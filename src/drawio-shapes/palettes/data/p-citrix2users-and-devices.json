@@ -1,0 +1,176 @@
+{
+ "id": "citrix2Users and Devices",
+ "title": "Citrix / Users and Devices",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Users and Devices-0-user",
+   "title": "User",
+   "tags": "citrix2 user citrix users devices  User",
+   "kind": "vertex",
+   "width": 48.84,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.user;",
+   "shapeNames": [
+    "mxgraph.citrix2.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:61"
+  },
+  {
+   "id": "citrix2Users and Devices-1-users",
+   "title": "Users",
+   "tags": "citrix2 users citrix users devices  Users",
+   "kind": "vertex",
+   "width": 50,
+   "height": 26.435,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.users;",
+   "shapeNames": [
+    "mxgraph.citrix2.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:62"
+  },
+  {
+   "id": "citrix2Users and Devices-2-external-users",
+   "title": "External Users",
+   "tags": "citrix2 external users citrix users devices  External Users",
+   "kind": "vertex",
+   "width": 48.449999999999996,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.external_users;",
+   "shapeNames": [
+    "mxgraph.citrix2.external_users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:63"
+  },
+  {
+   "id": "citrix2Users and Devices-3-internal-users",
+   "title": "Internal Users",
+   "tags": "citrix2 internal users citrix users devices  Internal Users",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.095,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.internal_users;",
+   "shapeNames": [
+    "mxgraph.citrix2.internal_users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:64"
+  },
+  {
+   "id": "citrix2Users and Devices-4-admins",
+   "title": "Admins",
+   "tags": "citrix2 admins citrix users devices  Admins",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.admins;",
+   "shapeNames": [
+    "mxgraph.citrix2.admins"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:65"
+  },
+  {
+   "id": "citrix2Users and Devices-5-desktop",
+   "title": "Desktop",
+   "tags": "citrix2 desktop citrix users devices  Desktop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.66,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.desktop;",
+   "shapeNames": [
+    "mxgraph.citrix2.desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:66"
+  },
+  {
+   "id": "citrix2Users and Devices-6-managed-desktop",
+   "title": "Managed Desktop",
+   "tags": "citrix2 managed desktop citrix users devices  Managed Desktop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.66,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.managed_desktop;",
+   "shapeNames": [
+    "mxgraph.citrix2.managed_desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:67"
+  },
+  {
+   "id": "citrix2Users and Devices-7-laptop",
+   "title": "Laptop",
+   "tags": "citrix2 laptop citrix users devices  Laptop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.57,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.laptop;",
+   "shapeNames": [
+    "mxgraph.citrix2.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:68"
+  },
+  {
+   "id": "citrix2Users and Devices-8-mobile-phone",
+   "title": "Mobile Phone",
+   "tags": "citrix2 mobile citrix users devices  Mobile Phone",
+   "kind": "vertex",
+   "width": 25.255,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.mobile;",
+   "shapeNames": [
+    "mxgraph.citrix2.mobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:69"
+  },
+  {
+   "id": "citrix2Users and Devices-9-tablet",
+   "title": "Tablet",
+   "tags": "citrix2 tablet citrix users devices  Tablet",
+   "kind": "vertex",
+   "width": 36.925000000000004,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.tablet;",
+   "shapeNames": [
+    "mxgraph.citrix2.tablet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:70"
+  },
+  {
+   "id": "citrix2Users and Devices-10-devices",
+   "title": "Devices",
+   "tags": "citrix2 devices citrix users devices  Devices",
+   "kind": "vertex",
+   "width": 113.3,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.devices;",
+   "shapeNames": [
+    "mxgraph.citrix2.devices"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:71"
+  },
+  {
+   "id": "citrix2Users and Devices-11-thin-client",
+   "title": "Thin Client",
+   "tags": "citrix2 thin client citrix users devices  Thin Client",
+   "kind": "vertex",
+   "width": 36.565,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.thin_client;",
+   "shapeNames": [
+    "mxgraph.citrix2.thin_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:72"
+  }
+ ]
+}

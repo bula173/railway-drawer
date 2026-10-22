@@ -1,0 +1,148 @@
+{
+ "id": "citrix2Locations",
+ "title": "Citrix / Locations",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Locations-0-office",
+   "title": "Office",
+   "tags": "citrix2 office citrix locations  Office",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.230000000000004,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.office;",
+   "shapeNames": [
+    "mxgraph.citrix2.office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:42"
+  },
+  {
+   "id": "citrix2Locations-1-home",
+   "title": "Home",
+   "tags": "citrix2 home citrix locations  Home",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.94,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.home;",
+   "shapeNames": [
+    "mxgraph.citrix2.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:43"
+  },
+  {
+   "id": "citrix2Locations-2-data-center",
+   "title": "Data Center",
+   "tags": "citrix2 data center citrix locations  Data Center",
+   "kind": "vertex",
+   "width": 49.24,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.data_center;",
+   "shapeNames": [
+    "mxgraph.citrix2.data_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:44"
+  },
+  {
+   "id": "citrix2Locations-3-factory",
+   "title": "Factory",
+   "tags": "citrix2 factory citrix locations  Factory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.415,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.factory;",
+   "shapeNames": [
+    "mxgraph.citrix2.factory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:45"
+  },
+  {
+   "id": "citrix2Locations-4-hospital",
+   "title": "Hospital",
+   "tags": "citrix2 hospital citrix locations  Hospital",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.2,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.hospital;",
+   "shapeNames": [
+    "mxgraph.citrix2.hospital"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:46"
+  },
+  {
+   "id": "citrix2Locations-5-finance-government",
+   "title": "Finance / Government",
+   "tags": "citrix2 finance government citrix locations  Finance / Government",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.735,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.finance_government;",
+   "shapeNames": [
+    "mxgraph.citrix2.finance_government"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:47"
+  },
+  {
+   "id": "citrix2Locations-6-airport",
+   "title": "Airport",
+   "tags": "citrix2 airport citrix locations  Airport",
+   "kind": "vertex",
+   "width": 48.075,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.airport;",
+   "shapeNames": [
+    "mxgraph.citrix2.airport"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:48"
+  },
+  {
+   "id": "citrix2Locations-7-cloud",
+   "title": "Cloud",
+   "tags": "citrix2 cloud citrix locations  Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.46,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.cloud;",
+   "shapeNames": [
+    "mxgraph.citrix2.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:49"
+  },
+  {
+   "id": "citrix2Locations-8-hybrid-cloud",
+   "title": "Hybrid Cloud",
+   "tags": "citrix2 hybrid cloud citrix locations  Hybrid Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.09,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.hybrid_cloud;",
+   "shapeNames": [
+    "mxgraph.citrix2.hybrid_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:50"
+  },
+  {
+   "id": "citrix2Locations-9-private-cloud",
+   "title": "Private Cloud",
+   "tags": "citrix2 private cloud citrix locations  Private Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.865000000000002,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.private_cloud;",
+   "shapeNames": [
+    "mxgraph.citrix2.private_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:51"
+  }
+ ]
+}

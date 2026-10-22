@@ -1,0 +1,694 @@
+{
+ "id": "signsTravel",
+ "title": "Signs / Travel",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsTravel-0-arriving-flights",
+   "title": "Arriving Flights",
+   "tags": "signs travel  Arriving Flights Arriving Flights",
+   "kind": "vertex",
+   "width": 74,
+   "height": 102,
+   "style": "shape=mxgraph.signs.travel.arriving_flights;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arriving_flights"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-1-arrow-east",
+   "title": "Arrow East",
+   "tags": "signs travel  Arrow East Arrow East",
+   "kind": "vertex",
+   "width": 98,
+   "height": 83,
+   "style": "shape=mxgraph.signs.travel.arrow_east;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_east"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-2-arrow-ne",
+   "title": "Arrow NE",
+   "tags": "signs travel  Arrow NE Arrow NE",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_ne;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_ne"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-3-arrow-north",
+   "title": "Arrow North",
+   "tags": "signs travel  Arrow North Arrow North",
+   "kind": "vertex",
+   "width": 83,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_north;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_north"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-4-arrow-nw",
+   "title": "Arrow NW",
+   "tags": "signs travel  Arrow NW Arrow NW",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_nw;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_nw"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-5-arrow-se",
+   "title": "Arrow SE",
+   "tags": "signs travel  Arrow SE Arrow SE",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_se;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_se"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-6-arrow-south",
+   "title": "Arrow South",
+   "tags": "signs travel  Arrow South Arrow South",
+   "kind": "vertex",
+   "width": 83,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_south;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_south"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-7-arrow-sw",
+   "title": "Arrow SW",
+   "tags": "signs travel  Arrow SW Arrow SW",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.arrow_sw;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_sw"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-8-arrow-west",
+   "title": "Arrow West",
+   "tags": "signs travel  Arrow West Arrow West",
+   "kind": "vertex",
+   "width": 99,
+   "height": 83,
+   "style": "shape=mxgraph.signs.travel.arrow_west;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.arrow_west"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-9-baggage",
+   "title": "Baggage",
+   "tags": "signs travel  Baggage Baggage",
+   "kind": "vertex",
+   "width": 98,
+   "height": 82,
+   "style": "shape=mxgraph.signs.travel.baggage;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.baggage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-10-bank",
+   "title": "Bank",
+   "tags": "signs travel  Bank Bank",
+   "kind": "vertex",
+   "width": 99,
+   "height": 86,
+   "style": "shape=mxgraph.signs.travel.bank;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.bank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-11-barber-shop",
+   "title": "Barber Shop",
+   "tags": "signs travel  Barber Shop Barber Shop",
+   "kind": "vertex",
+   "width": 93,
+   "height": 100,
+   "style": "shape=mxgraph.signs.travel.barber_shop;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.barber_shop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-12-beauty-salon",
+   "title": "Beauty Salon",
+   "tags": "signs travel  Beauty Salon Beauty Salon",
+   "kind": "vertex",
+   "width": 96,
+   "height": 100,
+   "style": "shape=mxgraph.signs.travel.beauty_salon;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.beauty_salon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-13-book-and-souvenir-shop",
+   "title": "Book And Souvenir Shop",
+   "tags": "signs travel  Book And Souvenir Shop Book And Souvenir Shop",
+   "kind": "vertex",
+   "width": 98,
+   "height": 92,
+   "style": "shape=mxgraph.signs.travel.book_and_souvenir_shop;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.book_and_souvenir_shop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-14-car-rental",
+   "title": "Car Rental",
+   "tags": "signs travel  Car Rental Car Rental",
+   "kind": "vertex",
+   "width": 75,
+   "height": 101,
+   "style": "shape=mxgraph.signs.travel.car_rental;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.car_rental"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-15-cashier",
+   "title": "Cashier",
+   "tags": "signs travel  Cashier Cashier",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.cashier;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.cashier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-16-coat-check",
+   "title": "Coat Check",
+   "tags": "signs travel  Coat Check Coat Check",
+   "kind": "vertex",
+   "width": 100,
+   "height": 71,
+   "style": "shape=mxgraph.signs.travel.coat_check;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.coat_check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-17-currency-exchange",
+   "title": "Currency Exchange",
+   "tags": "signs travel  Currency Exchange Currency Exchange",
+   "kind": "vertex",
+   "width": 99,
+   "height": 93,
+   "style": "shape=mxgraph.signs.travel.currency_exchange;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.currency_exchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-18-customs",
+   "title": "Customs",
+   "tags": "signs travel  Customs Customs",
+   "kind": "vertex",
+   "width": 99,
+   "height": 84,
+   "style": "shape=mxgraph.signs.travel.customs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.customs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-19-downstairs",
+   "title": "Downstairs",
+   "tags": "signs travel  Downstairs Downstairs",
+   "kind": "vertex",
+   "width": 99,
+   "height": 83,
+   "style": "shape=mxgraph.signs.travel.downstairs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.downstairs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-20-drinking-fountain",
+   "title": "Drinking Fountain",
+   "tags": "signs travel  Drinking Fountain Drinking Fountain",
+   "kind": "vertex",
+   "width": 82,
+   "height": 101,
+   "style": "shape=mxgraph.signs.travel.drinking_fountain;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.drinking_fountain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-21-driving-tour",
+   "title": "Driving Tour",
+   "tags": "signs travel  Driving Tour Driving Tour",
+   "kind": "vertex",
+   "width": 92,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.driving_tour;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.driving_tour"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-22-elevator",
+   "title": "Elevator",
+   "tags": "signs travel  Elevator Elevator",
+   "kind": "vertex",
+   "width": 65,
+   "height": 100,
+   "style": "shape=mxgraph.signs.travel.elevator;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.elevator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-23-escalator",
+   "title": "Escalator",
+   "tags": "signs travel  Escalator Escalator",
+   "kind": "vertex",
+   "width": 98,
+   "height": 77,
+   "style": "shape=mxgraph.signs.travel.escalator;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.escalator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-24-escalator-down",
+   "title": "Escalator Down",
+   "tags": "signs travel  Escalator Down Escalator Down",
+   "kind": "vertex",
+   "width": 99,
+   "height": 89,
+   "style": "shape=mxgraph.signs.travel.escalator_down;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.escalator_down"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-25-escalator-up",
+   "title": "Escalator Up",
+   "tags": "signs travel  Escalator Up Escalator Up",
+   "kind": "vertex",
+   "width": 99,
+   "height": 90,
+   "style": "shape=mxgraph.signs.travel.escalator_up;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.escalator_up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-26-euro",
+   "title": "Euro",
+   "tags": "signs travel  Euro Euro",
+   "kind": "vertex",
+   "width": 86,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.euro;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.euro"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-27-exit",
+   "title": "Exit",
+   "tags": "signs travel  Exit Exit",
+   "kind": "vertex",
+   "width": 98,
+   "height": 93,
+   "style": "shape=mxgraph.signs.travel.exit;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.exit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-28-haircut",
+   "title": "Haircut",
+   "tags": "signs travel  Haircut Haircut",
+   "kind": "vertex",
+   "width": 58,
+   "height": 100,
+   "style": "shape=mxgraph.signs.travel.haircut;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.haircut"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-29-hotel",
+   "title": "Hotel",
+   "tags": "signs travel  Hotel Hotel",
+   "kind": "vertex",
+   "width": 99,
+   "height": 60,
+   "style": "shape=mxgraph.signs.travel.hotel;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.hotel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-30-hotel-information",
+   "title": "Hotel Information",
+   "tags": "signs travel  Hotel Information Hotel Information",
+   "kind": "vertex",
+   "width": 94,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.hotel_information;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.hotel_information"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-31-immigration",
+   "title": "Immigration",
+   "tags": "signs travel  Immigration Immigration",
+   "kind": "vertex",
+   "width": 94,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.immigration;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.immigration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-32-information-1",
+   "title": "Information 1",
+   "tags": "signs travel  Information 1 Information 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.information_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.information_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-33-information-2",
+   "title": "Information 2",
+   "tags": "signs travel  Information 2 Information 2",
+   "kind": "vertex",
+   "width": 59,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.information_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.information_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-34-locker",
+   "title": "Locker",
+   "tags": "signs travel  Locker Locker",
+   "kind": "vertex",
+   "width": 78,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.locker;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.locker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-35-lost-and-found",
+   "title": "Lost And Found",
+   "tags": "signs travel  Lost And Found Lost And Found",
+   "kind": "vertex",
+   "width": 99,
+   "height": 95,
+   "style": "shape=mxgraph.signs.travel.lost_and_found;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.lost_and_found"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-36-museum",
+   "title": "Museum",
+   "tags": "signs travel  Museum Museum",
+   "kind": "vertex",
+   "width": 98,
+   "height": 94,
+   "style": "shape=mxgraph.signs.travel.museum;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.museum"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-37-no-parking",
+   "title": "No Parking",
+   "tags": "signs travel  No Parking No Parking",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.no_parking;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.no_parking"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-38-parking-1",
+   "title": "Parking 1",
+   "tags": "signs travel  Parking 1 Parking 1",
+   "kind": "vertex",
+   "width": 74,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.parking_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.parking_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-39-parking-2",
+   "title": "Parking 2",
+   "tags": "signs travel  Parking 2 Parking 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.parking_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.parking_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-40-point-of-interest",
+   "title": "Point Of Interest",
+   "tags": "signs travel  Point Of Interest Point Of Interest",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.travel.point_of_interest;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.point_of_interest"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-41-pound",
+   "title": "Pound",
+   "tags": "signs travel  Pound Pound",
+   "kind": "vertex",
+   "width": 68,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.pound;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.pound"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-42-present",
+   "title": "Present",
+   "tags": "signs travel  Present Present",
+   "kind": "vertex",
+   "width": 76,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.present;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.present"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-43-shops",
+   "title": "Shops",
+   "tags": "signs travel  Shops Shops",
+   "kind": "vertex",
+   "width": 98,
+   "height": 95,
+   "style": "shape=mxgraph.signs.travel.shops;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.shops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-44-stairs",
+   "title": "Stairs",
+   "tags": "signs travel  Stairs Stairs",
+   "kind": "vertex",
+   "width": 98,
+   "height": 83,
+   "style": "shape=mxgraph.signs.travel.stairs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.stairs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-45-ticket-machine",
+   "title": "Ticket Machine",
+   "tags": "signs travel  Ticket Machine Ticket Machine",
+   "kind": "vertex",
+   "width": 88,
+   "height": 100,
+   "style": "shape=mxgraph.signs.travel.ticket_machine;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.ticket_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-46-ticket-purchase",
+   "title": "Ticket Purchase",
+   "tags": "signs travel  Ticket Purchase Ticket Purchase",
+   "kind": "vertex",
+   "width": 98,
+   "height": 95,
+   "style": "shape=mxgraph.signs.travel.ticket_purchase;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.ticket_purchase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-47-tunnel",
+   "title": "Tunnel",
+   "tags": "signs travel  Tunnel Tunnel",
+   "kind": "vertex",
+   "width": 86,
+   "height": 98,
+   "style": "shape=mxgraph.signs.travel.tunnel;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.tunnel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTravel-48-upstairs",
+   "title": "Upstairs",
+   "tags": "signs travel  Upstairs Upstairs",
+   "kind": "vertex",
+   "width": 98,
+   "height": 85,
+   "style": "shape=mxgraph.signs.travel.upstairs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.travel.upstairs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

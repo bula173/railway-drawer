@@ -1,0 +1,85 @@
+{
+ "id": "mockupButtons",
+ "title": "Mockup Buttons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupButtons-0-button",
+   "title": "Button",
+   "tags": "mockup buttons button mockup button  Button",
+   "kind": "vertex",
+   "width": 150,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#ffffff;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#008cff;whiteSpace=wrap;",
+   "value": "Button Text",
+   "shapeNames": [
+    "mxgraph.mockup.buttons.button"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:46"
+  },
+  {
+   "id": "mockupButtons-1-formatted-button",
+   "title": "Formatted Button",
+   "tags": "mockup button formatted multibutton multi",
+   "kind": "cells",
+   "width": 150,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.multiButton;fillColor=#008cff;strokeColor=#666666;mainText=;subText=;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Main Text\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.anchor;fontSize=16;fontColor=#ffffff;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"8\" width=\"150\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Sub Text\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.anchor;fontSize=12;fontColor=#ffffff;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"150\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.buttons.multiButton",
+    "mxgraph.mockup.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:49"
+  },
+  {
+   "id": "mockupButtons-2-horizontal-button-bar",
+   "title": "Horizontal Button Bar",
+   "tags": "horizontal bar",
+   "kind": "cells",
+   "width": 500,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#666666;fillColor=#ffffff;fontColor=#666666;fontStyle=0;childLayout=stackLayout;horizontal=0;startSize=0;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"500\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Button 1\" style=\"text;strokeColor=#008CFF;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.mockup.leftButton;rSize=10;fillColor=#008CFF;fontColor=#ffffff;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Button 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Button 3\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Button 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.mockup.rightButton;rSize=10;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.mockup.leftButton",
+    "mxgraph.mockup.rightButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:63"
+  },
+  {
+   "id": "mockupButtons-3-vertical-button-bar",
+   "title": "Vertical Button Bar",
+   "tags": "vertical bar",
+   "kind": "cells",
+   "width": 120,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#666666;fillColor=#ffffff;fontColor=#666666;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Button 1\" style=\"text;strokeColor=#008CFF;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.mockup.topButton;rSize=10;fillColor=#008CFF;fontColor=#ffffff;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Button 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Button 3\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Button 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.mockup.bottomButton;rSize=10;fillColor=inherit;fontColor=inherit;fontSize=17;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.mockup.topButton",
+    "mxgraph.mockup.bottomButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:88"
+  },
+  {
+   "id": "mockupButtons-4-on-off-button",
+   "title": "On-off button",
+   "tags": "mockup buttons onOffButton mockup button on off On-off button",
+   "kind": "vertex",
+   "width": 150,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.onOffButton;gradientColor=none;strokeColor=#999999;buttonState=on;fillColor2=#008cff;fillColorStyles=fillColor2;fontColor=#ffffff;fontSize=17;mainText=;spacingRight=40;fontStyle=1;whiteSpace=wrap;",
+   "value": "ON",
+   "shapeNames": [
+    "mxgraph.mockup.buttons.onOffButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:113"
+  }
+ ]
+}

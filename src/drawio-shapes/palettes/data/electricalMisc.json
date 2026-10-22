@@ -1,0 +1,1359 @@
+{
+ "id": "electricalMisc",
+ "title": "Electrical / Misc",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalMisc-0-antenna",
+   "title": "Antenna",
+   "tags": "electrical radio aerial - antenna 1 electrical radio audio  Antenna",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.aerial_-_antenna_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:601"
+  },
+  {
+   "id": "electricalMisc-1-antenna",
+   "title": "Antenna",
+   "tags": "electrical radio aerial - antenna 2 electrical radio audio  Antenna",
+   "kind": "vertex",
+   "width": 79,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_2;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.aerial_-_antenna_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:603"
+  },
+  {
+   "id": "electricalMisc-2-loop-antenna",
+   "title": "Loop Antenna",
+   "tags": "electrical radio loop antenna electrical radio audio  Loop Antenna",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 69.78,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.loop_antenna;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.loop_antenna"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:605"
+  },
+  {
+   "id": "electricalMisc-3-loop-antenna",
+   "title": "Loop Antenna",
+   "tags": "electrical signal sources loop antenna electrical  Loop Antenna",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.loop_antenna",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.loop_antenna"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:607"
+  },
+  {
+   "id": "electricalMisc-4-electrical-motor",
+   "title": "Electrical Motor",
+   "tags": "electrical electro-mechanical motor 1 electrical switch relay  Electrical Motor",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;strokeWidth=1;shape=ellipse;aspect=fixed;fontSize=35;",
+   "value": "M",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:609"
+  },
+  {
+   "id": "electricalMisc-5-motor-armature",
+   "title": "Motor Armature",
+   "tags": "electrical electro-mechanical motor 2 electrical switch relay  Motor Armature",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.electrical.electro-mechanical.motor_2;html=1;shadow=0;dashed=0;align=center;fontSize=30;strokeWidth=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.motor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:611"
+  },
+  {
+   "id": "electricalMisc-6-co-ax",
+   "title": "Co-Ax",
+   "tags": "electrical miscellaneous co-ax electrical  Co-Ax",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.co-ax;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.co-ax"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:613"
+  },
+  {
+   "id": "electricalMisc-7-crystal",
+   "title": "Crystal",
+   "tags": "electrical miscellaneous crystal 1 electrical  Crystal",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.crystal_1;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.crystal_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:615"
+  },
+  {
+   "id": "electricalMisc-8-fuse-iec",
+   "title": "Fuse (IEC)",
+   "tags": "electrical miscellaneous fuse 1 electrical  Fuse (IEC)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.fuse_1;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.fuse_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:617"
+  },
+  {
+   "id": "electricalMisc-9-fuse-ieee",
+   "title": "Fuse (IEEE)",
+   "tags": "electrical miscellaneous fuse 2 electrical  Fuse (IEEE)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.fuse_2;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.fuse_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:619"
+  },
+  {
+   "id": "electricalMisc-10-fuse-obsolete",
+   "title": "Fuse (obsolete)",
+   "tags": "electrical miscellaneous fuse 3 electrical  Fuse (obsolete)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 12,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.fuse_3;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.fuse_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:621"
+  },
+  {
+   "id": "electricalMisc-11-fuse-ieee",
+   "title": "Fuse (IEEE)",
+   "tags": "electrical miscellaneous fuse 4 electrical  Fuse (IEEE)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 32,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.fuse_4;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.fuse_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:623"
+  },
+  {
+   "id": "electricalMisc-12-light-bulb",
+   "title": "Light Bulb",
+   "tags": "electrical miscellaneous light bulb electrical  Light Bulb",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.light_bulb;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.light_bulb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:625"
+  },
+  {
+   "id": "electricalMisc-13-illuminating-bulb",
+   "title": "Illuminating Bulb",
+   "tags": "electrical miscellaneous illuminating bulb electrical  Illuminating Bulb",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.illuminating_bulb;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.illuminating_bulb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:627"
+  },
+  {
+   "id": "electricalMisc-14-pilot-light",
+   "title": "Pilot Light",
+   "tags": "electrical miscellaneous light bulb electrical  Pilot Light",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.light_bulb;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.light_bulb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:629"
+  },
+  {
+   "id": "electricalMisc-15-neon-lamp",
+   "title": "Neon Lamp",
+   "tags": "electrical miscellaneous neon lamp 2 electrical  Neon Lamp",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.neon_lamp_2;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.neon_lamp_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:631"
+  },
+  {
+   "id": "electricalMisc-16-flourescent-lamp",
+   "title": "Flourescent Lamp",
+   "tags": "electrical signal sources flourescent lamp electrical  Flourescent Lamp",
+   "kind": "vertex",
+   "width": 80,
+   "height": 30,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.flourescent_lamp",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.flourescent_lamp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:633"
+  },
+  {
+   "id": "electricalMisc-17-lamp",
+   "title": "Lamp",
+   "tags": "electrical signal sources lamp electrical optical  Lamp",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.lamp",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.lamp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:635"
+  },
+  {
+   "id": "electricalMisc-18-thermocouple",
+   "title": "Thermocouple",
+   "tags": "electrical miscellaneous thermocouple electrical  Thermocouple",
+   "kind": "vertex",
+   "width": 80,
+   "height": 81,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.thermocouple;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.thermocouple"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:637"
+  },
+  {
+   "id": "electricalMisc-19-amplifier",
+   "title": "Amplifier",
+   "tags": "electrical abstract amplifier electrical  Amplifier",
+   "kind": "vertex",
+   "width": 90,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.amplifier;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.amplifier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:639"
+  },
+  {
+   "id": "electricalMisc-20-controlled-amplifier",
+   "title": "Controlled Amplifier",
+   "tags": "electrical abstract controlled amplifier electrical  Controlled Amplifier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.controlled_amplifier;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.controlled_amplifier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:641"
+  },
+  {
+   "id": "electricalMisc-21-dac",
+   "title": "DAC",
+   "tags": "electrical abstract dac electrical  DAC",
+   "kind": "vertex",
+   "width": 70,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.dac;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.dac"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:643"
+  },
+  {
+   "id": "electricalMisc-22-mux",
+   "title": "Mux",
+   "tags": "electrical abstract mux electrical  Mux",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.abstract.mux2;whiteSpace=wrap;",
+   "value": "Mux",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.mux2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:645"
+  },
+  {
+   "id": "electricalMisc-23-demux",
+   "title": "Demux",
+   "tags": "electrical abstract mux electrical  Demux",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.abstract.mux2;operation=demux;whiteSpace=wrap;",
+   "value": "Demux",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.mux2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:648"
+  },
+  {
+   "id": "electricalMisc-24-operational-amp",
+   "title": "Operational Amp",
+   "tags": "electrical abstract operational amp 1 electrical  Operational Amp",
+   "kind": "vertex",
+   "width": 98,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.operational_amp_1;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.operational_amp_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:651"
+  },
+  {
+   "id": "electricalMisc-25-operational-amp",
+   "title": "Operational Amp",
+   "tags": "electrical abstract operational amp 2 electrical  Operational Amp",
+   "kind": "vertex",
+   "width": 98,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.operational_amp_2;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.operational_amp_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:653"
+  },
+  {
+   "id": "electricalMisc-26-ota",
+   "title": "OTA",
+   "tags": "electrical abstract ota 1 electrical  OTA",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.ota_1;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.ota_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:655"
+  },
+  {
+   "id": "electricalMisc-27-ota",
+   "title": "OTA",
+   "tags": "electrical abstract ota 2 electrical  OTA",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.ota_2;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.ota_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:657"
+  },
+  {
+   "id": "electricalMisc-28-ota",
+   "title": "OTA",
+   "tags": "electrical abstract ota 3 electrical  OTA",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.ota_3;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.ota_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:659"
+  },
+  {
+   "id": "electricalMisc-29-quantizer",
+   "title": "Quantizer",
+   "tags": "electrical abstract quantizer electrical  Quantizer",
+   "kind": "vertex",
+   "width": 52,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.quantizer;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.quantizer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:661"
+  },
+  {
+   "id": "electricalMisc-30-delta",
+   "title": "Delta",
+   "tags": "electrical abstract delta electrical  Delta",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.delta;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.delta"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:663"
+  },
+  {
+   "id": "electricalMisc-31-function",
+   "title": "Function",
+   "tags": "electrical abstract function electrical  Function",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.electrical.abstract.function;html=1;shadow=0;dashed=0;align=center;strokeWidth=1;fontSize=24",
+   "value": "fn",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.function"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:665"
+  },
+  {
+   "id": "electricalMisc-32-integrator",
+   "title": "Integrator",
+   "tags": "electrical abstract integrator electrical  Integrator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.integrator;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.integrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:667"
+  },
+  {
+   "id": "electricalMisc-33-multiplier",
+   "title": "Multiplier",
+   "tags": "electrical abstract multiplier electrical  Multiplier",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.multiplier;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.multiplier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:669"
+  },
+  {
+   "id": "electricalMisc-34-sum",
+   "title": "Sum",
+   "tags": "electrical abstract sum electrical  Sum",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.sum;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.sum"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:671"
+  },
+  {
+   "id": "electricalMisc-35-summation-point",
+   "title": "Summation Point",
+   "tags": "electrical abstract summation point electrical  Summation Point",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.summation_point;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.summation_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:673"
+  },
+  {
+   "id": "electricalMisc-36-filter",
+   "title": "Filter",
+   "tags": "electrical abstract filter electrical  Filter",
+   "kind": "vertex",
+   "width": 52,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.filter;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:675"
+  },
+  {
+   "id": "electricalMisc-37-bandpass-filter",
+   "title": "Bandpass Filter",
+   "tags": "electrical logic gates bandpass filter  Bandpass Filter",
+   "kind": "vertex",
+   "width": 52,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.bandpass_filter;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.bandpass_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:677"
+  },
+  {
+   "id": "electricalMisc-38-highpass-filter",
+   "title": "Highpass Filter",
+   "tags": "electrical logic gates highpass filter  Highpass Filter",
+   "kind": "vertex",
+   "width": 52,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.highpass_filter;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.highpass_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:679"
+  },
+  {
+   "id": "electricalMisc-39-lowpass-filter",
+   "title": "Lowpass Filter",
+   "tags": "electrical logic gates lowpass filter  Lowpass Filter",
+   "kind": "vertex",
+   "width": 52,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.lowpass_filter;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.lowpass_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:681"
+  },
+  {
+   "id": "electricalMisc-40-thermistor-with-independent-integral-heater",
+   "title": "Thermistor With Independent Integral Heater",
+   "tags": "electrical abstract thermistor with independent integral heater electrical  Thermistor With Independent Integral Heater",
+   "kind": "vertex",
+   "width": 100,
+   "height": 94.25,
+   "style": "shape=mxgraph.electrical.abstract.thermistor_with_independent_integral_heater;html=1;shadow=0;dashed=0;strokeWidth=1;align=center;overflow=fill;fontSize=12;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%;height:100%;\"><tr height=\"45%\"><td align=\"center\">\\temp\\</td></tr><tr height=\"55%\"><td></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.thermistor_with_independent_integral_heater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:683"
+  },
+  {
+   "id": "electricalMisc-41-voltage-regulator",
+   "title": "Voltage Regulator",
+   "tags": "electrical abstract voltage regulator electrical  Voltage Regulator",
+   "kind": "vertex",
+   "width": 70,
+   "height": 58,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.abstract.voltage_regulator;",
+   "shapeNames": [
+    "mxgraph.electrical.abstract.voltage_regulator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:694"
+  },
+  {
+   "id": "electricalMisc-42-vss",
+   "title": "Vss",
+   "tags": "electrical signal sources vss electrical signal source  Vss",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.vss2;fontSize=24;flipV=1;",
+   "value": "V<sub>ss</sub>",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.vss2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:696"
+  },
+  {
+   "id": "electricalMisc-43-vdd",
+   "title": "Vdd",
+   "tags": "electrical signal sources vdd electrical signal source  Vdd",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "verticalLabelPosition=top;verticalAlign=bottom;shape=mxgraph.electrical.signal_sources.vdd;shadow=0;dashed=0;align=center;strokeWidth=1;fontSize=24;html=1;flipV=1;",
+   "value": "V<sub>dd</sub>",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.vdd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:699"
+  },
+  {
+   "id": "electricalMisc-44-current-flow",
+   "title": "Current Flow",
+   "tags": "electrical signal sources current flow electrical signal source  Current Flow",
+   "kind": "vertex",
+   "width": 70,
+   "height": 10,
+   "style": "verticalLabelPosition=top;verticalAlign=bottom;shape=mxgraph.electrical.signal_sources.current_flow;shadow=0;dashed=0;align=center;strokeWidth=1;fontSize=10;html=1;",
+   "value": "5 mA",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.current_flow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:702"
+  },
+  {
+   "id": "electricalMisc-45-voltage",
+   "title": "Voltage",
+   "tags": "electrical signal sources voltage electrical signal source  Voltage",
+   "kind": "vertex",
+   "width": 10,
+   "height": 70,
+   "style": "labelPosition=right;align=left;shape=mxgraph.electrical.signal_sources.voltage;shadow=0;dashed=0;strokeWidth=1;fontSize=10;html=1;",
+   "value": "1.2 V",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.voltage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:705"
+  },
+  {
+   "id": "electricalMisc-46-equipotential",
+   "title": "Equipotential",
+   "tags": "electrical signal sources equipotential electrical signal source  Equipotential",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.equipotential;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.equipotential"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:708"
+  },
+  {
+   "id": "electricalMisc-47-equipotential",
+   "title": "Equipotential",
+   "tags": "electrical signal sources protective earth earth ground electrical signal source  Equipotential",
+   "kind": "vertex",
+   "width": 25,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.protective_earth;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.protective_earth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:710"
+  },
+  {
+   "id": "electricalMisc-48-ground",
+   "title": "Ground",
+   "tags": "electrical signal sources signal ground earth electrical signal source  Ground",
+   "kind": "vertex",
+   "width": 45,
+   "height": 30,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.signal_ground;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.signal_ground"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:712"
+  },
+  {
+   "id": "electricalMisc-49-chassis",
+   "title": "Chassis",
+   "tags": "electrical signal sources chassis electrical  Chassis",
+   "kind": "vertex",
+   "width": 65,
+   "height": 32,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.chassis;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:714"
+  },
+  {
+   "id": "electricalMisc-50-circuit-breaker",
+   "title": "Circuit Breaker",
+   "tags": "electrical signal sources circuit breaker electrical  Circuit Breaker",
+   "kind": "vertex",
+   "width": 100,
+   "height": 13,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.circuit_breaker;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.circuit_breaker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:716"
+  },
+  {
+   "id": "electricalMisc-51-generic-component",
+   "title": "Generic Component",
+   "tags": "electrical signal sources generic component electrical  Generic Component",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.generic_component",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.generic_component"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:718"
+  },
+  {
+   "id": "electricalMisc-52-permanent-magnet",
+   "title": "Permanent Magnet",
+   "tags": "electrical signal sources permanent magnet electrical  Permanent Magnet",
+   "kind": "vertex",
+   "width": 20,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.permanent_magnet",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.permanent_magnet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:720"
+  },
+  {
+   "id": "electricalMisc-53-thermal-element",
+   "title": "Thermal Element",
+   "tags": "electrical signal sources thermal element electrical  Thermal Element",
+   "kind": "vertex",
+   "width": 100,
+   "height": 32,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.thermal_element",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.thermal_element"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:722"
+  },
+  {
+   "id": "electricalMisc-54-igniter-plug",
+   "title": "Igniter Plug",
+   "tags": "electrical signal sources igniter plug electrical  Igniter Plug",
+   "kind": "vertex",
+   "width": 72,
+   "height": 39,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.igniter_plug2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.igniter_plug2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:724"
+  },
+  {
+   "id": "electricalMisc-55-pickup-head",
+   "title": "Pickup Head",
+   "tags": "electrical signal sources pickup head electrical  Pickup Head",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.arrows2.arrow;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;dy=0;dx=10;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:726"
+  },
+  {
+   "id": "electricalMisc-56-squib-ignitor",
+   "title": "Squib Ignitor",
+   "tags": "electrical signal sources squib ignitor electrical  Squib Ignitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.squib_ignitor",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.squib_ignitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:728"
+  },
+  {
+   "id": "electricalMisc-57-transducer",
+   "title": "Transducer",
+   "tags": "electrical signal sources transducer electrical  Transducer",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.transducer",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.transducer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:730"
+  },
+  {
+   "id": "electricalMisc-58-transducer",
+   "title": "Transducer",
+   "tags": "electrical signal sources transducer electrical  Transducer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.transducer_2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.transducer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:732"
+  },
+  {
+   "id": "electricalMisc-59-thermopile",
+   "title": "Thermopile",
+   "tags": "electrical signal sources thermopile electrical  Thermopile",
+   "kind": "vertex",
+   "width": 80,
+   "height": 82,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.thermopile",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.thermopile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:734"
+  },
+  {
+   "id": "electricalMisc-60-indicator",
+   "title": "Indicator",
+   "tags": "electrical signal sources indicator electrical  Indicator",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.indicator",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.indicator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:736"
+  },
+  {
+   "id": "electricalMisc-61-surge-protector",
+   "title": "Surge Protector",
+   "tags": "electrical signal sources surge protector electrical  Surge Protector",
+   "kind": "vertex",
+   "width": 70,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.surge_protector;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.surge_protector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:738"
+  },
+  {
+   "id": "electricalMisc-62-surge-protector",
+   "title": "Surge Protector",
+   "tags": "electrical signal sources surge protector electrical  Surge Protector",
+   "kind": "vertex",
+   "width": 70,
+   "height": 24,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.surge_protector_2;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.surge_protector_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:740"
+  },
+  {
+   "id": "electricalMisc-63-material",
+   "title": "Material",
+   "tags": "electrical signal sources material electrical  Material",
+   "kind": "vertex",
+   "width": 130,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=rect;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:742"
+  },
+  {
+   "id": "electricalMisc-64-sensing-link-squib",
+   "title": "Sensing Link Squib",
+   "tags": "electrical signal sources sensing link squib electrical  Sensing Link Squib",
+   "kind": "vertex",
+   "width": 130,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.sensing_link_squib",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.sensing_link_squib"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:744"
+  },
+  {
+   "id": "electricalMisc-65-delay-element",
+   "title": "Delay Element",
+   "tags": "electrical signal sources delay element electrical  Delay Element",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.delay_element",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.delay_element"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:746"
+  },
+  {
+   "id": "electricalMisc-66-buzzer",
+   "title": "Buzzer",
+   "tags": "electrical signal sources buzzer electrical radio audio  Buzzer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.buzzer",
+   "shapeNames": [
+    "mxgraph.electrical.radio.buzzer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:748"
+  },
+  {
+   "id": "electricalMisc-67-adapter",
+   "title": "Adapter",
+   "tags": "electrical signal sources adapter electrical radio audio  Adapter",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.adapter",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:750"
+  },
+  {
+   "id": "electricalMisc-68-circuit-terminal",
+   "title": "Circuit Terminal",
+   "tags": "electrical signal sources circuit terminal electrical radio audio  Circuit Terminal",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=ellipse;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:752"
+  },
+  {
+   "id": "electricalMisc-69-m-f-contact",
+   "title": "M/F Contact",
+   "tags": "electrical signal sources  mf contact",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "endArrow=open;html=1;strokeWidth=1;endFill=0;endSize=20;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:754"
+  },
+  {
+   "id": "electricalMisc-70-m-f-contact-2",
+   "title": "M/F Contact 2",
+   "tags": "electrical signal sources mf contact electrical radio audio  M/F Contact 2",
+   "kind": "vertex",
+   "width": 100,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.mf_contact_2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.mf_contact_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:756"
+  },
+  {
+   "id": "electricalMisc-71-terminal-board",
+   "title": "Terminal Board",
+   "tags": "electrical signal sources terminal board electrical radio audio  Terminal Board",
+   "kind": "vertex",
+   "width": 75,
+   "height": 150,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.terminal_board",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.terminal_board"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:758"
+  },
+  {
+   "id": "electricalMisc-72-cable-termination",
+   "title": "Cable Termination",
+   "tags": "electrical signal sources cable termination electrical radio audio  Cable Termination",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.cable_termination",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.cable_termination"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:760"
+  },
+  {
+   "id": "electricalMisc-73-2-conductor-jack",
+   "title": "2-Conductor Jack",
+   "tags": "electrical signal sources 2 conductor jack two electrical radio audio  2-Conductor Jack",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.2_conductor_jack",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.2_conductor_jack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:762"
+  },
+  {
+   "id": "electricalMisc-74-3-conductor-jack",
+   "title": "3-Conductor Jack",
+   "tags": "electrical signal sources 3 conductor jack three electrical radio audio  3-Conductor Jack",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.3_conductor_jack",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.3_conductor_jack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:764"
+  },
+  {
+   "id": "electricalMisc-75-2-conductor-plug",
+   "title": "2-Conductor Plug",
+   "tags": "electrical signal sources 2 conductor plug two electrical radio audio  2-Conductor Plug",
+   "kind": "vertex",
+   "width": 53,
+   "height": 24,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.2_conductor_plug",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.2_conductor_plug"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:766"
+  },
+  {
+   "id": "electricalMisc-76-3-conductor-plug",
+   "title": "3 Conductor Plug",
+   "tags": "electrical signal sources 3 conductor plug electrical radio audio  3 Conductor Plug",
+   "kind": "vertex",
+   "width": 53,
+   "height": 24,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.3_conductor_plug",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.3_conductor_plug"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:768"
+  },
+  {
+   "id": "electricalMisc-77-normalled-jacks",
+   "title": "Normalled Jacks",
+   "tags": "electrical signal sources normalled jacks electrical radio audio  Normalled Jacks",
+   "kind": "vertex",
+   "width": 230,
+   "height": 65,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.normalled_jacks2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.normalled_jacks2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:770"
+  },
+  {
+   "id": "electricalMisc-78-normalled-jack",
+   "title": "Normalled Jack",
+   "tags": "electrical signal sources normalled jack electrical radio audio  Normalled Jack",
+   "kind": "vertex",
+   "width": 110,
+   "height": 65,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.normalled_jack2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.normalled_jack2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:772"
+  },
+  {
+   "id": "electricalMisc-79-coaxial-outside-conductor",
+   "title": "Coaxial Outside Conductor",
+   "tags": "electrical signal sources coaxial outside conductor electrical radio audio  Coaxial Outside Conductor",
+   "kind": "vertex",
+   "width": 300,
+   "height": 150,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.coaxial_outside_conductor",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.coaxial_outside_conductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:774"
+  },
+  {
+   "id": "electricalMisc-80-coaxial-center-conductor",
+   "title": "Coaxial Center Conductor",
+   "tags": "electrical signal sources coaxial center conductor electrical radio audio  Coaxial Center Conductor",
+   "kind": "vertex",
+   "width": 300,
+   "height": 150,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.coaxial_center_conductor",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.coaxial_center_conductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:776"
+  },
+  {
+   "id": "electricalMisc-81-large-d-connector",
+   "title": "Large D Connector",
+   "tags": "electrical signal sources large d connector electrical radio audio  Large D Connector",
+   "kind": "vertex",
+   "width": 375,
+   "height": 75,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.large_d_connector",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.large_d_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:778"
+  },
+  {
+   "id": "electricalMisc-82-small-d-connector",
+   "title": "Small D Connector",
+   "tags": "electrical signal sources small d connector electrical radio audio  Small D Connector",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.small_d_connector",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.small_d_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:780"
+  },
+  {
+   "id": "electricalMisc-83-c-header-connector",
+   "title": "C Header Connector",
+   "tags": "electrical signal sources c header connector electrical radio audio  C Header Connector",
+   "kind": "vertex",
+   "width": 200,
+   "height": 75,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.c_header_connector",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.c_header_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:782"
+  },
+  {
+   "id": "electricalMisc-84-ac-out",
+   "title": "AC Out",
+   "tags": "electrical signal sources ac out alternate current electrical radio audio  AC Out",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.ac_out",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.ac_out"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:784"
+  },
+  {
+   "id": "electricalMisc-85-shielded-jack-plug",
+   "title": "Shielded Jack/Plug",
+   "tags": "electrical signal sources shielded jack plug electrical radio audio  Shielded Jack/Plug",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.shielded_jack_plug",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.shielded_jack_plug"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:786"
+  },
+  {
+   "id": "electricalMisc-86-coaxial-jack-plug",
+   "title": "Coaxial Jack/Plug",
+   "tags": "electrical signal sources coaxial jack/plug electrical radio audio  Coaxial Jack/Plug",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.coaxial_jack_plug",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.coaxial_jack_plug"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:788"
+  },
+  {
+   "id": "electricalMisc-87-f-m-2-conductor",
+   "title": "F/M 2 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 2 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_2_conductor_1",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_2_conductor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:790"
+  },
+  {
+   "id": "electricalMisc-88-f-m-2-conductor",
+   "title": "F/M 2 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 2 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_2_conductor_2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_2_conductor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:792"
+  },
+  {
+   "id": "electricalMisc-89-f-m-2-conductor",
+   "title": "F/M 2 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 2 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_2_conductor_3",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_2_conductor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:794"
+  },
+  {
+   "id": "electricalMisc-90-f-m-3-conductor",
+   "title": "F/M 3 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 3 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_3_conductor_1",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_3_conductor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:796"
+  },
+  {
+   "id": "electricalMisc-91-f-m-3-conductor",
+   "title": "F/M 3 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 3 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_3_conductor_2",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_3_conductor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:798"
+  },
+  {
+   "id": "electricalMisc-92-f-m-3-conductor",
+   "title": "F/M 3 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 3 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_3_conductor_3",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_3_conductor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:800"
+  },
+  {
+   "id": "electricalMisc-93-f-m-3-conductor",
+   "title": "F/M 3 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 3 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_3_conductor_4",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_3_conductor_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:802"
+  },
+  {
+   "id": "electricalMisc-94-f-m-3-conductor",
+   "title": "F/M 3 Conductor",
+   "tags": "electrical signal sources fm 2 conductor electrical radio audio  F/M 3 Conductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.f_m_3_conductor_5",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.f_m_3_conductor_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:804"
+  },
+  {
+   "id": "electricalMisc-95-plug-socket-connection",
+   "title": "Plug-Socket Connection",
+   "tags": "electrical signal sources Plug Socket Connection electrical radio audio  Plug-Socket Connection",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.plug_socket_connection",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.plug_socket_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:806"
+  }
+ ]
+}

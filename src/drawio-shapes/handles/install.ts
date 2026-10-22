@@ -43,8 +43,21 @@ export const DRAWIO_HANDLE_FACTORIES: Readonly<Record<string, ShapeHandleFactory
     result[name] = (state: CellState) => factory(state, createHandleFn) as DrawioHandle[];
   }
 
-  return Object.freeze(result);
+  return result;
 })();
+
+/**
+ * Adds a Graph.handleFactory entry of a lazily loaded (vendored) draw.io shape library. Entries
+ * of the hand-ported libraries above are kept (they were registered first and are not replaced).
+ */
+export function registerDrawioHandleFactory(name: string, factory: (state: CellState) => unknown): void {
+  const registry = DRAWIO_HANDLE_FACTORIES as Record<string, ShapeHandleFactory>;
+  if (Object.prototype.hasOwnProperty.call(registry, name)) return;
+  registry[name] = (state: CellState) => {
+    const handles = factory(state);
+    return (Array.isArray(handles) ? handles : null) as DrawioHandle[];
+  };
+}
 
 function isKnownShape(name: unknown): boolean {
   if (typeof name !== 'string' || name === '') return false;

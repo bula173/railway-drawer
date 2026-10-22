@@ -1,0 +1,148 @@
+{
+ "id": "mscaeWeb Service",
+ "title": "CAE / Web Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeWeb Service-0-connection",
+   "title": "Connection",
+   "tags": "mscae connection ms microsoft cloud enterprise web service Connection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Connection.svg;points=[[0.5,0.004,0],[0.5,1,0],[0.02,0.5,0],[0.978,0.5,0],[0.895,0.351,0],[0.895,0.959,0],[0.105,0.657,0],[0.113,0.041,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1470"
+  },
+  {
+   "id": "mscaeWeb Service-1-app-service-certificates",
+   "title": "App Service Certificates",
+   "tags": "mscae app application certificates certificate ms microsoft cloud enterprise web service App Service Certificates",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Certificate.svg;points=[[0.5,0,0],[0.5,0.888,0],[0,0.442,0],[1,0.442,0],[0.972,0.015,0],[0.972,0.869,0],[0.143,1,0],[0.028,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1472"
+  },
+  {
+   "id": "mscaeWeb Service-2-app-service-domains",
+   "title": "App Service Domains",
+   "tags": "mscae app service domain domains ms microsoft cloud enterprise web service App Service Domains",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CustomDomain.svg;points=[[0.5,0,0],[0.5,0.991,0],[0,0.496,0],[1,0.496,0],[0.99,0.012,0],[0.987,0.982,0],[0.013,0.982,0],[0.01,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1474"
+  },
+  {
+   "id": "mscaeWeb Service-3-app-service-environments",
+   "title": "App Service Environments",
+   "tags": "mscae app service environments ms microsoft cloud enterprise web service App Service Environments",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Service.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1476"
+  },
+  {
+   "id": "mscaeWeb Service-4-app-service-plans",
+   "title": "App Service Plans",
+   "tags": "mscae app plans web hosting ms microsoft cloud enterprise web service App Service Plans",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/WebHosting.svg;points=[[0.5,0,0],[0.481,1,0],[0,0.5,0],[0.588,0.5,0],[1,0.896,0],[0.013,0.985,0],[0.018,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1478"
+  },
+  {
+   "id": "mscaeWeb Service-5-app-services",
+   "title": "App Services",
+   "tags": "mscae app services ms microsoft cloud enterprise web service App Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Services.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.499,0],[1,0.5,0],[0.837,0.128,0],[0.87,0.842,0],[0.113,0.825,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1480"
+  },
+  {
+   "id": "mscaeWeb Service-6-azure-media-services",
+   "title": "Azure Media Services",
+   "tags": "mscae azure media services ms microsoft cloud enterprise web service Azure Media Services",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Media_Services.svg;points=[[0.504,0,0],[0.504,1,0],[0,0.5,0],[1,0.5,0],[1,0.245,0],[1,0.755,0],[0,0.752,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1482"
+  },
+  {
+   "id": "mscaeWeb Service-7-azure-search",
+   "title": "Azure Search",
+   "tags": "mscae azure search ms microsoft cloud enterprise web service Azure Search",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Search.svg;points=[[0.5,0.03,0],[0.5,0.826,0],[0,0.461,0],[1,0.463,0],[0.8,0.065,0],[0.957,0.592,0],[0.108,0.975,0],[0.18,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1484"
+  },
+  {
+   "id": "mscaeWeb Service-8-notification-hub-namespaces",
+   "title": "Notification Hub Namespaces",
+   "tags": "mscae notification hub namespace namespaces ms microsoft cloud enterprise web service Notification Hub Namespaces",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Notification_Hubs.svg;points=[[0.495,0,0],[0.613,0.998,0],[0,0.38,0],[1,0.389,0],[0.952,0.025,0],[0.962,0.745,0],[0.038,0.745,0],[0.043,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1486"
+  },
+  {
+   "id": "mscaeWeb Service-9-signalr",
+   "title": "SignalR",
+   "tags": "mscae signalr ms microsoft cloud enterprise web service SignalR",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SignalR.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.496,0],[1,0.502,0],[0.85,0.14,0],[0.855,0.855,0],[0.128,0.837,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1488"
+  }
+ ]
+}

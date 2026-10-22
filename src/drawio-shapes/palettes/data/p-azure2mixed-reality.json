@@ -1,0 +1,36 @@
+{
+ "id": "azure2Mixed Reality",
+ "title": "Azure / Mixed Reality",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Mixed Reality-0-remote-rendering",
+   "title": "Remote Rendering",
+   "tags": "azure2 remote rendering azure mixed reality  Remote Rendering",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/mixed_reality/Remote_Rendering.svg;points=[[0.514,0,0],[0.506,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.682,0.068,0],[0.902,0.939,0],[0.12,0.936,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1354"
+  },
+  {
+   "id": "azure2Mixed Reality-1-spatial-anchor-accounts",
+   "title": "Spatial Anchor Accounts",
+   "tags": "azure2 spatial anchor accounts azure mixed reality  Spatial Anchor Accounts",
+   "kind": "vertex",
+   "width": 66.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/mixed_reality/Spatial_Anchor_Accounts.svg;points=[[0.453,0.247,0],[0.453,1,0],[0.185,0.5,0],[0.891,0.5,0],[0.946,0.063,0],[0.911,0.71,0],[0.018,0.672,0],[0.021,0.553,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1356"
+  }
+ ]
+}

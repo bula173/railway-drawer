@@ -1,0 +1,233 @@
+{
+ "id": "pidFlow Sensors",
+ "title": "Process Engineering / Flow Sensors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidFlow Sensors-0-averging-pitot-tube",
+   "title": "Averging Pitot Tube",
+   "tags": "pid flow sensors averging pitot tube process instrumentation sensor  Averging Pitot Tube",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.averging_pitot_tube;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.averging_pitot_tube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:300"
+  },
+  {
+   "id": "pidFlow Sensors-1-coriolis",
+   "title": "Coriolis",
+   "tags": "pid flow sensors coriolis process instrumentation sensor  Coriolis",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.coriolis;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.coriolis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:302"
+  },
+  {
+   "id": "pidFlow Sensors-2-flow-nozzle",
+   "title": "Flow Nozzle",
+   "tags": "pid flow sensors flow nozzle process instrumentation sensor  Flow Nozzle",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.flow_nozzle;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.flow_nozzle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:304"
+  },
+  {
+   "id": "pidFlow Sensors-3-flume",
+   "title": "Flume",
+   "tags": "pid flow sensors flume process instrumentation sensor  Flume",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.flume;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.flume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:306"
+  },
+  {
+   "id": "pidFlow Sensors-4-magnetic",
+   "title": "Magnetic",
+   "tags": "pid flow sensors magnetic process instrumentation sensor  Magnetic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.pid.flow_sensors.magnetic;dashed=0;align=center;html=1;fontSize=25;",
+   "value": "M",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.magnetic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:308"
+  },
+  {
+   "id": "pidFlow Sensors-5-pitot-tube",
+   "title": "Pitot Tube",
+   "tags": "pid flow sensors pitot tube process instrumentation sensor  Pitot Tube",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.pitot_tube;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.pitot_tube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:310"
+  },
+  {
+   "id": "pidFlow Sensors-6-positive-displacement",
+   "title": "Positive Displacement",
+   "tags": "pid flow sensors positive displacement process instrumentation sensor  Positive Displacement",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.positive_displacement;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.positive_displacement"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:312"
+  },
+  {
+   "id": "pidFlow Sensors-7-rotameter",
+   "title": "Rotameter",
+   "tags": "pid flow sensors rotameter process instrumentation sensor  Rotameter",
+   "kind": "vertex",
+   "width": 75,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.rotameter;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.rotameter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:314"
+  },
+  {
+   "id": "pidFlow Sensors-8-target",
+   "title": "Target",
+   "tags": "pid flow sensors target process instrumentation sensor  Target",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.target;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.target"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:316"
+  },
+  {
+   "id": "pidFlow Sensors-9-turbine",
+   "title": "Turbine",
+   "tags": "pid flow sensors turbine process instrumentation sensor  Turbine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.turbine;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.turbine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:318"
+  },
+  {
+   "id": "pidFlow Sensors-10-ultrasonic",
+   "title": "Ultrasonic",
+   "tags": "pid flow sensors ultrasonic process instrumentation sensor  Ultrasonic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.ultrasonic;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.ultrasonic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:320"
+  },
+  {
+   "id": "pidFlow Sensors-11-v-cone",
+   "title": "V-cone",
+   "tags": "pid flow sensors v-cone process instrumentation sensor  V-cone",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.v-cone;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.v-cone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:322"
+  },
+  {
+   "id": "pidFlow Sensors-12-venturi",
+   "title": "Venturi",
+   "tags": "pid flow sensors venturi process instrumentation sensor  Venturi",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.venturi;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.venturi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:324"
+  },
+  {
+   "id": "pidFlow Sensors-13-vortex",
+   "title": "Vortex",
+   "tags": "pid flow sensors vortex process instrumentation sensor  Vortex",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.vortex;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.vortex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:326"
+  },
+  {
+   "id": "pidFlow Sensors-14-wedge",
+   "title": "Wedge",
+   "tags": "pid flow sensors wedge process instrumentation sensor  Wedge",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.wedge;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.wedge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:328"
+  },
+  {
+   "id": "pidFlow Sensors-15-weir",
+   "title": "Weir",
+   "tags": "pid flow sensors weir process instrumentation sensor  Weir",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;outlineConnect=0;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.flow_sensors.weir;",
+   "shapeNames": [
+    "mxgraph.pid.flow_sensors.weir"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:330"
+  }
+ ]
+}

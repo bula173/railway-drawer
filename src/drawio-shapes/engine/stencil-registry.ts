@@ -56,6 +56,8 @@ let installed = false;
 let baseUrl = defaultBaseUrl();
 /** Decoded `stencil(...)` styles; null = failed to decode (logged once). */
 const inlineCache = new Map<string, StencilShape | null>();
+/** Stencil basenames whose draw.io library (stencils + JS shapes) was requested. */
+const resolvedBasenames = new Set<string>();
 /** Preload promise per stencil file path. */
 const filePromises = new Map<string, Promise<void>>();
 
@@ -296,25 +298,49 @@ export function collectShapeNames(xmlOrStyles: string | readonly string[]): stri
 }
 
 /**
- * Preloads the stencil sets that the named shapes of a model, library or style list need
- * (shapes already registered, JS shapes and `stencil(...)` are skipped). Resolves with the
- * basenames it loaded; the caller then calls graph.refresh().
+ * Preloads what the named shapes of a model, library or style list need (shapes already
+ * registered, JS shapes and `stencil(...)` are skipped): the stencil sets and, as draw.io's
+ * mxStencilRegistry.libraries does, the lazily loaded draw.io JS shape libraries
+ * (src/drawio-shapes/vendor, via a dynamically imported loader). Resolves with the basenames
+ * (and `js:<module>` for newly installed shape libraries) it loaded; the caller then calls
+ * graph.refresh() when the list is not empty.
  */
 export async function ensureStencilsForXml(xmlOrStyles: string | readonly string[]): Promise<string[]> {
   const basenames = new Set<string>();
+  const unknown: string[] = [];
   for (const name of collectShapeNames(xmlOrStyles)) {
-    if (name.startsWith(STENCIL_PREFIX) || isJsShape(name) || lookupStencil(name)) continue;
+    if (name.startsWith(STENCIL_PREFIX)) continue;
     // Not lowercased: draw.io basenames are case-sensitive (e.g. 'rackGeneral')
     const basename = getBasenameForStencil(name);
+    if (isJsShape(name) || lookupStencil(name)) {
+      // a JS shape of a library whose stencil set (icons drawn by the shape) is not loaded yet
+      if (basename && isJsShape(name) && !resolvedBasenames.has(basename) && !hasOwn(STENCIL_LIBRARIES, basename)) basenames.add(basename);
+      continue;
+    }
+    unknown.push(name);
     if (basename) basenames.add(basename);
   }
+  for (const b of basenames) resolvedBasenames.add(b);
+  if (unknown.length === 0 && basenames.size === 0) return [];
   const list = Array.from(basenames);
-  if (list.length > 0) await preloadStencilSets(list);
-  return list;
+  let files: string[] = [];
+  const loadedModules: string[] = [];
+  try {
+    const loader = await import('../vendor-runtime/loader');
+    const resolved = await loader.resolveDrawioShapes(unknown, list);
+    files = resolved.stencilFiles;
+    if (await loader.loadVendorModules(resolved.modules)) loadedModules.push(...resolved.modules.map((m) => `js:${m}`));
+  } catch (err) {
+    logger.warn(LOG, 'draw.io shape libraries unavailable', { error: err instanceof Error ? err.message : String(err) });
+    files = list.flatMap((b) => [...stencilFilesForBasename(b)]);
+  }
+  await Promise.all(Array.from(new Set(files), (file) => loadStencilFile(file)));
+  return list.length > 0 || loadedModules.length > 0 ? [...list, ...loadedModules] : [];
 }
 
 /** Test helper: forgets decoded inline stencils and preload promises. */
 export function resetStencilEngineCaches(): void {
   inlineCache.clear();
   filePromises.clear();
+  resolvedBasenames.clear();
 }

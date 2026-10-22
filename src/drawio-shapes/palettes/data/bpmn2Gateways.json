@@ -1,0 +1,974 @@
+{
+ "id": "bpmn2Gateways",
+ "title": "BPMN 2.0  Gateways",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-BPMN.js:8",
+ "entries": [
+  {
+   "id": "bpmn2Gateways-0-exclusive",
+   "title": "Exclusive",
+   "tags": "bpmn business process model notation gateway exclusive Exclusive",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1459"
+  },
+  {
+   "id": "bpmn2Gateways-1-exclusive",
+   "title": "Exclusive",
+   "tags": "bpmn business process model notation gateway exclusive Exclusive",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1460"
+  },
+  {
+   "id": "bpmn2Gateways-2-inclusive",
+   "title": "Inclusive",
+   "tags": "bpmn business process model notation gateway inclusive Inclusive",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1461"
+  },
+  {
+   "id": "bpmn2Gateways-3-parallel",
+   "title": "Parallel",
+   "tags": "bpmn business process model notation gateway parallel Parallel",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=parallel;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1462"
+  },
+  {
+   "id": "bpmn2Gateways-4-complex",
+   "title": "Complex",
+   "tags": "bpmn business process model notation gateway complex Complex",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=complex;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1463"
+  },
+  {
+   "id": "bpmn2Gateways-5-start",
+   "title": "Start",
+   "tags": "bpmn business process model notation gateway none start Start",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1465"
+  },
+  {
+   "id": "bpmn2Gateways-6-intermediate",
+   "title": "Intermediate",
+   "tags": "bpmn business process model notation gateway none intermediate Intermediate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1466"
+  },
+  {
+   "id": "bpmn2Gateways-7-end",
+   "title": "End",
+   "tags": "bpmn business process model notation gateway none end End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1467"
+  },
+  {
+   "id": "bpmn2Gateways-8-message",
+   "title": "Message",
+   "tags": "bpmn business process model notation gateway message standard Message",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1468"
+  },
+  {
+   "id": "bpmn2Gateways-9-message-interrupting",
+   "title": "Message (Interrupting)",
+   "tags": "bpmn business process model notation gateway message interrupting Message (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1469"
+  },
+  {
+   "id": "bpmn2Gateways-10-message-non-interrupting",
+   "title": "Message (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway message non interrupting noninterrupting Message (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1470"
+  },
+  {
+   "id": "bpmn2Gateways-11-message-catching",
+   "title": "Message (Catching)",
+   "tags": "bpmn business process model notation gateway message catching Message (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1471"
+  },
+  {
+   "id": "bpmn2Gateways-12-message-boundary-interrupting",
+   "title": "Message Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway message boundary interrupting Message Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1472"
+  },
+  {
+   "id": "bpmn2Gateways-13-message-boundary-non-interrupting",
+   "title": "Message Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway message boundary non interrupting noninterrupting Message Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1473"
+  },
+  {
+   "id": "bpmn2Gateways-14-message-throwing",
+   "title": "Message (Throwing)",
+   "tags": "bpmn business process model notation gateway message throwing Message (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1474"
+  },
+  {
+   "id": "bpmn2Gateways-15-message-end",
+   "title": "Message End",
+   "tags": "bpmn business process model notation gateway message end Message End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1475"
+  },
+  {
+   "id": "bpmn2Gateways-16-timer",
+   "title": "Timer",
+   "tags": "bpmn business process model notation gateway timer standard Timer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1476"
+  },
+  {
+   "id": "bpmn2Gateways-17-timer-interrupting",
+   "title": "Timer (Interrupting)",
+   "tags": "bpmn business process model notation gateway timer interrupting Timer (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1477"
+  },
+  {
+   "id": "bpmn2Gateways-18-timer-non-interrupting",
+   "title": "Timer (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway timer non interrupting noninterrupting Timer (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1478"
+  },
+  {
+   "id": "bpmn2Gateways-19-timer-catching",
+   "title": "Timer (Catching)",
+   "tags": "bpmn business process model notation gateway timer catching Timer (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1479"
+  },
+  {
+   "id": "bpmn2Gateways-20-timer-boundary-interrupting",
+   "title": "Timer Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway timer boundary interrupting Timer Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1480"
+  },
+  {
+   "id": "bpmn2Gateways-21-timer-boundary-non-interrupting",
+   "title": "Timer Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway timer boundary non interrupting noninterrupting Timer Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1481"
+  },
+  {
+   "id": "bpmn2Gateways-22-escalation-interrupting",
+   "title": "Escalation (Interrupting)",
+   "tags": "bpmn business process model notation gateway escalation interrupting Escalation (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1482"
+  },
+  {
+   "id": "bpmn2Gateways-23-escalation-non-interrupting",
+   "title": "Escalation (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway escalation non interrupting noninterrupting Escalation (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1483"
+  },
+  {
+   "id": "bpmn2Gateways-24-escalation-boundary-interrupting",
+   "title": "Escalation Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway escalation boundary interrupting Escalation Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1484"
+  },
+  {
+   "id": "bpmn2Gateways-25-escalation-boundary-non-interrupting",
+   "title": "Escalation Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway escalation boundary non interrupting noninterrupting Escalation Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1485"
+  },
+  {
+   "id": "bpmn2Gateways-26-escalation-throwing",
+   "title": "Escalation (Throwing)",
+   "tags": "bpmn business process model notation gateway escalation throwing Escalation (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1486"
+  },
+  {
+   "id": "bpmn2Gateways-27-escalation-end",
+   "title": "Escalation End",
+   "tags": "bpmn business process model notation gateway escalation end Escalation End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1487"
+  },
+  {
+   "id": "bpmn2Gateways-28-conditional",
+   "title": "Conditional",
+   "tags": "bpmn business process model notation gateway conditional standard Conditional",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1488"
+  },
+  {
+   "id": "bpmn2Gateways-29-conditional-interrupting",
+   "title": "Conditional (Interrupting)",
+   "tags": "bpmn business process model notation gateway conditional interrupting Conditional (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1489"
+  },
+  {
+   "id": "bpmn2Gateways-30-conditional-non-interrupting",
+   "title": "Conditional (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway conditional non interrupting noninterrupting Conditional (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1490"
+  },
+  {
+   "id": "bpmn2Gateways-31-conditional-catching",
+   "title": "Conditional (Catching)",
+   "tags": "bpmn business process model notation gateway conditional catching Conditional (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1491"
+  },
+  {
+   "id": "bpmn2Gateways-32-conditional-boundary-interrupting",
+   "title": "Conditional Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway conditional boundary interrupting Conditional Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1492"
+  },
+  {
+   "id": "bpmn2Gateways-33-conditional-boundary-non-interrupting",
+   "title": "Conditional Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway conditional boundary non interrupting noninterrupting Conditional Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1493"
+  },
+  {
+   "id": "bpmn2Gateways-34-link-catching",
+   "title": "Link (Catching)",
+   "tags": "bpmn business process model notation gateway link catching Link (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=link;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1494"
+  },
+  {
+   "id": "bpmn2Gateways-35-link-throwing",
+   "title": "Link (Throwing)",
+   "tags": "bpmn business process model notation gateway link throwing Link (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=link;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1495"
+  },
+  {
+   "id": "bpmn2Gateways-36-error-interrupting",
+   "title": "Error (Interrupting)",
+   "tags": "bpmn business process model notation gateway error interrupting Error (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1496"
+  },
+  {
+   "id": "bpmn2Gateways-37-error-boundary-interrupting",
+   "title": "Error Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway error boundary interrupting Error Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1497"
+  },
+  {
+   "id": "bpmn2Gateways-38-error-end",
+   "title": "Error (End)",
+   "tags": "bpmn business process model notation gateway error end Error (End)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1498"
+  },
+  {
+   "id": "bpmn2Gateways-39-cancel-boundary-interrupting",
+   "title": "Cancel Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway cancel boundary interrupting Cancel Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=cancel;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1499"
+  },
+  {
+   "id": "bpmn2Gateways-40-cancel-end",
+   "title": "Cancel End",
+   "tags": "bpmn business process model notation gateway cancel end Cancel End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=cancel;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1500"
+  },
+  {
+   "id": "bpmn2Gateways-41-compensation-interrupting",
+   "title": "Compensation (Interrupting)",
+   "tags": "bpmn business process model notation gateway compensation interrupting Compensation (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1501"
+  },
+  {
+   "id": "bpmn2Gateways-42-compensation-boundary-interrupting",
+   "title": "Compensation Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway compensation boundary interrupting Compensation Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1502"
+  },
+  {
+   "id": "bpmn2Gateways-43-compensation-throwing",
+   "title": "Compensation (Throwing)",
+   "tags": "bpmn business process model notation gateway compensation throwing Compensation (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1503"
+  },
+  {
+   "id": "bpmn2Gateways-44-compensation-end",
+   "title": "Compensation End",
+   "tags": "bpmn business process model notation gateway compensation end Compensation End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1504"
+  },
+  {
+   "id": "bpmn2Gateways-45-signal",
+   "title": "Signal",
+   "tags": "bpmn business process model notation gateway signal standard Signal",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1505"
+  },
+  {
+   "id": "bpmn2Gateways-46-signal-interrupting",
+   "title": "Signal (Interrupting)",
+   "tags": "bpmn business process model notation gateway signal interrupting Signal (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1506"
+  },
+  {
+   "id": "bpmn2Gateways-47-signal-non-interrupting",
+   "title": "Signal (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway signal non interrupting noninterrupting Signal (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1507"
+  },
+  {
+   "id": "bpmn2Gateways-48-signal-catching",
+   "title": "Signal (Catching)",
+   "tags": "bpmn business process model notation gateway signal catching Signal (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1508"
+  },
+  {
+   "id": "bpmn2Gateways-49-signal-boundary-interrupting",
+   "title": "Signal Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway signal boundary interrupting Signal Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1509"
+  },
+  {
+   "id": "bpmn2Gateways-50-signal-boundary-non-interrupting",
+   "title": "Signal Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway signal boundary non interrupting noninterrupting Signal Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1510"
+  },
+  {
+   "id": "bpmn2Gateways-51-signal-throwing",
+   "title": "Signal (Throwing)",
+   "tags": "bpmn business process model notation gateway signal throwing Signal (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1511"
+  },
+  {
+   "id": "bpmn2Gateways-52-signal-end",
+   "title": "Signal End",
+   "tags": "bpmn business process model notation gateway signal end Signal End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1512"
+  },
+  {
+   "id": "bpmn2Gateways-53-multiple",
+   "title": "Multiple ",
+   "tags": "bpmn business process model notation gateway multiple standard Multiple ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1513"
+  },
+  {
+   "id": "bpmn2Gateways-54-multiple-interrupting",
+   "title": "Multiple (Interrupting)",
+   "tags": "bpmn business process model notation gateway multiple interrupting Multiple (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1514"
+  },
+  {
+   "id": "bpmn2Gateways-55-multiple-non-interrupting",
+   "title": "Multiple (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway multiple non interrupting noninterrupting Multiple (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1515"
+  },
+  {
+   "id": "bpmn2Gateways-56-multiple-catching",
+   "title": "Multiple (Catching)",
+   "tags": "bpmn business process model notation gateway multiple catching Multiple (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1516"
+  },
+  {
+   "id": "bpmn2Gateways-57-multiple-boundary-interrupting",
+   "title": "Multiple Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway multiple boundary interrupting Multiple Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1517"
+  },
+  {
+   "id": "bpmn2Gateways-58-multiple-boundary-non-interrupting",
+   "title": "Multiple Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway multiple boundary non interrupting noninterrupting Multiple Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1518"
+  },
+  {
+   "id": "bpmn2Gateways-59-multiple-throwing",
+   "title": "Multiple (Throwing)",
+   "tags": "bpmn business process model notation gateway multiple throwing Multiple (Throwing)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=throwing;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1519"
+  },
+  {
+   "id": "bpmn2Gateways-60-multiple-end",
+   "title": "Multiple End",
+   "tags": "bpmn business process model notation gateway multiple end Multiple End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1520"
+  },
+  {
+   "id": "bpmn2Gateways-61-multiple-start",
+   "title": "Multiple Start",
+   "tags": "bpmn business process model notation gateway multiple end Multiple Start",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=star;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1521"
+  },
+  {
+   "id": "bpmn2Gateways-62-parallel-multiple",
+   "title": "Parallel Multiple",
+   "tags": "bpmn business process model notation gateway parallel multiple standard Parallel Multiple",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=standard;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1522"
+  },
+  {
+   "id": "bpmn2Gateways-63-parallel-multiple-interrupting",
+   "title": "Parallel Multiple (Interrupting)",
+   "tags": "bpmn business process model notation gateway parallel multiple interrupting Parallel Multiple (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventInt;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1523"
+  },
+  {
+   "id": "bpmn2Gateways-64-parallel-multiple-non-interrupting",
+   "title": "Parallel Multiple (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway parallel multiple non interrupting noninterrupting Parallel Multiple (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=eventNonint;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1524"
+  },
+  {
+   "id": "bpmn2Gateways-65-parallel-multiple-catching",
+   "title": "Parallel Multiple (Catching)",
+   "tags": "bpmn business process model notation gateway parallel multiple catching Parallel Multiple (Catching)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=catching;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1525"
+  },
+  {
+   "id": "bpmn2Gateways-66-parallel-multiple-boundary-interrupting",
+   "title": "Parallel Multiple Boundary (Interrupting)",
+   "tags": "bpmn business process model notation gateway parallel multiple boundary interrupting Parallel Multiple Boundary (Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundInt;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1526"
+  },
+  {
+   "id": "bpmn2Gateways-67-parallel-multiple-boundary-non-interrupting",
+   "title": "Parallel Multiple Boundary (Non-Interrupting)",
+   "tags": "bpmn business process model notation gateway parallel multiple boundary non interrupting noninterrupting Parallel Multiple Boundary (Non-Interrupting)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=boundNonint;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1527"
+  },
+  {
+   "id": "bpmn2Gateways-68-terminate",
+   "title": "Terminate",
+   "tags": "bpmn business process model notation gateway terminate Terminate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=end;symbol=terminate;",
+   "shapeNames": [
+    "mxgraph.bpmn.gateway2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1528"
+  }
+ ]
+}

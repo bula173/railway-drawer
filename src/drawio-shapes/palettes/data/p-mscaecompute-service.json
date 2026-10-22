@@ -1,0 +1,162 @@
+{
+ "id": "mscaeCompute Service",
+ "title": "CAE / Compute Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeCompute Service-0-batch-accounts",
+   "title": "Batch Accounts",
+   "tags": "mscae batch accounts ms microsoft cloud enterprise compute service Batch Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Batch_Accounts.svg;points=[[0.5,0,0],[0.865,1,0],[0,0.5,0],[1,0.861,0],[0.721,0.233,0],[0.992,1,0],[0.01,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:709"
+  },
+  {
+   "id": "mscaeCompute Service-1-citrix-virtual-desktops-essentials",
+   "title": "Citrix Virtual Desktops Essentials",
+   "tags": "mscae citrix virtual desktops essentials ms microsoft cloud enterprise compute service Citrix Virtual Desktops Essentials",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Citrix_Virtual_Desktops_Essentials.svg;points=[[0.499,0.149,0],[0.499,0.851,0],[0.149,0.499,0],[0.851,0.499,0],[0.917,0.048,0],[0.937,0.932,0],[0.048,0.917,0],[0.07,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:711"
+  },
+  {
+   "id": "mscaeCompute Service-2-cloud-services-classic",
+   "title": "Cloud Services (classic)",
+   "tags": "mscae cloud services classic ms microsoft cloud enterprise compute service Cloud Services (classic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cloud_Services_Classic.svg;points=[[0.5,0.045,0],[0.4,1,0],[0.005,0.558,0],[0.995,0.561,0],[0.78,0.06,0],[0.925,0.738,0],[0.283,0.952,0],[0.19,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:713"
+  },
+  {
+   "id": "mscaeCompute Service-3-cloud-services",
+   "title": "Cloud Services",
+   "tags": "mscae cloud services ms microsoft cloud enterprise compute service Cloud Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cloud_Service.svg;points=[[0.5,0.045,0],[0.4,1,0],[0.005,0.558,0],[0.995,0.561,0],[0.78,0.06,0],[0.925,0.738,0],[0.283,0.952,0],[0.19,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:715"
+  },
+  {
+   "id": "mscaeCompute Service-4-cloudsimple-virtual-machines",
+   "title": "CloudSimple Virtual Machines",
+   "tags": "mscae cloudsimple virtual machines ms microsoft cloud enterprise compute service CloudSimple Virtual Machines",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CloudSimple_Virtual_Machines.svg;points=[[0.5,0.046,0],[0.5,0.951,0],[0.005,0.504,0],[0.943,0.5,0],[0.935,0.079,0],[0.905,0.937,0],[0.125,0.906,0],[0.143,0.079,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:717"
+  },
+  {
+   "id": "mscaeCompute Service-5-disk-snapshots",
+   "title": "Disk Snapshots",
+   "tags": "mscae disk snapshots ms microsoft cloud enterprise compute service Disk Snapshots",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/MD_snapshot.svg;points=[[0.5,0.095,0],[0.5,0.905,0],[0.257,0.5,0],[0.743,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:719"
+  },
+  {
+   "id": "mscaeCompute Service-6-disks",
+   "title": "Disks",
+   "tags": "mscae disks ms microsoft cloud enterprise compute service Disks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Discs.svg;points=[[0.5,0,0],[0.5,0.988,0],[0.196,0.494,0],[0.804,0.494,0],[0.957,0.122,0],[0.955,0.869,0],[0.03,0.854,0],[0.043,0.122,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:721"
+  },
+  {
+   "id": "mscaeCompute Service-7-function-apps",
+   "title": "Function Apps",
+   "tags": "mscae function apps ms microsoft cloud enterprise compute service Function Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Functions.svg;points=[[0.591,0,0],[0.5,0.721,0],[0,0.488,0],[1,0.488,0],[0.745,0,0],[0.727,0.796,0],[0.32,0.997,0],[0.438,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:723"
+  },
+  {
+   "id": "mscaeCompute Service-8-sap-hana-on-azure",
+   "title": "SAP HANA on Azure",
+   "tags": "mscae sap hana on azure ms microsoft cloud enterprise compute service SAP HANA on Azure",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SAP_HANA_on_Azure.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[0.753,0.5,0],[1,0.001,0],[0.667,0.994,0],[0,0.999,0],[0,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:725"
+  },
+  {
+   "id": "mscaeCompute Service-9-service-fabric",
+   "title": "Service Fabric",
+   "tags": "mscae service fabric ms microsoft cloud enterprise compute service Service Fabric",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Fabric.svg;points=[[0.5,0,0],[0.5,0.901,0],[0,0.421,0],[1,0.422,0],[0.947,0.303,0],[0.85,0.942,0],[0.163,0.957,0],[0.043,0.313,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:727"
+  },
+  {
+   "id": "mscaeCompute Service-10-vm-images",
+   "title": "VM Images",
+   "tags": "mscae vm virtual machine images ms microsoft cloud enterprise compute service VM Images",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VM_Images.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.391,0],[1,0.391,0],[0.98,0.014,0],[0.82,1,0],[0.18,1,0],[0.02,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:729"
+  }
+ ]
+}

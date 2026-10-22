@@ -1,0 +1,818 @@
+{
+ "id": "bpmn2Choreographies",
+ "title": "BPMN 2.0  Choreographies",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-BPMN.js:8",
+ "entries": [
+  {
+   "id": "bpmn2Choreographies-0-choreography-task",
+   "title": "Choreography Task",
+   "tags": "bpmn business process model notation choreography choreography task",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:213"
+  },
+  {
+   "id": "bpmn2Choreographies-1-choreography-task-loop",
+   "title": "Choreography Task, Loop",
+   "tags": "bpmn business process model notation choreography choreography task loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:241"
+  },
+  {
+   "id": "bpmn2Choreographies-2-choreography-task-sequential-multi-instance",
+   "title": "Choreography Task, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography choreography task sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:269"
+  },
+  {
+   "id": "bpmn2Choreographies-3-choreography-task-parallel-multi-instance",
+   "title": "Choreography Task, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography choreography task parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:297"
+  },
+  {
+   "id": "bpmn2Choreographies-4-sub-choreography-collapsed",
+   "title": "Sub-Choreography, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:325"
+  },
+  {
+   "id": "bpmn2Choreographies-5-sub-choreography-loop-collapsed",
+   "title": "Sub-Choreography, Loop, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography loop collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:353"
+  },
+  {
+   "id": "bpmn2Choreographies-6-sub-choreography-sequential-multi-instance-collapsed",
+   "title": "Sub-Choreography, Sequential Multi Instance, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography sequential multi instance collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:381"
+  },
+  {
+   "id": "bpmn2Choreographies-7-sub-choreography-parallel-multi-instance-collapsed",
+   "title": "Sub-Choreography, Parallel Multi Instance, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography parallel multi instance collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:409"
+  },
+  {
+   "id": "bpmn2Choreographies-8-sub-choreography-expanded",
+   "title": "Sub-Choreography, Expanded",
+   "tags": "bpmn business process model notation choreography sub choreography expanded",
+   "kind": "cells",
+   "width": 400,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;verticalAlign=top;align=left;spacingLeft=5;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"400\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:437"
+  },
+  {
+   "id": "bpmn2Choreographies-9-bzzzzt",
+   "title": "bzzzzt",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:465"
+  },
+  {
+   "id": "bpmn2Choreographies-10-call-choreography-calling-global",
+   "title": "Call Choreography calling Global",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:475"
+  },
+  {
+   "id": "bpmn2Choreographies-11-call-choreography-calling-global-loop",
+   "title": "Call Choreography calling Global, Loop",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:503"
+  },
+  {
+   "id": "bpmn2Choreographies-12-call-choreography-calling-global-sequential-multi-instance",
+   "title": "Call Choreography calling Global, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:531"
+  },
+  {
+   "id": "bpmn2Choreographies-13-call-choreography-calling-global-parallel-multi-instance",
+   "title": "Call Choreography calling Global, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:559"
+  },
+  {
+   "id": "bpmn2Choreographies-14-call-choreography-calling-a-choreography",
+   "title": "Call Choreography calling a Choreography",
+   "tags": "bpmn business process model notation choreography call choreography activity calling",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:587"
+  },
+  {
+   "id": "bpmn2Choreographies-15-call-choreography-calling-a-choreography-loop",
+   "title": "Call Choreography calling a Choreography, Loop",
+   "tags": "bpmn business process model notation choreography call choreography activity calling loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:615"
+  },
+  {
+   "id": "bpmn2Choreographies-16-call-choreography-calling-a-choreography-sequential-multi-instance",
+   "title": "Call Choreography calling a Choreography, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:643"
+  },
+  {
+   "id": "bpmn2Choreographies-17-call-choreography-calling-a-choreography-parallel-multi-instance",
+   "title": "Call Choreography calling a Choreography, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:671"
+  },
+  {
+   "id": "bpmn2Choreographies-18-choreography-task",
+   "title": "Choreography Task",
+   "tags": "bpmn business process model notation choreography choreography task",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:699"
+  },
+  {
+   "id": "bpmn2Choreographies-19-choreography-task-loop",
+   "title": "Choreography Task, Loop",
+   "tags": "bpmn business process model notation choreography choreography task loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:727"
+  },
+  {
+   "id": "bpmn2Choreographies-20-choreography-task-sequential-multi-instance",
+   "title": "Choreography Task, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography choreography task sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:755"
+  },
+  {
+   "id": "bpmn2Choreographies-21-choreography-task-parallel-multi-instance",
+   "title": "Choreography Task, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography choreography task parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:783"
+  },
+  {
+   "id": "bpmn2Choreographies-22-sub-choreography-collapsed",
+   "title": "Sub-Choreography, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:811"
+  },
+  {
+   "id": "bpmn2Choreographies-23-sub-choreography-loop-collapsed",
+   "title": "Sub-Choreography, Loop, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography loop collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:839"
+  },
+  {
+   "id": "bpmn2Choreographies-24-sub-choreography-sequential-multi-instance-collapsed",
+   "title": "Sub-Choreography, Sequential Multi Instance, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography sequential multi instance collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:867"
+  },
+  {
+   "id": "bpmn2Choreographies-25-sub-choreography-parallel-multi-instance-collapsed",
+   "title": "Sub-Choreography, Parallel Multi Instance, Collapsed",
+   "tags": "bpmn business process model notation choreography sub choreography parallel multi instance collapsed",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;taskMarker=abstract;part=1;isLoopSub=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:895"
+  },
+  {
+   "id": "bpmn2Choreographies-26-sub-choreography-expanded",
+   "title": "Sub-Choreography, Expanded",
+   "tags": "bpmn business process model notation choreography sub choreography expanded",
+   "kind": "cells",
+   "width": 400,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;verticalAlign=top;align=left;spacingLeft=5;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"400\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:923"
+  },
+  {
+   "id": "bpmn2Choreographies-27-call-choreography-calling-global",
+   "title": "Call Choreography calling Global",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:951"
+  },
+  {
+   "id": "bpmn2Choreographies-28-call-choreography-calling-global-loop",
+   "title": "Call Choreography calling Global, Loop",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:979"
+  },
+  {
+   "id": "bpmn2Choreographies-29-call-choreography-calling-global-sequential-multi-instance",
+   "title": "Call Choreography calling Global, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1007"
+  },
+  {
+   "id": "bpmn2Choreographies-30-call-choreography-calling-global-parallel-multi-instance",
+   "title": "Call Choreography calling Global, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling global task parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1035"
+  },
+  {
+   "id": "bpmn2Choreographies-31-call-choreography-calling-a-choreography",
+   "title": "Call Choreography calling a Choreography",
+   "tags": "bpmn business process model notation choreography call choreography activity calling",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1063"
+  },
+  {
+   "id": "bpmn2Choreographies-32-call-choreography-calling-a-choreography-loop",
+   "title": "Call Choreography calling a Choreography, Loop",
+   "tags": "bpmn business process model notation choreography call choreography activity calling loop",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopStandard=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1091"
+  },
+  {
+   "id": "bpmn2Choreographies-33-call-choreography-calling-a-choreography-sequential-multi-instance",
+   "title": "Call Choreography calling a Choreography, Sequential Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling sequential multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopMultiSeq=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1119"
+  },
+  {
+   "id": "bpmn2Choreographies-34-call-choreography-calling-a-choreography-parallel-multi-instance",
+   "title": "Call Choreography calling a Choreography, Parallel Multi Instance",
+   "tags": "bpmn business process model notation choreography call choreography activity calling parallel multi instance",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;strokeWidth=8;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.bpmn.task2;arcSize=0;part=1;taskMarker=abstract;isLoopSub=1;isLoopMultiParallel=1;connectable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;topRightStyle=square;topLeftStyle=square;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.basic.rect",
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1147"
+  },
+  {
+   "id": "bpmn2Choreographies-35-participant-initiating-top",
+   "title": "Participant, Initiating, Top",
+   "tags": "bpmn business process model notation choreography initiating participant top Participant, Initiating, Top",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "whiteSpace=wrap;shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1175"
+  },
+  {
+   "id": "bpmn2Choreographies-36-participant-initiating-top-with-decorator",
+   "title": "Participant, Initiating, Top with Decorator",
+   "tags": "bpmn business process model notation choreography initiating participant top with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=0;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1177"
+  },
+  {
+   "id": "bpmn2Choreographies-37-additional-participant-initiating",
+   "title": "Additional Participant, Initiating",
+   "tags": "bpmn business process model notation choreography initiating additional participant Additional Participant, Initiating",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=square;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1198"
+  },
+  {
+   "id": "bpmn2Choreographies-38-participant-initiating-bottom",
+   "title": "Participant, Initiating, Bottom",
+   "tags": "bpmn business process model notation choreography initiating participant bottom Participant, Initiating, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;isLoopSub=0;topLeftStyle=square;topRightStyle=square;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1199"
+  },
+  {
+   "id": "bpmn2Choreographies-39-participant-initiating-bottom-with-decorator",
+   "title": "Participant, Initiating, Bottom with Decorator",
+   "tags": "bpmn business process model notation choreography initiating participant bottom with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;isLoopSub=0;topLeftStyle=square;topRightStyle=square;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" y=\"50\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=1;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1201"
+  },
+  {
+   "id": "bpmn2Choreographies-40-participant-initiating-multi-instance-top",
+   "title": "Participant, Initiating, Multi-Instance, Top",
+   "tags": "bpmn business process model notation choreography initiating participant bottom Participant, Initiating, Multi-Instance, Top",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;verticalAlign=top;isLoopMultiParallel=1;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1222"
+  },
+  {
+   "id": "bpmn2Choreographies-41-participant-initiating-multi-instance-top-with-decorator",
+   "title": "Participant, Initiating, Multi-Instance Top with Decorator",
+   "tags": "bpmn business process model notation choreography initiating participant multi instance top with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;verticalAlign=top;isLoopMultiParallel=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"120\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=0;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1224"
+  },
+  {
+   "id": "bpmn2Choreographies-42-additional-participant-initiating-multi-instance-bottom",
+   "title": "Additional Participant, Initiating, Multi-Instance, Bottom",
+   "tags": "bpmn business process model notation choreography initiating additional participant multi instance bottom Additional Participant, Initiating, Multi-Instance, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=square;verticalAlign=top;isLoopMultiParallel=1;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1245"
+  },
+  {
+   "id": "bpmn2Choreographies-43-participant-initiating-multi-instance-bottom",
+   "title": "Participant, Initiating, Multi-Instance, Bottom",
+   "tags": "bpmn business process model notation choreography initiating participant multi instance bottom Participant, Initiating, Multi-Instance, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;verticalAlign=top;isLoopMultiParallel=1;topLeftStyle=square;topRightStyle=square;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1246"
+  },
+  {
+   "id": "bpmn2Choreographies-44-participant-initiating-multi-instance-bottom-with-decorator",
+   "title": "Participant, Initiating, Multi-Instance, Bottom with Decorator",
+   "tags": "bpmn business process model notation choreography initiating participant multi instance bottom with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;topLeftStyle=square;topRightStyle=square;verticalAlign=top;isLoopMultiParallel=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" y=\"70\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=1;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1248"
+  },
+  {
+   "id": "bpmn2Choreographies-45-participant-non-initiating-top",
+   "title": "Participant, Non-Initiating, Top",
+   "tags": "bpmn business process model notation choreography non initiating participant top Participant, Non-Initiating, Top",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1269"
+  },
+  {
+   "id": "bpmn2Choreographies-46-participant-non-initiating-top-with-decorator",
+   "title": "Participant, Non-Initiating, Top with Decorator",
+   "tags": "bpmn business process model notation choreography non initiating participant top with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;fillColor=#C0C0C0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=0;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1271"
+  },
+  {
+   "id": "bpmn2Choreographies-47-additional-participant-non-initiating",
+   "title": "Additional Participant, Non-Initiating",
+   "tags": "bpmn business process model notation choreography non initiating additional participant Additional Participant, Non-Initiating",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1292"
+  },
+  {
+   "id": "bpmn2Choreographies-48-participant-non-initiating-bottom",
+   "title": "Participant, Non-Initiating, Bottom",
+   "tags": "bpmn business process model notation choreography non initiating participant bottom Participant, Non-Initiating, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;isLoopSub=0;topLeftStyle=square;topRightStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1293"
+  },
+  {
+   "id": "bpmn2Choreographies-49-participant-non-initiating-bottom-with-decorator",
+   "title": "Participant, Non-Initiating, Bottom with Decorator",
+   "tags": "bpmn business process model notation choreography non initiating participant bottom with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;isLoopSub=0;topLeftStyle=square;topRightStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;fillColor=#C0C0C0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" y=\"50\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=1;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1295"
+  },
+  {
+   "id": "bpmn2Choreographies-50-participant-non-initiating-multi-instance-top",
+   "title": "Participant, Non-Initiating, Multi-Instance, Top",
+   "tags": "bpmn business process model notation choreography initiating participant bottom Participant, Non-Initiating, Multi-Instance, Top",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;verticalAlign=top;isLoopMultiParallel=1;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1316"
+  },
+  {
+   "id": "bpmn2Choreographies-51-participant-non-initiating-multi-instance-top-with-decorator",
+   "title": "Participant, Non-Initiating, Multi-Instance, Top with Decorator",
+   "tags": "bpmn business process model notation choreography non initiating participant multi instance top with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;verticalAlign=top;isLoopMultiParallel=1;fillColor=#C0C0C0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"120\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;fillColor=#C0C0C0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=0;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1318"
+  },
+  {
+   "id": "bpmn2Choreographies-52-additional-participant-non-initiating-multi-instance-bottom",
+   "title": "Additional Participant, Non-Initiating, Multi-Instance, Bottom",
+   "tags": "bpmn business process model notation choreography non initiating additional participant multi instance bottom Additional Participant, Non-Initiating, Multi-Instance, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=square;verticalAlign=top;isLoopMultiParallel=1;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1339"
+  },
+  {
+   "id": "bpmn2Choreographies-53-participant-non-initiating-multi-instance-bottom",
+   "title": "Participant, Non-Initiating, Multi-Instance, Bottom",
+   "tags": "bpmn business process model notation choreography non initiating participant multi instance bottom Participant, Non-Initiating, Multi-Instance, Bottom",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;verticalAlign=top;isLoopMultiParallel=1;topLeftStyle=square;topRightStyle=square;fillColor=#C0C0C0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1340"
+  },
+  {
+   "id": "bpmn2Choreographies-54-participant-non-initiating-multi-instance-bottom-with-decorator",
+   "title": "Participant, Non-Initiating, Multi-Instance, Bottom with Decorator",
+   "tags": "bpmn business process model notation choreography non initiating participant multi instance bottom with decorator",
+   "kind": "cells",
+   "width": 120,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.bpmn.task2;part=1;taskMarker=abstract;rectStyle=rounded;topLeftStyle=square;topRightStyle=square;verticalAlign=top;isLoopMultiParallel=1;fillColor=#C0C0C0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;fillColor=#C0C0C0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" y=\"70\" width=\"40\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;html=1;elbow=horizontal;endArrow=none;labelBackgroundColor=none;endSize=12;endFill=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=1;rounded=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bpmn.task2",
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1342"
+  }
+ ]
+}

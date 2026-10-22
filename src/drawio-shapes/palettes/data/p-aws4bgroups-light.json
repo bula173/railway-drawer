@@ -1,0 +1,184 @@
+{
+ "id": "aws4bGroups Light",
+ "title": "AWS18 / Groups (light)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:8",
+ "entries": [
+  {
+   "id": "aws4bGroups Light-0-aws-cloud",
+   "title": "AWS Cloud",
+   "tags": "aws4 cloud aws amazon web service groups group light  AWS Cloud",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud;strokeColor=#AAB7B8;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;",
+   "value": "AWS Cloud",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:177"
+  },
+  {
+   "id": "aws4bGroups Light-1-region",
+   "title": "Region",
+   "tags": "aws4 region aws amazon web service groups group light  Region",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#879196;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#879196;dashed=1;",
+   "value": "Region",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:179"
+  },
+  {
+   "id": "aws4bGroups Light-2-vpc",
+   "title": "VPC",
+   "tags": "aws4 vpc virtual private cloud aws amazon web service groups group light  VPC",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#879196;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#879196;dashed=0;",
+   "value": "VPC",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:181"
+  },
+  {
+   "id": "aws4bGroups Light-3-availability-zone",
+   "title": "Availability zone",
+   "tags": "aws4 availability zone aws amazon web service groups group light  Availability zone",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#545B64;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#545B64;dashed=1;",
+   "value": "Availability zone",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:183"
+  },
+  {
+   "id": "aws4bGroups Light-4-subnet",
+   "title": "Subnet",
+   "tags": "aws4 subnet aws amazon web service groups group light  Subnet",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_subnet;strokeColor=#879196;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#879196;dashed=0;",
+   "value": "Subnet",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:185"
+  },
+  {
+   "id": "aws4bGroups Light-5-on-premise",
+   "title": "On-Premise",
+   "tags": "aws4 on premise aws amazon web service groups group light  On-Premise",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#AAB7B8;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;",
+   "value": "On-Premise",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:187"
+  },
+  {
+   "id": "aws4bGroups Light-6-auto-scaling-group",
+   "title": "Auto Scaling Group",
+   "tags": "aws4 auto scaling aws amazon web service groups group light  Auto Scaling Group",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_auto_scaling_group;grStroke=0;strokeColor=#879196;fillColor=#ECEFEF;verticalAlign=top;align=center;fontColor=#879196;dashed=0;spacingTop=25;",
+   "value": "Auto Scaling Group",
+   "shapeNames": [
+    "mxgraph.aws4.groupCenter"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:189"
+  },
+  {
+   "id": "aws4bGroups Light-7-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws4 elastic load balancing aws amazon web service groups group light  Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_elastic_load_balancing;grStroke=1;strokeColor=#007DBC;fillColor=none;verticalAlign=top;align=center;fontColor=#007DBC;dashed=0;spacingTop=25;",
+   "value": "Elastic Load Balancing",
+   "shapeNames": [
+    "mxgraph.aws4.groupCenter"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:191"
+  },
+  {
+   "id": "aws4bGroups Light-8-generic-group",
+   "title": "Generic Group",
+   "tags": "aws4 generic aws amazon web service groups group light  Generic Group",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;strokeColor=#879196;fillColor=none;verticalAlign=top;align=center;fontColor=#879196;dashed=1;spacingTop=3;",
+   "value": "Generic Group",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:193"
+  },
+  {
+   "id": "aws4bGroups Light-9-highlight",
+   "title": "Highlight",
+   "tags": "aws4 highlight aws amazon web service groups group light  Highlight",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;strokeColor=#FF9900;fillColor=none;verticalAlign=top;align=center;fontColor=#FF9900;dashed=0;spacingTop=3;",
+   "value": "Highlight",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:195"
+  },
+  {
+   "id": "aws4bGroups Light-10-aws-step-functions-workflow",
+   "title": "AWS Step Functions workflow",
+   "tags": "aws4 step functions workflow aws amazon web service groups group light  AWS Step Functions workflow",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_step_functions_workflow;strokeColor=#545B64;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#545B64;dashed=0;",
+   "value": "AWS Step Functions workflow",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:197"
+  },
+  {
+   "id": "aws4bGroups Light-11-spot-fleet",
+   "title": "Spot Fleet",
+   "tags": "aws4 spot fleet aws amazon web service groups group light  Spot Fleet",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_spot_fleet;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;",
+   "value": "Spot Fleet",
+   "shapeNames": [
+    "mxgraph.aws4.group"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:199"
+  }
+ ]
+}

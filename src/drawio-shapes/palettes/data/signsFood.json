@@ -1,0 +1,148 @@
+{
+ "id": "signsFood",
+ "title": "Signs / Food",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsFood-0-bar",
+   "title": "Bar",
+   "tags": "signs food  Bar Bar",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.food.bar;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-1-cans-and-bottles",
+   "title": "Cans and Bottles",
+   "tags": "signs food  Cans and Bottles Cans and Bottles",
+   "kind": "vertex",
+   "width": 74,
+   "height": 98,
+   "style": "shape=mxgraph.signs.food.cans_and_bottles;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.cans_and_bottles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-2-coffee",
+   "title": "Coffee",
+   "tags": "signs food  Coffee Coffee",
+   "kind": "vertex",
+   "width": 98,
+   "height": 61,
+   "style": "shape=mxgraph.signs.food.coffee;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.coffee"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-3-drinking-water-1",
+   "title": "Drinking Water 1",
+   "tags": "signs food  Drinking Water 1 Drinking Water 1",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.food.drinking_water_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.drinking_water_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-4-drinking-water-2",
+   "title": "Drinking Water 2",
+   "tags": "signs food  Drinking Water 2 Drinking Water 2",
+   "kind": "vertex",
+   "width": 76,
+   "height": 98,
+   "style": "shape=mxgraph.signs.food.drinking_water_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.drinking_water_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-5-fast-food",
+   "title": "Fast Food",
+   "tags": "signs food  Fast Food Fast Food",
+   "kind": "vertex",
+   "width": 98,
+   "height": 87,
+   "style": "shape=mxgraph.signs.food.fast_food;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.fast_food"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-6-food-truck",
+   "title": "Food Truck",
+   "tags": "signs food  Food Truck Food Truck",
+   "kind": "vertex",
+   "width": 98,
+   "height": 50,
+   "style": "shape=mxgraph.signs.food.food_truck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.food_truck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-7-knife",
+   "title": "Knife",
+   "tags": "signs food  Knife Knife",
+   "kind": "vertex",
+   "width": 97,
+   "height": 11,
+   "style": "shape=mxgraph.signs.food.knife;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.knife"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-8-restaurant-1",
+   "title": "Restaurant 1",
+   "tags": "signs food  Restaurant 1 Restaurant 1",
+   "kind": "vertex",
+   "width": 35,
+   "height": 98,
+   "style": "shape=mxgraph.signs.food.restaurant_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.restaurant_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsFood-9-restaurant-2",
+   "title": "Restaurant 2",
+   "tags": "signs food  Restaurant 2 Restaurant 2",
+   "kind": "vertex",
+   "width": 52,
+   "height": 104,
+   "style": "shape=mxgraph.signs.food.restaurant_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.food.restaurant_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

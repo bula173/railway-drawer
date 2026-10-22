@@ -1,0 +1,302 @@
+{
+ "id": "veeamUsersStatus",
+ "title": "Veeam / Users and Status",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamUsersStatus-0-user",
+   "title": "User",
+   "tags": "veeam storage user veeam vmware virtual machine users status User",
+   "kind": "vertex",
+   "width": 32,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.user;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:395"
+  },
+  {
+   "id": "veeamUsersStatus-1-user-group",
+   "title": "User Group",
+   "tags": "veeam storage user group veeam vmware virtual machine users status User Group",
+   "kind": "vertex",
+   "width": 53.6,
+   "height": 60.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.group;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:397"
+  },
+  {
+   "id": "veeamUsersStatus-2-company-user",
+   "title": "Company User",
+   "tags": "veeam storage company user veeam vmware virtual machine users status Company User",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 48.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.company_user;",
+   "shapeNames": [
+    "mxgraph.veeam.company_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:399"
+  },
+  {
+   "id": "veeamUsersStatus-3-company-owner",
+   "title": "Company Owner",
+   "tags": "veeam storage company owner veeam vmware virtual machine users status Company Owner",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 48.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.company_owner;",
+   "shapeNames": [
+    "mxgraph.veeam.company_owner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:401"
+  },
+  {
+   "id": "veeamUsersStatus-4-portal-admin",
+   "title": "Portal Admin",
+   "tags": "veeam storage portal admin veeam vmware virtual machine users status Portal Admin",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 48.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.portal_admin;",
+   "shapeNames": [
+    "mxgraph.veeam.portal_admin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:403"
+  },
+  {
+   "id": "veeamUsersStatus-5-company-administrator",
+   "title": "Company Administrator",
+   "tags": "veeam storage company administrator veeam vmware virtual machine users status Company Administrator",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 48.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.company_administrator;",
+   "shapeNames": [
+    "mxgraph.veeam.company_administrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:405"
+  },
+  {
+   "id": "veeamUsersStatus-6-alert",
+   "title": "Alert",
+   "tags": "veeam storage alert veeam vmware virtual machine users status Alert",
+   "kind": "vertex",
+   "width": 33.2,
+   "height": 33.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.alert;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.alert"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:407"
+  },
+  {
+   "id": "veeamUsersStatus-7-zipped",
+   "title": "Zipped",
+   "tags": "veeam storage zipped veeam vmware virtual machine users status Zipped",
+   "kind": "vertex",
+   "width": 6.8,
+   "height": 57.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.zipped;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.veeam.zipped"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:409"
+  },
+  {
+   "id": "veeamUsersStatus-8-shared",
+   "title": "Shared",
+   "tags": "veeam storage shared veeam vmware virtual machine users status Shared",
+   "kind": "vertex",
+   "width": 46,
+   "height": 24.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.shared;",
+   "shapeNames": [
+    "mxgraph.veeam.shared"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:411"
+  },
+  {
+   "id": "veeamUsersStatus-9-checked",
+   "title": "Checked",
+   "tags": "veeam storage checked veeam vmware virtual machine users status Checked",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.checked;",
+   "shapeNames": [
+    "mxgraph.veeam.checked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:413"
+  },
+  {
+   "id": "veeamUsersStatus-10-eject",
+   "title": "Eject",
+   "tags": "veeam storage eject veeam vmware virtual machine users status Eject",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.eject;",
+   "shapeNames": [
+    "mxgraph.veeam.eject"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:415"
+  },
+  {
+   "id": "veeamUsersStatus-11-recording",
+   "title": "Recording",
+   "tags": "veeam storage recording veeam vmware virtual machine users status Recording",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.recording;",
+   "shapeNames": [
+    "mxgraph.veeam.recording"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:417"
+  },
+  {
+   "id": "veeamUsersStatus-12-powered",
+   "title": "Powered",
+   "tags": "veeam storage powered veeam vmware virtual machine users status Powered",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.powered;",
+   "shapeNames": [
+    "mxgraph.veeam.powered"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:419"
+  },
+  {
+   "id": "veeamUsersStatus-13-failed",
+   "title": "Failed",
+   "tags": "veeam storage failed veeam vmware virtual machine users status Failed",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.failed;",
+   "shapeNames": [
+    "mxgraph.veeam.failed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:421"
+  },
+  {
+   "id": "veeamUsersStatus-14-paused",
+   "title": "Paused",
+   "tags": "veeam storage paused veeam vmware virtual machine users status Paused",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.paused;",
+   "shapeNames": [
+    "mxgraph.veeam.paused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:423"
+  },
+  {
+   "id": "veeamUsersStatus-15-unavailable",
+   "title": "Unavailable",
+   "tags": "veeam storage unavailable veeam vmware virtual machine users status Unavailable",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.unavailable;",
+   "shapeNames": [
+    "mxgraph.veeam.unavailable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:425"
+  },
+  {
+   "id": "veeamUsersStatus-16-active",
+   "title": "Active",
+   "tags": "veeam storage active veeam vmware virtual machine users status Active",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.active;",
+   "shapeNames": [
+    "mxgraph.veeam.active"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:427"
+  },
+  {
+   "id": "veeamUsersStatus-17-delayed",
+   "title": "Delayed",
+   "tags": "veeam storage delayed veeam vmware virtual machine users status Delayed",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.delayed;",
+   "shapeNames": [
+    "mxgraph.veeam.delayed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:429"
+  },
+  {
+   "id": "veeamUsersStatus-18-restore",
+   "title": "Restore",
+   "tags": "veeam storage restore veeam vmware virtual machine users status Restore",
+   "kind": "vertex",
+   "width": 31.2,
+   "height": 29.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.restore;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.veeam.restore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:431"
+  },
+  {
+   "id": "veeamUsersStatus-19-locked",
+   "title": "Locked",
+   "tags": "veeam storage locked veeam vmware virtual machine users status Locked",
+   "kind": "vertex",
+   "width": 30.4,
+   "height": 34.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.locked;",
+   "shapeNames": [
+    "mxgraph.veeam.locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:433"
+  },
+  {
+   "id": "veeamUsersStatus-20-unlocked",
+   "title": "Unlocked",
+   "tags": "veeam storage unlocked veeam vmware virtual machine users status Unlocked",
+   "kind": "vertex",
+   "width": 41.6,
+   "height": 34.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.unlocked;",
+   "shapeNames": [
+    "mxgraph.veeam.unlocked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:435"
+  }
+ ]
+}

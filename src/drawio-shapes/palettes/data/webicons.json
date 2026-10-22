@@ -1,0 +1,2458 @@
+{
+ "id": "webicons",
+ "title": "Web Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:8",
+ "entries": [
+  {
+   "id": "webicons-0-adfty",
+   "title": "Adfty",
+   "tags": "webicons adfty web icons icon Adfty",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.adfty;fillColor=#66E8F3;gradientColor=#1C7CBA",
+   "shapeNames": [
+    "mxgraph.webicons.adfty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:20"
+  },
+  {
+   "id": "webicons-1-adobe-pdf",
+   "title": "Adobe PDF",
+   "tags": "webicons adobe pdf web icons icon Adobe PDF",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.adobe_pdf;fillColor=#F40C0C;gradientColor=#610603",
+   "shapeNames": [
+    "mxgraph.webicons.adobe_pdf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:22"
+  },
+  {
+   "id": "webicons-2-aim",
+   "title": "Aim",
+   "tags": "webicons aim web icons icon Aim",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.aim;fillColor=#27E1E5;gradientColor=#0A4361",
+   "shapeNames": [
+    "mxgraph.webicons.aim"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:24"
+  },
+  {
+   "id": "webicons-3-allvoices",
+   "title": "Allvoices",
+   "tags": "webicons allvoices web icons icon Allvoices",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.allvoices;fillColor=#807E7E;gradientColor=#1B1C1C",
+   "shapeNames": [
+    "mxgraph.webicons.allvoices"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:26"
+  },
+  {
+   "id": "webicons-4-amazon",
+   "title": "Amazon",
+   "tags": "webicons amazon web icons icon Amazon",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.amazon;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.amazon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:28"
+  },
+  {
+   "id": "webicons-5-amazon",
+   "title": "Amazon",
+   "tags": "webicons amazon web icons icon Amazon",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.amazon_2;gradientColor=#231F20",
+   "shapeNames": [
+    "mxgraph.webicons.amazon_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:30"
+  },
+  {
+   "id": "webicons-6-android",
+   "title": "Android",
+   "tags": "webicons android web icons icon Android",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.android;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:32"
+  },
+  {
+   "id": "webicons-7-apache",
+   "title": "Apache",
+   "tags": "webicons apache db database web icons icon Apache",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.apache;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.apache"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:34"
+  },
+  {
+   "id": "webicons-8-apple",
+   "title": "Apple",
+   "tags": "webicons apple web icons icon Apple",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.apple;fillColor=#807E7E;gradientColor=#1B1C1C",
+   "shapeNames": [
+    "mxgraph.webicons.apple"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:36"
+  },
+  {
+   "id": "webicons-9-apple-classic",
+   "title": "Apple (classic)",
+   "tags": "webicons apple classic web icons icon Apple (classic)",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.apple_classic;fillColor=#66E8F3;gradientColor=#1C7CBA",
+   "shapeNames": [
+    "mxgraph.webicons.apple_classic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:38"
+  },
+  {
+   "id": "webicons-10-arduino",
+   "title": "Arduino",
+   "tags": "webicons arduino web icons icon Arduino",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.arduino;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.arduino"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:40"
+  },
+  {
+   "id": "webicons-11-ask",
+   "title": "Ask",
+   "tags": "webicons ask web icons icon Ask",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.ask;fillColor=#F33543;gradientColor=#B50E11",
+   "shapeNames": [
+    "mxgraph.webicons.ask"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:42"
+  },
+  {
+   "id": "webicons-12-atlassian",
+   "title": "Atlassian",
+   "tags": "webicons atlassian web icons icon Atlassian",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.atlassian;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.atlassian"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:44"
+  },
+  {
+   "id": "webicons-13-audioboo",
+   "title": "Audioboo",
+   "tags": "webicons audioboo web icons icon Audioboo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.audioboo;fillColor=#EB35CF;gradientColor=#8C0E35",
+   "shapeNames": [
+    "mxgraph.webicons.audioboo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:46"
+  },
+  {
+   "id": "webicons-14-aws",
+   "title": "AWS",
+   "tags": "webicons aws amazon web service web icons icon AWS",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.aws;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.aws"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:48"
+  },
+  {
+   "id": "webicons-15-aws-s3",
+   "title": "AWS S3",
+   "tags": "webicons aws s3 amazon web service web icons icon AWS S3",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.aws_s3;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.aws_s3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:50"
+  },
+  {
+   "id": "webicons-16-baidu",
+   "title": "Baidu",
+   "tags": "webicons baidu web icons icon Baidu",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.baidu;fillColor=#738FE8;gradientColor=#1F2470",
+   "shapeNames": [
+    "mxgraph.webicons.baidu"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:52"
+  },
+  {
+   "id": "webicons-17-bebo",
+   "title": "Bebo",
+   "tags": "webicons bebo web icons icon Bebo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.bebo;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.bebo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:54"
+  },
+  {
+   "id": "webicons-18-behance",
+   "title": "Behance",
+   "tags": "webicons behance web icons icon Behance",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.behance;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.behance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:56"
+  },
+  {
+   "id": "webicons-19-bing",
+   "title": "Bing",
+   "tags": "webicons bing web icons icon Bing",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.bing;fillColor=#0A776E;gradientColor=#053D39",
+   "shapeNames": [
+    "mxgraph.webicons.bing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:58"
+  },
+  {
+   "id": "webicons-20-bitbucket",
+   "title": "Bitbucket",
+   "tags": "webicons bitbucket web icons icon Bitbucket",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.bitbucket;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.bitbucket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:60"
+  },
+  {
+   "id": "webicons-21-blinklist",
+   "title": "Blinklist",
+   "tags": "webicons blinklist web icons icon Blinklist",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.blinklist;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.blinklist"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:62"
+  },
+  {
+   "id": "webicons-22-blogger",
+   "title": "Blogger",
+   "tags": "webicons blogger web icons icon Blogger",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.blogger;fillColor=#FDE47C;gradientColor=#F55F21",
+   "shapeNames": [
+    "mxgraph.webicons.blogger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:64"
+  },
+  {
+   "id": "webicons-23-blogmarks",
+   "title": "Blogmarks",
+   "tags": "webicons blogmarks web icons icon Blogmarks",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.blogmarks;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.blogmarks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:66"
+  },
+  {
+   "id": "webicons-24-bookmarks-fr",
+   "title": "Bookmarks.fr",
+   "tags": "webicons bookmarks.fr web icons icon Bookmarks.fr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.bookmarks.fr;fillColor=#F9FAF4;gradientColor=#DCDFBB",
+   "shapeNames": [
+    "mxgraph.webicons.bookmarks.fr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:68"
+  },
+  {
+   "id": "webicons-25-box",
+   "title": "Box",
+   "tags": "webicons box web icons icon Box",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.box;fillColor=#4CDFEF;gradientColor=#153EA0",
+   "shapeNames": [
+    "mxgraph.webicons.box"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:70"
+  },
+  {
+   "id": "webicons-26-buddymarks",
+   "title": "Buddymarks",
+   "tags": "webicons buddymarks web icons icon Buddymarks",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.buddymarks;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.buddymarks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:72"
+  },
+  {
+   "id": "webicons-27-buffer",
+   "title": "Buffer",
+   "tags": "webicons buffer web icons icon Buffer",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.buffer;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.buffer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:74"
+  },
+  {
+   "id": "webicons-28-buzzfeed",
+   "title": "Buzzfeed",
+   "tags": "webicons buzzfeed web icons icon Buzzfeed",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.buzzfeed;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.buzzfeed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:76"
+  },
+  {
+   "id": "webicons-29-chrome",
+   "title": "Chrome",
+   "tags": "webicons chrome web icons icon Chrome",
+   "kind": "vertex",
+   "width": 103.2,
+   "height": 104,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.chrome;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.chrome"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:78"
+  },
+  {
+   "id": "webicons-30-citeulike",
+   "title": "Citeulike",
+   "tags": "webicons citeulike web icons icon Citeulike",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.citeulike;fillColor=#ACD65E;gradientColor=#2E3618",
+   "shapeNames": [
+    "mxgraph.webicons.citeulike"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:80"
+  },
+  {
+   "id": "webicons-31-confluence",
+   "title": "Confluence",
+   "tags": "webicons confluence web icons icon Confluence",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.confluence;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.confluence"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:82"
+  },
+  {
+   "id": "webicons-32-connotea",
+   "title": "Connotea",
+   "tags": "webicons connotea web icons icon Connotea",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.connotea;fillColor=#E9FDFC;gradientColor=#BADBE9",
+   "shapeNames": [
+    "mxgraph.webicons.connotea"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:84"
+  },
+  {
+   "id": "webicons-33-dealsplus",
+   "title": "Dealsplus",
+   "tags": "webicons dealsplus web icons icon Dealsplus",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dealsplus;fillColor=#B569B5;gradientColor=#7A467A",
+   "shapeNames": [
+    "mxgraph.webicons.dealsplus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:86"
+  },
+  {
+   "id": "webicons-34-delicious",
+   "title": "Delicious",
+   "tags": "webicons delicious web icons icon Delicious",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.delicious",
+   "shapeNames": [
+    "mxgraph.webicons.delicious"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:88"
+  },
+  {
+   "id": "webicons-35-designfloat",
+   "title": "Designfloat",
+   "tags": "webicons designfloat web icons icon Designfloat",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.designfloat;fillColor=#247BE0;gradientColor=#0A1F42",
+   "shapeNames": [
+    "mxgraph.webicons.designfloat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:90"
+  },
+  {
+   "id": "webicons-36-deviantart",
+   "title": "Deviantart",
+   "tags": "webicons deviantart web icons icon Deviantart",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.deviantart;fillColor=#00C659;gradientColor=#00813B",
+   "shapeNames": [
+    "mxgraph.webicons.deviantart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:92"
+  },
+  {
+   "id": "webicons-37-digg",
+   "title": "Digg",
+   "tags": "webicons digg web icons icon Digg",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.digg;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.digg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:94"
+  },
+  {
+   "id": "webicons-38-diigo",
+   "title": "Diigo",
+   "tags": "webicons diiigo web icons icon Diigo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.diigo;fillColor=#2C7DE0;gradientColor=#1E5599",
+   "shapeNames": [
+    "mxgraph.webicons.diigo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:96"
+  },
+  {
+   "id": "webicons-39-dopplr",
+   "title": "Dopplr",
+   "tags": "webicons dopplr web icons icon Dopplr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dopplr;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.dopplr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:98"
+  },
+  {
+   "id": "webicons-40-draw-io",
+   "title": "draw.io",
+   "tags": "webicons diagrams.net drawio draw io draw.io web icons icon draw.io",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.drawio2;fillColor=#2174CE;gradientColor=#134277",
+   "shapeNames": [
+    "mxgraph.webicons.drawio2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:100"
+  },
+  {
+   "id": "webicons-41-dribbble",
+   "title": "Dribbble",
+   "tags": "webicons dribbble web icons icon Dribbble",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dribbble;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.dribbble"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:102"
+  },
+  {
+   "id": "webicons-42-dropbox",
+   "title": "Dropbox",
+   "tags": "webicons dropbox web icons icon Dropbox",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dropbox;fillColor=#0BAAFE;gradientColor=#0080E6",
+   "shapeNames": [
+    "mxgraph.webicons.dropbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:104"
+  },
+  {
+   "id": "webicons-43-dropbox",
+   "title": "Dropbox",
+   "tags": "webicons dropbox web icons icon Dropbox",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dropbox2;fillColor=#2FB8FC;gradientColor=#0080E6",
+   "shapeNames": [
+    "mxgraph.webicons.dropbox2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:106"
+  },
+  {
+   "id": "webicons-44-drupal",
+   "title": "Drupal",
+   "tags": "webicons drupal web icons icon Drupal",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.drupal;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.drupal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:108"
+  },
+  {
+   "id": "webicons-45-dzone",
+   "title": "Dzone",
+   "tags": "webicons dzone web icons icon Dzone",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.dzone;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.dzone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:110"
+  },
+  {
+   "id": "webicons-46-ebay",
+   "title": "Ebay",
+   "tags": "webicons ebay web icons icon Ebay",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.ebay;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.ebay"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:112"
+  },
+  {
+   "id": "webicons-47-edmodo",
+   "title": "Edmodo",
+   "tags": "webicons edmodo web icons icon Edmodo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.edmodo;fillColor=#2F81CE;gradientColor=#1F5487",
+   "shapeNames": [
+    "mxgraph.webicons.edmodo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:114"
+  },
+  {
+   "id": "webicons-48-evernote",
+   "title": "Evernote",
+   "tags": "webicons evernote web icons icon Evernote",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.evernote;fillColor=#D4EF75;gradientColor=#399F1F",
+   "shapeNames": [
+    "mxgraph.webicons.evernote"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:116"
+  },
+  {
+   "id": "webicons-49-facebook",
+   "title": "Facebook",
+   "tags": "webicons facebook web icons icon Facebook",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.facebook;fillColor=#6294E4;gradientColor=#1A2665",
+   "shapeNames": [
+    "mxgraph.webicons.facebook"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:118"
+  },
+  {
+   "id": "webicons-50-fancy",
+   "title": "Fancy",
+   "tags": "webicons fancy web icons icon Fancy",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fancy;fillColor=#C3ECF8;gradientColor=#348DD4",
+   "shapeNames": [
+    "mxgraph.webicons.fancy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:120"
+  },
+  {
+   "id": "webicons-51-fark",
+   "title": "Fark",
+   "tags": "webicons fark web icons icon Fark",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fark;fillColor=#EBEBF1;gradientColor=#8482A7",
+   "shapeNames": [
+    "mxgraph.webicons.fark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:122"
+  },
+  {
+   "id": "webicons-52-fashiolista",
+   "title": "Fashiolista",
+   "tags": "webicons fashiolista web icons icon Fashiolista",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fashiolista;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.fashiolista"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:124"
+  },
+  {
+   "id": "webicons-53-feed",
+   "title": "Feed",
+   "tags": "webicons feed web icons icon Feed",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.feed;fillColor=#FFAC75;gradientColor=#FF6600",
+   "shapeNames": [
+    "mxgraph.webicons.feed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:126"
+  },
+  {
+   "id": "webicons-54-feedburner",
+   "title": "Feedburner",
+   "tags": "webicons feedburner web icons icon Feedburner",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.feedburner;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.feedburner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:128"
+  },
+  {
+   "id": "webicons-55-flickr",
+   "title": "Flickr",
+   "tags": "webicons flickr web icons icon Flickr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.flickr;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.flickr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:130"
+  },
+  {
+   "id": "webicons-56-folkd",
+   "title": "Folkd",
+   "tags": "webicons folkd web icons icon Folkd",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.folkd;fillColor=#27A2E9;gradientColor=#0A2977",
+   "shapeNames": [
+    "mxgraph.webicons.folkd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:132"
+  },
+  {
+   "id": "webicons-57-forrst",
+   "title": "Forrst",
+   "tags": "webicons forrst web icons icon Forrst",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.forrst;fillColor=#3E6B32;gradientColor=#111C0D",
+   "shapeNames": [
+    "mxgraph.webicons.forrst"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:134"
+  },
+  {
+   "id": "webicons-58-fotolog",
+   "title": "Fotolog",
+   "tags": "webicons fotolog web icons icon Fotolog",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fotolog;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.fotolog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:136"
+  },
+  {
+   "id": "webicons-59-freshbump",
+   "title": "Freshbump",
+   "tags": "webicons freshbump web icons icon Freshbump",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.freshbump;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.freshbump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:138"
+  },
+  {
+   "id": "webicons-60-fresqui",
+   "title": "Fresqui",
+   "tags": "webicons fresqui web icons icon Fresqui",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fresqui;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.fresqui"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:140"
+  },
+  {
+   "id": "webicons-61-friendfeed",
+   "title": "Friendfeed",
+   "tags": "webicons fiendfeed web icons icon Friendfeed",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.friendfeed;fillColor=#7BDCEF;gradientColor=#21379E",
+   "shapeNames": [
+    "mxgraph.webicons.friendfeed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:142"
+  },
+  {
+   "id": "webicons-62-funp",
+   "title": "Funp",
+   "tags": "webicons funp web icons icon Funp",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.funp;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.funp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:144"
+  },
+  {
+   "id": "webicons-63-fwisp",
+   "title": "Fwisp",
+   "tags": "webicons fwisp web icons icon Fwisp",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.fwisp;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.fwisp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:146"
+  },
+  {
+   "id": "webicons-64-gabbr",
+   "title": "Gabbr",
+   "tags": "webicons gabbr web icons icon Gabbr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.gabbr;fillColor=#FBAC39;gradientColor=#EA2B0E",
+   "shapeNames": [
+    "mxgraph.webicons.gabbr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:148"
+  },
+  {
+   "id": "webicons-65-gamespot",
+   "title": "Gamespot",
+   "tags": "webicons gamespot web icons icon Gamespot",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.gamespot;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.gamespot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:150"
+  },
+  {
+   "id": "webicons-66-github",
+   "title": "Github",
+   "tags": "webicons github web icons icon Github",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.github;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.github"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:152"
+  },
+  {
+   "id": "webicons-67-gmail",
+   "title": "Gmail",
+   "tags": "webicons gmail web icons icon Gmail",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.gmail;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.gmail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:154"
+  },
+  {
+   "id": "webicons-68-google",
+   "title": "Google",
+   "tags": "webicons google web icons icon Google",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.google"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:156"
+  },
+  {
+   "id": "webicons-69-google-drive",
+   "title": "Google Drive",
+   "tags": "webicons google drive web icons icon Google Drive",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_drive;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.google_drive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:158"
+  },
+  {
+   "id": "webicons-70-google-hangout",
+   "title": "Google Hangout",
+   "tags": "webicons google hangout web icons icon Google Hangout",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_hangout;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.google_hangout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:160"
+  },
+  {
+   "id": "webicons-71-google-play",
+   "title": "Google Play",
+   "tags": "webicons google play web icons icon Google Play",
+   "kind": "vertex",
+   "width": 69.4,
+   "height": 20.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_play;fillColor=#000000",
+   "shapeNames": [
+    "mxgraph.webicons.google_play"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:162"
+  },
+  {
+   "id": "webicons-72-google-play-light",
+   "title": "Google Play Light",
+   "tags": "webicons google play light web icons icon Google Play Light",
+   "kind": "vertex",
+   "width": 60,
+   "height": 10.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_play_light;fillColor=#66E8F3;gradientColor=#1C7CBA",
+   "shapeNames": [
+    "mxgraph.webicons.google_play_light"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:164"
+  },
+  {
+   "id": "webicons-73-google-photos",
+   "title": "Google Photos",
+   "tags": "webicons google photos web icons icon Google Photos",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_photos;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.google_photos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:166"
+  },
+  {
+   "id": "webicons-74-google-plus",
+   "title": "Google Plus",
+   "tags": "webicons google plus web icons icon Google Plus",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.google_plus;fillColor=#F24B46;gradientColor=#AD3832",
+   "shapeNames": [
+    "mxgraph.webicons.google_plus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:168"
+  },
+  {
+   "id": "webicons-75-grooveshark",
+   "title": "Grooveshark",
+   "tags": "webicons grooveshark web icons icon Grooveshark",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.grooveshark;fillColor=#695D5D;gradientColor=#000000",
+   "shapeNames": [
+    "mxgraph.webicons.grooveshark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:170"
+  },
+  {
+   "id": "webicons-76-hatena",
+   "title": "Hatena",
+   "tags": "webicons hatena web icons icon Hatena",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.hatena;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.hatena"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:172"
+  },
+  {
+   "id": "webicons-77-html5",
+   "title": "HTML5",
+   "tags": "webicons html5 html web icons icon HTML5",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.html5;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.html5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:174"
+  },
+  {
+   "id": "webicons-78-identi-ca",
+   "title": "Identi.ca",
+   "tags": "webicons identi.ca web icons icon Identi.ca",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.identi.ca;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.identi.ca"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:176"
+  },
+  {
+   "id": "webicons-79-instagram",
+   "title": "Instagram",
+   "tags": "webicons instagram web icons icon Instagram",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.instagram;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.instagram"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:178"
+  },
+  {
+   "id": "webicons-80-instapaper",
+   "title": "Instapaper",
+   "tags": "webicons instapaper web icons icon Instapaper",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.instapaper;fillColor=#807E7E;gradientColor=#1B1C1C",
+   "shapeNames": [
+    "mxgraph.webicons.instapaper"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:180"
+  },
+  {
+   "id": "webicons-81-ios",
+   "title": "iOS",
+   "tags": "webicons ios web icons icon iOS",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.ios;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.ios"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:182"
+  },
+  {
+   "id": "webicons-82-jamespot",
+   "title": "Jamespot",
+   "tags": "webicons jamespot web icons icon Jamespot",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.jamespot;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.jamespot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:184"
+  },
+  {
+   "id": "webicons-83-java",
+   "title": "Java",
+   "tags": "webicons java web icons icon Java",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.java;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.java"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:186"
+  },
+  {
+   "id": "webicons-84-joomla",
+   "title": "Joomla",
+   "tags": "webicons joomla web icons icon Joomla",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.joomla;fillColor=#1F457D;gradientColor=#081220",
+   "shapeNames": [
+    "mxgraph.webicons.joomla"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:188"
+  },
+  {
+   "id": "webicons-85-jquery",
+   "title": "Jquery",
+   "tags": "webicons jquery web icons icon Jquery",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.jquery;fillColor=#0BB9EA;gradientColor=#032F80",
+   "shapeNames": [
+    "mxgraph.webicons.jquery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:190"
+  },
+  {
+   "id": "webicons-86-json",
+   "title": "JSON",
+   "tags": "webicons json web icons icon JSON",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.json;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.json"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:192"
+  },
+  {
+   "id": "webicons-87-json",
+   "title": "JSON",
+   "tags": "webicons json web icons icon JSON",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.json_2;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.json_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:194"
+  },
+  {
+   "id": "webicons-88-last-fm",
+   "title": "Last.fm",
+   "tags": "webicons last.fm last fm web icons icon Last.fm",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.last.fm;fillColor=#F33543;gradientColor=#BD0E11",
+   "shapeNames": [
+    "mxgraph.webicons.last.fm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:196"
+  },
+  {
+   "id": "webicons-89-linkagogo",
+   "title": "Linkagogo",
+   "tags": "webicons linkagogo web icons icon Linkagogo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.linkagogo;fillColor=#F6F5FA;gradientColor=#C8C1E1",
+   "shapeNames": [
+    "mxgraph.webicons.linkagogo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:198"
+  },
+  {
+   "id": "webicons-90-linkedin",
+   "title": "LinkedIn",
+   "tags": "webicons linkedin web icons icon LinkedIn",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.linkedin;fillColor=#0095DB;gradientColor=#006391",
+   "shapeNames": [
+    "mxgraph.webicons.linkedin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:200"
+  },
+  {
+   "id": "webicons-91-livejournal",
+   "title": "Livejournal",
+   "tags": "webicons livejournal web icons icon Livejournal",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.livejournal;fillColor=#2690E5;gradientColor=#0A2463",
+   "shapeNames": [
+    "mxgraph.webicons.livejournal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:202"
+  },
+  {
+   "id": "webicons-92-mail-ru",
+   "title": "Mail.ru",
+   "tags": "webicons mail.ru web icons icon Mail.ru",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mail.ru;fillColor=#267BE0;gradientColor=#0A1F42",
+   "shapeNames": [
+    "mxgraph.webicons.mail.ru"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:204"
+  },
+  {
+   "id": "webicons-93-meetup",
+   "title": "Meetup",
+   "tags": "webicons meetup web icons icon Meetup",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.meetup;fillColor=#F83263;gradientColor=#D40D19",
+   "shapeNames": [
+    "mxgraph.webicons.meetup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:206"
+  },
+  {
+   "id": "webicons-94-meneame",
+   "title": "Meneame",
+   "tags": "webicons meneame web icons icon Meneame",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.meneame;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.meneame"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:208"
+  },
+  {
+   "id": "webicons-95-messenger",
+   "title": "Messenger",
+   "tags": "webicons messenger web icons icon Messenger",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.messenger;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.messenger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:210"
+  },
+  {
+   "id": "webicons-96-messenger",
+   "title": "Messenger",
+   "tags": "webicons messenger web icons icon Messenger",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.messenger_2;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.messenger_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:212"
+  },
+  {
+   "id": "webicons-97-messenger",
+   "title": "Messenger",
+   "tags": "webicons messenger web icons icon Messenger",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.messenger_3;fillColor=#09BEFC;gradientColor=#0060FA",
+   "shapeNames": [
+    "mxgraph.webicons.messenger_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:214"
+  },
+  {
+   "id": "webicons-98-mind-body-green",
+   "title": "Mind Body Green",
+   "tags": "webicons mind body green web icons icon Mind Body Green",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mind_body_green;fillColor=#E0EEF8;gradientColor=#4496D5",
+   "shapeNames": [
+    "mxgraph.webicons.mind_body_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:216"
+  },
+  {
+   "id": "webicons-99-mongodb",
+   "title": "MongoDb",
+   "tags": "webicons mongodb web icons icon MongoDb",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mongodb;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.mongodb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:218"
+  },
+  {
+   "id": "webicons-100-myspace",
+   "title": "MySpace",
+   "tags": "webicons myspace web icons icon MySpace",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.myspace;fillColor=#3C69E2;gradientColor=#101B54",
+   "shapeNames": [
+    "mxgraph.webicons.myspace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:220"
+  },
+  {
+   "id": "webicons-101-n4g",
+   "title": "N4g",
+   "tags": "webicons n4g web icons icon N4g",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.n4g;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.n4g"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:222"
+  },
+  {
+   "id": "webicons-102-netlog",
+   "title": "Netlog",
+   "tags": "webicons netlog web icons icon Netlog",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.netlog;fillColor=#FA3743;gradientColor=#E10E11",
+   "shapeNames": [
+    "mxgraph.webicons.netlog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:224"
+  },
+  {
+   "id": "webicons-103-netvibes",
+   "title": "Netvibes",
+   "tags": "webicons netvibes web icons icon Netvibes",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.netvibes;fillColor=#99DB00;gradientColor=#638E00",
+   "shapeNames": [
+    "mxgraph.webicons.netvibes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:226"
+  },
+  {
+   "id": "webicons-104-netvouz",
+   "title": "Netvouz",
+   "tags": "webicons netvouz web icons icon Netvouz",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.netvouz;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.netvouz"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:228"
+  },
+  {
+   "id": "webicons-105-networkedblogs",
+   "title": "Networkedblogs",
+   "tags": "webicons networkedblogs web icons icon Networkedblogs",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.networkedblogs;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.networkedblogs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:230"
+  },
+  {
+   "id": "webicons-106-newsvine",
+   "title": "Newsvine",
+   "tags": "webicons newsvine web icons icon Newsvine",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.newsvine;fillColor=#008733;gradientColor=#00441B",
+   "shapeNames": [
+    "mxgraph.webicons.newsvine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:232"
+  },
+  {
+   "id": "webicons-107-odnoklassniki",
+   "title": "Odnoklassniki",
+   "tags": "webicons odnoklassniki web icons icon Odnoklassniki",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.odnoklassniki;fillColor=#FDE15A;gradientColor=#F24317",
+   "shapeNames": [
+    "mxgraph.webicons.odnoklassniki"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:234"
+  },
+  {
+   "id": "webicons-108-oknotizie",
+   "title": "Oknotizie",
+   "tags": "webicons oknotizie web icons icon Oknotizie",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.oknotizie;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.oknotizie"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:236"
+  },
+  {
+   "id": "webicons-109-onedrive",
+   "title": "OneDrive",
+   "tags": "webicons onedrive web icons icon OneDrive",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.onedrive;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.onedrive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:238"
+  },
+  {
+   "id": "webicons-110-oracle",
+   "title": "Oracle",
+   "tags": "webicons oracle web icons icon Oracle",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.oracle;fillColor=#FA3743;gradientColor=#E10E11",
+   "shapeNames": [
+    "mxgraph.webicons.oracle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:240"
+  },
+  {
+   "id": "webicons-111-paypal",
+   "title": "Paypal",
+   "tags": "webicons paypal web icons icon Paypal",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.paypal;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.paypal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:242"
+  },
+  {
+   "id": "webicons-112-phone",
+   "title": "Phone",
+   "tags": "webicons phone web icons icon Phone",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.phone;fillColor=#76F21E;gradientColor=#079704",
+   "shapeNames": [
+    "mxgraph.webicons.phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:244"
+  },
+  {
+   "id": "webicons-113-phonefavs",
+   "title": "Phonefavs",
+   "tags": "webicons phonefavs web icons icon Phonefavs",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.phonefavs;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.phonefavs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:246"
+  },
+  {
+   "id": "webicons-114-pinterest",
+   "title": "Pinterest",
+   "tags": "webicons pinterest web icons icon Pinterest",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.pinterest;fillColor=#E50B28;gradientColor=#890616",
+   "shapeNames": [
+    "mxgraph.webicons.pinterest"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:248"
+  },
+  {
+   "id": "webicons-115-plaxo",
+   "title": "Plaxo",
+   "tags": "webicons plaxo web icons icon Plaxo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.plaxo;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.plaxo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:250"
+  },
+  {
+   "id": "webicons-116-playfire",
+   "title": "Playfire",
+   "tags": "webicons playfire web icons icon Playfire",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.playfire;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.playfire"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:252"
+  },
+  {
+   "id": "webicons-117-plurk",
+   "title": "Plurk",
+   "tags": "webicons plurk web icons icon Plurk",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.plurk;fillColor=#FF5656;gradientColor=#A8312D",
+   "shapeNames": [
+    "mxgraph.webicons.plurk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:254"
+  },
+  {
+   "id": "webicons-118-pocket",
+   "title": "Pocket",
+   "tags": "webicons pocket web icons icon Pocket",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.pocket;fillColor=#FF4460;gradientColor=#B73143",
+   "shapeNames": [
+    "mxgraph.webicons.pocket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:256"
+  },
+  {
+   "id": "webicons-119-protopage",
+   "title": "Protopage",
+   "tags": "webicons protopage web icons icon Protopage",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.protopage;fillColor=#4B78C0;gradientColor=#294282",
+   "shapeNames": [
+    "mxgraph.webicons.protopage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:258"
+  },
+  {
+   "id": "webicons-120-readernaut",
+   "title": "Readernaut",
+   "tags": "webicons readernaut web icons icon Readernaut",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.readernaut;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.readernaut"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:260"
+  },
+  {
+   "id": "webicons-121-reddit",
+   "title": "Reddit",
+   "tags": "webicons reddit web icons icon Reddit",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.reddit;fillColor=#F3F8FC;gradientColor=#B4D2F0",
+   "shapeNames": [
+    "mxgraph.webicons.reddit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:262"
+  },
+  {
+   "id": "webicons-122-rss",
+   "title": "RSS",
+   "tags": "webicons rss web icons icon RSS",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.rss;fillColor=#FDE532;gradientColor=#F4600D",
+   "shapeNames": [
+    "mxgraph.webicons.rss"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:264"
+  },
+  {
+   "id": "webicons-123-scoopit",
+   "title": "Scoopit",
+   "tags": "webicons scoopit web icons icon Scoopit",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.scoopit;fillColor=#8CD845;gradientColor=#4E7A27",
+   "shapeNames": [
+    "mxgraph.webicons.scoopit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:266"
+  },
+  {
+   "id": "webicons-124-scribd",
+   "title": "Scribd",
+   "tags": "webicons scribd web icons icon Scribd",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.scribd;fillColor=#1D637D;gradientColor=#071920",
+   "shapeNames": [
+    "mxgraph.webicons.scribd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:268"
+  },
+  {
+   "id": "webicons-125-segnalo",
+   "title": "Segnalo",
+   "tags": "webicons segnalo web icons icon Segnalo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.segnalo;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.segnalo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:270"
+  },
+  {
+   "id": "webicons-126-sina",
+   "title": "Sina",
+   "tags": "webicons sina web icons icon Sina",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sina;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.sina"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:272"
+  },
+  {
+   "id": "webicons-127-sitejot",
+   "title": "Sitejot",
+   "tags": "webicons sitejot web icons icon Sitejot",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sitejot;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.sitejot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:274"
+  },
+  {
+   "id": "webicons-128-skype",
+   "title": "Skype",
+   "tags": "webicons skype web icons icon Skype",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.skype;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.skype"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:276"
+  },
+  {
+   "id": "webicons-129-skyrock",
+   "title": "Skyrock",
+   "tags": "webicons skyrock web icons icon Skyrock",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.skyrock;fillColor=#47B8FF;gradientColor=#006AAD",
+   "shapeNames": [
+    "mxgraph.webicons.skyrock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:278"
+  },
+  {
+   "id": "webicons-130-slashdot",
+   "title": "Slashdot",
+   "tags": "webicons slashdot web icons icon Slashdot",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.slashdot;fillColor=#03B2AC;gradientColor=#012C2C",
+   "shapeNames": [
+    "mxgraph.webicons.slashdot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:280"
+  },
+  {
+   "id": "webicons-131-sms",
+   "title": "SMS",
+   "tags": "webicons sms web icons icon SMS",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sms;fillColor=#86D466;gradientColor=#42B418",
+   "shapeNames": [
+    "mxgraph.webicons.sms"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:282"
+  },
+  {
+   "id": "webicons-132-socialvibe",
+   "title": "Socialvibe",
+   "tags": "webicons socialvibe web icons icon Socialvibe",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.socialvibe;fillColor=#FA16E2;gradientColor=#DF064B",
+   "shapeNames": [
+    "mxgraph.webicons.socialvibe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:284"
+  },
+  {
+   "id": "webicons-133-society6",
+   "title": "Society6",
+   "tags": "webicons society6 web icons icon Society6",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.society6;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.society6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:286"
+  },
+  {
+   "id": "webicons-134-sonico",
+   "title": "Sonico",
+   "tags": "webicons sonico web icons icon Sonico",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sonico;fillColor=#3FEAF6;gradientColor=#117EC9",
+   "shapeNames": [
+    "mxgraph.webicons.sonico"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:288"
+  },
+  {
+   "id": "webicons-135-soundcloud",
+   "title": "Soundcloud",
+   "tags": "webicons soundcloud web icons icon Soundcloud",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.soundcloud;fillColor=#F78E11;gradientColor=#F93A0E",
+   "shapeNames": [
+    "mxgraph.webicons.soundcloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:290"
+  },
+  {
+   "id": "webicons-136-sourceforge",
+   "title": "Sourceforge",
+   "tags": "webicons sourceforge web icons icon Sourceforge",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sourceforge;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.sourceforge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:292"
+  },
+  {
+   "id": "webicons-137-sourceforge",
+   "title": "Sourceforge",
+   "tags": "webicons sourceforge web icons icon Sourceforge",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.sourceforge_2;fillColor=#0078AF;gradientColor=#00385E",
+   "shapeNames": [
+    "mxgraph.webicons.sourceforge_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:294"
+  },
+  {
+   "id": "webicons-138-spring-me",
+   "title": "Spring.me",
+   "tags": "webicons spring me web icons icon Spring.me",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.spring.me;fillColor=#3CBEF2;gradientColor=#2B8AAF",
+   "shapeNames": [
+    "mxgraph.webicons.spring.me"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:296"
+  },
+  {
+   "id": "webicons-139-stackexchange",
+   "title": "Stackexchange",
+   "tags": "webicons stackexchange stack exchange web icons icon Stackexchange",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.stackexchange;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.stackexchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:298"
+  },
+  {
+   "id": "webicons-140-stackoverflow",
+   "title": "StackOverflow",
+   "tags": "webicons stackoverflow stack overflow web icons icon StackOverflow",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.stackoverflow;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.stackoverflow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:300"
+  },
+  {
+   "id": "webicons-141-startaid",
+   "title": "Startaid",
+   "tags": "webicons startaid web icons icon Startaid",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.startaid;fillColor=#47B0E5;gradientColor=#2F7599",
+   "shapeNames": [
+    "mxgraph.webicons.startaid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:302"
+  },
+  {
+   "id": "webicons-142-startlap",
+   "title": "Startlap",
+   "tags": "webicons startlap web icons icon Startlap",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.startlap;fillColor=#B9E6F0;gradientColor=#3062A2",
+   "shapeNames": [
+    "mxgraph.webicons.startlap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:304"
+  },
+  {
+   "id": "webicons-143-steam",
+   "title": "Steam",
+   "tags": "webicons steam web icons icon Steam",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.steam;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.webicons.steam"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:306"
+  },
+  {
+   "id": "webicons-144-stumbleupon",
+   "title": "StumbleUpon",
+   "tags": "webicons stumbleupon web icons icon StumbleUpon",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.stumbleupon;fillColor=#FA823C;gradientColor=#E12110",
+   "shapeNames": [
+    "mxgraph.webicons.stumbleupon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:308"
+  },
+  {
+   "id": "webicons-145-stumpedia",
+   "title": "Stumpedia",
+   "tags": "webicons stumpedia web icons icon Stumpedia",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.stumpedia;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.stumpedia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:310"
+  },
+  {
+   "id": "webicons-146-technorati",
+   "title": "Technorati",
+   "tags": "webicons technorati web icons icon Technorati",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.technorati;fillColor=#99EC92;gradientColor=#288925",
+   "shapeNames": [
+    "mxgraph.webicons.technorati"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:312"
+  },
+  {
+   "id": "webicons-147-translate",
+   "title": "Translate",
+   "tags": "webicons translate web icons icon Translate",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.translate;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.translate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:314"
+  },
+  {
+   "id": "webicons-148-tumblr",
+   "title": "Tumblr",
+   "tags": "webicons tumblr web icons icon Tumblr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.tumblr;fillColor=#588BBC;gradientColor=#172330",
+   "shapeNames": [
+    "mxgraph.webicons.tumblr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:316"
+  },
+  {
+   "id": "webicons-149-tunein",
+   "title": "Tunein",
+   "tags": "webicons tunein web icons icon Tunein",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.tunein;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.tunein"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:318"
+  },
+  {
+   "id": "webicons-150-twitter",
+   "title": "Twitter",
+   "tags": "webicons twitter web icons icon Twitter",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.twitter;fillColor=#49EAF7;gradientColor=#137BD0",
+   "shapeNames": [
+    "mxgraph.webicons.twitter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:320"
+  },
+  {
+   "id": "webicons-151-two",
+   "title": "Two",
+   "tags": "webicons two web icons icon Two",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.two;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:322"
+  },
+  {
+   "id": "webicons-152-typepad",
+   "title": "Typepad",
+   "tags": "webicons typepad web icons icon Typepad",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.typepad;fillColor=#CBD372;gradientColor=#818748",
+   "shapeNames": [
+    "mxgraph.webicons.typepad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:324"
+  },
+  {
+   "id": "webicons-153-viadeo",
+   "title": "Viadeo",
+   "tags": "webicons viadeo web icons icon Viadeo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.viadeo;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.viadeo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:326"
+  },
+  {
+   "id": "webicons-154-viber",
+   "title": "Viber",
+   "tags": "webicons viber web icons icon Viber",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.viber;fillColor=#9964C4;gradientColor=#52366B",
+   "shapeNames": [
+    "mxgraph.webicons.viber"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:328"
+  },
+  {
+   "id": "webicons-155-viddler",
+   "title": "Viddler",
+   "tags": "webicons viddler web icons icon Viddler",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.viddler;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.viddler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:330"
+  },
+  {
+   "id": "webicons-156-vimeo",
+   "title": "Vimeo",
+   "tags": "webicons vimeo web icons icon Vimeo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.vimeo;fillColor=#A4EDF9;gradientColor=#2B8ED9",
+   "shapeNames": [
+    "mxgraph.webicons.vimeo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:332"
+  },
+  {
+   "id": "webicons-157-virb",
+   "title": "Virb",
+   "tags": "webicons virb web icons icon Virb",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.virb;fillColor=#536873;gradientColor=#161A1D",
+   "shapeNames": [
+    "mxgraph.webicons.virb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:334"
+  },
+  {
+   "id": "webicons-158-vkontakte",
+   "title": "Vkontakte",
+   "tags": "webicons vkontakte web icons icon Vkontakte",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.vkontakte;fillColor=#5F94CC;gradientColor=#39587A",
+   "shapeNames": [
+    "mxgraph.webicons.vkontakte"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:336"
+  },
+  {
+   "id": "webicons-159-wakoopa",
+   "title": "Wakoopa",
+   "tags": "webicons wakoopa web icons icon Wakoopa",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.wakoopa;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.wakoopa"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:338"
+  },
+  {
+   "id": "webicons-160-weheartit",
+   "title": "Weheartit",
+   "tags": "webicons weheartit web icons icon Weheartit",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.weheartit;fillColor=#FF7AA2;gradientColor=#FF4577",
+   "shapeNames": [
+    "mxgraph.webicons.weheartit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:340"
+  },
+  {
+   "id": "webicons-161-whatsapp",
+   "title": "Whatsapp",
+   "tags": "webicons whatsapp web icons icon Whatsapp",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.whatsapp;fillColor=#4FE238;gradientColor=#138709",
+   "shapeNames": [
+    "mxgraph.webicons.whatsapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:342"
+  },
+  {
+   "id": "webicons-162-wix",
+   "title": "Wix",
+   "tags": "webicons wix web icons icon Wix",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.wix;fillColor=#8AE3F2;gradientColor=#2451B0",
+   "shapeNames": [
+    "mxgraph.webicons.wix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:344"
+  },
+  {
+   "id": "webicons-163-wordpress",
+   "title": "Wordpress",
+   "tags": "webicons wordpress web icons icon Wordpress",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.wordpress;fillColor=#35E2EE;gradientColor=#0E4D99",
+   "shapeNames": [
+    "mxgraph.webicons.wordpress"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:346"
+  },
+  {
+   "id": "webicons-164-wordpress",
+   "title": "Wordpress",
+   "tags": "webicons wordpress web icons icon Wordpress",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.wordpress_2;fillColor=#35E2EE;gradientColor=#0E4D99",
+   "shapeNames": [
+    "mxgraph.webicons.wordpress_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:348"
+  },
+  {
+   "id": "webicons-165-xanga",
+   "title": "Xanga",
+   "tags": "webicons xanga web icons icon Xanga",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.xanga;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.xanga"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:350"
+  },
+  {
+   "id": "webicons-166-xerpi",
+   "title": "Xerpi",
+   "tags": "webicons xerpi web icons icon Xerpi",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.xerpi;fillColor=#7F719B;gradientColor=#32264B",
+   "shapeNames": [
+    "mxgraph.webicons.xerpi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:352"
+  },
+  {
+   "id": "webicons-167-xing",
+   "title": "Xing",
+   "tags": "webicons xing web icons icon Xing",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.xing;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.xing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:354"
+  },
+  {
+   "id": "webicons-168-yahoo",
+   "title": "Yahoo",
+   "tags": "webicons yahoo web icons icon Yahoo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yahoo;fillColor=#AC37AE;gradientColor=#2E0E2D",
+   "shapeNames": [
+    "mxgraph.webicons.yahoo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:356"
+  },
+  {
+   "id": "webicons-169-yahoo",
+   "title": "Yahoo",
+   "tags": "webicons yahoo web icons icon Yahoo",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yahoo_2;fillColor=#AC37AE;gradientColor=#2E0E2D",
+   "shapeNames": [
+    "mxgraph.webicons.yahoo_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:358"
+  },
+  {
+   "id": "webicons-170-yammer",
+   "title": "Yammer",
+   "tags": "webicons yammer web icons icon Yammer",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yammer;fillColor=#00AFE0;gradientColor=#005F7A",
+   "shapeNames": [
+    "mxgraph.webicons.yammer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:360"
+  },
+  {
+   "id": "webicons-171-yandex",
+   "title": "Yandex",
+   "tags": "webicons yandex web icons icon Yandex",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yandex;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.yandex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:362"
+  },
+  {
+   "id": "webicons-172-yelp",
+   "title": "Yelp",
+   "tags": "webicons yelp web icons icon Yelp",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yelp;fillColor=#EF5140;gradientColor=#9C1410",
+   "shapeNames": [
+    "mxgraph.webicons.yelp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:364"
+  },
+  {
+   "id": "webicons-173-yoolink",
+   "title": "Yoolink",
+   "tags": "webicons yoolink web icons icon Yoolink",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.yoolink;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.yoolink"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:366"
+  },
+  {
+   "id": "webicons-174-youmob",
+   "title": "Youmob",
+   "tags": "webicons youmob web icons icon Youmob",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.youmob;gradientColor=#DFDEDE",
+   "shapeNames": [
+    "mxgraph.webicons.youmob"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:368"
+  }
+ ]
+}

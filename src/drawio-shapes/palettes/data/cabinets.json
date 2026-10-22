@@ -1,0 +1,958 @@
+{
+ "id": "cabinets",
+ "title": "Cabinets",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:8",
+ "entries": [
+  {
+   "id": "cabinets-0-cabinet",
+   "title": "Cabinet",
+   "tags": "cabinets cabinet cabinet  Cabinet",
+   "kind": "vertex",
+   "width": 250,
+   "height": 500,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cabinet;hasStand=1",
+   "shapeNames": [
+    "mxgraph.cabinets.cabinet"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:22"
+  },
+  {
+   "id": "cabinets-1-dimension",
+   "title": "Dimension",
+   "tags": "cabinets dimension cabinet  Dimension",
+   "kind": "vertex",
+   "width": 250,
+   "height": 40,
+   "style": "verticalLabelPosition=middle;dashed=0;shadow=0;html=1;shape=mxgraph.cabinets.dimension;verticalAlign=top;align=center;",
+   "value": "100",
+   "shapeNames": [
+    "mxgraph.cabinets.dimension"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:24"
+  },
+  {
+   "id": "cabinets-2-dimension",
+   "title": "Dimension",
+   "tags": "cabinets dimensionBottom cabinet  Dimension",
+   "kind": "vertex",
+   "width": 250,
+   "height": 40,
+   "style": "verticalLabelPosition=middle;dashed=0;shadow=0;html=1;shape=mxgraph.cabinets.dimensionBottom;verticalAlign=bottom;align=center;",
+   "value": "100",
+   "shapeNames": [
+    "mxgraph.cabinets.dimensionBottom"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:26"
+  },
+  {
+   "id": "cabinets-3-cover-plate",
+   "title": "Cover Plate",
+   "tags": "cabinets coverPlate cabinet  Cover Plate",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 125,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.coverPlate",
+   "shapeNames": [
+    "mxgraph.cabinets.coverPlate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:28"
+  },
+  {
+   "id": "cabinets-4-panel-wiring-system-25x40mm",
+   "title": "Panel Wiring System 25x40mm",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 25x40mm",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 12.5,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;",
+   "value": "25x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:30"
+  },
+  {
+   "id": "cabinets-5-panel-wiring-system-40x40mm",
+   "title": "Panel Wiring System 40x40mm",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 40x40mm",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 20,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;",
+   "value": "40x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:32"
+  },
+  {
+   "id": "cabinets-6-panel-wiring-system-60x40mm",
+   "title": "Panel Wiring System 60x40mm",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 60x40mm",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 30,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;",
+   "value": "60x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:34"
+  },
+  {
+   "id": "cabinets-7-panel-wiring-system-80x40mm",
+   "title": "Panel Wiring System 80x40mm",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 80x40mm",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 40,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;",
+   "value": "80x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:36"
+  },
+  {
+   "id": "cabinets-8-panel-wiring-system-100x40mm",
+   "title": "Panel Wiring System 100x40mm",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 100x40mm",
+   "kind": "vertex",
+   "width": 220.00000000000003,
+   "height": 50,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;",
+   "value": "100x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:38"
+  },
+  {
+   "id": "cabinets-9-panel-wiring-system-25x40mm-vertical",
+   "title": "Panel Wiring System 25x40mm (Vertical)",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 25x40mm (Vertical)",
+   "kind": "vertex",
+   "width": 12.5,
+   "height": 350,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;direction=south;horizontal=0;",
+   "value": "25x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:40"
+  },
+  {
+   "id": "cabinets-10-panel-wiring-system-40x40mm-vertical",
+   "title": "Panel Wiring System 40x40mm (Vertical)",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 40x40mm (Vertical)",
+   "kind": "vertex",
+   "width": 20,
+   "height": 350,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;direction=south;horizontal=0;",
+   "value": "40x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:42"
+  },
+  {
+   "id": "cabinets-11-panel-wiring-system-60x40mm-vertical",
+   "title": "Panel Wiring System 60x40mm (Vertical)",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 60x40mm (Vertical)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 350,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;direction=south;horizontal=0;",
+   "value": "60x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:44"
+  },
+  {
+   "id": "cabinets-12-panel-wiring-system-80x40mm-vertical",
+   "title": "Panel Wiring System 80x40mm (Vertical)",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 80x40mm (Vertical)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 350,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;direction=south;horizontal=0;",
+   "value": "80x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:46"
+  },
+  {
+   "id": "cabinets-13-panel-wiring-system-100x40mm-vertical",
+   "title": "Panel Wiring System 100x40mm (Vertical)",
+   "tags": "cabinets  cabinet panel wiring system Panel Wiring System 100x40mm (Vertical)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 350,
+   "style": "shape=rect;dashed=0;shadow=0;html=1;whiteSpace=wrap;direction=south;horizontal=0;",
+   "value": "100x40",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:48"
+  },
+  {
+   "id": "cabinets-14-circuit-breaker-1p",
+   "title": "Circuit Breaker (1P)",
+   "tags": "cabinets cb 1p cabinet  Circuit Breaker (1P)",
+   "kind": "vertex",
+   "width": 9,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_1p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:50"
+  },
+  {
+   "id": "cabinets-15-circuit-breaker-1p-x-10",
+   "title": "Circuit Breaker (1P x 10)",
+   "tags": "cabinet circuit breaker row",
+   "kind": "cells",
+   "width": 90,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"9\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"18\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"27\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"36\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"45\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"54\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"63\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"72\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_1p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"81\" width=\"9\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_1p"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:53"
+  },
+  {
+   "id": "cabinets-16-circuit-breaker-2p",
+   "title": "Circuit Breaker (2P)",
+   "tags": "cabinets cb 2p cabinet  Circuit Breaker (2P)",
+   "kind": "vertex",
+   "width": 18,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_2p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:79"
+  },
+  {
+   "id": "cabinets-17-circuit-breaker-2p-x-10",
+   "title": "Circuit Breaker (2P x 10)",
+   "tags": "cabinet circuit breaker row",
+   "kind": "cells",
+   "width": 180,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"18\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"36\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"54\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"72\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"108\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"126\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"144\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_2p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"162\" width=\"18\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_2p"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:81"
+  },
+  {
+   "id": "cabinets-18-circuit-breaker-3p",
+   "title": "Circuit Breaker (3P)",
+   "tags": "cabinets cb 3p cabinet  Circuit Breaker (3P)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_3p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:107"
+  },
+  {
+   "id": "cabinets-19-circuit-breaker-3p-x-5",
+   "title": "Circuit Breaker (3P x 5)",
+   "tags": "cabinet circuit breaker row",
+   "kind": "cells",
+   "width": 135,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"27\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"27\" width=\"27\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"54\" width=\"27\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"81\" width=\"27\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_3p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"108\" width=\"27\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_3p"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:109"
+  },
+  {
+   "id": "cabinets-20-circuit-breaker-4p",
+   "title": "Circuit Breaker (4P)",
+   "tags": "cabinets cb 4p cabinet  Circuit Breaker (4P)",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:125"
+  },
+  {
+   "id": "cabinets-21-circuit-breaker-4p-x-5",
+   "title": "Circuit Breaker (4P x 5)",
+   "tags": "cabinet circuit breaker row",
+   "kind": "cells",
+   "width": 180,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"36\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"36\" width=\"36\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"72\" width=\"36\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"108\" width=\"36\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_4p;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"144\" width=\"36\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_4p"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:127"
+  },
+  {
+   "id": "cabinets-22-auxiliary-contact-circuit-breaker",
+   "title": "Auxiliary Contact (Circuit Breaker)",
+   "tags": "cabinets cb auxiliary contact cabinet  Auxiliary Contact (Circuit Breaker)",
+   "kind": "vertex",
+   "width": 4.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.cb_auxiliary_contact;",
+   "shapeNames": [
+    "mxgraph.cabinets.cb_auxiliary_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:143"
+  },
+  {
+   "id": "cabinets-23-contactor-1-32a",
+   "title": "Contactor (1-32A)",
+   "tags": "cabinets contactor 1 32a cabinet  Contactor (1-32A)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.contactor_1_32a;",
+   "shapeNames": [
+    "mxgraph.cabinets.contactor_1_32a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:145"
+  },
+  {
+   "id": "cabinets-24-auxiliary-contact-contactor-1-32a",
+   "title": "Auxiliary Contact (Contactor 1-32A)",
+   "tags": "cabinets auxiliary contact contactor 1 32a cabinet  Auxiliary Contact (Contactor 1-32A)",
+   "kind": "vertex",
+   "width": 4.5,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.auxiliary_contact_contactor_1_32a;",
+   "shapeNames": [
+    "mxgraph.cabinets.auxiliary_contact_contactor_1_32a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:147"
+  },
+  {
+   "id": "cabinets-25-contactor-32-to-125a",
+   "title": "Contactor 32 to 125A",
+   "tags": "cabinets contactor 32 125a cabinet  Contactor 32 to 125A",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.contactor_32_125a;",
+   "shapeNames": [
+    "mxgraph.cabinets.contactor_32_125a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:149"
+  },
+  {
+   "id": "cabinets-26-auxiliary-contact-contactor-32-125a",
+   "title": "Auxiliary Contact (Contactor 32-125A)",
+   "tags": "cabinets auxiliary contact contactor 32 125a cabinet  Auxiliary Contact (Contactor 32-125A)",
+   "kind": "vertex",
+   "width": 4.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.auxiliary_contact_contactor_32_125a;",
+   "shapeNames": [
+    "mxgraph.cabinets.auxiliary_contact_contactor_32_125a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:151"
+  },
+  {
+   "id": "cabinets-27-contactor-125-to-400a",
+   "title": "Contactor 125 to 400A",
+   "tags": "cabinets contactor 125 400a cabinet  Contactor 125 to 400A",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.contactor_125_400a;",
+   "shapeNames": [
+    "mxgraph.cabinets.contactor_125_400a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:153"
+  },
+  {
+   "id": "cabinets-28-distribution-block-4p-125a-11-connections",
+   "title": "Distribution Block 4P 125A 11 Connections",
+   "tags": "cabinets distribution block 4p 125a 11 connections cabinet  Distribution Block 4P 125A 11 Connections",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.distribution_block_4p_125a_11_connections;",
+   "shapeNames": [
+    "mxgraph.cabinets.distribution_block_4p_125a_11_connections"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:155"
+  },
+  {
+   "id": "cabinets-29-distribution-block-4p-125a-11-connections",
+   "title": "Distribution Block 4P 125A 11 Connections",
+   "tags": "cabinets distribution block 4p 125a 11 connections 2 cabinet  Distribution Block 4P 125A 11 Connections",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.distribution_block_4p_125a_11_connections_2;",
+   "shapeNames": [
+    "mxgraph.cabinets.distribution_block_4p_125a_11_connections_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:157"
+  },
+  {
+   "id": "cabinets-30-mccb-25-63a-3p",
+   "title": "MCCB 25-63A 3P",
+   "tags": "cabinets mccb 25 63a 3p cabinet  MCCB 25-63A 3P",
+   "kind": "vertex",
+   "width": 60,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.mccb_25_63a_3p;",
+   "shapeNames": [
+    "mxgraph.cabinets.mccb_25_63a_3p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:159"
+  },
+  {
+   "id": "cabinets-31-mccb-25-63a-4p",
+   "title": "MCCB 25-63A 4P",
+   "tags": "cabinets mccb 25 63a 4p cabinet  MCCB 25-63A 4P",
+   "kind": "vertex",
+   "width": 80,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.mccb_25_63a_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.mccb_25_63a_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:161"
+  },
+  {
+   "id": "cabinets-32-mccb-63-250a-3p",
+   "title": "MCCB 63-250A 3P",
+   "tags": "cabinets mccb 63 250a 3p cabinet  MCCB 63-250A 3P",
+   "kind": "vertex",
+   "width": 70,
+   "height": 105,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.mccb_63_250a_3p;",
+   "shapeNames": [
+    "mxgraph.cabinets.mccb_63_250a_3p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:163"
+  },
+  {
+   "id": "cabinets-33-mccb-63-250a-4p",
+   "title": "MCCB 63-250A 4P",
+   "tags": "cabinets mccb 63 250a 4p cabinet  MCCB 63-250A 4P",
+   "kind": "vertex",
+   "width": 95,
+   "height": 105,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.mccb_63_250a_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.mccb_63_250a_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:165"
+  },
+  {
+   "id": "cabinets-34-motorized-switch-3p",
+   "title": "Motorized Switch 3P",
+   "tags": "cabinets motorized switch 3p cabinet  Motorized Switch 3P",
+   "kind": "vertex",
+   "width": 85,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motorized_switch_3p;",
+   "shapeNames": [
+    "mxgraph.cabinets.motorized_switch_3p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:167"
+  },
+  {
+   "id": "cabinets-35-motorized-switch-4p",
+   "title": "Motorized Switch 4P",
+   "tags": "cabinets motorized switch 4p cabinet  Motorized Switch 4P",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motorized_switch_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.motorized_switch_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:169"
+  },
+  {
+   "id": "cabinets-36-motor-circuit-breaker-1-32a",
+   "title": "Motor Circuit Breaker 1-32A",
+   "tags": "cabinets motor cb 1 32a cabinet  Motor Circuit Breaker 1-32A",
+   "kind": "vertex",
+   "width": 27,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_cb_1_32a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_cb_1_32a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:171"
+  },
+  {
+   "id": "cabinets-37-motor-circuit-breaker-32-125a",
+   "title": "Motor Circuit Breaker 32-125A",
+   "tags": "cabinets motor cb 32 125a cabinet  Motor Circuit Breaker 32-125A",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_cb_32_125a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_cb_32_125a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:173"
+  },
+  {
+   "id": "cabinets-38-motor-circuit-breaker-125-400a",
+   "title": "Motor Circuit Breaker 125-400A",
+   "tags": "cabinets motor cb 125 400a cabinet  Motor Circuit Breaker 125-400A",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_cb_125_400a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_cb_125_400a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:175"
+  },
+  {
+   "id": "cabinets-39-motor-protection-cb",
+   "title": "Motor Protection CB",
+   "tags": "cabinets motor protection cb cabinet  Motor Protection CB",
+   "kind": "vertex",
+   "width": 27,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_protection_cb;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_protection_cb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:177"
+  },
+  {
+   "id": "cabinets-40-motor-circuit-breaker-1-32a",
+   "title": "Motor Circuit Breaker 1-32A",
+   "tags": "cabinets motor starter 1 32a cabinet  Motor Circuit Breaker 1-32A",
+   "kind": "vertex",
+   "width": 27,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_starter_1_32a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_starter_1_32a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:179"
+  },
+  {
+   "id": "cabinets-41-motor-circuit-breaker-32-125a",
+   "title": "Motor Circuit Breaker 32-125A",
+   "tags": "cabinets motor starter 32 125a cabinet  Motor Circuit Breaker 32-125A",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_starter_32_125a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_starter_32_125a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:181"
+  },
+  {
+   "id": "cabinets-42-motor-circuit-breaker-125-400a",
+   "title": "Motor Circuit Breaker 125-400A",
+   "tags": "cabinets motor starter 125 400a cabinet  Motor Circuit Breaker 125-400A",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.motor_starter_125_400a;",
+   "shapeNames": [
+    "mxgraph.cabinets.motor_starter_125_400a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:183"
+  },
+  {
+   "id": "cabinets-43-overcurrent-relay-1-32a",
+   "title": "Overcurrent Relay 1-32A",
+   "tags": "cabinets overcurrent relay 1 32a cabinet  Overcurrent Relay 1-32A",
+   "kind": "vertex",
+   "width": 27,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.overcurrent_relay_1_32a;",
+   "shapeNames": [
+    "mxgraph.cabinets.overcurrent_relay_1_32a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:185"
+  },
+  {
+   "id": "cabinets-44-overcurrent-relay-32-125a",
+   "title": "Overcurrent Relay 32-125A",
+   "tags": "cabinets overcurrent relay 32 125a cabinet  Overcurrent Relay 32-125A",
+   "kind": "vertex",
+   "width": 30,
+   "height": 16.5,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.overcurrent_relay_32_125a;",
+   "shapeNames": [
+    "mxgraph.cabinets.overcurrent_relay_32_125a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:187"
+  },
+  {
+   "id": "cabinets-45-overcurrent-relay-125-400a",
+   "title": "Overcurrent Relay 125-400A",
+   "tags": "cabinets overcurrent relay 125 400a cabinet  Overcurrent Relay 125-400A",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.overcurrent_relay_125_400a;",
+   "shapeNames": [
+    "mxgraph.cabinets.overcurrent_relay_125_400a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:189"
+  },
+  {
+   "id": "cabinets-46-plugin-relay",
+   "title": "Plugin Relay",
+   "tags": "cabinets plugin relay 1 cabinet  Plugin Relay",
+   "kind": "vertex",
+   "width": 3,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.plugin_relay_1;",
+   "shapeNames": [
+    "mxgraph.cabinets.plugin_relay_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:191"
+  },
+  {
+   "id": "cabinets-47-plugin-relay",
+   "title": "Plugin Relay",
+   "tags": "cabinets plugin relay 2 cabinet  Plugin Relay",
+   "kind": "vertex",
+   "width": 12,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.plugin_relay_2;",
+   "shapeNames": [
+    "mxgraph.cabinets.plugin_relay_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:193"
+  },
+  {
+   "id": "cabinets-48-din-rail",
+   "title": "DIN Rail",
+   "tags": "cabinets din rail cabinet  DIN Rail",
+   "kind": "vertex",
+   "width": 500,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.din_rail;",
+   "shapeNames": [
+    "mxgraph.cabinets.din_rail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:195"
+  },
+  {
+   "id": "cabinets-49-residual-current-device-2p",
+   "title": "Residual Current Device 2p",
+   "tags": "cabinets residual current device 2p cabinet  Residual Current Device 2p",
+   "kind": "vertex",
+   "width": 18,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.residual_current_device_2p;",
+   "shapeNames": [
+    "mxgraph.cabinets.residual_current_device_2p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:197"
+  },
+  {
+   "id": "cabinets-50-residual-current-device-4p",
+   "title": "Residual Current Device 4p",
+   "tags": "cabinets residual current device 4p cabinet  Residual Current Device 4p",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.residual_current_device_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.residual_current_device_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:199"
+  },
+  {
+   "id": "cabinets-51-surge-protection-1p",
+   "title": "Surge Protection 1p",
+   "tags": "cabinets surge protection 1p cabinet  Surge Protection 1p",
+   "kind": "vertex",
+   "width": 9,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.surge_protection_1p;",
+   "shapeNames": [
+    "mxgraph.cabinets.surge_protection_1p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:201"
+  },
+  {
+   "id": "cabinets-52-surge-protection-2p",
+   "title": "Surge Protection 2p",
+   "tags": "cabinets surge protection 2p cabinet  Surge Protection 2p",
+   "kind": "vertex",
+   "width": 18,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.surge_protection_2p;",
+   "shapeNames": [
+    "mxgraph.cabinets.surge_protection_2p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:203"
+  },
+  {
+   "id": "cabinets-53-surge-protection-3p",
+   "title": "Surge Protection 3p",
+   "tags": "cabinets surge protection 3p cabinet  Surge Protection 3p",
+   "kind": "vertex",
+   "width": 27,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.surge_protection_3p;",
+   "shapeNames": [
+    "mxgraph.cabinets.surge_protection_3p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:205"
+  },
+  {
+   "id": "cabinets-54-surge-protection-4p",
+   "title": "Surge Protection 4p",
+   "tags": "cabinets surge protection 4p cabinet  Surge Protection 4p",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.surge_protection_4p;",
+   "shapeNames": [
+    "mxgraph.cabinets.surge_protection_4p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:207"
+  },
+  {
+   "id": "cabinets-55-terminal-4mm2",
+   "title": "Terminal 4mm2",
+   "tags": "cabinets terminal 4mm2 cabinet  Terminal 4mm2",
+   "kind": "vertex",
+   "width": 2.5,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_4mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_4mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:209"
+  },
+  {
+   "id": "cabinets-56-terminal-4mm2-x10",
+   "title": "Terminal 4mm2 x10",
+   "tags": "cabinets terminal 4mm2 x10 cabinet  Terminal 4mm2 x10",
+   "kind": "vertex",
+   "width": 25,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_4mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_4mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:211"
+  },
+  {
+   "id": "cabinets-57-terminal-4-6mm2",
+   "title": "Terminal 4-6mm2",
+   "tags": "cabinets terminal 4 6mm2 cabinet  Terminal 4-6mm2",
+   "kind": "vertex",
+   "width": 2.5,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_4_6mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_4_6mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:213"
+  },
+  {
+   "id": "cabinets-58-terminal-4-6mm2-x10",
+   "title": "Terminal 4-6mm2 x10",
+   "tags": "cabinets terminal 4 6mm2 x10 cabinet  Terminal 4-6mm2 x10",
+   "kind": "vertex",
+   "width": 25,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_4_6mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_4_6mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:215"
+  },
+  {
+   "id": "cabinets-59-terminal-6-25mm2",
+   "title": "Terminal 6-25mm2",
+   "tags": "cabinets terminal 6 25mm2 cabinet  Terminal 6-25mm2",
+   "kind": "vertex",
+   "width": 5,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_6_25mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_6_25mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:217"
+  },
+  {
+   "id": "cabinets-60-terminal-6-25mm2-x10",
+   "title": "Terminal 6-25mm2 x10",
+   "tags": "cabinets terminal 6 25mm2 x10 cabinet  Terminal 6-25mm2 x10",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_6_25mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_6_25mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:219"
+  },
+  {
+   "id": "cabinets-61-terminal-40mm2",
+   "title": "Terminal 40mm2",
+   "tags": "cabinets terminal 40mm2 cabinet  Terminal 40mm2",
+   "kind": "vertex",
+   "width": 11,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_40mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_40mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:221"
+  },
+  {
+   "id": "cabinets-62-terminal-40mm2-x10",
+   "title": "Terminal 40mm2 x10",
+   "tags": "cabinets terminal 40mm2 x10 cabinet  Terminal 40mm2 x10",
+   "kind": "vertex",
+   "width": 110.00000000000001,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_40mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_40mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:223"
+  },
+  {
+   "id": "cabinets-63-terminal-50mm2",
+   "title": "Terminal 50mm2",
+   "tags": "cabinets terminal 50mm2 cabinet  Terminal 50mm2",
+   "kind": "vertex",
+   "width": 12.5,
+   "height": 55.00000000000001,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_50mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_50mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:225"
+  },
+  {
+   "id": "cabinets-64-terminal-50mm2-x10",
+   "title": "Terminal 50mm2 x10",
+   "tags": "cabinets terminal 50mm2 x10 cabinet  Terminal 50mm2 x10",
+   "kind": "vertex",
+   "width": 125,
+   "height": 55.00000000000001,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_50mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_50mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:227"
+  },
+  {
+   "id": "cabinets-65-terminal-75mm2",
+   "title": "Terminal 75mm2",
+   "tags": "cabinets terminal 75mm2 cabinet  Terminal 75mm2",
+   "kind": "vertex",
+   "width": 15,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_75mm2;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_75mm2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:229"
+  },
+  {
+   "id": "cabinets-66-terminal-75mm2-x10",
+   "title": "Terminal 75mm2 x10",
+   "tags": "cabinets terminal 75mm2 x10 cabinet  Terminal 75mm2 x10",
+   "kind": "vertex",
+   "width": 150,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;dashed=0;shadow=0;html=1;align=center;verticalAlign=top;shape=mxgraph.cabinets.terminal_75mm2_x10;",
+   "shapeNames": [
+    "mxgraph.cabinets.terminal_75mm2_x10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cabinet.js:231"
+  }
+ ]
+}

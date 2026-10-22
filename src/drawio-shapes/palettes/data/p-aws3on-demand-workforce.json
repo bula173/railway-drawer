@@ -1,0 +1,78 @@
+{
+ "id": "aws3On Demand Workforce",
+ "title": "AWS17 / On-Demand Workforce",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3On Demand Workforce-0-mechanical-turk",
+   "title": "Mechanical Turk",
+   "tags": "aws3 mechanical turk aws amazon web service on demand workforce Mechanical Turk",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mechanical_turk;fillColor=#ACACAC;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mechanical_turk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:912"
+  },
+  {
+   "id": "aws3On Demand Workforce-1-human-intelligence-tasks-hit",
+   "title": "Human Intelligence Tasks HIT",
+   "tags": "aws3 human intelligence tasks hit aws amazon web service on demand workforce Human Intelligence Tasks HIT",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 55.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.human_intelligence_tasks_hit;fillColor=#ACACAC;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.human_intelligence_tasks_hit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:914"
+  },
+  {
+   "id": "aws3On Demand Workforce-2-requester",
+   "title": "Requester",
+   "tags": "aws3 requester aws amazon web service on demand workforce Requester",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.requester;fillColor=#ACACAC;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.requester"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:916"
+  },
+  {
+   "id": "aws3On Demand Workforce-3-workers",
+   "title": "Workers",
+   "tags": "aws3 workers aws amazon web service on demand workforce Workers",
+   "kind": "vertex",
+   "width": 66,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#ACACAC;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:918"
+  },
+  {
+   "id": "aws3On Demand Workforce-4-assignment-task",
+   "title": "Assignment/Task",
+   "tags": "aws3 assignment task aws amazon web service on demand workforce Assignment/Task",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.assignment_task;fillColor=#ACACAC;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.assignment_task"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:920"
+  }
+ ]
+}

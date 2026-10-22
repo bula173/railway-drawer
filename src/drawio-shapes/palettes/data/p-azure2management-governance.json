@@ -1,0 +1,498 @@
+{
+ "id": "azure2Management Governance",
+ "title": "Azure / Management and Governance",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Management Governance-0-activity-log",
+   "title": "Activity Log",
+   "tags": "azure2 activity log azure management governance  Activity Log",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Activity_Log.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.988,0.083,0],[0.991,0.922,0],[0.009,0.922,0],[0.012,0.083,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1217"
+  },
+  {
+   "id": "azure2Management Governance-1-advisor",
+   "title": "Advisor",
+   "tags": "azure2 advisor azure management governance  Advisor",
+   "kind": "vertex",
+   "width": 66,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Advisor.svg;points=[[0.514,0.003,0],[0.5,0.929,0],[0,0.474,0],[1,0.517,0],[0.705,0.073,0],[0.71,0.992,0],[0.095,0.683,0],[0.1,0.261,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1219"
+  },
+  {
+   "id": "azure2Management Governance-2-alerts",
+   "title": "Alerts",
+   "tags": "azure2 alerts azure management governance  Alerts",
+   "kind": "vertex",
+   "width": 67,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Alerts.svg;points=[[0.5,0,0],[0.674,1,0],[0,0.424,0],[1,0.424,0],[0.99,0.009,0],[0.985,0.841,0],[0.015,0.844,0],[0.01,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1221"
+  },
+  {
+   "id": "azure2Management Governance-3-application-insights",
+   "title": "Application Insights",
+   "tags": "azure2 application insights azure management governance  Application Insights",
+   "kind": "vertex",
+   "width": 44,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Application_Insights.svg;points=[[0.5,0,0],[0.5,1,0],[0.061,0.5,0],[0.939,0.5,0],[0.91,0.145,0],[0.67,0.945,0],[0.327,0.942,0],[0.09,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1223"
+  },
+  {
+   "id": "azure2Management Governance-4-arc",
+   "title": "Arc",
+   "tags": "azure2 arc azure management governance  Arc",
+   "kind": "vertex",
+   "width": 69,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Azure_Arc.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.997,0.15,0],[1,0.847,0],[0,0.847,0],[0,0.153,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1225"
+  },
+  {
+   "id": "azure2Management Governance-5-arc-machines",
+   "title": "Arc Machines",
+   "tags": "azure2 arc machines azure management governance  Arc Machines",
+   "kind": "vertex",
+   "width": 64.75999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Arc_Machines.svg;points=[[0.5,0,0],[0.487,1,0],[0,0.791,0],[1,0.784,0],[0.75,0.01,0],[0.976,0.885,0],[0.019,0.887,0],[0.25,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1227"
+  },
+  {
+   "id": "azure2Management Governance-6-automation-accounts",
+   "title": "Automation Accounts",
+   "tags": "azure2 automation accounts azure management governance  Automation Accounts",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Automation_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.877,0.168,0],[0.812,0.887,0],[0.268,0.982,0],[0.173,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1229"
+  },
+  {
+   "id": "azure2Management Governance-7-blueprints",
+   "title": "Blueprints",
+   "tags": "azure2 blueprints azure management governance  Blueprints",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Blueprints.svg;points=[[0.5,0.091,0],[0.5,0.77,0],[0,0.5,0],[1,0.536,0],[0.952,0.125,0],[0.952,0.979,0],[0.05,0.738,0],[0.025,0.036,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1231"
+  },
+  {
+   "id": "azure2Management Governance-8-compliance",
+   "title": "Compliance",
+   "tags": "azure2 compliance azure management governance  Compliance",
+   "kind": "vertex",
+   "width": 52,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Compliance.svg;points=[[0.5,0.003,0],[0.5,0.998,0],[0,0.5,0],[1,0.5,0],[0.996,0.333,0],[0.993,0.985,0],[0.007,0.985,0],[0.007,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1233"
+  },
+  {
+   "id": "azure2Management Governance-9-cost-management-and-billing",
+   "title": "Cost Management and Billing",
+   "tags": "azure2 cost management billing azure management governance  Cost Management and Billing",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Cost_Management_and_Billing.svg;points=[[0.472,0,0],[0.468,1,0],[0,0.53,0],[1,0.532,0],[0.825,0.145,0],[0.822,0.847,0],[0.118,0.842,0],[0.143,0.19,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1235"
+  },
+  {
+   "id": "azure2Management Governance-10-customer-lockbox-for-ms-azure",
+   "title": "Customer Lockbox for MS Azure",
+   "tags": "azure2 customer lockbox for ms azure azure management governance  Customer Lockbox for MS Azure",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.4,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Customer_Lockbox_for_MS_Azure.svg;points=[[0.434,0,0],[0.5,0.972,0],[0.194,0.5,0],[0.998,0.877,0],[0.605,0.069,0],[0.982,0.997,0],[0.033,0.956,0],[0.263,0.069,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1237"
+  },
+  {
+   "id": "azure2Management Governance-11-diagnostics-settings",
+   "title": "Diagnostics Settings",
+   "tags": "azure2 diagnostics settings azure management governance  Diagnostics Settings",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Diagnostics_Settings.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0.093,0],[0.994,0.92,0],[0.006,0.92,0],[0,0.093,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1239"
+  },
+  {
+   "id": "azure2Management Governance-12-education",
+   "title": "Education",
+   "tags": "azure2 education azure management governance  Education",
+   "kind": "vertex",
+   "width": 67,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Education.svg;points=[[0.489,0,0],[0.507,1,0],[0.201,0.5,0],[0.846,0.5,0],[0.985,0.3,0],[0.772,0.919,0],[0.235,0.912,0],[0.01,0.307,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1241"
+  },
+  {
+   "id": "azure2Management Governance-13-intune-trends",
+   "title": "Intune Trends",
+   "tags": "azure2 intune trends azure management governance  Intune Trends",
+   "kind": "vertex",
+   "width": 56.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Intune_Trends.svg;points=[[0.391,0.168,0],[0.5,1,0],[0.011,0.5,0],[1,0.497,0],[1,0.005,0],[1,0.99,0],[0.003,0.995,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1243"
+  },
+  {
+   "id": "azure2Management Governance-14-landing-zone",
+   "title": "Landing Zone",
+   "tags": "azure2 landing zone azure management governance  Landing Zone",
+   "kind": "vertex",
+   "width": 67.72,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Landing_Zone.svg;points=[[0.516,0,0],[0.5,1,0],[0,0.454,0],[1,0.5,0],[0.738,0.1,0],[0.836,1,0],[0.169,1,0],[0.058,0.29,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1245"
+  },
+  {
+   "id": "azure2Management Governance-15-lighthouse",
+   "title": "Lighthouse",
+   "tags": "azure2 lighthouse azure management governance  Lighthouse",
+   "kind": "vertex",
+   "width": 59,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Azure_Lighthouse.svg;points=[[0.496,0,0],[0.5,1,0],[0.21,0.5,0],[0.796,0.5,0],[0.775,0.14,0],[0.997,0.985,0],[0.003,0.985,0],[0.219,0.138,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1247"
+  },
+  {
+   "id": "azure2Management Governance-16-log-analytics-workspaces",
+   "title": "Log Analytics Workspaces",
+   "tags": "azure2 log analytics workspaces azure management governance  Log Analytics Workspaces",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Log_Analytics_Workspaces.svg;points=[[0.5,0.03,0],[0.5,1,0],[0,0.5,0],[0.97,0.5,0],[0.88,0.083,0],[0.005,0.985,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1249"
+  },
+  {
+   "id": "azure2Management Governance-17-machinesazurearc",
+   "title": "MachinesAzureArc",
+   "tags": "azure2 machines arc azure management governance  MachinesAzureArc",
+   "kind": "vertex",
+   "width": 44,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/MachinesAzureArc.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.992,0.015,0],[0.992,0.985,0],[0.008,0.985,0],[0.008,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1251"
+  },
+  {
+   "id": "azure2Management Governance-18-managed-applications-center",
+   "title": "Managed Applications Center",
+   "tags": "azure2 managed applications center azure management governance  Managed Applications Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 54,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Managed_Applications_Center.svg;points=[[0.5,0.003,0],[0.5,0.893,0],[0,0.818,0],[0.917,0.5,0],[0.955,0.136,0],[0.837,0.713,0],[0.045,0.943,0],[0.178,0.214,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1253"
+  },
+  {
+   "id": "azure2Management Governance-19-managed-desktop",
+   "title": "Managed Desktop",
+   "tags": "azure2 managed desktop azure management governance  Managed Desktop",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Managed_Desktop.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.987,0.008,0],[0.75,0.997,0],[0.25,0.997,0],[0.013,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1255"
+  },
+  {
+   "id": "azure2Management Governance-20-metrics",
+   "title": "Metrics",
+   "tags": "azure2 metrics azure management governance  Metrics",
+   "kind": "vertex",
+   "width": 60,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Metrics.svg;points=[[0.5,1,0],[0.003,0.571,0],[0.979,0.5,0],[0.975,0.035,0],[0.975,0.992,0],[0.025,0.99,0],[0.266,0.223,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1257"
+  },
+  {
+   "id": "azure2Management Governance-21-monitor",
+   "title": "Monitor",
+   "tags": "azure2 monitor azure management governance  Monitor",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Monitor.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.87,0.163,0],[0.837,0.87,0],[0.163,0.87,0],[0.153,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1259"
+  },
+  {
+   "id": "azure2Management Governance-22-my-customers",
+   "title": "My Customers",
+   "tags": "azure2 my customers azure management governance  My Customers",
+   "kind": "vertex",
+   "width": 69,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/My_Customers.svg;points=[[0.375,0,0],[0.5,0.997,0],[0.189,0.5,0],[0.871,0.5,0],[0.835,0.197,0],[0.985,0.821,0],[0.03,0.984,0],[0.243,0.056,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1261"
+  },
+  {
+   "id": "azure2Management Governance-23-operation-log-classic",
+   "title": "Operation Log (Classic)",
+   "tags": "azure2 operation log classic azure management governance  Operation Log (Classic)",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Operation_Log_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.988,0.083,0],[0.991,0.922,0],[0.009,0.922,0],[0.012,0.083,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1263"
+  },
+  {
+   "id": "azure2Management Governance-24-policy",
+   "title": "Policy",
+   "tags": "azure2 policy azure management governance  Policy",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Policy.svg;points=[[0.459,0.003,0],[0.465,0.998,0],[0,0.499,0],[1,0.499,0],[0.986,0.208,0],[0.984,0.79,0],[0,0.75,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1265"
+  },
+  {
+   "id": "azure2Management Governance-25-recovery-services-vaults",
+   "title": "Recovery Services Vaults",
+   "tags": "azure2 recovery services vaults azure management governance  Recovery Services Vaults",
+   "kind": "vertex",
+   "width": 69,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Recovery_Services_Vaults.svg;points=[[0.5,0.043,0],[0.405,1,0],[0,0.763,0],[1,0.432,0],[0.775,0.058,0],[0.72,0.954,0],[0.078,0.945,0],[0.305,0.225,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1267"
+  },
+  {
+   "id": "azure2Management Governance-26-resource-graph-explorer",
+   "title": "Resource Graph Explorer",
+   "tags": "azure2 resource graph explorer azure management governance  Resource Graph Explorer",
+   "kind": "vertex",
+   "width": 67,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Resource_Graph_Explorer.svg;points=[[0.838,0,0],[0.499,0.901,0],[0,0.185,0],[0.998,0.166,0],[0.952,0.048,0],[0.802,0.952,0],[0.045,0.084,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1269"
+  },
+  {
+   "id": "azure2Management Governance-27-resources-provider",
+   "title": "Resources Provider",
+   "tags": "azure2 resources provider azure management governance  Resources Provider",
+   "kind": "vertex",
+   "width": 60.440000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Resources_Provider.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.971,0.233,0],[0.977,0.762,0],[0.023,0.762,0],[0.023,0.238,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1271"
+  },
+  {
+   "id": "azure2Management Governance-28-scheduler-job-collections",
+   "title": "Scheduler Job Collections",
+   "tags": "azure2 scheduler job collections azure management governance  Scheduler Job Collections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Scheduler_Job_Collections.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.499,0],[0.997,0.112,0],[0.995,0.888,0],[0.005,0.888,0],[0.005,0.112,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1273"
+  },
+  {
+   "id": "azure2Management Governance-29-service-catalog-mad",
+   "title": "Service Catalog MAD",
+   "tags": "azure2 service catalog mad azure management governance  Service Catalog MAD",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Service_Catalog_MAD.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.5,0],[0.987,0.085,0],[0.99,0.922,0],[0.01,0.922,0],[0.013,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1275"
+  },
+  {
+   "id": "azure2Management Governance-30-service-group-relationships",
+   "title": "Service Group Relationships",
+   "tags": "azure2 service group relationships azure management governance  Service Group Relationships",
+   "kind": "vertex",
+   "width": 61.480000000000004,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Service_Group_Relationships.svg;points=[[0.753,0,0],[0.254,1,0],[0,0.75,0],[1,0.25,0],[0.98,0.113,0],[0.801,0.81,0],[0.02,0.887,0],[0.023,0.61,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1277"
+  },
+  {
+   "id": "azure2Management Governance-31-service-providers",
+   "title": "Service Providers",
+   "tags": "azure2 service providers azure management governance  Service Providers",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Service_Providers.svg;points=[[0.418,0.003,0],[0.5,0.895,0],[0.134,0.5,0],[1,0.779,0],[0.6,0.085,0],[0.994,0.992,0],[0.011,0.862,0],[0.235,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1279"
+  },
+  {
+   "id": "azure2Management Governance-32-solutions",
+   "title": "Solutions",
+   "tags": "azure2 solutions azure management governance  Solutions",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/solutions.svg;points=[[0.5,0.03,0],[0.416,1,0],[0,0.5,0],[0.968,0.5,0],[0.89,0.093,0],[0.552,0.985,0],[0.013,0.99,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1281"
+  },
+  {
+   "id": "azure2Management Governance-33-universal-print",
+   "title": "Universal Print",
+   "tags": "azure2 universal print azure management governance  Universal Print",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.99999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/Universal_Print.svg;points=[[0.512,0,0],[0.5,1,0],[0,0.525,0],[1,0.5,0],[0.877,0.191,0],[1,0.9,0],[0.095,0.759,0],[0.098,0.291,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1283"
+  },
+  {
+   "id": "azure2Management Governance-34-user-privacy",
+   "title": "User Privacy",
+   "tags": "azure2 user privacy azure management governance  User Privacy",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/management_governance/User_Privacy.svg;points=[[0.445,0,0],[0.5,0.915,0],[0.161,0.5,0],[1,0.69,0],[0.638,0.083,0],[0.915,0.905,0],[0.014,0.885,0],[0.256,0.08,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1285"
+  }
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "id": "clipart",
+ "title": "Clipart / Various",
+ "drawioTag": "v32.4.1",
+ "source": "",
+ "entries": [
+  {
+   "id": "clipart-0-battery-0",
+   "title": "Battery 0%",
+   "tags": "battery 0%",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Battery_0_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-1-battery-100",
+   "title": "Battery 100%",
+   "tags": "battery 100%",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Battery_100_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-2-battery-50",
+   "title": "Battery 50%",
+   "tags": "battery 50%",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Battery_50_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-3-battery-75",
+   "title": "Battery 75%",
+   "tags": "battery 75%",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Battery_75_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-4-battery",
+   "title": "Battery",
+   "tags": "battery",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Battery_allstates_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-5-bluetooth",
+   "title": "Bluetooth",
+   "tags": "bluetooth",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Bluetooth_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-6-globe",
+   "title": "Globe",
+   "tags": "globe",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Earth_globe_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-7-empty-folder",
+   "title": "Empty Folder",
+   "tags": "empty folder",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Empty_Folder_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-8-full-folder",
+   "title": "Full Folder",
+   "tags": "full folder",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Full_Folder_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-9-gear",
+   "title": "Gear",
+   "tags": "gear",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Gear_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-10-keys",
+   "title": "Keys",
+   "tags": "keys",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Keys_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-11-lock",
+   "title": "Lock",
+   "tags": "lock",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Lock_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-12-mousepointer",
+   "title": "Mousepointer",
+   "tags": "mousepointer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Mouse_Pointer_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-13-plug",
+   "title": "Plug",
+   "tags": "plug",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Plug_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-14-ships-wheel",
+   "title": "Ships Wheel",
+   "tags": "ships wheel",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Ships_Wheel_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-15-star",
+   "title": "Star",
+   "tags": "star",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Star_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  },
+  {
+   "id": "clipart-16-tire",
+   "title": "Tire",
+   "tags": "tire",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/general/Tire_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1518"
+  }
+ ]
+}

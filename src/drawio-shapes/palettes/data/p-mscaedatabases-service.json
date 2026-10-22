@@ -1,0 +1,274 @@
+{
+ "id": "mscaeDatabases Service",
+ "title": "CAE / Databases Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeDatabases Service-0-azure-cache-for-redis",
+   "title": "Azure Cache for Redis",
+   "tags": "mscae azure cache for redis ms microsoft cloud enterprise database databases db service Azure Cache for Redis",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Cache_for_Redis.svg;points=[[0.5,0.317,0],[0.502,0.998,0],[0,0.5,0],[1,0.5,0],[0.977,0.05,0],[0.725,0.942,0],[0.27,0.937,0],[0.013,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:808"
+  },
+  {
+   "id": "mscaeDatabases Service-1-cache-plus-redis",
+   "title": "Cache plus Redis",
+   "tags": "mscae cache including plus redis ms microsoft cloud enterprise database databases db service Cache plus Redis",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cache_including_Redis.svg;points=[[0.38,0,0],[0.496,0.989,0],[0,0.489,0],[0.993,0.5,0],[0.74,0.073,0],[0.982,0.93,0],[0.023,0.905,0],[0.033,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:810"
+  },
+  {
+   "id": "mscaeDatabases Service-2-cosmosdb",
+   "title": "CosmosDB",
+   "tags": "mscae cosmosdb db database ms microsoft cloud enterprise database databases db service CosmosDB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CosmosDB.svg;points=[[0.5,0.164,0],[0.5,0.836,0],[0.164,0.5,0],[0.836,0.5,0],[0.967,0.015,0],[0.992,0.877,0],[0.015,0.967,0],[0.165,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:812"
+  },
+  {
+   "id": "mscaeDatabases Service-3-database-generic",
+   "title": "Database (generic)",
+   "tags": "mscae database generic ms microsoft cloud enterprise database databases db service Database (generic)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Database_General.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.499,0],[0.973,0.093,0],[0.983,0.897,0],[0.024,0.905,0],[0.024,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:814"
+  },
+  {
+   "id": "mscaeDatabases Service-4-azure-database-for-mariadb-servers",
+   "title": "Azure Database for MariaDB servers",
+   "tags": "mscae azure database for mariadb servers ms microsoft cloud enterprise database databases db service Azure Database for MariaDB servers",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/aspect=fixed;html=1;perimeter=none;align=center;shadow=0;dashed=0;fontSize=12;image=img/lib/mscae/Azure_Database_for_MariaDB_servers.svg;points=[[0.503,0,0],[0.507,1,0],[0,0.5,0],[1,0.502,0],[0.99,0.105,0],[0.98,0.91,0],[0.02,0.907,0],[0.02,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:816"
+  },
+  {
+   "id": "mscaeDatabases Service-5-azure-database-for-mysql-servers",
+   "title": "Azure Database for MySQL servers",
+   "tags": "mscae azure database db for mysql servers ms microsoft cloud enterprise database databases db service Azure Database for MySQL servers",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Database_for_MySQL_servers.svg;points=[[0.503,0,0],[0.507,1,0],[0,0.5,0],[1,0.502,0],[0.99,0.105,0],[0.98,0.91,0],[0.02,0.907,0],[0.02,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:818"
+  },
+  {
+   "id": "mscaeDatabases Service-6-azure-database-for-postgresql-servers",
+   "title": "Azure Database for PostgreSQL servers",
+   "tags": "mscae azure database db for postgresql servers ms microsoft cloud enterprise database databases db service Azure Database for PostgreSQL servers",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Database_for_PostgreSQL_servers.svg;points=[[0.502,0,0],[0.508,0.995,0],[0,0.495,0],[1,0.499,0],[0.99,0.1,0],[0.986,0.9,0],[0.024,0.902,0],[0.02,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:820"
+  },
+  {
+   "id": "mscaeDatabases Service-7-azure-sql-datawarehouse",
+   "title": "Azure SQL DataWarehouse",
+   "tags": "mscae azure sql datawarehouse ms microsoft cloud enterprise database databases db service Azure SQL DataWarehouse",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SQL_DataWarehouse.svg;points=[[0.5,0.068,0],[0.79,1,0],[0.074,0.5,0],[1,0.5,0],[0.75,0.204,0],[0.982,0.953,0],[0.075,0.682,0],[0,0.204,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:822"
+  },
+  {
+   "id": "mscaeDatabases Service-8-blob-storage",
+   "title": "Blob Storage",
+   "tags": "mscae blob storage ms microsoft cloud enterprise database databases db service Blob Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/BlobBlock.svg;points=[[0.5,0,0],[0.499,0.994,0],[0,0.496,0],[1,0.496,0],[0.985,0.006,0],[0.987,0.985,0],[0.013,0.985,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:824"
+  },
+  {
+   "id": "mscaeDatabases Service-9-data-lake",
+   "title": "Data Lake",
+   "tags": "mscae data lake ms microsoft cloud enterprise database databases db service Data Lake",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Lake.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.5,0],[0.997,0.5,0],[0.98,0.1,0],[0.98,0.9,0],[0.017,0.902,0],[0.02,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:826"
+  },
+  {
+   "id": "mscaeDatabases Service-10-elastic-database-pools",
+   "title": "Elastic Database Pools",
+   "tags": "mscae elastic database pools ms microsoft cloud enterprise database databases db service Elastic Database Pools",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Elastic_Database_Pools.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.5,0],[1,0.5,0],[0.77,0.23,0],[0.77,0.77,0],[0.23,0.77,0],[0.23,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:828"
+  },
+  {
+   "id": "mscaeDatabases Service-11-elastic-job-agents",
+   "title": "Elastic Job Agents",
+   "tags": "mscae elastic job agents ms microsoft cloud enterprise database databases db service Elastic Job Agents",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Elastic_Job_Agents.svg;points=[[0.51,0,0],[0.499,1,0],[0,0.705,0],[0.858,0.5,0],[0.964,0.15,0],[1,0.797,0],[0,0.797,0],[0.167,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:830"
+  },
+  {
+   "id": "mscaeDatabases Service-12-managed-databases",
+   "title": "Managed Databases",
+   "tags": "mscae managed databases ms microsoft cloud enterprise database databases db service Managed Databases",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Managed_Databases.svg;points=[[0.5,0.007,0],[0.54,1,0],[0,0.5,0],[0.783,0.5,0],[0.731,0.098,0],[0.976,0.955,0],[0.022,0.907,0],[0.019,0.098,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:832"
+  },
+  {
+   "id": "mscaeDatabases Service-13-sql-databases",
+   "title": "SQL Databases",
+   "tags": "mscae sql databases ms microsoft cloud enterprise database databases db service SQL Databases",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SQL_Database_generic.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.499,0],[0.973,0.093,0],[0.973,0.907,0],[0.024,0.905,0],[0.024,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:834"
+  },
+  {
+   "id": "mscaeDatabases Service-14-sql-managed-instances",
+   "title": "SQL Managed Instances",
+   "tags": "mscae sql managed instances ms microsoft cloud enterprise database databases db service SQL Managed Instances",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SQL_Managed_Instances.svg;points=[[0.612,0,0],[0.612,1,0],[0,0.805,0],[1,0.5,0],[0.98,0.018,0],[0.986,0.975,0],[0.043,0.907,0],[0.237,0.025,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:836"
+  },
+  {
+   "id": "mscaeDatabases Service-15-sql-server-stretch-db",
+   "title": "SQL Server Stretch DB",
+   "tags": "mscae sql server stretch db database ms microsoft cloud enterprise database databases db service SQL Server Stretch DB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/dep/SQL_Server_Stretch_DB.svg;points=[[0.5,0,0],[0.502,1,0],[0.089,0.5,0],[0.909,0.5,0],[0.985,0.1,0],[0.99,0.895,0],[0.015,0.9,0],[0.02,0.095,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:838"
+  },
+  {
+   "id": "mscaeDatabases Service-16-sql-servers",
+   "title": "SQL Servers",
+   "tags": "mscae sql servers ms microsoft cloud enterprise database databases db service SQL Servers",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SQL_Servers.svg;points=[[0.5,0.007,0],[0.5,0.989,0],[0,0.496,0],[0.75,0.5,0],[0.72,0.08,0],[0.902,0.985,0],[0.015,0.9,0],[0.025,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:840"
+  },
+  {
+   "id": "mscaeDatabases Service-17-virtual-clusters",
+   "title": "Virtual Clusters",
+   "tags": "mscae virtual clusters ms microsoft cloud enterprise database databases db service Virtual Clusters",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Clusters.svg;points=[[0.5,0,0],[0.5,1,0],[0.035,0.5,0],[0.965,0.5,0],[0.945,0.013,0],[0.76,0.963,0],[0.24,0.963,0],[0.055,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:842"
+  },
+  {
+   "id": "mscaeDatabases Service-18-virtual-datacenter",
+   "title": "Virtual Datacenter",
+   "tags": "mscae virtual datacenter ms microsoft cloud enterprise database databases db service Virtual Datacenter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Datacenter.svg;points=[[0.54,0,0],[0.5,0.958,0],[0,0.385,0],[1,0.445,0],[0.712,0.063,0],[0.857,0.94,0],[0.208,0.932,0],[0.075,0.21,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:844"
+  }
+ ]
+}

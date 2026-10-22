@@ -1,0 +1,442 @@
+{
+ "id": "aws3Database",
+ "title": "AWS17 / Database",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Database-0-dynamo-db",
+   "title": "Dynamo DB",
+   "tags": "aws3 dynamo aws amazon web service db database Dynamo DB",
+   "kind": "vertex",
+   "width": 72,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.dynamo_db"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:311"
+  },
+  {
+   "id": "aws3Database-1-elasticache",
+   "title": "ElastiCache",
+   "tags": "aws3 elasticache elastic cache aws amazon web service db database ElastiCache",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elasticache;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elasticache"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:313"
+  },
+  {
+   "id": "aws3Database-2-rds",
+   "title": "RDS",
+   "tags": "aws3 rds aws amazon web service db database RDS",
+   "kind": "vertex",
+   "width": 72,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rds;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rds"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:315"
+  },
+  {
+   "id": "aws3Database-3-redshift",
+   "title": "Redshift",
+   "tags": "aws3 redshift aws amazon web service db database Redshift",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redshift;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.redshift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:317"
+  },
+  {
+   "id": "aws3Database-4-redis",
+   "title": "Redis",
+   "tags": "aws3 redis aws amazon web service db database Redis",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redis;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.redis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:319"
+  },
+  {
+   "id": "aws3Database-5-rds-db-instance",
+   "title": "RDS DB Instance",
+   "tags": "aws3 rds instance aws amazon web service db database RDS DB Instance",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rds_db_instance;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rds_db_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:321"
+  },
+  {
+   "id": "aws3Database-6-rds-db-instance-read-replica",
+   "title": "RDS DB Instance Read Replica",
+   "tags": "aws3 rds instance read replica aws amazon web service db database RDS DB Instance Read Replica",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rds_db_instance_read_replica;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rds_db_instance_read_replica"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:323"
+  },
+  {
+   "id": "aws3Database-7-oracle-db-instance",
+   "title": "Oracle DB Instance",
+   "tags": "aws3 oracle instance aws amazon web service db database Oracle DB Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.oracle_db_instance;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.oracle_db_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:325"
+  },
+  {
+   "id": "aws3Database-8-piop",
+   "title": "PIOP",
+   "tags": "aws3 piop aws amazon web service db database PIOP",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.piop;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.piop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:327"
+  },
+  {
+   "id": "aws3Database-9-attribute",
+   "title": "Attribute",
+   "tags": "aws3 attribute aws amazon web service db database Attribute",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.attribute;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.attribute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:329"
+  },
+  {
+   "id": "aws3Database-10-attributes",
+   "title": "Attributes",
+   "tags": "aws3 attributes aws amazon web service db database Attributes",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.attributes;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.attributes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:331"
+  },
+  {
+   "id": "aws3Database-11-item",
+   "title": "Item",
+   "tags": "aws3 item aws amazon web service db database Item",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.item;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.item"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:333"
+  },
+  {
+   "id": "aws3Database-12-global-secondary-index",
+   "title": "Global Secondary Index",
+   "tags": "aws3 global secondary index aws amazon web service db database Global Secondary Index",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.global_secondary_index;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.global_secondary_index"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:335"
+  },
+  {
+   "id": "aws3Database-13-items",
+   "title": "Items",
+   "tags": "aws3 items aws amazon web service db database Items",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.items;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.items"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:337"
+  },
+  {
+   "id": "aws3Database-14-db-accelerator",
+   "title": "DB Accelerator",
+   "tags": "aws3 db database accelerator aws amazon web service db database DB Accelerator",
+   "kind": "vertex",
+   "width": 72,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.db_accelerator;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.db_accelerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:339"
+  },
+  {
+   "id": "aws3Database-15-table",
+   "title": "Table",
+   "tags": "aws3 table aws amazon web service db database Table",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.table;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:341"
+  },
+  {
+   "id": "aws3Database-16-memcached",
+   "title": "Memcached",
+   "tags": "aws3 memcached aws amazon web service db database Memcached",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.memcached;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.memcached"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:343"
+  },
+  {
+   "id": "aws3Database-17-mysql-db-instance",
+   "title": "MySQL DB Instance",
+   "tags": "aws3 mysql instance my sql aws amazon web service db database MySQL DB Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mysql_db_instance;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mysql_db_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:345"
+  },
+  {
+   "id": "aws3Database-18-rds-db-instance-standby-multi-az",
+   "title": "RDS DB Instance standby (multi-AZ)",
+   "tags": "aws3 rds instance standby multi aws amazon web service db database RDS DB Instance standby (multi-AZ)",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rds_db_instance_standby_multi_az;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rds_db_instance_standby_multi_az"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:347"
+  },
+  {
+   "id": "aws3Database-19-cache-node",
+   "title": "Cache Node",
+   "tags": "aws3 cache node aws amazon web service db database Cache Node",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cache_node;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cache_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:349"
+  },
+  {
+   "id": "aws3Database-20-sql-master",
+   "title": "SQL Master",
+   "tags": "aws3 sql master aws amazon web service db database SQL Master",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sql_master;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.sql_master"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:351"
+  },
+  {
+   "id": "aws3Database-21-sql-slave",
+   "title": "SQL Slave",
+   "tags": "aws3 sql slave aws amazon web service db database SQL Slave",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sql_slave;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.sql_slave"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:353"
+  },
+  {
+   "id": "aws3Database-22-ms-sql-instance",
+   "title": "MS SQL Instance",
+   "tags": "aws3 ms sql instance aws amazon web service db database MS SQL Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ms_sql_instance_2;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ms_sql_instance_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:355"
+  },
+  {
+   "id": "aws3Database-23-mysql-db-instance",
+   "title": "MySQL DB Instance",
+   "tags": "aws3 mysql instance my sql aws amazon web service db database MySQL DB Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mysql_db_instance_2;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mysql_db_instance_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:357"
+  },
+  {
+   "id": "aws3Database-24-ms-sql-instance",
+   "title": "MS SQL Instance",
+   "tags": "aws3 ms sql instance aws amazon web service db database MS SQL Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ms_sql_instance;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ms_sql_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:359"
+  },
+  {
+   "id": "aws3Database-25-oracle-db-instance",
+   "title": "Oracle DB Instance",
+   "tags": "aws3 oracle instance aws amazon web service db database Oracle DB Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.oracle_db_instance_2;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.oracle_db_instance_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:361"
+  },
+  {
+   "id": "aws3Database-26-postgre-sql-instance",
+   "title": "Postgre SQL Instance",
+   "tags": "aws3 postgre sql instance aws amazon web service db database Postgre SQL Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.postgre_sql_instance;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.postgre_sql_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:363"
+  },
+  {
+   "id": "aws3Database-27-dense-compute-node",
+   "title": "Dense Compute Node",
+   "tags": "aws3 dense compute node aws amazon web service db database Dense Compute Node",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dense_compute_node;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.dense_compute_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:365"
+  },
+  {
+   "id": "aws3Database-28-dense-storage-node",
+   "title": "Dense Storage Node",
+   "tags": "aws3 dense storage node aws amazon web service db database Dense Storage Node",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dense_storage_node;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.dense_storage_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:367"
+  },
+  {
+   "id": "aws3Database-29-database-migration-workflow-job",
+   "title": "Database Migration Workflow/Job",
+   "tags": "aws3 database migration workflow job aws amazon web service db database Database Migration Workflow/Job",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 87,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.database_migration_workflow_job;fillColor=#2E73B8;gradientColor=none;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.aws3.database_migration_workflow_job"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:369"
+  },
+  {
+   "id": "aws3Database-30-database-migration-service",
+   "title": "Database Migration Service",
+   "tags": "aws3 database migration service aws amazon web service db database Database Migration Service",
+   "kind": "vertex",
+   "width": 72,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.database_migration_service;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.database_migration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:371"
+  }
+ ]
+}

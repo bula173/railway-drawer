@@ -1,0 +1,92 @@
+{
+ "id": "aws3Application Services",
+ "title": "AWS17 / Application Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Application Services-0-elastic-transcoder",
+   "title": "Elastic Transcoder",
+   "tags": "aws3 elastic transcoder aws amazon web service app application services Elastic Transcoder",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_transcoder;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_transcoder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:124"
+  },
+  {
+   "id": "aws3Application Services-1-api-gateway",
+   "title": "API Gateway",
+   "tags": "aws3 api gateway aws amazon web service app application services API Gateway",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.api_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:126"
+  },
+  {
+   "id": "aws3Application Services-2-step-functions",
+   "title": "Step Functions",
+   "tags": "aws3 step functions aws amazon web service app application services Step Functions",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.step_functions;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.step_functions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:128"
+  },
+  {
+   "id": "aws3Application Services-3-swf",
+   "title": "SWF",
+   "tags": "aws3 swf aws amazon web service app application services SWF",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.swf;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.swf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:130"
+  },
+  {
+   "id": "aws3Application Services-4-decider",
+   "title": "Decider",
+   "tags": "aws3 decider aws amazon web service app application services Decider",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.decider;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.decider"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:132"
+  },
+  {
+   "id": "aws3Application Services-5-worker",
+   "title": "Worker",
+   "tags": "aws3 worker aws amazon web service app application services Worker",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.worker;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.worker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:134"
+  }
+ ]
+}

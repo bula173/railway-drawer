@@ -1,0 +1,355 @@
+{
+ "id": "electricalTransmission",
+ "title": "Electrical / Transmission Paths",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalTransmission-0-bus-width",
+   "title": "Bus Width",
+   "tags": "electrical transmission bus width electrical transmission paths bus buses Bus Width",
+   "kind": "vertex",
+   "width": 130,
+   "height": 156,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.bus_width;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.bus_width"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:975"
+  },
+  {
+   "id": "electricalTransmission-1-line-concentrator",
+   "title": "Line Concentrator",
+   "tags": "electrical transmission line concentrator electrical transmission paths bus buses Line Concentrator",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.line_concentrator;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.line_concentrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:977"
+  },
+  {
+   "id": "electricalTransmission-2-cable-group",
+   "title": "Cable Group",
+   "tags": "electrical transmission cable group electrical transmission paths bus buses Cable Group",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.cable_group;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.cable_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:979"
+  },
+  {
+   "id": "electricalTransmission-3-overground-enclosure",
+   "title": "Overground Enclosure",
+   "tags": "electrical transmission overground enclosure electrical transmission paths bus buses Overground Enclosure",
+   "kind": "vertex",
+   "width": 130,
+   "height": 136,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.overground_enclosure;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.overground_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:981"
+  },
+  {
+   "id": "electricalTransmission-4-optical-fiber",
+   "title": "Optical Fiber",
+   "tags": "electrical transmission optical fiber electrical transmission paths bus buses Optical Fiber",
+   "kind": "vertex",
+   "width": 130,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.optical_fiber2;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.optical_fiber2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:983"
+  },
+  {
+   "id": "electricalTransmission-5-terminal",
+   "title": "Terminal",
+   "tags": "electrical transmission terminal electrical transmission paths bus buses Terminal",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=ellipse;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:985"
+  },
+  {
+   "id": "electricalTransmission-6-terminal-3-phase",
+   "title": "Terminal 3 Phase",
+   "tags": "electrical transmission Terminal 3 Phase electrical transmission paths bus buses Terminal 3 Phase",
+   "kind": "vertex",
+   "width": 43,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.terminal_3_phase;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.terminal_3_phase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:987"
+  },
+  {
+   "id": "electricalTransmission-7-terminal",
+   "title": "Terminal",
+   "tags": "electrical transmission terminal electrical transmission paths bus buses Terminal",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;strokeWidth=1;shape=ellipse;fontSize=50;fontStyle=1;perimeter=ellipsePerimeter;whiteSpace=wrap;",
+   "value": "T",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:989"
+  },
+  {
+   "id": "electricalTransmission-8-line-cable",
+   "title": "Line/Cable",
+   "tags": "electrical transmission line cable electrical transmission paths bus buses Line/Cable",
+   "kind": "vertex",
+   "width": 130,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.line_cable;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.line_cable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:991"
+  },
+  {
+   "id": "electricalTransmission-9-anticreepage-device",
+   "title": "Anticreepage Device",
+   "tags": "electrical transmission anticreepage device electrical transmission paths bus buses Anticreepage Device",
+   "kind": "vertex",
+   "width": 130,
+   "height": 88,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.anticreepage_device;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.anticreepage_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:993"
+  },
+  {
+   "id": "electricalTransmission-10-test-point",
+   "title": "Test Point",
+   "tags": "electrical transmission test point electrical transmission paths bus buses Test Point",
+   "kind": "vertex",
+   "width": 60,
+   "height": 130,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.testPoint;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.testPoint"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:995"
+  },
+  {
+   "id": "electricalTransmission-11-dashed-wire",
+   "title": "Dashed Wire",
+   "tags": "electrical signal sources  cable wire dashed",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "shape=wire;edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;endArrow=none;curved=0;rounded=0;strokeColor=#009900;dashed=1;fillColor=#ffff00;dashPattern=12 12;fixDash=1;startSize=6;endSize=6;",
+   "shapeNames": [
+    "wire"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:997"
+  },
+  {
+   "id": "electricalTransmission-12-transmission-path",
+   "title": "Transmission Path",
+   "tags": "electrical signal sources  transmission path",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "endArrow=none;html=1;strokeWidth=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1000"
+  },
+  {
+   "id": "electricalTransmission-13-direction-of-flow",
+   "title": "Direction of Flow",
+   "tags": "electrical signal sources  direction flow",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "endArrow=classicThin;html=1;strokeWidth=1;endSize=20;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1002"
+  },
+  {
+   "id": "electricalTransmission-14-straight-bus",
+   "title": "Straight Bus",
+   "tags": "electrical transmission straight bus electrical transmission paths bus buses Straight Bus",
+   "kind": "vertex",
+   "width": 90,
+   "height": 130,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.straightBus;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.straightBus"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1004"
+  },
+  {
+   "id": "electricalTransmission-15-elbow-bus",
+   "title": "Elbow Bus",
+   "tags": "electrical transmission elbow bus electrical transmission paths bus buses Elbow Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=0;strokeWidth=1",
+   "shapeNames": [
+    "mxgraph.arrows2.bendArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1006"
+  },
+  {
+   "id": "electricalTransmission-16-elbow-bus",
+   "title": "Elbow Bus",
+   "tags": "electrical transmission elbow bus electrical transmission paths bus buses Elbow Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 130,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=0;strokeWidth=1;flipH=1;",
+   "shapeNames": [
+    "mxgraph.arrows2.bendArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1008"
+  },
+  {
+   "id": "electricalTransmission-17-2-line-bus",
+   "title": "2-Line Bus",
+   "tags": "electrical transmission 2 two line bus electrical transmission paths bus buses 2-Line Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.2_line_bus;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.2_line_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1010"
+  },
+  {
+   "id": "electricalTransmission-18-3-line-bus",
+   "title": "3-Line Bus",
+   "tags": "electrical transmission 3 three line bus electrical transmission paths bus buses 3-Line Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.3_line_bus;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.3_line_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1012"
+  },
+  {
+   "id": "electricalTransmission-19-4-line-bus",
+   "title": "4-Line Bus",
+   "tags": "electrical transmission 3 three line bus electrical transmission paths bus buses 4-Line Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 75,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.4_line_bus;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.4_line_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1014"
+  },
+  {
+   "id": "electricalTransmission-20-8-line-bus",
+   "title": "8-Line Bus",
+   "tags": "electrical transmission 3 three line bus electrical transmission paths bus buses 8-Line Bus",
+   "kind": "vertex",
+   "width": 130,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.8_line_bus;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.8_line_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1016"
+  },
+  {
+   "id": "electricalTransmission-21-2-line-bus-elbow",
+   "title": "2-Line Bus Elbow",
+   "tags": "electrical transmission 2 two line bus elbow electrical transmission paths bus buses 2-Line Bus Elbow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.twoLineBusElbow;notch=25;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.twoLineBusElbow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1018"
+  },
+  {
+   "id": "electricalTransmission-22-3-line-bus-elbow",
+   "title": "3-Line Bus Elbow",
+   "tags": "electrical transmission 3 two line bus elbow electrical transmission paths bus buses 3-Line Bus Elbow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.threeLineBusElbow;notch=30;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.threeLineBusElbow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1020"
+  },
+  {
+   "id": "electricalTransmission-23-4-line-bus-elbow",
+   "title": "4-Line Bus Elbow",
+   "tags": "electrical transmission 4 two line bus elbow electrical transmission paths bus buses 4-Line Bus Elbow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.fourLineBusElbow;notch=75;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.fourLineBusElbow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1022"
+  },
+  {
+   "id": "electricalTransmission-24-8-line-bus-elbow",
+   "title": "8-Line Bus Elbow",
+   "tags": "electrical transmission 8 two line bus elbow electrical transmission paths bus buses 8-Line Bus Elbow",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transmission.eightLineBusElbow;notch=180;",
+   "shapeNames": [
+    "mxgraph.electrical.transmission.eightLineBusElbow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:1024"
+  }
+ ]
+}

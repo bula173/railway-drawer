@@ -1,0 +1,106 @@
+{
+ "id": "allied_telesisBuildings",
+ "title": "Allied Telesis / Buildings",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisBuildings-0-apartments",
+   "title": "Apartments",
+   "tags": "apartments allied telesis Apartments",
+   "kind": "vertex",
+   "width": 54,
+   "height": 105,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Apartments.svg;points=[[0.464,0,0],[0.515,0.998,0],[0,0.47,0],[1,0.516,0],[0.999,0.165,0],[0.999,0.867,0],[0.015,0.837,0],[0.001,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:38"
+  },
+  {
+   "id": "allied_telesisBuildings-1-building-cluster",
+   "title": "Building Cluster",
+   "tags": "building cluster allied telesis Building Cluster",
+   "kind": "vertex",
+   "width": 121.2,
+   "height": 111,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Building_Cluster.svg;points=[[0.292,0,0],[0.374,0.997,0],[0,0.596,0],[1,0.499,0],[0.992,0.836,0],[0.023,0.773,0],[0.08,0.121,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:40"
+  },
+  {
+   "id": "allied_telesisBuildings-2-large-building",
+   "title": "Large Building",
+   "tags": "large building allied telesis Large Building",
+   "kind": "vertex",
+   "width": 75,
+   "height": 75,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Large_Building.svg;points=[[0.484,0,0],[0.614,1,0],[0,0.401,0],[1,0.594,0],[0.855,0.218,0],[0.997,0.802,0],[0.028,0.655,0],[0.008,0.195,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:42"
+  },
+  {
+   "id": "allied_telesisBuildings-3-long-building",
+   "title": "Long Building",
+   "tags": "long building allied telesis Long Building",
+   "kind": "vertex",
+   "width": 125.39999999999999,
+   "height": 129.60000000000002,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Long_Building.svg;points=[[0.249,0,0],[0.748,1,0],[0,0.5,0],[1,0.5,0],[0.997,0.872,0],[0.003,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:44"
+  },
+  {
+   "id": "allied_telesisBuildings-4-medium-business-building",
+   "title": "Medium Business Building",
+   "tags": "medium business building allied telesis Medium Business Building",
+   "kind": "vertex",
+   "width": 54.6,
+   "height": 70.19999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Medium_Business_Building.svg;points=[[0.465,0,0],[0.514,0.998,0],[0,0.454,0],[1,0.522,0],[0.993,0.243,0],[0.996,0.8,0],[0.033,0.775,0],[0,0.188,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:46"
+  },
+  {
+   "id": "allied_telesisBuildings-5-school-building",
+   "title": "School Building",
+   "tags": "school building allied telesis School Building",
+   "kind": "vertex",
+   "width": 165,
+   "height": 166.79999999999998,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/School_Building.svg;points=[[0.5,0.011,0],[0.687,1,0],[0,0.474,0],[1,0.733,0],[0.997,0.837,0],[0.013,0.6,0],[0,0.37,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:48"
+  },
+  {
+   "id": "allied_telesisBuildings-6-secure-building",
+   "title": "Secure Building",
+   "tags": "secure building allied telesis Secure Building",
+   "kind": "vertex",
+   "width": 163.20000000000002,
+   "height": 111.60000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Secure_Building.svg;points=[[0.502,0,0],[0.5,0.923,0],[0,0.538,0],[0.996,0.5,0],[0.85,0.22,0],[0.155,0.912,0],[0.25,0.194,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:50"
+  }
+ ]
+}

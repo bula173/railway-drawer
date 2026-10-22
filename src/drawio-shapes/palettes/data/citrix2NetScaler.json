@@ -1,0 +1,190 @@
+{
+ "id": "citrix2NetScaler",
+ "title": "Citrix / NetScaler",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2NetScaler-0-netscaler-blx",
+   "title": "NetScaler BLX",
+   "tags": "citrix2 netscaler blx citrix netscaler  NetScaler BLX",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.265,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_blx;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_blx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:176"
+  },
+  {
+   "id": "citrix2NetScaler-1-netscaler-cpx",
+   "title": "NetScaler CPX",
+   "tags": "citrix2 netscaler cpx citrix netscaler  NetScaler CPX",
+   "kind": "vertex",
+   "width": 44.87,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_cpx;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_cpx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:177"
+  },
+  {
+   "id": "citrix2NetScaler-2-netscaler-mpx",
+   "title": "NetScaler MPX",
+   "tags": "citrix2 netscaler mpx citrix netscaler  NetScaler MPX",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41.225,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_mpx;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_mpx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:178"
+  },
+  {
+   "id": "citrix2NetScaler-3-netscaler-sdx",
+   "title": "NetScaler SDX",
+   "tags": "citrix2 netscaler sdx citrix netscaler  NetScaler SDX",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41.225,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_sdx;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_sdx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:179"
+  },
+  {
+   "id": "citrix2NetScaler-4-netscaler-vpx",
+   "title": "NetScaler VPX",
+   "tags": "citrix2 netscaler vpx citrix netscaler  NetScaler VPX",
+   "kind": "vertex",
+   "width": 44.87,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_vpx;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_vpx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:180"
+  },
+  {
+   "id": "citrix2NetScaler-5-netscaler-gateway",
+   "title": "NetScaler Gateway",
+   "tags": "citrix2 netscaler gateway citrix netscaler  NetScaler Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.215,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_gateway2;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_gateway2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:181"
+  },
+  {
+   "id": "citrix2NetScaler-6-waf",
+   "title": "WAF",
+   "tags": "citrix2 waf citrix netscaler  WAF",
+   "kind": "vertex",
+   "width": 50,
+   "height": 24.705,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.waf;",
+   "shapeNames": [
+    "mxgraph.citrix2.waf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:182"
+  },
+  {
+   "id": "citrix2NetScaler-7-api-protection",
+   "title": "API Protection",
+   "tags": "citrix2 api protection citrix netscaler  API Protection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.885,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.api_protection;",
+   "shapeNames": [
+    "mxgraph.citrix2.api_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:183"
+  },
+  {
+   "id": "citrix2NetScaler-8-ddos-protection",
+   "title": "DDoS Protection",
+   "tags": "citrix2 ddos protection citrix netscaler  DDoS Protection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.885,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.ddos_protection;",
+   "shapeNames": [
+    "mxgraph.citrix2.ddos_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:184"
+  },
+  {
+   "id": "citrix2NetScaler-9-bot-mitigation",
+   "title": "Bot Mitigation",
+   "tags": "citrix2 bot mitigation citrix netscaler  Bot Mitigation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.885,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.bot_mitigation;",
+   "shapeNames": [
+    "mxgraph.citrix2.bot_mitigation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:185"
+  },
+  {
+   "id": "citrix2NetScaler-10-load-balancing",
+   "title": "Load Balancing",
+   "tags": "citrix2 load balancing citrix netscaler  Load Balancing",
+   "kind": "vertex",
+   "width": 96,
+   "height": 20.13,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.load_balancing;",
+   "shapeNames": [
+    "mxgraph.citrix2.load_balancing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:186"
+  },
+  {
+   "id": "citrix2NetScaler-11-ssl-tls-offloading",
+   "title": "SSL / TLS Offloading",
+   "tags": "citrix2 ssl tls offloading citrix netscaler  SSL / TLS Offloading",
+   "kind": "vertex",
+   "width": 46.47,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.ssl_tls_offloading;",
+   "shapeNames": [
+    "mxgraph.citrix2.ssl_tls_offloading"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:187"
+  },
+  {
+   "id": "citrix2NetScaler-12-gslb",
+   "title": "GSLB",
+   "tags": "citrix2 gslb citrix netscaler  GSLB",
+   "kind": "vertex",
+   "width": 104,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.gslb;",
+   "shapeNames": [
+    "mxgraph.citrix2.gslb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:188"
+  }
+ ]
+}

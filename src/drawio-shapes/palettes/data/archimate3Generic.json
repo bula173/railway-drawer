@@ -1,0 +1,343 @@
+{
+ "id": "archimate3Generic",
+ "title": "Archimate 3.2 / Generic",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:8",
+ "entries": [
+  {
+   "id": "archimate3Generic-0-internal-active-structure-element",
+   "title": "Internal Active Structure Element",
+   "tags": "archimate3  archimate generic internal active structure element Internal Active Structure Element",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=generic;archiType=square;",
+   "value": "Internal Active Structure Element",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:42"
+  },
+  {
+   "id": "archimate3Generic-1-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate3  archimate generic collaboration Collaboration",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=collab;archiType=square;",
+   "value": "Collaboration",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:44"
+  },
+  {
+   "id": "archimate3Generic-2-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate3  archimate generic collaboration Collaboration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.collaboration;",
+   "shapeNames": [
+    "mxgraph.archimate3.collaboration"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:46"
+  },
+  {
+   "id": "archimate3Generic-3-interface",
+   "title": "Interface",
+   "tags": "archimate3  archimate generic interface Interface",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=interface;archiType=square;",
+   "value": "Interface",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:48"
+  },
+  {
+   "id": "archimate3Generic-4-interface",
+   "title": "Interface",
+   "tags": "archimate3  archimate generic interface Interface",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.interface;",
+   "shapeNames": [
+    "mxgraph.archimate3.interface"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:50"
+  },
+  {
+   "id": "archimate3Generic-5-internal-behavior-element",
+   "title": "Internal Behavior Element",
+   "tags": "archimate3  archimate generic internal behavior element Internal Behavior Element",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=generic;archiType=rounded;",
+   "value": "Internal Behavior Element",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:52"
+  },
+  {
+   "id": "archimate3Generic-6-process",
+   "title": "Process",
+   "tags": "archimate3  archimate generic process Process",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;",
+   "value": "Process",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:54"
+  },
+  {
+   "id": "archimate3Generic-7-process",
+   "title": "Process",
+   "tags": "archimate3  archimate generic process Process",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.process;",
+   "shapeNames": [
+    "mxgraph.archimate3.process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:56"
+  },
+  {
+   "id": "archimate3Generic-8-function",
+   "title": "Function",
+   "tags": "archimate3  archimate generic function Function",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=func;archiType=rounded;",
+   "value": "Function",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:58"
+  },
+  {
+   "id": "archimate3Generic-9-function",
+   "title": "Function",
+   "tags": "archimate3  archimate generic function Function",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.function;",
+   "shapeNames": [
+    "mxgraph.archimate3.function"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:60"
+  },
+  {
+   "id": "archimate3Generic-10-interaction",
+   "title": "Interaction",
+   "tags": "archimate3  archimate generic interaction Interaction",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;",
+   "value": "Interaction",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:62"
+  },
+  {
+   "id": "archimate3Generic-11-interaction",
+   "title": "Interaction",
+   "tags": "archimate3  archimate generic interaction Interaction",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.interaction;",
+   "shapeNames": [
+    "mxgraph.archimate3.interaction"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:64"
+  },
+  {
+   "id": "archimate3Generic-12-service",
+   "title": "Service",
+   "tags": "archimate3  archimate generic service Service",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded",
+   "value": "Service",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:66"
+  },
+  {
+   "id": "archimate3Generic-13-service",
+   "title": "Service",
+   "tags": "archimate3  archimate generic service Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.service;",
+   "shapeNames": [
+    "mxgraph.archimate3.service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:68"
+  },
+  {
+   "id": "archimate3Generic-14-event",
+   "title": "Event",
+   "tags": "archimate3  archimate generic event Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=event;archiType=rounded",
+   "value": "Event",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:70"
+  },
+  {
+   "id": "archimate3Generic-15-event",
+   "title": "Event",
+   "tags": "archimate3  archimate generic event Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.event;",
+   "shapeNames": [
+    "mxgraph.archimate3.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:72"
+  },
+  {
+   "id": "archimate3Generic-16-passive-structure-element",
+   "title": "Passive Structure Element",
+   "tags": "archimate3  archimate generic passive structure element Passive Structure Element",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=passive;archiType=square",
+   "value": "Passive Structure Element",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:74"
+  },
+  {
+   "id": "archimate3Generic-17-passive-structure-element",
+   "title": "Passive Structure Element",
+   "tags": "archimate3  archimate generic passive structure element Passive Structure Element",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.passive;",
+   "shapeNames": [
+    "mxgraph.archimate3.passive"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:76"
+  },
+  {
+   "id": "archimate3Generic-18-motivation-element",
+   "title": "Motivation Element",
+   "tags": "archimate3  archimate generic motivation element Motivation Element",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EBEBEB;shape=mxgraph.archimate3.application;appType=generic;archiType=oct;",
+   "value": "Motivation Element",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:78"
+  },
+  {
+   "id": "archimate3Generic-19-grouping",
+   "title": "Grouping",
+   "tags": "archimate3  archimate generic grouping Grouping",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=grouping;archiType=square;dashed=1;fillColor=none;",
+   "value": "Grouping",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:80"
+  },
+  {
+   "id": "archimate3Generic-20-grouping",
+   "title": "Grouping",
+   "tags": "archimate3  archimate generic grouping Grouping",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.grouping;fillColor=none;dashed=1;",
+   "shapeNames": [
+    "mxgraph.archimate3.grouping"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:82"
+  },
+  {
+   "id": "archimate3Generic-21-location",
+   "title": "Location",
+   "tags": "archimate3  archimate generic location Location",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=location;archiType=square;fillColor=#efd1e4;",
+   "value": "Location",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:84"
+  },
+  {
+   "id": "archimate3Generic-22-location",
+   "title": "Location",
+   "tags": "archimate3  archimate generic location Location",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.locationIcon;fillColor=#efd1e4;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.archimate3.locationIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:86"
+  }
+ ]
+}

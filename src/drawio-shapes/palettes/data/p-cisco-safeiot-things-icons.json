@@ -1,0 +1,680 @@
+{
+ "id": "cisco_safeIoT Things Icons",
+ "title": "Cisco Safe / IoT Things Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeIoT Things Icons-0-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 48.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon1;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:718"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-1-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:720"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-2-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 24,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon3;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:722"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-3-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon4;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:724"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-4-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon5;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:726"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-5-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon6;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:728"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-6-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon7;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:730"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-7-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon8;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:732"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-8-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon9;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon9"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:734"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-9-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 25,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon10;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:736"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-10-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon11;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon11"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:738"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-11-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon12;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon12"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:740"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-12-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.000000000000004,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon13;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon13"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:742"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-13-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 18.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon14;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon14"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:744"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-14-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon15;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon15"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:746"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-15-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon16;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon16"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:748"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-16-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon17;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon17"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:750"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-17-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon18;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon18"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:752"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-18-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon19;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon19"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:754"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-19-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon20;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon20"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:756"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-20-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon21;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon21"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:758"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-21-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon22;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:760"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-22-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon23;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon23"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:762"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-23-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon24;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon24"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:764"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-24-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 11,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon25;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon25"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:766"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-25-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon26;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon26"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:768"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-26-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon27;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon27"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:770"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-27-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon28;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon28"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:772"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-28-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon29;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon29"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:774"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-29-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon30;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon30"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:776"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-30-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon31;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon31"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:778"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-31-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.000000000000004,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon32;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon32"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:780"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-32-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon33;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon33"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:782"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-33-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon34;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon34"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:784"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-34-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon35;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon35"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:786"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-35-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 26.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon36;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon36"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:788"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-36-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 39.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon37;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon37"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:790"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-37-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon38;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon38"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:792"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-38-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon39;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon39"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:794"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-39-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon40;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon40"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:796"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-40-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon41;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon41"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:798"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-41-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon42;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon42"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:800"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-42-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon43;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon43"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:802"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-43-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon44;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon44"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:804"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-44-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon45;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon45"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:806"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-45-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon46;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon46"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:808"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-46-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon47;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon47"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:810"
+  },
+  {
+   "id": "cisco_safeIoT Things Icons-47-entry",
+   "title": "",
+   "tags": "cisco safe iot things icons  cisco safe iot things icons internet ",
+   "kind": "vertex",
+   "width": 21.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.iot_things_icons.icon48;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.iot_things_icons.icon48"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:812"
+  }
+ ]
+}

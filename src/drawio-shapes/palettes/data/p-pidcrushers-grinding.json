@@ -1,0 +1,176 @@
+{
+ "id": "pidCrushers Grinding",
+ "title": "Process Engineering / Crushers Grinding",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidCrushers Grinding-0-crusher",
+   "title": "Crusher",
+   "tags": "pid crushers grinding crusher process instrumentation crushers grinding  Crusher",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher;",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:399"
+  },
+  {
+   "id": "pidCrushers Grinding-1-crusher-cone",
+   "title": "Crusher (Cone)",
+   "tags": "pid crushers grinding crusher cone process instrumentation crushers grinding  Crusher (Cone)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher_(cone);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher_(cone)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:400"
+  },
+  {
+   "id": "pidCrushers Grinding-2-crusher-hammer",
+   "title": "Crusher (Hammer)",
+   "tags": "pid crushers grinding crusher hammer process instrumentation crushers grinding  Crusher (Hammer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher_(hammer);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher_(hammer)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:401"
+  },
+  {
+   "id": "pidCrushers Grinding-3-crusher-impact",
+   "title": "Crusher (Impact)",
+   "tags": "pid crushers grinding crusher impact process instrumentation crushers grinding  Crusher (Impact)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher_(impact);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher_(impact)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:402"
+  },
+  {
+   "id": "pidCrushers Grinding-4-crusher-jaw",
+   "title": "Crusher (Jaw)",
+   "tags": "pid crushers grinding crusher jaw process instrumentation crushers grinding  Crusher (Jaw)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher_(jaw);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher_(jaw)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:403"
+  },
+  {
+   "id": "pidCrushers Grinding-5-crusher-roller",
+   "title": "Crusher (Roller)",
+   "tags": "pid crushers grinding crusher roller process instrumentation crushers grinding  Crusher (Roller)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crusher_(roller);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crusher_(roller)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:404"
+  },
+  {
+   "id": "pidCrushers Grinding-6-crushing-grinding-machine",
+   "title": "Crushing, Grinding Machine",
+   "tags": "pid crushers grinding crushing grinding machine process instrumentation crushers grinding  Crushing, Grinding Machine",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.crushing,_grinding_machine;",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.crushing,_grinding_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:405"
+  },
+  {
+   "id": "pidCrushers Grinding-7-mill-pulverizer",
+   "title": "Mill, Pulverizer",
+   "tags": "pid crushers grinding mill pulverizer process instrumentation crushers grinding  Mill, Pulverizer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.mill,_pulverizer;",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.mill,_pulverizer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:406"
+  },
+  {
+   "id": "pidCrushers Grinding-8-mill-pulverizer-hammer",
+   "title": "Mill, Pulverizer (Hammer)",
+   "tags": "pid crushers grinding mill pulverizer hammer process instrumentation crushers grinding  Mill, Pulverizer (Hammer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.mill,_pulverizer_(hammer);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.mill,_pulverizer_(hammer)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:407"
+  },
+  {
+   "id": "pidCrushers Grinding-9-mill-pulverizer-impact",
+   "title": "Mill, Pulverizer (Impact)",
+   "tags": "pid crushers grinding mill pulverizer impact process instrumentation crushers grinding  Mill, Pulverizer (Impact)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.mill,_pulverizer_(impact);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.mill,_pulverizer_(impact)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:408"
+  },
+  {
+   "id": "pidCrushers Grinding-10-mill-roller",
+   "title": "Mill (Roller)",
+   "tags": "pid crushers grinding mill roller process instrumentation crushers grinding  Mill (Roller)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.mill_(roller);",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.mill_(roller)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:409"
+  },
+  {
+   "id": "pidCrushers Grinding-11-mill-vibration",
+   "title": "Mill (Vibration)",
+   "tags": "pid crushers grinding mill vibration process instrumentation crushers grinding  Mill (Vibration)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.crushers_grinding.mill_(vibration)2;",
+   "shapeNames": [
+    "mxgraph.pid.crushers_grinding.mill_(vibration)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:410"
+  }
+ ]
+}

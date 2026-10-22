@@ -1,0 +1,314 @@
+{
+ "id": "sysmlRequirements",
+ "title": "SysML / Requirements",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sysml.js:7",
+ "entries": [
+  {
+   "id": "sysmlRequirements-0-requirement-diagram",
+   "title": "Requirement Diagram",
+   "tags": "package sysml requirement diagram Requirement Diagram",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "html=1;shape=mxgraph.sysml.package;overflow=fill;labelX=110;strokeWidth=2;align=center;",
+   "value": "<p style=\"margin:0px;margin-top:4px;margin-left:7px;text-align:left;\"><b>req</b>  ReqDiagram</p>",
+   "shapeNames": [
+    "mxgraph.sysml.package"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2427"
+  },
+  {
+   "id": "sysmlRequirements-1-requirement",
+   "title": "Requirement",
+   "tags": "sysml requirement ",
+   "kind": "cells",
+   "width": 200,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;spacingTop=3;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Requirement Name\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"text=&quot;The system shall do&quot;\" style=\"html=1;align=left;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;spacingLeft=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Id=&quot;62j32.&quot;\" style=\"html=1;align=left;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;spacingLeft=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"26\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2431"
+  },
+  {
+   "id": "sysmlRequirements-2-test-case",
+   "title": "Test Case",
+   "tags": "sysml requirement test case",
+   "kind": "cells",
+   "width": 200,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;testCase&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;spacingTop=3;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"TestCaseName\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"58\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2457"
+  },
+  {
+   "id": "sysmlRequirements-3-requirement-containment-relationship",
+   "title": "Requirement Containment Relationship",
+   "tags": "sysml requirement containment relationship Requirement Containment Relationship",
+   "kind": "cells",
+   "width": 300,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#10;Parent\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#10;Child1\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#10;Child2\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"180\" y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"rounded=0;html=1;labelBackgroundColor=none;endArrow=none;edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=sysMLPackCont;startSize=12;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"rounded=0;html=1;labelBackgroundColor=none;endArrow=none;edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=sysMLPackCont;startSize=12;\" edge=\"1\" source=\"2\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2477"
+  },
+  {
+   "id": "sysmlRequirements-4-copy-dependency",
+   "title": "Copy Dependency",
+   "tags": "sysml requirement copy dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Slave\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Master\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;copy&amp;gt;&amp;gt;\" style=\"endArrow=open;edgeStyle=none;endSize=12;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2480"
+  },
+  {
+   "id": "sysmlRequirements-5-master-callout",
+   "title": "Master Callout",
+   "tags": "sysml requirement master callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Master&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; Master\" style=\"shape=note;html=1;size=15;align=left;spacingLeft=5;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; Slave\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;edgeStyle=none;dashed=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2495"
+  },
+  {
+   "id": "sysmlRequirements-6-derive-dependency",
+   "title": "Derive Dependency",
+   "tags": "sysml requirement derive dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Client\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Supplier\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;deriveReq&amp;gt;&amp;gt;\" style=\"endArrow=open;html=1;edgeStyle=none;endSize=12;dashed=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2510"
+  },
+  {
+   "id": "sysmlRequirements-7-derive-callout",
+   "title": "Derive Callout",
+   "tags": "sysml requirement derive callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqA\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Derived&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqB\" style=\"shape=note;html=1;size=15;align=left;spacingLeft=5;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;edgeStyle=none;dashed=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "note"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2525"
+  },
+  {
+   "id": "sysmlRequirements-8-derive-callout",
+   "title": "Derive Callout",
+   "tags": "sysml requirement derive callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"DerivedFrom&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqA\" style=\"shape=note;html=1;size=15;align=left;spacingLeft=5;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqB\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2540"
+  },
+  {
+   "id": "sysmlRequirements-9-satisfy-dependency",
+   "title": "Satisfy Dependency",
+   "tags": "sysml requirement satisfy dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Supplier\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;satisfy&amp;gt;&amp;gt;\" style=\"endArrow=open;edgeStyle=none;endSize=12;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2555"
+  },
+  {
+   "id": "sysmlRequirements-10-satisfy-callout",
+   "title": "Satisfy Callout",
+   "tags": "sysml requirement satisfy callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Satisfies&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqA\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "note"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2570"
+  },
+  {
+   "id": "sysmlRequirements-11-satisfy-callout",
+   "title": "Satisfy Callout",
+   "tags": "sysml requirement satisfy callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"SatisfiedBy&#xa;NamedElement\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqA\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2585"
+  },
+  {
+   "id": "sysmlRequirements-12-verify-dependency",
+   "title": "Verify Dependency",
+   "tags": "sysml requirement verify dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Supplier\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;verify&amp;gt;&amp;gt;\" style=\"endArrow=open;edgeStyle=none;endSize=12;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2600"
+  },
+  {
+   "id": "sysmlRequirements-13-verify-callout",
+   "title": "Verify Callout",
+   "tags": "sysml requirement verify callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Verifies&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqA\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "note"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2615"
+  },
+  {
+   "id": "sysmlRequirements-14-verify-callout",
+   "title": "Verify Callout",
+   "tags": "sysml requirement verify callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"VerifiedBy&#xa;NamedElement\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqA\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2630"
+  },
+  {
+   "id": "sysmlRequirements-15-refine-dependency",
+   "title": "Refine Dependency",
+   "tags": "sysml requirement refine dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Client\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;refine&amp;gt;&amp;gt;\" style=\"endArrow=open;edgeStyle=none;endSize=12;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2645"
+  },
+  {
+   "id": "sysmlRequirements-16-refine-callout",
+   "title": "Refine Callout",
+   "tags": "sysml requirement refine dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Refines&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqA\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "note"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2660"
+  },
+  {
+   "id": "sysmlRequirements-17-refine-callout",
+   "title": "Refine Callout",
+   "tags": "sysml requirement refine dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"RefinedBy&#xa;NamedElement\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqA\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2675"
+  },
+  {
+   "id": "sysmlRequirements-18-trace-dependency",
+   "title": "Trace Dependency",
+   "tags": "sysml requirement trace dependency",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Client\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;Supplier\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;trace&amp;gt;&amp;gt;\" style=\"endArrow=open;edgeStyle=none;endSize=12;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2690"
+  },
+  {
+   "id": "sysmlRequirements-19-refine-callout",
+   "title": "Refine Callout",
+   "tags": "sysml requirement refine callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"NamedElement\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"TracedFrom&#xa;&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt; ReqA\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "note"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2705"
+  },
+  {
+   "id": "sysmlRequirements-20-trace-callout",
+   "title": "Trace Callout",
+   "tags": "sysml requirement trace callout",
+   "kind": "cells",
+   "width": 360,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"TracedTo&#xa;NamedElement\" style=\"shape=note;size=15;align=left;spacingLeft=5;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;requirement&amp;gt;&amp;gt;&#xa;ReqA\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;edgeStyle=none;dashed=1;html=1;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2720"
+  }
+ ]
+}

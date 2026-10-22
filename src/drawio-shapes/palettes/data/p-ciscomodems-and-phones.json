@@ -1,0 +1,162 @@
+{
+ "id": "ciscoModems and Phones",
+ "title": "Cisco / Modems and Phones",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoModems and Phones-0-cable-modem",
+   "title": "Cable Modem",
+   "tags": "cisco cable modem cisco modems and phones  Cable Modem",
+   "kind": "vertex",
+   "width": 74,
+   "height": 35,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.cable_modem;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.cable_modem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:309"
+  },
+  {
+   "id": "ciscoModems and Phones-1-cell-phone",
+   "title": "Cell Phone",
+   "tags": "cisco cell phone cisco modems and phones  Cell Phone",
+   "kind": "vertex",
+   "width": 34,
+   "height": 57.99999999999999,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.cell_phone;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.cell_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:310"
+  },
+  {
+   "id": "ciscoModems and Phones-2-fax",
+   "title": "Fax",
+   "tags": "cisco fax cisco modems and phones  Fax",
+   "kind": "vertex",
+   "width": 126,
+   "height": 59,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.fax;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.fax"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:311"
+  },
+  {
+   "id": "ciscoModems and Phones-3-hootphone",
+   "title": "Hootphone",
+   "tags": "cisco hootphone cisco modems and phones  Hootphone",
+   "kind": "vertex",
+   "width": 64,
+   "height": 46,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.hootphone;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.hootphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:312"
+  },
+  {
+   "id": "ciscoModems and Phones-4-ip-phone",
+   "title": "IP Phone",
+   "tags": "cisco ip internet protocol phone cisco modems and phones  IP Phone",
+   "kind": "vertex",
+   "width": 90,
+   "height": 50,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.ip_phone;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.ip_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:313"
+  },
+  {
+   "id": "ciscoModems and Phones-5-mobile-access-ip-phone",
+   "title": "Mobile Access IP Phone",
+   "tags": "cisco mobile access ip phone cisco modems and phones  Mobile Access IP Phone",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.mobile_access_ip_phone_2;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.mobile_access_ip_phone_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:314"
+  },
+  {
+   "id": "ciscoModems and Phones-6-modem",
+   "title": "Modem",
+   "tags": "cisco modem cisco modems and phones  Modem",
+   "kind": "vertex",
+   "width": 77,
+   "height": 27,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.modem;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.modem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:315"
+  },
+  {
+   "id": "ciscoModems and Phones-7-phone-fax",
+   "title": "Phone-Fax",
+   "tags": "cisco phone fax cisco modems and phones  Phone-Fax",
+   "kind": "vertex",
+   "width": 106,
+   "height": 46,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.phone-fax;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.phone-fax"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:316"
+  },
+  {
+   "id": "ciscoModems and Phones-8-phone",
+   "title": "Phone",
+   "tags": "cisco phone cisco modems and phones  Phone",
+   "kind": "vertex",
+   "width": 64,
+   "height": 46,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.phone;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:317"
+  },
+  {
+   "id": "ciscoModems and Phones-9-rf-modem",
+   "title": "RF Modem",
+   "tags": "cisco rf modem cisco modems and phones  RF Modem",
+   "kind": "vertex",
+   "width": 82,
+   "height": 42,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.rf_modem;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.rf_modem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:318"
+  },
+  {
+   "id": "ciscoModems and Phones-10-softphone",
+   "title": "Softphone",
+   "tags": "cisco softphone cisco modems and phones  Softphone",
+   "kind": "vertex",
+   "width": 61,
+   "height": 56.00000000000001,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.modems_and_phones.softphone;",
+   "shapeNames": [
+    "mxgraph.cisco.modems_and_phones.softphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:319"
+  }
+ ]
+}

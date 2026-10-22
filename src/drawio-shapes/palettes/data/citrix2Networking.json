@@ -1,0 +1,148 @@
+{
+ "id": "citrix2Networking",
+ "title": "Citrix / Networking",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Networking-0-tunnel",
+   "title": "Tunnel",
+   "tags": "citrix2 tunnel citrix networking  Tunnel",
+   "kind": "vertex",
+   "width": 50,
+   "height": 10.75,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.tunnel;",
+   "shapeNames": [
+    "mxgraph.citrix2.tunnel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:198"
+  },
+  {
+   "id": "citrix2Networking-1-bridge",
+   "title": "Bridge",
+   "tags": "citrix2 bridge citrix networking  Bridge",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27.32,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.bridge;",
+   "shapeNames": [
+    "mxgraph.citrix2.bridge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:199"
+  },
+  {
+   "id": "citrix2Networking-2-switch",
+   "title": "Switch",
+   "tags": "citrix2 switch citrix networking  Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27.32,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.switch;",
+   "shapeNames": [
+    "mxgraph.citrix2.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:200"
+  },
+  {
+   "id": "citrix2Networking-3-network",
+   "title": "Network",
+   "tags": "citrix2 network citrix networking  Network",
+   "kind": "vertex",
+   "width": 48.19,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.network;",
+   "shapeNames": [
+    "mxgraph.citrix2.network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:201"
+  },
+  {
+   "id": "citrix2Networking-4-router",
+   "title": "Router",
+   "tags": "citrix2 router citrix networking  Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.router;",
+   "shapeNames": [
+    "mxgraph.citrix2.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:202"
+  },
+  {
+   "id": "citrix2Networking-5-sd-wan",
+   "title": "SD-WAN",
+   "tags": "citrix2 sd wan wide area network citrix networking  SD-WAN",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.96,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.sd_wan;",
+   "shapeNames": [
+    "mxgraph.citrix2.sd_wan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:203"
+  },
+  {
+   "id": "citrix2Networking-6-firewall",
+   "title": "Firewall",
+   "tags": "citrix2 firewall citrix networking  Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.915,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.firewall;",
+   "shapeNames": [
+    "mxgraph.citrix2.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:204"
+  },
+  {
+   "id": "citrix2Networking-7-wifi-router",
+   "title": "Wifi Router",
+   "tags": "citrix2 wifi router citrix networking  Wifi Router",
+   "kind": "vertex",
+   "width": 49.9,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.wifi_router;",
+   "shapeNames": [
+    "mxgraph.citrix2.wifi_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:205"
+  },
+  {
+   "id": "citrix2Networking-8-dns",
+   "title": "DNS",
+   "tags": "citrix2 dns domain name server citrix networking  DNS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.dns;",
+   "shapeNames": [
+    "mxgraph.citrix2.dns"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:206"
+  },
+  {
+   "id": "citrix2Networking-9-internet",
+   "title": "Internet",
+   "tags": "citrix2 internet citrix networking  Internet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.internet;",
+   "shapeNames": [
+    "mxgraph.citrix2.internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:207"
+  }
+ ]
+}

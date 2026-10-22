@@ -1,0 +1,92 @@
+{
+ "id": "aws3Developer Tools",
+ "title": "AWS17 / Developer Tools",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Developer Tools-0-codecommit",
+   "title": "CodeCommit",
+   "tags": "aws3 codecommit code commit aws amazon web service dev developer tools CodeCommit",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codecommit;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.codecommit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:403"
+  },
+  {
+   "id": "aws3Developer Tools-1-codedeploy",
+   "title": "CodeDeploy",
+   "tags": "aws3 codedeploy code deploy aws amazon web service dev developer tools CodeDeploy",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codedeploy;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.codedeploy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:405"
+  },
+  {
+   "id": "aws3Developer Tools-2-codepipeline",
+   "title": "CodePipeline",
+   "tags": "aws3 codepipeline code pipeline aws amazon web service dev developer tools CodePipeline",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codepipeline;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.codepipeline"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:407"
+  },
+  {
+   "id": "aws3Developer Tools-3-codestar",
+   "title": "CodeStar",
+   "tags": "aws3 codestar code star aws amazon web service dev developer tools CodeStar",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codestar;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.codestar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:409"
+  },
+  {
+   "id": "aws3Developer Tools-4-codebuild",
+   "title": "CodeBuild",
+   "tags": "aws3 codebuild code build aws amazon web service dev developer tools CodeBuild",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codebuild;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.codebuild"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:411"
+  },
+  {
+   "id": "aws3Developer Tools-5-x-ray",
+   "title": "X-Ray",
+   "tags": "aws3 x ray aws amazon web service dev developer tools X-Ray",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 85.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.x_ray;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.x_ray"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:413"
+  }
+ ]
+}

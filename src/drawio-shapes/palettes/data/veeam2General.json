@@ -1,0 +1,638 @@
+{
+ "id": "veeam2General",
+ "title": "Veeam / General",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2General-0-enterprise-business",
+   "title": "Enterprise (business)",
+   "tags": "veeam2 enterprise business veeam vm vmware virtual machine general Enterprise (business)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 33,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.enterprise_business;",
+   "shapeNames": [
+    "mxgraph.veeam2.enterprise_business"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:288"
+  },
+  {
+   "id": "veeam2General-1-smb-business",
+   "title": "SMB (business)",
+   "tags": "veeam2 smb business veeam vm vmware virtual machine general SMB (business)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 27,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.smb_business;",
+   "shapeNames": [
+    "mxgraph.veeam2.smb_business"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:290"
+  },
+  {
+   "id": "veeam2General-2-automation",
+   "title": "Automation",
+   "tags": "veeam2 automation veeam vm vmware virtual machine general Automation",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.automation;",
+   "shapeNames": [
+    "mxgraph.veeam2.automation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:292"
+  },
+  {
+   "id": "veeam2General-3-service-application",
+   "title": "Service Application",
+   "tags": "veeam2 service application veeam vm vmware virtual machine general Service Application",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.service_application;",
+   "shapeNames": [
+    "mxgraph.veeam2.service_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:294"
+  },
+  {
+   "id": "veeam2General-4-cloud",
+   "title": "Cloud",
+   "tags": "veeam2 cloud veeam vm vmware virtual machine general Cloud",
+   "kind": "vertex",
+   "width": 40,
+   "height": 25,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.cloud;",
+   "shapeNames": [
+    "mxgraph.veeam2.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:296"
+  },
+  {
+   "id": "veeam2General-5-database",
+   "title": "Database",
+   "tags": "veeam2 database veeam vm vmware virtual machine general Database",
+   "kind": "vertex",
+   "width": 23,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.database;",
+   "shapeNames": [
+    "mxgraph.veeam2.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:298"
+  },
+  {
+   "id": "veeam2General-6-report",
+   "title": "Report",
+   "tags": "veeam2 report veeam vm vmware virtual machine general Report",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.report;",
+   "shapeNames": [
+    "mxgraph.veeam2.report"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:300"
+  },
+  {
+   "id": "veeam2General-7-task-list",
+   "title": "Task List",
+   "tags": "veeam2 task list veeam vm vmware virtual machine general Task List",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.task_list;",
+   "shapeNames": [
+    "mxgraph.veeam2.task_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:302"
+  },
+  {
+   "id": "veeam2General-8-dr-plan",
+   "title": "DR Plan",
+   "tags": "veeam2 dr plan veeam vm vmware virtual machine general DR Plan",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.dr_plan;",
+   "shapeNames": [
+    "mxgraph.veeam2.dr_plan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:304"
+  },
+  {
+   "id": "veeam2General-9-folder",
+   "title": "Folder",
+   "tags": "veeam2 folder veeam vm vmware virtual machine general Folder",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.folder;",
+   "shapeNames": [
+    "mxgraph.veeam2.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:306"
+  },
+  {
+   "id": "veeam2General-10-file",
+   "title": "File",
+   "tags": "veeam2 file veeam vm vmware virtual machine general File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.file;",
+   "shapeNames": [
+    "mxgraph.veeam2.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:308"
+  },
+  {
+   "id": "veeam2General-11-audio-file",
+   "title": "Audio File",
+   "tags": "veeam2 audio file veeam vm vmware virtual machine general Audio File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.audio_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.audio_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:310"
+  },
+  {
+   "id": "veeam2General-12-data-file",
+   "title": "Data File",
+   "tags": "veeam2 data file veeam vm vmware virtual machine general Data File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.data_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.data_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:312"
+  },
+  {
+   "id": "veeam2General-13-iso-file",
+   "title": "ISO File",
+   "tags": "veeam2 iso file veeam vm vmware virtual machine general ISO File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.iso_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.iso_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:314"
+  },
+  {
+   "id": "veeam2General-14-metadata-file",
+   "title": "Metadata File",
+   "tags": "veeam2 metadata file veeam vm vmware virtual machine general Metadata File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.metadata_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.metadata_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:316"
+  },
+  {
+   "id": "veeam2General-15-license-file",
+   "title": "License File",
+   "tags": "veeam2 license file veeam vm vmware virtual machine general License File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.license_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.license_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:318"
+  },
+  {
+   "id": "veeam2General-16-video-file",
+   "title": "Video File",
+   "tags": "veeam2 video file veeam vm vmware virtual machine general Video File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.video_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.video_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:320"
+  },
+  {
+   "id": "veeam2General-17-alarm",
+   "title": "Alarm",
+   "tags": "veeam2 alarm veeam vm vmware virtual machine general Alarm",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.alarm;",
+   "shapeNames": [
+    "mxgraph.veeam2.alarm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:322"
+  },
+  {
+   "id": "veeam2General-18-backup-browser",
+   "title": "Backup Browser",
+   "tags": "veeam2 backup browser veeam vm vmware virtual machine general Backup Browser",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.backup_browser;",
+   "shapeNames": [
+    "mxgraph.veeam2.backup_browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:324"
+  },
+  {
+   "id": "veeam2General-19-calendar",
+   "title": "Calendar",
+   "tags": "veeam2 calendar veeam vm vmware virtual machine general Calendar",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.calendar;",
+   "shapeNames": [
+    "mxgraph.veeam2.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:326"
+  },
+  {
+   "id": "veeam2General-20-command-line",
+   "title": "Command Line",
+   "tags": "veeam2 command line veeam vm vmware virtual machine general Command Line",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.command_line;",
+   "shapeNames": [
+    "mxgraph.veeam2.command_line"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:328"
+  },
+  {
+   "id": "veeam2General-21-cd",
+   "title": "CD",
+   "tags": "veeam2 cd compact disc veeam vm vmware virtual machine general CD",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.cd;",
+   "shapeNames": [
+    "mxgraph.veeam2.cd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:330"
+  },
+  {
+   "id": "veeam2General-22-controller",
+   "title": "Controller",
+   "tags": "veeam2 controller veeam vm vmware virtual machine general Controller",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.controller;",
+   "shapeNames": [
+    "mxgraph.veeam2.controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:332"
+  },
+  {
+   "id": "veeam2General-23-deduplication",
+   "title": "Deduplication",
+   "tags": "veeam2 deduplication veeam vm vmware virtual machine general Deduplication",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.deduplication;",
+   "shapeNames": [
+    "mxgraph.veeam2.deduplication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:334"
+  },
+  {
+   "id": "veeam2General-24-download",
+   "title": "Download",
+   "tags": "veeam2 download veeam vm vmware virtual machine general Download",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.download;",
+   "shapeNames": [
+    "mxgraph.veeam2.download"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:336"
+  },
+  {
+   "id": "veeam2General-25-dns",
+   "title": "DNS",
+   "tags": "veeam2 dns domain name store veeam vm vmware virtual machine general DNS",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.dns;",
+   "shapeNames": [
+    "mxgraph.veeam2.dns"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:338"
+  },
+  {
+   "id": "veeam2General-26-globe",
+   "title": "Globe",
+   "tags": "veeam2 globe veeam vm vmware virtual machine general Globe",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.globe;",
+   "shapeNames": [
+    "mxgraph.veeam2.globe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:340"
+  },
+  {
+   "id": "veeam2General-27-key",
+   "title": "Key",
+   "tags": "veeam2 key veeam vm vmware virtual machine general Key",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.key;",
+   "shapeNames": [
+    "mxgraph.veeam2.key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:342"
+  },
+  {
+   "id": "veeam2General-28-encryption-key",
+   "title": "Encryption Key",
+   "tags": "veeam2 encryption key veeam vm vmware virtual machine general Encryption Key",
+   "kind": "vertex",
+   "width": 36,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.encryption_key;",
+   "shapeNames": [
+    "mxgraph.veeam2.encryption_key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:344"
+  },
+  {
+   "id": "veeam2General-29-letter",
+   "title": "Letter",
+   "tags": "veeam2 letter veeam vm vmware virtual machine general Letter",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 20,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.letter;",
+   "shapeNames": [
+    "mxgraph.veeam2.letter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:346"
+  },
+  {
+   "id": "veeam2General-30-exchange-objects",
+   "title": "Exchange objects",
+   "tags": "veeam2 exchange objects veeam vm vmware virtual machine general Exchange objects",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.exchange_objects;",
+   "shapeNames": [
+    "mxgraph.veeam2.exchange_objects"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:348"
+  },
+  {
+   "id": "veeam2General-31-magnifying-glass",
+   "title": "Magnifying Glass",
+   "tags": "veeam2 magnifying glass veeam vm vmware virtual machine general Magnifying Glass",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.magnifying_glass;",
+   "shapeNames": [
+    "mxgraph.veeam2.magnifying_glass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:350"
+  },
+  {
+   "id": "veeam2General-32-restore",
+   "title": "Restore",
+   "tags": "veeam2 restore veeam vm vmware virtual machine general Restore",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.restore;",
+   "shapeNames": [
+    "mxgraph.veeam2.restore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:352"
+  },
+  {
+   "id": "veeam2General-33-role",
+   "title": "Role",
+   "tags": "veeam2 role veeam vm vmware virtual machine general Role",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.role;",
+   "shapeNames": [
+    "mxgraph.veeam2.role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:354"
+  },
+  {
+   "id": "veeam2General-34-interface-console",
+   "title": "Interface / Console",
+   "tags": "veeam2 interface console veeam vm vmware virtual machine general Interface / Console",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.interface_console;",
+   "shapeNames": [
+    "mxgraph.veeam2.interface_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:356"
+  },
+  {
+   "id": "veeam2General-35-monitoring-console",
+   "title": "Monitoring Console",
+   "tags": "veeam2 monitoring console veeam vm vmware virtual machine general Monitoring Console",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.monitoring_console;",
+   "shapeNames": [
+    "mxgraph.veeam2.monitoring_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:358"
+  },
+  {
+   "id": "veeam2General-36-web-console",
+   "title": "Web Console",
+   "tags": "veeam2 web console veeam vm vmware virtual machine general Web Console",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.web_console;",
+   "shapeNames": [
+    "mxgraph.veeam2.web_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:360"
+  },
+  {
+   "id": "veeam2General-37-file-browser",
+   "title": "File Browser",
+   "tags": "veeam2 file browser veeam vm vmware virtual machine general File Browser",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.file_browser;",
+   "shapeNames": [
+    "mxgraph.veeam2.file_browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:362"
+  },
+  {
+   "id": "veeam2General-38-table",
+   "title": "Table",
+   "tags": "veeam2 table veeam vm vmware virtual machine general Table",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.table;",
+   "shapeNames": [
+    "mxgraph.veeam2.table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:364"
+  },
+  {
+   "id": "veeam2General-39-time-clocks",
+   "title": "Time / Clocks",
+   "tags": "veeam2 time clocks veeam vm vmware virtual machine general Time / Clocks",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.time_clocks;",
+   "shapeNames": [
+    "mxgraph.veeam2.time_clocks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:366"
+  },
+  {
+   "id": "veeam2General-40-tag",
+   "title": "Tag",
+   "tags": "veeam2 tag veeam vm vmware virtual machine general Tag",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tag;",
+   "shapeNames": [
+    "mxgraph.veeam2.tag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:368"
+  },
+  {
+   "id": "veeam2General-41-transport",
+   "title": "Transport",
+   "tags": "veeam2 transport veeam vm vmware virtual machine general Transport",
+   "kind": "vertex",
+   "width": 38,
+   "height": 23,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.transport;",
+   "shapeNames": [
+    "mxgraph.veeam2.transport"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:370"
+  },
+  {
+   "id": "veeam2General-42-vpn",
+   "title": "VPN",
+   "tags": "veeam2 vpn virtual private network veeam vm vmware virtual machine general VPN",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vpn;",
+   "shapeNames": [
+    "mxgraph.veeam2.vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:372"
+  },
+  {
+   "id": "veeam2General-43-user",
+   "title": "User",
+   "tags": "veeam2 user veeam vm vmware virtual machine general User",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.user;",
+   "shapeNames": [
+    "mxgraph.veeam2.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:374"
+  },
+  {
+   "id": "veeam2General-44-user-group",
+   "title": "User Group",
+   "tags": "veeam2 user group veeam vm vmware virtual machine general User Group",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.user_group;",
+   "shapeNames": [
+    "mxgraph.veeam2.user_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:376"
+  }
+ ]
+}

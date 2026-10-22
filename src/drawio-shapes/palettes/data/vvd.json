@@ -1,0 +1,1366 @@
+{
+ "id": "vvd",
+ "title": "VMware Validated Design",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-VVD.js:7",
+ "entries": [
+  {
+   "id": "vvd-0-administrator",
+   "title": "Administrator",
+   "tags": "vvd administrator vmware validated design Administrator",
+   "kind": "vertex",
+   "width": 21.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.administrator;",
+   "shapeNames": [
+    "mxgraph.vvd.administrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:23"
+  },
+  {
+   "id": "vvd-1-infrastructure-role",
+   "title": "Infrastructure Role",
+   "tags": "vvd administrator vmware validated design Infrastructure Role",
+   "kind": "vertex",
+   "width": 21.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.administrator;fillColor=#066A90;",
+   "shapeNames": [
+    "mxgraph.vvd.administrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:25"
+  },
+  {
+   "id": "vvd-2-tenant-role",
+   "title": "Tenant Role",
+   "tags": "vvd administrator vmware validated design Tenant Role",
+   "kind": "vertex",
+   "width": 21.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.administrator;fillColor=#65B245;",
+   "shapeNames": [
+    "mxgraph.vvd.administrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:27"
+  },
+  {
+   "id": "vvd-3-app",
+   "title": "App",
+   "tags": "vvd app application vmware validated design App",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.app;",
+   "shapeNames": [
+    "mxgraph.vvd.app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:29"
+  },
+  {
+   "id": "vvd-4-volumes-agent",
+   "title": "Volumes Agent",
+   "tags": "vvd volumes agent vmware validated design Volumes Agent",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.volumes_agent;",
+   "shapeNames": [
+    "mxgraph.vvd.volumes_agent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:31"
+  },
+  {
+   "id": "vvd-5-appstack-volume",
+   "title": "AppStack Volume",
+   "tags": "vvd appstack volume vmware validated design AppStack Volume",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.appstack_volume;",
+   "shapeNames": [
+    "mxgraph.vvd.appstack_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:33"
+  },
+  {
+   "id": "vvd-6-app-volumes-manager",
+   "title": "App Volumes Manager",
+   "tags": "vvd app volumes manager vmware validated design App Volumes Manager",
+   "kind": "vertex",
+   "width": 48.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.app_volumes_manager;",
+   "shapeNames": [
+    "mxgraph.vvd.app_volumes_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:35"
+  },
+  {
+   "id": "vvd-7-array-manager",
+   "title": "Array Manager",
+   "tags": "vvd array manager vmware validated design Array Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.array_manager;",
+   "shapeNames": [
+    "mxgraph.vvd.array_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:37"
+  },
+  {
+   "id": "vvd-8-blueprint",
+   "title": "Blueprint",
+   "tags": "vvd blueprint vmware validated design Blueprint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.blueprint;",
+   "shapeNames": [
+    "mxgraph.vvd.blueprint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:39"
+  },
+  {
+   "id": "vvd-9-business-continuity-data-protection",
+   "title": "Business Continuity Data Protection",
+   "tags": "vvd business continuity data protection vmware validated design Business Continuity Data Protection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.business_continuity_data_protection;",
+   "shapeNames": [
+    "mxgraph.vvd.business_continuity_data_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:41"
+  },
+  {
+   "id": "vvd-10-cd",
+   "title": "CD",
+   "tags": "vvd cd compact disc vmware validated design CD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.cd;",
+   "shapeNames": [
+    "mxgraph.vvd.cd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:43"
+  },
+  {
+   "id": "vvd-11-cloud-computing",
+   "title": "Cloud Computing",
+   "tags": "vvd cloud computing vmware validated design Cloud Computing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.cloud_computing;fillColor=#066A90;",
+   "shapeNames": [
+    "mxgraph.vvd.cloud_computing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:45"
+  },
+  {
+   "id": "vvd-12-collective-nsx-esg",
+   "title": "Collective NSX ESG",
+   "tags": "vvd collective nsx esg vmware validated design Collective NSX ESG",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.collective_nsx_esg;",
+   "shapeNames": [
+    "mxgraph.vvd.collective_nsx_esg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:47"
+  },
+  {
+   "id": "vvd-13-consumption-plane",
+   "title": "Consumption Plane",
+   "tags": "vvd consumption plane vmware validated design Consumption Plane",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.consumption_plane;",
+   "shapeNames": [
+    "mxgraph.vvd.consumption_plane"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:49"
+  },
+  {
+   "id": "vvd-14-cpu",
+   "title": "CPU",
+   "tags": "vvd cpu central processing unit vmware validated design CPU",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.cpu;",
+   "shapeNames": [
+    "mxgraph.vvd.cpu"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:51"
+  },
+  {
+   "id": "vvd-15-datacenter",
+   "title": "Datacenter",
+   "tags": "vvd datacenter vmware validated design Datacenter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.datacenter;",
+   "shapeNames": [
+    "mxgraph.vvd.datacenter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:53"
+  },
+  {
+   "id": "vvd-16-datastore",
+   "title": "Datastore",
+   "tags": "vvd datastore vmware validated design Datastore",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.datastore;",
+   "shapeNames": [
+    "mxgraph.vvd.datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:55"
+  },
+  {
+   "id": "vvd-17-disk",
+   "title": "Disk",
+   "tags": "vvd disk vmware validated design Disk",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.disk;",
+   "shapeNames": [
+    "mxgraph.vvd.disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:57"
+  },
+  {
+   "id": "vvd-18-document",
+   "title": "Document",
+   "tags": "vvd document vmware validated design Document",
+   "kind": "vertex",
+   "width": 36.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.document;",
+   "shapeNames": [
+    "mxgraph.vvd.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:59"
+  },
+  {
+   "id": "vvd-19-edge-gateway",
+   "title": "Edge Gateway",
+   "tags": "vvd edge gateway vmware validated design Edge Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.edge_gateway;",
+   "shapeNames": [
+    "mxgraph.vvd.edge_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:61"
+  },
+  {
+   "id": "vvd-20-endpoint-white",
+   "title": "Endpoint White",
+   "tags": "vvd endpoint vmware validated design Endpoint White",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.endpoint;accentColor=#079247;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.vvd.endpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:63"
+  },
+  {
+   "id": "vvd-21-endpoint",
+   "title": "Endpoint",
+   "tags": "vvd endpoint vmware validated design Endpoint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.endpoint;accentColor=#079247;",
+   "shapeNames": [
+    "mxgraph.vvd.endpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:65"
+  },
+  {
+   "id": "vvd-22-ethernet-port",
+   "title": "Ethernet Port",
+   "tags": "vvd ethernet port vmware validated design Ethernet Port",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.ethernet_port;",
+   "shapeNames": [
+    "mxgraph.vvd.ethernet_port"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:67"
+  },
+  {
+   "id": "vvd-23-external-networks",
+   "title": "External Networks",
+   "tags": "vvd external networks vmware validated design External Networks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.external_networks;",
+   "shapeNames": [
+    "mxgraph.vvd.external_networks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:69"
+  },
+  {
+   "id": "vvd-24-flash-drive",
+   "title": "Flash Drive",
+   "tags": "vvd flash drive vmware validated design Flash Drive",
+   "kind": "vertex",
+   "width": 21,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.flash_drive;",
+   "shapeNames": [
+    "mxgraph.vvd.flash_drive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:71"
+  },
+  {
+   "id": "vvd-25-folder",
+   "title": "Folder",
+   "tags": "vvd folder vmware validated design Folder",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.folder;",
+   "shapeNames": [
+    "mxgraph.vvd.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:73"
+  },
+  {
+   "id": "vvd-26-guest-agent-customization",
+   "title": "Guest Agent Customization",
+   "tags": "vvd guest agent customization vmware validated design Guest Agent Customization",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.guest_agent_customization;",
+   "shapeNames": [
+    "mxgraph.vvd.guest_agent_customization"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:75"
+  },
+  {
+   "id": "vvd-27-horizon",
+   "title": "Horizon",
+   "tags": "vvd horizon vmware validated design Horizon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.horizon;",
+   "shapeNames": [
+    "mxgraph.vvd.horizon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:77"
+  },
+  {
+   "id": "vvd-28-infrastructure",
+   "title": "Infrastructure",
+   "tags": "vvd infrastructure vmware validated design Infrastructure",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.infrastructure;",
+   "shapeNames": [
+    "mxgraph.vvd.infrastructure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:79"
+  },
+  {
+   "id": "vvd-29-key",
+   "title": "Key",
+   "tags": "vvd key vmware validated design Key",
+   "kind": "vertex",
+   "width": 24,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.key;",
+   "shapeNames": [
+    "mxgraph.vvd.key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:81"
+  },
+  {
+   "id": "vvd-30-tenant-key",
+   "title": "Tenant Key",
+   "tags": "vvd tenant key vmware validated design Tenant Key",
+   "kind": "vertex",
+   "width": 25.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.tenant_key;",
+   "shapeNames": [
+    "mxgraph.vvd.tenant_key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:83"
+  },
+  {
+   "id": "vvd-31-keyboard",
+   "title": "Keyboard",
+   "tags": "vvd keyboard vmware validated design Keyboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.keyboard;",
+   "shapeNames": [
+    "mxgraph.vvd.keyboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:85"
+  },
+  {
+   "id": "vvd-32-laptop",
+   "title": "Laptop",
+   "tags": "vvd laptop vmware validated design Laptop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.laptop;",
+   "shapeNames": [
+    "mxgraph.vvd.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:87"
+  },
+  {
+   "id": "vvd-33-log-files",
+   "title": "Log Files",
+   "tags": "vvd log files vmware validated design Log Files",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.log_files;",
+   "shapeNames": [
+    "mxgraph.vvd.log_files"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:89"
+  },
+  {
+   "id": "vvd-34-logical-firewall",
+   "title": "Logical Firewall",
+   "tags": "vvd logical firewall vmware validated design Logical Firewall",
+   "kind": "vertex",
+   "width": 48.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.logical_firewall;",
+   "shapeNames": [
+    "mxgraph.vvd.logical_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:91"
+  },
+  {
+   "id": "vvd-35-logical-distribution",
+   "title": "Logical Distribution",
+   "tags": "vvd logical distribution vmware validated design Logical Distribution",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.logical_distribution;",
+   "shapeNames": [
+    "mxgraph.vvd.logical_distribution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:93"
+  },
+  {
+   "id": "vvd-36-machine",
+   "title": "Machine",
+   "tags": "vvd machine vmware validated design Machine",
+   "kind": "vertex",
+   "width": 20.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.machine;",
+   "shapeNames": [
+    "mxgraph.vvd.machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:95"
+  },
+  {
+   "id": "vvd-37-memory",
+   "title": "Memory",
+   "tags": "vvd memory vmware validated design Memory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 19,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.memory;",
+   "shapeNames": [
+    "mxgraph.vvd.memory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:97"
+  },
+  {
+   "id": "vvd-38-monitor",
+   "title": "Monitor",
+   "tags": "vvd monitor vmware validated design Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.monitor;",
+   "shapeNames": [
+    "mxgraph.vvd.monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:99"
+  },
+  {
+   "id": "vvd-39-mouse",
+   "title": "Mouse",
+   "tags": "vvd mouse vmware validated design Mouse",
+   "kind": "vertex",
+   "width": 24.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.mouse;",
+   "shapeNames": [
+    "mxgraph.vvd.mouse"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:101"
+  },
+  {
+   "id": "vvd-40-networking",
+   "title": "Networking",
+   "tags": "vvd networking vmware validated design Networking",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.networking;",
+   "shapeNames": [
+    "mxgraph.vvd.networking"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:103"
+  },
+  {
+   "id": "vvd-41-networks",
+   "title": "Networks",
+   "tags": "vvd networks vmware validated design Networks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.networks;",
+   "shapeNames": [
+    "mxgraph.vvd.networks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:105"
+  },
+  {
+   "id": "vvd-42-nfvo",
+   "title": "NFVO",
+   "tags": "vvd nfvo vmware validated design NFVO",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nfvo;",
+   "shapeNames": [
+    "mxgraph.vvd.nfvo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:107"
+  },
+  {
+   "id": "vvd-43-nsx",
+   "title": "NSX",
+   "tags": "vvd nsx vmware validated design NSX",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:109"
+  },
+  {
+   "id": "vvd-44-nsx-controller",
+   "title": "NSX Controller",
+   "tags": "vvd nsx controller vmware validated design NSX Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_controller;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:111"
+  },
+  {
+   "id": "vvd-45-nsx-dashboard",
+   "title": "NSX Dashboard",
+   "tags": "vvd nsx dashboard vmware validated design NSX Dashboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_dashboard;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_dashboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:113"
+  },
+  {
+   "id": "vvd-46-nsx-edge-and-load-balancer",
+   "title": "NSX Edge and Load Balancer",
+   "tags": "vvd nsx edge and load balancer vmware validated design NSX Edge and Load Balancer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_edge_and_load_balancer;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_edge_and_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:115"
+  },
+  {
+   "id": "vvd-47-nsx-esg",
+   "title": "NSX ESG",
+   "tags": "vvd nsx esg vmware validated design NSX ESG",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_esg;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_esg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:117"
+  },
+  {
+   "id": "vvd-48-nsx-manager",
+   "title": "NSX Manager",
+   "tags": "vvd nsx manager vmware validated design NSX Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_manager;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:119"
+  },
+  {
+   "id": "vvd-49-nsx-public-cloud-gateway",
+   "title": "NSX Public Cloud Gateway",
+   "tags": "vvd nsx public cloud gateway vmware validated design NSX Public Cloud Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_public_cloud_gateway;",
+   "shapeNames": [
+    "mxgraph.vvd.nsx_public_cloud_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:121"
+  },
+  {
+   "id": "vvd-50-on-demand-self-service",
+   "title": "On-demand self-service",
+   "tags": "vvd on demand self service vmware validated design On-demand self-service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.on_demand_self_service;",
+   "shapeNames": [
+    "mxgraph.vvd.on_demand_self_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:123"
+  },
+  {
+   "id": "vvd-51-ovdc-networks",
+   "title": "OvDC Networks",
+   "tags": "vvd ovdc networks vmware validated design OvDC Networks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.ovdc_networks;",
+   "shapeNames": [
+    "mxgraph.vvd.ovdc_networks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:125"
+  },
+  {
+   "id": "vvd-52-pair-sites",
+   "title": "Pair Sites",
+   "tags": "vvd pair sites vmware validated design Pair Sites",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.pair_sites;",
+   "shapeNames": [
+    "mxgraph.vvd.pair_sites"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:127"
+  },
+  {
+   "id": "vvd-53-platform-services-controller",
+   "title": "Platform Services Controller",
+   "tags": "vvd platform services controller vmware validated design Platform Services Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.platform_services_controller;",
+   "shapeNames": [
+    "mxgraph.vvd.platform_services_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:129"
+  },
+  {
+   "id": "vvd-54-phone",
+   "title": "Phone",
+   "tags": "vvd phone vmware validated design Phone",
+   "kind": "vertex",
+   "width": 29.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.phone;",
+   "shapeNames": [
+    "mxgraph.vvd.phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:131"
+  },
+  {
+   "id": "vvd-55-physical-storage",
+   "title": "Physical Storage",
+   "tags": "vvd physical storage vmware validated design Physical Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.physical_storage;",
+   "shapeNames": [
+    "mxgraph.vvd.physical_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:133"
+  },
+  {
+   "id": "vvd-56-physical-network-adapter",
+   "title": "Physical Network Adapter",
+   "tags": "vvd physical network adapter vmware validated design Physical Network Adapter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.999999999999996,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.physical_network_adapter;",
+   "shapeNames": [
+    "mxgraph.vvd.physical_network_adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:135"
+  },
+  {
+   "id": "vvd-57-physical-upstream-router",
+   "title": "Physical Upstream Router",
+   "tags": "vvd physical upstream router vmware validated design Physical Upstream Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.physical_upstream_router;",
+   "shapeNames": [
+    "mxgraph.vvd.physical_upstream_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:137"
+  },
+  {
+   "id": "vvd-58-protection-group-config",
+   "title": "Protection Group Config",
+   "tags": "vvd protection group config vmware validated design Protection Group Config",
+   "kind": "vertex",
+   "width": 48.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.protection_group_config;",
+   "shapeNames": [
+    "mxgraph.vvd.protection_group_config"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:139"
+  },
+  {
+   "id": "vvd-59-protection-group",
+   "title": "Protection Group",
+   "tags": "vvd protection group vmware validated design Protection Group",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.protection_group;",
+   "shapeNames": [
+    "mxgraph.vvd.protection_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:141"
+  },
+  {
+   "id": "vvd-60-recovery-plan",
+   "title": "Recovery Plan",
+   "tags": "vvd recovery plan vmware validated design Recovery Plan",
+   "kind": "vertex",
+   "width": 36.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.recovery_plan;",
+   "shapeNames": [
+    "mxgraph.vvd.recovery_plan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:143"
+  },
+  {
+   "id": "vvd-61-resource-pool",
+   "title": "Resource Pool",
+   "tags": "vvd resource pool vmware validated design Resource Pool",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.resource_pool;",
+   "shapeNames": [
+    "mxgraph.vvd.resource_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:145"
+  },
+  {
+   "id": "vvd-62-site-container",
+   "title": "Site Container",
+   "tags": "vvd site container vmware validated design Site Container",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.site_container;",
+   "shapeNames": [
+    "mxgraph.vvd.site_container"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:147"
+  },
+  {
+   "id": "vvd-63-scsi-controller",
+   "title": "SCSI Controller",
+   "tags": "vvd scsi controller vmware validated design SCSI Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 22.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.scsi_controller;",
+   "shapeNames": [
+    "mxgraph.vvd.scsi_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:149"
+  },
+  {
+   "id": "vvd-64-security",
+   "title": "Security",
+   "tags": "vvd security vmware validated design Security",
+   "kind": "vertex",
+   "width": 38.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.security;",
+   "shapeNames": [
+    "mxgraph.vvd.security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:151"
+  },
+  {
+   "id": "vvd-65-server",
+   "title": "Server",
+   "tags": "vvd server vmware validated design Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 13,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.server;",
+   "shapeNames": [
+    "mxgraph.vvd.server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:153"
+  },
+  {
+   "id": "vvd-66-service-provider-cloud-environment",
+   "title": "Service Provider Cloud Environment",
+   "tags": "vvd service provider cloud environment vmware validated design Service Provider Cloud Environment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.service_provider_cloud_environment;",
+   "shapeNames": [
+    "mxgraph.vvd.service_provider_cloud_environment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:155"
+  },
+  {
+   "id": "vvd-67-site",
+   "title": "Site",
+   "tags": "vvd site vmware validated design Site",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.site;",
+   "shapeNames": [
+    "mxgraph.vvd.site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:157"
+  },
+  {
+   "id": "vvd-68-site-recovery",
+   "title": "Site Recovery",
+   "tags": "vvd site recovery vmware validated design Site Recovery",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.site_recovery;",
+   "shapeNames": [
+    "mxgraph.vvd.site_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:159"
+  },
+  {
+   "id": "vvd-69-site-recovery-functional-icon",
+   "title": "Site Recovery Functional Icon",
+   "tags": "vvd site recovery functional icon vmware validated design Site Recovery Functional Icon",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.site_recovery_functional_icon;",
+   "shapeNames": [
+    "mxgraph.vvd.site_recovery_functional_icon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:161"
+  },
+  {
+   "id": "vvd-70-ssd",
+   "title": "SSD",
+   "tags": "vvd ssd solid state drive vmware validated design SSD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.ssd;",
+   "shapeNames": [
+    "mxgraph.vvd.ssd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:163"
+  },
+  {
+   "id": "vvd-71-storage",
+   "title": "Storage",
+   "tags": "vvd storage vmware validated design Storage",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.storage;",
+   "shapeNames": [
+    "mxgraph.vvd.storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:165"
+  },
+  {
+   "id": "vvd-72-switch",
+   "title": "Switch",
+   "tags": "vvd switch vmware validated design Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.switch;",
+   "shapeNames": [
+    "mxgraph.vvd.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:167"
+  },
+  {
+   "id": "vvd-73-telco-network",
+   "title": "Telco Network",
+   "tags": "vvd telco network vmware validated design Telco Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.telco_network;",
+   "shapeNames": [
+    "mxgraph.vvd.telco_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:169"
+  },
+  {
+   "id": "vvd-74-template",
+   "title": "Template",
+   "tags": "vvd template vmware validated design Template",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.template;",
+   "shapeNames": [
+    "mxgraph.vvd.template"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:171"
+  },
+  {
+   "id": "vvd-75-user-group",
+   "title": "User Group",
+   "tags": "vvd user group vmware validated design User Group",
+   "kind": "vertex",
+   "width": 35.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.user_group;",
+   "shapeNames": [
+    "mxgraph.vvd.user_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:173"
+  },
+  {
+   "id": "vvd-76-vapp-network",
+   "title": "vApp Network",
+   "tags": "vvd vapp network vmware validated design vApp Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vapp_network;",
+   "shapeNames": [
+    "mxgraph.vvd.vapp_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:175"
+  },
+  {
+   "id": "vvd-77-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "vvd virtual machine vmware validated design Virtual Machine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.virtual_machine;",
+   "shapeNames": [
+    "mxgraph.vvd.virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:177"
+  },
+  {
+   "id": "vvd-78-virtual-switch",
+   "title": "Virtual Switch",
+   "tags": "vvd virtual switch vmware validated design Virtual Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 26.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.virtual_switch;",
+   "shapeNames": [
+    "mxgraph.vvd.virtual_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:179"
+  },
+  {
+   "id": "vvd-79-virtual-appliance",
+   "title": "Virtual Appliance",
+   "tags": "vvd virtual appliance vmware validated design Virtual Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.virtual_appliance;",
+   "shapeNames": [
+    "mxgraph.vvd.virtual_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:181"
+  },
+  {
+   "id": "vvd-80-vcenter-server",
+   "title": "vCenter Server",
+   "tags": "vvd vcenter server vmware validated design vCenter Server",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vcenter_server;",
+   "shapeNames": [
+    "mxgraph.vvd.vcenter_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:183"
+  },
+  {
+   "id": "vvd-81-vcloud-director",
+   "title": "vCloud Director",
+   "tags": "vvd vcloud director vmware validated design vCloud Director",
+   "kind": "vertex",
+   "width": 50,
+   "height": 21.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vcloud_director;",
+   "shapeNames": [
+    "mxgraph.vvd.vcloud_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:185"
+  },
+  {
+   "id": "vvd-82-vpn",
+   "title": "VPN",
+   "tags": "vvd vpn virtual private network vmware validated design VPN",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vpn;",
+   "shapeNames": [
+    "mxgraph.vvd.vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:187"
+  },
+  {
+   "id": "vvd-83-vrealize-automation",
+   "title": "vRealize Automation",
+   "tags": "vvd vrealize automation vmware validated design vRealize Automation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vrealize_automation;",
+   "shapeNames": [
+    "mxgraph.vvd.vrealize_automation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:189"
+  },
+  {
+   "id": "vvd-84-vrealize-log-insight",
+   "title": "vRealize Log Insight",
+   "tags": "vvd vrealize log insight vmware validated design vRealize Log Insight",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vrealize_log_insight;",
+   "shapeNames": [
+    "mxgraph.vvd.vrealize_log_insight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:191"
+  },
+  {
+   "id": "vvd-85-vrealize-operations",
+   "title": "vRealize Operations",
+   "tags": "vvd vrealize operations vmware validated design vRealize Operations",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vrealize_operations;",
+   "shapeNames": [
+    "mxgraph.vvd.vrealize_operations"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:193"
+  },
+  {
+   "id": "vvd-86-vrealize-orchestrator",
+   "title": "vRealize Orchestrator",
+   "tags": "vvd vrealize orchestrator vmware validated design vRealize Orchestrator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vrealize_orchestrator;",
+   "shapeNames": [
+    "mxgraph.vvd.vrealize_orchestrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:195"
+  },
+  {
+   "id": "vvd-87-vrops",
+   "title": "vROPs",
+   "tags": "vvd vrops vmware validated design vROPs",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vrops;",
+   "shapeNames": [
+    "mxgraph.vvd.vrops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:197"
+  },
+  {
+   "id": "vvd-88-vsan",
+   "title": "vSAN",
+   "tags": "vvd vsan vmware validated design vSAN",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vsan;",
+   "shapeNames": [
+    "mxgraph.vvd.vsan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:199"
+  },
+  {
+   "id": "vvd-89-vshield",
+   "title": "vShield",
+   "tags": "vvd vshield vmware validated design vShield",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vshield;",
+   "shapeNames": [
+    "mxgraph.vvd.vshield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:201"
+  },
+  {
+   "id": "vvd-90-vm-group",
+   "title": "VM Group",
+   "tags": "vvd vm group vmware validated design VM Group",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vm_group;",
+   "shapeNames": [
+    "mxgraph.vvd.vm_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:203"
+  },
+  {
+   "id": "vvd-91-vnf-m",
+   "title": "VNF-M",
+   "tags": "vvd vnf vmware validated design VNF-M",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vnf_m;",
+   "shapeNames": [
+    "mxgraph.vvd.vnf_m"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:205"
+  },
+  {
+   "id": "vvd-92-vxlan",
+   "title": "VXLAN",
+   "tags": "vvd vxlan vmware validated design VXLAN",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.vxlan;",
+   "shapeNames": [
+    "mxgraph.vvd.vxlan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:207"
+  },
+  {
+   "id": "vvd-93-writable-volume",
+   "title": "Writable Volume",
+   "tags": "vvd writable volume vmware validated design Writable Volume",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.writable_volume;",
+   "shapeNames": [
+    "mxgraph.vvd.writable_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:209"
+  },
+  {
+   "id": "vvd-94-wavefront",
+   "title": "Wavefront",
+   "tags": "vvd wavefront vmware validated design Wavefront",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wavefront;",
+   "shapeNames": [
+    "mxgraph.vvd.wavefront"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:211"
+  },
+  {
+   "id": "vvd-95-web-browser",
+   "title": "Web Browser",
+   "tags": "vvd web browser vmware validated design Web Browser",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.web_browser;",
+   "shapeNames": [
+    "mxgraph.vvd.web_browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:213"
+  },
+  {
+   "id": "vvd-96-wi-fi",
+   "title": "Wi-Fi",
+   "tags": "vvd wi fi wifi vmware validated design Wi-Fi",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wi_fi;",
+   "shapeNames": [
+    "mxgraph.vvd.wi_fi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-VVD.js:215"
+  }
+ ]
+}

@@ -1,0 +1,1515 @@
+{
+ "id": "android",
+ "title": "Android",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Android.js:8",
+ "entries": [
+  {
+   "id": "android-0-phone",
+   "title": "Phone",
+   "tags": "android phone mobile portrait Phone",
+   "kind": "vertex",
+   "width": 200,
+   "height": 390,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.android.phone2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:29"
+  },
+  {
+   "id": "android-1-phone-landscape",
+   "title": "Phone (landscape)",
+   "tags": "android phone mobile landscape Phone (landscape)",
+   "kind": "vertex",
+   "width": 390,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;direction=south;",
+   "shapeNames": [
+    "mxgraph.android.phone2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:31"
+  },
+  {
+   "id": "android-2-tab",
+   "title": "Tab",
+   "tags": "android tab tablet portrait Tab",
+   "kind": "vertex",
+   "width": 472,
+   "height": 686,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.tab2;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.android.tab2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:33"
+  },
+  {
+   "id": "android-3-tab-landscape",
+   "title": "Tab (landscape)",
+   "tags": "android tab tablet landscape Tab (landscape)",
+   "kind": "vertex",
+   "width": 686,
+   "height": 472,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.tab2;strokeColor=#c0c0c0;direction=north;",
+   "shapeNames": [
+    "mxgraph.android.tab2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:35"
+  },
+  {
+   "id": "android-4-action-bar",
+   "title": "Action Bar",
+   "tags": "android action bar dark portrait Action Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar;fillColor=#1A1A1A;strokeColor=none;strokeWidth=2;fontColor=#FFFFFF;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.android.action_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:37"
+  },
+  {
+   "id": "android-5-action-bar-bright",
+   "title": "Action Bar (Bright)",
+   "tags": "android action bar bright portrait Action Bar (Bright)",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar;fillColor=#E6E6E6;strokeColor=none;strokeWidth=2;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.android.action_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:39"
+  },
+  {
+   "id": "android-6-action-bar-landscape",
+   "title": "Action Bar Landscape",
+   "tags": "android action bar landscape dark Action Bar Landscape",
+   "kind": "vertex",
+   "width": 320,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar_landscape;fillColor=#1A1A1A;strokeColor=none;strokeWidth=2;fontColor=#FFFFFF;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.android.action_bar_landscape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:41"
+  },
+  {
+   "id": "android-7-action-bar-landscape-bright",
+   "title": "Action Bar Landscape (Bright)",
+   "tags": "android action bar bright landscape Action Bar Landscape (Bright)",
+   "kind": "vertex",
+   "width": 320,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar_landscape;fillColor=#E6E6E6;strokeColor=none;strokeWidth=2;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.android.action_bar_landscape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:43"
+  },
+  {
+   "id": "android-8-button-normal",
+   "title": "Button (Normal)",
+   "tags": "android button normal Button (Normal)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#666666;align=center;strokeColor=#4D4D4D;fontColor=#ffffff;",
+   "value": "Normal",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:45"
+  },
+  {
+   "id": "android-9-button-focused",
+   "title": "Button (Focused)",
+   "tags": "android button focused Button (Focused)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#666666;align=center;strokeColor=#999999;fontColor=#ffffff;",
+   "value": "Focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:47"
+  },
+  {
+   "id": "android-10-button-pressed",
+   "title": "Button (Pressed)",
+   "tags": "android button pressed Button (Pressed)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#999999;align=center;strokeColor=#666666;fontColor=#ffffff;strokeWidth=2;",
+   "value": "Pressed",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:49"
+  },
+  {
+   "id": "android-11-button-focused-disabled",
+   "title": "Button (Focused, Disabled)",
+   "tags": "android button focused disabled Button (Focused, Disabled)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#333333;align=center;strokeColor=#4D4D4D;fontColor=#666666;",
+   "value": "Focused disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:51"
+  },
+  {
+   "id": "android-12-button-disabled",
+   "title": "Button (Disabled)",
+   "tags": "android button disabled Button (Disabled)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#333333;align=center;strokeColor=#333333;fontColor=#666666;",
+   "value": "Disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:53"
+  },
+  {
+   "id": "android-13-button-normal-bright",
+   "title": "Button (Normal, Bright)",
+   "tags": "android button normal bright Button (Normal, Bright)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#E6E6E6;align=center;strokeColor=#E6E6E6;fontColor=#333333;",
+   "value": "Normal",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:55"
+  },
+  {
+   "id": "android-14-button-focused-bright",
+   "title": "Button (Focused, Bright)",
+   "tags": "android button focused bright Button (Focused, Bright)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#E6E6E6;align=center;strokeColor=#B3B3B3;fontColor=#333333;",
+   "value": "Focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:57"
+  },
+  {
+   "id": "android-15-button-pressed-bright",
+   "title": "Button (Pressed, Bright)",
+   "tags": "android button pressed bright Button (Pressed, Bright)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#B3B3B3;align=center;strokeColor=#E6E6E6;fontColor=#333333;strokeWidth=2;",
+   "value": "Pressed",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:59"
+  },
+  {
+   "id": "android-16-button-focused-disabled-bright",
+   "title": "Button (Focused, Disabled, Bright)",
+   "tags": "android button focused disabled bright Button (Focused, Disabled, Bright)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#F4F4F4;align=center;strokeColor=#E6E6E6;fontColor=#CCCCCC;",
+   "value": "Focused disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:61"
+  },
+  {
+   "id": "android-17-button-disabled-bright",
+   "title": "Button (Disabled, Bright)",
+   "tags": "android button disabled bright Button (Disabled, Bright)",
+   "kind": "vertex",
+   "width": 105.5,
+   "height": 16.88,
+   "style": "rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#F4F4F4;align=center;strokeColor=#F4F4F4;fontColor=#CCCCCC;",
+   "value": "Disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:63"
+  },
+  {
+   "id": "android-18-checkboxes",
+   "title": "Checkboxes",
+   "tags": "android checkboxes checkbox",
+   "kind": "cells",
+   "width": 165,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=transparent;strokeColor=#33b5e5\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Setting 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;resizable=0;\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Setting 2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"12.5\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"6\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;resizable=0;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"Setting 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"25\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"9\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.checkbox;rSize=0;resizable=0;\" vertex=\"1\" parent=\"10\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Setting 4\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"37.5\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"12\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;resizable=0;\" vertex=\"1\" parent=\"13\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "transparent",
+    "mxgraph.android.rrect",
+    "mxgraph.android.checkbox"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:66"
+  },
+  {
+   "id": "android-19-radiobuttons",
+   "title": "Radiobuttons",
+   "tags": "android radiobuttons radiobutton",
+   "kind": "cells",
+   "width": 165,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=transparent;strokeColor=#33b5e5\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Option 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=ellipse;resizable=0;html=1;sketch=0;\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Option 2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"12.5\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"6\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=ellipse;resizable=0;html=1;sketch=0;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"Option 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"25\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"9\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=ellipse;strokeColor=inherit;resizable=0;fillColor=#33b5e5;html=1;sketch=0;\" vertex=\"1\" parent=\"10\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Option 4\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;html=1;align=left;spacingLeft=10;fontSize=8;fontColor=#33b5e5;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"37.5\" width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=transparent;\" vertex=\"1\" parent=\"12\"><mxGeometry y=\"6\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=ellipse;resizable=0;html=1;sketch=0;\" vertex=\"1\" parent=\"13\"><mxGeometry x=\"2.5\" y=\"-2.5\" width=\"5\" height=\"5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "transparent",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:110"
+  },
+  {
+   "id": "android-20-contact-badge-focused",
+   "title": "Contact Badge Focused",
+   "tags": "android contact badge focused Contact Badge Focused",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:154"
+  },
+  {
+   "id": "android-21-contact-badge-focused",
+   "title": "Contact Badge Focused",
+   "tags": "android contact badge focused Contact Badge Focused",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:155"
+  },
+  {
+   "id": "android-22-contact-badge-normal",
+   "title": "Contact Badge Normal",
+   "tags": "android contact badge normal Contact Badge Normal",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:156"
+  },
+  {
+   "id": "android-23-contact-badge-normal",
+   "title": "Contact Badge Normal",
+   "tags": "android contact badge normal Contact Badge Normal",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:157"
+  },
+  {
+   "id": "android-24-contact-badge-pressed",
+   "title": "Contact Badge Pressed",
+   "tags": "android contact badge pressed Contact Badge Pressed",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:158"
+  },
+  {
+   "id": "android-25-contact-badge-pressed",
+   "title": "Contact Badge Pressed",
+   "tags": "android contact badge pressed Contact Badge Pressed",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.contact_badge_focused;strokeColor=none;fillColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.contact_badge_focused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:159"
+  },
+  {
+   "id": "android-26-contextual-action-bar",
+   "title": "Contextual Action Bar",
+   "tags": "android contextual action bar dark portrait",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_action_bar;fillColor=#002E3E;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"shape=transparent;align=left;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"40\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_action_bar",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:161"
+  },
+  {
+   "id": "android-27-contextual-action-bar-bright",
+   "title": "Contextual Action Bar (Bright)",
+   "tags": "android contextual action bar bright portrait",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_action_bar;fillColor=#E6E6E6;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"shape=transparent;align=left;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"40\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_action_bar",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:172"
+  },
+  {
+   "id": "android-28-contextual-action-bar-landscape",
+   "title": "Contextual Action Bar Landscape",
+   "tags": "android contextual action bar landscape dark",
+   "kind": "cells",
+   "width": 320,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_action_bar_landscape;fillColor=#002E3E;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"shape=transparent;align=left;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"40\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_action_bar_landscape",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:183"
+  },
+  {
+   "id": "android-29-contextual-action-bar-landscape-bright",
+   "title": "Contextual Action Bar Landscape (Bright)",
+   "tags": "android contextual action bar landscape bright",
+   "kind": "cells",
+   "width": 320,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_action_bar_landscape;fillColor=#E6E6E6;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"shape=transparent;align=left;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"40\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_action_bar_landscape",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:194"
+  },
+  {
+   "id": "android-30-contextual-split-action-bar",
+   "title": "Contextual Split Action Bar",
+   "tags": "android contextual split action bar dark",
+   "kind": "cells",
+   "width": 185,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_split_action_bar;fillColor=#002E3E;strokeColor=none;sketch=0;fontColor=#FFFFFF;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Contextual\" style=\"shape=transparent;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"shape=transparent;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"185\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_split_action_bar",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:205"
+  },
+  {
+   "id": "android-31-contextual-split-action-bar-bright",
+   "title": "Contextual Split Action Bar (Bright)",
+   "tags": "android contextual split action bar bright",
+   "kind": "cells",
+   "width": 185,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_split_action_bar;fillColor=#E6E6E6;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Contextual\" style=\"shape=transparent;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"shape=transparent;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"185\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_split_action_bar",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:219"
+  },
+  {
+   "id": "android-32-contextual-split-action-bar-landscape",
+   "title": "Contextual Split Action Bar Landscape",
+   "tags": "android contextual split action bar landscape dark",
+   "kind": "cells",
+   "width": 320,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_split_action_bar_landscape;fillColor=#002E3E;strokeColor=none;sketch=0;fontColor=#FFFFFF;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Contextual\" style=\"shape=transparent;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"shape=transparent;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"320\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_split_action_bar_landscape",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:233"
+  },
+  {
+   "id": "android-33-contextual-split-action-bar-landscape-bright",
+   "title": "Contextual Split Action Bar Landscape (Bright)",
+   "tags": "android contextual split action bar landscape bright",
+   "kind": "cells",
+   "width": 320,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.contextual_split_action_bar_landscape_white;fillColor=#E6E6E6;strokeColor=none;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Contextual\" style=\"shape=transparent;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"shape=transparent;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"320\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.contextual_split_action_bar_landscape_white",
+    "transparent"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:247"
+  },
+  {
+   "id": "android-34-indeterminate-progress-bar",
+   "title": "Indeterminate Progress Bar",
+   "tags": "android indeterminate progress bar Indeterminate Progress Bar",
+   "kind": "vertex",
+   "width": 149,
+   "height": 5,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.indeterminate_progress_bar;strokeColor=#33B5E5;pointerEvents=1;fillColor=none",
+   "shapeNames": [
+    "mxgraph.android.indeterminate_progress_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:261"
+  },
+  {
+   "id": "android-35-indeterminate-spinner",
+   "title": "Indeterminate Spinner",
+   "tags": "android indeterminate spinner Indeterminate Spinner",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.indeterminateSpinner;",
+   "shapeNames": [
+    "mxgraph.android.indeterminateSpinner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:263"
+  },
+  {
+   "id": "android-36-keyboard",
+   "title": "Keyboard",
+   "tags": "android keyboard Keyboard",
+   "kind": "vertex",
+   "width": 185,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.keyboard;sketch=0;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.keyboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:265"
+  },
+  {
+   "id": "android-37-menu-bar",
+   "title": "Menu bar",
+   "tags": "android menu bar",
+   "kind": "cells",
+   "width": 185,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;strokeColor=#888888;fillColor=#444444;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Menu Item 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Menu Item 2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"12.5\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Menu Item 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"25\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Menu Item 4\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"37.5\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:268"
+  },
+  {
+   "id": "android-38-menu-bar",
+   "title": "Menu bar",
+   "tags": "android menu bar",
+   "kind": "cells",
+   "width": 185,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;strokeColor=#eeeeee;fillColor=#ffffff;gradientColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Menu Item 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#333333;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Menu Item 2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#333333;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"12.5\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Menu Item 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#333333;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"25\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Menu Item 4\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;align=left;spacingLeft=10;fontSize=8;fontColor=#333333;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"37.5\" width=\"185\" height=\"12.5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:288"
+  },
+  {
+   "id": "android-39-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar portrait horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_1;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:308"
+  },
+  {
+   "id": "android-40-navigation-bar-landscape",
+   "title": "Navigation Bar Landscape",
+   "tags": "android navigation bar landscape horizontal Navigation Bar Landscape",
+   "kind": "vertex",
+   "width": 320,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_1_landscape;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_1_landscape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:310"
+  },
+  {
+   "id": "android-41-navigation-bar-vertical",
+   "title": "Navigation Bar Vertical",
+   "tags": "android navigation bar vertical Navigation Bar Vertical",
+   "kind": "vertex",
+   "width": 30,
+   "height": 320,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_1_vertical;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_1_vertical"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:312"
+  },
+  {
+   "id": "android-42-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_2;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:314"
+  },
+  {
+   "id": "android-43-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar portrait horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_3;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:316"
+  },
+  {
+   "id": "android-44-navigation-bar-landscape",
+   "title": "Navigation Bar Landscape",
+   "tags": "android navigation bar landscape horizontal Navigation Bar Landscape",
+   "kind": "vertex",
+   "width": 320,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_3_landscape;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_3_landscape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:318"
+  },
+  {
+   "id": "android-45-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_4;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:320"
+  },
+  {
+   "id": "android-46-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_5;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:322"
+  },
+  {
+   "id": "android-47-navigation-bar-vertical",
+   "title": "Navigation Bar Vertical",
+   "tags": "android navigation bar vertical Navigation Bar Vertical",
+   "kind": "vertex",
+   "width": 30,
+   "height": 320,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_5_vertical;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_5_vertical"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:324"
+  },
+  {
+   "id": "android-48-navigation-bar",
+   "title": "Navigation Bar",
+   "tags": "android navigation bar horizontal Navigation Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_6;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.navigation_bar_6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:326"
+  },
+  {
+   "id": "android-49-progress-bar",
+   "title": "Progress Bar",
+   "tags": "android progress bar Progress Bar",
+   "kind": "vertex",
+   "width": 185,
+   "height": 5,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.progressBar;strokeColor=#33b5e5;dx1=0.8;dx2=0.6;fillColor=none;strokeColor2=#444444;",
+   "shapeNames": [
+    "mxgraph.android.progressBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:328"
+  },
+  {
+   "id": "android-50-progress-scrubber-disabled",
+   "title": "Progress Scrubber Disabled",
+   "tags": "android progress scrubber disabled Progress Scrubber Disabled",
+   "kind": "vertex",
+   "width": 185,
+   "height": 16,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.progressScrubberDisabled;dx=0.3;fillColor=#33b5e5;strokeColor=none;strokeColor2=#444444;",
+   "shapeNames": [
+    "mxgraph.android.progressScrubberDisabled"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:330"
+  },
+  {
+   "id": "android-51-progress-scrubber-focused",
+   "title": "Progress Scrubber Focused",
+   "tags": "android progress scrubber focused Progress Scrubber Focused",
+   "kind": "vertex",
+   "width": 185,
+   "height": 16,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.progressScrubberFocused;dx=0.3;fillColor=#33b5e5;strokeColor2=#444444;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.progressScrubberFocused"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:332"
+  },
+  {
+   "id": "android-52-progress-scrubber-pressed",
+   "title": "Progress Scrubber Pressed",
+   "tags": "android progress scrubber pressed Progress Scrubber Pressed",
+   "kind": "vertex",
+   "width": 185,
+   "height": 16,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.progressScrubberPressed;dx=0.3;fillColor=#33b5e5;strokeColor2=#444444;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.progressScrubberPressed"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:334"
+  },
+  {
+   "id": "android-53-quickscroll",
+   "title": "Quickscroll",
+   "tags": "android quickscroll quick scroll Quickscroll",
+   "kind": "vertex",
+   "width": 58,
+   "height": 320,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.quickscroll2;dy=0.5;fillColor=#33b5e5;strokeColor=#66D5F5;fillColor2=#cccccc;fillColor3=#666666;",
+   "shapeNames": [
+    "mxgraph.android.quickscroll2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:336"
+  },
+  {
+   "id": "android-54-quickscroll",
+   "title": "Quickscroll",
+   "tags": "android quickscroll quick scroll Quickscroll",
+   "kind": "vertex",
+   "width": 6,
+   "height": 320,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.quickscroll3;dy=0.5;fillColor=#33b5e5;strokeColor=#66D5F5;fillColor2=#cccccc;",
+   "shapeNames": [
+    "mxgraph.android.quickscroll3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:339"
+  },
+  {
+   "id": "android-55-quick-contact",
+   "title": "Quick Contact",
+   "tags": "android quick contact",
+   "kind": "cells",
+   "width": 150,
+   "height": 165,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.quick_contact;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"165\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Name\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;rSize=0;fontStyle=1;fontColor=#FFFFFF;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"65\" width=\"150\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 1\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;rSize=0;align=left;spacingLeft=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"108\" width=\"120\" height=\"28\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 2\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;rSize=0;align=left;spacingLeft=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"136\" width=\"120\" height=\"28\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.quick_contact",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:342"
+  },
+  {
+   "id": "android-56-scrollable-tab",
+   "title": "Scrollable Tab",
+   "tags": "android scrollable tab scroll",
+   "kind": "cells",
+   "width": 185,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#444444;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"One\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;align=left;fontColor=#FFFFFF;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46.25\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Tab Two\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontColor=#FFFFFF;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46.25\" width=\"92.5\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Tab\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;align=right;fontColor=#FFFFFF;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"138.75\" width=\"46.25\" height=\"15\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:359"
+  },
+  {
+   "id": "android-57-scrollbars",
+   "title": "Scrollbars",
+   "tags": "android scrollbar scroll bar Scrollbars",
+   "kind": "vertex",
+   "width": 56,
+   "height": 56,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.scrollbars2;fillColor=#999999;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.scrollbars2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:376"
+  },
+  {
+   "id": "android-58-section-header-normal",
+   "title": "Section Header (Normal)",
+   "tags": "android section header normal dark Section Header (Normal)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#1A1A1A;strokeColor=#1A1A1A;fontColor=#FFFFFF;",
+   "value": "Normal",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:378"
+  },
+  {
+   "id": "android-59-section-header-pressed",
+   "title": "Section Header (Pressed)",
+   "tags": "android section header pressed dark Section Header (Pressed)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#4D4D4D;strokeColor=#4D4D4D;fontColor=#FFFFFF;",
+   "value": "Pressed",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:380"
+  },
+  {
+   "id": "android-60-section-header-activated",
+   "title": "Section Header (Activated)",
+   "tags": "android section header activated dark Section Header (Activated)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#33b5e5;strokeColor=#33B5E5;fontColor=#FFFFFF;",
+   "value": "Activated",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:382"
+  },
+  {
+   "id": "android-61-section-header-focused",
+   "title": "Section Header (Focused)",
+   "tags": "android section header focused dark Section Header (Focused)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#006699;strokeColor=#33B5E5;fontColor=#FFFFFF;",
+   "value": "Focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:384"
+  },
+  {
+   "id": "android-62-section-header-disabled-focused",
+   "title": "Section Header (Disabled focused)",
+   "tags": "android section header disabled focused dark Section Header (Disabled focused)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#006699;strokeColor=#33B5E5;fontColor=#B3B3B3;",
+   "value": "Disabled focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:386"
+  },
+  {
+   "id": "android-63-section-header-disabled",
+   "title": "Section Header (Disabled)",
+   "tags": "android section header disabled dark Section Header (Disabled)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#1A1A1A;strokeColor=#1A1A1A;fontColor=#B3B3B3;",
+   "value": "Disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:388"
+  },
+  {
+   "id": "android-64-section-header-normal-bright",
+   "title": "Section Header (Normal, Bright)",
+   "tags": "android section header normal bright Section Header (Normal, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#4D4D4D;",
+   "value": "Normal",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:390"
+  },
+  {
+   "id": "android-65-section-header-pressed-bright",
+   "title": "Section Header (Pressed, Bright)",
+   "tags": "android section header pressed bright Section Header (Pressed, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#f6f6f6;strokeColor=#f6f6f6;fontColor=#4D4D4D;",
+   "value": "Pressed",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:392"
+  },
+  {
+   "id": "android-66-section-header-activated-bright",
+   "title": "Section Header (Activated, Bright)",
+   "tags": "android section header activated bright Section Header (Activated, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#33b5e5;strokeColor=#33B5E5;fontColor=#4D4D4D;",
+   "value": "Activated",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:394"
+  },
+  {
+   "id": "android-67-section-header-focused-bright",
+   "title": "Section Header (Focused, Bright)",
+   "tags": "android section header focused bright Section Header (Focused, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#99e5ff;strokeColor=#33B5E5;fontColor=#4D4D4D;",
+   "value": "Focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:396"
+  },
+  {
+   "id": "android-68-section-header-disabled-focused-bright",
+   "title": "Section Header (Disabled focused, Bright)",
+   "tags": "android section header disabled focused bright Section Header (Disabled focused, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#99e5ff;strokeColor=#33B5E5;fontColor=#B3B3B3;",
+   "value": "Disabled focused",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:398"
+  },
+  {
+   "id": "android-69-section-header-disabled-bright",
+   "title": "Section Header (Disabled, Bright)",
+   "tags": "android section header disabled bright Section Header (Disabled, Bright)",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 16.88,
+   "style": "whiteSpace=wrap;html=1;shadow=0;dashed=0;fontSize=10;align=left;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#B3B3B3;",
+   "value": "Disabled",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:400"
+  },
+  {
+   "id": "android-70-spinner-normal",
+   "title": "Spinner Normal",
+   "tags": "android spinner normal Spinner Normal",
+   "kind": "vertex",
+   "width": 110,
+   "height": 10,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;align=center;fillColor=#999999;strokeColor=#999999;verticalAlign=bottom",
+   "value": "Item",
+   "shapeNames": [
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:402"
+  },
+  {
+   "id": "android-71-spinner-focused",
+   "title": "Spinner Focused",
+   "tags": "android spinner focused Spinner Focused",
+   "kind": "vertex",
+   "width": 110,
+   "height": 10,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;align=center;fillColor=#33b5e5;strokeColor=#33b5e5;verticalAlign=bottom",
+   "value": "Item",
+   "shapeNames": [
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:404"
+  },
+  {
+   "id": "android-72-spinner-disabled-focused",
+   "title": "Spinner Disabled Focused",
+   "tags": "android spinner disabled focused",
+   "kind": "cells",
+   "width": 117,
+   "height": 28,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rect;rounded=1;fillColor=#207585;strokeColor=#33b5e5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"117\" height=\"28\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;strokeColor=#999999;fillColor=#999999;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"3\" y=\"4\" width=\"110\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rect",
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:407"
+  },
+  {
+   "id": "android-73-spinner-disabled-focused-bright",
+   "title": "Spinner Disabled Focused Bright",
+   "tags": "android spinner disabled focused light bright",
+   "kind": "cells",
+   "width": 117,
+   "height": 28,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rect;rounded=1;fillColor=#ccf2ff;strokeColor=#88c5f5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"117\" height=\"28\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;fontStyle=0;fontColor=#666666;align=center;verticalAlign=middle;strokeColor=#cccccc;fillColor=#cccccc;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"3\" y=\"4\" width=\"110\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rect",
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:418"
+  },
+  {
+   "id": "android-74-spinner-pressed",
+   "title": "Spinner Pressed",
+   "tags": "android spinner pressed",
+   "kind": "cells",
+   "width": 117,
+   "height": 28,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rect;rounded=1;fillColor=#33b5e5;strokeColor=#33b5e5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"117\" height=\"28\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;fontStyle=0;fontColor=#ffffff;align=center;verticalAlign=middle;strokeColor=#aaeeff;fillColor=#aaeeff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"3\" y=\"4\" width=\"110\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rect",
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:429"
+  },
+  {
+   "id": "android-75-spinner-pressed-bright",
+   "title": "Spinner Pressed Bright",
+   "tags": "android spinner pressed light bright",
+   "kind": "cells",
+   "width": 117,
+   "height": 28,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rect;rounded=1;fillColor=#33b5e5;strokeColor=#33b5e5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"117\" height=\"28\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.spinner2;fontStyle=0;fontColor=#ffffff;align=center;verticalAlign=middle;strokeColor=#666666;fillColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"3\" y=\"4\" width=\"110\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rect",
+    "mxgraph.android.spinner2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:440"
+  },
+  {
+   "id": "android-76-split-action-bar",
+   "title": "Split Action Bar",
+   "tags": "android split action bar dark",
+   "kind": "cells",
+   "width": 185,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.split_action_bar;fillColor=#1A1A1A;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Split\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"185\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.split_action_bar",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:451"
+  },
+  {
+   "id": "android-77-split-action-bar-bright",
+   "title": "Split Action Bar (Bright)",
+   "tags": "android split action bar bright",
+   "kind": "cells",
+   "width": 185,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.split_action_bar;fillColor=#E6E6E6;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Split\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"185\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.split_action_bar",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:465"
+  },
+  {
+   "id": "android-78-split-action-bar-landscape",
+   "title": "Split Action Bar Landscape",
+   "tags": "android split action bar landscape dark",
+   "kind": "cells",
+   "width": 320,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.split_action_bar_landscape;fillColor=#1A1A1A;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Split\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"320\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.split_action_bar_landscape",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:479"
+  },
+  {
+   "id": "android-79-split-action-bar-landscape-bright",
+   "title": "Split Action Bar Landscape (Bright)",
+   "tags": "android split action bar landscape bright",
+   "kind": "cells",
+   "width": 320,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.split_action_bar_landscape;fillColor=#E6E6E6;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"320\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Split\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"320\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Action\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"320\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.split_action_bar_landscape",
+    "mxgraph.android.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:493"
+  },
+  {
+   "id": "android-80-status-bar-portrait",
+   "title": "Status bar (portrait)",
+   "tags": "android status bar portrait Status bar (portrait)",
+   "kind": "vertex",
+   "width": 183.57,
+   "height": 15.825,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fillColor=#000000;strokeColor=#ffffff;fontColor=#ffffff;fontSize=10;batteryColor=#444444;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.statusBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:507"
+  },
+  {
+   "id": "android-81-status-bar-landscape",
+   "title": "Status bar (landscape)",
+   "tags": "android status bar landscape Status bar (landscape)",
+   "kind": "vertex",
+   "width": 320.087,
+   "height": 15.825,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fillColor=#000000;strokeColor=#ffffff;fontColor=#ffffff;fontSize=10;batteryColor=#444444;sketch=0;",
+   "shapeNames": [
+    "mxgraph.android.statusBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:509"
+  },
+  {
+   "id": "android-82-switch-off",
+   "title": "Switch Off",
+   "tags": "android switch off Switch Off",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.switch_off;fillColor=#666666;sketch=0;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.switch_off"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:511"
+  },
+  {
+   "id": "android-83-switch-off",
+   "title": "Switch Off",
+   "tags": "android switch off Switch Off",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.switch_off;fillColor=#E6E6E6;sketch=0;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.switch_off"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:513"
+  },
+  {
+   "id": "android-84-switch-on",
+   "title": "Switch On",
+   "tags": "android switch on Switch On",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.switch_on;fillColor=#666666;sketch=0;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.switch_on"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:515"
+  },
+  {
+   "id": "android-85-switch-on",
+   "title": "Switch On",
+   "tags": "android switch on Switch On",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.switch_on;fillColor=#E6E6E6;sketch=0;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.switch_on"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:517"
+  },
+  {
+   "id": "android-86-tab-bar-dark",
+   "title": "Tab Bar Dark",
+   "tags": "android tab tabulator bar dark Tab Bar Dark",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#444444;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fontStyle=1;fillColor=#0099cc;strokeColor=none;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46.25\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#33b5e5;strokeColor=none;\" vertex=\"1\" parent=\"4\"><mxGeometry y=\"27\" width=\"46.25\" height=\"3\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Tab 3\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"92.5\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Tab 4\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"138.75\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=line;strokeColor=#ffffff;direction=south;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"131.5\" y=\"5\" width=\"10\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect",
+    "mxgraph.android.anchor",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:519"
+  },
+  {
+   "id": "android-87-tab-bar-dark",
+   "title": "Tab Bar Dark",
+   "tags": "android tab tabulator bar dark Tab Bar Dark",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#444444;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46.25\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#33b5e5;strokeColor=none;\" vertex=\"1\" parent=\"4\"><mxGeometry y=\"27\" width=\"46.25\" height=\"3\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Tab 3\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"92.5\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Tab 4\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"138.75\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=line;strokeColor=#ffffff;direction=south;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"131.5\" y=\"5\" width=\"10\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect",
+    "mxgraph.android.anchor",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:521"
+  },
+  {
+   "id": "android-88-tab-bar-bright",
+   "title": "Tab Bar Bright",
+   "tags": "android tab tabulator bar bright Tab Bar Bright",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#eeeeee;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fontStyle=1;fillColor=#44c5f5;strokeColor=none;fontColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46.25\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#33b5e5;strokeColor=none;\" vertex=\"1\" parent=\"4\"><mxGeometry y=\"27\" width=\"46.25\" height=\"3\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Tab 3\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"92.5\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Tab 4\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"138.75\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=line;strokeColor=#666666;direction=south;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"131.5\" y=\"5\" width=\"10\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect",
+    "mxgraph.android.anchor",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:523"
+  },
+  {
+   "id": "android-89-tab-bar-bright",
+   "title": "Tab Bar Bright",
+   "tags": "android tab tabulator bar bright Tab Bar Bright",
+   "kind": "cells",
+   "width": 185,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#eeeeee;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"185\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46.25\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#33b5e5;strokeColor=none;\" vertex=\"1\" parent=\"4\"><mxGeometry y=\"27\" width=\"46.25\" height=\"3\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Tab 3\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"92.5\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Tab 4\" style=\"strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"138.75\" width=\"46.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=line;strokeColor=#666666;direction=south;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"131.5\" y=\"5\" width=\"10\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.android.rrect",
+    "mxgraph.android.anchor",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:525"
+  },
+  {
+   "id": "android-90-textfield-disabled",
+   "title": "Textfield Disabled",
+   "tags": "android textfield disabled Textfield Disabled",
+   "kind": "vertex",
+   "width": 174,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.textfield;align=center;strokeColor=#4D4D4D;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.android.textfield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:528"
+  },
+  {
+   "id": "android-91-textfield-normal",
+   "title": "Textfield Normal",
+   "tags": "android textfield normal Textfield Normal",
+   "kind": "vertex",
+   "width": 174,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.textfield;align=center;strokeColor=#999999;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.android.textfield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:530"
+  },
+  {
+   "id": "android-92-textfield-activated",
+   "title": "Textfield Activated",
+   "tags": "android textfield activated Textfield Activated",
+   "kind": "vertex",
+   "width": 174,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.textfield;align=center;strokeColor=#33b5e5;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.android.textfield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:532"
+  },
+  {
+   "id": "android-93-text-insertion-point",
+   "title": "Text Insertion Point",
+   "tags": "android textfield insertion point Text Insertion Point",
+   "kind": "vertex",
+   "width": 20,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.text_insertion_point;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.text_insertion_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:534"
+  },
+  {
+   "id": "android-94-text-selection-handles",
+   "title": "Text Selection Handles",
+   "tags": "android text selection handle Text Selection Handles",
+   "kind": "vertex",
+   "width": 168.8,
+   "height": 42.2,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.textSelHandles;fillColor=#33b5e5;strokeColor=#0099cc;",
+   "shapeNames": [
+    "mxgraph.android.textSelHandles"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:536"
+  },
+  {
+   "id": "android-95-time-picker-bright",
+   "title": "Time Picker (Bright)",
+   "tags": "android time picker bright Time Picker (Bright)",
+   "kind": "vertex",
+   "width": 150,
+   "height": 230,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.time_picker;sketch=0;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.time_picker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:538"
+  },
+  {
+   "id": "android-96-time-picker-dark",
+   "title": "Time Picker (Dark)",
+   "tags": "android time picker dark Time Picker (Dark)",
+   "kind": "vertex",
+   "width": 150,
+   "height": 230,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.time_picker_dark;sketch=0;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.android.time_picker_dark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:540"
+  },
+  {
+   "id": "android-97-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#33b5e5;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:542"
+  },
+  {
+   "id": "android-98-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#0099cc;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:544"
+  },
+  {
+   "id": "android-99-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#aa66cc;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:546"
+  },
+  {
+   "id": "android-100-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#9933cc;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:548"
+  },
+  {
+   "id": "android-101-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#99cc00;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:550"
+  },
+  {
+   "id": "android-102-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#669900;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:552"
+  },
+  {
+   "id": "android-103-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#ffbb33;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:554"
+  },
+  {
+   "id": "android-104-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#ff8800;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:556"
+  },
+  {
+   "id": "android-105-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#ff4444;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:558"
+  },
+  {
+   "id": "android-106-color",
+   "title": "Color",
+   "tags": "android color Color",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;strokeColor=none;shape=rect;fillColor=#cc0000;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Android.js:560"
+  }
+ ]
+}

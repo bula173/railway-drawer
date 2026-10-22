@@ -167,13 +167,31 @@ export function decodeVendoredStencils(): Map<string, string> {
   return out;
 }
 
+/** Every stencil file of the bundle (file name relative to stencils/ -> XML), sorted by name. */
+export function decodeAllStencils(): Map<string, string> {
+  const bundle = parseStencilBundle(readSource(WEBAPP + 'js/stencils.min.js'));
+  const out = new Map<string, string>();
+  for (const file of [...bundle.keys()].sort()) {
+    const root = decodeStencilBundleEntry(bundle.get(file) as string);
+    if (root.nodeName !== 'shapes') throw new Error(`${file}: unexpected root <${root.nodeName}>`);
+    out.set(file, stencilNodeToXml(root));
+  }
+  return out;
+}
+
 const isMain = process.argv[1] != null && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isMain) {
-  for (const [file, xml] of decodeVendoredStencils()) {
+  // every set of the bundle: palettes, and drawings that use any draw.io stencil, find their XML
+  const all = decodeAllStencils();
+  for (const file of VENDORED_STENCILS) if (!all.has(file)) throw new Error(`stencils.min.js has no entry for ${file}`);
+  let total = 0;
+  for (const [file, xml] of all) {
     const dest = path.join(REPO_ROOT, 'public', 'stencils', file);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.writeFileSync(dest, xml);
     const count = (xml.match(/^ {2}<shape /gm) || []).length;
-    console.log(`wrote public/stencils/${file} (${count} shapes, ${xml.length} bytes)`);
+    total += count;
+    if (process.argv.includes('--verbose')) console.log(`wrote public/stencils/${file} (${count} shapes, ${xml.length} bytes)`);
   }
+  console.log(`wrote ${all.size} stencil sets (${total} shapes) to public/stencils/`);
 }

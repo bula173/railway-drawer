@@ -1,0 +1,456 @@
+{
+ "id": "salesforceIndustry",
+ "title": "Salesforce / Industry",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:8",
+ "entries": [
+  {
+   "id": "salesforceIndustry-0-government",
+   "title": "Government",
+   "tags": "salesforce government salesforce industry Government",
+   "kind": "vertex",
+   "width": 51.6,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.government;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.government"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:739"
+  },
+  {
+   "id": "salesforceIndustry-1-media",
+   "title": "Media",
+   "tags": "salesforce media salesforce industry Media",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.media;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.media"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:740"
+  },
+  {
+   "id": "salesforceIndustry-2-consumer-goods",
+   "title": "Consumer Goods",
+   "tags": "salesforce consumer goods salesforce industry Consumer Goods",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.consumer_goods;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.consumer_goods"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:741"
+  },
+  {
+   "id": "salesforceIndustry-3-transportation-and-technology",
+   "title": "Transportation and Technology",
+   "tags": "salesforce transportation and technology salesforce industry Transportation and Technology",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.transportation_and_technology;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.transportation_and_technology"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:742"
+  },
+  {
+   "id": "salesforceIndustry-4-financial-services",
+   "title": "Financial Services",
+   "tags": "salesforce financial services salesforce industry Financial Services",
+   "kind": "vertex",
+   "width": 57.599999999999994,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.financial_services;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.financial_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:743"
+  },
+  {
+   "id": "salesforceIndustry-5-automotive",
+   "title": "Automotive",
+   "tags": "salesforce automotive salesforce industry Automotive",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.automotive;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.automotive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:744"
+  },
+  {
+   "id": "salesforceIndustry-6-energy",
+   "title": "Energy",
+   "tags": "salesforce energy salesforce industry Energy",
+   "kind": "vertex",
+   "width": 45,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.energy;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.energy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:745"
+  },
+  {
+   "id": "salesforceIndustry-7-smb",
+   "title": "SMB",
+   "tags": "salesforce smb salesforce industry SMB",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49.199999999999996,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.smb;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.smb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:746"
+  },
+  {
+   "id": "salesforceIndustry-8-communications",
+   "title": "Communications",
+   "tags": "salesforce communications salesforce industry Communications",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.communications;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.communications"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:747"
+  },
+  {
+   "id": "salesforceIndustry-9-retail",
+   "title": "Retail",
+   "tags": "salesforce retail salesforce industry Retail",
+   "kind": "vertex",
+   "width": 45,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.retail;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.retail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:748"
+  },
+  {
+   "id": "salesforceIndustry-10-manufacturing",
+   "title": "Manufacturing",
+   "tags": "salesforce manufacturing salesforce industry Manufacturing",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.manufacturing;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.manufacturing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:749"
+  },
+  {
+   "id": "salesforceIndustry-11-health",
+   "title": "Health",
+   "tags": "salesforce health salesforce industry Health",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50.4,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.health;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.health"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:750"
+  },
+  {
+   "id": "salesforceIndustry-12-philantrophy",
+   "title": "Philantrophy",
+   "tags": "salesforce philantrophy salesforce industry Philantrophy",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.philantrophy;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.philantrophy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:751"
+  },
+  {
+   "id": "salesforceIndustry-13-non-profit",
+   "title": "Non-profit",
+   "tags": "salesforce non profit salesforce industry Non-profit",
+   "kind": "vertex",
+   "width": 60,
+   "height": 55.800000000000004,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.non_profit;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.non_profit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:752"
+  },
+  {
+   "id": "salesforceIndustry-14-education",
+   "title": "Education",
+   "tags": "salesforce education salesforce industry Education",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40.2,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.education;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.education"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:753"
+  },
+  {
+   "id": "salesforceIndustry-15-sustainability",
+   "title": "Sustainability",
+   "tags": "salesforce sustainability salesforce industry Sustainability",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.sustainability;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.sustainability"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:754"
+  },
+  {
+   "id": "salesforceIndustry-16-government",
+   "title": "Government",
+   "tags": "salesforce government salesforce industry Government",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.government2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.government2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:756"
+  },
+  {
+   "id": "salesforceIndustry-17-media",
+   "title": "Media",
+   "tags": "salesforce media salesforce industry Media",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.media2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.media2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:757"
+  },
+  {
+   "id": "salesforceIndustry-18-consumer-goods",
+   "title": "Consumer Goods",
+   "tags": "salesforce consumer goods salesforce industry Consumer Goods",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.consumer_goods2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.consumer_goods2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:758"
+  },
+  {
+   "id": "salesforceIndustry-19-transportation-and-technology",
+   "title": "Transportation and Technology",
+   "tags": "salesforce transportation and technology salesforce industry Transportation and Technology",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.transportation_and_technology2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.transportation_and_technology2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:759"
+  },
+  {
+   "id": "salesforceIndustry-20-financial-services",
+   "title": "Financial Services",
+   "tags": "salesforce financial services salesforce industry Financial Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.financial_services2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.financial_services2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:760"
+  },
+  {
+   "id": "salesforceIndustry-21-automotive",
+   "title": "Automotive",
+   "tags": "salesforce automotive salesforce industry Automotive",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.automotive2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.automotive2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:761"
+  },
+  {
+   "id": "salesforceIndustry-22-energy",
+   "title": "Energy",
+   "tags": "salesforce energy salesforce industry Energy",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.energy2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.energy2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:762"
+  },
+  {
+   "id": "salesforceIndustry-23-smb",
+   "title": "SMB",
+   "tags": "salesforce smb salesforce industry SMB",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.smb2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.smb2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:763"
+  },
+  {
+   "id": "salesforceIndustry-24-communications",
+   "title": "Communications",
+   "tags": "salesforce communications salesforce industry Communications",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.communications2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.communications2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:764"
+  },
+  {
+   "id": "salesforceIndustry-25-retail",
+   "title": "Retail",
+   "tags": "salesforce retail salesforce industry Retail",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.retail2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.retail2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:765"
+  },
+  {
+   "id": "salesforceIndustry-26-manufacturing",
+   "title": "Manufacturing",
+   "tags": "salesforce manufacturing salesforce industry Manufacturing",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.manufacturing2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.manufacturing2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:766"
+  },
+  {
+   "id": "salesforceIndustry-27-health",
+   "title": "Health",
+   "tags": "salesforce health salesforce industry Health",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.health2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.health2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:767"
+  },
+  {
+   "id": "salesforceIndustry-28-philantrophy",
+   "title": "Philantrophy",
+   "tags": "salesforce philantrophy salesforce industry Philantrophy",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.philantrophy2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.philantrophy2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:768"
+  },
+  {
+   "id": "salesforceIndustry-29-non-profit",
+   "title": "Non-profit",
+   "tags": "salesforce non profit salesforce industry Non-profit",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.non_profit2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.non_profit2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:769"
+  },
+  {
+   "id": "salesforceIndustry-30-education",
+   "title": "Education",
+   "tags": "salesforce education salesforce industry Education",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.education2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.education2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:770"
+  },
+  {
+   "id": "salesforceIndustry-31-sustainability",
+   "title": "Sustainability",
+   "tags": "salesforce sustainability salesforce industry Sustainability",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.sustainability2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.sustainability2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:771"
+  }
+ ]
+}

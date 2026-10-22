@@ -1,0 +1,540 @@
+{
+ "id": "veeam2Software",
+ "title": "Veeam / Software",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2Software-0-antivirus",
+   "title": "Antivirus",
+   "tags": "veeam2 antivirus veeam vm vmware virtual machine software Antivirus",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.antivirus;",
+   "shapeNames": [
+    "mxgraph.veeam2.antivirus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:540"
+  },
+  {
+   "id": "veeam2Software-1-firewall",
+   "title": "Firewall",
+   "tags": "veeam2 firewall veeam vm vmware virtual machine software Firewall",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.firewall;",
+   "shapeNames": [
+    "mxgraph.veeam2.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:542"
+  },
+  {
+   "id": "veeam2Software-2-application",
+   "title": "Application",
+   "tags": "veeam2 application veeam vm vmware virtual machine software Application",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.application;",
+   "shapeNames": [
+    "mxgraph.veeam2.application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:544"
+  },
+  {
+   "id": "veeam2Software-3-linux",
+   "title": "Linux",
+   "tags": "veeam2 linux veeam vm vmware virtual machine software Linux",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.linux;",
+   "shapeNames": [
+    "mxgraph.veeam2.linux"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:546"
+  },
+  {
+   "id": "veeam2Software-4-linux-server",
+   "title": "Linux Server",
+   "tags": "veeam2 linux server veeam vm vmware virtual machine software Linux Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.linux_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.linux_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:548"
+  },
+  {
+   "id": "veeam2Software-5-microsoft-active-directory",
+   "title": "Microsoft Active Directory",
+   "tags": "veeam2 microsoft ms active directory veeam vm vmware virtual machine software Microsoft Active Directory",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_active_directory;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_active_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:550"
+  },
+  {
+   "id": "veeam2Software-6-domain-controller",
+   "title": "Domain Controller",
+   "tags": "veeam2 domain controller veeam vm vmware virtual machine software Domain Controller",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.domain_controller;",
+   "shapeNames": [
+    "mxgraph.veeam2.domain_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:552"
+  },
+  {
+   "id": "veeam2Software-7-microsoft-exchange",
+   "title": "Microsoft Exchange",
+   "tags": "veeam2 microsoft ms exchange veeam vm vmware virtual machine software Microsoft Exchange",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_exchange;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_exchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:554"
+  },
+  {
+   "id": "veeam2Software-8-exchange-server",
+   "title": "Exchange Server",
+   "tags": "veeam2 exchange server veeam vm vmware virtual machine software Exchange Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.exchange_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.exchange_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:556"
+  },
+  {
+   "id": "veeam2Software-9-microsoft-scom",
+   "title": "Microsoft SCOM",
+   "tags": "veeam2 microsoft ms scom veeam vm vmware virtual machine software Microsoft SCOM",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_scom;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_scom"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:558"
+  },
+  {
+   "id": "veeam2Software-10-microsoft-scvmm",
+   "title": "Microsoft SCVMM",
+   "tags": "veeam2 microsoft ms scvmm veeam vm vmware virtual machine software Microsoft SCVMM",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_scvmm;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_scvmm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:560"
+  },
+  {
+   "id": "veeam2Software-11-microsoft-sharepoint",
+   "title": "Microsoft SharePoint",
+   "tags": "veeam2 microsoft ms sharepoint veeam vm vmware virtual machine software Microsoft SharePoint",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_sharepoint;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:562"
+  },
+  {
+   "id": "veeam2Software-12-sharepoint-server",
+   "title": "Sharepoint Server",
+   "tags": "veeam2 sharepoint server veeam vm vmware virtual machine software Sharepoint Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sharepoint_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.sharepoint_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:564"
+  },
+  {
+   "id": "veeam2Software-13-microsoft-sql",
+   "title": "Microsoft SQL",
+   "tags": "veeam2 microsoft ms sql veeam vm vmware virtual machine software Microsoft SQL",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_sql;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_sql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:566"
+  },
+  {
+   "id": "veeam2Software-14-sql-server",
+   "title": "SQL Server",
+   "tags": "veeam2 sql server veeam vm vmware virtual machine software SQL Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sql_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.sql_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:568"
+  },
+  {
+   "id": "veeam2Software-15-microsoft-teams",
+   "title": "Microsoft Teams",
+   "tags": "veeam2 microsoft ms teams veeam vm vmware virtual machine software Microsoft Teams",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_teams;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_teams"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:570"
+  },
+  {
+   "id": "veeam2Software-16-microsoft-windows",
+   "title": "Microsoft Windows",
+   "tags": "veeam2 microsoft ms windows veeam vm vmware virtual machine software Microsoft Windows",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_windows;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_windows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:572"
+  },
+  {
+   "id": "veeam2Software-17-windows-server",
+   "title": "Windows Server",
+   "tags": "veeam2 windows server veeam vm vmware virtual machine software Windows Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.windows_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.windows_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:574"
+  },
+  {
+   "id": "veeam2Software-18-microsoft-onedrive",
+   "title": "Microsoft OneDrive",
+   "tags": "veeam2 microsoft ms onedrive veeam vm vmware virtual machine software Microsoft OneDrive",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_onedrive;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_onedrive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:576"
+  },
+  {
+   "id": "veeam2Software-19-microsoft-outlook",
+   "title": "Microsoft Outlook",
+   "tags": "veeam2 microsoft ms outlook veeam vm vmware virtual machine software Microsoft Outlook",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_outlook;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_outlook"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:578"
+  },
+  {
+   "id": "veeam2Software-20-microsoft-office",
+   "title": "Microsoft Office",
+   "tags": "veeam2 microsoft ms office veeam vm vmware virtual machine software Microsoft Office",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_office;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:580"
+  },
+  {
+   "id": "veeam2Software-21-powershell",
+   "title": "PowerShell",
+   "tags": "veeam2 powershell veeam vm vmware virtual machine software PowerShell",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.power_shell;",
+   "shapeNames": [
+    "mxgraph.veeam2.power_shell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:582"
+  },
+  {
+   "id": "veeam2Software-22-oracle-rman",
+   "title": "Oracle RMAN",
+   "tags": "veeam2 oracle rman veeam vm vmware virtual machine software Oracle RMAN",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.oracle_rman;",
+   "shapeNames": [
+    "mxgraph.veeam2.oracle_rman"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:584"
+  },
+  {
+   "id": "veeam2Software-23-sap-brtools",
+   "title": "SAP BRTools",
+   "tags": "veeam2 sap brtools veeam vm vmware virtual machine software SAP BRTools",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sap_brtools;",
+   "shapeNames": [
+    "mxgraph.veeam2.sap_brtools"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:586"
+  },
+  {
+   "id": "veeam2Software-24-sap-hana",
+   "title": "SAP HANA",
+   "tags": "veeam2 sap hana veeam vm vmware virtual machine software SAP HANA",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sap_hana;",
+   "shapeNames": [
+    "mxgraph.veeam2.sap_hana"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:588"
+  },
+  {
+   "id": "veeam2Software-25-nutanix",
+   "title": "Nutanix",
+   "tags": "veeam2 nutanix veeam vm vmware virtual machine software Nutanix",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.nutanix;",
+   "shapeNames": [
+    "mxgraph.veeam2.nutanix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:590"
+  },
+  {
+   "id": "veeam2Software-26-server-nutanix",
+   "title": "Server Nutanix",
+   "tags": "veeam2 server nutanix veeam vm vmware virtual machine software Server Nutanix",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.server_nutanix;",
+   "shapeNames": [
+    "mxgraph.veeam2.server_nutanix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:592"
+  },
+  {
+   "id": "veeam2Software-27-vmware-vcloud-director",
+   "title": "VMware vCloud Director",
+   "tags": "veeam2 vmware vcloud director veeam vm vmware virtual machine software VMware vCloud Director",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vmware_vcloud_director;",
+   "shapeNames": [
+    "mxgraph.veeam2.vmware_vcloud_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:594"
+  },
+  {
+   "id": "veeam2Software-28-vcloud-director-server",
+   "title": "vCloud Director Server",
+   "tags": "veeam2 vcloud director server veeam vm vmware virtual machine software vCloud Director Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vcloud_director_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vcloud_director_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:596"
+  },
+  {
+   "id": "veeam2Software-29-vmware-vsphere",
+   "title": "VMware vSphere",
+   "tags": "veeam2 vmware vsphere veeam vm vmware virtual machine software VMware vSphere",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vmware_vsphere;",
+   "shapeNames": [
+    "mxgraph.veeam2.vmware_vsphere"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:598"
+  },
+  {
+   "id": "veeam2Software-30-vcenter-server",
+   "title": "vCenter Server",
+   "tags": "veeam2 vcenter server veeam vm vmware virtual machine software vCenter Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vcenter_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vcenter_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:600"
+  },
+  {
+   "id": "veeam2Software-31-database",
+   "title": "Database",
+   "tags": "veeam2 database db veeam vm vmware virtual machine software Database",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.database2;",
+   "shapeNames": [
+    "mxgraph.veeam2.database2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:602"
+  },
+  {
+   "id": "veeam2Software-32-database-server",
+   "title": "Database Server",
+   "tags": "veeam2 database server db veeam vm vmware virtual machine software Database Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.database_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:604"
+  },
+  {
+   "id": "veeam2Software-33-microsoft-sql-db",
+   "title": "Microsoft SQL DB",
+   "tags": "veeam2 microsoft sql db database veeam vm vmware virtual machine software Microsoft SQL DB",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.microsoft_sql_db;",
+   "shapeNames": [
+    "mxgraph.veeam2.microsoft_sql_db"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:606"
+  },
+  {
+   "id": "veeam2Software-34-oracle-db",
+   "title": "Oracle DB",
+   "tags": "veeam2 oracle db database veeam vm vmware virtual machine software Oracle DB",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.oracle_db;",
+   "shapeNames": [
+    "mxgraph.veeam2.oracle_db"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:608"
+  },
+  {
+   "id": "veeam2Software-35-sap-hana-db",
+   "title": "SAP HANA DB",
+   "tags": "veeam2 sap hana db database veeam vm vmware virtual machine software SAP HANA DB",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sap_hana_db;",
+   "shapeNames": [
+    "mxgraph.veeam2.sap_hana_db"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:610"
+  },
+  {
+   "id": "veeam2Software-36-openvpn",
+   "title": "OpenVPN",
+   "tags": "veeam2 openvpn open vpn virtual private network veeam vm vmware virtual machine software OpenVPN",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.open_vpn;",
+   "shapeNames": [
+    "mxgraph.veeam2.open_vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:612"
+  },
+  {
+   "id": "veeam2Software-37-wireguard",
+   "title": "WireGuard",
+   "tags": "veeam2 wireguard veeam vm vmware virtual machine software WireGuard",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.wireguard;",
+   "shapeNames": [
+    "mxgraph.veeam2.wireguard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:614"
+  }
+ ]
+}

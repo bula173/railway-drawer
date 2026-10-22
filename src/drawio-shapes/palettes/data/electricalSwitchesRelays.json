@@ -1,0 +1,1268 @@
+{
+ "id": "electricalSwitchesRelays",
+ "title": "Electrical / Switches and Relays",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalSwitchesRelays-0-spdt",
+   "title": "SPDT",
+   "tags": "electrical electro-mechanical 2-way switch new electrical switch relay  SPDT",
+   "kind": "vertex",
+   "width": 75,
+   "height": 26,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.twoWaySwitch;aspect=fixed;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoWaySwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:265"
+  },
+  {
+   "id": "electricalSwitchesRelays-1-pushbutton-on",
+   "title": "Pushbutton On",
+   "tags": "electrical electro-mechanical pushbutton push button electrical switch relay  Pushbutton On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbutton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:267"
+  },
+  {
+   "id": "electricalSwitchesRelays-2-pushbutton-off",
+   "title": "Pushbutton Off",
+   "tags": "electrical electro-mechanical pushbutton push button electrical switch relay  Pushbutton Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbutton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:269"
+  },
+  {
+   "id": "electricalSwitchesRelays-3-single-switch-on",
+   "title": "Single Switch On",
+   "tags": "electrical electro-mechanical single switch electrical switch relay  Single Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.singleSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.singleSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:271"
+  },
+  {
+   "id": "electricalSwitchesRelays-4-single-switch-off",
+   "title": "Single Switch Off",
+   "tags": "electrical electro-mechanical single switch electrical switch relay  Single Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.singleSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.singleSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:273"
+  },
+  {
+   "id": "electricalSwitchesRelays-5-switch-disconnector-on",
+   "title": "Switch Disconnector On",
+   "tags": "electrical electro-mechanical switch disconnector electrical switch relay  Switch Disconnector On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.switchDisconnector;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.switchDisconnector"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:275"
+  },
+  {
+   "id": "electricalSwitchesRelays-6-switch-disconnector-off",
+   "title": "Switch Disconnector Off",
+   "tags": "electrical electro-mechanical switch disconnector electrical switch relay  Switch Disconnector Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.switchDisconnector;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.switchDisconnector"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:277"
+  },
+  {
+   "id": "electricalSwitchesRelays-7-fuse-off",
+   "title": "Fuse Off",
+   "tags": "electrical electro-mechanical fuse electrical switch relay  Fuse Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.fuse2;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fuse2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:279"
+  },
+  {
+   "id": "electricalSwitchesRelays-8-fuse-on",
+   "title": "Fuse On",
+   "tags": "electrical electro-mechanical fuse electrical switch relay  Fuse On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.fuse2;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fuse2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:281"
+  },
+  {
+   "id": "electricalSwitchesRelays-9-liquid-level-actuated-on",
+   "title": "Liquid Level Actuated On",
+   "tags": "electrical electro-mechanical liquid level actuated switch electrical switch relay  Liquid Level Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 30,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:283"
+  },
+  {
+   "id": "electricalSwitchesRelays-10-liquid-level-actuated-off",
+   "title": "Liquid Level Actuated Off",
+   "tags": "electrical electro-mechanical liquid level actuated switch electrical switch relay  Liquid Level Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 30,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:285"
+  },
+  {
+   "id": "electricalSwitchesRelays-11-liquid-level-actuated-on",
+   "title": "Liquid Level Actuated On",
+   "tags": "electrical electro-mechanical liquid level actuated switch electrical switch relay  Liquid Level Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch2;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:287"
+  },
+  {
+   "id": "electricalSwitchesRelays-12-liquid-level-actuated-off",
+   "title": "Liquid Level Actuated Off",
+   "tags": "electrical electro-mechanical liquid level actuated switch electrical switch relay  Liquid Level Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch2;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:289"
+  },
+  {
+   "id": "electricalSwitchesRelays-13-gas-flow-actuated-on",
+   "title": "Gas Flow Actuated On",
+   "tags": "electrical electro-mechanical gas flow actuated switch electrical switch relay  Gas Flow Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.gasFlowActuatedSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.gasFlowActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:291"
+  },
+  {
+   "id": "electricalSwitchesRelays-14-gas-flow-actuated-off",
+   "title": "Gas Flow Actuated Off",
+   "tags": "electrical electro-mechanical gas flow actuated switch electrical switch relay  Gas Flow Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.gasFlowActuatedSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.gasFlowActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:293"
+  },
+  {
+   "id": "electricalSwitchesRelays-15-flow-actuated-on",
+   "title": "Flow Actuated On",
+   "tags": "electrical electro-mechanical flow actuated switch electrical switch relay  Flow Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.flowActuatedSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.flowActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:295"
+  },
+  {
+   "id": "electricalSwitchesRelays-16-flow-actuated-off",
+   "title": "Flow Actuated Off",
+   "tags": "electrical electro-mechanical flow actuated switch electrical switch relay  Flow Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.flowActuatedSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.flowActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:297"
+  },
+  {
+   "id": "electricalSwitchesRelays-17-pressure-actuated-on",
+   "title": "Pressure Actuated On",
+   "tags": "electrical electro-mechanical pressure actuated switch electrical switch relay  Pressure Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.pressureActuatedSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pressureActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:299"
+  },
+  {
+   "id": "electricalSwitchesRelays-18-pressure-actuated-off",
+   "title": "Pressure Actuated Off",
+   "tags": "electrical electro-mechanical pressure actuated switch electrical switch relay  Pressure Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.pressureActuatedSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pressureActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:301"
+  },
+  {
+   "id": "electricalSwitchesRelays-19-temperature-actuated-on",
+   "title": "Temperature Actuated On",
+   "tags": "electrical electro-mechanical temperature actuated switch electrical switch relay  Temperature Actuated On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.temperatureActuatedSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.temperatureActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:303"
+  },
+  {
+   "id": "electricalSwitchesRelays-20-temperature-actuated-off",
+   "title": "Temperature Actuated Off",
+   "tags": "electrical electro-mechanical temperature actuated switch electrical switch relay  Temperature Actuated Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 31,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.temperatureActuatedSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.temperatureActuatedSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:305"
+  },
+  {
+   "id": "electricalSwitchesRelays-21-safety-interlock-on",
+   "title": "Safety Interlock On",
+   "tags": "electrical electro-mechanical safety interlock electrical switch relay  Safety Interlock On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 45,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.safetyInterlockSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.safetyInterlockSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:307"
+  },
+  {
+   "id": "electricalSwitchesRelays-22-safety-interlock-off",
+   "title": "Safety Interlock Off",
+   "tags": "electrical electro-mechanical safety interlock electrical switch relay  Safety Interlock Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 45,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.safetyInterlockSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.safetyInterlockSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:309"
+  },
+  {
+   "id": "electricalSwitchesRelays-23-temperature-switch-on",
+   "title": "Temperature Switch On",
+   "tags": "electrical electro-mechanical temperature switch electrical switch relay  Temperature Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 18,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.temperatureSwitch;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.temperatureSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:311"
+  },
+  {
+   "id": "electricalSwitchesRelays-24-temperature-switch-off",
+   "title": "Temperature Switch Off",
+   "tags": "electrical electro-mechanical temperature switch electrical switch relay  Temperature Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 18,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.temperatureSwitch;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.temperatureSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:313"
+  },
+  {
+   "id": "electricalSwitchesRelays-25-thermostat-on",
+   "title": "Thermostat On",
+   "tags": "electrical electro-mechanical thermostat electrical switch relay  Thermostat On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 21,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.thermostat2;aspect=fixed;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.thermostat2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:315"
+  },
+  {
+   "id": "electricalSwitchesRelays-26-thermostat-off",
+   "title": "Thermostat Off",
+   "tags": "electrical electro-mechanical thermostat electrical switch relay  Thermostat Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 21,
+   "style": "html=1;shape=mxgraph.electrical.electro-mechanical.thermostat2;aspect=fixed;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.thermostat2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:317"
+  },
+  {
+   "id": "electricalSwitchesRelays-27-limit-switch-on",
+   "title": "Limit Switch On",
+   "tags": "electrical electro-mechanical limit switch electrical switch relay  Limit Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 19,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.limitSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.limitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:319"
+  },
+  {
+   "id": "electricalSwitchesRelays-28-limit-switch-off",
+   "title": "Limit Switch Off",
+   "tags": "electrical electro-mechanical limit switch electrical switch relay  Limit Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 19,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.limitSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.limitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:321"
+  },
+  {
+   "id": "electricalSwitchesRelays-29-circuit-breaker-on",
+   "title": "Circuit Breaker On",
+   "tags": "electrical electro-mechanical circuit breaker electrical switch relay  Circuit Breaker On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.circuitBreaker2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.circuitBreaker2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:323"
+  },
+  {
+   "id": "electricalSwitchesRelays-30-circuit-breaker-off",
+   "title": "Circuit Breaker Off",
+   "tags": "electrical electro-mechanical circuit breaker electrical switch relay  Circuit Breaker Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.circuitBreaker2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.circuitBreaker2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:325"
+  },
+  {
+   "id": "electricalSwitchesRelays-31-selector-switch-3-positions",
+   "title": "Selector Switch (3 positions)",
+   "tags": "electrical electro-mechanical selector switch three position electrical switch relay  Selector Switch (3 positions)",
+   "kind": "vertex",
+   "width": 75,
+   "height": 46,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.selectorSwitch3Position2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.selectorSwitch3Position2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:327"
+  },
+  {
+   "id": "electricalSwitchesRelays-32-selector-switch-4-positions",
+   "title": "Selector Switch (4 positions)",
+   "tags": "electrical electro-mechanical selector switch four position electrical switch relay  Selector Switch (4 positions)",
+   "kind": "vertex",
+   "width": 75,
+   "height": 66,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.selectorSwitch4Position2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.selectorSwitch4Position2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:329"
+  },
+  {
+   "id": "electricalSwitchesRelays-33-selector-switch-6-positions",
+   "title": "Selector Switch (6 positions)",
+   "tags": "electrical electro-mechanical selector switch electrical switch relay  Selector Switch (6 positions)",
+   "kind": "vertex",
+   "width": 75,
+   "height": 106,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.selectorSwitch6Position2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.selectorSwitch6Position2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:331"
+  },
+  {
+   "id": "electricalSwitchesRelays-34-shorting-selector",
+   "title": "Shorting Selector",
+   "tags": "electrical electro-mechanical shorting selector electrical switch relay  Shorting Selector",
+   "kind": "vertex",
+   "width": 60,
+   "height": 66,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.shortingSelectorSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.shortingSelectorSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:333"
+  },
+  {
+   "id": "electricalSwitchesRelays-35-proximity-limit-switch-on",
+   "title": "Proximity Limit Switch On",
+   "tags": "electrical electro-mechanical proximity limit switch electrical switch relay  Proximity Limit Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 55,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.proximityLimitSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.proximityLimitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:335"
+  },
+  {
+   "id": "electricalSwitchesRelays-36-proximity-limit-switch-off",
+   "title": "Proximity Limit Switch Off",
+   "tags": "electrical electro-mechanical proximity limit switch electrical switch relay  Proximity Limit Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 55,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.proximityLimitSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.proximityLimitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:337"
+  },
+  {
+   "id": "electricalSwitchesRelays-37-inertia-switch-on",
+   "title": "Inertia Switch On",
+   "tags": "electrical electro-mechanical inertia switch electrical switch relay  Inertia Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 19,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.inertiaSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.inertiaSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:339"
+  },
+  {
+   "id": "electricalSwitchesRelays-38-inertia-switch-off",
+   "title": "Inertia Switch Off",
+   "tags": "electrical electro-mechanical inertia switch electrical switch relay  Inertia Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 19,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.inertiaSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.inertiaSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:341"
+  },
+  {
+   "id": "electricalSwitchesRelays-39-pushbutton-break-on",
+   "title": "Pushbutton Break On",
+   "tags": "electrical electro-mechanical pushbutton break electrical switch relay  Pushbutton Break On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonBreak2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonBreak2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:343"
+  },
+  {
+   "id": "electricalSwitchesRelays-40-pushbutton-break-off",
+   "title": "Pushbutton Break Off",
+   "tags": "electrical electro-mechanical pushbutton break electrical switch relay  Pushbutton Break Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonBreak2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonBreak2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:345"
+  },
+  {
+   "id": "electricalSwitchesRelays-41-manual-switch-on",
+   "title": "Manual Switch On",
+   "tags": "electrical electro-mechanical manual switch electrical switch relay  Manual Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 18,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.manualSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.manualSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:347"
+  },
+  {
+   "id": "electricalSwitchesRelays-42-manual-switch-off",
+   "title": "Manual Switch Off",
+   "tags": "electrical electro-mechanical manual switch electrical switch relay  Manual Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 18,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.manualSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.manualSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:349"
+  },
+  {
+   "id": "electricalSwitchesRelays-43-make-contact",
+   "title": "Make Contact",
+   "tags": "electrical electro-mechanical make contact electrical switch relay  Make Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 16,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.make_contact;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.make_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:351"
+  },
+  {
+   "id": "electricalSwitchesRelays-44-break-contact",
+   "title": "Break Contact",
+   "tags": "electrical electro-mechanical break contact electrical switch relay  Break Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 10,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.break_contact;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.break_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:353"
+  },
+  {
+   "id": "electricalSwitchesRelays-45-two-way-contact",
+   "title": "Two Way Contact",
+   "tags": "electrical electro-mechanical two way contact electrical switch relay  Two Way Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 30,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.twoWayContact2;elSwitchState=neutral;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoWayContact2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:355"
+  },
+  {
+   "id": "electricalSwitchesRelays-46-two-way-contact-neutral",
+   "title": "Two Way Contact Neutral",
+   "tags": "electrical electro-mechanical two way contact electrical switch relay  Two Way Contact Neutral",
+   "kind": "vertex",
+   "width": 75,
+   "height": 30,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.twoWayContact2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoWayContact2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:357"
+  },
+  {
+   "id": "electricalSwitchesRelays-47-two-way-contact",
+   "title": "Two Way Contact",
+   "tags": "electrical electro-mechanical two way contact electrical switch relay  Two Way Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 30,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.twoWayContact2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoWayContact2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:359"
+  },
+  {
+   "id": "electricalSwitchesRelays-48-passing-make-contact-on",
+   "title": "Passing Make-Contact On",
+   "tags": "electrical electro-mechanical passing make contact electrical switch relay  Passing Make-Contact On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 23,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.passingMakeContact2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.passingMakeContact2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:361"
+  },
+  {
+   "id": "electricalSwitchesRelays-49-passing-make-contact-off",
+   "title": "Passing Make-Contact Off",
+   "tags": "electrical electro-mechanical passing make contact electrical switch relay  Passing Make-Contact Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 23,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.passingMakeContact2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.passingMakeContact2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:363"
+  },
+  {
+   "id": "electricalSwitchesRelays-50-stay-put",
+   "title": "Stay Put",
+   "tags": "electrical electro-mechanical stay put electrical switch relay  Stay Put",
+   "kind": "vertex",
+   "width": 75,
+   "height": 7,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.stay_put;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.stay_put"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:365"
+  },
+  {
+   "id": "electricalSwitchesRelays-51-dpst-on",
+   "title": "DPST On",
+   "tags": "electrical electro-mechanical dpst electrical switch relay  DPST On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 39,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.dpst2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.dpst2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:367"
+  },
+  {
+   "id": "electricalSwitchesRelays-52-dpst-off",
+   "title": "DPST Off",
+   "tags": "electrical electro-mechanical dpst electrical switch relay  DPST Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 39,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.dpst2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.dpst2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:369"
+  },
+  {
+   "id": "electricalSwitchesRelays-53-spring-return-on",
+   "title": "Spring Return On",
+   "tags": "electrical electro-mechanical spring return electrical switch relay  Spring Return On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 26,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.springReturn3;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.springReturn3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:371"
+  },
+  {
+   "id": "electricalSwitchesRelays-54-spring-return-off",
+   "title": "Spring Return Off",
+   "tags": "electrical electro-mechanical spring return electrical switch relay  Spring Return Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 26,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.springReturn3;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.springReturn3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:373"
+  },
+  {
+   "id": "electricalSwitchesRelays-55-limit-switch-nc",
+   "title": "Limit Switch NC",
+   "tags": "electrical electro-mechanical limit switch electrical switch relay  Limit Switch NC",
+   "kind": "vertex",
+   "width": 75,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.limitSwitch;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.limitSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:375"
+  },
+  {
+   "id": "electricalSwitchesRelays-56-limit-switch-no",
+   "title": "Limit Switch NO",
+   "tags": "electrical electro-mechanical limit switch electrical switch relay  Limit Switch NO",
+   "kind": "vertex",
+   "width": 75,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.limitSwitch;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.limitSwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:377"
+  },
+  {
+   "id": "electricalSwitchesRelays-57-dpdt",
+   "title": "DPDT",
+   "tags": "electrical electro-mechanical dpdt electrical switch relay  DPDT",
+   "kind": "vertex",
+   "width": 58,
+   "height": 62,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.dpdt3;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.dpdt3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:379"
+  },
+  {
+   "id": "electricalSwitchesRelays-58-dpdt",
+   "title": "DPDT",
+   "tags": "electrical electro-mechanical dpdt electrical switch relay  DPDT",
+   "kind": "vertex",
+   "width": 58,
+   "height": 62,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.dpdt3;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.dpdt3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:381"
+  },
+  {
+   "id": "electricalSwitchesRelays-59-2-position-switch",
+   "title": "2-Position Switch",
+   "tags": "electrical electro-mechanical 2 position switch electrical switch relay  2-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.twoPositionSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:383"
+  },
+  {
+   "id": "electricalSwitchesRelays-60-2-position-switch",
+   "title": "2-Position Switch",
+   "tags": "electrical electro-mechanical 2 position switch electrical switch relay  2-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.twoPositionSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.twoPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:385"
+  },
+  {
+   "id": "electricalSwitchesRelays-61-3-position-switch",
+   "title": "3-Position Switch",
+   "tags": "electrical electro-mechanical 3 position switch electrical switch relay  3-Position Switch",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.threePositionSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.threePositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:387"
+  },
+  {
+   "id": "electricalSwitchesRelays-62-3-position-switch",
+   "title": "3-Position Switch",
+   "tags": "electrical electro-mechanical 3 position switch electrical switch relay  3-Position Switch",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.threePositionSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.threePositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:389"
+  },
+  {
+   "id": "electricalSwitchesRelays-63-3-position-switch",
+   "title": "3-Position Switch",
+   "tags": "electrical electro-mechanical 3 position switch electrical switch relay  3-Position Switch",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.threePositionSwitch2;elSwitchState=3;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.threePositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:391"
+  },
+  {
+   "id": "electricalSwitchesRelays-64-4-position-switch",
+   "title": "4-Position Switch",
+   "tags": "electrical electro-mechanical 4 position switch electrical switch relay  4-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.fourPositionSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fourPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:393"
+  },
+  {
+   "id": "electricalSwitchesRelays-65-4-position-switch",
+   "title": "4-Position Switch",
+   "tags": "electrical electro-mechanical 4 position switch electrical switch relay  4-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.fourPositionSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fourPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:395"
+  },
+  {
+   "id": "electricalSwitchesRelays-66-4-position-switch",
+   "title": "4-Position Switch",
+   "tags": "electrical electro-mechanical 4 position switch electrical switch relay  4-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.fourPositionSwitch2;elSwitchState=3;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fourPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:397"
+  },
+  {
+   "id": "electricalSwitchesRelays-67-4-position-switch",
+   "title": "4-Position Switch",
+   "tags": "electrical electro-mechanical 4 position switch electrical switch relay  4-Position Switch",
+   "kind": "vertex",
+   "width": 75,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.fourPositionSwitch2;elSwitchState=4;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.fourPositionSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:399"
+  },
+  {
+   "id": "electricalSwitchesRelays-68-pushbutton-make",
+   "title": "Pushbutton Make",
+   "tags": "electrical electro-mechanical pushbutton make electrical switch relay  Pushbutton Make",
+   "kind": "vertex",
+   "width": 75,
+   "height": 53,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonMakeSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonMakeSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:401"
+  },
+  {
+   "id": "electricalSwitchesRelays-69-pushbutton-make",
+   "title": "Pushbutton Make",
+   "tags": "electrical electro-mechanical pushbutton make electrical switch relay  Pushbutton Make",
+   "kind": "vertex",
+   "width": 75,
+   "height": 53,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonMakeSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonMakeSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:403"
+  },
+  {
+   "id": "electricalSwitchesRelays-70-pushbutton-2-circuit",
+   "title": "Pushbutton 2-Circuit",
+   "tags": "electrical electro-mechanical pushbutton 2 circuit electrical switch relay  Pushbutton 2-Circuit",
+   "kind": "vertex",
+   "width": 75,
+   "height": 73,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonTwoCircuitSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonTwoCircuitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:405"
+  },
+  {
+   "id": "electricalSwitchesRelays-71-pushbutton-2-circuit",
+   "title": "Pushbutton 2-Circuit",
+   "tags": "electrical electro-mechanical pushbutton 2 circuit electrical switch relay  Pushbutton 2-Circuit",
+   "kind": "vertex",
+   "width": 75,
+   "height": 73,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pushbuttonTwoCircuitSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pushbuttonTwoCircuitSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:407"
+  },
+  {
+   "id": "electricalSwitchesRelays-72-time-delay-break",
+   "title": "Time Delay Break",
+   "tags": "electrical electro-mechanical time delay break electrical switch relay  Time Delay Break",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.timeDelaySwitch;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:409"
+  },
+  {
+   "id": "electricalSwitchesRelays-73-time-delay-make",
+   "title": "Time Delay Make",
+   "tags": "electrical electro-mechanical time delay make electrical switch relay  Time Delay Make",
+   "kind": "vertex",
+   "width": 75,
+   "height": 32,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.timeDelaySwitch;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:411"
+  },
+  {
+   "id": "electricalSwitchesRelays-74-time-delay-make",
+   "title": "Time Delay Make",
+   "tags": "electrical electro-mechanical time delay make electrical switch relay  Time Delay Make",
+   "kind": "vertex",
+   "width": 75,
+   "height": 36,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.timeDelaySwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:413"
+  },
+  {
+   "id": "electricalSwitchesRelays-75-time-delay-break",
+   "title": "Time Delay Break",
+   "tags": "electrical electro-mechanical time delay break electrical switch relay  Time Delay Break",
+   "kind": "vertex",
+   "width": 75,
+   "height": 36,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.timeDelaySwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:415"
+  },
+  {
+   "id": "electricalSwitchesRelays-76-isolator-off",
+   "title": "Isolator Off",
+   "tags": "electrical electro-mechanical isolator electrical switch relay  Isolator Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.isolatorSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.isolatorSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:417"
+  },
+  {
+   "id": "electricalSwitchesRelays-77-isolator-on",
+   "title": "Isolator On",
+   "tags": "electrical electro-mechanical isolator electrical switch relay  Isolator On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.isolatorSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.isolatorSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:419"
+  },
+  {
+   "id": "electricalSwitchesRelays-78-changeover-contact",
+   "title": "Changeover Contact",
+   "tags": "electrical electro-mechanical changeover contact electrical switch relay  Changeover Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.changeoverContactSwitch2;elSwitchState=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.changeoverContactSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:421"
+  },
+  {
+   "id": "electricalSwitchesRelays-79-changeover-contact",
+   "title": "Changeover Contact",
+   "tags": "electrical electro-mechanical changeover contact electrical switch relay  Changeover Contact",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.changeoverContactSwitch2;elSwitchState=2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.changeoverContactSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:423"
+  },
+  {
+   "id": "electricalSwitchesRelays-80-reed-switch-on",
+   "title": "Reed Switch On",
+   "tags": "electrical electro-mechanical reed switch electrical switch relay  Reed Switch On",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.reedSwitch2;elSwitchState=on;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.reedSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:425"
+  },
+  {
+   "id": "electricalSwitchesRelays-81-reed-switch-off",
+   "title": "Reed Switch Off",
+   "tags": "electrical electro-mechanical reed switch electrical switch relay  Reed Switch Off",
+   "kind": "vertex",
+   "width": 75,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.reedSwitch2;elSwitchState=off;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.reedSwitch2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:427"
+  },
+  {
+   "id": "electricalSwitchesRelays-82-relay-coil",
+   "title": "Relay Coil",
+   "tags": "electrical electro-mechanical relay coil electrical switch relay  Relay Coil",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.relay_coil;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.relay_coil"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:429"
+  },
+  {
+   "id": "electricalSwitchesRelays-83-relay",
+   "title": "Relay",
+   "tags": "electrical electro-mechanical relay electrical switch relay  Relay",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.relay;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.relay"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:431"
+  },
+  {
+   "id": "electricalSwitchesRelays-84-relay-contacts",
+   "title": "Relay Contacts",
+   "tags": "electrical electro-mechanical relay contacts electrical switch relay  Relay Contacts",
+   "kind": "vertex",
+   "width": 30,
+   "height": 24,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.relay_contacts;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.relay_contacts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:433"
+  },
+  {
+   "id": "electricalSwitchesRelays-85-resonator",
+   "title": "Resonator",
+   "tags": "electrical electro-mechanical resonator electrical switch relay  Resonator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.resonator;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.resonator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:435"
+  },
+  {
+   "id": "electricalSwitchesRelays-86-pilot-light",
+   "title": "Pilot Light",
+   "tags": "electrical electro-mechanical pilot light electrical switch relay  Pilot Light",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.pilot_light;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.pilot_light"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:437"
+  },
+  {
+   "id": "electricalSwitchesRelays-87-relay-coil",
+   "title": "Relay Coil",
+   "tags": "electrical electro-mechanical relay coil electrical switch relay  Relay Coil",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.relay_coil_2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.relay_coil_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:439"
+  },
+  {
+   "id": "electricalSwitchesRelays-88-mercury-switch",
+   "title": "Mercury Switch",
+   "tags": "electrical electro-mechanical mercury switch electrical switch relay  Mercury Switch",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.mercury_switch;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.mercury_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:441"
+  },
+  {
+   "id": "electricalSwitchesRelays-89-mercury-switch",
+   "title": "Mercury Switch",
+   "tags": "electrical electro-mechanical mercury switch electrical switch relay  Mercury Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.mercury_switch_2;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.mercury_switch_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:443"
+  }
+ ]
+}

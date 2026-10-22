@@ -1,0 +1,828 @@
+{
+ "id": "archimate",
+ "title": "ArchiMate 2.1",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:8",
+ "entries": [
+  {
+   "id": "archimate-0-business-actor",
+   "title": "Business Actor",
+   "tags": "archimate application archimate business actor Business Actor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.application;appType=actor",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:26"
+  },
+  {
+   "id": "archimate-1-business-role",
+   "title": "Business Role",
+   "tags": "archimate  archimate business role Business Role",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.application;appType=role",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:28"
+  },
+  {
+   "id": "archimate-2-business-collaboration",
+   "title": "Business Collaboration",
+   "tags": "archimate  archimate business collaboration Business Collaboration",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.application;appType=collab",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:30"
+  },
+  {
+   "id": "archimate-3-business-interface",
+   "title": "Business Interface",
+   "tags": "archimate  archimate business interface Business Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.application;appType=interface",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:32"
+  },
+  {
+   "id": "archimate-4-business-interface",
+   "title": "Business Interface",
+   "tags": "archimate  archimate business interface Business Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.application;appType=interface2",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:34"
+  },
+  {
+   "id": "archimate-5-location",
+   "title": "Location",
+   "tags": "archimate  archimate location Location",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.location",
+   "shapeNames": [
+    "mxgraph.archimate.location"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:36"
+  },
+  {
+   "id": "archimate-6-business-process",
+   "title": "Business Process",
+   "tags": "archimate  archimate business process Business Process",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.business;busType=process",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:38"
+  },
+  {
+   "id": "archimate-7-business-function",
+   "title": "Business Function",
+   "tags": "archimate  archimate business function Business Function",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.business;busType=function",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:40"
+  },
+  {
+   "id": "archimate-8-business-interaction",
+   "title": "Business Interaction",
+   "tags": "archimate  archimate business interaction Business Interaction",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.business;busType=interaction",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:42"
+  },
+  {
+   "id": "archimate-9-business-event",
+   "title": "Business Event",
+   "tags": "archimate  archimate business event Business Event",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.business;busType=event",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:44"
+  },
+  {
+   "id": "archimate-10-business-service",
+   "title": "Business Service",
+   "tags": "archimate  archimate business service Business Service",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.business;busType=service",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:46"
+  },
+  {
+   "id": "archimate-11-business-object",
+   "title": "Business Object",
+   "tags": "archimate  archimate business object Business Object",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.businessObject;overflow=fill",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"center\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate.businessObject"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:48"
+  },
+  {
+   "id": "archimate-12-representation",
+   "title": "Representation",
+   "tags": "archimate  archimate representation Representation",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.representation",
+   "shapeNames": [
+    "mxgraph.archimate.representation"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:51"
+  },
+  {
+   "id": "archimate-13-meaning",
+   "title": "Meaning",
+   "tags": "archimate  archimate meaning Meaning",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "fillColor=#ffff99;whiteSpace=wrap;shape=cloud;html=1;",
+   "shapeNames": [
+    "cloud"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:53"
+  },
+  {
+   "id": "archimate-14-value",
+   "title": "Value",
+   "tags": "archimate  archimate value Value",
+   "kind": "vertex",
+   "width": 100,
+   "height": 56.25,
+   "style": "fillColor=#ffff99;whiteSpace=wrap;shape=ellipse;html=1;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:55"
+  },
+  {
+   "id": "archimate-15-product",
+   "title": "Product",
+   "tags": "archimate  archimate product Product",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.product;overflow=fill",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"left\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate.product"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:57"
+  },
+  {
+   "id": "archimate-16-contract",
+   "title": "Contract",
+   "tags": "archimate  archimate contract Contract",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate.businessObject;overflow=fill",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"center\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate.businessObject"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:60"
+  },
+  {
+   "id": "archimate-17-application-component",
+   "title": "Application Component",
+   "tags": "archimate  archimate application component Application Component",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=comp",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:63"
+  },
+  {
+   "id": "archimate-18-application-collaboration",
+   "title": "Application Collaboration",
+   "tags": "archimate  archimate application collaboration Application Collaboration",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=collab",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:65"
+  },
+  {
+   "id": "archimate-19-application-interface",
+   "title": "Application Interface",
+   "tags": "archimate  archimate application interface Application Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=interface",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:67"
+  },
+  {
+   "id": "archimate-20-application-interface",
+   "title": "Application Interface",
+   "tags": "archimate  archimate application interface Application Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=interface2",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:69"
+  },
+  {
+   "id": "archimate-21-application-function",
+   "title": "Application Function",
+   "tags": "archimate  archimate application function Application Function",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=function",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:71"
+  },
+  {
+   "id": "archimate-22-application-interaction",
+   "title": "Application Interaction",
+   "tags": "archimate  archimate application interaction Application Interaction",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=interaction",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:73"
+  },
+  {
+   "id": "archimate-23-application-service",
+   "title": "Application Service",
+   "tags": "archimate  archimate application service Application Service",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.application;appType=service",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:75"
+  },
+  {
+   "id": "archimate-24-data-object",
+   "title": "Data Object",
+   "tags": "archimate  archimate data object Data Object",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate.businessObject;overflow=fill",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"center\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate.businessObject"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:77"
+  },
+  {
+   "id": "archimate-25-node",
+   "title": "Node",
+   "tags": "archimate  archimate node Node",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=node",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:80"
+  },
+  {
+   "id": "archimate-26-device",
+   "title": "Device",
+   "tags": "archimate  archimate device Device",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.tech;techType=device",
+   "shapeNames": [
+    "mxgraph.archimate.tech"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:82"
+  },
+  {
+   "id": "archimate-27-network",
+   "title": "Network",
+   "tags": "archimate  archimate network Network",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=network",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:84"
+  },
+  {
+   "id": "archimate-28-communications-path",
+   "title": "Communications Path",
+   "tags": "archimate  archimate communications path Communications Path",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=commPath",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:86"
+  },
+  {
+   "id": "archimate-29-infrastructure-interface",
+   "title": "Infrastructure Interface",
+   "tags": "archimate  archimate infrastructure interface Infrastructure Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=interface",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:88"
+  },
+  {
+   "id": "archimate-30-infrastructure-interface",
+   "title": "Infrastructure Interface",
+   "tags": "archimate  archimate infrastructure interface Infrastructure Interface",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=interface2",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:90"
+  },
+  {
+   "id": "archimate-31-system-software",
+   "title": "System Software",
+   "tags": "archimate  archimate system software System Software",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=sysSw",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:92"
+  },
+  {
+   "id": "archimate-32-infrastructure-function",
+   "title": "Infrastructure Function",
+   "tags": "archimate  archimate infraastructure function Infrastructure Function",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.business;busType=function",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:94"
+  },
+  {
+   "id": "archimate-33-infrastructure-service",
+   "title": "Infrastructure Service",
+   "tags": "archimate  archimate infrastructure service Infrastructure Service",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.business;busType=service",
+   "shapeNames": [
+    "mxgraph.archimate.business"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:96"
+  },
+  {
+   "id": "archimate-34-artifact",
+   "title": "Artifact",
+   "tags": "archimate  archimate artifact Artifact",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.application;appType=artifact",
+   "shapeNames": [
+    "mxgraph.archimate.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:98"
+  },
+  {
+   "id": "archimate-35-association",
+   "title": "Association",
+   "tags": "archimate  archimate association",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=none;elbow=vertical",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:101"
+  },
+  {
+   "id": "archimate-36-access",
+   "title": "Access",
+   "tags": "archimate  archimate access",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=1;dashed=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:103"
+  },
+  {
+   "id": "archimate-37-access",
+   "title": "Access",
+   "tags": "archimate  archimate access",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=none;elbow=vertical;endFill=0;dashed=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:105"
+  },
+  {
+   "id": "archimate-38-used-by",
+   "title": "Used by",
+   "tags": "archimate  archimate used by",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:107"
+  },
+  {
+   "id": "archimate-39-realization",
+   "title": "Realization",
+   "tags": "archimate  archimate realization",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=block;elbow=vertical;endFill=0;dashed=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:109"
+  },
+  {
+   "id": "archimate-40-assignment",
+   "title": "Assignment",
+   "tags": "archimate  archimate assignment",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=oval;html=1;endFill=1;startArrow=oval;startFill=1;edgeStyle=elbowEdgeStyle;elbow=vertical",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:111"
+  },
+  {
+   "id": "archimate-41-aggregation",
+   "title": "Aggregation",
+   "tags": "archimate  archimate aggregation",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=none;html=1;endFill=0;startArrow=diamondThin;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:113"
+  },
+  {
+   "id": "archimate-42-composition",
+   "title": "Composition",
+   "tags": "archimate  archimate composition",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=none;html=1;endFill=0;startArrow=diamondThin;startFill=1;edgeStyle=elbowEdgeStyle;elbow=vertical",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:115"
+  },
+  {
+   "id": "archimate-43-a",
+   "title": "A",
+   "tags": "archimate  archimate ",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=block;html=1;endFill=1;startArrow=none;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;dashed=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:117"
+  },
+  {
+   "id": "archimate-44-flow",
+   "title": "Flow",
+   "tags": "archimate  archimate flow",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=block;html=1;endFill=1;startArrow=none;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;dashed=1",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:119"
+  },
+  {
+   "id": "archimate-45-triggering",
+   "title": "Triggering",
+   "tags": "archimate  archimate triggering",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=block;html=1;endFill=1;startArrow=none;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;dashed=0",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:121"
+  },
+  {
+   "id": "archimate-46-grouping",
+   "title": "Grouping",
+   "tags": "grouping",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "swimlane;html=1;fillColor=#ffffff;whiteSpace=wrap",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:123"
+  },
+  {
+   "id": "archimate-47-junction",
+   "title": "Junction",
+   "tags": "junction",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "ellipse;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;fillColor=strokeColor",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:125"
+  },
+  {
+   "id": "archimate-48-specialization",
+   "title": "Specialization",
+   "tags": "archimate  archimate specialization",
+   "kind": "edge",
+   "width": 100,
+   "height": 75,
+   "style": "endArrow=block;html=1;endFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:127"
+  },
+  {
+   "id": "archimate-49-stakeholder",
+   "title": "Stakeholder",
+   "tags": "archimate  archimate stakeholder Stakeholder",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffccff;shape=mxgraph.archimate.motiv;motivType=stake",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:130"
+  },
+  {
+   "id": "archimate-50-driver",
+   "title": "Driver",
+   "tags": "archimate  archimate driver Driver",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffccff;shape=mxgraph.archimate.motiv;motivType=driver",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:132"
+  },
+  {
+   "id": "archimate-51-assessment",
+   "title": "Assessment",
+   "tags": "archimate  archimate assesment Assessment",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffccff;shape=mxgraph.archimate.motiv;motivType=assess",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:134"
+  },
+  {
+   "id": "archimate-52-goal",
+   "title": "Goal",
+   "tags": "archimate  archimate goal Goal",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ccccff;shape=mxgraph.archimate.motiv;motivType=goal",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:136"
+  },
+  {
+   "id": "archimate-53-requirement",
+   "title": "Requirement",
+   "tags": "archimate  archimate goal Requirement",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ccccff;shape=mxgraph.archimate.motiv;motivType=req",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:138"
+  },
+  {
+   "id": "archimate-54-constraint",
+   "title": "Constraint",
+   "tags": "archimate  archimate constraint Constraint",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ccccff;shape=mxgraph.archimate.motiv;motivType=const",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:140"
+  },
+  {
+   "id": "archimate-55-principle",
+   "title": "Principle",
+   "tags": "archimate  archimate principle Principle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ccccff;shape=mxgraph.archimate.motiv;motivType=princ",
+   "shapeNames": [
+    "mxgraph.archimate.motiv"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:142"
+  },
+  {
+   "id": "archimate-56-work-package",
+   "title": "Work Package",
+   "tags": "archimate  archimate work package Work Package",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffe0e0;shape=mxgraph.archimate.rounded=1",
+   "shapeNames": [
+    "mxgraph.archimate.rounded=1"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:145"
+  },
+  {
+   "id": "archimate-57-deliverable",
+   "title": "Deliverable",
+   "tags": "archimate  archimate deliverable Deliverable",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffe0e0;shape=mxgraph.archimate.representation",
+   "shapeNames": [
+    "mxgraph.archimate.representation"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:147"
+  },
+  {
+   "id": "archimate-58-plateau",
+   "title": "Plateau",
+   "tags": "archimate  archimate plateau Plateau",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.tech;techType=plateau",
+   "shapeNames": [
+    "mxgraph.archimate.tech"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:149"
+  },
+  {
+   "id": "archimate-59-gap",
+   "title": "Gap",
+   "tags": "archimate  archimate gap Gap",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ff99;shape=mxgraph.archimate.gap",
+   "shapeNames": [
+    "mxgraph.archimate.gap"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate.js:151"
+  }
+ ]
+}

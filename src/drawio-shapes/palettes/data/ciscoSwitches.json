@@ -1,0 +1,344 @@
+{
+ "id": "ciscoSwitches",
+ "title": "Cisco / Switches",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoSwitches-0-atm-fast-gigabit-etherswitch",
+   "title": "ATM Fast GigaBit EtherSwitch",
+   "tags": "cisco atm fast gigabit etherswitch cisco switch  ATM Fast GigaBit EtherSwitch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.atm_fast_gigabit_etherswitch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.atm_fast_gigabit_etherswitch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:468"
+  },
+  {
+   "id": "ciscoSwitches-1-atm-switch",
+   "title": "ATM Switch",
+   "tags": "cisco atm switch cisco switch  ATM Switch",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.atm_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.atm_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:469"
+  },
+  {
+   "id": "ciscoSwitches-2-class-4-5-switch",
+   "title": "Class 4/5 Switch",
+   "tags": "cisco class 4 5 switch cisco switch  Class 4/5 Switch",
+   "kind": "vertex",
+   "width": 69,
+   "height": 90,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.class_4_5_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.class_4_5_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:470"
+  },
+  {
+   "id": "ciscoSwitches-3-content-service-switch-1100",
+   "title": "Content Service Switch 1100",
+   "tags": "cisco content service switch 1100 cisco switch  Content Service Switch 1100",
+   "kind": "vertex",
+   "width": 94,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.content_service_switch_1100;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.content_service_switch_1100"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:471"
+  },
+  {
+   "id": "ciscoSwitches-4-content-switch",
+   "title": "Content Switch",
+   "tags": "cisco content switch cisco switch  Content Switch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 86,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.content_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.content_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:472"
+  },
+  {
+   "id": "ciscoSwitches-5-fibre-channel-fabric-switch",
+   "title": "Fibre Channel Fabric Switch",
+   "tags": "cisco fibre channel fabric switch cisco switch  Fibre Channel Fabric Switch",
+   "kind": "vertex",
+   "width": 101,
+   "height": 74,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.fibre_channel_fabric_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.fibre_channel_fabric_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:473"
+  },
+  {
+   "id": "ciscoSwitches-6-generic-softswitch",
+   "title": "Generic Softswitch",
+   "tags": "cisco generic softswitch cisco switch  Generic Softswitch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 75,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.generic_softswitch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.generic_softswitch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:474"
+  },
+  {
+   "id": "ciscoSwitches-7-intelliswitch-stack",
+   "title": "Intelliswitch Stack",
+   "tags": "cisco intelliswitch stack cisco switch  Intelliswitch Stack",
+   "kind": "vertex",
+   "width": 66,
+   "height": 69,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.intelliswitch_stack;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.intelliswitch_stack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:475"
+  },
+  {
+   "id": "ciscoSwitches-8-isdn-switch",
+   "title": "ISDN Switch",
+   "tags": "cisco isdn switch cisco switch  ISDN Switch",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 59,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.isdn_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.isdn_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:476"
+  },
+  {
+   "id": "ciscoSwitches-9-layer-2-remote-switch",
+   "title": "Layer 2 Remote Switch",
+   "tags": "cisco layer 2 remote switch cisco switch  Layer 2 Remote Switch",
+   "kind": "vertex",
+   "width": 101,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.layer_2_remote_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.layer_2_remote_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:477"
+  },
+  {
+   "id": "ciscoSwitches-10-layer-3-switch",
+   "title": "Layer 3 Switch",
+   "tags": "cisco layer 3 switch cisco switch  Layer 3 Switch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.layer_3_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.layer_3_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:478"
+  },
+  {
+   "id": "ciscoSwitches-11-mgx-8000-multiservice-switch",
+   "title": "MGX 8000 Multiservice Switch",
+   "tags": "cisco mgx 8000 multiservice switch cisco switch  MGX 8000 Multiservice Switch",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.mgx_8000_multiservice_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.mgx_8000_multiservice_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:479"
+  },
+  {
+   "id": "ciscoSwitches-12-multi-fabric-server-switch",
+   "title": "Multi-Fabric Server Switch",
+   "tags": "cisco multi fabric server switch cisco switch  Multi-Fabric Server Switch",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 75,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.multi-fabric_server_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.multi-fabric_server_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:480"
+  },
+  {
+   "id": "ciscoSwitches-13-multilayer-remote-switch",
+   "title": "Multilayer Remote Switch",
+   "tags": "cisco multilayer remote switch cisco switch  Multilayer Remote Switch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 88,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.multilayer_remote_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.multilayer_remote_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:481"
+  },
+  {
+   "id": "ciscoSwitches-14-multiswitch-device",
+   "title": "MultiSwitch Device",
+   "tags": "cisco multiswitch device cisco switch  MultiSwitch Device",
+   "kind": "vertex",
+   "width": 101,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.multiswitch_device;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.multiswitch_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:482"
+  },
+  {
+   "id": "ciscoSwitches-15-pbx-switch",
+   "title": "PBX Switch",
+   "tags": "cisco pbx switch cisco switch  PBX Switch",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.pbx_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.pbx_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:483"
+  },
+  {
+   "id": "ciscoSwitches-16-programmable-switch",
+   "title": "Programmable Switch",
+   "tags": "cisco programmable switch cisco switch  Programmable Switch",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.programmable_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.programmable_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:484"
+  },
+  {
+   "id": "ciscoSwitches-17-server-switch",
+   "title": "Server Switch",
+   "tags": "cisco server switch cisco switch  Server Switch",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.server_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.server_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:485"
+  },
+  {
+   "id": "ciscoSwitches-18-simultilayer-switch",
+   "title": "SimultiLayer Switch",
+   "tags": "cisco simultilayer switch cisco switch  SimultiLayer Switch",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 57.99999999999999,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.simultilayer_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.simultilayer_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:486"
+  },
+  {
+   "id": "ciscoSwitches-19-softswitch-pgw-mgc",
+   "title": "SoftSwitch PGW MGC",
+   "tags": "cisco softswitch pgw mgc cisco switch  SoftSwitch PGW MGC",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.softswitch_pgw_mgc;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.softswitch_pgw_mgc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:487"
+  },
+  {
+   "id": "ciscoSwitches-20-virtual-layer-switch",
+   "title": "Virtual Layer Switch",
+   "tags": "cisco virtual layer switch cisco switch  Virtual Layer Switch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 86,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.virtual_layer_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.virtual_layer_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:488"
+  },
+  {
+   "id": "ciscoSwitches-21-voice-atm-switch",
+   "title": "Voice ATM Switch",
+   "tags": "cisco voice atm switch cisco switch  Voice ATM Switch",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.voice_atm_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.voice_atm_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:489"
+  },
+  {
+   "id": "ciscoSwitches-22-voice-switch",
+   "title": "Voice Switch",
+   "tags": "cisco voice switch cisco switch  Voice Switch",
+   "kind": "vertex",
+   "width": 101,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.voice_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.voice_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:490"
+  },
+  {
+   "id": "ciscoSwitches-23-workgroup-switch",
+   "title": "Workgroup Switch",
+   "tags": "cisco workgroup switch cisco switch  Workgroup Switch",
+   "kind": "vertex",
+   "width": 101,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.workgroup_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.switches.workgroup_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:491"
+  }
+ ]
+}

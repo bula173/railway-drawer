@@ -1,0 +1,68 @@
+{
+ "id": "gmdlMisc",
+ "title": "GMDL / Misc",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:7",
+ "entries": [
+  {
+   "id": "gmdlMisc-0-background-light",
+   "title": "Background (Light)",
+   "tags": "gmdl background gmdl google media design library misc  Background (Light)",
+   "kind": "vertex",
+   "width": 358,
+   "height": 642,
+   "style": "shape=rect;fillColor=#eeeeee;strokeColor=none;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1665"
+  },
+  {
+   "id": "gmdlMisc-1-background-dark",
+   "title": "Background (Dark)",
+   "tags": "gmdl background gmdl google media design library misc  Background (Dark)",
+   "kind": "vertex",
+   "width": 358,
+   "height": 642,
+   "style": "shape=rect;fillColor=#333333;strokeColor=none;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1667"
+  },
+  {
+   "id": "gmdlMisc-2-keyboard",
+   "title": "Keyboard",
+   "tags": "gmdl google media design library misc keyboard Keyboard",
+   "kind": "cells",
+   "width": 358,
+   "height": 224,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"dashed=0;shape=rect;fillColor=#263238;strokeColor=none;aspect=fixed;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"358\" height=\"224\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"q\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"12\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"w\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"46\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"e\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"80\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"r\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"114\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"t\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"148\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"y\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"182\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"u\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"216\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"i\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"250\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"o\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"284\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"p\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"318\" y=\"22\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"a\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"27\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"s\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"61\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"15\" value=\"d\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"95\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"f\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"129\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"17\" value=\"g\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"163\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"18\" value=\"h\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"197\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"19\" value=\"j\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"231\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"20\" value=\"k\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"265\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"21\" value=\"l\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"299\" y=\"75\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"22\" value=\"z\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"61\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"23\" value=\"x\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"95\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"24\" value=\"c\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"129\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"25\" value=\"v\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"163\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"26\" value=\"b\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"197\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"27\" value=\"n\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"231\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"28\" value=\"m\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;html=1;spacingBottom=-6;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"265\" y=\"126\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"29\" value=\"1\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"22\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"30\" value=\"2\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"56\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"31\" value=\"3\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"90\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"32\" value=\"4\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"124\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"33\" value=\"5\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"158\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"34\" value=\"6\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"192\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"35\" value=\"7\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"226\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"36\" value=\"8\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"260\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"37\" value=\"9\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"294\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"38\" value=\"0\" style=\"text;fontColor=#999999;fontSize=10;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"328\" y=\"12\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"39\" value=\"\" style=\"dashed=0;shape=mxgraph.gmdl.shift;strokeColor=none;fillColor=#A1A7A9;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"21\" y=\"135\" width=\"22\" height=\"22\" as=\"geometry\"/></mxCell><mxCell id=\"40\" value=\"\" style=\"dashed=0;shape=mxgraph.gmdl.backspace;strokeColor=none;fillColor=#A1A7A9;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"310\" y=\"132\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"41\" value=\"?123\" style=\"text;fontColor=#bbbbbb;fontSize=14;verticalAlign=middle;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"17\" y=\"177\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"42\" value=\",\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"62\" y=\"174\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"43\" value=\".\" style=\"text;fontColor=#bbbbbb;fontSize=24;verticalAlign=middle;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"265\" y=\"170\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"44\" value=\"\" style=\"shape=ellipse;strokeColor=none;fillColor=#4CB5AB;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"308\" y=\"167\" width=\"36\" height=\"36\" as=\"geometry\"/></mxCell><mxCell id=\"45\" value=\"\" style=\"dashed=0;shape=mxgraph.gmdl.check;strokeColor=#ffffff;strokeWidth=2;\" vertex=\"1\" parent=\"44\"><mxGeometry x=\"10\" y=\"12\" width=\"16\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"46\" value=\"\" style=\"shape=rect;strokeColor=none;fillColor=#3C474C;rounded=1;size=3;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"105\" y=\"174\" width=\"145\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.gmdl.shift",
+    "mxgraph.gmdl.backspace",
+    "ellipse",
+    "mxgraph.gmdl.check"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1669"
+  },
+  {
+   "id": "gmdlMisc-3-snackbar",
+   "title": "Snackbar",
+   "tags": "gmdl google media design library misc snackbar",
+   "kind": "cells",
+   "width": 358,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Archived\" style=\"shape=rect;strokeColor=none;fillColor=#333333;fontColor=#FFFFFF;align=left;spacing=16;fontSize=13;spacingLeft=8;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"358\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"UNDO\" style=\"text;verticalAlign=middle;align=center;fontColor=#EEFF41;fontSize=14;resizeHeight=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"88\" height=\"48\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-88\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1672"
+  }
+ ]
+}

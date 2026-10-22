@@ -1,0 +1,666 @@
+{
+ "id": "sapFoundations",
+ "title": "SAP / Foundational",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapFoundations-0-cloud-integration-automation",
+   "title": "Cloud Integration Automation",
+   "tags": "sap cloud integration automation sap foundation  Cloud Integration Automation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Cloud_Integration_Automation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:183"
+  },
+  {
+   "id": "sapFoundations-1-sap-audit-log-service",
+   "title": "SAP Audit Log Service",
+   "tags": "sap audit log service sap foundation  SAP Audit Log Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Audit_Log_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:185"
+  },
+  {
+   "id": "sapFoundations-2-sap-btp-cloud-foundry-runtime",
+   "title": "SAP BTP, Cloud Foundry Runtime",
+   "tags": "sap btp cloud foundry runtime sap foundation  SAP BTP, Cloud Foundry Runtime",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_BTP,_Cloud_Foundry_runtime",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:187"
+  },
+  {
+   "id": "sapFoundations-3-sap-keystore-service",
+   "title": "SAP Keystore Service",
+   "tags": "sap keystore service sap foundation  SAP Keystore Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Keystore_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:189"
+  },
+  {
+   "id": "sapFoundations-4-sap-event-broker-for-sap-cloud-applications",
+   "title": "SAP Event Broker for SAP Cloud Applications",
+   "tags": "sap event broker for cloud applications sap foundation  SAP Event Broker for SAP Cloud Applications",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Event_Broker_for_SAP_Cloud_Applications",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:191"
+  },
+  {
+   "id": "sapFoundations-5-sap-cloud-identity-sap-malware-scanning-service",
+   "title": "SAP Cloud Identity, SAP Malware Scanning Service",
+   "tags": "sap cloud identity, malware scanning service sap foundation  SAP Cloud Identity, SAP Malware Scanning Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Identity,_SAP_Malware_Scanning_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:193"
+  },
+  {
+   "id": "sapFoundations-6-application-autoscaler",
+   "title": "Application Autoscaler",
+   "tags": "sap application autoscaler sap foundation  Application Autoscaler",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Application_Autoscaler",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:195"
+  },
+  {
+   "id": "sapFoundations-7-sap-service-manager",
+   "title": "SAP Service Manager",
+   "tags": "sap service manager sap foundation  SAP Service Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Service_Manager",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:197"
+  },
+  {
+   "id": "sapFoundations-8-sap-application-logging-service-for-sap-btp",
+   "title": "SAP Application Logging service for SAP BTP",
+   "tags": "sap application logging service for btp sap foundation  SAP Application Logging service for SAP BTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Application_Logging_service_for_SAP_BTP",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:199"
+  },
+  {
+   "id": "sapFoundations-9-sap-btp-kyma-runtime",
+   "title": "SAP BTP, Kyma runtime",
+   "tags": "sap btp kyma runtime sap foundation  SAP BTP, Kyma runtime",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_BTP,_Kyma_runtime",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:201"
+  },
+  {
+   "id": "sapFoundations-10-cloud-connector",
+   "title": "Cloud Connector",
+   "tags": "sap cloud connector sap foundation  Cloud Connector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Cloud_Connector2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:203"
+  },
+  {
+   "id": "sapFoundations-11-sap-custom-domain-service",
+   "title": "SAP Custom Domain service",
+   "tags": "sap custom domain service sap foundation  SAP Custom Domain service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Custom_Domain_service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:205"
+  },
+  {
+   "id": "sapFoundations-12-sap-connectivity-service",
+   "title": "SAP Connectivity Service",
+   "tags": "sap connectivity service sap foundation  SAP Connectivity Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Connectivity_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:207"
+  },
+  {
+   "id": "sapFoundations-13-sap-destination-service",
+   "title": "SAP Destination service",
+   "tags": "sap destination service sap foundation  SAP Destination service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Destination_service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:209"
+  },
+  {
+   "id": "sapFoundations-14-sap-job-scheduling-service",
+   "title": "SAP Job Scheduling service",
+   "tags": "sap job scheduling service sap foundation  SAP Job Scheduling service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Job_Scheduling_service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:211"
+  },
+  {
+   "id": "sapFoundations-15-sap-authorization-and-trust-management-service",
+   "title": "SAP Authorization and Trust Management service",
+   "tags": "sap authorization and trust management service sap foundation  SAP Authorization and Trust Management service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Authorization_and_Trust_Management_service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:213"
+  },
+  {
+   "id": "sapFoundations-16-object-store-on-sap-btp",
+   "title": "Object Store on SAP BTP",
+   "tags": "sap object store on btp sap foundation  Object Store on SAP BTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Object_Store_on_SAP_BTP",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:215"
+  },
+  {
+   "id": "sapFoundations-17-sap-alert-notification-service-for-sap-btp",
+   "title": "SAP Alert Notification service for SAP BTP",
+   "tags": "sap alert notification service for btp sap foundation  SAP Alert Notification service for SAP BTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Alert_Notification_service_for_SAP_BTP",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:217"
+  },
+  {
+   "id": "sapFoundations-18-sap-credential-store",
+   "title": "SAP Credential Store",
+   "tags": "sap credential store sap foundation  SAP Credential Store",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Credential_Store",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:219"
+  },
+  {
+   "id": "sapFoundations-19-sap-cloud-logging",
+   "title": "SAP_Cloud_Logging",
+   "tags": "sap cloud logging sap foundation  SAP_Cloud_Logging",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Logging",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:221"
+  },
+  {
+   "id": "sapFoundations-20-sap-monitoring-service-for-sap-btp",
+   "title": "SAP Monitoring service for SAP BTP",
+   "tags": "sap monitoring service for btp sap foundation  SAP Monitoring service for SAP BTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Monitoring_service_for_SAP_BTP",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:223"
+  },
+  {
+   "id": "sapFoundations-21-sap-master-data-integration",
+   "title": "SAP Master Data Integration",
+   "tags": "sap master data integration sap foundation  SAP Master Data Integration",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Master_Data_Integration",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:225"
+  },
+  {
+   "id": "sapFoundations-22-sap-secure-login-service-for-sap-gui",
+   "title": "SAP Secure Login Service for SAP GUI",
+   "tags": "sap secure login service gui graphical user interface sap foundation  SAP Secure Login Service for SAP GUI",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Secure_Login_Service_for_SAP_GUI",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:227"
+  },
+  {
+   "id": "sapFoundations-23-identity-authentication",
+   "title": "Identity Authentication",
+   "tags": "sap identity authentication sap foundation  Identity Authentication",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Authentication2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:229"
+  },
+  {
+   "id": "sapFoundations-24-identity-directory",
+   "title": "Identity Directory",
+   "tags": "sap identity directory sap foundation  Identity Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Directory2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:231"
+  },
+  {
+   "id": "sapFoundations-25-sap-cloud-identity-service",
+   "title": "SAP Cloud Identity Service",
+   "tags": "sap identity cloud service sap foundation  SAP Cloud Identity Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Identity_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:233"
+  },
+  {
+   "id": "sapFoundations-26-sap-authorization-management-service",
+   "title": "SAP Authorization Management Service",
+   "tags": "sap authorization management service sap foundation  SAP Authorization Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Authorization_Management_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:235"
+  },
+  {
+   "id": "sapFoundations-27-sap-automation-pilot",
+   "title": "SAP Automation Pilot",
+   "tags": "sap automation pilot sap foundation  SAP Automation Pilot",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Automation_Pilot",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:237"
+  },
+  {
+   "id": "sapFoundations-28-sap-continuous-integration-and-delivery",
+   "title": "SAP Continuous Integration and Delivery",
+   "tags": "sap continuous integration and delivery sap foundation  SAP Continuous Integration and Delivery",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Continuous_Integration_and_Delivery",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:239"
+  },
+  {
+   "id": "sapFoundations-29-sap-cloud-transport-management",
+   "title": "SAP Cloud Transport Management",
+   "tags": "sap cloud transport management sap foundation  SAP Cloud Transport Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Transport_Management",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:241"
+  },
+  {
+   "id": "sapFoundations-30-sap-content-agent-service",
+   "title": "SAP Content Agent Service",
+   "tags": "sap content agent service sap foundation  SAP Content Agent Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Content_Agent_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:243"
+  },
+  {
+   "id": "sapFoundations-31-sap-personal-data-manager",
+   "title": "SAP Personal Data Manager",
+   "tags": "sap personal data manager sap foundation  SAP Personal Data Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Personal_Data_Manager",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:245"
+  },
+  {
+   "id": "sapFoundations-32-sap-data-retention-manager",
+   "title": "SAP Data Retention Manager",
+   "tags": "sap data retention manager sap foundation  SAP Data Retention Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Data_Retention_Manager",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:247"
+  },
+  {
+   "id": "sapFoundations-33-sap-data-privacy-integration",
+   "title": "SAP Data Privacy Integration",
+   "tags": "sap data privacy integration sap foundation  SAP Data Privacy Integration",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Data_Privacy_Integration",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:249"
+  },
+  {
+   "id": "sapFoundations-34-sap-document-management-service",
+   "title": "SAP Document Management Service",
+   "tags": "sap document management service sap foundation  SAP Document Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Document_Management_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:251"
+  },
+  {
+   "id": "sapFoundations-35-sap-solution-lifecycle-management-service",
+   "title": "SAP Solution Lifecycle Management Service",
+   "tags": "sap solution lifecycle management service sap foundation  SAP Solution Lifecycle Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Solution_Lifecycle_Management_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:253"
+  },
+  {
+   "id": "sapFoundations-36-sap-cloud-management-service",
+   "title": "SAP Cloud Management Service",
+   "tags": "sap cloud management service sap foundation  SAP Cloud Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Management_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:255"
+  },
+  {
+   "id": "sapFoundations-37-sap-software-as-a-service-provisioning-service",
+   "title": "SAP Software as a Service Provisioning Service",
+   "tags": "sap software as service provisioning saas sap foundation  SAP Software as a Service Provisioning Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Software_as_a_Service_Provisioning_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:257"
+  },
+  {
+   "id": "sapFoundations-38-landscape-portal-for-sap-s-4hana-cloud-abap-environment",
+   "title": "Landscape Portal for SAP S/4HANA Cloud, ABAP Environment",
+   "tags": "sap landscape portal for s4hana cloud abap environment sap foundation  Landscape Portal for SAP S/4HANA Cloud, ABAP Environment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Landscape_Portal_for_SAP_S4HANA_Cloud_ABAP_Environment",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:259"
+  },
+  {
+   "id": "sapFoundations-39-oauth-2-0",
+   "title": "OAuth 2.0",
+   "tags": "sap oauth 2.0 sap foundation  OAuth 2.0",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=OAuth_20",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:261"
+  },
+  {
+   "id": "sapFoundations-40-sap-pki-certificate-service",
+   "title": "SAP PKI Certificate Service",
+   "tags": "sap pki certificate service sap foundation  SAP PKI Certificate Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_PKI_Certificate_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:263"
+  },
+  {
+   "id": "sapFoundations-41-application-vulnerability-report",
+   "title": "Application Vulnerability Report",
+   "tags": "sap application vulnerability report sap foundation  Application Vulnerability Report",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Application_Vulnerability_Report",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:265"
+  },
+  {
+   "id": "sapFoundations-42-identity-provisioning",
+   "title": "Identity Provisioning",
+   "tags": "sap identity provisioning sap foundation  Identity Provisioning",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Provisioning2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:269"
+  },
+  {
+   "id": "sapFoundations-43-sap-private-link-service",
+   "title": "SAP Private Link service",
+   "tags": "sap private link service sap foundation  SAP Private Link service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Private_Link_service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:271"
+  },
+  {
+   "id": "sapFoundations-44-identity-directory",
+   "title": "Identity Directory",
+   "tags": "sap identity directory sap foundation  Identity Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Directory",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:273"
+  },
+  {
+   "id": "sapFoundations-45-identity-provisioning",
+   "title": "Identity Provisioning",
+   "tags": "sap identity provisioning sap foundation  Identity Provisioning",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Provisioning",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:275"
+  },
+  {
+   "id": "sapFoundations-46-identity-authentication",
+   "title": "Identity Authentication",
+   "tags": "sap identity authentication sap foundation  Identity Authentication",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Identity_Authentication",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:277"
+  }
+ ]
+}

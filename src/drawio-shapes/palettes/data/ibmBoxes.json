@@ -1,0 +1,180 @@
+{
+ "id": "ibmBoxes",
+ "title": "IBM / Boxes",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmBoxes-0-ibm-cloud",
+   "title": "IBM Cloud",
+   "tags": "ibm cloud ibm  IBM Cloud",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=cloud;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=3;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "IBM Cloud",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:590"
+  },
+  {
+   "id": "ibmBoxes-1-vpc",
+   "title": "VPC",
+   "tags": "vpc virtual private cloud ibm  VPC",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=vpc;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=2;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "VPC",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:593"
+  },
+  {
+   "id": "ibmBoxes-2-region",
+   "title": "Region",
+   "tags": "region ibm  Region",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=region;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#919191;strokeWidth=2;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Region",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:596"
+  },
+  {
+   "id": "ibmBoxes-3-zone",
+   "title": "Zone",
+   "tags": "zone ibm  Zone",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=zone;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=#E0E0E0;rounded=0;whiteSpace=wrap;html=1;strokeColor=#919191;strokeWidth=1;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Zone",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:599"
+  },
+  {
+   "id": "ibmBoxes-4-subnet-acl",
+   "title": "Subnet:ACL",
+   "tags": "subnet acl ibm  Subnet:ACL",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=subnet;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=#E6F0E2;rounded=0;whiteSpace=wrap;html=1;strokeColor=#00882B;strokeWidth=1;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Subnet:ACL",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:602"
+  },
+  {
+   "id": "ibmBoxes-5-security-group",
+   "title": "Security Group",
+   "tags": "security group ibm  Security Group",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "fontStyle=0;verticalAlign=top;align=center;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;container=1;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Security Group",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:605"
+  },
+  {
+   "id": "ibmBoxes-6-instance-group",
+   "title": "Instance Group",
+   "tags": "instance group ibm  Instance Group",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "fontStyle=0;verticalAlign=top;align=center;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#00882B;strokeWidth=2;dashed=1;container=1;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Instance Group",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:608"
+  },
+  {
+   "id": "ibmBoxes-7-resource-group",
+   "title": "Resource Group",
+   "tags": "resource group ibm  Resource Group",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "fontStyle=0;verticalAlign=top;align=center;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#919191;strokeWidth=2;dashed=1;container=1;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Resource Group",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:611"
+  },
+  {
+   "id": "ibmBoxes-8-public-network",
+   "title": "Public Network",
+   "tags": "public network ibm  Public Network",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=public;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=3;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Public Network",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:614"
+  },
+  {
+   "id": "ibmBoxes-9-enterprise-network",
+   "title": "Enterprise Network",
+   "tags": "enterprise network ibm  Enterprise Network",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=enterprise;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=3;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Enterprise Network",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:617"
+  },
+  {
+   "id": "ibmBoxes-10-classic-infrastructure",
+   "title": "Classic Infrastructure",
+   "tags": "classic infrastructure ibm  Classic Infrastructure",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shape=mxgraph.ibm.box;iconColor=#ffffff;prType=classic;fontStyle=0;verticalAlign=top;align=left;spacingLeft=32;spacingTop=4;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=2;dashed=0;container=1;spacing=-4;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Classic Infrastructure",
+   "shapeNames": [
+    "mxgraph.ibm.box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:620"
+  },
+  {
+   "id": "ibmBoxes-11-cloud-services",
+   "title": "Cloud Services",
+   "tags": "cloud services ibm  Cloud Services",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "fontStyle=0;verticalAlign=top;align=center;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#4376BB;strokeWidth=1;dashed=0;container=1;collapsible=0;expand=0;recursiveResize=0;",
+   "value": "Cloud Services",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:623"
+  }
+ ]
+}

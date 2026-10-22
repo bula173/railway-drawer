@@ -1,0 +1,190 @@
+{
+ "id": "mscaeCompanies",
+ "title": "CAE / Companies",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeCompanies-0-cache-redis-product-icon",
+   "title": "Cache Redis Product Icon",
+   "tags": "mscae azure cache redis product icon ms microsoft cloud enterprise company companies Cache Redis Product Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.503,0],[1,0.501,0],[0.987,0.218,0],[0.987,0.785,0],[0.013,0.785,0],[0.013,0.218,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:78"
+  },
+  {
+   "id": "mscaeCompanies-1-databricks",
+   "title": "Databricks",
+   "tags": "mscae azure databricks ms microsoft cloud enterprise company companies Databricks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Databricks.svg;points=[[0.5,0,0],[0.5,1,0],[0.201,0.5,0],[0.799,0.5,0],[0.955,0.248,0],[0.955,0.752,0],[0.045,0.752,0],[0.045,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:80"
+  },
+  {
+   "id": "mscaeCompanies-2-hdinsight",
+   "title": "HDInsight",
+   "tags": "mscae azure hdinsight ms microsoft cloud enterprise company companies HDInsight",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/HDInsight.svg;points=[[0.614,0.096,0],[0.431,0.904,0],[0.064,0.5,0],[1,0.43,0],[0.952,0.235,0],[0.942,0.567,0],[0.125,0.864,0],[0.025,0.368,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:82"
+  },
+  {
+   "id": "mscaeCompanies-3-hockeyapp",
+   "title": "HockeyApp",
+   "tags": "mscae azure hockey app hockeyapp ms microsoft cloud enterprise company companies HockeyApp",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.cloud.hockeyapp;fillColor=#0079D6;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.mscae.cloud.hockeyapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:84"
+  },
+  {
+   "id": "mscaeCompanies-4-openshift",
+   "title": "OpenShift",
+   "tags": "mscae azure open shift openshift ms microsoft cloud enterprise company companies OpenShift",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/OpenShift.svg;points=[[0.525,0,0],[0.525,0.992,0],[0.068,0.5,0],[0.98,0.5,0],[0.96,0.182,0],[0.825,0.869,0],[0.065,0.801,0],[0.215,0.128,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:86"
+  },
+  {
+   "id": "mscaeCompanies-5-cloud-cycle",
+   "title": "Cloud Cycle",
+   "tags": "mscae cloud cycle ms microsoft cloud enterprise company companies Cloud Cycle",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cloud_Cycle.svg;points=[[0.4,0.106,0],[0.61,0.894,0],[0.06,0.5,0],[0.912,0.5,0],[0.837,0.245,0],[0.94,0.845,0],[0.06,0.82,0],[0.233,0.172,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:88"
+  },
+  {
+   "id": "mscaeCompanies-6-kubernetes",
+   "title": "Kubernetes",
+   "tags": "mscae kubernetes ms microsoft cloud enterprise company companies Kubernetes",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Kubernetes.svg;points=[[0.5,0,0],[0.499,1,0],[0.025,0.5,0],[0.975,0.5,0],[0.887,0.183,0],[0.735,0.987,0],[0.265,0.987,0],[0.113,0.183,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:90"
+  },
+  {
+   "id": "mscaeCompanies-7-pluralsight-mono",
+   "title": "PluralSight Mono",
+   "tags": "mscae pluralsight mono ms microsoft cloud enterprise company companies PluralSight Mono",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/PluralSight_mono.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.825,0.118,0],[0.87,0.837,0],[0.145,0.855,0],[0.175,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:92"
+  },
+  {
+   "id": "mscaeCompanies-8-dc-os",
+   "title": "DC OS",
+   "tags": "mscae dc os ms microsoft cloud enterprise company companies DC OS",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/DC_OS.svg;points=[[0.5,0,0],[0.5,1,0],[0.073,0.5,0],[0.929,0.5,0],[1,0.43,0],[1,0.607,0],[0,0.605,0],[0,0.433,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:94"
+  },
+  {
+   "id": "mscaeCompanies-9-docker",
+   "title": "Docker",
+   "tags": "mscae docker ms microsoft cloud enterprise company companies Docker",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Docker.svg;points=[[0.522,0,0],[0.496,1,0],[0.01,0.89,0],[0.99,0.803,0],[0.985,0.244,0],[0.912,0.997,0],[0.038,0.972,0],[0.295,0.107,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:96"
+  },
+  {
+   "id": "mscaeCompanies-10-stackoverflow",
+   "title": "StackOverflow",
+   "tags": "mscae stack overflow stackoverflow so ms microsoft cloud enterprise company companies StackOverflow",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/StackOverflow.svg;points=[[0.5,0.34,0],[0.423,1,0],[0,0.782,0],[1,0.376,0],[0.925,0,0],[0.846,1,0],[0,1,0],[0,0.565,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:98"
+  },
+  {
+   "id": "mscaeCompanies-11-webappumbraco",
+   "title": "WebAppUmbraco",
+   "tags": "mscae webappumbraco webapp umbraco ms microsoft cloud enterprise company companies WebAppUmbraco",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/WebAppUmbraco.svg;points=[[0.389,0,0],[0.5,0.927,0],[0,0.389,0],[0.926,0.5,0],[0.673,0.118,0],[0.923,0.902,0],[0.082,0.637,0],[0.108,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:100"
+  },
+  {
+   "id": "mscaeCompanies-12-webappwordpress",
+   "title": "WebAppWordPress",
+   "tags": "mscae webappwordpress webapp wordpress ms microsoft cloud enterprise company companies WebAppWordPress",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/WebAppWordPress.svg;points=[[0.389,0,0],[0.5,0.927,0],[0,0.389,0],[0.926,0.5,0],[0.673,0.118,0],[0.923,0.902,0],[0.082,0.637,0],[0.108,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:102"
+  }
+ ]
+}

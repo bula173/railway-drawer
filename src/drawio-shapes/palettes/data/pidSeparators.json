@@ -1,0 +1,190 @@
+{
+ "id": "pidSeparators",
+ "title": "Process Engineering / Separators",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidSeparators-0-gravity-separator-settling-chamber",
+   "title": "Gravity Separator, Settling Chamber",
+   "tags": "pid fittings gravity settling chamber process instrumentation separators separator  Gravity Separator, Settling Chamber",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.gravity_separator,_settling_chamber2;",
+   "shapeNames": [
+    "mxgraph.pid.separators.gravity_separator,_settling_chamber2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:464"
+  },
+  {
+   "id": "pidSeparators-1-impact-separator",
+   "title": "Impact Separator",
+   "tags": "pid fittings impact process instrumentation separators separator  Impact Separator",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.impact_separator;",
+   "shapeNames": [
+    "mxgraph.pid.separators.impact_separator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:465"
+  },
+  {
+   "id": "pidSeparators-2-separator-sifter",
+   "title": "Separator, Sifter",
+   "tags": "pid fittings sifter process instrumentation separators separator  Separator, Sifter",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator,_sifter2;",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator,_sifter2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:466"
+  },
+  {
+   "id": "pidSeparators-3-separator-cyclone",
+   "title": "Separator (Cyclone)",
+   "tags": "pid fittings cyclone process instrumentation separators separator  Separator (Cyclone)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(cyclone)2;",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(cyclone)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:467"
+  },
+  {
+   "id": "pidSeparators-4-separator-electromagnetic",
+   "title": "Separator (Electromagnetic)",
+   "tags": "pid fittings electromagnetic process instrumentation separators separator  Separator (Electromagnetic)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(electromagnetic);",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(electromagnetic)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:468"
+  },
+  {
+   "id": "pidSeparators-5-separator-electrostatic-precipitator",
+   "title": "Separator (Electrostatic Precipitator)",
+   "tags": "pid fittings electrostatic precipitator process instrumentation separators separator  Separator (Electrostatic Precipitator)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(electrostatic_precipitator);",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(electrostatic_precipitator)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:469"
+  },
+  {
+   "id": "pidSeparators-6-separator-electrostatic-precipitator-wet",
+   "title": "Separator (Electrostatic Precipitator, Wet)",
+   "tags": "pid fittings electrostatic precipitator wet) process instrumentation separators separator  Separator (Electrostatic Precipitator, Wet)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(electrostatic_precipitator,_wet);",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(electrostatic_precipitator,_wet)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:470"
+  },
+  {
+   "id": "pidSeparators-7-separator-permanent-magnet",
+   "title": "Separator (Permanent Magnet)",
+   "tags": "pid fittings permanent magnet process instrumentation separators separator  Separator (Permanent Magnet)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(permanent_magnet)2;",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(permanent_magnet)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:471"
+  },
+  {
+   "id": "pidSeparators-8-separator-venturi-scrubber",
+   "title": "Separator (Venturi Scrubber)",
+   "tags": "pid fittings venturi scrubber process instrumentation separators separator  Separator (Venturi Scrubber)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(venturi_scrubber);",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(venturi_scrubber)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:472"
+  },
+  {
+   "id": "pidSeparators-9-separator-wet-scrubber",
+   "title": "Separator (Wet Scrubber)",
+   "tags": "pid fittings wet scrubber process instrumentation separators separator  Separator (Wet Scrubber)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.separator_(wet_scrubber)2;",
+   "shapeNames": [
+    "mxgraph.pid.separators.separator_(wet_scrubber)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:473"
+  },
+  {
+   "id": "pidSeparators-10-solidifier-closed",
+   "title": "Solidifier (Closed)",
+   "tags": "pid fittings solidifier closed process instrumentation separators separator  Solidifier (Closed)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.solidifier_(closed);",
+   "shapeNames": [
+    "mxgraph.pid.separators.solidifier_(closed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:474"
+  },
+  {
+   "id": "pidSeparators-11-solidifier-open",
+   "title": "Solidifier (Open)",
+   "tags": "pid fittings solidifier open process instrumentation separators separator  Solidifier (Open)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.solidifier_(open);",
+   "shapeNames": [
+    "mxgraph.pid.separators.solidifier_(open)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:475"
+  },
+  {
+   "id": "pidSeparators-12-spray-scrubber",
+   "title": "Spray Scrubber",
+   "tags": "pid fittings spray scrubber process instrumentation separators separator  Spray Scrubber",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.separators.spray_scrubber;",
+   "shapeNames": [
+    "mxgraph.pid.separators.spray_scrubber"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:476"
+  }
+ ]
+}

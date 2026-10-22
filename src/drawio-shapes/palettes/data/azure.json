@@ -1,0 +1,1212 @@
+{
+ "id": "azure",
+ "title": "Azure",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure.js:7",
+ "entries": [
+  {
+   "id": "azure-0-access-control",
+   "title": "Access Control",
+   "tags": "azure access control  Access Control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.access_control;",
+   "shapeNames": [
+    "mxgraph.azure.access_control"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:18"
+  },
+  {
+   "id": "azure-1-automation",
+   "title": "Automation",
+   "tags": "azure automation  Automation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.automation;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.automation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:19"
+  },
+  {
+   "id": "azure-2-autoscale",
+   "title": "AutoScale",
+   "tags": "azure autoscale  AutoScale",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.autoscale;",
+   "shapeNames": [
+    "mxgraph.azure.autoscale"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:20"
+  },
+  {
+   "id": "azure-3-azure-active-directory",
+   "title": "Azure Active Directory",
+   "tags": "azure azure active directory  Azure Active Directory",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_active_directory;",
+   "shapeNames": [
+    "mxgraph.azure.azure_active_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:21"
+  },
+  {
+   "id": "azure-4-azure-alert",
+   "title": "Azure Alert",
+   "tags": "azure azure alert  Azure Alert",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_alert;",
+   "shapeNames": [
+    "mxgraph.azure.azure_alert"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:22"
+  },
+  {
+   "id": "azure-5-azure-cache",
+   "title": "Azure Cache",
+   "tags": "azure azure cache  Azure Cache",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_cache;",
+   "shapeNames": [
+    "mxgraph.azure.azure_cache"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:23"
+  },
+  {
+   "id": "azure-6-azure-instance",
+   "title": "Azure Instance",
+   "tags": "azure azure instance  Azure Instance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_instance;",
+   "shapeNames": [
+    "mxgraph.azure.azure_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:24"
+  },
+  {
+   "id": "azure-7-azure-load-balancer",
+   "title": "Azure Load Balancer",
+   "tags": "azure azure load balancer  Azure Load Balancer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_load_balancer;",
+   "shapeNames": [
+    "mxgraph.azure.azure_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:25"
+  },
+  {
+   "id": "azure-8-azure-marketplace",
+   "title": "Azure Marketplace",
+   "tags": "azure azure marketplace  Azure Marketplace",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_marketplace;",
+   "shapeNames": [
+    "mxgraph.azure.azure_marketplace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:26"
+  },
+  {
+   "id": "azure-9-azure-sdk",
+   "title": "Azure SDK",
+   "tags": "azure azure sdk  Azure SDK",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_sdk;",
+   "shapeNames": [
+    "mxgraph.azure.azure_sdk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:27"
+  },
+  {
+   "id": "azure-10-azure-subscription",
+   "title": "Azure Subscription",
+   "tags": "azure azure subscription  Azure Subscription",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_subscription;",
+   "shapeNames": [
+    "mxgraph.azure.azure_subscription"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:28"
+  },
+  {
+   "id": "azure-11-azure-website",
+   "title": "Azure Website",
+   "tags": "azure azure website  Azure Website",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.azure_website;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.azure_website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:29"
+  },
+  {
+   "id": "azure-12-backup-service",
+   "title": "Backup Service",
+   "tags": "azure backup service  Backup Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.backup_service;",
+   "shapeNames": [
+    "mxgraph.azure.backup_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:30"
+  },
+  {
+   "id": "azure-13-bitbucket-code-source",
+   "title": "BitBucket Code Source",
+   "tags": "azure bitbucket code source  BitBucket Code Source",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.bitbucket_code_source;",
+   "shapeNames": [
+    "mxgraph.azure.bitbucket_code_source"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:31"
+  },
+  {
+   "id": "azure-14-biztalk-services",
+   "title": "BizTalk Services",
+   "tags": "azure biztalk services  BizTalk Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.biztalk_services;",
+   "shapeNames": [
+    "mxgraph.azure.biztalk_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:32"
+  },
+  {
+   "id": "azure-15-certificate",
+   "title": "Certificate",
+   "tags": "azure certificate  Certificate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.certificate;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:33"
+  },
+  {
+   "id": "azure-16-cloud",
+   "title": "Cloud",
+   "tags": "azure cloud  Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.cloud;",
+   "shapeNames": [
+    "mxgraph.azure.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:34"
+  },
+  {
+   "id": "azure-17-cloud-service",
+   "title": "Cloud Service",
+   "tags": "azure cloud service  Cloud Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.cloud_service;",
+   "shapeNames": [
+    "mxgraph.azure.cloud_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:35"
+  },
+  {
+   "id": "azure-18-cloud-services-configuration-file",
+   "title": "Cloud Services Configuration File",
+   "tags": "azure cloud services configuration file  Cloud Services Configuration File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.cloud_services_configuration_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.cloud_services_configuration_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:36"
+  },
+  {
+   "id": "azure-19-cloud-service-package-file",
+   "title": "Cloud Service Package File",
+   "tags": "azure cloud service package file  Cloud Service Package File",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.cloud_service_package_file;",
+   "shapeNames": [
+    "mxgraph.azure.cloud_service_package_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:37"
+  },
+  {
+   "id": "azure-20-codeplex-code-source",
+   "title": "CodePlex Code Source",
+   "tags": "azure codeplex code source  CodePlex Code Source",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.codeplex_code_source;",
+   "shapeNames": [
+    "mxgraph.azure.codeplex_code_source"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:38"
+  },
+  {
+   "id": "azure-21-code-file",
+   "title": "Code File",
+   "tags": "azure code file  Code File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.code_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.code_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:39"
+  },
+  {
+   "id": "azure-22-computer",
+   "title": "Computer",
+   "tags": "azure computer  Computer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.computer;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.computer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:40"
+  },
+  {
+   "id": "azure-23-content-delivery-network",
+   "title": "Content Delivery Network",
+   "tags": "azure content delivery network  Content Delivery Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.content_delivery_network;",
+   "shapeNames": [
+    "mxgraph.azure.content_delivery_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:41"
+  },
+  {
+   "id": "azure-24-database",
+   "title": "Database",
+   "tags": "azure database  Database",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.database;",
+   "shapeNames": [
+    "mxgraph.azure.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:42"
+  },
+  {
+   "id": "azure-25-dropbox-code-source",
+   "title": "DropBox Code Source",
+   "tags": "azure dropbox code source  DropBox Code Source",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.dropbox_code_source;",
+   "shapeNames": [
+    "mxgraph.azure.dropbox_code_source"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:43"
+  },
+  {
+   "id": "azure-26-enterprise",
+   "title": "Enterprise",
+   "tags": "azure enterprise  Enterprise",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.enterprise;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.enterprise"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:44"
+  },
+  {
+   "id": "azure-27-express-route",
+   "title": "Express Route",
+   "tags": "azure express route  Express Route",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.express_route;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.express_route"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:45"
+  },
+  {
+   "id": "azure-28-file",
+   "title": "File",
+   "tags": "azure file  File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:46"
+  },
+  {
+   "id": "azure-29-file-2",
+   "title": "File 2",
+   "tags": "azure file 2  File 2",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.file_2;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.file_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:47"
+  },
+  {
+   "id": "azure-30-github-code",
+   "title": "GitHub Code",
+   "tags": "azure github code  GitHub Code",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.github_code"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:48"
+  },
+  {
+   "id": "azure-31-git-repository",
+   "title": "Git Repository",
+   "tags": "azure git repository  Git Repository",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.git_repository;",
+   "shapeNames": [
+    "mxgraph.azure.git_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:49"
+  },
+  {
+   "id": "azure-32-hdinsight",
+   "title": "HDInsight",
+   "tags": "azure hdinsight  HDInsight",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.hdinsight;",
+   "shapeNames": [
+    "mxgraph.azure.hdinsight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:50"
+  },
+  {
+   "id": "azure-33-healthy",
+   "title": "Healthy",
+   "tags": "azure healthy  Healthy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.healthy;",
+   "shapeNames": [
+    "mxgraph.azure.healthy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:51"
+  },
+  {
+   "id": "azure-34-health-monitoring",
+   "title": "Health Monitoring",
+   "tags": "azure health monitoring  Health Monitoring",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.health_monitoring;",
+   "shapeNames": [
+    "mxgraph.azure.health_monitoring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:52"
+  },
+  {
+   "id": "azure-35-hyper-v-recovery-manager",
+   "title": "Hyper-V Recovery Manager",
+   "tags": "azure hyper v recovery manager  Hyper-V Recovery Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.hyper_v_recovery_manager;",
+   "shapeNames": [
+    "mxgraph.azure.hyper_v_recovery_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:53"
+  },
+  {
+   "id": "azure-36-laptop",
+   "title": "Laptop",
+   "tags": "azure laptop  Laptop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.laptop;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:54"
+  },
+  {
+   "id": "azure-37-load-balancer-generic",
+   "title": "Load Balancer Generic",
+   "tags": "azure load balancer generic  Load Balancer Generic",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.load_balancer_generic;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.load_balancer_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:55"
+  },
+  {
+   "id": "azure-38-media-service",
+   "title": "Media Service",
+   "tags": "azure media service  Media Service",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.media_service;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.media_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:56"
+  },
+  {
+   "id": "azure-39-message",
+   "title": "Message",
+   "tags": "azure message  Message",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.message;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.message"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:57"
+  },
+  {
+   "id": "azure-40-mobile",
+   "title": "Mobile",
+   "tags": "azure mobile  Mobile",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.mobile;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.mobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:58"
+  },
+  {
+   "id": "azure-41-mobile-services",
+   "title": "Mobile Services",
+   "tags": "azure mobile services  Mobile Services",
+   "kind": "vertex",
+   "width": 32.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.mobile_services;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.mobile_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:59"
+  },
+  {
+   "id": "azure-42-multi-factor-authentication",
+   "title": "Multi Factor Authentication",
+   "tags": "azure multi factor authentication  Multi Factor Authentication",
+   "kind": "vertex",
+   "width": 25,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.multi_factor_authentication;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.multi_factor_authentication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:60"
+  },
+  {
+   "id": "azure-43-mysql-database",
+   "title": "MySQL Database",
+   "tags": "azure mysql database  MySQL Database",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.mysql_database;",
+   "shapeNames": [
+    "mxgraph.azure.mysql_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:61"
+  },
+  {
+   "id": "azure-44-notification-hub",
+   "title": "Notification Hub",
+   "tags": "azure notification hub  Notification Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.notification_hub;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.notification_hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:62"
+  },
+  {
+   "id": "azure-45-notification-topic",
+   "title": "Notification Topic",
+   "tags": "azure notification topic  Notification Topic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.notification_topic;",
+   "shapeNames": [
+    "mxgraph.azure.notification_topic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:63"
+  },
+  {
+   "id": "azure-46-operating-system-image",
+   "title": "Operating System Image",
+   "tags": "azure operating system image  Operating System Image",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.operating_system_image;",
+   "shapeNames": [
+    "mxgraph.azure.operating_system_image"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:64"
+  },
+  {
+   "id": "azure-47-powershell-file",
+   "title": "PowerShell File",
+   "tags": "azure powershell file  PowerShell File",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.powershell_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.powershell_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:65"
+  },
+  {
+   "id": "azure-48-queue-generic",
+   "title": "Queue Generic",
+   "tags": "azure queue generic  Queue Generic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.queue_generic;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.queue_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:66"
+  },
+  {
+   "id": "azure-49-rdp-remoting-file",
+   "title": "RDP Remoting File",
+   "tags": "azure rdp remoting file  RDP Remoting File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.rdp_remoting_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.rdp_remoting_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:67"
+  },
+  {
+   "id": "azure-50-scheduler",
+   "title": "Scheduler",
+   "tags": "azure scheduler  Scheduler",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.scheduler_2;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.scheduler_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:68"
+  },
+  {
+   "id": "azure-51-script-file",
+   "title": "Script File",
+   "tags": "azure script file  Script File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.script_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.script_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:69"
+  },
+  {
+   "id": "azure-52-server",
+   "title": "Server",
+   "tags": "azure server  Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.server;",
+   "shapeNames": [
+    "mxgraph.azure.server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:70"
+  },
+  {
+   "id": "azure-53-server-rack",
+   "title": "Server Rack",
+   "tags": "azure server rack  Server Rack",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.server_rack;",
+   "shapeNames": [
+    "mxgraph.azure.server_rack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:71"
+  },
+  {
+   "id": "azure-54-service-bus",
+   "title": "Service Bus",
+   "tags": "azure service bus  Service Bus",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_bus;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.service_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:72"
+  },
+  {
+   "id": "azure-55-service-bus-queues",
+   "title": "Service Bus Queues",
+   "tags": "azure service bus queues  Service Bus Queues",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_bus_queues;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.service_bus_queues"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:73"
+  },
+  {
+   "id": "azure-56-service-bus-relay",
+   "title": "Service Bus Relay",
+   "tags": "azure service bus relay  Service Bus Relay",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_bus_relay;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.service_bus_relay"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:74"
+  },
+  {
+   "id": "azure-57-service-bus-topics-and-subscriptions",
+   "title": "Service Bus Topics and Subscriptions",
+   "tags": "azure service bus topics and subscriptions  Service Bus Topics and Subscriptions",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_bus_topics_and_subscriptions;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.service_bus_topics_and_subscriptions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:75"
+  },
+  {
+   "id": "azure-58-service-endpoint",
+   "title": "Service Endpoint",
+   "tags": "azure service endpoint  Service Endpoint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_endpoint;",
+   "shapeNames": [
+    "mxgraph.azure.service_endpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:76"
+  },
+  {
+   "id": "azure-59-sql-database",
+   "title": "SQL Database",
+   "tags": "azure sql database  SQL Database",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database;",
+   "shapeNames": [
+    "mxgraph.azure.sql_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:77"
+  },
+  {
+   "id": "azure-60-sql-database-sql-azure",
+   "title": "SQL Database SQL Azure",
+   "tags": "azure sql database sql azure  SQL Database SQL Azure",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;",
+   "shapeNames": [
+    "mxgraph.azure.sql_database_sql_azure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:78"
+  },
+  {
+   "id": "azure-61-sql-datasync",
+   "title": "SQL DataSync",
+   "tags": "azure sql datasync  SQL DataSync",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_datasync;",
+   "shapeNames": [
+    "mxgraph.azure.sql_datasync"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:79"
+  },
+  {
+   "id": "azure-62-sql-reporting",
+   "title": "SQL Reporting",
+   "tags": "azure sql reporting  SQL Reporting",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_reporting;",
+   "shapeNames": [
+    "mxgraph.azure.sql_reporting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:80"
+  },
+  {
+   "id": "azure-63-startup-task",
+   "title": "Startup Task",
+   "tags": "azure startup task  Startup Task",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.startup_task;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.startup_task"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:81"
+  },
+  {
+   "id": "azure-64-storage",
+   "title": "Storage",
+   "tags": "azure storage  Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storage;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:82"
+  },
+  {
+   "id": "azure-65-storage-blob",
+   "title": "Storage Blob",
+   "tags": "azure storage blob  Storage Blob",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storage_blob;",
+   "shapeNames": [
+    "mxgraph.azure.storage_blob"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:83"
+  },
+  {
+   "id": "azure-66-storage-queue",
+   "title": "Storage Queue",
+   "tags": "azure storage queue  Storage Queue",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storage_queue;",
+   "shapeNames": [
+    "mxgraph.azure.storage_queue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:84"
+  },
+  {
+   "id": "azure-67-storage-table",
+   "title": "Storage Table",
+   "tags": "azure storage table  Storage Table",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storage_table;",
+   "shapeNames": [
+    "mxgraph.azure.storage_table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:85"
+  },
+  {
+   "id": "azure-68-storsimple",
+   "title": "StorSimple",
+   "tags": "azure storsimple  StorSimple",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storsimple;",
+   "shapeNames": [
+    "mxgraph.azure.storsimple"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:86"
+  },
+  {
+   "id": "azure-69-tablet",
+   "title": "Tablet",
+   "tags": "azure tablet  Tablet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.tablet;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.tablet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:87"
+  },
+  {
+   "id": "azure-70-team-foundation-service",
+   "title": "Team Foundation Service",
+   "tags": "azure team foundation service  Team Foundation Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.team_foundation_service;",
+   "shapeNames": [
+    "mxgraph.azure.team_foundation_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:88"
+  },
+  {
+   "id": "azure-71-traffic-manager",
+   "title": "Traffic Manager",
+   "tags": "azure traffic manager  Traffic Manager",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.traffic_manager;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.traffic_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:89"
+  },
+  {
+   "id": "azure-72-unidentified-code-object",
+   "title": "Unidentified Code Object",
+   "tags": "azure unidentified code object  Unidentified Code Object",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.unidentified_code_object;",
+   "shapeNames": [
+    "mxgraph.azure.unidentified_code_object"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:90"
+  },
+  {
+   "id": "azure-73-user",
+   "title": "User",
+   "tags": "azure user  User",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.user;",
+   "shapeNames": [
+    "mxgraph.azure.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:91"
+  },
+  {
+   "id": "azure-74-vhd",
+   "title": "VHD",
+   "tags": "azure vhd  VHD",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.vhd;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.vhd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:92"
+  },
+  {
+   "id": "azure-75-vhd-data-disk",
+   "title": "VHD Data Disk",
+   "tags": "azure vhd data disk  VHD Data Disk",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.vhd_data_disk;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.vhd_data_disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:93"
+  },
+  {
+   "id": "azure-76-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "azure virtual machine  Virtual Machine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_machine;",
+   "shapeNames": [
+    "mxgraph.azure.virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:94"
+  },
+  {
+   "id": "azure-77-virtual-machine-feature",
+   "title": "Virtual Machine Feature",
+   "tags": "azure virtual machine feature  Virtual Machine Feature",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_machine_feature;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.virtual_machine_feature"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:95"
+  },
+  {
+   "id": "azure-78-virtual-network",
+   "title": "Virtual Network",
+   "tags": "azure virtual network  Virtual Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27.500000000000004,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_network;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.virtual_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:96"
+  },
+  {
+   "id": "azure-79-visual-studio-online",
+   "title": "Visual Studio Online",
+   "tags": "azure visual studio online  Visual Studio Online",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.visual_studio_online;",
+   "shapeNames": [
+    "mxgraph.azure.visual_studio_online"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:97"
+  },
+  {
+   "id": "azure-80-wadcfg-diagnostics-file",
+   "title": "WADCFG Diagnostics File",
+   "tags": "azure wadcfg diagnostics file  WADCFG Diagnostics File",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.wadcfg_diagnostics_file;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.wadcfg_diagnostics_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:98"
+  },
+  {
+   "id": "azure-81-website-generic",
+   "title": "Website Generic",
+   "tags": "azure website generic  Website Generic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.website_generic;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.azure.website_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:99"
+  },
+  {
+   "id": "azure-82-web-role",
+   "title": "Web Role",
+   "tags": "azure web role  Web Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.web_role;",
+   "shapeNames": [
+    "mxgraph.azure.web_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:100"
+  },
+  {
+   "id": "azure-83-web-roles",
+   "title": "Web Roles",
+   "tags": "azure web roles  Web Roles",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.web_roles;",
+   "shapeNames": [
+    "mxgraph.azure.web_roles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:101"
+  },
+  {
+   "id": "azure-84-worker-role",
+   "title": "Worker Role",
+   "tags": "azure worker role  Worker Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.worker_role;",
+   "shapeNames": [
+    "mxgraph.azure.worker_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:102"
+  },
+  {
+   "id": "azure-85-worker-roles",
+   "title": "Worker Roles",
+   "tags": "azure worker roles  Worker Roles",
+   "kind": "vertex",
+   "width": 55.00000000000001,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.worker_roles;",
+   "shapeNames": [
+    "mxgraph.azure.worker_roles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Azure.js:103"
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "id": "eipMessaging Channels",
+ "title": "EIP / Messaging Channels",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipMessaging Channels-0-point-to-point-channel",
+   "title": "Point to Point Channel",
+   "tags": "eip  eip enterprise integration pattern messaging channel message point",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;strokeColor=#808080;endArrow=block;endSize=10;dashed=0;verticalAlign=bottom;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:177"
+  },
+  {
+   "id": "eipMessaging Channels-1-publish-subscribe-channel",
+   "title": "Publish Subscribe Channel",
+   "tags": "eip enterprise integration pattern messaging channel message publish subscribe Publish Subscribe Channel",
+   "kind": "cells",
+   "width": 80,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;html=1;shape=rect;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" y=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"rounded=0;endArrow=none;endSize=10;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endSize=10;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endSize=10;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" y=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=block;endSize=10;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"80\" y=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:179"
+  },
+  {
+   "id": "eipMessaging Channels-2-channel-adapter",
+   "title": "Channel Adapter",
+   "tags": "eip channel adapter eip enterprise integration pattern messaging channel message  Channel Adapter",
+   "kind": "vertex",
+   "width": 45,
+   "height": 90,
+   "style": "strokeWidth=2;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.channel_adapter;fillColor=#9ddbef;",
+   "shapeNames": [
+    "mxgraph.eip.channel_adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:181"
+  },
+  {
+   "id": "eipMessaging Channels-3-message-channel",
+   "title": "Message Channel",
+   "tags": "eip messageChannel eip enterprise integration pattern messaging channel message  Message Channel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "strokeWidth=1;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.messageChannel;channelColor1=#e6e6e6;channelColor2=#808080;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.messageChannel"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:183"
+  },
+  {
+   "id": "eipMessaging Channels-4-datatype-channel",
+   "title": "Datatype Channel",
+   "tags": "eip dataChannel eip enterprise integration pattern messaging channel message  Datatype Channel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "strokeWidth=1;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.dataChannel;channelColor1=#e6e6e6;channelColor2=#808080;markerColor=#fffbc0;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.dataChannel"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:185"
+  },
+  {
+   "id": "eipMessaging Channels-5-dead-letter-channel",
+   "title": "Dead Letter Channel",
+   "tags": "eip deadLetterChannel eip enterprise integration pattern messaging channel message  Dead Letter Channel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "strokeWidth=1;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.deadLetterChannel;channelColor1=#e6e6e6;channelColor2=#808080;markerColor=#ff0000;markerIconColor=#ffffff;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.deadLetterChannel"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:187"
+  },
+  {
+   "id": "eipMessaging Channels-6-invalid-message-channel",
+   "title": "Invalid Message Channel",
+   "tags": "eip invalidMessageChannel eip enterprise integration pattern messaging channel message  Invalid Message Channel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "strokeWidth=1;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.invalidMessageChannel;channelColor1=#e6e6e6;channelColor2=#808080;markerColor=#ffe040;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.invalidMessageChannel"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:189"
+  },
+  {
+   "id": "eipMessaging Channels-7-messaging-bridge",
+   "title": "Messaging Bridge",
+   "tags": "eip messaging bridge eip enterprise integration pattern messaging channel message  Messaging Bridge",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "strokeWidth=2;outlineConnect=0;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.messaging_bridge;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#c0f5a9;",
+   "shapeNames": [
+    "mxgraph.eip.messaging_bridge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:191"
+  },
+  {
+   "id": "eipMessaging Channels-8-message-bus",
+   "title": "Message Bus",
+   "tags": "eip enterprise integration pattern messaging channel message message bus Message Bus",
+   "kind": "cells",
+   "width": 120,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;strokeColor=#000000;dashed=0;align=center;html=1;fontSize=8;shape=mxgraph.eip.messageChannel;channelColor1=#e6e6e6;channelColor2=#808080;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"120\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;strokeWidth=2;rounded=0;endArrow=block;startArrow=block;startSize=10;endSize=10;dashed=0;html=1;strokeColor=#808080;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" y=\"140\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;strokeWidth=2;rounded=0;endArrow=block;startArrow=block;startSize=10;endSize=10;dashed=0;html=1;strokeColor=#808080;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;strokeWidth=2;rounded=0;endArrow=block;startArrow=block;startSize=10;endSize=10;dashed=0;html=1;strokeColor=#808080;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;strokeWidth=2;rounded=0;endArrow=block;startArrow=block;startSize=10;endSize=10;dashed=0;html=1;strokeColor=#808080;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"100\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.eip.messageChannel"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:193"
+  }
+ ]
+}

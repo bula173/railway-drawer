@@ -1,0 +1,135 @@
+{
+ "id": "sysmlProfiles",
+ "title": "SysML / Profiles",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sysml.js:7",
+ "entries": [
+  {
+   "id": "sysmlProfiles-0-stereotype",
+   "title": "Stereotype",
+   "tags": " sysml profile stereotype Stereotype",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "shape=rect;html=1;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;stereotype&gt;&gt;\nStereotypeName",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2753"
+  },
+  {
+   "id": "sysmlProfiles-1-metaclass",
+   "title": "Metaclass",
+   "tags": " sysml profile metaclass Metaclass",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "shape=rect;html=1;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;metaclass&gt;&gt;\nMetaClassName",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2756"
+  },
+  {
+   "id": "sysmlProfiles-2-profile",
+   "title": "Profile",
+   "tags": " sysml profile profile Profile",
+   "kind": "vertex",
+   "width": 160,
+   "height": 100,
+   "style": "shape=folder;tabWidth=80;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;profile&gt;&gt;\nProfileName",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2758"
+  },
+  {
+   "id": "sysmlProfiles-3-model-library",
+   "title": "Model Library",
+   "tags": " sysml profile model library Model Library",
+   "kind": "vertex",
+   "width": 160,
+   "height": 100,
+   "style": "shape=folder;tabWidth=80;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;modelLibrary&gt;&gt;\nLibraryName",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2760"
+  },
+  {
+   "id": "sysmlProfiles-4-extension",
+   "title": "Extension",
+   "tags": "sysml profile extension",
+   "kind": "cells",
+   "width": 120,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;metaclass&amp;gt;&amp;gt;&#xa;MetaClassName\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;stereotype&amp;gt;&amp;gt;&#xa;StereotypeName\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"{required}\" style=\"endArrow=block;html=1;endFill=1;edgeStyle=none;endSize=12;labelBackgroundColor=none;align=left;\" edge=\"1\" parent=\"1\" source=\"3\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2763"
+  },
+  {
+   "id": "sysmlProfiles-5-generalization",
+   "title": "Generalization",
+   "tags": "sysml profile generalization",
+   "kind": "cells",
+   "width": 120,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;stereotype&amp;gt;&amp;gt;&#xa;StereotypeName\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;stereotype&amp;gt;&amp;gt;&#xa;StereotypeName\" style=\"shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=block;html=1;endFill=0;edgeStyle=none;endSize=12;labelBackgroundColor=none;align=left;\" edge=\"1\" parent=\"1\" source=\"3\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2778"
+  },
+  {
+   "id": "sysmlProfiles-6-profile-application",
+   "title": "Profile Application",
+   "tags": " sysml profile profile application",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;endArrow=open;endSize=12;dashed=1;verticalAlign=bottom;",
+   "value": "&lt;&lt;apply&gt;&gt;{strict}",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2793"
+  },
+  {
+   "id": "sysmlProfiles-7-metamodel-reference",
+   "title": "Metamodel Reference",
+   "tags": " sysml profile metamodel reference",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;endArrow=open;endSize=12;dashed=1;verticalAlign=top;",
+   "value": "&lt;&lt;reference&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2795"
+  },
+  {
+   "id": "sysmlProfiles-8-unidirectional-association",
+   "title": "Unidirectional Association",
+   "tags": " sysml profile unidirectional association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;endArrow=open;endSize=12;verticalAlign=bottom;",
+   "value": "propertyName",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2797"
+  }
+ ]
+}

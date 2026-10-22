@@ -1,0 +1,414 @@
+{
+ "id": "citrix2Components",
+ "title": "Citrix / Components",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Components-0-netscaler-gateway",
+   "title": "NetScaler Gateway",
+   "tags": "citrix2 netscaler gateway citrix components  NetScaler Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.714999999999996,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_gateway;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:112"
+  },
+  {
+   "id": "citrix2Components-1-storefront",
+   "title": "StoreFront",
+   "tags": "citrix2 storefront citrix components  StoreFront",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.135,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.storefront;",
+   "shapeNames": [
+    "mxgraph.citrix2.storefront"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:113"
+  },
+  {
+   "id": "citrix2Components-2-workspace-environment-management",
+   "title": "Workspace Environment Management",
+   "tags": "citrix2 workspace environment management citrix components  Workspace Environment Management",
+   "kind": "vertex",
+   "width": 47.975,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.workspace_environment_management2;",
+   "shapeNames": [
+    "mxgraph.citrix2.workspace_environment_management2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:114"
+  },
+  {
+   "id": "citrix2Components-3-delivery-controller",
+   "title": "Delivery Controller",
+   "tags": "citrix2 delivery controller citrix components  Delivery Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.delivery_controller;",
+   "shapeNames": [
+    "mxgraph.citrix2.delivery_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:115"
+  },
+  {
+   "id": "citrix2Components-4-director",
+   "title": "Director",
+   "tags": "citrix2 director citrix components  Director",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.055,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.director;",
+   "shapeNames": [
+    "mxgraph.citrix2.director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:116"
+  },
+  {
+   "id": "citrix2Components-5-studio-web-studio",
+   "title": "Studio / Web Studio",
+   "tags": "citrix2 studio web studio citrix components  Studio / Web Studio",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.985,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.studio_web_studio;",
+   "shapeNames": [
+    "mxgraph.citrix2.studio_web_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:117"
+  },
+  {
+   "id": "citrix2Components-6-vda",
+   "title": "VDA",
+   "tags": "citrix2 vda citrix components  VDA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41.185,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.vda;",
+   "shapeNames": [
+    "mxgraph.citrix2.vda"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:118"
+  },
+  {
+   "id": "citrix2Components-7-beacon",
+   "title": "Beacon",
+   "tags": "citrix2 beacon citrix components  Beacon",
+   "kind": "vertex",
+   "width": 35.04,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.beacon;",
+   "shapeNames": [
+    "mxgraph.citrix2.beacon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:119"
+  },
+  {
+   "id": "citrix2Components-8-zones",
+   "title": "Zones",
+   "tags": "citrix2 zones citrix components  Zones",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.47,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.zones;",
+   "shapeNames": [
+    "mxgraph.citrix2.zones"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:120"
+  },
+  {
+   "id": "citrix2Components-9-citrix-app-layering",
+   "title": "Citrix App Layering",
+   "tags": "citrix2 app layering citrix components  Citrix App Layering",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.835,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_app_layering;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_app_layering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:121"
+  },
+  {
+   "id": "citrix2Components-10-machine-catalog",
+   "title": "Machine Catalog",
+   "tags": "citrix2 machine catalog citrix components  Machine Catalog",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.42,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.machine_catalog;",
+   "shapeNames": [
+    "mxgraph.citrix2.machine_catalog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:122"
+  },
+  {
+   "id": "citrix2Components-11-delivery-group",
+   "title": "Delivery Group",
+   "tags": "citrix2 delivery group citrix components  Delivery Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.delivery_group;",
+   "shapeNames": [
+    "mxgraph.citrix2.delivery_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:123"
+  },
+  {
+   "id": "citrix2Components-12-app-group",
+   "title": "App Group",
+   "tags": "citrix2 app group citrix components  App Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.325,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.app_group;",
+   "shapeNames": [
+    "mxgraph.citrix2.app_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:124"
+  },
+  {
+   "id": "citrix2Components-13-citrix-provisioning-server",
+   "title": "Citrix Provisioning Server",
+   "tags": "citrix2 provisioning server citrix components  Citrix Provisioning Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.235,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_provisioning_server;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_provisioning_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:125"
+  },
+  {
+   "id": "citrix2Components-14-citrix-app",
+   "title": "Citrix App",
+   "tags": "citrix2 app citrix components  Citrix App",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_app;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:126"
+  },
+  {
+   "id": "citrix2Components-15-site-database",
+   "title": "Site Database",
+   "tags": "citrix2 site database citrix components  Site Database",
+   "kind": "vertex",
+   "width": 45.395,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.site_database;",
+   "shapeNames": [
+    "mxgraph.citrix2.site_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:127"
+  },
+  {
+   "id": "citrix2Components-16-monitoring-database",
+   "title": "Monitoring Database",
+   "tags": "citrix2 monitoring database citrix components  Monitoring Database",
+   "kind": "vertex",
+   "width": 45.395,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.site_database;",
+   "shapeNames": [
+    "mxgraph.citrix2.site_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:128"
+  },
+  {
+   "id": "citrix2Components-17-logging-database",
+   "title": "Logging Database",
+   "tags": "citrix2 logging database citrix components  Logging Database",
+   "kind": "vertex",
+   "width": 45.395,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.site_database;",
+   "shapeNames": [
+    "mxgraph.citrix2.site_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:129"
+  },
+  {
+   "id": "citrix2Components-18-citrix-license-server",
+   "title": "Citrix License Server",
+   "tags": "citrix2 license server citrix components  Citrix License Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.835,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_license_server;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_license_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:130"
+  },
+  {
+   "id": "citrix2Components-19-citrix-session-recording-server",
+   "title": "Citrix Session Recording Server",
+   "tags": "citrix2 session recording server citrix components  Citrix Session Recording Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 33.19,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_session_recording_server;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_session_recording_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:131"
+  },
+  {
+   "id": "citrix2Components-20-citrix-federated-authentication-service",
+   "title": "Citrix Federated Authentication Service",
+   "tags": "citrix2 federated authentication service citrix components  Citrix Federated Authentication Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.095,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_federated_authentication_service2;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_federated_authentication_service2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:132"
+  },
+  {
+   "id": "citrix2Components-21-secure-private-access",
+   "title": "Secure Private Access",
+   "tags": "citrix2 secure private access citrix components  Secure Private Access",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.82,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.secure_private_access2;",
+   "shapeNames": [
+    "mxgraph.citrix2.secure_private_access2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:133"
+  },
+  {
+   "id": "citrix2Components-22-xenserver-console",
+   "title": "XenServer Console",
+   "tags": "citrix2 xenserver console citrix components  XenServer Console",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.05,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.xenserver_console;",
+   "shapeNames": [
+    "mxgraph.citrix2.xenserver_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:134"
+  },
+  {
+   "id": "citrix2Components-23-hypervisor-xenserver",
+   "title": "Hypervisor: XenServer",
+   "tags": "citrix2 hypervisor xenserver citrix components  Hypervisor: XenServer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.995,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.hypervisor_xenserver;",
+   "shapeNames": [
+    "mxgraph.citrix2.hypervisor_xenserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:135"
+  },
+  {
+   "id": "citrix2Components-24-app-protection",
+   "title": "App Protection",
+   "tags": "citrix2 app protection citrix components  App Protection",
+   "kind": "vertex",
+   "width": 47.61,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.app_protection;",
+   "shapeNames": [
+    "mxgraph.citrix2.app_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:136"
+  },
+  {
+   "id": "citrix2Components-25-citrix-policies",
+   "title": "Citrix Policies",
+   "tags": "citrix2 policies citrix components  Citrix Policies",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.575,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_policies;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_policies"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:137"
+  },
+  {
+   "id": "citrix2Components-26-image-portability-service",
+   "title": "Image Portability Service",
+   "tags": "citrix2 image portability service citrix components  Image Portability Service",
+   "kind": "vertex",
+   "width": 49.964999999999996,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.image_portability_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.image_portability_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:138"
+  },
+  {
+   "id": "citrix2Components-27-citrix-terraform-provider",
+   "title": "Citrix Terraform Provider",
+   "tags": "citrix2 terraform provider citrix components  Citrix Terraform Provider",
+   "kind": "vertex",
+   "width": 45.73,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_terraform_provider;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_terraform_provider"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:139"
+  },
+  {
+   "id": "citrix2Components-28-citrix-uber-agent",
+   "title": "Citrix Uber Agent",
+   "tags": "citrix2 uber agent citrix components  Citrix Uber Agent",
+   "kind": "vertex",
+   "width": 50,
+   "height": 26.419999999999998,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_uber_agent;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_uber_agent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:140"
+  }
+ ]
+}

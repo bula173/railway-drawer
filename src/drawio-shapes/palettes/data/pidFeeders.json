@@ -1,0 +1,78 @@
+{
+ "id": "pidFeeders",
+ "title": "Process Engineering / Feeders",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidFeeders-0-feeder-rotary-table",
+   "title": "Feeder (Rotary Table)",
+   "tags": "pid feeders  Feeder (Rotary Table) Feeder (Rotary Table)",
+   "kind": "vertex",
+   "width": 104,
+   "height": 100,
+   "style": "shape=mxgraph.pid.feeders.feeder_(rotary_table);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.feeders.feeder_(rotary_table)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidFeeders-1-proportional-feeder",
+   "title": "Proportional Feeder",
+   "tags": "pid feeders  Proportional Feeder Proportional Feeder",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.feeders.proportional_feeder;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.feeders.proportional_feeder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidFeeders-2-proportional-feeder-metering",
+   "title": "Proportional Feeder (Metering)",
+   "tags": "pid feeders  Proportional Feeder (Metering) Proportional Feeder (Metering)",
+   "kind": "vertex",
+   "width": 300,
+   "height": 50,
+   "style": "shape=mxgraph.pid.feeders.proportional_feeder_(metering);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.feeders.proportional_feeder_(metering)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidFeeders-3-proportional-feeder-rotary-valve",
+   "title": "Proportional Feeder (Rotary Valve)",
+   "tags": "pid feeders  Proportional Feeder (Rotary Valve) Proportional Feeder (Rotary Valve)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.feeders.proportional_feeder_(rotary_valve);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.feeders.proportional_feeder_(rotary_valve)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidFeeders-4-spray-nozzle",
+   "title": "Spray Nozzle",
+   "tags": "pid feeders  Spray Nozzle Spray Nozzle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=mxgraph.pid.feeders.spray_nozzle;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.feeders.spray_nozzle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

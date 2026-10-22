@@ -1,0 +1,610 @@
+{
+ "id": "officeUsers",
+ "title": "Office / Users",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeUsers-0-administrator",
+   "title": "Administrator",
+   "tags": "office users administrator office user  Administrator",
+   "kind": "vertex",
+   "width": 58,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.administrator;",
+   "shapeNames": [
+    "mxgraph.office.users.administrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1308"
+  },
+  {
+   "id": "officeUsers-1-approver",
+   "title": "Approver",
+   "tags": "office users approver office user  Approver",
+   "kind": "vertex",
+   "width": 59,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.approver;",
+   "shapeNames": [
+    "mxgraph.office.users.approver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1310"
+  },
+  {
+   "id": "officeUsers-2-call-center-agent",
+   "title": "Call Center Agent",
+   "tags": "office users call center agent office user  Call Center Agent",
+   "kind": "vertex",
+   "width": 46,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.call_center_agent;",
+   "shapeNames": [
+    "mxgraph.office.users.call_center_agent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1312"
+  },
+  {
+   "id": "officeUsers-3-communications",
+   "title": "Communications",
+   "tags": "office users communications office user  Communications",
+   "kind": "vertex",
+   "width": 54,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.communications;",
+   "shapeNames": [
+    "mxgraph.office.users.communications"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1314"
+  },
+  {
+   "id": "officeUsers-4-conferencing-attendant",
+   "title": "Conferencing Attendant",
+   "tags": "office users conferencing attendant office user  Conferencing Attendant",
+   "kind": "vertex",
+   "width": 53,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.conferencing_attendant;",
+   "shapeNames": [
+    "mxgraph.office.users.conferencing_attendant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1316"
+  },
+  {
+   "id": "officeUsers-5-credentials",
+   "title": "Credentials",
+   "tags": "office users credentials office user  Credentials",
+   "kind": "vertex",
+   "width": 56,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.credentials;",
+   "shapeNames": [
+    "mxgraph.office.users.credentials"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1318"
+  },
+  {
+   "id": "officeUsers-6-csv-file",
+   "title": "CSV File",
+   "tags": "office users csv comma separated value file office user  CSV File",
+   "kind": "vertex",
+   "width": 59,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.csv_file;",
+   "shapeNames": [
+    "mxgraph.office.users.csv_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1320"
+  },
+  {
+   "id": "officeUsers-7-distribution-group",
+   "title": "Distribution Group",
+   "tags": "office users distribution group office user  Distribution Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.distribution_group;",
+   "shapeNames": [
+    "mxgraph.office.users.distribution_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1322"
+  },
+  {
+   "id": "officeUsers-8-dynamic-distribution-group",
+   "title": "Dynamic Distribution Group",
+   "tags": "office users dynamic distribution group office user  Dynamic Distribution Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.dynamic_distribution_group;",
+   "shapeNames": [
+    "mxgraph.office.users.dynamic_distribution_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1324"
+  },
+  {
+   "id": "officeUsers-9-mail-user",
+   "title": "Mail User",
+   "tags": "office users mail user office user  Mail User",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.mail_user;",
+   "shapeNames": [
+    "mxgraph.office.users.mail_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1326"
+  },
+  {
+   "id": "officeUsers-10-meeting",
+   "title": "Meeting",
+   "tags": "office users meeting office user  Meeting",
+   "kind": "vertex",
+   "width": 59,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.meeting;",
+   "shapeNames": [
+    "mxgraph.office.users.meeting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1328"
+  },
+  {
+   "id": "officeUsers-11-mobile-user",
+   "title": "Mobile User",
+   "tags": "office users mobile user office user  Mobile User",
+   "kind": "vertex",
+   "width": 59,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.mobile_user;",
+   "shapeNames": [
+    "mxgraph.office.users.mobile_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1330"
+  },
+  {
+   "id": "officeUsers-12-online-user",
+   "title": "Online User",
+   "tags": "office users online user office user  Online User",
+   "kind": "vertex",
+   "width": 54,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.online_user;",
+   "shapeNames": [
+    "mxgraph.office.users.online_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1332"
+  },
+  {
+   "id": "officeUsers-13-on-premises-user",
+   "title": "On-Premises User",
+   "tags": "office users on premises user office user  On-Premises User",
+   "kind": "vertex",
+   "width": 49,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.on_premises_user;",
+   "shapeNames": [
+    "mxgraph.office.users.on_premises_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1334"
+  },
+  {
+   "id": "officeUsers-14-outlook-user",
+   "title": "Outlook User",
+   "tags": "office users outlook user office user  Outlook User",
+   "kind": "vertex",
+   "width": 63,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.outlook_user;",
+   "shapeNames": [
+    "mxgraph.office.users.outlook_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1336"
+  },
+  {
+   "id": "officeUsers-15-response-group",
+   "title": "Response Group",
+   "tags": "office users response group office user  Response Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.response_group;",
+   "shapeNames": [
+    "mxgraph.office.users.response_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1338"
+  },
+  {
+   "id": "officeUsers-16-role-group",
+   "title": "Role Group",
+   "tags": "office users role group office user  Role Group",
+   "kind": "vertex",
+   "width": 59,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.role_group;",
+   "shapeNames": [
+    "mxgraph.office.users.role_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1340"
+  },
+  {
+   "id": "officeUsers-17-skype-commercial-user",
+   "title": "Skype Commercial User",
+   "tags": "office users skype commercial user office user  Skype Commercial User",
+   "kind": "vertex",
+   "width": 59,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.skype_commercial_user;",
+   "shapeNames": [
+    "mxgraph.office.users.skype_commercial_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1342"
+  },
+  {
+   "id": "officeUsers-18-skype-for-business-user",
+   "title": "Skype for Business User",
+   "tags": "office users skype for business user office user  Skype for Business User",
+   "kind": "vertex",
+   "width": 59,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.skype_for_business_user;",
+   "shapeNames": [
+    "mxgraph.office.users.skype_for_business_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1344"
+  },
+  {
+   "id": "officeUsers-19-tenant-admin",
+   "title": "Tenant Admin",
+   "tags": "office users tenant admin office user  Tenant Admin",
+   "kind": "vertex",
+   "width": 56,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.tenant_admin;",
+   "shapeNames": [
+    "mxgraph.office.users.tenant_admin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1346"
+  },
+  {
+   "id": "officeUsers-20-um-enabled-user",
+   "title": "UM-Enabled User",
+   "tags": "office users um enabled user office user  UM-Enabled User",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.um_enabled_user;",
+   "shapeNames": [
+    "mxgraph.office.users.um_enabled_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1348"
+  },
+  {
+   "id": "officeUsers-21-universal-security-group",
+   "title": "Universal Security Group",
+   "tags": "office users universal security group office user  Universal Security Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.universal_security_group;",
+   "shapeNames": [
+    "mxgraph.office.users.universal_security_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1350"
+  },
+  {
+   "id": "officeUsers-22-user",
+   "title": "User",
+   "tags": "office users user office user  User",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1352"
+  },
+  {
+   "id": "officeUsers-23-user-blue",
+   "title": "User (blue)",
+   "tags": "office users user office user  User (blue)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1354"
+  },
+  {
+   "id": "officeUsers-24-user-orange",
+   "title": "User (orange)",
+   "tags": "office users user office user  User (orange)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1356"
+  },
+  {
+   "id": "officeUsers-25-user-green",
+   "title": "User (green)",
+   "tags": "office users user office user  User (green)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1358"
+  },
+  {
+   "id": "officeUsers-26-user-ghosted",
+   "title": "User (ghosted)",
+   "tags": "office users user office user  User (ghosted)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1360"
+  },
+  {
+   "id": "officeUsers-27-user-small",
+   "title": "User (small)",
+   "tags": "office users user small office user  User (small)",
+   "kind": "vertex",
+   "width": 32,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;",
+   "shapeNames": [
+    "mxgraph.office.users.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1362"
+  },
+  {
+   "id": "officeUsers-28-users",
+   "title": "Users",
+   "tags": "office users users office user  Users",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users;",
+   "shapeNames": [
+    "mxgraph.office.users.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1364"
+  },
+  {
+   "id": "officeUsers-29-users-blue",
+   "title": "Users (blue)",
+   "tags": "office users users office user  Users (blue)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.users.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1366"
+  },
+  {
+   "id": "officeUsers-30-users-orange",
+   "title": "Users (orange)",
+   "tags": "office users users office user  Users (orange)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.users.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1368"
+  },
+  {
+   "id": "officeUsers-31-users-green",
+   "title": "Users (green)",
+   "tags": "office users users office user  Users (green)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.users.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1370"
+  },
+  {
+   "id": "officeUsers-32-users-ghosted",
+   "title": "Users (ghosted)",
+   "tags": "office users users office user  Users (ghosted)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.users.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1372"
+  },
+  {
+   "id": "officeUsers-33-users-two",
+   "title": "Users, Two",
+   "tags": "office users users two office user  Users, Two",
+   "kind": "vertex",
+   "width": 57,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users_two;",
+   "shapeNames": [
+    "mxgraph.office.users.users_two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1374"
+  },
+  {
+   "id": "officeUsers-34-users-two-blue",
+   "title": "Users, Two (blue)",
+   "tags": "office users users two office user  Users, Two (blue)",
+   "kind": "vertex",
+   "width": 57,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users_two;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.users.users_two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1376"
+  },
+  {
+   "id": "officeUsers-35-users-two-orange",
+   "title": "Users, Two (orange)",
+   "tags": "office users users two office user  Users, Two (orange)",
+   "kind": "vertex",
+   "width": 57,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users_two;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.users.users_two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1378"
+  },
+  {
+   "id": "officeUsers-36-users-two-green",
+   "title": "Users, Two (green)",
+   "tags": "office users users two office user  Users, Two (green)",
+   "kind": "vertex",
+   "width": 57,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users_two;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.users.users_two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1380"
+  },
+  {
+   "id": "officeUsers-37-users-two-ghosted",
+   "title": "Users, Two (ghosted)",
+   "tags": "office users users two office user  Users, Two (ghosted)",
+   "kind": "vertex",
+   "width": 57,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.users_two;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.users.users_two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1382"
+  },
+  {
+   "id": "officeUsers-38-user-accounts",
+   "title": "User Accounts",
+   "tags": "office users user accounts office user  User Accounts",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user_accounts;",
+   "shapeNames": [
+    "mxgraph.office.users.user_accounts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1384"
+  },
+  {
+   "id": "officeUsers-39-user-external",
+   "title": "User External",
+   "tags": "office users user external office user  User External",
+   "kind": "vertex",
+   "width": 59,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user_external;",
+   "shapeNames": [
+    "mxgraph.office.users.user_external"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1386"
+  },
+  {
+   "id": "officeUsers-40-user-services",
+   "title": "User Services",
+   "tags": "office users user services office user  User Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user_services;",
+   "shapeNames": [
+    "mxgraph.office.users.user_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1388"
+  },
+  {
+   "id": "officeUsers-41-user-store",
+   "title": "User Store",
+   "tags": "office users user store office user  User Store",
+   "kind": "vertex",
+   "width": 50,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user_store;",
+   "shapeNames": [
+    "mxgraph.office.users.user_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1390"
+  },
+  {
+   "id": "officeUsers-42-writer",
+   "title": "Writer",
+   "tags": "office users writer office user  Writer",
+   "kind": "vertex",
+   "width": 54,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.writer;",
+   "shapeNames": [
+    "mxgraph.office.users.writer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1392"
+  }
+ ]
+}

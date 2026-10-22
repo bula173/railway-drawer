@@ -1,0 +1,916 @@
+{
+ "id": "aws3d",
+ "title": "AWS 3D",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:8",
+ "entries": [
+  {
+   "id": "aws3d-0-ami",
+   "title": "AMI",
+   "tags": "aws3d ami aws 3d amazon web service AMI",
+   "kind": "vertex",
+   "width": 92,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.ami;aspect=fixed;fillColor=#E8CA45;strokeColor=#FFF215;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.ami"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:20"
+  },
+  {
+   "id": "aws3d-1-ami",
+   "title": "AMI",
+   "tags": "aws3d ami aws 3d amazon web service AMI",
+   "kind": "vertex",
+   "width": 74,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.ami2;aspect=fixed;fillColor=#FF9900;strokeColor=#ffffff;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.ami2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:22"
+  },
+  {
+   "id": "aws3d-2-application",
+   "title": "Application",
+   "tags": "aws3d application aws 3d amazon web service Application",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68.8,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application;fillColor=#4286c5;strokeColor=#57A2D8;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:24"
+  },
+  {
+   "id": "aws3d-3-application",
+   "title": "Application",
+   "tags": "aws3d application aws 3d amazon web service Application",
+   "kind": "vertex",
+   "width": 62,
+   "height": 53,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application2;fillColor=#86E83A;strokeColor=#B0F373;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.application2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:26"
+  },
+  {
+   "id": "aws3d-4-ec2-instance",
+   "title": "EC2 Instance",
+   "tags": "aws3d ec2 instance aws 3d amazon web service EC2 Instance",
+   "kind": "vertex",
+   "width": 123,
+   "height": 124,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application_server;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.application_server"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:28"
+  },
+  {
+   "id": "aws3d-5-client",
+   "title": "Client",
+   "tags": "aws3d client aws 3d amazon web service Client",
+   "kind": "vertex",
+   "width": 60,
+   "height": 104,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.client;aspect=fixed;strokeColor=none;fillColor=#777777;",
+   "shapeNames": [
+    "mxgraph.aws3d.client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:30"
+  },
+  {
+   "id": "aws3d-6-cloudfront",
+   "title": "CloudFront",
+   "tags": "aws3d cloudfront aws 3d amazon web service CloudFront",
+   "kind": "vertex",
+   "width": 103.8,
+   "height": 169.79999999999998,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.cloudfront;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.cloudfront"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:32"
+  },
+  {
+   "id": "aws3d-7-content",
+   "title": "Content",
+   "tags": "aws3d content aws 3d amazon web service Content",
+   "kind": "vertex",
+   "width": 30.8,
+   "height": 70.6,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.file;aspect=fixed;strokeColor=#2d6195;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:34"
+  },
+  {
+   "id": "aws3d-8-customer-gateway",
+   "title": "Customer Gateway",
+   "tags": "aws3d customer gateway aws 3d amazon web service Customer Gateway",
+   "kind": "vertex",
+   "width": 116.7,
+   "height": 102.8,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.customerGateway;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.customerGateway"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:36"
+  },
+  {
+   "id": "aws3d-9-data-center",
+   "title": "Data Center",
+   "tags": "aws3d data center aws 3d amazon web service Data Center",
+   "kind": "vertex",
+   "width": 123,
+   "height": 142,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dataCenter;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.dataCenter"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:38"
+  },
+  {
+   "id": "aws3d-10-data-server",
+   "title": "Data Server",
+   "tags": "aws3d data server aws 3d amazon web service Data Server",
+   "kind": "vertex",
+   "width": 123,
+   "height": 106,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dataServer;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.dataServer"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:40"
+  },
+  {
+   "id": "aws3d-11-decider",
+   "title": "Decider",
+   "tags": "aws3d decider aws 3d amazon web service Decider",
+   "kind": "vertex",
+   "width": 74,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.decider;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.decider"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:42"
+  },
+  {
+   "id": "aws3d-12-dynamodb",
+   "title": "DynamoDB",
+   "tags": "aws3d dynamodb db database aws 3d amazon web service DynamoDB",
+   "kind": "vertex",
+   "width": 181.5,
+   "height": 210,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dynamoDb;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.dynamoDb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:44"
+  },
+  {
+   "id": "aws3d-13-ebs",
+   "title": "EBS",
+   "tags": "aws3d ebs aws 3d amazon web service EBS",
+   "kind": "vertex",
+   "width": 92,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.ebs;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.ebs"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:46"
+  },
+  {
+   "id": "aws3d-14-ebs",
+   "title": "EBS",
+   "tags": "aws3d ebs aws 3d amazon web service EBS",
+   "kind": "vertex",
+   "width": 92,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.ebs2;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.ebs2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:48"
+  },
+  {
+   "id": "aws3d-15-elastic-beanstalk",
+   "title": "Elastic Beanstalk",
+   "tags": "aws3d elastic beanstalk aws 3d amazon web service Elastic Beanstalk",
+   "kind": "vertex",
+   "width": 182,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.elasticBeanstalk;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.elasticBeanstalk"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:50"
+  },
+  {
+   "id": "aws3d-16-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws3d elastic load balancing elb aws 3d amazon web service Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 92,
+   "height": 88.17,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.elasticLoadBalancing;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.elasticLoadBalancing"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:52"
+  },
+  {
+   "id": "aws3d-17-elastic-mapreduce",
+   "title": "Elastic MapReduce",
+   "tags": "aws3d elastic mapreduce aws 3d amazon web service Elastic MapReduce",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.elasticMapReduce;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.elasticMapReduce"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:54"
+  },
+  {
+   "id": "aws3d-18-elasticache",
+   "title": "Elasticache",
+   "tags": "aws 3d amazon web serviceelasticache",
+   "kind": "cells",
+   "width": 264,
+   "height": 204,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application_server;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"70\" width=\"123\" height=\"124\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application_server;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"40\" width=\"123\" height=\"124\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application_server;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"140\" y=\"40\" width=\"123\" height=\"124\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.application_server;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"70\" y=\"80\" width=\"123\" height=\"124\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3d.application_server"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:57"
+  },
+  {
+   "id": "aws3d-19-email",
+   "title": "Email",
+   "tags": "aws3d email aws 3d amazon web service Email",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56.99999999999999,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.email;aspect=fixed;strokeColor=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.email"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:71"
+  },
+  {
+   "id": "aws3d-20-email-service",
+   "title": "Email Service",
+   "tags": "aws3d email service aws 3d amazon web service Email Service",
+   "kind": "vertex",
+   "width": 151,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.email_service;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.email_service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:73"
+  },
+  {
+   "id": "aws3d-21-file",
+   "title": "File",
+   "tags": "aws3d file aws 3d amazon web service File",
+   "kind": "vertex",
+   "width": 30.8,
+   "height": 70.6,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.file;aspect=fixed;strokeColor=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:75"
+  },
+  {
+   "id": "aws3d-22-glacier",
+   "title": "Glacier",
+   "tags": "aws3d glacier aws 3d amazon web service Glacier",
+   "kind": "vertex",
+   "width": 181,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.glacier;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.glacier"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:77"
+  },
+  {
+   "id": "aws3d-23-image-video",
+   "title": "Image/Video",
+   "tags": "aws3d image video aws 3d amazon web service Image/Video",
+   "kind": "vertex",
+   "width": 50,
+   "height": 86,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.image;strokeColor=none;fillColor=#777777;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.image"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:79"
+  },
+  {
+   "id": "aws3d-24-internet-gateway",
+   "title": "Internet Gateway",
+   "tags": "aws3d internet gateway aws 3d amazon web service Internet Gateway",
+   "kind": "vertex",
+   "width": 116.7,
+   "height": 102.8,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.internetGateway;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.internetGateway"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:81"
+  },
+  {
+   "id": "aws3d-25-lambda",
+   "title": "Lambda",
+   "tags": "aws3d lambda aws 3d amazon web service Lambda",
+   "kind": "vertex",
+   "width": 92,
+   "height": 109.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.lambda;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;strokeColor3=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.lambda"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:83"
+  },
+  {
+   "id": "aws3d-26-mobile-worker",
+   "title": "Mobile Worker",
+   "tags": "aws3d mobile worker aws 3d amazon web service Mobile Worker",
+   "kind": "vertex",
+   "width": 36,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.mobile_worker;aspect=fixed;strokeColor=none;fillColor=#777777;",
+   "shapeNames": [
+    "mxgraph.aws3d.mobile_worker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:85"
+  },
+  {
+   "id": "aws3d-27-oracle-data-center",
+   "title": "Oracle Data Center",
+   "tags": "aws3d oracle data center aws 3d amazon web service Oracle Data Center",
+   "kind": "vertex",
+   "width": 123,
+   "height": 142,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.oracleDataCenter;fillColor=#ffffff;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;fillColor2=#ff0000;fillColor3=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.oracleDataCenter"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:87"
+  },
+  {
+   "id": "aws3d-28-oracle-database-server",
+   "title": "Oracle Database Server",
+   "tags": "aws3d oracle database server db aws 3d amazon web service Oracle Database Server",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.oracleDbServer;fillColor=#ffffff;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;fillColor2=#ff0000;fillColor3=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.oracleDbServer"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:89"
+  },
+  {
+   "id": "aws3d-29-oracle-server",
+   "title": "Oracle Server",
+   "tags": "aws3d oracle server aws 3d amazon web service Oracle Server",
+   "kind": "vertex",
+   "width": 123,
+   "height": 142,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.oracleServer;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;fillColor2=#ff0000;fillColor3=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.oracleServer"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:91"
+  },
+  {
+   "id": "aws3d-30-rds",
+   "title": "RDS",
+   "tags": "aws3d rds aws 3d amazon web service RDS",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.rds;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;strokeColor3=#ffffff;",
+   "shapeNames": [
+    "mxgraph.aws3d.rds"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:93"
+  },
+  {
+   "id": "aws3d-31-rds-master",
+   "title": "RDS Master",
+   "tags": "aws3d rds master aws 3d amazon web service RDS Master",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.rdsMaster;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.rdsMaster"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:95"
+  },
+  {
+   "id": "aws3d-32-rds-slave",
+   "title": "RDS Slave",
+   "tags": "aws3d rds slave aws 3d amazon web service RDS Slave",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.rdsSlave;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.rdsSlave"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:97"
+  },
+  {
+   "id": "aws3d-33-redshift",
+   "title": "Redshift",
+   "tags": "aws3d redshift aws 3d amazon web service Redshift",
+   "kind": "vertex",
+   "width": 150,
+   "height": 190,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.redshift;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.redshift"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:99"
+  },
+  {
+   "id": "aws3d-34-route-53",
+   "title": "Route 53",
+   "tags": "aws3d route aws 3d amazon web service Route 53",
+   "kind": "vertex",
+   "width": 117.17,
+   "height": 134.4,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.route53;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.route53"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:101"
+  },
+  {
+   "id": "aws3d-35-s3",
+   "title": "S3",
+   "tags": "aws3d s3 aws 3d amazon web service S3",
+   "kind": "vertex",
+   "width": 231.5,
+   "height": 239,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.s3;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.s3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:103"
+  },
+  {
+   "id": "aws3d-36-s3-bucket",
+   "title": "S3 Bucket",
+   "tags": "aws3d s3 bucket aws 3d amazon web service S3 Bucket",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 63.800000000000004,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.s3Bucket;fillColor=#4286c5;strokeColor=#57A2D8;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.s3Bucket"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:105"
+  },
+  {
+   "id": "aws3d-37-search-engine",
+   "title": "Search Engine",
+   "tags": "aws3d search engine aws 3d amazon web service Search Engine",
+   "kind": "vertex",
+   "width": 180,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.searchEngine;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.searchEngine"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:107"
+  },
+  {
+   "id": "aws3d-38-secure-connection",
+   "title": "Secure Connection",
+   "tags": "aws3d secure connection aws 3d amazon web service Secure Connection",
+   "kind": "vertex",
+   "width": 56.99999999999999,
+   "height": 34,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.secureConnection;fillColor=#000000;strokeColor=#ffffff;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.secureConnection"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:109"
+  },
+  {
+   "id": "aws3d-39-security-token-service",
+   "title": "Security Token Service",
+   "tags": "aws3d security token service aws 3d amazon web service Security Token Service",
+   "kind": "vertex",
+   "width": 180,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.securityTokenService;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.securityTokenService"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:111"
+  },
+  {
+   "id": "aws3d-40-simpledb",
+   "title": "SimpleDB",
+   "tags": "aws3d simpledb simple db database aws 3d amazon web service SimpleDB",
+   "kind": "vertex",
+   "width": 123,
+   "height": 133,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.simpleDb;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.simpleDb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:113"
+  },
+  {
+   "id": "aws3d-41-simpledb",
+   "title": "SimpleDB",
+   "tags": "aws3d simpledb simple db database aws 3d amazon web service SimpleDB",
+   "kind": "vertex",
+   "width": 181.5,
+   "height": 192.6,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.simpleDb2;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.simpleDb2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:115"
+  },
+  {
+   "id": "aws3d-42-snapshot",
+   "title": "Snapshot",
+   "tags": "aws3d snapshot aws 3d amazon web service Snapshot",
+   "kind": "vertex",
+   "width": 92,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.snapshot;fillColor=#4286c5;strokeColor=#57A2D8;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.snapshot"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:117"
+  },
+  {
+   "id": "aws3d-43-spot-instance",
+   "title": "Spot Instance",
+   "tags": "aws3d spot instance aws 3d amazon web service Spot Instance",
+   "kind": "vertex",
+   "width": 123,
+   "height": 97,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.instance;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.instance"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:119"
+  },
+  {
+   "id": "aws3d-44-sqs",
+   "title": "SQS",
+   "tags": "aws3d sqs aws 3d amazon web service SQS",
+   "kind": "vertex",
+   "width": 184,
+   "height": 212.75,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.sqs;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.sqs"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:121"
+  },
+  {
+   "id": "aws3d-45-user",
+   "title": "User",
+   "tags": "aws3d user aws 3d amazon web service User",
+   "kind": "vertex",
+   "width": 49,
+   "height": 100.46,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.end_user;strokeColor=none;fillColor=#777777;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.end_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:123"
+  },
+  {
+   "id": "aws3d-46-vpc-gateway",
+   "title": "VPC Gateway",
+   "tags": "aws3d vpc gateway aws 3d amazon web service VPC Gateway",
+   "kind": "vertex",
+   "width": 116.7,
+   "height": 102.8,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.vpcGateway;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.vpcGateway"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:125"
+  },
+  {
+   "id": "aws3d-47-worker",
+   "title": "Worker",
+   "tags": "aws3d worker aws 3d amazon web service Worker",
+   "kind": "vertex",
+   "width": 74,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.worker;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.worker"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:127"
+  },
+  {
+   "id": "aws3d-48-workflow-service",
+   "title": "Workflow Service",
+   "tags": "aws3d workflow service aws 3d amazon web service Workflow Service",
+   "kind": "vertex",
+   "width": 182.20000000000002,
+   "height": 148.4,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.workflowService;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;",
+   "shapeNames": [
+    "mxgraph.aws3d.workflowService"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:129"
+  },
+  {
+   "id": "aws3d-49-arrow-ne",
+   "title": "Arrow NE",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Arrow NE",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 26,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowNE;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowNE"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:132"
+  },
+  {
+   "id": "aws3d-50-arrow-se",
+   "title": "Arrow SE",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Arrow SE",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 26,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowSE;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowSE"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:134"
+  },
+  {
+   "id": "aws3d-51-arrow-sw",
+   "title": "Arrow SW",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Arrow SW",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 26,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowSW;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowSW"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:136"
+  },
+  {
+   "id": "aws3d-52-arrow-nw",
+   "title": "Arrow NW",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Arrow NW",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 26,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowNW;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowNW"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:138"
+  },
+  {
+   "id": "aws3d-53-arrowless-ne",
+   "title": "Arrowless NE",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Arrowless NE",
+   "kind": "vertex",
+   "width": 31.6,
+   "height": 18,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowlessNE;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowlessNE"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:140"
+  },
+  {
+   "id": "aws3d-54-dashed-edge-double-arrow",
+   "title": "Dashed Edge Double Arrow",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Dashed Edge Double Arrow",
+   "kind": "vertex",
+   "width": 31.6,
+   "height": 18,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dashedEdgeDouble2;strokeColor=#2D6195;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.dashedEdgeDouble2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:142"
+  },
+  {
+   "id": "aws3d-55-dashed-arrowless-edge",
+   "title": "Dashed Arrowless Edge",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Dashed Arrowless Edge",
+   "kind": "vertex",
+   "width": 31.6,
+   "height": 18,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dashedArrowlessEdge2;strokeColor=#2D6195;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.dashedArrowlessEdge2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:144"
+  },
+  {
+   "id": "aws3d-56-dashed-edge",
+   "title": "Dashed Edge",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Dashed Edge",
+   "kind": "vertex",
+   "width": 31.6,
+   "height": 18,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dashedEdge2;strokeColor=#2D6195;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.dashedEdge2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:146"
+  },
+  {
+   "id": "aws3d-57-flat-edge",
+   "title": "Flat Edge",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Flat Edge",
+   "kind": "vertex",
+   "width": 63.2,
+   "height": 36,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.flatEdge2;strokeColor=none;fillColor=#F4B934;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.flatEdge2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:148"
+  },
+  {
+   "id": "aws3d-58-flat-double-edge",
+   "title": "Flat Double Edge",
+   "tags": "aws3d arrow ne north east northeast aws 3d amazon web service Flat Double Edge",
+   "kind": "vertex",
+   "width": 252.8,
+   "height": 144,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.flatDoubleEdge2;strokeColor=none;fillColor=#F4B934;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.flatDoubleEdge2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:150"
+  },
+  {
+   "id": "aws3d-59-arrowhead",
+   "title": "Arrowhead",
+   "tags": "aws3d arrowhead aws 3d amazon web service Arrowhead",
+   "kind": "vertex",
+   "width": 19,
+   "height": 11,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.arrowhead2;fillColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.arrowhead2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:152"
+  },
+  {
+   "id": "aws3d-60-edge",
+   "title": "Edge",
+   "tags": "aws3d edge aws 3d amazon web service Edge",
+   "kind": "vertex",
+   "width": 97,
+   "height": 107.4,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.edge2;strokeColor=#000000;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.edge2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:154"
+  },
+  {
+   "id": "aws3d-61-reference",
+   "title": "Reference",
+   "tags": "aws3d reference aws 3d amazon web service Reference",
+   "kind": "vertex",
+   "width": 29.5,
+   "height": 19.5,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.reference2;fillColor=#2d6195;strokeColor=none;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.reference2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:156"
+  },
+  {
+   "id": "aws3d-62-spot",
+   "title": "Spot",
+   "tags": "aws3d spot aws 3d amazon web service Spot",
+   "kind": "vertex",
+   "width": 62,
+   "height": 36,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.spot2;fillColor=#F4B934;strokeColor=none;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.aws3d.spot2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:158"
+  },
+  {
+   "id": "aws3d-63-isometric-edge-1",
+   "title": "Isometric Edge 1",
+   "tags": "isometric edge 1",
+   "kind": "edge",
+   "width": 50,
+   "height": 100,
+   "style": "edgeStyle=isometricEdgeStyle;endArrow=none;html=1;",
+   "value": "isometric edge",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:160"
+  },
+  {
+   "id": "aws3d-64-isometric-edge-2",
+   "title": "Isometric Edge 2",
+   "tags": "isometric edge 2",
+   "kind": "edge",
+   "width": 50,
+   "height": 100,
+   "style": "edgeStyle=isometricEdgeStyle;endArrow=none;html=1;elbow=vertical;",
+   "value": "isometric edge",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3D.js:161"
+  }
+ ]
+}

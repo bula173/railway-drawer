@@ -1,0 +1,1184 @@
+{
+ "id": "pidMisc",
+ "title": "Process Engineering / Misc",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidMisc-0-fan",
+   "title": "Fan",
+   "tags": "pid misc fan process instrumentation  Fan",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.fan;fanType=common",
+   "shapeNames": [
+    "mxgraph.pid2misc.fan"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:490"
+  },
+  {
+   "id": "pidMisc-1-column",
+   "title": "Column",
+   "tags": "pid misc column process instrumentation  Column",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=common",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:492"
+  },
+  {
+   "id": "pidMisc-2-column-tray",
+   "title": "Column (Tray)",
+   "tags": "pid misc column process instrumentation tray Column (Tray)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=tray",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:494"
+  },
+  {
+   "id": "pidMisc-3-column-fixed-bed",
+   "title": "Column (Fixed Bed)",
+   "tags": "pid misc column process instrumentation fixed bed Column (Fixed Bed)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=fixed",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:496"
+  },
+  {
+   "id": "pidMisc-4-column-fluidized-bed",
+   "title": "Column (Fluidized Bed)",
+   "tags": "pid misc column process instrumentation fluidized bed Column (Fluidized Bed)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=fluid",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:498"
+  },
+  {
+   "id": "pidMisc-5-column-staggered-baffle-trays",
+   "title": "Column (Staggered Baffle Trays)",
+   "tags": "pid misc column process instrumentation staggered baffle tray Column (Staggered Baffle Trays)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=baffle",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:500"
+  },
+  {
+   "id": "pidMisc-6-column-bubble-cap-trays",
+   "title": "Column (Bubble Cap Trays)",
+   "tags": "pid misc column process instrumentation bubble cap tray Column (Bubble Cap Trays)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=bubble",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:502"
+  },
+  {
+   "id": "pidMisc-7-column-valve-trays",
+   "title": "Column (Valve Trays)",
+   "tags": "pid misc column process instrumentation valve tray Column (Valve Trays)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=valve",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:504"
+  },
+  {
+   "id": "pidMisc-8-column-fixed-bed-spray-nozzle",
+   "title": "Column (Fixed Bed, Spray Nozzle)",
+   "tags": "pid misc column process instrumentation fixed bed spray nozzle Column (Fixed Bed, Spray Nozzle)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.column;columnType=nozzle",
+   "shapeNames": [
+    "mxgraph.pid2misc.column"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:506"
+  },
+  {
+   "id": "pidMisc-9-conveyor",
+   "title": "Conveyor",
+   "tags": "pid misc conveyor process instrumentation  Conveyor",
+   "kind": "vertex",
+   "width": 200,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid2misc.conveyor",
+   "shapeNames": [
+    "mxgraph.pid2misc.conveyor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:508"
+  },
+  {
+   "id": "pidMisc-10-aerator-with-sparger",
+   "title": "Aerator With Sparger",
+   "tags": "pid misc aerator with sparger process instrumentation  Aerator With Sparger",
+   "kind": "vertex",
+   "width": 35,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.aerator_with_sparger;",
+   "shapeNames": [
+    "mxgraph.pid.misc.aerator_with_sparger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:510"
+  },
+  {
+   "id": "pidMisc-11-air-cooler",
+   "title": "Air Cooler",
+   "tags": "pid misc air cooler process instrumentation  Air Cooler",
+   "kind": "vertex",
+   "width": 70,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.air_cooler;",
+   "shapeNames": [
+    "mxgraph.pid.misc.air_cooler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:512"
+  },
+  {
+   "id": "pidMisc-12-air-filter",
+   "title": "Air Filter",
+   "tags": "pid misc air filter process instrumentation  Air Filter",
+   "kind": "vertex",
+   "width": 40,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.air_filter;",
+   "shapeNames": [
+    "mxgraph.pid.misc.air_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:514"
+  },
+  {
+   "id": "pidMisc-13-air-separator",
+   "title": "Air Separator",
+   "tags": "pid misc air separator process instrumentation  Air Separator",
+   "kind": "vertex",
+   "width": 65.5,
+   "height": 106,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.air_separator;",
+   "shapeNames": [
+    "mxgraph.pid.misc.air_separator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:516"
+  },
+  {
+   "id": "pidMisc-14-back-draft-damper",
+   "title": "Back Draft Damper",
+   "tags": "pid misc back draft damper process instrumentation  Back Draft Damper",
+   "kind": "vertex",
+   "width": 62,
+   "height": 32,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.back_draft_damper2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.back_draft_damper2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:518"
+  },
+  {
+   "id": "pidMisc-15-bag-filling-machine",
+   "title": "Bag Filling Machine",
+   "tags": "pid misc bag filling machine process instrumentation  Bag Filling Machine",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.bag_filling_machine2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.bag_filling_machine2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:520"
+  },
+  {
+   "id": "pidMisc-16-belt-skimmer",
+   "title": "Belt Skimmer",
+   "tags": "pid misc belt skimmer process instrumentation  Belt Skimmer",
+   "kind": "vertex",
+   "width": 70,
+   "height": 98,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.belt_skimmer;",
+   "shapeNames": [
+    "mxgraph.pid.misc.belt_skimmer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:522"
+  },
+  {
+   "id": "pidMisc-17-bin",
+   "title": "Bin",
+   "tags": "pid misc bin process instrumentation  Bin",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.bin;",
+   "shapeNames": [
+    "mxgraph.pid.misc.bin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:524"
+  },
+  {
+   "id": "pidMisc-18-boiler-dome",
+   "title": "Boiler (Dome)",
+   "tags": "pid misc boiler (dome) process instrumentation  Boiler (Dome)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.boiler_(dome);",
+   "shapeNames": [
+    "mxgraph.pid.misc.boiler_(dome)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:526"
+  },
+  {
+   "id": "pidMisc-19-boiler-dome-hot-liquid",
+   "title": "Boiler (Dome, Hot Liquid)",
+   "tags": "pid misc boiler (dome, hot liquid) process instrumentation  Boiler (Dome, Hot Liquid)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.boiler_(dome,_hot_liquid);",
+   "shapeNames": [
+    "mxgraph.pid.misc.boiler_(dome,_hot_liquid)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:528"
+  },
+  {
+   "id": "pidMisc-20-box-truck",
+   "title": "Box Truck",
+   "tags": "pid misc box truck process instrumentation  Box Truck",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.box_truck;",
+   "shapeNames": [
+    "mxgraph.pid.misc.box_truck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:530"
+  },
+  {
+   "id": "pidMisc-21-bucket-elevator",
+   "title": "Bucket Elevator",
+   "tags": "pid misc bucket elevator process instrumentation  Bucket Elevator",
+   "kind": "vertex",
+   "width": 65,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.bucket_elevator;",
+   "shapeNames": [
+    "mxgraph.pid.misc.bucket_elevator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:532"
+  },
+  {
+   "id": "pidMisc-22-chiller",
+   "title": "Chiller",
+   "tags": "pid misc chiller process instrumentation  Chiller",
+   "kind": "vertex",
+   "width": 155,
+   "height": 115,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.chiller;",
+   "shapeNames": [
+    "mxgraph.pid.misc.chiller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:534"
+  },
+  {
+   "id": "pidMisc-23-combustion-chamber",
+   "title": "Combustion Chamber",
+   "tags": "pid misc combustion chamber process instrumentation  Combustion Chamber",
+   "kind": "vertex",
+   "width": 130,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.combustion_chamber;",
+   "shapeNames": [
+    "mxgraph.pid.misc.combustion_chamber"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:536"
+  },
+  {
+   "id": "pidMisc-24-conveyor",
+   "title": "Conveyor",
+   "tags": "pid misc conveyor process instrumentation  Conveyor",
+   "kind": "vertex",
+   "width": 200,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:538"
+  },
+  {
+   "id": "pidMisc-25-conveyor-belt",
+   "title": "Conveyor (Belt)",
+   "tags": "pid misc conveyor (belt) process instrumentation  Conveyor (Belt)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(belt);",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(belt)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:540"
+  },
+  {
+   "id": "pidMisc-26-conveyor-belt-closed",
+   "title": "Conveyor (Belt, Closed)",
+   "tags": "pid misc conveyor (belt, closed) process instrumentation  Conveyor (Belt, Closed)",
+   "kind": "vertex",
+   "width": 240,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(belt,_closed);",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(belt,_closed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:542"
+  },
+  {
+   "id": "pidMisc-27-conveyor-belt-closed-reversible",
+   "title": "Conveyor (Belt, Closed, Reversible)",
+   "tags": "pid misc conveyor (belt, closed, reversible) process instrumentation  Conveyor (Belt, Closed, Reversible)",
+   "kind": "vertex",
+   "width": 240,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(belt,_closed,_reversible)2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(belt,_closed,_reversible)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:544"
+  },
+  {
+   "id": "pidMisc-28-conveyor-chain-closed",
+   "title": "Conveyor (Chain, Closed)",
+   "tags": "pid misc conveyor (chain, closed) process instrumentation  Conveyor (Chain, Closed)",
+   "kind": "vertex",
+   "width": 240,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(chain,_closed);",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(chain,_closed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:546"
+  },
+  {
+   "id": "pidMisc-29-conveyor-screw-closed",
+   "title": "Conveyor (Screw, Closed)",
+   "tags": "pid misc conveyor (screw, closed) process instrumentation  Conveyor (Screw, Closed)",
+   "kind": "vertex",
+   "width": 220,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(screw,_closed);",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(screw,_closed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:548"
+  },
+  {
+   "id": "pidMisc-30-conveyor-vibrating-closed",
+   "title": "Conveyor (Vibrating, Closed)",
+   "tags": "pid misc conveyor (vibrating, closed) process instrumentation  Conveyor (Vibrating, Closed)",
+   "kind": "vertex",
+   "width": 240,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.conveyor_(vibrating,_closed)2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.conveyor_(vibrating,_closed)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:550"
+  },
+  {
+   "id": "pidMisc-31-cooler",
+   "title": "Cooler",
+   "tags": "pid misc cooler process instrumentation  Cooler",
+   "kind": "vertex",
+   "width": 85,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooler;",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:552"
+  },
+  {
+   "id": "pidMisc-32-cooling-tower",
+   "title": "Cooling Tower",
+   "tags": "pid misc cooling tower process instrumentation  Cooling Tower",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:554"
+  },
+  {
+   "id": "pidMisc-33-cooling-tower-dry-forced-draught",
+   "title": "Cooling Tower (Dry, Forced Draught)",
+   "tags": "pid misc cooling tower (dry, forced draught) process instrumentation  Cooling Tower (Dry, Forced Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(dry,_forced_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(dry,_forced_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:556"
+  },
+  {
+   "id": "pidMisc-34-cooling-tower-dry-induced-draught",
+   "title": "Cooling Tower (Dry, Induced Draught)",
+   "tags": "pid misc cooling tower (dry, induced draught) process instrumentation  Cooling Tower (Dry, Induced Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(dry,_induced_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(dry,_induced_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:558"
+  },
+  {
+   "id": "pidMisc-35-cooling-tower-dry-natural-draught",
+   "title": "Cooling Tower (Dry, Natural Draught)",
+   "tags": "pid misc cooling tower (dry, natural draught) process instrumentation  Cooling Tower (Dry, Natural Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(dry,_natural_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(dry,_natural_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:560"
+  },
+  {
+   "id": "pidMisc-36-cooling-tower-wet-forced-draught",
+   "title": "Cooling Tower (Wet, Forced Draught)",
+   "tags": "pid misc cooling tower (wet, forced draught) process instrumentation  Cooling Tower (Wet, Forced Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(wet,_forced_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(wet,_forced_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:562"
+  },
+  {
+   "id": "pidMisc-37-cooling-tower-wet-induced-draught",
+   "title": "Cooling Tower (Wet, Induced Draught)",
+   "tags": "pid misc cooling tower (wet, induced draught) process instrumentation  Cooling Tower (Wet, Induced Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(wet,_induced_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(wet,_induced_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:564"
+  },
+  {
+   "id": "pidMisc-38-cooling-tower-wet-natural-draught",
+   "title": "Cooling Tower (Wet, Natural Draught)",
+   "tags": "pid misc cooling tower (wet, natural draught) process instrumentation  Cooling Tower (Wet, Natural Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(wet,_natural_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(wet,_natural_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:566"
+  },
+  {
+   "id": "pidMisc-39-cooling-tower-wet-dry-natural-draught",
+   "title": "Cooling Tower (Wet-Dry, Natural Draught)",
+   "tags": "pid misc cooling tower (wet-dry, natural draught) process instrumentation  Cooling Tower (Wet-Dry, Natural Draught)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cooling_tower_(wet-dry,_natural_draught);",
+   "shapeNames": [
+    "mxgraph.pid.misc.cooling_tower_(wet-dry,_natural_draught)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:568"
+  },
+  {
+   "id": "pidMisc-40-covered-gas-vent",
+   "title": "Covered Gas Vent",
+   "tags": "pid misc covered gas vent process instrumentation  Covered Gas Vent",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.covered_gas_vent;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.covered_gas_vent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:570"
+  },
+  {
+   "id": "pidMisc-41-crane",
+   "title": "Crane",
+   "tags": "pid misc crane process instrumentation  Crane",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.crane;",
+   "shapeNames": [
+    "mxgraph.pid.misc.crane"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:572"
+  },
+  {
+   "id": "pidMisc-42-curved-gas-vent",
+   "title": "Curved Gas Vent",
+   "tags": "pid misc curved gas vent process instrumentation  Curved Gas Vent",
+   "kind": "vertex",
+   "width": 30,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.curved_gas_vent;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.curved_gas_vent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:574"
+  },
+  {
+   "id": "pidMisc-43-cyclone",
+   "title": "Cyclone",
+   "tags": "pid misc cyclone process instrumentation  Cyclone",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.cyclone;",
+   "shapeNames": [
+    "mxgraph.pid.misc.cyclone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:576"
+  },
+  {
+   "id": "pidMisc-44-dryer",
+   "title": "Dryer",
+   "tags": "pid misc dryer process instrumentation  Dryer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.dryer;",
+   "shapeNames": [
+    "mxgraph.pid.misc.dryer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:578"
+  },
+  {
+   "id": "pidMisc-45-elevator-bucket",
+   "title": "Elevator (Bucket)",
+   "tags": "pid misc elevator (bucket) process instrumentation  Elevator (Bucket)",
+   "kind": "vertex",
+   "width": 160,
+   "height": 250,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.elevator_(bucket);",
+   "shapeNames": [
+    "mxgraph.pid.misc.elevator_(bucket)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:580"
+  },
+  {
+   "id": "pidMisc-46-elevator-bucket-z-form",
+   "title": "Elevator (Bucket, Z-Form)",
+   "tags": "pid misc elevator (bucket, z-form) process instrumentation  Elevator (Bucket, Z-Form)",
+   "kind": "vertex",
+   "width": 430,
+   "height": 250,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.elevator_(bucket,_z-form);",
+   "shapeNames": [
+    "mxgraph.pid.misc.elevator_(bucket,_z-form)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:582"
+  },
+  {
+   "id": "pidMisc-47-fan",
+   "title": "Fan",
+   "tags": "pid misc fan process instrumentation  Fan",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.fan;",
+   "shapeNames": [
+    "mxgraph.pid.misc.fan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:584"
+  },
+  {
+   "id": "pidMisc-48-fan-2",
+   "title": "Fan 2",
+   "tags": "pid misc fan 2 process instrumentation  Fan 2",
+   "kind": "vertex",
+   "width": 58,
+   "height": 8,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.fan_2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.fan_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:586"
+  },
+  {
+   "id": "pidMisc-49-filter",
+   "title": "Filter",
+   "tags": "pid misc filter process instrumentation  Filter",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.filter;",
+   "shapeNames": [
+    "mxgraph.pid.misc.filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:588"
+  },
+  {
+   "id": "pidMisc-50-filter-2",
+   "title": "Filter 2",
+   "tags": "pid misc filter 2 process instrumentation  Filter 2",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.filter_2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.filter_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:590"
+  },
+  {
+   "id": "pidMisc-51-firing-system-burner",
+   "title": "Firing System, Burner",
+   "tags": "pid misc firing system, burner process instrumentation  Firing System, Burner",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.firing_system,_burner;",
+   "shapeNames": [
+    "mxgraph.pid.misc.firing_system,_burner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:592"
+  },
+  {
+   "id": "pidMisc-52-flame-arrestor",
+   "title": "Flame Arrestor",
+   "tags": "pid misc flame arrestor process instrumentation  Flame Arrestor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.flame_arrestor;",
+   "shapeNames": [
+    "mxgraph.pid.misc.flame_arrestor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:594"
+  },
+  {
+   "id": "pidMisc-53-flexible-pipe",
+   "title": "Flexible Pipe",
+   "tags": "pid misc flexible pipe process instrumentation  Flexible Pipe",
+   "kind": "vertex",
+   "width": 60,
+   "height": 16,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.flexible_pipe;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.flexible_pipe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:596"
+  },
+  {
+   "id": "pidMisc-54-forced-flow-air-cooler",
+   "title": "Forced Flow Air Cooler",
+   "tags": "pid misc forced flow air cooler process instrumentation  Forced Flow Air Cooler",
+   "kind": "vertex",
+   "width": 70,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.forced_flow_air_cooler;",
+   "shapeNames": [
+    "mxgraph.pid.misc.forced_flow_air_cooler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:598"
+  },
+  {
+   "id": "pidMisc-55-forklift-manual",
+   "title": "Forklift (Manual)",
+   "tags": "pid misc forklift (manual) process instrumentation  Forklift (Manual)",
+   "kind": "vertex",
+   "width": 140,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.forklift_(manual);",
+   "shapeNames": [
+    "mxgraph.pid.misc.forklift_(manual)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:600"
+  },
+  {
+   "id": "pidMisc-56-forklift-truck",
+   "title": "Forklift (Truck)",
+   "tags": "pid misc forklift (truck) process instrumentation  Forklift (Truck)",
+   "kind": "vertex",
+   "width": 140,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.forklift_(truck);",
+   "shapeNames": [
+    "mxgraph.pid.misc.forklift_(truck)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:602"
+  },
+  {
+   "id": "pidMisc-57-funnel",
+   "title": "Funnel",
+   "tags": "pid misc funnel process instrumentation  Funnel",
+   "kind": "vertex",
+   "width": 40,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.funnel;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.funnel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:604"
+  },
+  {
+   "id": "pidMisc-58-gas-flare",
+   "title": "Gas Flare",
+   "tags": "pid misc gas flare process instrumentation  Gas Flare",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.gas_flare;",
+   "shapeNames": [
+    "mxgraph.pid.misc.gas_flare"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:606"
+  },
+  {
+   "id": "pidMisc-59-induced-flow-air-cooler",
+   "title": "Induced Flow Air Cooler",
+   "tags": "pid misc induced flow air cooler process instrumentation  Induced Flow Air Cooler",
+   "kind": "vertex",
+   "width": 93,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.induced_flow_air_cooler;",
+   "shapeNames": [
+    "mxgraph.pid.misc.induced_flow_air_cooler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:608"
+  },
+  {
+   "id": "pidMisc-60-industrial-truck",
+   "title": "Industrial Truck",
+   "tags": "pid misc industrial truck process instrumentation  Industrial Truck",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.industrial_truck;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.industrial_truck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:610"
+  },
+  {
+   "id": "pidMisc-61-lift",
+   "title": "Lift",
+   "tags": "pid misc lift process instrumentation  Lift",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.lift;",
+   "shapeNames": [
+    "mxgraph.pid.misc.lift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:612"
+  },
+  {
+   "id": "pidMisc-62-loading-arm",
+   "title": "Loading Arm",
+   "tags": "pid misc loading arm process instrumentation  Loading Arm",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.loading_arm;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.loading_arm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:614"
+  },
+  {
+   "id": "pidMisc-63-mixer",
+   "title": "Mixer",
+   "tags": "pid misc mixer process instrumentation  Mixer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.mixer;",
+   "shapeNames": [
+    "mxgraph.pid.misc.mixer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:616"
+  },
+  {
+   "id": "pidMisc-64-palletizer",
+   "title": "Palletizer",
+   "tags": "pid misc palletizer process instrumentation  Palletizer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.palletizer2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.palletizer2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:618"
+  },
+  {
+   "id": "pidMisc-65-protective-palette-covering",
+   "title": "Protective Palette Covering",
+   "tags": "pid misc protective palette covering process instrumentation  Protective Palette Covering",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.protective_palette_covering;",
+   "shapeNames": [
+    "mxgraph.pid.misc.protective_palette_covering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:620"
+  },
+  {
+   "id": "pidMisc-66-roller-conveyor",
+   "title": "Roller Conveyor",
+   "tags": "pid misc roller conveyor process instrumentation  Roller Conveyor",
+   "kind": "vertex",
+   "width": 160,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.roller_conveyor;",
+   "shapeNames": [
+    "mxgraph.pid.misc.roller_conveyor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:622"
+  },
+  {
+   "id": "pidMisc-67-rolling-bin",
+   "title": "Rolling Bin",
+   "tags": "pid misc rolling bin process instrumentation  Rolling Bin",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.rolling_bin;",
+   "shapeNames": [
+    "mxgraph.pid.misc.rolling_bin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:624"
+  },
+  {
+   "id": "pidMisc-68-rotary-screen",
+   "title": "Rotary Screen",
+   "tags": "pid misc rotary screen process instrumentation  Rotary Screen",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.rotary_screen;",
+   "shapeNames": [
+    "mxgraph.pid.misc.rotary_screen"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:626"
+  },
+  {
+   "id": "pidMisc-69-screening-device-sieve-strainer",
+   "title": "Screening Device, Sieve, Strainer",
+   "tags": "pid misc screening device, sieve, strainer process instrumentation  Screening Device, Sieve, Strainer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:628"
+  },
+  {
+   "id": "pidMisc-70-screening-device-sieve-strainer-basket-reel",
+   "title": "Screening Device, Sieve, Strainer (Basket Reel)",
+   "tags": "pid misc screening device, sieve, strainer (basket reel) process instrumentation  Screening Device, Sieve, Strainer (Basket Reel)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(basket_reel);",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(basket_reel)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:630"
+  },
+  {
+   "id": "pidMisc-71-screening-device-sieve-strainer-coarse-and-fine-screens",
+   "title": "Screening Device, Sieve, Strainer (Coarse and Fine Screens)",
+   "tags": "pid misc screening device, sieve, strainer (coarse and fine screens) process instrumentation  Screening Device, Sieve, Strainer (Coarse and Fine Screens)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(coarse_and_fine_screens);",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(coarse_and_fine_screens)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:632"
+  },
+  {
+   "id": "pidMisc-72-screening-device-sieve-strainer-coarse-rake",
+   "title": "Screening Device, Sieve, Strainer (Coarse Rake)",
+   "tags": "pid misc screening device, sieve, strainer (coarse rake) process instrumentation  Screening Device, Sieve, Strainer (Coarse Rake)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(coarse_rake);",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(coarse_rake)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:634"
+  },
+  {
+   "id": "pidMisc-73-screening-device-sieve-strainer-fine-rake",
+   "title": "Screening Device, Sieve, Strainer (Fine Rake)",
+   "tags": "pid misc screening device, sieve, strainer (fine rake) process instrumentation  Screening Device, Sieve, Strainer (Fine Rake)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(fine_rake);",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(fine_rake)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:636"
+  },
+  {
+   "id": "pidMisc-74-screening-device-sieve-strainer-rotating-drum",
+   "title": "Screening Device, Sieve, Strainer (Rotating Drum)",
+   "tags": "pid misc screening device, sieve, strainer (rotating drum) process instrumentation  Screening Device, Sieve, Strainer (Rotating Drum)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(rotating_drum)",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(rotating_drum)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:638"
+  },
+  {
+   "id": "pidMisc-75-screening-device-sieve-strainer-vibrating",
+   "title": "Screening Device, Sieve, Strainer (Vibrating)",
+   "tags": "pid misc screening device, sieve, strainer (vibrating) process instrumentation  Screening Device, Sieve, Strainer (Vibrating)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.screening_device,_sieve,_strainer_(vibrating)2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.screening_device,_sieve,_strainer_(vibrating)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:640"
+  },
+  {
+   "id": "pidMisc-76-ship",
+   "title": "Ship",
+   "tags": "pid misc ship process instrumentation  Ship",
+   "kind": "vertex",
+   "width": 105,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.ship",
+   "shapeNames": [
+    "mxgraph.pid.misc.ship"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:642"
+  },
+  {
+   "id": "pidMisc-77-silencer",
+   "title": "Silencer",
+   "tags": "pid misc silencer process instrumentation  Silencer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.silencer;",
+   "shapeNames": [
+    "mxgraph.pid.misc.silencer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:644"
+  },
+  {
+   "id": "pidMisc-78-spraying-device",
+   "title": "Spraying Device",
+   "tags": "pid misc spraying device process instrumentation  Spraying Device",
+   "kind": "vertex",
+   "width": 60,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.spraying_device;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.misc.spraying_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:646"
+  },
+  {
+   "id": "pidMisc-79-spray-cooler",
+   "title": "Spray Cooler",
+   "tags": "pid misc spray cooler process instrumentation  Spray Cooler",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.spray_cooler;",
+   "shapeNames": [
+    "mxgraph.pid.misc.spray_cooler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:648"
+  },
+  {
+   "id": "pidMisc-80-stack-chimney",
+   "title": "Stack, Chimney",
+   "tags": "pid misc stack, chimney process instrumentation  Stack, Chimney",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.stack,_chimney;",
+   "shapeNames": [
+    "mxgraph.pid.misc.stack,_chimney"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:650"
+  },
+  {
+   "id": "pidMisc-81-steam-trap",
+   "title": "Steam Trap",
+   "tags": "pid misc steam trap process instrumentation  Steam Trap",
+   "kind": "vertex",
+   "width": 53,
+   "height": 53,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.steam_trap2;",
+   "shapeNames": [
+    "mxgraph.pid.misc.steam_trap2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:652"
+  },
+  {
+   "id": "pidMisc-82-tank-car-tank-wagon",
+   "title": "Tank Car, Tank Wagon",
+   "tags": "pid misc tank car, tank wagon process instrumentation  Tank Car, Tank Wagon",
+   "kind": "vertex",
+   "width": 127,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.tank_car,_tank_wagon;",
+   "shapeNames": [
+    "mxgraph.pid.misc.tank_car,_tank_wagon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:654"
+  },
+  {
+   "id": "pidMisc-83-viewing-glass",
+   "title": "Viewing Glass",
+   "tags": "pid misc viewing glass process instrumentation  Viewing Glass",
+   "kind": "vertex",
+   "width": 80,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.misc.viewing_glass;",
+   "shapeNames": [
+    "mxgraph.pid.misc.viewing_glass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:656"
+  }
+ ]
+}

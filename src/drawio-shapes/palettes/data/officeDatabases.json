@@ -1,0 +1,638 @@
+{
+ "id": "officeDatabases",
+ "title": "Office / Databases",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeDatabases-0-address-book-store",
+   "title": "Address Book Store",
+   "tags": "office databases address book store office database db  Address Book Store",
+   "kind": "vertex",
+   "width": 50,
+   "height": 54,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.address_book_store;",
+   "shapeNames": [
+    "mxgraph.office.databases.address_book_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:570"
+  },
+  {
+   "id": "officeDatabases-1-application-store",
+   "title": "Application Store",
+   "tags": "office databases application store office database db  Application Store",
+   "kind": "vertex",
+   "width": 49,
+   "height": 53,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.application_store;",
+   "shapeNames": [
+    "mxgraph.office.databases.application_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:572"
+  },
+  {
+   "id": "officeDatabases-2-database",
+   "title": "Database",
+   "tags": "office databases  office database db  Database",
+   "kind": "vertex",
+   "width": 35,
+   "height": 49,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:574"
+  },
+  {
+   "id": "officeDatabases-3-database-blue",
+   "title": "Database (blue)",
+   "tags": "office databases  office database db  Database (blue)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 49,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:576"
+  },
+  {
+   "id": "officeDatabases-4-database-orange",
+   "title": "Database (orange)",
+   "tags": "office databases  office database db  Database (orange)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 49,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:578"
+  },
+  {
+   "id": "officeDatabases-5-database-green",
+   "title": "Database (green)",
+   "tags": "office databases  office database db  Database (green)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 49,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:580"
+  },
+  {
+   "id": "officeDatabases-6-database-ghosted",
+   "title": "Database (ghosted)",
+   "tags": "office databases  office database db  Database (ghosted)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 49,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:582"
+  },
+  {
+   "id": "officeDatabases-7-database-small",
+   "title": "Database (small)",
+   "tags": "office databases  office database db  Database (small)",
+   "kind": "vertex",
+   "width": 28,
+   "height": 38,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;",
+   "shapeNames": [
+    "mxgraph.office.databases.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:584"
+  },
+  {
+   "id": "officeDatabases-8-database-availability-group",
+   "title": "Database Availability Group",
+   "tags": "office databases availability group office database db  Database Availability Group",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_availability_group;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_availability_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:586"
+  },
+  {
+   "id": "officeDatabases-9-database-cube",
+   "title": "Database Cube",
+   "tags": "office databases cube office database db  Database Cube",
+   "kind": "vertex",
+   "width": 47,
+   "height": 52,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_cube;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:588"
+  },
+  {
+   "id": "officeDatabases-10-database-cube-blue",
+   "title": "Database Cube (blue)",
+   "tags": "office databases cube office database db  Database Cube (blue)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 52,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_cube;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:590"
+  },
+  {
+   "id": "officeDatabases-11-database-cube-orange",
+   "title": "Database Cube (orange)",
+   "tags": "office databases cube office database db  Database Cube (orange)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 52,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_cube;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:592"
+  },
+  {
+   "id": "officeDatabases-12-database-cube-green",
+   "title": "Database Cube (green)",
+   "tags": "office databases cube office database db  Database Cube (green)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 52,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_cube;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:594"
+  },
+  {
+   "id": "officeDatabases-13-database-cube-ghosted",
+   "title": "Database Cube (ghosted)",
+   "tags": "office databases cube office database db  Database Cube (ghosted)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 52,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_cube;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:596"
+  },
+  {
+   "id": "officeDatabases-14-database-mini",
+   "title": "Database, Mini",
+   "tags": "office databases Mini office database db  Database, Mini",
+   "kind": "vertex",
+   "width": 35,
+   "height": 27,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_1;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:598"
+  },
+  {
+   "id": "officeDatabases-15-database-mini-blue",
+   "title": "Database, Mini (blue)",
+   "tags": "office databases Mini office database db  Database, Mini (blue)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 27,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_1;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:600"
+  },
+  {
+   "id": "officeDatabases-16-database-mini-orange",
+   "title": "Database, Mini (orange)",
+   "tags": "office databases Mini office database db  Database, Mini (orange)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 27,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_1;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:602"
+  },
+  {
+   "id": "officeDatabases-17-database-mini-green",
+   "title": "Database, Mini (green)",
+   "tags": "office databases Mini office database db  Database, Mini (green)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 27,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_1;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:604"
+  },
+  {
+   "id": "officeDatabases-18-database-mini-ghosted",
+   "title": "Database, Mini (ghosted)",
+   "tags": "office databases Mini office database db  Database, Mini (ghosted)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 27,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_1;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:606"
+  },
+  {
+   "id": "officeDatabases-19-database-mini",
+   "title": "Database, Mini",
+   "tags": "office databases Mini office database db  Database, Mini",
+   "kind": "vertex",
+   "width": 35,
+   "height": 42,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:608"
+  },
+  {
+   "id": "officeDatabases-20-database-mini-blue",
+   "title": "Database, Mini (blue)",
+   "tags": "office databases Mini office database db  Database, Mini (blue)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 42,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:610"
+  },
+  {
+   "id": "officeDatabases-21-database-mini-orange",
+   "title": "Database, Mini (orange)",
+   "tags": "office databases Mini office database db  Database, Mini (orange)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 42,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:612"
+  },
+  {
+   "id": "officeDatabases-22-database-mini-green",
+   "title": "Database, Mini (green)",
+   "tags": "office databases Mini office database db  Database, Mini (green)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 42,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:614"
+  },
+  {
+   "id": "officeDatabases-23-database-mini-ghosted",
+   "title": "Database, Mini (ghosted)",
+   "tags": "office databases Mini office database db  Database, Mini (ghosted)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 42,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:616"
+  },
+  {
+   "id": "officeDatabases-24-database-mini",
+   "title": "Database, Mini",
+   "tags": "office databases Mini office database db  Database, Mini",
+   "kind": "vertex",
+   "width": 35,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_3;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:618"
+  },
+  {
+   "id": "officeDatabases-25-database-mini-blue",
+   "title": "Database, Mini (blue)",
+   "tags": "office databases Mini office database db  Database, Mini (blue)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_3;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:620"
+  },
+  {
+   "id": "officeDatabases-26-database-mini-orange",
+   "title": "Database, Mini (orange)",
+   "tags": "office databases Mini office database db  Database, Mini (orange)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_3;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:622"
+  },
+  {
+   "id": "officeDatabases-27-database-mini-green",
+   "title": "Database, Mini (green)",
+   "tags": "office databases Mini office database db  Database, Mini (green)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_3;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:624"
+  },
+  {
+   "id": "officeDatabases-28-database-mini-ghosted",
+   "title": "Database, Mini (ghosted)",
+   "tags": "office databases Mini office database db  Database, Mini (ghosted)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_3;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mini_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:626"
+  },
+  {
+   "id": "officeDatabases-29-database-mirror",
+   "title": "Database Mirror",
+   "tags": "office databases mirror office database db  Database Mirror",
+   "kind": "vertex",
+   "width": 60,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mirror;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mirror"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:628"
+  },
+  {
+   "id": "officeDatabases-30-database-mirror-witness-node",
+   "title": "Database Mirror Witness Node",
+   "tags": "office databases mirror witness node office database db  Database Mirror Witness Node",
+   "kind": "vertex",
+   "width": 60,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mirror_witness_node;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_mirror_witness_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:630"
+  },
+  {
+   "id": "officeDatabases-31-database-partition",
+   "title": "Database Partition",
+   "tags": "office databases partition office database db  Database Partition",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_partition_2;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_partition_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:632"
+  },
+  {
+   "id": "officeDatabases-32-database-partition",
+   "title": "Database Partition",
+   "tags": "office databases partition office database db  Database Partition",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_partition_3;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_partition_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:634"
+  },
+  {
+   "id": "officeDatabases-33-database-partition",
+   "title": "Database Partition",
+   "tags": "office databases partition office database db  Database Partition",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_partition_4;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_partition_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:636"
+  },
+  {
+   "id": "officeDatabases-34-database-partition",
+   "title": "Database Partition",
+   "tags": "office databases partition office database db  Database Partition",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_partition_5;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_partition_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:638"
+  },
+  {
+   "id": "officeDatabases-35-database-public-folder",
+   "title": "Database Public Folder",
+   "tags": "office databases public folder office database db  Database Public Folder",
+   "kind": "vertex",
+   "width": 53,
+   "height": 54,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_public_folder;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_public_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:640"
+  },
+  {
+   "id": "officeDatabases-36-database-server",
+   "title": "Database Server",
+   "tags": "office databases server office database db  Database Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_server;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:642"
+  },
+  {
+   "id": "officeDatabases-37-database-server-blue",
+   "title": "Database Server (blue)",
+   "tags": "office databases server blue office database db  Database Server (blue)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_server_blue;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_server_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:644"
+  },
+  {
+   "id": "officeDatabases-38-database-server-orange",
+   "title": "Database Server (orange)",
+   "tags": "office databases server blue office database db  Database Server (orange)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_server_orange;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_server_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:646"
+  },
+  {
+   "id": "officeDatabases-39-database-server-green",
+   "title": "Database Server (green)",
+   "tags": "office databases server blue office database db  Database Server (green)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_server_green;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_server_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:648"
+  },
+  {
+   "id": "officeDatabases-40-database-server-ghosted",
+   "title": "Database Server (ghosted)",
+   "tags": "office databases server blue office database db  Database Server (ghosted)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_server_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.databases.database_server_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:650"
+  },
+  {
+   "id": "officeDatabases-41-mailbox-database",
+   "title": "Mailbox Database",
+   "tags": "office databases mailbox office database db  Mailbox Database",
+   "kind": "vertex",
+   "width": 53,
+   "height": 55,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.mailbox_database;",
+   "shapeNames": [
+    "mxgraph.office.databases.mailbox_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:652"
+  },
+  {
+   "id": "officeDatabases-42-monitoring-store",
+   "title": "Monitoring Store",
+   "tags": "office databases monitoring store office database db  Monitoring Store",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.monitoring_store;",
+   "shapeNames": [
+    "mxgraph.office.databases.monitoring_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:654"
+  },
+  {
+   "id": "officeDatabases-43-unified-contact-store",
+   "title": "Unified Contact Store",
+   "tags": "office databases unified contact store office database db  Unified Contact Store",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.unified_contact_store;",
+   "shapeNames": [
+    "mxgraph.office.databases.unified_contact_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:656"
+  },
+  {
+   "id": "officeDatabases-44-web-store",
+   "title": "Web Store",
+   "tags": "office databases web store office database db  Web Store",
+   "kind": "vertex",
+   "width": 50,
+   "height": 54,
+   "style": "sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.web_store;",
+   "shapeNames": [
+    "mxgraph.office.databases.web_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:658"
+  }
+ ]
+}

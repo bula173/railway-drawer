@@ -1,0 +1,1599 @@
+{
+ "drawioTag": "v32.4.1",
+ "modules": [
+  {
+   "id": "bpmn-mxBpmnShape2",
+   "source": "shapes/bpmn/mxBpmnShape2.js",
+   "deps": [],
+   "stencils": [
+    "bpmn.xml"
+   ],
+   "shapes": [
+    "mxgraph.bpmn.shape",
+    "mxgraph.bpmn.sendMarker",
+    "mxgraph.bpmn.event",
+    "mxgraph.bpmn.gateway2",
+    "mxgraph.bpmn.task",
+    "mxgraph.bpmn.task2",
+    "mxgraph.bpmn.data",
+    "mxgraph.bpmn.data2",
+    "mxgraph.bpmn.swimlane",
+    "mxgraph.bpmn.conversation",
+    "mxgraph.bpmn.conversation2"
+   ],
+   "handles": 3
+  },
+  {
+   "id": "emoji-mxEmoji",
+   "source": "shapes/emoji/mxEmoji.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.emoji"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "er-mxER",
+   "source": "shapes/er/mxER.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.er.entity",
+    "mxgraph.er.entityExt",
+    "mxgraph.er.attribute",
+    "mxgraph.er.has",
+    "mxgraph.er.cloud",
+    "mxgraph.er.hierarchy",
+    "mxgraph.er.note",
+    "mxgraph.er.chens",
+    "mxgraph.er.bachmans",
+    "mxgraph.er.ie",
+    "mxgraph.er.rrect",
+    "mxgraph.er.anchor"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "ios7-mxIOS7Ui",
+   "source": "shapes/ios7/mxIOS7Ui.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.ios7ui.appBar",
+    "mxgraph.ios7ui.onOffButton",
+    "mxgraph.ios7ui.slider",
+    "mxgraph.ios7ui.downloadBar",
+    "mxgraph.ios7ui.icon",
+    "mxgraph.ios7ui.horButtonBar",
+    "mxgraph.ios7ui.pageControl",
+    "mxgraph.ios7ui.iconGrid",
+    "mxgraph.ios7ui.phone",
+    "mxgraph.ios7ui.searchBox",
+    "mxgraph.ios7ui.url",
+    "mxgraph.ios7ui.actionDialog",
+    "mxgraph.ios7ui.anchor",
+    "mxgraph.ios7ui.rrect",
+    "mxgraph.ios7ui.leftButton",
+    "mxgraph.ios7ui.rightButton",
+    "mxgraph.ios7ui.topButton",
+    "mxgraph.ios7ui.bottomButton",
+    "mxgraph.ios7ui.horLines",
+    "mxgraph.ios7ui.marginRect",
+    "mxgraph.ios7ui.callout",
+    "mxgraph.ios7ui.selectBar",
+    "mxgraph.ios7ui.slider"
+   ],
+   "handles": 4
+  },
+  {
+   "id": "mockup-mxMockupButtons",
+   "source": "shapes/mockup/mxMockupButtons.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.buttons.multiButton",
+    "mxgraph.mockup.buttons.button",
+    "mxgraph.mockup.buttons.horButtonBar",
+    "mxgraph.mockup.buttons.verButtonBar",
+    "mxgraph.mockup.buttons.onOffButton",
+    "mxgraph.mockup.rrect",
+    "mxgraph.mockup.anchor",
+    "mxgraph.mockup.topButton",
+    "mxgraph.mockup.bottomButton",
+    "mxgraph.mockup.rightButton",
+    "mxgraph.mockup.leftButton"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mockup-mxMockupContainers",
+   "source": "shapes/mockup/mxMockupContainers.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.containers.videoPlayer",
+    "mxgraph.mockup.containers.accordion",
+    "mxgraph.mockup.containers.browserWindow",
+    "mxgraph.mockup.containers.userMale",
+    "mxgraph.mockup.containers.userFemale",
+    "mxgraph.mockup.containers.group",
+    "mxgraph.mockup.containers.window",
+    "mxgraph.mockup.containers.horTabBar",
+    "mxgraph.mockup.containers.verTabBar",
+    "mxgraph.mockup.containers.alertBox",
+    "mxgraph.mockup.containers.rrect",
+    "mxgraph.mockup.containers.anchor",
+    "mxgraph.mockup.containers.topButton",
+    "mxgraph.mockup.containers.leftButton",
+    "mxgraph.mockup.containers.marginRect",
+    "mxgraph.mockup.containers.marginRect2"
+   ],
+   "handles": 1
+  },
+  {
+   "id": "mockup-mxMockupForms",
+   "source": "shapes/mockup/mxMockupForms.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.forms.checkboxGroup",
+    "mxgraph.mockup.forms.radioGroup",
+    "mxgraph.mockup.forms.colorPicker",
+    "mxgraph.mockup.forms.comboBox",
+    "mxgraph.mockup.forms.spinner",
+    "mxgraph.mockup.forms.menuBar",
+    "mxgraph.mockup.forms.horSlider",
+    "mxgraph.mockup.forms.listBox",
+    "mxgraph.mockup.forms.pwField",
+    "mxgraph.mockup.forms.splitter",
+    "mxgraph.mockup.forms.wedgeBar",
+    "mxgraph.mockup.forms.searchBox",
+    "mxgraph.mockup.forms.signIn",
+    "mxgraph.mockup.forms.calendar",
+    "mxgraph.mockup.forms.emailForm",
+    "mxgraph.mockup.forms.rrect",
+    "mxgraph.mockup.forms.anchor",
+    "mxgraph.mockup.forms.checkbox",
+    "mxgraph.mockup.forms.uRect"
+   ],
+   "handles": 1
+  },
+  {
+   "id": "mockup-mxMockupGraphics",
+   "source": "shapes/mockup/mxMockupGraphics.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.graphics.barChart",
+    "mxgraph.mockup.graphics.columnChart",
+    "mxgraph.mockup.graphics.lineChart",
+    "mxgraph.mockup.graphics.pieChart",
+    "mxgraph.mockup.graphics.iconGrid",
+    "mxgraph.mockup.graphics.bubbleChart",
+    "mxgraph.mockup.graphics.gauge",
+    "mxgraph.mockup.graphics.plotChart",
+    "mxgraph.mockup.graphics.ganttChart",
+    "mxgraph.mockup.graphics.simpleIcon",
+    "mxgraph.mockup.graphics.anchor",
+    "mxgraph.mockup.graphics.rrect"
+   ],
+   "handles": 1
+  },
+  {
+   "id": "mockup-mxMockupMarkup",
+   "source": "shapes/mockup/mxMockupMarkup.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.markup.curlyBrace",
+    "mxgraph.mockup.markup.line",
+    "mxgraph.mockup.markup.scratchOut",
+    "mxgraph.mockup.markup.redX"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mockup-mxMockupMisc",
+   "source": "shapes/mockup/mxMockupMisc.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.misc.playbackControls",
+    "mxgraph.mockup.misc.progressBar",
+    "mxgraph.mockup.misc.shoppingCart",
+    "mxgraph.mockup.misc.rating",
+    "mxgraph.mockup.misc.mail2",
+    "mxgraph.mockup.misc.volumeSlider",
+    "mxgraph.mockup.misc.editIcon",
+    "mxgraph.mockup.misc.printIcon",
+    "mxgraph.mockup.misc.shareIcon",
+    "mxgraph.mockup.misc.trashcanIcon",
+    "mxgraph.mockup.misc.copyrightIcon",
+    "mxgraph.mockup.misc.registeredIcon",
+    "mxgraph.mockup.misc.volumeIcon",
+    "mxgraph.mockup.misc.ruler",
+    "mxgraph.mockup.misc.ruler2",
+    "mxgraph.mockup.misc.revisionTable",
+    "mxgraph.mockup.misc.statusBar",
+    "mxgraph.mockup.misc.pin",
+    "mxgraph.mockup.misc.rrect",
+    "mxgraph.mockup.misc.anchor"
+   ],
+   "handles": 3
+  },
+  {
+   "id": "mockup-mxMockupNavigation",
+   "source": "shapes/mockup/mxMockupNavigation.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.navigation.breadcrumb",
+    "mxgraph.mockup.navigation.stepBar",
+    "mxgraph.mockup.navigation.coverFlow",
+    "mxgraph.mockup.navigation.scrollBar",
+    "mxgraph.mockup.navigation.pagination",
+    "mxgraph.mockup.navigation.pageControl",
+    "mxgraph.mockup.navigation.mapNavigator",
+    "mxgraph.mockup.navigation.anchor"
+   ],
+   "handles": 1
+  },
+  {
+   "id": "mockup-mxMockupText",
+   "source": "shapes/mockup/mxMockupText.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.mockup.text.link",
+    "mxgraph.mockup.text.linkBar",
+    "mxgraph.mockup.text.callout",
+    "mxgraph.mockup.text.stickyNote",
+    "mxgraph.mockup.text.stickyNote2",
+    "mxgraph.mockup.text.bulletedList",
+    "mxgraph.mockup.text.textBox",
+    "mxgraph.mockup.text.captcha",
+    "mxgraph.mockup.text.alphanumeric",
+    "mxgraph.mockup.text.rrect"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mockup-mxMockupiOS",
+   "source": "shapes/mockup/mxMockupiOS.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.ios.iPhone",
+    "mxgraph.ios.iBgFlat",
+    "mxgraph.ios.iBgStriped",
+    "mxgraph.ios.iBgMap",
+    "mxgraph.ios.iButtonBar",
+    "mxgraph.ios.iAppBar",
+    "mxgraph.ios.iTopBar",
+    "mxgraph.ios.iTopBar2",
+    "mxgraph.ios.iTopBarLocked",
+    "mxgraph.ios.iButton",
+    "mxgraph.ios.iButtonBack",
+    "mxgraph.ios.iButtonFw",
+    "mxgraph.ios.iPrevNext",
+    "mxgraph.ios.iTextInput",
+    "mxgraph.ios.iRadioGroup",
+    "mxgraph.ios.iCheckboxGroup",
+    "mxgraph.ios.iComboBox",
+    "mxgraph.ios.iOnOffButton",
+    "mxgraph.ios.iAlertBox",
+    "mxgraph.ios.iDialogBox",
+    "mxgraph.ios.iLockButton",
+    "mxgraph.ios.iArrowIcon",
+    "mxgraph.ios.iDeleteIcon",
+    "mxgraph.ios.iAddIcon",
+    "mxgraph.ios.iInfoIcon",
+    "mxgraph.ios.iSortFindIcon",
+    "mxgraph.ios.iCheckIcon",
+    "mxgraph.ios.iKeybLett",
+    "mxgraph.ios.iKeybNumb",
+    "mxgraph.ios.iKeybSymb",
+    "mxgraph.ios.iDeleteApp",
+    "mxgraph.ios.iDir",
+    "mxgraph.ios.iLocBar",
+    "mxgraph.ios.iCallDialog",
+    "mxgraph.ios.iCallButtons",
+    "mxgraph.ios.iOption",
+    "mxgraph.ios.iAlphaList",
+    "mxgraph.ios.iHorButtonBar",
+    "mxgraph.ios.iPin",
+    "mxgraph.ios.iVideoControls",
+    "mxgraph.ios.iURLBar",
+    "mxgraph.ios.iSlider",
+    "mxgraph.ios.iProgressBar",
+    "mxgraph.ios.iCloudProgressBar",
+    "mxgraph.ios.iDownloadBar",
+    "mxgraph.ios.iScreenNameBar",
+    "mxgraph.ios.iIconGrid",
+    "mxgraph.ios.iCopy",
+    "mxgraph.ios.iCopyArea",
+    "mxgraph.ios.iHomePageControl",
+    "mxgraph.ios.iPageControl",
+    "mxgraph.ios.iPad",
+    "mxgraph.ios.rrect",
+    "mxgraph.ios.topButton",
+    "mxgraph.ios.bottomButton",
+    "mxgraph.ios.anchor",
+    "mxgraph.ios.checkbox",
+    "mxgraph.ios.fancyRRect"
+   ],
+   "handles": 5
+  },
+  {
+   "id": "mxAWS3D",
+   "source": "shapes/mxAWS3D.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.aws3d.arrowNE",
+    "mxgraph.aws3d.arrowSE",
+    "mxgraph.aws3d.arrowSW",
+    "mxgraph.aws3d.arrowNW",
+    "mxgraph.aws3d.arrowlessNE",
+    "mxgraph.aws3d.dashedEdgeDouble",
+    "mxgraph.aws3d.dashedEdgeDouble2",
+    "mxgraph.aws3d.dashedArrowlessEdge",
+    "mxgraph.aws3d.dashedArrowlessEdge2",
+    "mxgraph.aws3d.dashedEdge",
+    "mxgraph.aws3d.dashedEdge2",
+    "mxgraph.aws3d.flatEdge",
+    "mxgraph.aws3d.flatEdge2",
+    "mxgraph.aws3d.flatDoubleEdge",
+    "mxgraph.aws3d.flatDoubleEdge2",
+    "mxgraph.aws3d.ami",
+    "mxgraph.aws3d.snapshot",
+    "mxgraph.aws3d.application",
+    "mxgraph.aws3d.application_server",
+    "mxgraph.aws3d.cloudfront",
+    "mxgraph.aws3d.dataCenter",
+    "mxgraph.aws3d.dataServer",
+    "mxgraph.aws3d.elasticLoadBalancing",
+    "mxgraph.aws3d.instance",
+    "mxgraph.aws3d.internetGateway",
+    "mxgraph.aws3d.oracleDataCenter",
+    "mxgraph.aws3d.oracleDbServer",
+    "mxgraph.aws3d.rdsMaster",
+    "mxgraph.aws3d.rds",
+    "mxgraph.aws3d.route53",
+    "mxgraph.aws3d.s3Bucket",
+    "mxgraph.aws3d.s3",
+    "mxgraph.aws3d.simpleDb",
+    "mxgraph.aws3d.sqs",
+    "mxgraph.aws3d.vpcGateway",
+    "mxgraph.aws3d.webServer",
+    "mxgraph.aws3d.dynamoDb",
+    "mxgraph.aws3d.elasticMapReduce",
+    "mxgraph.aws3d.rdsSlave",
+    "mxgraph.aws3d.ami2",
+    "mxgraph.aws3d.ebs",
+    "mxgraph.aws3d.oracleServer",
+    "mxgraph.aws3d.secureConnection",
+    "mxgraph.aws3d.email_service",
+    "mxgraph.aws3d.worker",
+    "mxgraph.aws3d.application2",
+    "mxgraph.aws3d.elasticBeanstalk",
+    "mxgraph.aws3d.simpleDb2",
+    "mxgraph.aws3d.workflowService",
+    "mxgraph.aws3d.decider",
+    "mxgraph.aws3d.searchEngine",
+    "mxgraph.aws3d.securityTokenService",
+    "mxgraph.aws3d.glacier",
+    "mxgraph.aws3d.customerGateway",
+    "mxgraph.aws3d.redshift",
+    "mxgraph.aws3d.lambda",
+    "mxgraph.aws3d.ebs2"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxAWS4",
+   "source": "shapes/mxAWS4.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.aws4.productIcon",
+    "mxgraph.aws4.resourceIcon",
+    "mxgraph.aws4.group",
+    "mxgraph.aws4.groupCenter",
+    "mxgraph.aws4.group2"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxAndroid",
+   "source": "shapes/mxAndroid.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.android.tabBar",
+    "mxgraph.android.phone",
+    "mxgraph.android.statusBar",
+    "mxgraph.android.checkboxGroup",
+    "mxgraph.android.radioGroup",
+    "mxgraph.android.menuBar",
+    "mxgraph.android.textSelHandles",
+    "mxgraph.android.indeterminateSpinner",
+    "mxgraph.android.anchor",
+    "mxgraph.android.rrect",
+    "mxgraph.android.checkbox",
+    "mxgraph.android.progressBar",
+    "mxgraph.android.progressScrubberDisabled",
+    "mxgraph.android.progressScrubberFocused",
+    "mxgraph.android.progressScrubberPressed",
+    "mxgraph.android.quickscroll2",
+    "mxgraph.android.quickscroll3",
+    "mxgraph.android.scrollbars2",
+    "mxgraph.android.spinner2"
+   ],
+   "handles": 6
+  },
+  {
+   "id": "mxArchiMate",
+   "source": "shapes/mxArchiMate.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.archimate.location",
+    "mxgraph.archimate.business",
+    "mxgraph.archimate.businessObject",
+    "mxgraph.archimate.representation",
+    "mxgraph.archimate.product",
+    "mxgraph.archimate.application",
+    "mxgraph.archimate.tech",
+    "mxgraph.archimate.motiv",
+    "mxgraph.archimate.gap"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxArchiMate3",
+   "source": "shapes/mxArchiMate3.js",
+   "deps": [],
+   "stencils": [
+    "basic.xml"
+   ],
+   "shapes": [
+    "mxgraph.archimate3.application",
+    "mxgraph.archimate3.component",
+    "mxgraph.archimate3.collaboration",
+    "mxgraph.archimate3.interface",
+    "mxgraph.archimate3.contractSmall",
+    "mxgraph.archimate3.representationSmall",
+    "mxgraph.archimate3.passive",
+    "mxgraph.archimate3.plateau",
+    "mxgraph.archimate3.productSmall",
+    "mxgraph.archimate3.process",
+    "mxgraph.archimate3.driver",
+    "mxgraph.archimate3.assess",
+    "mxgraph.archimate3.goal",
+    "mxgraph.archimate3.outcome",
+    "mxgraph.archimate3.principle",
+    "mxgraph.archimate3.facility",
+    "mxgraph.archimate3.function",
+    "mxgraph.archimate3.grouping",
+    "mxgraph.archimate3.interaction",
+    "mxgraph.archimate3.material",
+    "mxgraph.archimate3.locationIcon",
+    "mxgraph.archimate3.service",
+    "mxgraph.archimate3.requirement",
+    "mxgraph.archimate3.constraint",
+    "mxgraph.archimate3.equipment",
+    "mxgraph.archimate3.event",
+    "mxgraph.archimate3.event2",
+    "mxgraph.archimate3.actor",
+    "mxgraph.archimate3.role",
+    "mxgraph.archimate3.businessObject",
+    "mxgraph.archimate3.contract",
+    "mxgraph.archimate3.product",
+    "mxgraph.archimate3.representation",
+    "mxgraph.archimate3.deliverable",
+    "mxgraph.archimate3.location",
+    "mxgraph.archimate3.gap",
+    "mxgraph.archimate3.gapIcon",
+    "mxgraph.archimate3.tech",
+    "mxgraph.archimate3.distribution",
+    "mxgraph.archimate3.resource",
+    "mxgraph.archimate3.capability",
+    "mxgraph.archimate3.course",
+    "mxgraph.archimate3.node",
+    "mxgraph.archimate3.network",
+    "mxgraph.archimate3.device",
+    "mxgraph.archimate3.sysSw",
+    "mxgraph.archimate3.artifact",
+    "mxgraph.archimate3.commNetw",
+    "mxgraph.archimate3.path",
+    "mxgraph.archimate3.valueStream",
+    "mxgraph.archimate3.workPackage"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxArchiMate4",
+   "source": "shapes/mxArchiMate4.js",
+   "deps": [
+    "mxArchiMate3"
+   ],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.archimate4.element",
+    "mxgraph.archimate4.role",
+    "mxgraph.archimate4.collaboration",
+    "mxgraph.archimate4.path",
+    "mxgraph.archimate4.service",
+    "mxgraph.archimate4.process",
+    "mxgraph.archimate4.function",
+    "mxgraph.archimate4.event",
+    "mxgraph.archimate4.grouping",
+    "mxgraph.archimate4.locationIcon",
+    "mxgraph.archimate4.driver",
+    "mxgraph.archimate4.assess",
+    "mxgraph.archimate4.goal",
+    "mxgraph.archimate4.outcome",
+    "mxgraph.archimate4.principle",
+    "mxgraph.archimate4.requirement",
+    "mxgraph.archimate4.resource",
+    "mxgraph.archimate4.capability",
+    "mxgraph.archimate4.valueStream",
+    "mxgraph.archimate4.course",
+    "mxgraph.archimate4.actor",
+    "mxgraph.archimate4.interface",
+    "mxgraph.archimate4.businessObject",
+    "mxgraph.archimate4.product",
+    "mxgraph.archimate4.component",
+    "mxgraph.archimate4.node",
+    "mxgraph.archimate4.device",
+    "mxgraph.archimate4.sysSw",
+    "mxgraph.archimate4.network",
+    "mxgraph.archimate4.equipment",
+    "mxgraph.archimate4.facility",
+    "mxgraph.archimate4.distribution",
+    "mxgraph.archimate4.material",
+    "mxgraph.archimate4.workPackage",
+    "mxgraph.archimate4.deliverable",
+    "mxgraph.archimate4.plateau"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxAtlassian",
+   "source": "shapes/mxAtlassian.js",
+   "deps": [],
+   "stencils": [
+    "atlassian.xml"
+   ],
+   "shapes": [
+    "mxgraph.atlassian.issue"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxAtlassian2",
+   "source": "shapes/mxAtlassian2.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxBootstrap",
+   "source": "shapes/mxBootstrap.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.bootstrap.rrect",
+    "mxgraph.bootstrap.topButton",
+    "mxgraph.bootstrap.bottomButton",
+    "mxgraph.bootstrap.rightButton",
+    "mxgraph.bootstrap.leftButton",
+    "mxgraph.bootstrap.leftButtonStriped",
+    "mxgraph.bootstrap.roundedButton",
+    "mxgraph.bootstrap.arrow",
+    "mxgraph.bootstrap.tabTop",
+    "mxgraph.bootstrap.image",
+    "mxgraph.bootstrap.checkbox",
+    "mxgraph.bootstrap.checkbox2",
+    "mxgraph.bootstrap.radioButton",
+    "mxgraph.bootstrap.radioButton2",
+    "mxgraph.bootstrap.horLines",
+    "mxgraph.bootstrap.user2",
+    "mxgraph.bootstrap.rating",
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.bootstrap.rangeInput",
+    "mxgraph.bootstrap.switch",
+    "mxgraph.bootstrap.x",
+    "mxgraph.bootstrap.popover"
+   ],
+   "handles": 2
+  },
+  {
+   "id": "mxC4",
+   "source": "shapes/mxC4.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.c4.person",
+    "mxgraph.c4.person2",
+    "mxgraph.c4.webBrowserContainer",
+    "mxgraph.c4.webBrowserContainer2",
+    "mxgraph.c4.mobileDeviceContainer"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxCabinets",
+   "source": "shapes/mxCabinets.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.cabinets.cabinet",
+    "mxgraph.cabinets.coverPlate",
+    "mxgraph.cabinets.dimension",
+    "mxgraph.cabinets.dimensionBottom"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxCisco19",
+   "source": "shapes/mxCisco19.js",
+   "deps": [],
+   "stencils": [
+    "cisco19.xml"
+   ],
+   "shapes": [
+    "mxgraph.cisco19.rect"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxCiscoSafe",
+   "source": "shapes/mxCiscoSafe.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxDFD",
+   "source": "shapes/mxDFD.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.dfd.start",
+    "mxgraph.dfd.archive",
+    "mxgraph.dfd.check2",
+    "mxgraph.dfd.dataStoreID",
+    "mxgraph.dfd.externalEntity",
+    "mxgraph.dfd.loop"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxEip",
+   "source": "shapes/mxEip.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.eip.messExp",
+    "mxgraph.eip.retAddr",
+    "mxgraph.eip.anchor",
+    "mxgraph.eip.messageChannel",
+    "mxgraph.eip.dataChannel",
+    "mxgraph.eip.deadLetterChannel",
+    "mxgraph.eip.invalidMessageChannel"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxElectrical",
+   "source": "shapes/mxElectrical.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.electrical.transmission.testPoint",
+    "mxgraph.electrical.transmission.straightBus",
+    "mxgraph.electrical.transmission.twoLineBusElbow",
+    "mxgraph.electrical.transmission.threeLineBusElbow",
+    "mxgraph.electrical.transmission.fourLineBusElbow",
+    "mxgraph.electrical.transmission.eightLineBusElbow",
+    "mxgraph.electrical.logic_gates.logic_gate",
+    "mxgraph.electrical.logic_gates.buffer2",
+    "mxgraph.electrical.logic_gates.dual_inline_ic",
+    "mxgraph.electrical.logic_gates.qfp_ic",
+    "mxgraph.electrical.abstract.mux2",
+    "mxgraph.electrical.miscellaneous.batteryStack",
+    "mxgraph.electrical.signal_sources.dc_source_3_v2",
+    "mxgraph.electrical.signal_sources.source",
+    "mxgraph.electrical.electro-mechanical.twoWaySwitch",
+    "mxgraph.electrical.electro-mechanical.pushbutton",
+    "mxgraph.electrical.electro-mechanical.singleSwitch",
+    "mxgraph.electrical.electro-mechanical.switchDisconnector",
+    "mxgraph.electrical.electro-mechanical.fuse2",
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch",
+    "mxgraph.electrical.electro-mechanical.liquidLevelActuatedSwitch2",
+    "mxgraph.electrical.electro-mechanical.gasFlowActuatedSwitch",
+    "mxgraph.electrical.electro-mechanical.flowActuatedSwitch",
+    "mxgraph.electrical.electro-mechanical.pressureActuatedSwitch",
+    "mxgraph.electrical.electro-mechanical.temperatureActuatedSwitch",
+    "mxgraph.electrical.electro-mechanical.safetyInterlockSwitch",
+    "mxgraph.electrical.electro-mechanical.temperatureSwitch",
+    "mxgraph.electrical.electro-mechanical.thermostat2",
+    "mxgraph.electrical.electro-mechanical.limitSwitch2",
+    "mxgraph.electrical.electro-mechanical.circuitBreaker2",
+    "mxgraph.electrical.electro-mechanical.selectorSwitch3Position2",
+    "mxgraph.electrical.electro-mechanical.selectorSwitch4Position2",
+    "mxgraph.electrical.electro-mechanical.selectorSwitch6Position2",
+    "mxgraph.electrical.electro-mechanical.shortingSelectorSwitch2",
+    "mxgraph.electrical.electro-mechanical.proximityLimitSwitch2",
+    "mxgraph.electrical.electro-mechanical.inertiaSwitch2",
+    "mxgraph.electrical.electro-mechanical.pushbuttonBreak2",
+    "mxgraph.electrical.electro-mechanical.manualSwitch2",
+    "mxgraph.electrical.electro-mechanical.twoWayContact2",
+    "mxgraph.electrical.electro-mechanical.passingMakeContact2",
+    "mxgraph.electrical.electro-mechanical.dpst2",
+    "mxgraph.electrical.electro-mechanical.springReturn3",
+    "mxgraph.electrical.electro-mechanical.limitSwitch",
+    "mxgraph.electrical.electro-mechanical.dpdt3",
+    "mxgraph.electrical.electro-mechanical.twoPositionSwitch2",
+    "mxgraph.electrical.electro-mechanical.threePositionSwitch2",
+    "mxgraph.electrical.electro-mechanical.fourPositionSwitch2",
+    "mxgraph.electrical.electro-mechanical.pushbuttonMakeSwitch2",
+    "mxgraph.electrical.electro-mechanical.pushbuttonTwoCircuitSwitch2",
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch",
+    "mxgraph.electrical.electro-mechanical.timeDelaySwitch2",
+    "mxgraph.electrical.electro-mechanical.isolatorSwitch2",
+    "mxgraph.electrical.electro-mechanical.changeoverContactSwitch2",
+    "mxgraph.electrical.electro-mechanical.reedSwitch2"
+   ],
+   "handles": 4
+  },
+  {
+   "id": "mxFloorplan",
+   "source": "shapes/mxFloorplan.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.floorplan.wall",
+    "mxgraph.floorplan.wallCorner",
+    "mxgraph.floorplan.wallU",
+    "mxgraph.floorplan.room",
+    "mxgraph.floorplan.window",
+    "mxgraph.floorplan.dimension",
+    "mxgraph.floorplan.dimensionBottom",
+    "mxgraph.floorplan.stairs",
+    "mxgraph.floorplan.stairsRest",
+    "mxgraph.floorplan.doorLeft",
+    "mxgraph.floorplan.doorRight",
+    "mxgraph.floorplan.doorDouble",
+    "mxgraph.floorplan.doorUneven",
+    "mxgraph.floorplan.doorOpposing",
+    "mxgraph.floorplan.doorRevolving",
+    "mxgraph.floorplan.doorPocket",
+    "mxgraph.floorplan.doorDoublePocket",
+    "mxgraph.floorplan.doorBypass",
+    "mxgraph.floorplan.doorBifold",
+    "mxgraph.floorplan.doorSlidingGlass",
+    "mxgraph.floorplan.doorOverhead",
+    "mxgraph.floorplan.opening",
+    "mxgraph.floorplan.windowGlider",
+    "mxgraph.floorplan.windowGarden",
+    "mxgraph.floorplan.windowBow",
+    "mxgraph.floorplan.windowBay",
+    "mxgraph.floorplan.doorAccordion",
+    "mxgraph.floorplan.doorDoubleAction"
+   ],
+   "handles": 9
+  },
+  {
+   "id": "mxGCP2",
+   "source": "shapes/mxGCP2.js",
+   "deps": [],
+   "stencils": [
+    "gcp2.xml"
+   ],
+   "shapes": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.hexIcon"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxGmdl",
+   "source": "shapes/mxGmdl.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.gmdl.player",
+    "mxgraph.gmdl.switch",
+    "mxgraph.gmdl.marginRect",
+    "mxgraph.gmdl.sliderNormal",
+    "mxgraph.gmdl.slider2",
+    "mxgraph.gmdl.sliderFocused",
+    "mxgraph.gmdl.sliderDisabled",
+    "mxgraph.gmdl.sliderDisabled2",
+    "mxgraph.gmdl.sliderDiscrete",
+    "mxgraph.gmdl.sliderDiscreteDots",
+    "mxgraph.gmdl.progressBar"
+   ],
+   "handles": 6
+  },
+  {
+   "id": "mxIBM",
+   "source": "shapes/mxIBM.js",
+   "deps": [],
+   "stencils": [
+    "ibm.xml"
+   ],
+   "shapes": [
+    "mxgraph.ibm.box"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxInfographic",
+   "source": "shapes/mxInfographic.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.infographic.numberedEntryVert",
+    "mxgraph.infographic.bendingArch",
+    "mxgraph.infographic.parallelogram",
+    "mxgraph.infographic.ribbonRolled",
+    "mxgraph.infographic.ribbonDoubleFolded",
+    "mxgraph.infographic.ribbonFrontFolded",
+    "mxgraph.infographic.ribbonBackFolded",
+    "mxgraph.infographic.banner",
+    "mxgraph.infographic.circularCallout",
+    "mxgraph.infographic.shadedTriangle",
+    "mxgraph.infographic.shadedPyramid",
+    "mxgraph.infographic.pyramidStep",
+    "mxgraph.infographic.cylinder",
+    "mxgraph.infographic.circularCallout2",
+    "mxgraph.infographic.bannerSingleFold",
+    "mxgraph.infographic.shadedCube",
+    "mxgraph.infographic.partConcEllipse",
+    "mxgraph.infographic.bannerHalfFold",
+    "mxgraph.infographic.circularDial",
+    "mxgraph.infographic.ribbonSimple",
+    "mxgraph.infographic.barCallout",
+    "mxgraph.infographic.flag"
+   ],
+   "handles": 17
+  },
+  {
+   "id": "mxKubernetes",
+   "source": "shapes/mxKubernetes.js",
+   "deps": [],
+   "stencils": [
+    "kubernetes.xml",
+    "kubernetes2.xml"
+   ],
+   "shapes": [
+    "mxgraph.kubernetes.icon",
+    "mxgraph.kubernetes.icon2"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxLeanMap",
+   "source": "shapes/mxLeanMap.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.lean_mapping.boat_shipment",
+    "mxgraph.lean_mapping.buffer_or_safety_stock",
+    "mxgraph.lean_mapping.data_box",
+    "mxgraph.lean_mapping.outside_sources",
+    "mxgraph.lean_mapping.manufacturing_process",
+    "mxgraph.lean_mapping.manufacturing_process_shared",
+    "mxgraph.lean_mapping.work_cell",
+    "mxgraph.lean_mapping.inventory_box",
+    "mxgraph.lean_mapping.push_arrow",
+    "mxgraph.lean_mapping.supermarket",
+    "mxgraph.lean_mapping.physical_pull",
+    "mxgraph.lean_mapping.fifo_lane",
+    "mxgraph.lean_mapping.truck_shipment",
+    "mxgraph.lean_mapping.schedule",
+    "mxgraph.lean_mapping.fifo_sequence_flow",
+    "mxgraph.lean_mapping.production_kanban",
+    "mxgraph.lean_mapping.withdrawal_kanban",
+    "mxgraph.lean_mapping.signal_kanban",
+    "mxgraph.lean_mapping.sequenced_pull_ball",
+    "mxgraph.lean_mapping.rail_shipment",
+    "mxgraph.lean_mapping.warehouse",
+    "mxgraph.lean_mapping.timeline",
+    "mxgraph.lean_mapping.crossDock",
+    "mxgraph.lean_mapping.orders",
+    "mxgraph.lean_mapping.batched_kanban",
+    "mxgraph.lean_mapping.control_center",
+    "mxgraph.lean_mapping.electronic_info_flow_edge",
+    "mxgraph.lean_mapping.manual_info_flow_edge",
+    "mxgraph.lean_mapping.timeline2"
+   ],
+   "handles": 1
+  },
+  {
+   "id": "mxNetworks",
+   "source": "shapes/mxNetworks.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.networks.bus",
+    "mxgraph.networks.comm_link_edge"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxNetworks2",
+   "source": "shapes/mxNetworks2.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.networks2.icon"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxSAP",
+   "source": "shapes/mxSAP.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.sap.icon"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "mxSysML",
+   "source": "shapes/mxSysML.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.sysml.composite",
+    "mxgraph.sysml.package",
+    "mxgraph.sysml.package2",
+    "mxgraph.sysml.none",
+    "mxgraph.sysml.rect",
+    "mxgraph.sysml.port1",
+    "mxgraph.sysml.port2",
+    "mxgraph.sysml.port3",
+    "mxgraph.sysml.port4",
+    "mxgraph.sysml.itemFlow",
+    "mxgraph.sysml.itemFlowLeft",
+    "mxgraph.sysml.itemFlowRight",
+    "mxgraph.sysml.nestedPort",
+    "mxgraph.sysml.paramDgm",
+    "mxgraph.sysml.consProp",
+    "mxgraph.sysml.callBehAct",
+    "mxgraph.sysml.accEvent",
+    "mxgraph.sysml.timeEvent",
+    "mxgraph.sysml.sendSigAct",
+    "mxgraph.sysml.actFinal",
+    "mxgraph.sysml.actParamNode",
+    "mxgraph.sysml.contOper",
+    "mxgraph.sysml.flowFinal",
+    "mxgraph.sysml.isControl",
+    "mxgraph.sysml.isStream",
+    "mxgraph.sysml.isActStream",
+    "mxgraph.sysml.paramSet",
+    "mxgraph.sysml.paramActSet",
+    "mxgraph.sysml.probability",
+    "mxgraph.sysml.actProb",
+    "mxgraph.sysml.objFlowR",
+    "mxgraph.sysml.objFlowL",
+    "mxgraph.sysml.actPart",
+    "mxgraph.sysml.cont",
+    "mxgraph.sysml.coregion",
+    "mxgraph.sysml.dimension",
+    "mxgraph.sysml.compState",
+    "mxgraph.sysml.region",
+    "mxgraph.sysml.simpleState",
+    "mxgraph.sysml.stateMachine",
+    "mxgraph.sysml.x",
+    "mxgraph.sysml.submState",
+    "mxgraph.sysml.useCaseExtPt",
+    "mxgraph.sysml.port"
+   ],
+   "handles": 2
+  },
+  {
+   "id": "mxUML25",
+   "source": "shapes/mxUML25.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.uml25.inputPin",
+    "mxgraph.uml25.behaviorAction",
+    "mxgraph.uml25.action",
+    "mxgraph.uml25.actionParams"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "pid2-mxPidInstruments",
+   "source": "shapes/pid2/mxPidInstruments.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.pid2inst.discInst",
+    "mxgraph.pid2inst.sharedCont",
+    "mxgraph.pid2inst.compFunc",
+    "mxgraph.pid2inst.progLogCont",
+    "mxgraph.pid2inst.indicator",
+    "mxgraph.pid2inst.logic"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "pid2-mxPidMisc",
+   "source": "shapes/pid2/mxPidMisc.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.pid2misc.fan",
+    "mxgraph.pid2misc.column",
+    "mxgraph.pid2misc.conveyor"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "pid2-mxPidValves",
+   "source": "shapes/pid2/mxPidValves.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.pid2valves.valve",
+    "mxgraph.pid2valves.blockBleedValve",
+    "mxgraph.pid2valves.autoRecircValve"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "rack-mxRack",
+   "source": "shapes/rack/mxRack.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "mxgraph.rackGeneral.rackCabinet3",
+    "mxgraph.rackGeneral.container",
+    "mxgraph.rackGeneral.rackCabinet2",
+    "mxgraph.rackGeneral.horCableDuct",
+    "mxgraph.rackGeneral.horRoutingBank",
+    "mxgraph.rackGeneral.neatPatch",
+    "mxgraph.rackGeneral.shelf",
+    "mxgraph.rackGeneral.plate",
+    "mxgraph.rackGeneral.rackNumbering",
+    "mxgraph.rackGeneral.rackCabinet",
+    "mxgraph.rackGeneral.horCableDuct1U",
+    "mxgraph.rackGeneral.horCableDuct2U",
+    "mxgraph.rackGeneral.horRoutingBank1U",
+    "mxgraph.rackGeneral.horRoutingBank2U",
+    "mxgraph.rackGeneral.neatPatch2U",
+    "mxgraph.rackGeneral.shelf1U",
+    "mxgraph.rackGeneral.shelf2U",
+    "mxgraph.rackGeneral.shelf4U",
+    "mxgraph.rackGeneral.channelBase",
+    "mxgraph.rackGeneral.cabinetLeg"
+   ],
+   "handles": 0
+  },
+  {
+   "id": "Shapes-extra",
+   "source": "js/grapheditor/Shapes.js",
+   "deps": [],
+   "stencils": [],
+   "shapes": [
+    "tableLine",
+    "wire",
+    "isoCube",
+    "note2",
+    "cylinder2",
+    "folder",
+    "umlState",
+    "parallelMarker",
+    "process2",
+    "transparent",
+    "plus",
+    "umlBoundary",
+    "umlEntity",
+    "umlDestroy",
+    "umlControl",
+    "seqBoundary",
+    "seqControl",
+    "seqEntity",
+    "seqQueue",
+    "seqCollections",
+    "seqDatabase",
+    "seqActorStick",
+    "umlLifeline",
+    "umlFrame",
+    "lollipop",
+    "requires",
+    "requiredInterface",
+    "providedRequiredInterface",
+    "module",
+    "component",
+    "associativeEntity",
+    "endState",
+    "startState",
+    "dimension",
+    "pipe",
+    "gitMergeCommit",
+    "gitCherryPick",
+    "ishikawaHead",
+    "mermaidOdd",
+    "mermaidBlockArrow"
+   ],
+   "handles": 0
+  }
+ ],
+ "libraries": {
+  "android": {
+   "stencils": [
+    "android/android.xml"
+   ],
+   "modules": [
+    "mxAndroid"
+   ]
+  },
+  "archimate": {
+   "stencils": [],
+   "modules": [
+    "mxArchiMate"
+   ]
+  },
+  "archimate3": {
+   "stencils": [],
+   "modules": [
+    "mxArchiMate3"
+   ]
+  },
+  "archimate4": {
+   "stencils": [],
+   "modules": [
+    "mxArchiMate3",
+    "mxArchiMate4"
+   ]
+  },
+  "arrows2": {
+   "stencils": [],
+   "modules": []
+  },
+  "atlassian": {
+   "stencils": [
+    "atlassian.xml"
+   ],
+   "modules": [
+    "mxAtlassian"
+   ]
+  },
+  "atlassian2": {
+   "stencils": [
+    "atlassian2.xml"
+   ],
+   "modules": [
+    "mxAtlassian2"
+   ]
+  },
+  "aws3d": {
+   "stencils": [
+    "aws3d.xml"
+   ],
+   "modules": [
+    "mxAWS3D"
+   ]
+  },
+  "aws4": {
+   "stencils": [
+    "aws4.xml"
+   ],
+   "modules": [
+    "mxAWS4"
+   ]
+  },
+  "aws4b": {
+   "stencils": [
+    "aws4.xml"
+   ],
+   "modules": [
+    "mxAWS4"
+   ]
+  },
+  "basic": {
+   "stencils": [
+    "basic.xml"
+   ],
+   "modules": []
+  },
+  "bootstrap": {
+   "stencils": [
+    "bootstrap.xml"
+   ],
+   "modules": [
+    "mxBootstrap"
+   ]
+  },
+  "bpmn": {
+   "stencils": [
+    "bpmn.xml"
+   ],
+   "modules": [
+    "bpmn-mxBpmnShape2"
+   ]
+  },
+  "bpmn2": {
+   "stencils": [
+    "bpmn.xml"
+   ],
+   "modules": [
+    "bpmn-mxBpmnShape2"
+   ]
+  },
+  "c4": {
+   "stencils": [],
+   "modules": [
+    "mxC4"
+   ]
+  },
+  "cabinets": {
+   "stencils": [
+    "cabinets.xml"
+   ],
+   "modules": [
+    "mxCabinets"
+   ]
+  },
+  "cisco19": {
+   "stencils": [
+    "cisco19.xml"
+   ],
+   "modules": [
+    "mxCisco19"
+   ]
+  },
+  "cisco_safe": {
+   "stencils": [
+    "cisco_safe/architecture.xml",
+    "cisco_safe/business_icons.xml",
+    "cisco_safe/capability.xml",
+    "cisco_safe/design.xml",
+    "cisco_safe/iot_things_icons.xml",
+    "cisco_safe/people_places_things_icons.xml",
+    "cisco_safe/security_icons.xml",
+    "cisco_safe/technology_icons.xml",
+    "cisco_safe/threat.xml"
+   ],
+   "modules": [
+    "mxCiscoSafe"
+   ]
+  },
+  "dfd": {
+   "stencils": [],
+   "modules": [
+    "mxDFD"
+   ]
+  },
+  "eip": {
+   "stencils": [
+    "eip.xml"
+   ],
+   "modules": [
+    "mxEip"
+   ]
+  },
+  "electrical/abstract": {
+   "stencils": [
+    "electrical/abstract.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "electrical/electro-mechanical": {
+   "stencils": [
+    "electrical/electro-mechanical.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "electrical/logic_gates": {
+   "stencils": [
+    "electrical/logic_gates.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "electrical/miscellaneous": {
+   "stencils": [
+    "electrical/miscellaneous.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "electrical/signal_sources": {
+   "stencils": [
+    "electrical/signal_sources.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "electrical/transmission": {
+   "stencils": [
+    "electrical/transmission.xml"
+   ],
+   "modules": [
+    "mxElectrical"
+   ]
+  },
+  "emoji": {
+   "stencils": [],
+   "modules": [
+    "emoji-mxEmoji"
+   ]
+  },
+  "er": {
+   "stencils": [],
+   "modules": [
+    "er-mxER"
+   ]
+  },
+  "floorplan": {
+   "stencils": [
+    "floorplan.xml"
+   ],
+   "modules": [
+    "mxFloorplan"
+   ]
+  },
+  "flowchart": {
+   "stencils": [
+    "flowchart.xml"
+   ],
+   "modules": []
+  },
+  "gcp2": {
+   "stencils": [
+    "gcp2.xml"
+   ],
+   "modules": [
+    "mxGCP2"
+   ]
+  },
+  "gmdl": {
+   "stencils": [
+    "gmdl.xml"
+   ],
+   "modules": [
+    "mxGmdl"
+   ]
+  },
+  "ibm": {
+   "stencils": [
+    "ibm.xml"
+   ],
+   "modules": [
+    "mxIBM"
+   ]
+  },
+  "ibmcloud": {
+   "stencils": [
+    "ibm_cloud.xml"
+   ],
+   "modules": []
+  },
+  "infographic": {
+   "stencils": [],
+   "modules": [
+    "mxInfographic"
+   ]
+  },
+  "ios": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupiOS"
+   ]
+  },
+  "ios7icons": {
+   "stencils": [
+    "ios7/icons.xml"
+   ],
+   "modules": []
+  },
+  "ios7ui": {
+   "stencils": [
+    "ios7/misc.xml"
+   ],
+   "modules": [
+    "ios7-mxIOS7Ui"
+   ]
+  },
+  "kubernetes": {
+   "stencils": [
+    "kubernetes.xml",
+    "kubernetes2.xml"
+   ],
+   "modules": [
+    "mxKubernetes"
+   ]
+  },
+  "lean_mapping": {
+   "stencils": [
+    "lean_mapping.xml"
+   ],
+   "modules": [
+    "mxLeanMap"
+   ]
+  },
+  "mockup": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupButtons"
+   ]
+  },
+  "mockup/buttons": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupButtons"
+   ]
+  },
+  "mockup/containers": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupContainers"
+   ]
+  },
+  "mockup/forms": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupForms"
+   ]
+  },
+  "mockup/graphics": {
+   "stencils": [
+    "mockup/misc.xml"
+   ],
+   "modules": [
+    "mockup-mxMockupGraphics"
+   ]
+  },
+  "mockup/markup": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupMarkup"
+   ]
+  },
+  "mockup/misc": {
+   "stencils": [
+    "mockup/misc.xml"
+   ],
+   "modules": [
+    "mockup-mxMockupMisc"
+   ]
+  },
+  "mockup/navigation": {
+   "stencils": [
+    "mockup/misc.xml"
+   ],
+   "modules": [
+    "mockup-mxMockupNavigation"
+   ]
+  },
+  "mockup/text": {
+   "stencils": [],
+   "modules": [
+    "mockup-mxMockupText"
+   ]
+  },
+  "networks": {
+   "stencils": [
+    "networks.xml"
+   ],
+   "modules": [
+    "mxNetworks"
+   ]
+  },
+  "networks2": {
+   "stencils": [
+    "networks2.xml"
+   ],
+   "modules": [
+    "mxNetworks2"
+   ]
+  },
+  "pid2inst": {
+   "stencils": [],
+   "modules": [
+    "pid2-mxPidInstruments"
+   ]
+  },
+  "pid2misc": {
+   "stencils": [
+    "pid/misc.xml"
+   ],
+   "modules": [
+    "pid2-mxPidMisc"
+   ]
+  },
+  "pid2valves": {
+   "stencils": [],
+   "modules": [
+    "pid2-mxPidValves"
+   ]
+  },
+  "pidFlowSensors": {
+   "stencils": [
+    "pid/flow_sensors.xml"
+   ],
+   "modules": []
+  },
+  "rackF5": {
+   "stencils": [
+    "rack/f5.xml"
+   ],
+   "modules": []
+  },
+  "rackGeneral": {
+   "stencils": [
+    "rack/general.xml"
+   ],
+   "modules": [
+    "rack-mxRack"
+   ]
+  },
+  "salesforce": {
+   "stencils": [
+    "salesforce.xml"
+   ],
+   "modules": []
+  },
+  "sap": {
+   "stencils": [
+    "sap.xml"
+   ],
+   "modules": [
+    "mxSAP"
+   ]
+  },
+  "sysml": {
+   "stencils": [],
+   "modules": [
+    "mxSysML"
+   ]
+  },
+  "uml25": {
+   "stencils": [],
+   "modules": [
+    "mxUML25"
+   ]
+  },
+  "veeam": {
+   "stencils": [
+    "veeam/2d.xml",
+    "veeam/3d.xml",
+    "veeam/veeam.xml"
+   ],
+   "modules": []
+  },
+  "veeam2": {
+   "stencils": [
+    "veeam/2d.xml",
+    "veeam/3d.xml",
+    "veeam/veeam2.xml"
+   ],
+   "modules": []
+  }
+ }
+}

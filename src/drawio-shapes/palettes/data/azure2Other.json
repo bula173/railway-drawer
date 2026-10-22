@@ -1,0 +1,2276 @@
+{
+ "id": "azure2Other",
+ "title": "Azure / Other",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Other-0-a",
+   "title": "A",
+   "tags": "azure2  azure other  A",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64.12,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_A.svg;points=[[0.5,0,0],[0.5,0.91,0],[0.139,0.5,0],[0.861,0.5,0],[0.695,0.008,0],[0.977,0.994,0],[0.013,0.986,0],[0.308,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1574"
+  },
+  {
+   "id": "azure2Other-1-aad-licenses",
+   "title": "AAD Licenses",
+   "tags": "azure2 aad licenses azure other  AAD Licenses",
+   "kind": "vertex",
+   "width": 65.36,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/AAD_Licenses.svg;points=[[0.443,0,0],[0.5,0.944,0],[0.172,0.5,0],[1,0.599,0],[0.631,0.08,0],[0.922,0.992,0],[0.016,0.912,0],[0.263,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1576"
+  },
+  {
+   "id": "azure2Other-2-acs-solutions-builder",
+   "title": "ACS Solutions Builder",
+   "tags": "azure2 acs solutions builder azure other  ACS Solutions Builder",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/ACS_Solutions_Builder.svg;points=[[0.432,0.003,0],[0.5,0.997,0],[0,0.459,0],[1,0.765,0],[0.855,0.01,0],[0.992,0.921,0],[0.01,0.908,0],[0.01,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1578"
+  },
+  {
+   "id": "azure2Other-3-aks-automatic",
+   "title": "AKS Automatic",
+   "tags": "azure2 aks automatic azure other  AKS Automatic",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/AKS_Automatic.svg;points=[[0.5,0.094,0],[0.5,0.981,0],[0,0.465,0],[1,0.644,0],[0.855,0.34,0],[0.855,0.95,0],[0.328,0.972,0],[0.103,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1580"
+  },
+  {
+   "id": "azure2Other-4-aks-istio",
+   "title": "AKS Istio",
+   "tags": "azure2 aks istio azure other  AKS Istio",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/AKS_Istio.svg;points=[[0.5,0.305,0],[0.5,0.695,0],[0.307,0.5,0],[0.698,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1582"
+  },
+  {
+   "id": "azure2Other-5-api-proxy",
+   "title": "API Proxy",
+   "tags": "azure2 api application programming interface proxy azure other  API Proxy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 38,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/API_Proxy.svg;points=[[0.5,0.223,0],[0.5,0.777,0],[0,0.5,0],[1,0.5,0],[0.75,0.362,0],[0.75,0.64,0],[0.25,0.64,0],[0.25,0.362,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1584"
+  },
+  {
+   "id": "azure2Other-6-app-compliance-automation",
+   "title": "App Compliance Automation",
+   "tags": "azure2 app compliance automation azure other  App Compliance Automation",
+   "kind": "vertex",
+   "width": 68,
+   "height": 49.480000000000004,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/App_Compliance_Automation.svg;points=[[0.514,0,0],[0.525,1,0],[0.018,0.5,0],[0.953,0.5,0],[0.685,0.069,0],[0.91,0.938,0],[0.105,0.92,0],[0.343,0.069,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1586"
+  },
+  {
+   "id": "azure2Other-7-app-registrations",
+   "title": "App Registrations",
+   "tags": "azure2 app registrations azure other  App Registrations",
+   "kind": "vertex",
+   "width": 66.92,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/App_Registrations.svg;points=[[0.429,0,0],[0.769,0.998,0],[0,0.425,0],[1,0.733,0],[0.855,0.018,0],[1,0.867,0],[0.005,0.835,0],[0.005,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1588"
+  },
+  {
+   "id": "azure2Other-8-app-space-compoment",
+   "title": "App Space Compoment",
+   "tags": "azure2 app space component azure other  App Space Compoment",
+   "kind": "vertex",
+   "width": 56.68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/App_Space_Component.svg;points=[[0.5,0,0],[0.5,1,0],[0.009,0.5,0],[0.991,0.5,0],[0.982,0.325,0],[0.982,0.99,0],[0.018,0.99,0],[0.015,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1590"
+  },
+  {
+   "id": "azure2Other-9-aquila",
+   "title": "Aquila",
+   "tags": "azure2 aquila azure other  Aquila",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Aquila.svg;points=[[0.512,0,0],[0.75,1,0],[0,0.454,0],[1,0.5,0],[0.705,0.067,0],[0.91,0.944,0],[0.095,0.656,0],[0.09,0.257,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1592"
+  },
+  {
+   "id": "azure2Other-10-arc-data-services",
+   "title": "Arc Data Services",
+   "tags": "azure2 arc data services azure other  Arc Data Services",
+   "kind": "vertex",
+   "width": 65.08,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Arc_Data_Services.svg;points=[[0.5,0,0],[0.496,1,0],[0,0.791,0],[1,0.781,0],[0.814,0.08,0],[0.987,0.872,0],[0.024,0.892,0],[0.183,0.083,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1594"
+  },
+  {
+   "id": "azure2Other-11-arc-kubernetes",
+   "title": "Arc Kubernetes",
+   "tags": "azure2 arc kubernetes azure other  Arc Kubernetes",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Arc_Kubernetes.svg;points=[[0.5,0.253,0],[0.486,1,0],[0,0.782,0],[1,0.782,0],[0.782,0.048,0],[0.975,0.877,0],[0.023,0.885,0],[0.218,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1596"
+  },
+  {
+   "id": "azure2Other-12-arc-postgresql",
+   "title": "Arc PostgreSQL",
+   "tags": "azure2 arc postgresql azure other  Arc PostgreSQL",
+   "kind": "vertex",
+   "width": 65.08,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Arc_PostgreSQL.svg;points=[[0.473,0,0],[0.497,1,0],[0,0.791,0],[1,0.782,0],[0.788,0.083,0],[0.984,0.875,0],[0.013,0.88,0],[0.157,0.08,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1598"
+  },
+  {
+   "id": "azure2Other-13-arc-sql-managed-instance",
+   "title": "Arc SQL Managed Instance",
+   "tags": "azure2 arc sql managed instance azure other  Arc SQL Managed Instance",
+   "kind": "vertex",
+   "width": 64.96,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Arc_SQL_Managed_Instance.svg;points=[[0.5,0,0],[0.495,1,0],[0.099,0.5,0],[1,0.781,0],[0.984,0.875,0],[0.024,0.892,0],[0.105,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1600"
+  },
+  {
+   "id": "azure2Other-14-arc-sql-server",
+   "title": "Arc SQL Server",
+   "tags": "azure2 arc sql server azure other  Arc SQL Server",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Arc_SQL_Server.svg;points=[[0.5,0,0],[0.495,1,0],[0.079,0.5,0],[0.921,0.5,0],[0.918,0.013,0],[0.984,0.875,0],[0.019,0.887,0],[0.084,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1602"
+  },
+  {
+   "id": "azure2Other-15-avs-vm",
+   "title": "AVS VM",
+   "tags": "azure2 avs vm virtual machine azure other  AVS VM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/AVS_VM.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.987,0.006,0],[0.75,1,0],[0.25,1,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1604"
+  },
+  {
+   "id": "azure2Other-16-azure-enclaves",
+   "title": "Azure Enclaves",
+   "tags": "azure2 enclaves virtual enclaves azure other  Azure Enclaves",
+   "kind": "vertex",
+   "width": 61.44,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Enclaves.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.501,0],[0.853,0.223,0],[0.856,0.775,0],[0.144,0.775,0],[0.147,0.223,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1606"
+  },
+  {
+   "id": "azure2Other-17-azureattestation",
+   "title": "AzureAttestation",
+   "tags": "azure2 azureattestation attestation azure other  AzureAttestation",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/AzureAttestation.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.99,0.125,0],[0.848,0.765,0],[0.149,0.762,0],[0.01,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1608"
+  },
+  {
+   "id": "azure2Other-18-azurite",
+   "title": "Azurite",
+   "tags": "azure2 azurite azure other  Azurite",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azurite.svg;points=[[0.441,0,0],[0.5,0.956,0],[0,0.5,0],[0.985,0.5,0],[0.87,0.003,0],[0.98,0.989,0],[0.015,0.706,0],[0.01,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1610"
+  },
+  {
+   "id": "azure2Other-19-backup-center",
+   "title": "Backup Center",
+   "tags": "azure2 backup center azure other  Backup Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Backup_Center.svg;points=[[0.5,0.047,0],[0.5,0.934,0],[0,0.712,0],[1,0.4,0],[0.775,0.05,0],[0.72,0.89,0],[0.073,0.885,0],[0.313,0.211,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1612"
+  },
+  {
+   "id": "azure2Other-20-backup-vault",
+   "title": "Backup Vault",
+   "tags": "azure2 backup vault azure other  Backup Vault",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.96,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Backup_Vault.svg;points=[[0.5,0.065,0],[0.5,1,0],[0,0.777,0],[1,0.413,0],[0.78,0.047,0],[0.657,0.959,0],[0.07,0.95,0],[0.353,0.203,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1614"
+  },
+  {
+   "id": "azure2Other-21-bare-metal-infrastructure",
+   "title": "Bare Metal Infrastructure",
+   "tags": "azure2 bare metal infrastructure azure other  Bare Metal Infrastructure",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Bare_Metal_Infrastructure.svg;points=[[0.5,0,0],[0.526,1,0],[0.02,0.5,0],[0.98,0.5,0],[0.987,0.006,0],[0.935,0.944,0],[0.065,0.944,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1616"
+  },
+  {
+   "id": "azure2Other-22-breeze",
+   "title": "Breeze",
+   "tags": "azure2 breeze azure other  Breeze",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Breeze.svg;points=[[0.499,0,0],[0.492,1,0],[0,0.49,0],[1,0.501,0],[0.842,0.133,0],[0.87,0.837,0],[0.148,0.857,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1618"
+  },
+  {
+   "id": "azure2Other-23-business-process-tracking",
+   "title": "Business Process Tracking",
+   "tags": "azure2 business process tracking azure other  Business Process Tracking",
+   "kind": "vertex",
+   "width": 49.120000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Business_Process_Tracking.svg;points=[[0.5,0,0],[0.5,1,0],[0.014,0.448,0],[0.986,0.448,0],[0.975,0.008,0],[0.982,0.882,0],[0.018,0.882,0],[0.025,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1620"
+  },
+  {
+   "id": "azure2Other-24-center-for-sap",
+   "title": "Center for SAP",
+   "tags": "azure2 center for sap azure other  Center for SAP",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Center_for_SAP.svg;points=[[0.5,0.009,0],[0.5,1,0],[0,0.499,0],[1,0.499,0],[0.842,0.133,0],[0.842,0.865,0],[0.163,0.87,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1622"
+  },
+  {
+   "id": "azure2Other-25-central-service-instance-for-sap",
+   "title": "Central Service Instance for SAP",
+   "tags": "azure2 central service instance for sap azure other  Central Service Instance for SAP",
+   "kind": "vertex",
+   "width": 68,
+   "height": 35.6,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Central_Service_Instance_for_SAP.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[0.789,0.5,0],[0.987,0.01,0],[0.018,0.995,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1624"
+  },
+  {
+   "id": "azure2Other-26-ceres",
+   "title": "Ceres",
+   "tags": "azure2 ceres azure other  Ceres",
+   "kind": "vertex",
+   "width": 59.199999999999996,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Ceres.svg;points=[[0.635,0,0],[0.444,1,0],[0.057,0.5,0],[0.931,0.5,0],[0.916,0.113,0],[0.882,0.987,0],[0.012,0.992,0],[0.161,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1626"
+  },
+  {
+   "id": "azure2Other-27-chaos-studio",
+   "title": "Chaos Studio",
+   "tags": "azure2 chaos studio azure other  Chaos Studio",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Chaos_Studio.svg;points=[[0.482,0,0],[0.516,1,0],[0,0.481,0],[1,0.519,0],[0.765,0.013,0],[0.932,0.925,0],[0.013,0.765,0],[0.09,0.055,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1628"
+  },
+  {
+   "id": "azure2Other-28-cloud-services-extended-support",
+   "title": "Cloud Services (extended support)",
+   "tags": "azure2 cloud services extended support azure other  Cloud Services (extended support)",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.99999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Cloud_Services_(extended_support).svg;points=[[0.459,0,0],[0.784,1,0],[0,0.481,0],[1,0.746,0],[0.622,0.062,0],[0.925,0.941,0],[0.088,0.698,0],[0.083,0.267,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1630"
+  },
+  {
+   "id": "azure2Other-29-cloud-shell",
+   "title": "Cloud Shell",
+   "tags": "azure2 cloud shell azure other  Cloud Shell",
+   "kind": "vertex",
+   "width": 68,
+   "height": 47.199999999999996,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Cloud_Shell.svg;points=[[0.435,0,0],[0.5,0.996,0],[0,0.606,0],[1,0.818,0],[0.862,0.001,0],[0.95,0.96,0],[0.008,0.996,0],[0.008,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1632"
+  },
+  {
+   "id": "azure2Other-30-communication-services",
+   "title": "Communication Services",
+   "tags": "azure2 communication services azure other  Communication Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 50,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Communication_Services.svg;points=[[0.431,0.007,0],[0.774,0.993,0],[0,0.42,0],[0.955,0.5,0],[0.845,0.018,0],[0.902,0.942,0],[0.018,0.823,0],[0.018,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1634"
+  },
+  {
+   "id": "azure2Other-31-compliance-center",
+   "title": "Compliance Center",
+   "tags": "azure2 compliance center azure other  Compliance Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Compliance_Center.svg;points=[[0.441,0,0],[0.751,1,0],[0,0.443,0],[1,0.75,0],[0.792,0.005,0],[0.945,0.91,0],[0.123,0.75,0],[0.09,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1636"
+  },
+  {
+   "id": "azure2Other-32-compute-fleet",
+   "title": "Compute Fleet",
+   "tags": "azure2 compute fleet azure other  Compute Fleet",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Compute_Fleet.svg;points=[[0.5,0,0],[0.5,0.922,0],[0.071,0.5,0],[1,0.415,0],[0.995,0.203,0],[0.925,0.917,0],[0.075,0.792,0],[0.025,0.273,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1638"
+  },
+  {
+   "id": "azure2Other-33-compute-galleries",
+   "title": "Compute Galleries",
+   "tags": "azure2 compute galleries azure other  Compute Galleries",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Azure_Compute_Galleries.svg;points=[[0.5,0.104,0],[0.5,0.911,0],[0.094,0.5,0],[0.894,0.5,0],[0.877,0.118,0],[0.88,0.895,0],[0.105,0.89,0],[0.115,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1640"
+  },
+  {
+   "id": "azure2Other-34-confidential-ledger",
+   "title": "Confidential_Ledger",
+   "tags": "azure2 confidential ledger azure other  Confidential_Ledger",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Confidential_Ledger.svg;points=[[0.5,0,0],[0.5,0.776,0],[0,0.749,0],[1,0.749,0],[0.712,0.123,0],[1,0.875,0],[0,0.875,0],[0.288,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1642"
+  },
+  {
+   "id": "azure2Other-35-consumption-commitment",
+   "title": "Consumption Commitment",
+   "tags": "azure2 consumption commitment macc azure other  Consumption Commitment",
+   "kind": "vertex",
+   "width": 67.4,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Consumption_Commitment.svg;points=[[0.427,0,0],[0.801,1,0],[0,0.419,0],[0.844,0.5,0],[0.747,0.143,0],[0.99,0.98,0],[0.099,0.695,0],[0.084,0.078,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1644"
+  },
+  {
+   "id": "azure2Other-36-container-app-environments",
+   "title": "Container App Environments",
+   "tags": "azure2 container app environments azure other  Container App Environments",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Container_App_Environments.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.98,0.018,0],[0.985,0.977,0],[0.015,0.977,0],[0.02,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1646"
+  },
+  {
+   "id": "azure2Other-37-connected-cache",
+   "title": "Connected Cache",
+   "tags": "azure2 connected cache azure other  Connected Cache",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Connected_Cache.svg;points=[[0.5,0.061,0],[0.5,0.964,0],[0,0.395,0],[1,0.5,0],[0.995,0.933,0],[0.07,0.571,0],[0.07,0.219,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1648"
+  },
+  {
+   "id": "azure2Other-38-connected-vehicle-platform",
+   "title": "Connected Vehicle Platform",
+   "tags": "azure2 connected vehicle platform azure other  Connected Vehicle Platform",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Connected_Vehicle_Platform.svg;points=[[0.393,0.003,0],[0.5,0.935,0],[0,0.469,0],[0.766,0.5,0],[0.535,0.066,0],[0.98,0.921,0],[0.18,0.921,0],[0.253,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1650"
+  },
+  {
+   "id": "azure2Other-39-cost-export",
+   "title": "Cost Export",
+   "tags": "azure2 cost export azure other  Cost Export",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Cost_Export.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.637,0.004,0],[0.637,0.996,0],[0.005,0.996,0],[0.005,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1652"
+  },
+  {
+   "id": "azure2Other-40-custom-ip-prefix",
+   "title": "Custom IP Prefix",
+   "tags": "azure2 custom ip internet protocol prefix azure other  Custom IP Prefix",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Custom_IP_Prefix.svg;points=[[0.39,0,0],[0.5,0.889,0],[0,0.5,0],[0.854,0.5,0],[0.77,0.005,0],[0.947,0.915,0],[0.005,0.617,0],[0.008,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1654"
+  },
+  {
+   "id": "azure2Other-41-dashboard-hub",
+   "title": "Dashboard Hub",
+   "tags": "azure2 dashboard hub azure other  Dashboard Hub",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Dashboard_Hub.svg;points=[[0.598,0,0],[0.404,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.004,0],[0.8,0.993,0],[0.008,0.993,0],[0.205,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1656"
+  },
+  {
+   "id": "azure2Other-42-data-collection-rules",
+   "title": "Data Collection Rules",
+   "tags": "azure2 data collection rules azure other  Data Collection Rules",
+   "kind": "vertex",
+   "width": 66.60000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Data_Collection_Rules.svg;points=[[0.583,0,0],[0.583,1,0],[0.01,0.5,0],[1,0.501,0],[0.995,0.013,0],[0.995,0.987,0],[0.171,0.987,0],[0.003,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1658"
+  },
+  {
+   "id": "azure2Other-43-data-sharing",
+   "title": "Data Sharing",
+   "tags": "azure2 data sharing azure other  Data Sharing",
+   "kind": "vertex",
+   "width": 68,
+   "height": 47.599999999999994,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Data_Sharing.svg;points=[[0.41,0,0],[0.5,0.944,0],[0,0.471,0],[1,0.764,0],[0.807,0.004,0],[0.84,0.996,0],[0.01,0.935,0],[0.013,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1660"
+  },
+  {
+   "id": "azure2Other-44-data-transfer",
+   "title": "Data Transfer",
+   "tags": "azure2 data transfer azure other  Data Transfer",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.599999999999994,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Data_Transfer.svg;points=[[0.455,0,0],[0.259,1,0],[0,0.553,0],[1,0.56,0],[0.795,0.216,0],[0.952,0.69,0],[0.118,0.914,0],[0.16,0.21,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1662"
+  },
+  {
+   "id": "azure2Other-45-database-instance-for-sap",
+   "title": "Database Instance for SAP",
+   "tags": "azure2 database instance for sap azure other  Database Instance for SAP",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Database_Instance_for_SAP.svg;points=[[0.5,0.018,0],[0.477,1,0],[0,0.458,0],[1,0.633,0],[0.63,0.073,0],[0.667,0.994,0],[0.023,0.836,0],[0.028,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1664"
+  },
+  {
+   "id": "azure2Other-46-dedicated-hsm",
+   "title": "Dedicated HSM",
+   "tags": "azure2 dedicated hsm azure other  Dedicated HSM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Dedicated_HSM.svg;points=[[0.49,0,0],[0.5,1,0],[0.003,0.795,0],[0.998,0.795,0],[0.625,0.052,0],[0.985,0.994,0],[0.015,0.994,0],[0.355,0.052,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1666"
+  },
+  {
+   "id": "azure2Other-47-defender-cm-local-manager",
+   "title": "Defender CM Local Manager",
+   "tags": "azure2 defender cm local manager azure other  Defender CM Local Manager",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_CM_Local_Manager.svg;points=[[0.492,0,0],[0.51,1,0],[0,0.509,0],[1,0.615,0],[0.99,0.218,0],[1,0.902,0],[0.163,0.87,0],[0.175,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1668"
+  },
+  {
+   "id": "azure2Other-48-defender-dcs-controller",
+   "title": "Defender DCS Controller",
+   "tags": "azure2 defender dcs controller azure other  Defender DCS Controller",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.4,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_DCS_Controller.svg;points=[[0.511,0,0],[0.505,1,0],[0.752,0.221,0],[0.987,0.902,0],[0.013,0.902,0],[0.273,0.221,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1670"
+  },
+  {
+   "id": "azure2Other-49-defender-distributer-control-system",
+   "title": "Defender Distributer Control System",
+   "tags": "azure2 defender distributer control system azure other  Defender Distributer Control System",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Distributer_Control_System.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.763,0.237,0],[0.763,0.763,0],[0.237,0.763,0],[0.237,0.237,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1672"
+  },
+  {
+   "id": "azure2Other-50-defender-engineering-station",
+   "title": "Defender Engineering Station",
+   "tags": "azure2 defender engineering station azure other  Defender Engineering Station",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.839999999999996,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Engineering_Station.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.006,0],[0.75,1,0],[0.25,1,0],[0.01,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1674"
+  },
+  {
+   "id": "azure2Other-51-defender-external-management",
+   "title": "Defender External Management",
+   "tags": "azure2 defender external management azure other  Defender External Management",
+   "kind": "vertex",
+   "width": 66.16,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_External_Management.svg;points=[[0.766,0,0],[0.332,1,0],[0,0.618,0],[0.924,0.5,0],[1,0.01,0],[0.923,0.605,0],[0.165,1,0],[0.003,0.41,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1676"
+  },
+  {
+   "id": "azure2Other-52-defender-freezer-monitor",
+   "title": "Defender Freezer Monitor",
+   "tags": "azure2 defender freezer monitor azure other  Defender Freezer Monitor",
+   "kind": "vertex",
+   "width": 47.599999999999994,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Freezer_Monitor.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.971,0.043,0],[0.971,0.957,0],[0.026,0.955,0],[0.026,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1678"
+  },
+  {
+   "id": "azure2Other-53-defender-historian",
+   "title": "Defender Historian",
+   "tags": "azure2 defender historian azure other  Defender Historian",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.08,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Historian.svg;points=[[0.434,0,0],[0.5,0.949,0],[0,0.472,0],[0.89,0.5,0],[0.852,0.074,0],[0.895,0.946,0],[0.02,0.878,0],[0.013,0.076,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1680"
+  },
+  {
+   "id": "azure2Other-54-defender-hmi",
+   "title": "Defender HMI",
+   "tags": "azure2 defender hmi azure other  Defender HMI",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52.88,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_HMI.svg;points=[[0.496,0,0],[0.5,1,0],[0,0.477,0],[1,0.506,0],[0.907,0.029,0],[0.902,0.977,0],[0.098,0.977,0],[0.09,0.026,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1682"
+  },
+  {
+   "id": "azure2Other-55-defender-industrial-packaging-system",
+   "title": "Defender Industrial Packaging System",
+   "tags": "azure2 defender industrial packaging system azure other  Defender Industrial Packaging System",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Industrial_Packaging_System.svg;points=[[0.463,0,0],[0.5,1,0],[0,0.836,0],[1,0.838,0],[0.777,0,0],[0.955,0.96,0],[0.043,0.957,0],[0.148,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1684"
+  },
+  {
+   "id": "azure2Other-56-defender-industrial-printer",
+   "title": "Defender Industrial Printer",
+   "tags": "azure2 defender industrial printer azure other  Defender Industrial Printer",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Industrial_Printer.svg;points=[[0.499,0,0],[0.491,1,0],[0,0.497,0],[1,0.499,0],[0.975,0.068,0],[1,0.882,0],[0,0.882,0],[0.023,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1686"
+  },
+  {
+   "id": "azure2Other-57-defender-industrial-scale-system",
+   "title": "Defender Industrial Scale System",
+   "tags": "azure2 defender industrial scale system azure other  Defender Industrial Scale System",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Industrial_Scale_System.svg;points=[[0.5,0.03,0],[0.5,0.922,0],[0.214,0.5,0],[1,0.845,0],[0.605,0.09,0],[0.97,0.975,0],[0.12,0.98,0],[0.025,0.09,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1688"
+  },
+  {
+   "id": "azure2Other-58-defender-industrial-robot",
+   "title": "Defender Industrial Robot",
+   "tags": "azure2 defender industrial robot azure other  Defender Industrial Robot",
+   "kind": "vertex",
+   "width": 51.080000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Industrial_Robot.svg;points=[[0.55,0,0],[0.577,1,0],[0.032,0.5,0],[0.976,0.255,0],[0.993,0.99,0],[0.157,0.987,0],[0.027,0.355,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1690"
+  },
+  {
+   "id": "azure2Other-59-defender-marquee",
+   "title": "Defender Marquee",
+   "tags": "azure2 defender marquee azure other  Defender Marquee",
+   "kind": "vertex",
+   "width": 68,
+   "height": 40.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Marquee.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0.001,0],[1,0.999,0],[0,0.999,0],[0,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1692"
+  },
+  {
+   "id": "azure2Other-60-defender-meter",
+   "title": "Defender Meter",
+   "tags": "azure2 defender meter azure other  Defender Meter",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Meter.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.962,0.025,0],[0.975,0.962,0],[0.025,0.962,0],[0.038,0.025,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1694"
+  },
+  {
+   "id": "azure2Other-61-defender-plc",
+   "title": "Defender PLC",
+   "tags": "azure2 defender plc programmable logic controller azure other  Defender PLC",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_PLC.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.99,0.985,0],[0.01,0.985,0],[0.013,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1696"
+  },
+  {
+   "id": "azure2Other-62-defender-pneumatic-device",
+   "title": "Defender Pneumatic Device",
+   "tags": "azure2 defender pneumatic device azure other  Defender Pneumatic Device",
+   "kind": "vertex",
+   "width": 68,
+   "height": 55.800000000000004,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Pneumatic_Device.svg;points=[[0.5,0.042,0],[0.5,0.947,0],[0,0.828,0],[1,0.841,0],[0.965,0.978,0],[0.035,0.978,0],[0.198,0.074,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1698"
+  },
+  {
+   "id": "azure2Other-63-defender-programable-board",
+   "title": "Defender Programable Board",
+   "tags": "azure2 defender programable board azure other  Defender Programable Board",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Programable_Board.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.685,0.005,0],[0.685,0.995,0],[0.315,0.995,0],[0.315,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1700"
+  },
+  {
+   "id": "azure2Other-64-defender-relay",
+   "title": "Defender Relay",
+   "tags": "azure2 defender relay azure other  Defender Relay",
+   "kind": "vertex",
+   "width": 68,
+   "height": 27.200000000000003,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Relay.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.503,0],[1,0.5,0],[0.867,0.126,0],[0.867,0.874,0],[0.165,0.874,0],[0.165,0.126,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1702"
+  },
+  {
+   "id": "azure2Other-65-defender-robot-controller",
+   "title": "Defender Robot Controller",
+   "tags": "azure2 defender robot controller azure other  Defender Robot Controller",
+   "kind": "vertex",
+   "width": 66.16,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Robot_Controller.svg;points=[[0.5,0.03,0],[0.5,0.975,0],[0,0.516,0],[0.928,0.5,0],[0.591,0.058,0],[0.92,0.89,0],[0.139,0.962,0],[0.113,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1704"
+  },
+  {
+   "id": "azure2Other-66-defender-rtu",
+   "title": "Defender RTU",
+   "tags": "azure2 defender rtu azure other  Defender RTU",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.440000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_RTU.svg;points=[[0.562,0,0],[0.438,1,0],[0,0.607,0],[1,0.393,0],[0.97,0.014,0],[0.845,0.986,0],[0.02,0.977,0],[0.155,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1706"
+  },
+  {
+   "id": "azure2Other-67-defender-sensor",
+   "title": "Defender Sensor",
+   "tags": "azure2 defender sensor azure other  Defender Sensor",
+   "kind": "vertex",
+   "width": 68,
+   "height": 50.28,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Sensor.svg;points=[[0.419,0,0],[0.581,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.982,0.281,0],[0.987,0.787,0],[0.015,0.716,0],[0.008,0.217,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1708"
+  },
+  {
+   "id": "azure2Other-68-defender-slot",
+   "title": "Defender Slot",
+   "tags": "azure2 defender slot azure other  Defender Slot",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Slot.svg;points=[[0.514,0,0],[0.514,1,0],[0,0.5,0],[1,0.481,0],[0.99,0.003,0],[0.997,0.99,0],[0.013,0.982,0],[0.018,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1710"
+  },
+  {
+   "id": "azure2Other-69-defender-web-guiding-system",
+   "title": "Defender Web Guiding System",
+   "tags": "azure2 defender web guiding system azure other  Defender Web Guiding System",
+   "kind": "vertex",
+   "width": 68,
+   "height": 23.76,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Defender_Web_Guiding_System.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.593,0],[1,0.596,0],[0.72,0.022,0],[0.95,0.935,0],[0.058,0.949,0],[0.28,0.022,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1712"
+  },
+  {
+   "id": "azure2Other-70-deployment-environments",
+   "title": "Deployment Environments",
+   "tags": "azure2 deployment environments azure other  Deployment Environments",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.28,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Deployment_Environments.svg;points=[[0.512,0,0],[0.5,1,0],[0.036,0.5,0],[0.969,0.5,0],[0.697,0.068,0],[0.985,0.997,0],[0.015,0.997,0],[0.11,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1714"
+  },
+  {
+   "id": "azure2Other-71-detonation",
+   "title": "Detonation",
+   "tags": "azure2 detonation azure other  Detonation",
+   "kind": "vertex",
+   "width": 62,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Detonation.svg;points=[[0.601,0.003,0],[0.5,0.766,0],[0.216,0.5,0],[1,0.39,0],[0.897,0.128,0],[0.897,0.652,0],[0.011,0.967,0],[0.307,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1716"
+  },
+  {
+   "id": "azure2Other-72-device-update-iot-hub",
+   "title": "Device Update IoT Hub",
+   "tags": "azure2 device updateiot hub internet of things azure other  Device Update IoT Hub",
+   "kind": "vertex",
+   "width": 60,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Device_Update_IoT_Hub.svg;points=[[0.5,0.044,0],[0.5,0.954,0],[0.003,0.5,0],[0.997,0.502,0],[0.713,0.01,0],[0.971,0.645,0],[0.281,0.992,0],[0.029,0.358,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1718"
+  },
+  {
+   "id": "azure2Other-73-dev-tunnels",
+   "title": "Dev Tunnels",
+   "tags": "azure2 dev tunnels azure other  Dev Tunnels",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Dev_Tunnels.svg;points=[[0.5,0,0],[0.5,1,0],[0.061,0.5,0],[0.939,0.5,0],[0.812,0.128,0],[1,1,0],[0,1,0],[0.213,0.105,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1720"
+  },
+  {
+   "id": "azure2Other-74-disconnected-operations",
+   "title": "Disconnected Operations",
+   "tags": "azure2 disconnected operations azure other  Disconnected Operations",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Disconnected_Operations.svg;points=[[0.5,0.054,0],[0.5,0.848,0],[0,0.528,0],[1,0.558,0],[0.957,0,0],[0.907,0.776,0],[0.043,0.997,0],[0.255,0.129,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1722"
+  },
+  {
+   "id": "azure2Other-75-disk-pool",
+   "title": "Disk Pool",
+   "tags": "azure2 disk pool azure other  Disk Pool",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Disk_Pool.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[1,0.114,0],[1,0.886,0],[0,0.886,0],[0,0.114,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1724"
+  },
+  {
+   "id": "azure2Other-76-edge-hardware-center",
+   "title": "Edge Hardware Center",
+   "tags": "azure2 edge hardware center azure other  Edge Hardware Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Edge_Hardware_Center.svg;points=[[0.5,0,0],[0.751,1,0],[0,0.414,0],[0.887,0.5,0],[0.665,0.003,0],[1,0.857,0],[0.005,0.82,0],[0.013,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1726"
+  },
+  {
+   "id": "azure2Other-77-edge-management",
+   "title": "Edge Management",
+   "tags": "azure2 edge management azure other  Edge Management",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Edge_Management.svg;points=[[0.514,0,0],[0.499,1,0],[0,0.441,0],[1,0.479,0],[0.719,0.075,0],[0.878,0.987,0],[0.122,0.992,0],[0.062,0.278,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1728"
+  },
+  {
+   "id": "azure2Other-78-elastic-san",
+   "title": "Elastic SAN",
+   "tags": "azure2 elastic san azure other  Elastic SAN",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Elastic_SAN.svg;points=[[0.5,0.013,0],[0.576,1,0],[0,0.412,0],[1,0.806,0],[0.625,0.058,0],[0.947,0.937,0],[0.008,0.772,0],[0.008,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1730"
+  },
+  {
+   "id": "azure2Other-79-entra-connect-health",
+   "title": "Entra Connect Health",
+   "tags": "azure2 entra connect health azure other  Entra Connect Health",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.440000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/Active_Directory_Connect_Health2.svg;points=[[0.5,0,0],[0.5,0.997,0],[0,0.615,0],[0.953,0.5,0],[0.877,0.887,0],[0.033,0.688,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1732"
+  },
+  {
+   "id": "azure2Other-80-entra-connect-sync",
+   "title": "Entra Connect Sync",
+   "tags": "azure2 entra connect sync azure other  Entra Connect Sync",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Entra_Connect_Sync.svg;points=[[0.515,0,0],[0.444,1,0],[0,0.443,0],[1,0.5,0],[0.72,0.078,0],[0.945,0.91,0],[0.1,0.995,0],[0.093,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1734"
+  },
+  {
+   "id": "azure2Other-81-entra-identity",
+   "title": "Entra Identity",
+   "tags": "azure2 entra identity azure other  Entra Identity",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.440000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Entra_Identity.svg;points=[[0.5,0,0],[0.5,1,0],[0.064,0.5,0],[0.936,0.5,0],[0.98,0.679,0],[0.02,0.679,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1736"
+  },
+  {
+   "id": "azure2Other-82-exchange-on-premises-access",
+   "title": "Exchange On Premises Access",
+   "tags": "azure2 exchange on premises access azure other  Exchange On Premises Access",
+   "kind": "vertex",
+   "width": 40,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Exchange_On_Premises_Access.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.991,0.013,0],[0.991,0.987,0],[0.009,0.987,0],[0.009,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1738"
+  },
+  {
+   "id": "azure2Other-83-express-route-traffic-collector",
+   "title": "Express Route Traffic Collector",
+   "tags": "azure2 express route traffic collector azure other  Express Route Traffic Collector",
+   "kind": "vertex",
+   "width": 58.160000000000004,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Express_Route_Traffic_Collector.svg;points=[[0.5,0,0],[0.5,0.968,0],[0,0.482,0],[0.924,0.5,0],[0.918,0.32,0],[0.953,0.93,0],[0.009,0.957,0],[0.003,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1740"
+  },
+  {
+   "id": "azure2Other-84-expressroute-direct",
+   "title": "ExpressRoute Direct",
+   "tags": "azure2 expressroute express route direct azure other  ExpressRoute Direct",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/ExpressRoute_Direct.svg;points=[[0.341,0,0],[0.5,0.935,0],[0.003,0.598,0],[0.973,0.5,0],[0.885,0.366,0],[0.895,0.909,0],[0.033,0.677,0],[0.198,0.3,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1742"
+  },
+  {
+   "id": "azure2Other-85-fhir-service",
+   "title": "FHIR Service",
+   "tags": "azure2 fhir service azure other  FHIR Service",
+   "kind": "vertex",
+   "width": 68,
+   "height": 59.440000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/FHIR_Service.svg;points=[[0.502,0,0],[0.5,1,0],[0,0.6,0],[1,0.6,0],[0.992,0.212,0],[0.987,0.994,0],[0.013,0.994,0],[0.008,0.212,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1744"
+  },
+  {
+   "id": "azure2Other-86-fiji",
+   "title": "Fiji",
+   "tags": "azure2 fiji azure other  Fiji",
+   "kind": "vertex",
+   "width": 54,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Fiji.svg;points=[[0.498,0,0],[0.503,1,0],[0,0.5,0],[1,0.499,0],[1,0.225,0],[0.996,0.777,0],[0.004,0.78,0],[0,0.225,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1746"
+  },
+  {
+   "id": "azure2Other-87-grafana",
+   "title": "Grafana",
+   "tags": "azure2 grafana azure other  Grafana",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52.800000000000004,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Grafana.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.982,0.007,0],[0.985,0.99,0],[0.015,0.99,0],[0.018,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1748"
+  },
+  {
+   "id": "azure2Other-88-hdi-aks-cluster",
+   "title": "HDI AKS Cluster",
+   "tags": "azure2 hdi aks cluster azure other  HDI AKS Cluster",
+   "kind": "vertex",
+   "width": 60.440000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/HDI_AKS_Cluster.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.499,0],[1,0.5,0],[0.98,0.238,0],[0.974,0.767,0],[0.023,0.765,0],[0.02,0.238,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1750"
+  },
+  {
+   "id": "azure2Other-89-hpc-workbench",
+   "title": "HPC Workbench",
+   "tags": "azure2 hpc workbench azure other  HPC Workbench",
+   "kind": "vertex",
+   "width": 55.60000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_HPC_Workbench.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.993,0.125,0],[0.859,0.755,0],[0.138,0.752,0],[0.004,0.13,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1752"
+  },
+  {
+   "id": "azure2Other-90-icm-troubleshooting",
+   "title": "IcM Troubleshooting",
+   "tags": "azure2 icm troubleshooting azure other  IcM Troubleshooting",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/IcM_Troubleshooting.svg;points=[[0.443,0,0],[0.501,1,0],[0.135,0.5,0],[0.91,0.749,0],[0.712,0.123,0],[0.842,0.922,0],[0.365,0.99,0],[0.208,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1754"
+  },
+  {
+   "id": "azure2Other-91-image-definition",
+   "title": "Image Definition",
+   "tags": "azure2 image definition azure other  Image Definition",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Image_Definition.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.499,0],[0.87,0.176,0],[0.86,0.832,0],[0.01,0.992,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1756"
+  },
+  {
+   "id": "azure2Other-92-image-version",
+   "title": "Image Version",
+   "tags": "azure2 image version azure other  Image Version",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Image_Version.svg;points=[[0.5,0,0],[0.5,0.882,0],[0,0.44,0],[0.938,0.5,0],[0.807,0.143,0],[0.94,0.922,0],[0.005,0.872,0],[0.013,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1758"
+  },
+  {
+   "id": "azure2Other-93-instance-pools",
+   "title": "Instance Pools",
+   "tags": "azure2 instance pools azure other  Instance Pools",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Instance_Pools.svg;points=[[0.524,0,0],[0.579,1,0],[0,0.617,0],[1,0.803,0],[0.8,0.005,0],[0.93,0.954,0],[0.015,0.992,0],[0.248,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1760"
+  },
+  {
+   "id": "azure2Other-94-internet-analyzer-profiles",
+   "title": "Internet Analyzer Profiles",
+   "tags": "azure2 internet analyzer profiles azure other  Internet Analyzer Profiles",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Internet_Analyzer_Profiles.svg;points=[[0.497,0,0],[0.5,1,0],[0.003,0.456,0],[0.964,0.5,0],[0.692,0.078,0],[0.99,0.997,0],[0.093,0.659,0],[0.08,0.266,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1762"
+  },
+  {
+   "id": "azure2Other-95-intune-trends",
+   "title": "Intune Trends",
+   "tags": "azure2 intune trends azure other  Intune Trends",
+   "kind": "vertex",
+   "width": 56.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Intune_Trends.svg;points=[[0.391,0.168,0],[0.5,1,0],[0.011,0.5,0],[1,0.497,0],[1,0.005,0],[1,0.99,0],[0.003,0.995,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1764"
+  },
+  {
+   "id": "azure2Other-96-kubernetes-fleet-manager",
+   "title": "Kubernetes Fleet Manager",
+   "tags": "azure2 kubernetes fleet manager azure other  Kubernetes Fleet Manager",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Kubernetes_Fleet_Manager.svg;points=[[0.5,0,0],[0.5,1,0],[0.041,0.5,0],[0.956,0.5,0],[0.947,0.138,0],[1,1,0],[0,1,0],[0.048,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1766"
+  },
+  {
+   "id": "azure2Other-97-load-testing",
+   "title": "Load Testing",
+   "tags": "azure2 load testing azure other  Load Testing",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Load_Testing.svg;points=[[0.4,0,0],[0.73,1,0],[0.169,0.5,0],[0.9,0.5,0],[0.582,0.006,0],[0.915,0.927,0],[0.018,0.81,0],[0.218,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1768"
+  },
+  {
+   "id": "azure2Other-98-load-testing",
+   "title": "Load Testing",
+   "tags": "azure2 load testing azure other  Load Testing",
+   "kind": "vertex",
+   "width": 59.199999999999996,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Load_Testing.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.501,0],[1,0.25,0],[1,0.752,0],[0,0.747,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1770"
+  },
+  {
+   "id": "azure2Other-99-local-network-gateways",
+   "title": "Local Network Gateways",
+   "tags": "azure2 local network gateways azure other  Local Network Gateways",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Local_Network_Gateways.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1772"
+  },
+  {
+   "id": "azure2Other-100-log-analytics-query-pack",
+   "title": "Log Analytics Query Pack",
+   "tags": "azure2 log analytics query pack azure other  Log Analytics Query Pack",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Log_Analytics_Query_Pack.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.98,0.023,0],[0.98,0.692,0],[0.013,0.967,0],[0.023,0.305,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1774"
+  },
+  {
+   "id": "azure2Other-101-managed-devops-pools",
+   "title": "Managed DevOps Pools",
+   "tags": "azure2 managed devops pools azure other  Managed DevOps Pools",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Managed_DevOps_Pools.svg;points=[[0.5,0.018,0],[0.5,0.983,0],[0,0.499,0],[1,0.5,0],[0.995,0.123,0],[1,0.872,0],[0,0.872,0],[0,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1776"
+  },
+  {
+   "id": "azure2Other-102-managed-file-shares",
+   "title": "Managed File Shares",
+   "tags": "azure2 managed file shares azure other  Managed File Shares",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Managed_File_Shares.svg;points=[[0.5,0.214,0],[0.5,0.791,0],[0,0.635,0],[0.981,0.5,0],[0.922,0.013,0],[0.987,0.967,0],[0.035,0.712,0],[0.283,0.28,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1778"
+  },
+  {
+   "id": "azure2Other-103-managed-instance-apache-cassandra",
+   "title": "Managed Instance Apache Cassandra",
+   "tags": "azure2 managed instance apache cassandra azure other  Managed Instance Apache Cassandra",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Managed_Instance_Apache_Cassandra.svg;points=[[0.198,0,0],[0.746,1,0],[0.104,0.5,0],[0.897,0.5,0],[0.895,0.298,0],[0.95,0.9,0],[0.025,0.755,0],[0.018,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1780"
+  },
+  {
+   "id": "azure2Other-104-marketplace-management",
+   "title": "Marketplace Management",
+   "tags": "azure2 marketplace management azure other  Marketplace Management",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Marketplace_Management.svg;points=[[0.582,0.005,0],[0.5,0.973,0],[0.014,0.501,0],[0.986,0.501,0],[0.976,0.255,0],[1,0.895,0],[0,0.94,0],[0.024,0.255,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1782"
+  },
+  {
+   "id": "azure2Other-105-medtech-service",
+   "title": "MedTech Service",
+   "tags": "azure2 medtech service azure other  MedTech Service",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/MedTech_Service.svg;points=[[0.494,0,0],[0.5,0.896,0],[0,0.478,0],[1,0.613,0],[0.967,0.351,0],[0.895,1,0],[0.09,0.691,0],[0.085,0.272,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1784"
+  },
+  {
+   "id": "azure2Other-106-microsoft-discovery",
+   "title": "Microsoft Discovery",
+   "tags": "azure2 microsoft discovery science azure other  Microsoft Discovery",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.96,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Microsoft_Discovery.svg;points=[[0.499,0,0],[0.5,1,0],[0.113,0.5,0],[0.887,0.5,0],[0.96,0.165,0],[0.935,0.806,0],[0.04,0.84,0],[0.055,0.201,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1786"
+  },
+  {
+   "id": "azure2Other-107-mission-landing-zone",
+   "title": "Mission Landing Zone",
+   "tags": "azure2 mission landing zone azure other  Mission Landing Zone",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Mission_Landing_Zone.svg;points=[[0.514,0,0],[0.505,1,0],[0.001,0.5,0],[1,0.5,0],[0.717,0.08,0],[0.982,0.901,0],[0.025,0.909,0],[0.093,0.266,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1788"
+  },
+  {
+   "id": "azure2Other-108-modular-data-center",
+   "title": "Modular Data Center",
+   "tags": "azure2 modular data center azure other  Modular Data Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Modular_Data_Center.svg;points=[[0.5,0.001,0],[0.52,0.998,0],[0.1,0.5,0],[1,0.468,0],[0.99,0.01,0],[0.997,0.915,0],[0.17,0.985,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1790"
+  },
+  {
+   "id": "azure2Other-109-monitor-dashboard",
+   "title": "Monitor Dashboard",
+   "tags": "azure2 monitor dashboard azure other  Monitor Dashboard",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Monitor_Dashboard.svg;points=[[0.453,0,0],[0.5,1,0],[0,0.407,0],[0.906,0.5,0],[0.885,0.006,0],[0.975,0.978,0],[0.018,0.809,0],[0.013,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1792"
+  },
+  {
+   "id": "azure2Other-110-monitor-health-models",
+   "title": "Monitor Health Models",
+   "tags": "azure2 monitor health models azure other  Monitor Health Models",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Monitor_Health_Models.svg;points=[[0.5,0.064,0],[0.5,0.944,0],[0.075,0.5,0],[0.824,0.5,0],[0.825,0.06,0],[0.987,0.97,0],[0.09,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1794"
+  },
+  {
+   "id": "azure2Other-111-monitor-pipeline",
+   "title": "Monitor Pipeline",
+   "tags": "azure2 monitor pipeline azure other  Monitor Pipeline",
+   "kind": "vertex",
+   "width": 68,
+   "height": 49.120000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Monitor_Pipeline.svg;points=[[0.422,0.01,0],[0.5,0.914,0],[0,0.517,0],[1,0.431,0],[0.972,0.333,0],[0.76,0.986,0],[0.085,0.754,0],[0.275,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1796"
+  },
+  {
+   "id": "azure2Other-112-ms-dev-box",
+   "title": "MS Dev Box",
+   "tags": "azure2 ms dev box azure other  MS Dev Box",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/MS_Dev_Box.svg;points=[[0.404,0,0],[0.496,0.994,0],[0.07,0.5,0],[0.993,0.57,0],[0.985,0.335,0],[0.815,0.992,0],[0.06,0.208,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1798"
+  },
+  {
+   "id": "azure2Other-113-network-function-manager",
+   "title": "Network Function Manager",
+   "tags": "azure2 network function manager azure other  Network Function Manager",
+   "kind": "vertex",
+   "width": 60,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Network_Function_Manager.svg;points=[[0.497,0,0],[0.499,1,0],[0,0.541,0],[1,0.542,0],[0.881,0.245,0],[0.912,0.927,0],[0.06,0.922,0],[0.119,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1800"
+  },
+  {
+   "id": "azure2Other-114-network-function-manager-functions",
+   "title": "Network Function Manager Functions",
+   "tags": "azure2 network function manager azure other  Network Function Manager Functions",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Network_Function_Manager_Functions.svg;points=[[0.5,0.03,0],[0.5,1,0],[0,0.397,0],[0.71,0.5,0],[0.602,0.099,0],[0.995,0.994,0],[0.37,0.997,0],[0.115,0.105,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1802"
+  },
+  {
+   "id": "azure2Other-115-network-manager",
+   "title": "Network Manager",
+   "tags": "azure2 network manager azure other  Network Manager",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Network_Manager.svg;points=[[0.5,0.005,0],[0.5,0.929,0],[0.928,0.5,0],[0.827,0.223,0],[0.93,0.885,0],[0.006,0.218,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1804"
+  },
+  {
+   "id": "azure2Other-116-network-security-perimeters",
+   "title": "Network Security Perimeters",
+   "tags": "azure2 network security perimeters azure other  Network Security Perimeters",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Network_Security_Perimeters.svg;points=[[0.583,0,0],[0.677,1,0],[0,0.419,0],[0.915,0.5,0],[0.765,0.123,0],[1,0.987,0],[0.123,0.765,0],[0.24,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1806"
+  },
+  {
+   "id": "azure2Other-117-open-supply-chain-platform",
+   "title": "Open Supply Chain Platform",
+   "tags": "azure2 open supply chain platform azure other  Open Supply Chain Platform",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Open_Supply_Chain_Platform.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1808"
+  },
+  {
+   "id": "azure2Other-118-orbital",
+   "title": "Orbital",
+   "tags": "azure2 orbital azure other  Orbital",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Orbital.svg;points=[[0.505,0,0],[0.5,0.983,0],[0.015,0.5,0],[1,0.491,0],[0.865,0.153,0],[0.877,0.817,0],[0.065,0.927,0],[0.185,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1810"
+  },
+  {
+   "id": "azure2Other-119-osconfig",
+   "title": "OSConfig",
+   "tags": "azure2 osconfig azure other  OSConfig",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/OSConfig.svg;points=[[0.395,0,0],[0.395,1,0],[0,0.5,0],[1,0.395,0],[0.775,0.006,0],[0.775,0.994,0],[0.015,0.994,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1812"
+  },
+  {
+   "id": "azure2Other-120-peering-service",
+   "title": "Peering Service",
+   "tags": "azure2 peering service azure other  Peering Service",
+   "kind": "vertex",
+   "width": 68,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Peering_Service.svg;points=[[0.393,0,0],[0.613,1,0],[0,0.388,0],[0.98,0.5,0],[0.695,0.135,0],[0.896,0.882,0],[0.323,0.872,0],[0.107,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1814"
+  },
+  {
+   "id": "azure2Other-121-peerings",
+   "title": "Peerings",
+   "tags": "azure2 peerings azure other  Peerings",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.92,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Peerings.svg;points=[[0.5,0.038,0],[0.5,0.918,0],[0.025,0.5,0],[1,0.447,0],[0.78,0.068,0],[0.945,0.598,0],[0.108,0.917,0],[0.1,0.373,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1816"
+  },
+  {
+   "id": "azure2Other-122-private-endpoints",
+   "title": "Private Endpoints",
+   "tags": "azure2 private endpoints azure other  Private Endpoints",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64.68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Private_Endpoints.svg;points=[[0.5,0,0],[0.5,0.785,0],[0,0.684,0],[1,0.684,0],[0.72,0.994,0],[0.28,0.994,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1818"
+  },
+  {
+   "id": "azure2Other-123-private-mobile-network",
+   "title": "Private Mobile Network",
+   "tags": "azure2 private mobile network azure other  Private Mobile Network",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Private_Mobile_Network.svg;points=[[0.514,0,0],[0.44,1,0],[0.02,0.5,0],[0.953,0.5,0],[0.69,0.075,0],[0.91,0.932,0],[0.123,0.939,0],[0.338,0.075,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1820"
+  },
+  {
+   "id": "azure2Other-124-prometheus",
+   "title": "Prometheus",
+   "tags": "azure2 prometheus monitoring metrics azure other  Prometheus",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Prometheus.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.496,0],[1,0.504,0],[0.85,0.14,0],[0.862,0.847,0],[0.128,0.837,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1822"
+  },
+  {
+   "id": "azure2Other-125-quotas",
+   "title": "Quotas",
+   "tags": "azure2 quotas azure other  Quotas",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Quotas.svg;points=[[0.514,0,0],[0.502,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.692,0.079,0],[0.902,0.939,0],[0.113,0.929,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1824"
+  },
+  {
+   "id": "azure2Other-126-reserved-capacity",
+   "title": "Reserved Capacity",
+   "tags": "azure2 reserved capacity azure other  Reserved Capacity",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Reserved_Capacity.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.501,0],[0.997,0.253,0],[0.997,0.747,0],[0.006,0.752,0],[0.003,0.253,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1826"
+  },
+  {
+   "id": "azure2Other-127-reserved-capacity-groups",
+   "title": "Reserved Capacity Groups",
+   "tags": "azure2 reserved capacity groups azure other  Reserved Capacity Groups",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Reserved_Capacity_Groups.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.501,0],[0.997,0.253,0],[0.997,0.747,0],[0.006,0.752,0],[0.003,0.253,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1828"
+  },
+  {
+   "id": "azure2Other-128-resiliency",
+   "title": "Resiliency",
+   "tags": "azure2 resiliency resilience azure other  Resiliency",
+   "kind": "vertex",
+   "width": 58.120000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Resiliency.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.994,0.165,0],[0.859,0.797,0],[0.138,0.795,0],[0.006,0.165,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1830"
+  },
+  {
+   "id": "azure2Other-129-resource-guard",
+   "title": "Resource Guard",
+   "tags": "azure2 resource guard azure other  Resource Guard",
+   "kind": "vertex",
+   "width": 56.64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Resource_Guard.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.994,0.125,0],[0.849,0.765,0],[0.148,0.762,0],[0.006,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1832"
+  },
+  {
+   "id": "azure2Other-130-resource-mover",
+   "title": "Resource Mover",
+   "tags": "azure2 resource mover azure other  Resource Mover",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Resource_Mover.svg;points=[[0.535,0,0],[0.544,1,0],[0,0.568,0],[1,0.444,0],[1,0.22,0],[1,0.667,0],[0.083,0.737,0],[0.07,0.223,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1834"
+  },
+  {
+   "id": "azure2Other-131-rtos",
+   "title": "RTOS",
+   "tags": "azure2 rtos azure other  RTOS",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/RTOS.svg;points=[[0.5,0.062,0],[0.5,0.94,0],[0.06,0.5,0],[0.939,0.5,0],[0.97,0.275,0],[0.895,0.87,0],[0.14,0.877,0],[0.14,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1836"
+  },
+  {
+   "id": "azure2Other-132-savings-plan",
+   "title": "Savings Plan",
+   "tags": "azure2 savings plan azure other  Savings Plan",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Savings_Plan.svg;points=[[0.466,0,0],[0.5,0.932,0],[0,0.458,0],[0.932,0.5,0],[0.802,0.14,0],[0.945,0.91,0],[0.115,0.772,0],[0.11,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1838"
+  },
+  {
+   "id": "azure2Other-133-scvmm-management-servers",
+   "title": "SCVMM Management Servers",
+   "tags": "azure2 scvmm management servers azure other  SCVMM Management Servers",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/SCVMM_Management_Servers.svg;points=[[0.417,0,0],[0.486,1,0],[0.08,0.5,0],[1,0.768,0],[0.752,0.008,0],[0.967,0.887,0],[0.035,0.897,0],[0.09,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1840"
+  },
+  {
+   "id": "azure2Other-134-sonic-dash",
+   "title": "Sonic Dash",
+   "tags": "azure2 sonic dash azure other  Sonic Dash",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Sonic_Dash.svg;points=[[0.508,0.003,0],[0.503,0.998,0],[0.161,0.5,0],[0.871,0.5,0],[0.871,0.21,0],[0.994,0.745,0],[0,0.74,0],[0.132,0.2,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1842"
+  },
+  {
+   "id": "azure2Other-135-sphere",
+   "title": "Sphere",
+   "tags": "azure2 sphere azure other  Sphere",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Sphere.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.519,0],[0.997,0.519,0],[0.868,0.193,0],[0.953,0.867,0],[0.047,0.867,0],[0.132,0.193,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1844"
+  },
+  {
+   "id": "azure2Other-136-ssh-keys",
+   "title": "SSH Keys",
+   "tags": "azure2 ssh keys azure other  SSH Keys",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/SSH_Keys.svg;points=[[0.514,0,0],[0.5,1,0],[0,0.507,0],[1,0.552,0],[0.707,0.077,0],[0.917,0.745,0],[0.09,0.728,0],[0.085,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1846"
+  },
+  {
+   "id": "azure2Other-137-storage-actions",
+   "title": "Storage Actions",
+   "tags": "azure2 storage actions azure other  Storage Actions",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Storage_Actions.svg;points=[[0.405,0,0],[0.62,1,0],[0,0.434,0],[1,0.618,0],[0.8,0.07,0],[0.912,0.825,0],[0.01,0.797,0],[0.013,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1848"
+  },
+  {
+   "id": "azure2Other-138-storage-mover",
+   "title": "Storage Mover",
+   "tags": "azure2 storage mover azure other  Storage Mover",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.88,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Storage_Mover.svg;points=[[0.5,0.121,0],[0.5,0.771,0],[0.061,0.5,0],[0.949,0.5,0],[0.69,0.176,0],[0.967,0.961,0],[0.03,0.984,0],[0.06,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1850"
+  },
+  {
+   "id": "azure2Other-139-storage-tasks",
+   "title": "Storage Tasks",
+   "tags": "azure2 storage tasks azure other  Storage Tasks",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Storage_Tasks.svg;points=[[0.44,0,0],[0.5,0.95,0],[0,0.472,0],[1,0.75,0],[0.867,0.075,0],[0.942,0.912,0],[0.01,0.87,0],[0.01,0.078,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1852"
+  },
+  {
+   "id": "azure2Other-140-support-center-blue",
+   "title": "Support Center Blue",
+   "tags": "azure2 support center blue azure other  Support Center Blue",
+   "kind": "vertex",
+   "width": 60,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Support_Center_Blue.svg;points=[[0.499,0.003,0],[0.5,0.772,0],[0,0.526,0],[1,0.527,0],[0.957,0.233,0],[0.997,0.762,0],[0.006,0.765,0],[0.04,0.233,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1854"
+  },
+  {
+   "id": "azure2Other-141-support-sustainability",
+   "title": "Support Sustainability",
+   "tags": "azure2 sustainability azure other  Support Sustainability",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Sustainability.svg;points=[[0.5,0,0],[0.512,1,0],[0,0.474,0],[0.884,0.5,0],[0.712,0.088,0],[0.872,0.857,0],[0.055,0.625,0],[0.298,0.075,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1856"
+  },
+  {
+   "id": "azure2Other-142-targets-management",
+   "title": "Targets Management",
+   "tags": "azure2 targets management azure other  Targets Management",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Targets_Management.svg;points=[[0.501,0,0],[0.501,1,0],[0.013,0.501,0],[0.988,0.501,0],[0.718,0.282,0],[0.718,0.718,0],[0.282,0.718,0],[0.284,0.284,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1858"
+  },
+  {
+   "id": "azure2Other-143-template-specs",
+   "title": "Template Specs",
+   "tags": "azure2 template specs azure other  Template Specs",
+   "kind": "vertex",
+   "width": 56.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Template_Specs.svg;points=[[0.5,0.079,0],[0.5,0.921,0],[0.089,0.5,0],[0.911,0.5,0],[0.988,0.028,0],[0.988,0.972,0],[0.012,0.972,0],[0.012,0.028,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1860"
+  },
+  {
+   "id": "azure2Other-144-test-base",
+   "title": "Test Base",
+   "tags": "azure2 test base azure other  Test Base",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Test_Base.svg;points=[[0.514,0,0],[0.506,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.682,0.068,0],[0.902,0.939,0],[0.12,0.936,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1862"
+  },
+  {
+   "id": "azure2Other-145-universal-print",
+   "title": "Universal Print",
+   "tags": "azure2 universal print azure other  Universal Print",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Universal_Print.svg;points=[[0.512,0.003,0],[0.5,0.997,0],[0,0.525,0],[1,0.5,0],[0.877,0.193,0],[1,0.898,0],[0.095,0.758,0],[0.098,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1864"
+  },
+  {
+   "id": "azure2Other-146-update-center",
+   "title": "Update Center",
+   "tags": "azure2 update center azure other  Update Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Update_Center.svg;points=[[0.497,0.003,0],[0.502,0.998,0],[0,0.505,0],[1,0.5,0],[0.825,0.12,0],[0.847,0.865,0],[0.153,0.865,0],[0.175,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1866"
+  },
+  {
+   "id": "azure2Other-147-video-analyzers",
+   "title": "Video Analyzers",
+   "tags": "azure2 update center azure other  Video Analyzers",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48.44,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Video_Analyzers.svg;points=[[0.512,0,0],[0.524,1,0],[0.02,0.5,0],[0.953,0.5,0],[0.692,0.078,0],[0.907,0.943,0],[0.108,0.926,0],[0.335,0.078,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1868"
+  },
+  {
+   "id": "azure2Other-148-video-indexer",
+   "title": "Video Indexer",
+   "tags": "azure2 video indexer azure other  Video Indexer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Azure_Video_Indexer.svg;points=[[0.5,0.229,0],[0.5,0.771,0],[0,0.5,0],[1,0.5,0],[0.003,0.987,0],[0.003,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1870"
+  },
+  {
+   "id": "azure2Other-149-virtual-enclaves",
+   "title": "Virtual Enclaves",
+   "tags": "azure2 virtual enclaves azure other  Virtual Enclaves",
+   "kind": "vertex",
+   "width": 60.440000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Virtual_Enclaves.svg;points=[[0.5,0.007,0],[0.5,0.993,0],[0,0.501,0],[1,0.501,0],[0.856,0.23,0],[0.839,0.787,0],[0.161,0.787,0],[0.144,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1872"
+  },
+  {
+   "id": "azure2Other-150-virtual-instance-for-sap",
+   "title": "Virtual Instance for SAP",
+   "tags": "azure2 virtual instance for sap azure other  Virtual Instance for SAP",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.839999999999996,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Virtual_Instance_for_SAP.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.987,0.006,0],[0.75,1,0],[0.25,1,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1874"
+  },
+  {
+   "id": "azure2Other-151-vm-application-definition",
+   "title": "VM Application Definition",
+   "tags": "azure2 vm virtual machine application definition azure other  VM Application Definition",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/VM_Application_Definition.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.987,0.006,0],[0.75,1,0],[0.25,1,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1876"
+  },
+  {
+   "id": "azure2Other-152-vm-application-version",
+   "title": "VM Application Version",
+   "tags": "azure2 vm virtual machine application version azure other  VM Application Version",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/VM_Application_Version.svg;points=[[0.485,0,0],[0.5,0.892,0],[0,0.5,0],[0.97,0.5,0],[0.957,0.005,0],[0.942,0.917,0],[0.248,0.892,0],[0.01,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1878"
+  },
+  {
+   "id": "azure2Other-153-vmware-solution",
+   "title": "VMWare Solution",
+   "tags": "azure2 vm virtual machine vmware solution azure other  VMWare Solution",
+   "kind": "vertex",
+   "width": 68,
+   "height": 54.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_vmware_solution/AVS.svg;points=[[0.511,0,0],[0.502,1,0],[0,0.559,0],[1,0.611,0],[0.695,0.072,0],[0.835,0.993,0],[0.175,0.996,0],[0.32,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1880"
+  },
+  {
+   "id": "azure2Other-154-wac",
+   "title": "WAC",
+   "tags": "azure2 wac windows admin center azure other  WAC",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/WAC.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.432,0],[1,0.83,0],[0.611,0.01,0],[1,1,0],[0.006,0.852,0],[0.006,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1882"
+  },
+  {
+   "id": "azure2Other-155-wac-installer",
+   "title": "WAC Installer",
+   "tags": "azure2 wac windows admin center installer azure other  WAC Installer",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/WAC_Installer.svg;points=[[0.5,0,0],[0.575,1,0],[0.09,0.5,0],[1,0.826,0],[0.64,0.005,0],[1,1,0],[0.048,0.947,0],[0.093,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1884"
+  },
+  {
+   "id": "azure2Other-156-web-app-database",
+   "title": "Web App Database",
+   "tags": "azure2 web app database azure other  Web App Database",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Web_App_Database.svg;points=[[0.5,0.115,0],[0.5,0.9,0],[0.115,0.5,0],[1,0.5,0],[0.77,0.205,0],[0.977,0.957,0],[0.205,0.77,0],[0.07,0.09,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1886"
+  },
+  {
+   "id": "azure2Other-157-web-jobs",
+   "title": "Web Jobs",
+   "tags": "azure2 web jobs azure other  Web Jobs",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Web_Jobs.svg;points=[[0.425,0,0],[0.218,1,0],[0.003,0.411,0],[0.997,0.586,0],[0.744,0.13,0],[0.964,0.775,0],[0.057,0.93,0],[0.098,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1888"
+  },
+  {
+   "id": "azure2Other-158-windows-notification-services",
+   "title": "Windows Notification Services",
+   "tags": "azure2 windows notification services azure other  Windows Notification Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Windows_Notification_Services.svg;points=[[0.5,0,0],[0.431,1,0],[0,0.499,0],[0.965,0.5,0],[0.99,0.01,0],[0.645,1,0],[0.218,1,0],[0.005,0.22,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1890"
+  },
+  {
+   "id": "azure2Other-159-windows-virtual-desktop",
+   "title": "Windows Virtual Desktop",
+   "tags": "azure2 windows virtual desktop azure other  Windows Virtual Desktop",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Windows_Virtual_Desktop.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1892"
+  },
+  {
+   "id": "azure2Other-160-worker-container-app",
+   "title": "Worker Container App",
+   "tags": "azure2 worker container app azure other  Worker Container App",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Worker_Container_App.svg;points=[[0.5,0,0],[0.5,0.97,0],[0,0.482,0],[1,0.478,0],[0.855,0.024,0],[0.825,0.835,0],[0.19,0.974,0],[0.19,0.116,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1894"
+  },
+  {
+   "id": "azure2Other-161-workspace-gateway",
+   "title": "Workspace Gateway",
+   "tags": "azure2 workspace gateway azure other  Workspace Gateway",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Workspace_Gateway.svg;points=[[0.469,0,0],[0.549,1,0],[0.007,0.479,0],[0.993,0.47,0],[0.635,0.067,0],[0.837,0.9,0],[0.095,0.693,0],[0.095,0.265,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1896"
+  }
+ ]
+}

@@ -1,0 +1,581 @@
+{
+ "id": "lean_mapping",
+ "title": "Value Stream Mapping",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:8",
+ "entries": [
+  {
+   "id": "lean_mapping-0-boat-shipment",
+   "title": "Boat Shipment",
+   "tags": "lean mapping boat shipment value stream lean mapping  Boat Shipment",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.boat_shipment;align=center;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.boat_shipment"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:23"
+  },
+  {
+   "id": "lean_mapping-1-data-box",
+   "title": "Data Box",
+   "tags": "value stream lean mapping data box Data Box",
+   "kind": "cells",
+   "width": 60,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;html=1;shape=mxgraph.lean_mapping.data_box;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"C/T=\" style=\"text;fontSize=8;spacingLeft=2;verticalAlign=middle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"C/O=\" style=\"text;fontSize=8;spacingLeft=2;verticalAlign=middle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Batch=\" style=\"text;fontSize=8;spacingLeft=2;verticalAlign=middle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Avail=\" style=\"text;fontSize=8;spacingLeft=2;verticalAlign=middle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"text;fontSize=8;spacingLeft=2;verticalAlign=middle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"80\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.data_box"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:24"
+  },
+  {
+   "id": "lean_mapping-2-customer-supplier",
+   "title": "Customer/Supplier",
+   "tags": "lean mapping outside sources value stream lean mapping  Customer/Supplier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.outside_sources;whiteSpace=wrap;align=center;",
+   "value": "<table cellpadding=\"5\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td height=\"50%\"></td></tr><tr><td align=\"center\" height=\"50%\">XYZ Corp</td></tr></table>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.outside_sources"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:27"
+  },
+  {
+   "id": "lean_mapping-3-dedicated-process",
+   "title": "Dedicated Process",
+   "tags": "value stream lean mapping dedicated process manufacturing",
+   "kind": "cells",
+   "width": 100,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&#xa;Description\" style=\"strokeWidth=2;html=1;shape=mxgraph.lean_mapping.manufacturing_process;fontSize=12;verticalAlign=middle;html=1;align=center;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Process\" style=\"text;fontSize=12;spacingLeft=2;verticalAlign=top;html=1;align=center;spacingTop=-5;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.manufacturing_process"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:33"
+  },
+  {
+   "id": "lean_mapping-4-shared-process",
+   "title": "Shared Process",
+   "tags": "lean mapping manufacturing process shared value stream lean mapping  Shared Process",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.manufacturing_process_shared;spacingTop=-5;align=center;whiteSpace=wrap;verticalAlign=top;",
+   "value": "Process",
+   "shapeNames": [
+    "mxgraph.lean_mapping.manufacturing_process_shared"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:44"
+  },
+  {
+   "id": "lean_mapping-5-workcell",
+   "title": "Workcell",
+   "tags": "lean mapping work cell value stream lean mapping  Workcell",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.work_cell;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.work_cell"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:47"
+  },
+  {
+   "id": "lean_mapping-6-inventory-box",
+   "title": "Inventory Box",
+   "tags": "lean mapping inventory box value stream lean mapping  Inventory Box",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.inventory_box;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.inventory_box"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:48"
+  },
+  {
+   "id": "lean_mapping-7-push-arrow",
+   "title": "Push Arrow",
+   "tags": "lean mapping push arrow value stream lean mapping  Push Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.push_arrow;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.push_arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:49"
+  },
+  {
+   "id": "lean_mapping-8-supermarket",
+   "title": "Supermarket",
+   "tags": "lean mapping supermarket value stream lean mapping  Supermarket",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.supermarket;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.supermarket"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:50"
+  },
+  {
+   "id": "lean_mapping-9-material-pull",
+   "title": "Material Pull",
+   "tags": "lean mapping physical pull value stream lean mapping circular arrow Material Pull",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.physical_pull;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.physical_pull"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:51"
+  },
+  {
+   "id": "lean_mapping-10-fifo-lane",
+   "title": "FIFO Lane",
+   "tags": "lean mapping fifo lane value stream lean mapping  FIFO Lane",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.fifo_lane;overflow=fill;verticalAlign=top;align=center;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td height=\"0%\">MAX=XX</td></tr><tr><td align=\"center\" height=\"100%\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.fifo_lane"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:52"
+  },
+  {
+   "id": "lean_mapping-11-safety-stock",
+   "title": "Safety Stock",
+   "tags": "lean mapping buffer or safety stock value stream lean mapping  Safety Stock",
+   "kind": "vertex",
+   "width": 40,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.buffer_or_safety_stock;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.buffer_or_safety_stock"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:57"
+  },
+  {
+   "id": "lean_mapping-12-truck-shipment",
+   "title": "Truck Shipment",
+   "tags": "lean mapping truck shipment value stream lean mapping ",
+   "kind": "cells",
+   "width": 100,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;html=1;shape=mxgraph.lean_mapping.truck_shipment;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"2x per&#xa;Week\" style=\"text;fontSize=12;verticalAlign=middle;html=1;align=center;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"80\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.truck_shipment"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:59"
+  },
+  {
+   "id": "lean_mapping-13-production-control",
+   "title": "Production Control",
+   "tags": "lean mapping schedule value stream lean mapping  Production Control",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.schedule;whiteSpace=wrap;align=center;",
+   "value": "Production\nControl",
+   "shapeNames": [
+    "mxgraph.lean_mapping.schedule"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:70"
+  },
+  {
+   "id": "lean_mapping-14-other-information",
+   "title": "Other Information",
+   "tags": "lean mapping schedule value stream lean mapping  Other Information",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.schedule;whiteSpace=wrap;align=center;",
+   "value": "Other\nInformation",
+   "shapeNames": [
+    "mxgraph.lean_mapping.schedule"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:71"
+  },
+  {
+   "id": "lean_mapping-15-go-see-production-scheduling",
+   "title": "Go See Production Scheduling",
+   "tags": "lean mapping go see production scheduling value stream lean mapping  Go See Production Scheduling",
+   "kind": "vertex",
+   "width": 92,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.go_see_production_scheduling;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.go_see_production_scheduling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:72"
+  },
+  {
+   "id": "lean_mapping-16-kaizen-lightening-burst",
+   "title": "Kaizen Lightening Burst",
+   "tags": "lean mapping kaizen lightening burst value stream lean mapping ",
+   "kind": "cells",
+   "width": 90,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.kaizen_lightening_burst;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"90\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"rect;fillColor=strokeColor;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"8\" y=\"8\" width=\"74\" height=\"24\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.kaizen_lightening_burst"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:74"
+  },
+  {
+   "id": "lean_mapping-17-kanban-post",
+   "title": "Kanban Post",
+   "tags": "lean mapping kanban post value stream lean mapping  Kanban Post",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.kanban_post;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.kanban_post"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:85"
+  },
+  {
+   "id": "lean_mapping-18-load-leveling",
+   "title": "Load Leveling",
+   "tags": "lean mapping load leveling value stream lean mapping  Load Leveling",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.load_leveling;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.load_leveling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:86"
+  },
+  {
+   "id": "lean_mapping-19-move-by-forklift",
+   "title": "Move by Forklift",
+   "tags": "lean mapping move by forklift value stream lean mapping  Move by Forklift",
+   "kind": "vertex",
+   "width": 92,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.move_by_forklift;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.move_by_forklift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:87"
+  },
+  {
+   "id": "lean_mapping-20-mrp-erp",
+   "title": "MRP/ERP",
+   "tags": "lean mapping mrp erp value stream lean mapping  MRP/ERP",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.mrp_erp;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.mrp_erp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:88"
+  },
+  {
+   "id": "lean_mapping-21-operator",
+   "title": "Operator",
+   "tags": "lean mapping operator value stream lean mapping  Operator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 84,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.operator;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.operator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:89"
+  },
+  {
+   "id": "lean_mapping-22-quality-problem",
+   "title": "Quality Problem",
+   "tags": "lean mapping quality problem value stream lean mapping  Quality Problem",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.quality_problem;fontSize=24;fontStyle=1;whiteSpace=wrap;align=center;",
+   "value": "Q",
+   "shapeNames": [
+    "mxgraph.lean_mapping.quality_problem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:90"
+  },
+  {
+   "id": "lean_mapping-23-verbal-information",
+   "title": "Verbal Information",
+   "tags": "lean mapping verbal value stream lean mapping  Verbal Information",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.verbal;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.verbal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:91"
+  },
+  {
+   "id": "lean_mapping-24-fifo-sequence",
+   "title": "FIFO Sequence",
+   "tags": "lean mapping fifo sequence flow value stream lean mapping  FIFO Sequence",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.fifo_sequence_flow;pointerEvents=1;fontStyle=0;fontSize=20;align=center;",
+   "value": "FIFO",
+   "shapeNames": [
+    "mxgraph.lean_mapping.fifo_sequence_flow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:92"
+  },
+  {
+   "id": "lean_mapping-25-production-kanban",
+   "title": "Production Kanban",
+   "tags": "lean mapping production kanban value stream lean mapping  Production Kanban",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.production_kanban;overflow=fill;",
+   "value": "<p style=\"font-size:2em;margin-right:35px;margin-top:13px;text-align:right\">P</p>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.production_kanban"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:93"
+  },
+  {
+   "id": "lean_mapping-26-withdrawal-kanban",
+   "title": "Withdrawal Kanban",
+   "tags": "lean mapping withdrawal kanban value stream lean mapping  Withdrawal Kanban",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.withdrawal_kanban;overflow=fill;",
+   "value": "<p style=\"font-size:2em;margin-right:35px;margin-top:13px;text-align:right\">W</p>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.withdrawal_kanban"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:96"
+  },
+  {
+   "id": "lean_mapping-27-signal-kanban",
+   "title": "Signal Kanban",
+   "tags": "lean mapping signal kanban value stream lean mapping  Signal Kanban",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.signal_kanban;overflow=fill;",
+   "value": "<p style=\"font-size:2em;margin-right:35px;margin-top:4px;text-align:right\">S</p>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.signal_kanban"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:99"
+  },
+  {
+   "id": "lean_mapping-28-sequenced-pull-ball",
+   "title": "Sequenced Pull Ball",
+   "tags": "lean mapping sequenced pull ball value stream lean mapping  Sequenced Pull Ball",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.sequenced_pull_ball;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.sequenced_pull_ball"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:102"
+  },
+  {
+   "id": "lean_mapping-29-rail-shipment",
+   "title": "Rail Shipment",
+   "tags": "lean mapping rail shipment value stream lean mapping  Rail Shipment",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.rail_shipment;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.rail_shipment"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:103"
+  },
+  {
+   "id": "lean_mapping-30-air-freight",
+   "title": "Air Freight",
+   "tags": "lean mapping airplane 7 value stream lean mapping  Air Freight",
+   "kind": "vertex",
+   "width": 100,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.airplane_7;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.airplane_7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:104"
+  },
+  {
+   "id": "lean_mapping-31-warehouse",
+   "title": "Warehouse",
+   "tags": "lean mapping warehouse value stream lean mapping  Warehouse",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.warehouse;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.warehouse"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:105"
+  },
+  {
+   "id": "lean_mapping-32-timeline",
+   "title": "Timeline",
+   "tags": "lean mapping timeline value stream lean mapping  Timeline",
+   "kind": "vertex",
+   "width": 400,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.timeline2;dx1=0;dy1=1;dx2=30;dy2=0;dx3=160;dy3=1;dx4=230;dy4=0;dx5=310;dy5=1;dy6=0;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.timeline2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:106"
+  },
+  {
+   "id": "lean_mapping-33-cross-dock",
+   "title": "Cross-Dock",
+   "tags": "lean mapping crossDock value stream lean mapping  Cross-Dock",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.crossDock;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.crossDock"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:107"
+  },
+  {
+   "id": "lean_mapping-34-orders",
+   "title": "Orders",
+   "tags": "lean mapping orders value stream lean mapping  Orders",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.lean_mapping.orders;overflow=fill;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1.5em;width:100%;height:100%;\"><tr><td height=\"65%\"></td></tr><tr><td align=\"center\" height=\"35%\">IN</td></tr></table>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.orders"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:108"
+  },
+  {
+   "id": "lean_mapping-35-batched-kanban",
+   "title": "Batched Kanban",
+   "tags": "lean mapping batched kanban value stream lean mapping  Batched Kanban",
+   "kind": "vertex",
+   "width": 200,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.batched_kanban;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.batched_kanban"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:113"
+  },
+  {
+   "id": "lean_mapping-36-control-center",
+   "title": "Control Center",
+   "tags": "lean mapping control center value stream lean mapping  Control Center",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.control_center;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.control_center"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:114"
+  },
+  {
+   "id": "lean_mapping-37-shipments",
+   "title": "Shipments",
+   "tags": "lean mapping arrow value stream lean mapping ",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=flexArrow;html=1;",
+   "shapeNames": [
+    "flexArrow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:115"
+  },
+  {
+   "id": "lean_mapping-38-manual-information",
+   "title": "Manual Information",
+   "tags": "lean mapping manual info flow edge value stream lean mapping ",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.lean_mapping.manual_info_flow_edge;html=1;",
+   "value": "Daily",
+   "shapeNames": [
+    "mxgraph.lean_mapping.manual_info_flow_edge"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:116"
+  },
+  {
+   "id": "lean_mapping-39-electronic-information",
+   "title": "Electronic Information",
+   "tags": "lean mapping electronic info flow edge value stream lean mapping ",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.lean_mapping.electronic_info_flow_edge;html=1;",
+   "value": "Monthly",
+   "shapeNames": [
+    "mxgraph.lean_mapping.electronic_info_flow_edge"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-LeanMapping.js:117"
+  }
+ ]
+}

@@ -1,0 +1,708 @@
+{
+ "id": "officeDevices",
+ "title": "Office / Devices",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeDevices-0-bluetooth",
+   "title": "Bluetooth",
+   "tags": "office devices bluetooth office device  Bluetooth",
+   "kind": "vertex",
+   "width": 56,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.bluetooth;",
+   "shapeNames": [
+    "mxgraph.office.devices.bluetooth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:685"
+  },
+  {
+   "id": "officeDevices-1-cd-dvd",
+   "title": "CD, DVD",
+   "tags": "office devices cd dvd compact disc digital video drive office device  CD, DVD",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cd_dvd;",
+   "shapeNames": [
+    "mxgraph.office.devices.cd_dvd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:687"
+  },
+  {
+   "id": "officeDevices-2-cell-phone-android-proportional",
+   "title": "Cell Phone, Android, Proportional",
+   "tags": "office devices cell phone android proportional office device  Cell Phone, Android, Proportional",
+   "kind": "vertex",
+   "width": 17,
+   "height": 31,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_android_proportional;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_android_proportional"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:689"
+  },
+  {
+   "id": "officeDevices-3-cell-phone-android-standalone",
+   "title": "Cell Phone, Android, Standalone",
+   "tags": "office devices cell phone android standalone office device  Cell Phone, Android, Standalone",
+   "kind": "vertex",
+   "width": 24,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_android_standalone;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_android_standalone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:691"
+  },
+  {
+   "id": "officeDevices-4-cell-phone-generic",
+   "title": "Cell Phone, Generic",
+   "tags": "office devices cell phone generic office device  Cell Phone, Generic",
+   "kind": "vertex",
+   "width": 26,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_generic;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:693"
+  },
+  {
+   "id": "officeDevices-5-cell-phone-generic-small",
+   "title": "Cell Phone, Generic (small)",
+   "tags": "office devices cell phone generic small office device  Cell Phone, Generic (small)",
+   "kind": "vertex",
+   "width": 21,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_generic;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:695"
+  },
+  {
+   "id": "officeDevices-6-cell-phone-iphone-proportional",
+   "title": "Cell Phone, iPhone, Proportional",
+   "tags": "office devices cell phone iphone proportional office device  Cell Phone, iPhone, Proportional",
+   "kind": "vertex",
+   "width": 17,
+   "height": 29,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_iphone_proportional;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_iphone_proportional"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:697"
+  },
+  {
+   "id": "officeDevices-7-cell-phone-iphone-standalone",
+   "title": "Cell Phone, iPhone, Standalone",
+   "tags": "office devices cell phone iphone standalone office device  Cell Phone, iPhone, Standalone",
+   "kind": "vertex",
+   "width": 25,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_iphone_standalone;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_iphone_standalone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:699"
+  },
+  {
+   "id": "officeDevices-8-cell-phone-windows-phone-proportional",
+   "title": "Cell Phone, Windows Phone, Proportional",
+   "tags": "office devices cell phone windows phone proportional office device  Cell Phone, Windows Phone, Proportional",
+   "kind": "vertex",
+   "width": 16,
+   "height": 29,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_windows_phone_proportional;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_windows_phone_proportional"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:701"
+  },
+  {
+   "id": "officeDevices-9-cell-phone-windows-phone-standalone",
+   "title": "Cell Phone, Windows Phone, Standalone",
+   "tags": "office devices cell phone windows standalone office device  Cell Phone, Windows Phone, Standalone",
+   "kind": "vertex",
+   "width": 24,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.cell_phone_windows_phone_standalone;",
+   "shapeNames": [
+    "mxgraph.office.devices.cell_phone_windows_phone_standalone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:703"
+  },
+  {
+   "id": "officeDevices-10-data-jack",
+   "title": "Data Jack",
+   "tags": "office devices data jack office device  Data Jack",
+   "kind": "vertex",
+   "width": 47,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.data_jack;",
+   "shapeNames": [
+    "mxgraph.office.devices.data_jack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:705"
+  },
+  {
+   "id": "officeDevices-11-device-update-service",
+   "title": "Device Update Service",
+   "tags": "office devices device update service office device  Device Update Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.device_update_service;",
+   "shapeNames": [
+    "mxgraph.office.devices.device_update_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:707"
+  },
+  {
+   "id": "officeDevices-12-fax",
+   "title": "Fax",
+   "tags": "office devices fax office device  Fax",
+   "kind": "vertex",
+   "width": 57,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.fax;",
+   "shapeNames": [
+    "mxgraph.office.devices.fax"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:709"
+  },
+  {
+   "id": "officeDevices-13-hard-disk",
+   "title": "Hard Disk",
+   "tags": "office devices hard disk hdd drive office device  Hard Disk",
+   "kind": "vertex",
+   "width": 40,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.hard_disk;",
+   "shapeNames": [
+    "mxgraph.office.devices.hard_disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:711"
+  },
+  {
+   "id": "officeDevices-14-headset",
+   "title": "Headset",
+   "tags": "office devices headset office device  Headset",
+   "kind": "vertex",
+   "width": 36,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.headset;",
+   "shapeNames": [
+    "mxgraph.office.devices.headset"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:713"
+  },
+  {
+   "id": "officeDevices-15-ipad-mini",
+   "title": "iPad, Mini",
+   "tags": "office devices ipad mini office device  iPad, Mini",
+   "kind": "vertex",
+   "width": 33,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.ipad_mini;",
+   "shapeNames": [
+    "mxgraph.office.devices.ipad_mini"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:715"
+  },
+  {
+   "id": "officeDevices-16-ip-gateway",
+   "title": "IP Gateway",
+   "tags": "office devices ip gateway office device  IP Gateway",
+   "kind": "vertex",
+   "width": 59,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.ip_gateway;",
+   "shapeNames": [
+    "mxgraph.office.devices.ip_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:717"
+  },
+  {
+   "id": "officeDevices-17-ip-pbx",
+   "title": "IP PBX",
+   "tags": "office devices ip pbx office device  IP PBX",
+   "kind": "vertex",
+   "width": 59,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.ip_pbx;",
+   "shapeNames": [
+    "mxgraph.office.devices.ip_pbx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:719"
+  },
+  {
+   "id": "officeDevices-18-laptop",
+   "title": "Laptop",
+   "tags": "office devices laptop office device  Laptop",
+   "kind": "vertex",
+   "width": 58,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.laptop;",
+   "shapeNames": [
+    "mxgraph.office.devices.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:721"
+  },
+  {
+   "id": "officeDevices-19-lcd-monitor",
+   "title": "LCD Monitor",
+   "tags": "office devices lcd monitor office device  LCD Monitor",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.lcd_monitor;",
+   "shapeNames": [
+    "mxgraph.office.devices.lcd_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:723"
+  },
+  {
+   "id": "officeDevices-20-lcd-monitor-small",
+   "title": "LCD Monitor (small)",
+   "tags": "office devices lcd monitor small office device  LCD Monitor (small)",
+   "kind": "vertex",
+   "width": 39,
+   "height": 32,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.lcd_monitor;",
+   "shapeNames": [
+    "mxgraph.office.devices.lcd_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:725"
+  },
+  {
+   "id": "officeDevices-21-load-balancer",
+   "title": "Load Balancer",
+   "tags": "office devices load balancer office device  Load Balancer",
+   "kind": "vertex",
+   "width": 59,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.load_balancer;",
+   "shapeNames": [
+    "mxgraph.office.devices.load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:727"
+  },
+  {
+   "id": "officeDevices-22-mac-client",
+   "title": "Mac Client",
+   "tags": "office devices mac client office device  Mac Client",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.mac_client;",
+   "shapeNames": [
+    "mxgraph.office.devices.mac_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:729"
+  },
+  {
+   "id": "officeDevices-23-management-console",
+   "title": "Management Console",
+   "tags": "office devices management console office device  Management Console",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.management_console;",
+   "shapeNames": [
+    "mxgraph.office.devices.management_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:731"
+  },
+  {
+   "id": "officeDevices-24-microphone",
+   "title": "Microphone",
+   "tags": "office devices microphone office device  Microphone",
+   "kind": "vertex",
+   "width": 53,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.microphone;",
+   "shapeNames": [
+    "mxgraph.office.devices.microphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:733"
+  },
+  {
+   "id": "officeDevices-25-modem",
+   "title": "Modem",
+   "tags": "office devices modem office device  Modem",
+   "kind": "vertex",
+   "width": 54,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.modem;",
+   "shapeNames": [
+    "mxgraph.office.devices.modem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:735"
+  },
+  {
+   "id": "officeDevices-26-nic",
+   "title": "NIC",
+   "tags": "office devices nic office device  NIC",
+   "kind": "vertex",
+   "width": 57,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.nic;",
+   "shapeNames": [
+    "mxgraph.office.devices.nic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:737"
+  },
+  {
+   "id": "officeDevices-27-phone-digital",
+   "title": "Phone, Digital",
+   "tags": "office devices phone digital office device  Phone, Digital",
+   "kind": "vertex",
+   "width": 49,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.phone_digital;",
+   "shapeNames": [
+    "mxgraph.office.devices.phone_digital"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:739"
+  },
+  {
+   "id": "officeDevices-28-phone-traditional",
+   "title": "Phone, Traditional",
+   "tags": "office devices phone traditional office device  Phone, Traditional",
+   "kind": "vertex",
+   "width": 48,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.phone_traditional;",
+   "shapeNames": [
+    "mxgraph.office.devices.phone_traditional"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:741"
+  },
+  {
+   "id": "officeDevices-29-phone-usb",
+   "title": "Phone, USB",
+   "tags": "office devices phone usb office device  Phone, USB",
+   "kind": "vertex",
+   "width": 58,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.phone_usb;",
+   "shapeNames": [
+    "mxgraph.office.devices.phone_usb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:743"
+  },
+  {
+   "id": "officeDevices-30-phone-voip",
+   "title": "Phone, VoIP",
+   "tags": "office devices phone voip voice over internet protocol office device  Phone, VoIP",
+   "kind": "vertex",
+   "width": 57,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.phone_voip;",
+   "shapeNames": [
+    "mxgraph.office.devices.phone_voip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:745"
+  },
+  {
+   "id": "officeDevices-31-printer",
+   "title": "Printer",
+   "tags": "office devices printer office device  Printer",
+   "kind": "vertex",
+   "width": 56,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.printer;",
+   "shapeNames": [
+    "mxgraph.office.devices.printer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:747"
+  },
+  {
+   "id": "officeDevices-32-roundtable",
+   "title": "Roundtable",
+   "tags": "office devices roundtable office device  Roundtable",
+   "kind": "vertex",
+   "width": 50,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.roundtable;",
+   "shapeNames": [
+    "mxgraph.office.devices.roundtable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:749"
+  },
+  {
+   "id": "officeDevices-33-router",
+   "title": "Router",
+   "tags": "office devices router office device  Router",
+   "kind": "vertex",
+   "width": 55,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.router;",
+   "shapeNames": [
+    "mxgraph.office.devices.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:751"
+  },
+  {
+   "id": "officeDevices-34-session-border-controller",
+   "title": "Session Border Controller",
+   "tags": "office devices session border controller office device  Session Border Controller",
+   "kind": "vertex",
+   "width": 59,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.session_border_controller;",
+   "shapeNames": [
+    "mxgraph.office.devices.session_border_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:753"
+  },
+  {
+   "id": "officeDevices-35-shadowed-router",
+   "title": "Shadowed Router",
+   "tags": "office devices shadowed router office device  Shadowed Router",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.shadowed_router;",
+   "shapeNames": [
+    "mxgraph.office.devices.shadowed_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:755"
+  },
+  {
+   "id": "officeDevices-36-stylus",
+   "title": "Stylus",
+   "tags": "office devices stylus office device  Stylus",
+   "kind": "vertex",
+   "width": 57,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.stylus;",
+   "shapeNames": [
+    "mxgraph.office.devices.stylus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:757"
+  },
+  {
+   "id": "officeDevices-37-switch",
+   "title": "Switch",
+   "tags": "office devices switch office device  Switch",
+   "kind": "vertex",
+   "width": 55,
+   "height": 18,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.switch;",
+   "shapeNames": [
+    "mxgraph.office.devices.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:759"
+  },
+  {
+   "id": "officeDevices-38-tablet-android",
+   "title": "Tablet, Android",
+   "tags": "office devices tablet android office device  Tablet, Android",
+   "kind": "vertex",
+   "width": 56,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.tablet_android;",
+   "shapeNames": [
+    "mxgraph.office.devices.tablet_android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:761"
+  },
+  {
+   "id": "officeDevices-39-tablet-ipad",
+   "title": "Tablet, iPad",
+   "tags": "office devices tablet ipad office device  Tablet, iPad",
+   "kind": "vertex",
+   "width": 39,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.tablet_ipad;",
+   "shapeNames": [
+    "mxgraph.office.devices.tablet_ipad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:763"
+  },
+  {
+   "id": "officeDevices-40-tablet-windows-7inch",
+   "title": "Tablet, Windows, 7inch",
+   "tags": "office devices tablet windows seven inch office device  Tablet, Windows, 7inch",
+   "kind": "vertex",
+   "width": 34,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.tablet_windows_7inch;",
+   "shapeNames": [
+    "mxgraph.office.devices.tablet_windows_7inch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:765"
+  },
+  {
+   "id": "officeDevices-41-tablet-windows-8",
+   "title": "Tablet, Windows 8",
+   "tags": "office devices tablet windows eight office device  Tablet, Windows 8",
+   "kind": "vertex",
+   "width": 56,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.tablet_windows_8;",
+   "shapeNames": [
+    "mxgraph.office.devices.tablet_windows_8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:767"
+  },
+  {
+   "id": "officeDevices-42-tv",
+   "title": "TV",
+   "tags": "office devices tv television office device  TV",
+   "kind": "vertex",
+   "width": 59,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.tv;",
+   "shapeNames": [
+    "mxgraph.office.devices.tv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:769"
+  },
+  {
+   "id": "officeDevices-43-video-camera",
+   "title": "Video Camera",
+   "tags": "office devices video camera office device  Video Camera",
+   "kind": "vertex",
+   "width": 52,
+   "height": 25,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.video_camera;",
+   "shapeNames": [
+    "mxgraph.office.devices.video_camera"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:771"
+  },
+  {
+   "id": "officeDevices-44-video-gateway",
+   "title": "Video Gateway",
+   "tags": "office devices video gateway office device  Video Gateway",
+   "kind": "vertex",
+   "width": 59,
+   "height": 41,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.video_gateway;",
+   "shapeNames": [
+    "mxgraph.office.devices.video_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:773"
+  },
+  {
+   "id": "officeDevices-45-webcam",
+   "title": "Webcam",
+   "tags": "office devices webcam office device  Webcam",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.webcam;",
+   "shapeNames": [
+    "mxgraph.office.devices.webcam"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:775"
+  },
+  {
+   "id": "officeDevices-46-webcam-hd",
+   "title": "Webcam, HD",
+   "tags": "office devices webcam hd high definition office device  Webcam, HD",
+   "kind": "vertex",
+   "width": 56,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.webcam_hd;",
+   "shapeNames": [
+    "mxgraph.office.devices.webcam_hd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:777"
+  },
+  {
+   "id": "officeDevices-47-workstation",
+   "title": "Workstation",
+   "tags": "office devices workstation office device  Workstation",
+   "kind": "vertex",
+   "width": 53,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.workstation;",
+   "shapeNames": [
+    "mxgraph.office.devices.workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:779"
+  },
+  {
+   "id": "officeDevices-48-workstation-pc",
+   "title": "Workstation, PC",
+   "tags": "office devices workstation pc personal computer office device  Workstation, PC",
+   "kind": "vertex",
+   "width": 53,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.workstation_pc;",
+   "shapeNames": [
+    "mxgraph.office.devices.workstation_pc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:781"
+  },
+  {
+   "id": "officeDevices-49-workstation-visual-studio",
+   "title": "Workstation, Visual Studio",
+   "tags": "office devices workstation visual studio office device  Workstation, Visual Studio",
+   "kind": "vertex",
+   "width": 53,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.workstation_visual_studio;",
+   "shapeNames": [
+    "mxgraph.office.devices.workstation_visual_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:783"
+  }
+ ]
+}

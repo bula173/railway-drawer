@@ -1,0 +1,50 @@
+{
+ "id": "mscaeSecurity Service",
+ "title": "CAE / Security Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeSecurity Service-0-azure-sentinel",
+   "title": "Azure Sentinel",
+   "tags": "mscae azure sentinel ms microsoft cloud enterprise security service Azure Sentinel",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Sentinel.svg;points=[[0.5,0,0],[0.499,1,0],[0.003,0.5,0],[0.997,0.5,0],[1,0.128,0],[0.849,0.752,0],[0.165,0.767,0],[0,0.128,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1394"
+  },
+  {
+   "id": "mscaeSecurity Service-1-key-vaults",
+   "title": "Key Vaults",
+   "tags": "mscae key vaults ms microsoft cloud enterprise security service Key Vaults",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Key_Vaults.svg;points=[[0.501,0,0],[0.5,1,0],[0,0.524,0],[1,0.526,0],[0.872,0.2,0],[0.869,0.847,0],[0.128,0.845,0],[0.128,0.2,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1396"
+  },
+  {
+   "id": "mscaeSecurity Service-2-security-center",
+   "title": "Security Center",
+   "tags": "mscae security center ms microsoft cloud enterprise security service Security Center",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Security_Center.svg;points=[[0.495,0,0],[0.495,1,0],[0,0.395,0],[0.99,0.396,0],[0.989,0.125,0],[0.923,0.772,0],[0.066,0.772,0],[0.001,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1398"
+  }
+ ]
+}

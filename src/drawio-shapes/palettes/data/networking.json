@@ -1,0 +1,400 @@
+{
+ "id": "networking",
+ "title": "Clipart / Networking",
+ "drawioTag": "v32.4.1",
+ "source": "",
+ "entries": [
+  {
+   "id": "networking-0-bridge",
+   "title": "Bridge",
+   "tags": "bridge",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Bridge_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-1-certificate",
+   "title": "Certificate",
+   "tags": "certificate",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Certificate_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-2-certificate-off",
+   "title": "Certificate Off",
+   "tags": "certificate off",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Certificate_Off_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-3-cloud",
+   "title": "Cloud",
+   "tags": "cloud",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-4-cloud-computer",
+   "title": "Cloud Computer",
+   "tags": "cloud computer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Computer_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-5-cloud-computer-private",
+   "title": "Cloud Computer Private",
+   "tags": "cloud computer private",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Computer_Private_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-6-cloud-rack",
+   "title": "Cloud Rack",
+   "tags": "cloud rack",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Rack_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-7-cloud-rack-private",
+   "title": "Cloud Rack Private",
+   "tags": "cloud rack private",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Rack_Private_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-8-cloud-server",
+   "title": "Cloud Server",
+   "tags": "cloud server",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Server_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-9-cloud-server-private",
+   "title": "Cloud Server Private",
+   "tags": "cloud server private",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Server_Private_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-10-cloud-storage",
+   "title": "Cloud Storage",
+   "tags": "cloud storage",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Cloud_Storage_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-11-concentrator",
+   "title": "Concentrator",
+   "tags": "concentrator",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Concentrator_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-12-email",
+   "title": "Email",
+   "tags": "email",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Email_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-13-firewall-1",
+   "title": "Firewall 1",
+   "tags": "firewall 1",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Firewall_02_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-14-firewall-2",
+   "title": "Firewall 2",
+   "tags": "firewall 2",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Firewall_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-15-firewall",
+   "title": "Firewall",
+   "tags": "firewall",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Firewall-page1_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-16-camera",
+   "title": "Camera",
+   "tags": "camera",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Ip_Camera_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-17-modem",
+   "title": "Modem",
+   "tags": "modem",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Modem_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-18-power-distribution-unit",
+   "title": "Power Distribution Unit",
+   "tags": "power distribution unit",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/power_distribution_unit_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-19-print-server",
+   "title": "Print Server",
+   "tags": "print server",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Print_Server_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-20-print-server-wireless",
+   "title": "Print Server Wireless",
+   "tags": "print server wireless",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Print_Server_Wireless_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-21-repeater",
+   "title": "Repeater",
+   "tags": "repeater",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Repeater_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-22-router",
+   "title": "Router",
+   "tags": "router switch Router",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Router_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-23-router-icon",
+   "title": "Router Icon",
+   "tags": "router switch Router Icon",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Router_Icon_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-24-switch",
+   "title": "Switch",
+   "tags": "switch",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Switch_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-25-ups",
+   "title": "UPS",
+   "tags": "ups",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/UPS_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-26-wireless-router",
+   "title": "Wireless Router",
+   "tags": "wireless router switch wap wifi access point wlan Wireless Router",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Wireless_Router_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  },
+  {
+   "id": "networking-27-wireless-router-n",
+   "title": "Wireless Router N",
+   "tags": "wireless router switch wap wifi access point wlan Wireless Router N",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/networking/Wireless_Router_N_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1529"
+  }
+ ]
+}

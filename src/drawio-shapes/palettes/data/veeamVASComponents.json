@@ -1,0 +1,358 @@
+{
+ "id": "veeamVASComponents",
+ "title": "Veeam / Availability Suite components",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamVASComponents-0-database-server",
+   "title": "Database Server",
+   "tags": "veeam vascomponent database server veeam vmware virtual machine vas availability suite component Database Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.database_server;",
+   "shapeNames": [
+    "mxgraph.veeam.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:466"
+  },
+  {
+   "id": "veeamVASComponents-1-gateway-server",
+   "title": "Gateway Server",
+   "tags": "veeam vascomponent gateway server veeam vmware virtual machine vas availability suite component Gateway Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.gateway_server;",
+   "shapeNames": [
+    "mxgraph.veeam.gateway_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:468"
+  },
+  {
+   "id": "veeamVASComponents-2-mount-server",
+   "title": "Mount Server",
+   "tags": "veeam vascomponent mount server veeam vmware virtual machine vas availability suite component Mount Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.mount_server;",
+   "shapeNames": [
+    "mxgraph.veeam.mount_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:470"
+  },
+  {
+   "id": "veeamVASComponents-3-proxy-server",
+   "title": "Proxy Server",
+   "tags": "veeam vascomponent proxy server veeam vmware virtual machine vas availability suite component Proxy Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.proxy_server;",
+   "shapeNames": [
+    "mxgraph.veeam.proxy_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:472"
+  },
+  {
+   "id": "veeamVASComponents-4-repository-server",
+   "title": "Repository Server",
+   "tags": "veeam vascomponent repository server veeam vmware virtual machine vas availability suite component Repository Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.repository_server;",
+   "shapeNames": [
+    "mxgraph.veeam.repository_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:474"
+  },
+  {
+   "id": "veeamVASComponents-5-search-server",
+   "title": "Search Server",
+   "tags": "veeam vascomponent backup search server veeam vmware virtual machine vas availability suite component Search Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_backup_search_server;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_backup_search_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:476"
+  },
+  {
+   "id": "veeamVASComponents-6-tape-server",
+   "title": "Tape Server",
+   "tags": "veeam vascomponent tape server veeam vmware virtual machine vas availability suite component Tape Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.tape_server;",
+   "shapeNames": [
+    "mxgraph.veeam.tape_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:478"
+  },
+  {
+   "id": "veeamVASComponents-7-vsphere-server",
+   "title": "vSphere Server",
+   "tags": "veeam vascomponent vsphere server veeam vmware virtual machine vas availability suite component vSphere Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vsphere_server;",
+   "shapeNames": [
+    "mxgraph.veeam.vsphere_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:480"
+  },
+  {
+   "id": "veeamVASComponents-8-windows-linux-server",
+   "title": "Windows Linux Server",
+   "tags": "veeam vascomponent windows linux server veeam vmware virtual machine vas availability suite component Windows Linux Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.windows_linux_server;",
+   "shapeNames": [
+    "mxgraph.veeam.windows_linux_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:482"
+  },
+  {
+   "id": "veeamVASComponents-9-backup-and-replication-server",
+   "title": "Backup and Replication Server",
+   "tags": "veeam vascomponent backup and replication server veeam vmware virtual machine vas availability suite component Backup and Replication Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_backup_and_replication_server;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_backup_and_replication_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:484"
+  },
+  {
+   "id": "veeamVASComponents-10-backup-enterprise-manager-server",
+   "title": "Backup Enterprise Manager Server",
+   "tags": "veeam vascomponent backup enterprise manager server veeam vmware virtual machine vas availability suite component Backup Enterprise Manager Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_backup_enterprise_manager_server;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_backup_enterprise_manager_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:486"
+  },
+  {
+   "id": "veeamVASComponents-11-one-server",
+   "title": "ONE Server",
+   "tags": "veeam vascomponent one server veeam vmware virtual machine vas availability suite component ONE Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 72,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.one_server;",
+   "shapeNames": [
+    "mxgraph.veeam.one_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:488"
+  },
+  {
+   "id": "veeamVASComponents-12-explorer-for-active-directory",
+   "title": "Explorer for Active Directory",
+   "tags": "veeam vascomponent explorer for active directory veeam vmware virtual machine vas availability suite component Explorer for Active Directory",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_explorer_for_active_directory;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_explorer_for_active_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:490"
+  },
+  {
+   "id": "veeamVASComponents-13-explorer-for-exchange",
+   "title": "Explorer for Exchange",
+   "tags": "veeam vascomponent explorer for exchange veeam vmware virtual machine vas availability suite component Explorer for Exchange",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_explorer_for_exchange;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_explorer_for_exchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:492"
+  },
+  {
+   "id": "veeamVASComponents-14-explorer-for-oracle",
+   "title": "Explorer for Oracle",
+   "tags": "veeam vascomponent explorer for oracle veeam vmware virtual machine vas availability suite component Explorer for Oracle",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.explorer_for_oracle;",
+   "shapeNames": [
+    "mxgraph.veeam.explorer_for_oracle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:494"
+  },
+  {
+   "id": "veeamVASComponents-15-explorer-for-sharepoint",
+   "title": "Explorer for SharePoint",
+   "tags": "veeam vascomponent explorer for sharepoint veeam vmware virtual machine vas availability suite component Explorer for SharePoint",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_explorer_for_sharepoint;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_explorer_for_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:496"
+  },
+  {
+   "id": "veeamVASComponents-16-explorer-for-storage-snapshots",
+   "title": "Explorer for Storage Snapshots",
+   "tags": "veeam vascomponent explorer for storage snapshots veeam vmware virtual machine vas availability suite component Explorer for Storage Snapshots",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.explorer_for_storage_snapshots;",
+   "shapeNames": [
+    "mxgraph.veeam.explorer_for_storage_snapshots"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:498"
+  },
+  {
+   "id": "veeamVASComponents-17-explorer-for-sql",
+   "title": "Explorer for SQL",
+   "tags": "veeam vascomponent explorer for sql veeam vmware virtual machine vas availability suite component Explorer for SQL",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_explorer_for_sql;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_explorer_for_sql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:500"
+  },
+  {
+   "id": "veeamVASComponents-18-availability-suite",
+   "title": "Availability Suite",
+   "tags": "veeam vascomponent availability suite veeam vmware virtual machine vas availability suite component Availability Suite",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_availability_suite;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_availability_suite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:502"
+  },
+  {
+   "id": "veeamVASComponents-19-backup-and-replication",
+   "title": "Backup and Replication",
+   "tags": "veeam vascomponent backup and replication veeam vmware virtual machine vas availability suite component Backup and Replication",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.backup_replication;",
+   "shapeNames": [
+    "mxgraph.veeam.backup_replication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:504"
+  },
+  {
+   "id": "veeamVASComponents-20-enterprise-manager",
+   "title": "Enterprise Manager",
+   "tags": "veeam vascomponent enterprise manager veeam vmware virtual machine vas availability suite component Enterprise Manager",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.enterprise_manager;",
+   "shapeNames": [
+    "mxgraph.veeam.enterprise_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:506"
+  },
+  {
+   "id": "veeamVASComponents-21-linux-repository",
+   "title": "Linux Repository",
+   "tags": "veeam vascomponent linux repository veeam vmware virtual machine vas availability suite component Linux Repository",
+   "kind": "vertex",
+   "width": 48.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.linux_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.linux_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:508"
+  },
+  {
+   "id": "veeamVASComponents-22-windows-repository",
+   "title": "Windows Repository",
+   "tags": "veeam vascomponent windows repository veeam vmware virtual machine vas availability suite component Windows Repository",
+   "kind": "vertex",
+   "width": 48.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.windows_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.windows_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:510"
+  },
+  {
+   "id": "veeamVASComponents-23-flr-helper-appliance",
+   "title": "FLR Helper Appliance",
+   "tags": "veeam vascomponent flr helper appliance veeam vmware virtual machine vas availability suite component FLR Helper Appliance",
+   "kind": "vertex",
+   "width": 49.6,
+   "height": 50,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.flr_helper_appliance;",
+   "shapeNames": [
+    "mxgraph.veeam.flr_helper_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:512"
+  },
+  {
+   "id": "veeamVASComponents-24-one-client",
+   "title": "ONE client",
+   "tags": "veeam vascomponent one client veeam vmware virtual machine vas availability suite component ONE client",
+   "kind": "vertex",
+   "width": 90.8,
+   "height": 61.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.one_client;",
+   "shapeNames": [
+    "mxgraph.veeam.one_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:514"
+  }
+ ]
+}

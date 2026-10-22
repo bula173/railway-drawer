@@ -1,0 +1,190 @@
+{
+ "id": "mscaeIntune Service",
+ "title": "CAE / Intune Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeIntune Service-0-client-apps",
+   "title": "Client Apps",
+   "tags": "mscae client apps ms microsoft cloud enterprise intune service Client Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Client_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1096"
+  },
+  {
+   "id": "mscaeIntune Service-1-dedicated-event-hub",
+   "title": "Dedicated Event Hub",
+   "tags": "mscae dedicated event hub ms microsoft cloud enterprise intune service Dedicated Event Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Dedicated_Event_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.78,0.188,0],[0.997,1,0],[0.22,0.812,0],[0.003,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1098"
+  },
+  {
+   "id": "mscaeIntune Service-2-device-compliance",
+   "title": "Device Compliance",
+   "tags": "mscae device compliance ms microsoft cloud enterprise intune service Device Compliance",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Device_Compliance.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.44,0],[0.985,0.5,0],[0.67,0.023,0],[0.997,0.99,0],[0.013,0.857,0],[0.013,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1100"
+  },
+  {
+   "id": "mscaeIntune Service-3-device-config",
+   "title": "Device Config",
+   "tags": "mscae device config ms microsoft cloud enterprise intune service Device Config",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Device_Config.svg;points=[[0.5,0,0],[0.5,0.93,0],[0,0.439,0],[1,0.739,0],[0.625,0.023,0],[0.937,0.905,0],[0.012,0.857,0],[0.012,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1102"
+  },
+  {
+   "id": "mscaeIntune Service-4-devices-groups",
+   "title": "Devices Groups",
+   "tags": "mscae devices groups ms microsoft cloud enterprise intune service Devices Groups",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Devices_Groups.svg;points=[[0.46,0,0],[0.77,1,0],[0,0.5,0],[1,0.5,0],[0.9,0.013,0],[0.992,0.98,0],[0.02,0.707,0],[0.018,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1104"
+  },
+  {
+   "id": "mscaeIntune Service-5-ebooks",
+   "title": "eBooks",
+   "tags": "mscae ebooks ms microsoft cloud enterprise intune service eBooks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/eBooks.svg;points=[[0.5,0.048,0],[0.5,0.997,0],[0,0.497,0],[1,0.497,0],[0.992,0.052,0],[0.99,0.945,0],[0.01,0.945,0],[0.008,0.052,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1106"
+  },
+  {
+   "id": "mscaeIntune Service-6-enrollment",
+   "title": "Enrollment",
+   "tags": "mscae enrollment ms microsoft cloud enterprise intune service Enrollment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Enrollment.svg;points=[[0.46,0,0],[0.5,0.93,0],[0,0.5,0],[1,0.5,0],[0.9,0.013,0],[0.992,0.98,0],[0.02,0.707,0],[0.018,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1108"
+  },
+  {
+   "id": "mscaeIntune Service-7-exchange-on-premises-access",
+   "title": "Exchange On-premises Access",
+   "tags": "mscae exchange on premises access ms microsoft cloud enterprise intune service Exchange On-premises Access",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Exchange_On_premises_Access.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.995,0.008,0],[0.999,0.99,0],[0.001,0.99,0],[0.001,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1110"
+  },
+  {
+   "id": "mscaeIntune Service-8-intune-app-protection",
+   "title": "Intune App Protection",
+   "tags": "mscae intune app protection ms microsoft cloud enterprise intune service Intune App Protection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Intune_App_Protection.svg;points=[[0.39,0,0],[0.83,1,0],[0,0.5,0],[1,0.5,0],[0.765,0.01,0],[0.985,0.996,0],[0.16,0.875,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1112"
+  },
+  {
+   "id": "mscaeIntune Service-9-managed-desktop",
+   "title": "Managed Desktop",
+   "tags": "mscae managed desktop ms microsoft cloud enterprise intune service Managed Desktop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Managed_Desktop.svg;points=[[0.501,0,0],[0.5,1,0],[0.076,0.5,0],[0.924,0.5,0],[0.902,0.011,0],[0.985,0.999,0],[0.015,0.999,0],[0.095,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1114"
+  },
+  {
+   "id": "mscaeIntune Service-10-security-baselines",
+   "title": "Security Baselines",
+   "tags": "mscae security baselines ms microsoft cloud enterprise intune service Security Baselines",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Security_Baselines.svg;points=[[0.5,0.08,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.715,0.1,0],[0.997,0.992,0],[0.358,0.99,0],[0,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1116"
+  },
+  {
+   "id": "mscaeIntune Service-11-software-update",
+   "title": "Software Update",
+   "tags": "mscae software update ms microsoft cloud enterprise intune service Software Update",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Software_Update.svg;points=[[0.469,0,0],[0.5,0.931,0],[0,0.408,0],[0.94,0.5,0],[0.915,0.012,0],[0.807,0.936,0],[0.023,0.805,0],[0.02,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1118"
+  },
+  {
+   "id": "mscaeIntune Service-12-tools",
+   "title": "Tools",
+   "tags": "mscae tools ms microsoft cloud enterprise intune service Tools",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Tools.svg;points=[[0.239,0,0],[0.157,1,0],[0.396,0.5,0],[0.681,0.5,0],[0.994,0.053,0],[0.965,0.922,0],[0,0.85,0],[0.03,0.158,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1120"
+  }
+ ]
+}

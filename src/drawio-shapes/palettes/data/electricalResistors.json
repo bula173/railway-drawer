@@ -1,0 +1,302 @@
+{
+ "id": "electricalResistors",
+ "title": "Electrical / Resistors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalResistors-0-resistor",
+   "title": "Resistor",
+   "tags": "electrical resistors resistor 1 electrical resistor  Resistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.resistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:113"
+  },
+  {
+   "id": "electricalResistors-1-resistor",
+   "title": "Resistor",
+   "tags": "electrical resistors resistor 2 electrical resistor  Resistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.resistor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:115"
+  },
+  {
+   "id": "electricalResistors-2-potentiometer",
+   "title": "Potentiometer",
+   "tags": "electrical resistors potentiometer 1 electrical resistor  Potentiometer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.potentiometer_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.potentiometer_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:117"
+  },
+  {
+   "id": "electricalResistors-3-potentiometer",
+   "title": "Potentiometer",
+   "tags": "electrical resistors potentiometer 2 electrical resistor  Potentiometer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.potentiometer_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.potentiometer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:119"
+  },
+  {
+   "id": "electricalResistors-4-potentiometer-trimmer",
+   "title": "Potentiometer (Trimmer)",
+   "tags": "electrical resistors trimmer pot 1 electrical resistor  Potentiometer (Trimmer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.trimmer_pot_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.trimmer_pot_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:121"
+  },
+  {
+   "id": "electricalResistors-5-potentiometer-trimmer",
+   "title": "Potentiometer (Trimmer)",
+   "tags": "electrical resistors trimmer pot 2 electrical resistor  Potentiometer (Trimmer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.trimmer_pot_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.trimmer_pot_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:123"
+  },
+  {
+   "id": "electricalResistors-6-resistor-trimmer",
+   "title": "Resistor (Trimmer)",
+   "tags": "electrical resistors trimmer resistor 1 electrical resistor  Resistor (Trimmer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65.5,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.trimmer_resistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.trimmer_resistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:125"
+  },
+  {
+   "id": "electricalResistors-7-resistor-trimmer",
+   "title": "Resistor (Trimmer)",
+   "tags": "electrical resistors trimmer resistor 2 electrical resistor  Resistor (Trimmer)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65.5,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.trimmer_resistor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.trimmer_resistor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:127"
+  },
+  {
+   "id": "electricalResistors-8-resistor-variable",
+   "title": "Resistor (Variable)",
+   "tags": "electrical resistors variable resistor 1 electrical resistor  Resistor (Variable)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.variable_resistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.variable_resistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:129"
+  },
+  {
+   "id": "electricalResistors-9-resistor-variable",
+   "title": "Resistor (Variable)",
+   "tags": "electrical resistors variable resistor 2 electrical resistor  Resistor (Variable)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.variable_resistor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.variable_resistor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:131"
+  },
+  {
+   "id": "electricalResistors-10-resistor-instrument-relay-shunt",
+   "title": "Resistor (Instrument/Relay Shunt)",
+   "tags": "electrical resistors resistor with instrument or relay shunt electrical resistor  Resistor (Instrument/Relay Shunt)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor_with_instrument_or_relay_shunt;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.resistor_with_instrument_or_relay_shunt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:133"
+  },
+  {
+   "id": "electricalResistors-11-attenuator",
+   "title": "Attenuator",
+   "tags": "electrical resistors attenuator electrical resistor  Attenuator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.attenuator;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.attenuator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:135"
+  },
+  {
+   "id": "electricalResistors-12-resistor-adjustable-contact",
+   "title": "Resistor (Adjustable Contact)",
+   "tags": "electrical resistors resistor, adjustable contact electrical resistor  Resistor (Adjustable Contact)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor,_adjustable_contact;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.resistor,_adjustable_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:137"
+  },
+  {
+   "id": "electricalResistors-13-resistor-shunt",
+   "title": "Resistor (Shunt)",
+   "tags": "electrical resistors resistor, shunt electrical resistor  Resistor (Shunt)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 45,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor,_shunt;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.resistor,_shunt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:139"
+  },
+  {
+   "id": "electricalResistors-14-varistor-symmetrical",
+   "title": "Varistor (Symmetrical)",
+   "tags": "electrical resistors symmetrical varistor electrical resistor  Varistor (Symmetrical)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.symmetrical_varistor;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.symmetrical_varistor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:141"
+  },
+  {
+   "id": "electricalResistors-15-resistor-tapped",
+   "title": "Resistor (Tapped)",
+   "tags": "electrical resistors tapped resistor electrical resistor  Resistor (Tapped)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.tapped_resistor;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.tapped_resistor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:143"
+  },
+  {
+   "id": "electricalResistors-16-resistor-nonlinear",
+   "title": "Resistor (Nonlinear)",
+   "tags": "electrical resistors nonlinear resistor electrical resistor  Resistor (Nonlinear)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.nonlinear_resistor;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.nonlinear_resistor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:145"
+  },
+  {
+   "id": "electricalResistors-17-memristor",
+   "title": "Memristor",
+   "tags": "electrical resistors memristor 1 electrical resistor  Memristor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.memristor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.memristor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:147"
+  },
+  {
+   "id": "electricalResistors-18-memristor",
+   "title": "Memristor",
+   "tags": "electrical resistors memristor 2 electrical resistor  Memristor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 24,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.memristor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.memristor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:149"
+  },
+  {
+   "id": "electricalResistors-19-magnetoresistor",
+   "title": "Magnetoresistor",
+   "tags": "electrical resistors magnetoresistor electrical resistor  Magnetoresistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.magnetoresistor;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.magnetoresistor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:151"
+  },
+  {
+   "id": "electricalResistors-20-photoconductive-transducer-symmetrical",
+   "title": "Photoconductive Transducer (Symmetrical)",
+   "tags": "electrical resistors symmetrical photoconductive transducer electrical resistor  Photoconductive Transducer (Symmetrical)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.symmetrical_photoconductive_transducer;",
+   "shapeNames": [
+    "mxgraph.electrical.resistors.symmetrical_photoconductive_transducer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:153"
+  }
+ ]
+}

@@ -1,0 +1,638 @@
+{
+ "id": "cisco19Collaboration",
+ "title": "Cisco 19 / Collaboration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:8",
+ "entries": [
+  {
+   "id": "cisco19Collaboration-0-video-call-server",
+   "title": "Video Call Server",
+   "tags": "cisco19 video call server cisco collaboration Video Call Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=video_call_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:279"
+  },
+  {
+   "id": "cisco19Collaboration-1-primary-codec",
+   "title": "Primary Codec",
+   "tags": "cisco19 primary codec cisco collaboration Primary Codec",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=primary_codec;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:281"
+  },
+  {
+   "id": "cisco19Collaboration-2-secondary-codec",
+   "title": "Secondary Codec",
+   "tags": "cisco19 secondary codec cisco collaboration Secondary Codec",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secondary_codec;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:283"
+  },
+  {
+   "id": "cisco19Collaboration-3-laptop-video-client",
+   "title": "Laptop Video Client",
+   "tags": "cisco19 laptop video client cisco collaboration Laptop Video Client",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "points=[[0.13,0.225,0],[0.5,0,0],[0.87,0.225,0],[0.885,0.5,0],[0.985,0.99,0],[0.5,1,0],[0.015,0.99,0],[0.115,0.5,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.laptop_video_client2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.laptop_video_client2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:285"
+  },
+  {
+   "id": "cisco19Collaboration-4-immersive-telepresence-endpoint",
+   "title": "Immersive Telepresence Endpoint",
+   "tags": "cisco19 immersive telepresence endpoint cisco collaboration Immersive Telepresence Endpoint",
+   "kind": "vertex",
+   "width": 114.99999999999999,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=immersive_telepresence_endpoint;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:287"
+  },
+  {
+   "id": "cisco19Collaboration-5-hdtv",
+   "title": "HDTV",
+   "tags": "cisco19 hdtv cisco collaboration HDTV",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.4,0],[1,0.8,0],[0.815,1,0],[0.5,1,0],[0.185,1,0],[0,0.8,0],[0,0.4,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.hdtv2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.hdtv2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:289"
+  },
+  {
+   "id": "cisco19Collaboration-6-virtual-desktop-service",
+   "title": "Virtual Desktop Service",
+   "tags": "cisco19 virtual desktop service cisco collaboration Virtual Desktop Service",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=virtual_desktop_service;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:291"
+  },
+  {
+   "id": "cisco19Collaboration-7-video-gateway",
+   "title": "Video Gateway",
+   "tags": "cisco19 video gateway cisco collaboration Video Gateway",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=video_gateway;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:293"
+  },
+  {
+   "id": "cisco19Collaboration-8-telepresence-endpoint",
+   "title": "Telepresence Endpoint",
+   "tags": "cisco19 telepresence endpoint cisco collaboration Telepresence Endpoint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=telepresence_endpoint;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:295"
+  },
+  {
+   "id": "cisco19Collaboration-9-collaboration",
+   "title": "Collaboration",
+   "tags": "cisco19  cisco collaboration Collaboration",
+   "kind": "vertex",
+   "width": 50,
+   "height": 65,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=collab1;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:297"
+  },
+  {
+   "id": "cisco19Collaboration-10-video-analytics",
+   "title": "Video Analytics",
+   "tags": "cisco19 video analytics cisco collaboration Video Analytics",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=video_analytics;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:299"
+  },
+  {
+   "id": "cisco19Collaboration-11-telepresence-exchange",
+   "title": "Telepresence Exchange",
+   "tags": "cisco19 telepresence exchange cisco collaboration Telepresence Exchange",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=telepresence_exchange;fillColorStyles=fillColor2;fillColor2=#00bceb;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:301"
+  },
+  {
+   "id": "cisco19Collaboration-12-meeting-scheduling-and-management-server",
+   "title": "Meeting Scheduling and Management Server",
+   "tags": "cisco19 meeting scheduling and management server cisco collaboration Meeting Scheduling and Management Server",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=meeting_scheduling_and_management_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:303"
+  },
+  {
+   "id": "cisco19Collaboration-13-multipoint-meeting-server",
+   "title": "Multipoint Meeting Server",
+   "tags": "cisco19 multipoint meeting server cisco collaboration Multipoint Meeting Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=multipoint_meeting_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:305"
+  },
+  {
+   "id": "cisco19Collaboration-14-content-recording-streaming-server",
+   "title": "Content Recording / Streaming Server",
+   "tags": "cisco19 content recording streaming server cisco collaboration Content Recording / Streaming Server",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=content_recording_streaming_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:307"
+  },
+  {
+   "id": "cisco19Collaboration-15-communications-manager",
+   "title": "Communications Manager",
+   "tags": "cisco19 communications manager cisco collaboration Communications Manager",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=communications_manager;fillColorStyles=fillColor2;fillColor2=#ffffff;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:309"
+  },
+  {
+   "id": "cisco19Collaboration-16-cisco-unified-presence-service",
+   "title": "Cisco Unified Presence Service",
+   "tags": "cisco19 cisco unified presence service cisco collaboration Cisco Unified Presence Service",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=cisco_unified_presence_service;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:311"
+  },
+  {
+   "id": "cisco19Collaboration-17-cisco-unified-contact-center-enterprise-and-hosted",
+   "title": "Cisco Unified Contact Center Enterprise and Hosted",
+   "tags": "cisco19 cisco unified contact center enterprise and hosted cisco collaboration Cisco Unified Contact Center Enterprise and Hosted",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=cisco_unified_contact_center_enterprise_and_hosted;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:313"
+  },
+  {
+   "id": "cisco19Collaboration-18-h-323",
+   "title": "H.323",
+   "tags": "cisco19 h323 cisco collaboration H.323",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=h323;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:315"
+  },
+  {
+   "id": "cisco19Collaboration-19-surveillance-camera",
+   "title": "Surveillance Camera",
+   "tags": "cisco19 surveillance camera cisco collaboration Surveillance Camera",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "points=[[0.015,0.015,0],[0.5,0,0],[0.985,0.015,0],[1,0.22,0],[0.985,0.43,0],[0.73,0.85,0],[0.5,1,0],[0.285,0.85,0],[0.015,0.43,0],[0,0.22,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.surveillance_camera2;fillColorStyls=fillColor2;fillColor2=#00bceb;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.surveillance_camera2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:317"
+  },
+  {
+   "id": "cisco19Collaboration-20-monitor",
+   "title": "Monitor",
+   "tags": "cisco19 monitor cisco collaboration Monitor",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=monitor;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:319"
+  },
+  {
+   "id": "cisco19Collaboration-21-upc-unified-personal-communicator",
+   "title": "UPC Unified Personal Communicator",
+   "tags": "cisco19 upc unified personal communicator cisco collaboration UPC Unified Personal Communicator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "points=[[0.13,0.225,0],[0.5,0,0],[0.87,0.225,0],[0.885,0.5,0],[0.985,0.99,0],[0.5,1,0],[0.015,0.99,0],[0.115,0.5,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.upc_unified_personal_communicator2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.upc_unified_personal_communicator2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:321"
+  },
+  {
+   "id": "cisco19Collaboration-22-telepresence-endpoint-twin-data-display",
+   "title": "Telepresence Endpoint (twin data display)",
+   "tags": "cisco19 telepresence endpoint twin data display cisco collaboration Telepresence Endpoint (twin data display)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=telepresence_endpoint_twin_data_display;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:323"
+  },
+  {
+   "id": "cisco19Collaboration-23-operations-manager",
+   "title": "Operations Manager",
+   "tags": "cisco19 operations manager cisco collaboration Operations Manager",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=operations_manager;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:325"
+  },
+  {
+   "id": "cisco19Collaboration-24-transcoder",
+   "title": "Transcoder",
+   "tags": "cisco19 transcoder cisco collaboration Transcoder",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=transcoder;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:327"
+  },
+  {
+   "id": "cisco19Collaboration-25-contact-center-express",
+   "title": "Contact Center Express",
+   "tags": "cisco19 contact center express cisco collaboration Contact Center Express",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=contact_center_express;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:329"
+  },
+  {
+   "id": "cisco19Collaboration-26-media-server",
+   "title": "Media Server",
+   "tags": "cisco19 media server cisco collaboration Media Server",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=media_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:331"
+  },
+  {
+   "id": "cisco19Collaboration-27-ip-ip-gateway",
+   "title": "IP IP Gateway",
+   "tags": "cisco19 ip gateway cisco collaboration IP IP Gateway",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ip_ip_gateway;fillColorStyles=fillColor2;fillColor2=#00bceb;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:333"
+  },
+  {
+   "id": "cisco19Collaboration-28-webex",
+   "title": "WebEx",
+   "tags": "cisco19 webex cisco collaboration WebEx",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.webex;fillColorStyles=fillColor2;strokeColorStyles=strokeColor2;fillColor2=#92be70;strokeColor2=#78af4e;fillColor=#2c96c9;strokeColor=#0d87c1;",
+   "shapeNames": [
+    "mxgraph.cisco19.webex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:335"
+  },
+  {
+   "id": "cisco19Collaboration-29-clock",
+   "title": "Clock",
+   "tags": "cisco19 clock cisco collaboration Clock",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=clock;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:337"
+  },
+  {
+   "id": "cisco19Collaboration-30-phone-polycom",
+   "title": "Phone Polycom",
+   "tags": "cisco19 phone polycom cisco collaboration Phone Polycom",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "points=[[0.5,0,0],[0.75,0.37,0],[0.96,0.735,0],[0.5,1,0],[0.045,0.73,0],[0.25,0.37,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.phone_polycom2;fillColorStyles=fillColor2;fillColor2=#00bceb;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.phone_polycom2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:339"
+  },
+  {
+   "id": "cisco19Collaboration-31-unity",
+   "title": "Unity",
+   "tags": "cisco19 unity cisco collaboration Unity",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=unity;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:341"
+  },
+  {
+   "id": "cisco19Collaboration-32-shield",
+   "title": "Shield",
+   "tags": "cisco19 shield cisco collaboration Shield",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=shield;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:343"
+  },
+  {
+   "id": "cisco19Collaboration-33-cisco-meetingplace-express",
+   "title": "Cisco MeetingPlace Express",
+   "tags": "cisco19 meetingplace express cisco collaboration Cisco MeetingPlace Express",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=cisco_meetingplace_express;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:345"
+  },
+  {
+   "id": "cisco19Collaboration-34-set-top",
+   "title": "Set Top",
+   "tags": "cisco19 set top cisco collaboration Set Top",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=set_top2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:347"
+  },
+  {
+   "id": "cisco19Collaboration-35-ip-phone",
+   "title": "IP Phone",
+   "tags": "cisco19 ip phone internet protocol cisco collaboration IP Phone",
+   "kind": "vertex",
+   "width": 57.49999999999999,
+   "height": 50,
+   "style": "points=[[0.59,0,0],[0.87,0.015,0],[0.88,0.3,0],[0.99,0.99,0],[0.5,1,0],[0.01,0.99,0],[0.075,0.5,0],[0.17,0.115,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.ip_phone2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.ip_phone2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:349"
+  },
+  {
+   "id": "cisco19Collaboration-36-camera",
+   "title": "Camera",
+   "tags": "cisco19 camera cisco collaboration Camera",
+   "kind": "vertex",
+   "width": 90,
+   "height": 50,
+   "style": "points=[[0,0.5,0],[0.19,0.02,0],[0.59,0,0],[0.985,0.02,0],[1,0.5,0],[0.985,0.98,0],[0.59,1,0],[0.19,0.98,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.camera2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.camera2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:351"
+  },
+  {
+   "id": "cisco19Collaboration-37-da-encoder",
+   "title": "DA Encoder",
+   "tags": "cisco19 da encoder analog digital cisco collaboration DA Encoder",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=da_encoder;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:353"
+  },
+  {
+   "id": "cisco19Collaboration-38-ad-encoder",
+   "title": "AD Encoder",
+   "tags": "cisco19 ad encoder analog digital cisco collaboration AD Encoder",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ad_encoder;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:355"
+  },
+  {
+   "id": "cisco19Collaboration-39-da-decoder",
+   "title": "DA Decoder",
+   "tags": "cisco19 da decoder analog digital cisco collaboration DA Decoder",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=da_decoder;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:357"
+  },
+  {
+   "id": "cisco19Collaboration-40-ad-decoder",
+   "title": "AD Decoder",
+   "tags": "cisco19 ad decoder analog digital cisco collaboration AD Decoder",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ad_decoder;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:359"
+  },
+  {
+   "id": "cisco19Collaboration-41-joystick-keyboard",
+   "title": "Joystick Keyboard",
+   "tags": "cisco19 joystick keyboard cisco collaboration Joystick Keyboard",
+   "kind": "vertex",
+   "width": 90,
+   "height": 50,
+   "style": "points=[[0.13,0.24,0],[0.5,0.2,0],[0.62,0,0],[0.87,0.24,0],[0.95,0.55,0],[0.96,0.95,0],[0.5,1,0],[0.04,0.95,0],[0.05,0.55,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.joystick_keyboard2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.joystick_keyboard2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:361"
+  },
+  {
+   "id": "cisco19Collaboration-42-collaboration",
+   "title": "Collaboration",
+   "tags": "cisco19 collaboration cisco collaboration Collaboration",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=collab2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:363"
+  },
+  {
+   "id": "cisco19Collaboration-43-collaboration",
+   "title": "Collaboration",
+   "tags": "cisco19 collaboration cisco collaboration Collaboration",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=collab3;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:365"
+  },
+  {
+   "id": "cisco19Collaboration-44-collaboration",
+   "title": "Collaboration",
+   "tags": "cisco19 collaboration cisco collaboration Collaboration",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=collab4;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:367"
+  }
+ ]
+}

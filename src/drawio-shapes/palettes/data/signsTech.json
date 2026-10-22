@@ -1,0 +1,400 @@
+{
+ "id": "signsTech",
+ "title": "Signs / Tech",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsTech-0-at-1",
+   "title": "At 1",
+   "tags": "signs tech  At 1 At 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.at_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.at_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-1-at-2",
+   "title": "At 2",
+   "tags": "signs tech  At 2 At 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 95,
+   "style": "shape=mxgraph.signs.tech.at_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.at_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-2-camera-1",
+   "title": "Camera 1",
+   "tags": "signs tech  Camera 1 Camera 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 84,
+   "style": "shape=mxgraph.signs.tech.camera_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.camera_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-3-camera-2",
+   "title": "Camera 2",
+   "tags": "signs tech  Camera 2 Camera 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 72,
+   "style": "shape=mxgraph.signs.tech.camera_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.camera_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-4-cell-phone",
+   "title": "Cell Phone",
+   "tags": "signs tech  Cell Phone Cell Phone",
+   "kind": "vertex",
+   "width": 47,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.cell_phone;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.cell_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-5-command",
+   "title": "Command",
+   "tags": "signs tech  Command Command",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.command;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.command"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-6-computer",
+   "title": "Computer",
+   "tags": "signs tech  Computer Computer",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.computer;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.computer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-7-crop",
+   "title": "Crop",
+   "tags": "signs tech  Crop Crop",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.crop;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.crop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-8-cut",
+   "title": "Cut",
+   "tags": "signs tech  Cut Cut",
+   "kind": "vertex",
+   "width": 100,
+   "height": 72,
+   "style": "shape=mxgraph.signs.tech.cut;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.cut"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-9-eject",
+   "title": "Eject",
+   "tags": "signs tech  Eject Eject",
+   "kind": "vertex",
+   "width": 98,
+   "height": 77,
+   "style": "shape=mxgraph.signs.tech.eject;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.eject"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-10-ethernet",
+   "title": "Ethernet",
+   "tags": "signs tech  Ethernet Ethernet",
+   "kind": "vertex",
+   "width": 99,
+   "height": 48,
+   "style": "shape=mxgraph.signs.tech.ethernet;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.ethernet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-11-firewire",
+   "title": "Firewire",
+   "tags": "signs tech  Firewire Firewire",
+   "kind": "vertex",
+   "width": 93,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.firewire;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.firewire"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-12-fullscreen",
+   "title": "Fullscreen",
+   "tags": "signs tech  Fullscreen Fullscreen",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.signs.tech.fullscreen;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.fullscreen"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-13-fullscreen-exit",
+   "title": "Fullscreen Exit",
+   "tags": "signs tech  Fullscreen Exit Fullscreen Exit",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.signs.tech.fullscreen_exit;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.fullscreen_exit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-14-mail",
+   "title": "Mail",
+   "tags": "signs tech  Mail Mail",
+   "kind": "vertex",
+   "width": 99,
+   "height": 75,
+   "style": "shape=mxgraph.signs.tech.mail;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.mail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-15-next",
+   "title": "Next",
+   "tags": "signs tech  Next Next",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.signs.tech.next;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.next"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-16-power",
+   "title": "Power",
+   "tags": "signs tech  Power Power",
+   "kind": "vertex",
+   "width": 91,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.power;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.power"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-17-previous",
+   "title": "Previous",
+   "tags": "signs tech  Previous Previous",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.signs.tech.previous;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.previous"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-18-radio",
+   "title": "Radio",
+   "tags": "signs tech  Radio Radio",
+   "kind": "vertex",
+   "width": 99,
+   "height": 56,
+   "style": "shape=mxgraph.signs.tech.radio;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.radio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-19-rss",
+   "title": "RSS",
+   "tags": "signs tech  RSS RSS",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.rss;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.rss"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-20-telephone-1",
+   "title": "Telephone 1",
+   "tags": "signs tech  Telephone 1 Telephone 1",
+   "kind": "vertex",
+   "width": 42,
+   "height": 100,
+   "style": "shape=mxgraph.signs.tech.telephone_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.telephone_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-21-telephone-2",
+   "title": "Telephone 2",
+   "tags": "signs tech  Telephone 2 Telephone 2",
+   "kind": "vertex",
+   "width": 36,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.telephone_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.telephone_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-22-telephone-3",
+   "title": "Telephone 3",
+   "tags": "signs tech  Telephone 3 Telephone 3",
+   "kind": "vertex",
+   "width": 74,
+   "height": 101,
+   "style": "shape=mxgraph.signs.tech.telephone_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.telephone_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-23-telephone-4",
+   "title": "Telephone 4",
+   "tags": "signs tech  Telephone 4 Telephone 4",
+   "kind": "vertex",
+   "width": 71,
+   "height": 99,
+   "style": "shape=mxgraph.signs.tech.telephone_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.telephone_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-24-telephone-5",
+   "title": "Telephone 5",
+   "tags": "signs tech  Telephone 5 Telephone 5",
+   "kind": "vertex",
+   "width": 36,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.telephone_5;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.telephone_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-25-usb",
+   "title": "USB",
+   "tags": "signs tech  USB USB",
+   "kind": "vertex",
+   "width": 43,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.usb;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.usb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-26-video-camera",
+   "title": "Video Camera",
+   "tags": "signs tech  Video Camera Video Camera",
+   "kind": "vertex",
+   "width": 98,
+   "height": 40,
+   "style": "shape=mxgraph.signs.tech.video_camera;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.video_camera"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTech-27-washing-machine",
+   "title": "Washing Machine",
+   "tags": "signs tech  Washing Machine Washing Machine",
+   "kind": "vertex",
+   "width": 75,
+   "height": 98,
+   "style": "shape=mxgraph.signs.tech.washing_machine;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.tech.washing_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

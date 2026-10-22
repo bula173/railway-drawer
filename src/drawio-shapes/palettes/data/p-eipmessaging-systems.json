@@ -1,0 +1,167 @@
+{
+ "id": "eipMessaging Systems",
+ "title": "EIP / Messaging Systems",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipMessaging Systems-0-message-router",
+   "title": "Message Router",
+   "tags": "eip content based router eip enterprise integration pattern messaging system  Message Router",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;shape=mxgraph.eip.content_based_router;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#c0f5a9;",
+   "shapeNames": [
+    "mxgraph.eip.content_based_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:247"
+  },
+  {
+   "id": "eipMessaging Systems-1-message-channel",
+   "title": "Message Channel",
+   "tags": "eip messageChannel eip enterprise integration pattern messaging system  Message Channel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "strokeWidth=1;outlineConnect=0;dashed=0;align=center;fontSize=8;shape=mxgraph.eip.messageChannel;html=1;verticalLabelPosition=bottom;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.messageChannel"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:250"
+  },
+  {
+   "id": "eipMessaging Systems-2-message-endpoint",
+   "title": "Message Endpoint",
+   "tags": "eip enterprise integration pattern messaging system message endpoint",
+   "kind": "cells",
+   "width": 150,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#c0f5a9;html=1;dropTarget=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;strokeWidth=1;dashed=0;align=center;fontSize=8;shape=rect;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"85\" y=\"25\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:253"
+  },
+  {
+   "id": "eipMessaging Systems-3-message-endpoint",
+   "title": "Message Endpoint",
+   "tags": "eip enterprise integration pattern messaging system message endpoint",
+   "kind": "cells",
+   "width": 150,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#c0f5a9;html=1;dropTarget=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;strokeWidth=1;dashed=0;align=center;fontSize=8;shape=rect\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"25\" y=\"25\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:264"
+  },
+  {
+   "id": "eipMessaging Systems-4-message-endpoint",
+   "title": "Message Endpoint",
+   "tags": "eip enterprise integration pattern messaging system message endpoint Message Endpoint",
+   "kind": "cells",
+   "width": 400,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#c0f5a9;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;html=1;dropTarget=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=1;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#ffffff;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"25\" y=\"25\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#c0f5a9;strokeColor=#000000;html=1;dropTarget=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"250\" width=\"150\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=1;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#ffffff;strokeColor=#000000;html=1;\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"85\" y=\"25\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;strokeWidth=2;rounded=0;endArrow=block;startArrow=none;startSize=10;endSize=10;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"3\" target=\"5\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:274"
+  },
+  {
+   "id": "eipMessaging Systems-5-message",
+   "title": "Message",
+   "tags": "eip enterprise integration pattern messaging system message Message",
+   "kind": "cells",
+   "width": 28,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"5\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"6\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=ellipse;fillColor=#808080;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#80FF6C;strokeColor=#000000;fontStyle=1;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"18\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#ff9900;strokeColor=#000000;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"36\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:276"
+  },
+  {
+   "id": "eipMessaging Systems-6-message",
+   "title": "Message",
+   "tags": "eip enterprise integration pattern messaging system message",
+   "kind": "cells",
+   "width": 28,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=ellipse;fillColor=#808080;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#80FF6C;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"18\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:279"
+  },
+  {
+   "id": "eipMessaging Systems-7-message",
+   "title": "Message",
+   "tags": "eip enterprise integration pattern messaging system message Message",
+   "kind": "cells",
+   "width": 28,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" source=\"4\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=ellipse;fillColor=#808080;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#ff9900;strokeColor=#000000;fontStyle=1;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"18\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:294"
+  },
+  {
+   "id": "eipMessaging Systems-8-message",
+   "title": "Message",
+   "tags": "eip enterprise integration pattern messaging system message",
+   "kind": "cells",
+   "width": 28,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=ellipse;fillColor=#808080;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;shape=mxgraph.eip.message_1;fillColor1=#ffff00;fillColor=#ff5500;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"18\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.eip.message_1"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:297"
+  },
+  {
+   "id": "eipMessaging Systems-9-message",
+   "title": "Message",
+   "tags": "eip enterprise integration pattern messaging system message",
+   "kind": "cells",
+   "width": 28,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=ellipse;fillColor=#808080;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"12\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;shape=mxgraph.eip.message_2;fillColor1=#ffff00;fillColor=#00cc00;fontStyle=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"16\" y=\"18\" width=\"12\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.eip.message_2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:312"
+  },
+  {
+   "id": "eipMessaging Systems-10-message-translator",
+   "title": "Message-Translator",
+   "tags": "eip message translator eip enterprise integration pattern messaging system  Message-Translator",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;shape=mxgraph.eip.message_translator;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.eip.message_translator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:327"
+  }
+ ]
+}

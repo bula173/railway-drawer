@@ -1,0 +1,526 @@
+{
+ "id": "computer",
+ "title": "Clipart / Computer",
+ "drawioTag": "v32.4.1",
+ "source": "",
+ "entries": [
+  {
+   "id": "computer-0-antivirus",
+   "title": "Antivirus",
+   "tags": "antivirus",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Antivirus_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-1-data-filtering",
+   "title": "Data Filtering",
+   "tags": "data filtering",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Data_Filtering_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-2-database",
+   "title": "Database",
+   "tags": "database",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Database_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-3-database-add",
+   "title": "Database Add",
+   "tags": "database add",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Database_Add_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-4-database-minus",
+   "title": "Database Minus",
+   "tags": "database minus",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Database_Minus_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-5-database-move-stack",
+   "title": "Database Move Stack",
+   "tags": "database move stack",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Database_Move_Stack_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-6-database-remove",
+   "title": "Database Remove",
+   "tags": "database remove",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Database_Remove_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-7-fujitsu-tablet",
+   "title": "Fujitsu Tablet",
+   "tags": "fujitsu tablet",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Fujitsu_Tablet_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-8-harddrive",
+   "title": "Harddrive",
+   "tags": "harddrive",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Harddrive_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-9-ibmtablet",
+   "title": "IBMTablet",
+   "tags": "ibmtablet",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/IBM_Tablet_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-10-imac",
+   "title": "iMac",
+   "tags": "imac",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/iMac_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-11-ipad",
+   "title": "iPad",
+   "tags": "ipad",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/iPad_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-12-laptop",
+   "title": "Laptop",
+   "tags": "laptop",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Laptop_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-13-macbook",
+   "title": "MacBook",
+   "tags": "macbook",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/MacBook_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-14-mainframe",
+   "title": "Mainframe",
+   "tags": "mainframe",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Mainframe_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-15-monitor",
+   "title": "Monitor",
+   "tags": "monitor",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Monitor_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-16-monitor-tower",
+   "title": "Monitor Tower",
+   "tags": "monitor tower",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Monitor_Tower_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-17-monitor-tower-behind",
+   "title": "Monitor Tower Behind",
+   "tags": "monitor tower behind",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Monitor_Tower_Behind_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-18-netbook",
+   "title": "Netbook",
+   "tags": "netbook",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Netbook_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-19-network",
+   "title": "Network",
+   "tags": "network",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Network_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-20-network-2",
+   "title": "Network 2",
+   "tags": "network 2",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Network_2_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-21-printer",
+   "title": "Printer",
+   "tags": "printer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Printer_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-22-printer-commercial",
+   "title": "Printer Commercial",
+   "tags": "printer commercial",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Printer_Commercial_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-23-secure-system",
+   "title": "Secure System",
+   "tags": "secure system",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Secure_System_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-24-server",
+   "title": "Server",
+   "tags": "server",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Server_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-25-server-rack",
+   "title": "Server Rack",
+   "tags": "server rack",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Server_Rack_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-26-server-rack-empty",
+   "title": "Server Rack Empty",
+   "tags": "server rack empty",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Server_Rack_Empty_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-27-server-rack-partial",
+   "title": "Server Rack Partial",
+   "tags": "server rack partial",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Server_Rack_Partial_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-28-server-tower",
+   "title": "Server Tower",
+   "tags": "server tower",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Server_Tower_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-29-software",
+   "title": "Software",
+   "tags": "software",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Software_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-30-stylus",
+   "title": "Stylus",
+   "tags": "stylus",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Stylus_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-31-touch",
+   "title": "Touch",
+   "tags": "touch",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Touch_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-32-usb-hub",
+   "title": "USB Hub",
+   "tags": "usb hub",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/USB_Hub_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-33-virtual-application",
+   "title": "Virtual Application",
+   "tags": "virtual application",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Virtual_Application_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-34-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "virtual machine",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Virtual_Machine_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-35-virus",
+   "title": "Virus",
+   "tags": "virus",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Virus_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  },
+  {
+   "id": "computer-36-workstation",
+   "title": "Workstation",
+   "tags": "workstation",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/computers/Workstation_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1487"
+  }
+ ]
+}

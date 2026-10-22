@@ -1,0 +1,596 @@
+{
+ "id": "atlassian2Logos",
+ "title": "Atlassian / Logos",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:9",
+ "entries": [
+  {
+   "id": "atlassian2Logos-0-admin-logo",
+   "title": "Admin Logo",
+   "tags": "atlassian2 admin product logo wordmark lockup Admin Logo",
+   "kind": "vertex",
+   "width": 93.6,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.admin;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_admin;atlassian2Lockup=0.245 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:121"
+  },
+  {
+   "id": "atlassian2Logos-1-align-logo",
+   "title": "Align Logo",
+   "tags": "atlassian2 align product logo wordmark lockup Align Logo",
+   "kind": "vertex",
+   "width": 79.3,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.align;tileColor=#fb9700;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_align;atlassian2Lockup=0.25 0.872 0.048;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:122"
+  },
+  {
+   "id": "atlassian2Logos-2-analytics-logo",
+   "title": "Analytics Logo",
+   "tags": "atlassian2 analytics product logo wordmark lockup Analytics Logo",
+   "kind": "vertex",
+   "width": 120.5,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.analytics;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_analytics;atlassian2Lockup=0.245 0.872 0.048;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:123"
+  },
+  {
+   "id": "atlassian2Logos-3-assets-logo",
+   "title": "Assets Logo",
+   "tags": "atlassian2 assets product logo wordmark lockup insight cmdb Assets Logo",
+   "kind": "vertex",
+   "width": 94.3,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.assets;tileColor=#ffc716;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_assets;atlassian2Lockup=0.245 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:124"
+  },
+  {
+   "id": "atlassian2Logos-4-atlassian-logo",
+   "title": "Atlassian Logo",
+   "tags": "atlassian2 atlassian product logo wordmark lockup Atlassian Logo",
+   "kind": "vertex",
+   "width": 205.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.atlassian;tileColor=none;fillColor=#1868db;atlassian2Wordmark=mxgraph.atlassian2.wordmark_atlassian;atlassian2Lockup=0.384 0.895 0.047;wordmarkColor=#1868DB;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:125"
+  },
+  {
+   "id": "atlassian2Logos-5-atlassian-marketplace-logo",
+   "title": "Atlassian Marketplace Logo",
+   "tags": "atlassian2 marketplace product logo wordmark lockup atlassian Atlassian Marketplace Logo",
+   "kind": "vertex",
+   "width": 315.4,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.marketplace;tileColor=none;fillColor=#1868db;atlassian2Wordmark=mxgraph.atlassian2.wordmark_marketplace;atlassian2Lockup=0.651 1.201 0.14;wordmarkColor=#101214;atlassian2Wordmark2=mxgraph.atlassian2.wordmark_atlassian;atlassian2Lockup2=0.384 0.895 0.047;atlassian2LockupBox=1.241 0;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:126"
+  },
+  {
+   "id": "atlassian2Logos-6-bamboo-logo",
+   "title": "Bamboo Logo",
+   "tags": "atlassian2 bamboo product logo wordmark lockup Bamboo Logo",
+   "kind": "vertex",
+   "width": 119.4,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bamboo;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_bamboo;atlassian2Lockup=0.382 0.719 -0.045;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:127"
+  },
+  {
+   "id": "atlassian2Logos-7-bitbucket-logo",
+   "title": "Bitbucket Logo",
+   "tags": "atlassian2 bitbucket product logo wordmark lockup Bitbucket Logo",
+   "kind": "vertex",
+   "width": 123.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bitbucket;tileColor=#94c748;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_bitbucket;atlassian2Lockup=0.346 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:128"
+  },
+  {
+   "id": "atlassian2Logos-8-bitbucket-data-center-logo",
+   "title": "Bitbucket Data Center Logo",
+   "tags": "atlassian2 bitbucket data center product logo wordmark lockup Bitbucket Data Center Logo",
+   "kind": "vertex",
+   "width": 128.8,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bitbucket-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_bitbucket_data_center;atlassian2Lockup=0.382 0.719 -0.045;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:129"
+  },
+  {
+   "id": "atlassian2Logos-9-chat-logo",
+   "title": "Chat Logo",
+   "tags": "atlassian2 chat product logo wordmark lockup rovo chat Chat Logo",
+   "kind": "vertex",
+   "width": 76.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.chat;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_chat;atlassian2Lockup=0.288 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:130"
+  },
+  {
+   "id": "atlassian2Logos-10-company-hub-logo",
+   "title": "Company Hub Logo",
+   "tags": "atlassian2 company hub product logo wordmark lockup intranet Company Hub Logo",
+   "kind": "vertex",
+   "width": 127.7,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.company-hub;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_company_hub;atlassian2Lockup=0.32 0.552 0.054;wordmarkColor=#292a2e;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:131"
+  },
+  {
+   "id": "atlassian2Logos-11-compass-logo",
+   "title": "Compass Logo",
+   "tags": "atlassian2 compass product logo wordmark lockup Compass Logo",
+   "kind": "vertex",
+   "width": 121.3,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.compass;tileColor=#94c748;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_compass;atlassian2Lockup=0.288 0.826 0.066;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:132"
+  },
+  {
+   "id": "atlassian2Logos-12-confluence-logo",
+   "title": "Confluence Logo",
+   "tags": "atlassian2 confluence product logo wordmark lockup Confluence Logo",
+   "kind": "vertex",
+   "width": 140.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.confluence;tileColor=#1868db;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_confluence;atlassian2Lockup=0.288 0.691 -0.044;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:133"
+  },
+  {
+   "id": "atlassian2Logos-13-confluence-data-center-logo",
+   "title": "Confluence Data Center Logo",
+   "tags": "atlassian2 confluence data center product logo wordmark lockup Confluence Data Center Logo",
+   "kind": "vertex",
+   "width": 146.5,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.confluence-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_confluence_data_center;atlassian2Lockup=0.323 0.721 -0.046;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:134"
+  },
+  {
+   "id": "atlassian2Logos-14-crowd-logo",
+   "title": "Crowd Logo",
+   "tags": "atlassian2 crowd product logo wordmark lockup Crowd Logo",
+   "kind": "vertex",
+   "width": 97.5,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.crowd;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_crowd;atlassian2Lockup=0.323 0.719 -0.045;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:135"
+  },
+  {
+   "id": "atlassian2Logos-15-customer-service-management-logo",
+   "title": "Customer Service Management Logo",
+   "tags": "atlassian2 customer service management product logo wordmark lockup Customer Service Management Logo",
+   "kind": "vertex",
+   "width": 342.1,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.customer-service-management;tileColor=#ffc716;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_customer_service_management;atlassian2Lockup=0.288 0.856 0.056;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:136"
+  },
+  {
+   "id": "atlassian2Logos-16-feedback-logo",
+   "title": "Feedback Logo",
+   "tags": "atlassian2 feedback product logo wordmark lockup Feedback Logo",
+   "kind": "vertex",
+   "width": 126.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.feedback;tileColor=#c97cf4;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_feedback;atlassian2Lockup=0.335 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:137"
+  },
+  {
+   "id": "atlassian2Logos-17-focus-logo",
+   "title": "Focus Logo",
+   "tags": "atlassian2 focus product logo wordmark lockup Focus Logo",
+   "kind": "vertex",
+   "width": 87,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.focus;tileColor=#fb9700;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_focus;atlassian2Lockup=0.335 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:138"
+  },
+  {
+   "id": "atlassian2Logos-18-goals-logo",
+   "title": "Goals Logo",
+   "tags": "atlassian2 goals product logo wordmark lockup atlas Goals Logo",
+   "kind": "vertex",
+   "width": 86.7,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.goals;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_goals;atlassian2Lockup=0.288 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:139"
+  },
+  {
+   "id": "atlassian2Logos-19-guard-logo",
+   "title": "Guard Logo",
+   "tags": "atlassian2 guard product logo wordmark lockup atlassian access Guard Logo",
+   "kind": "vertex",
+   "width": 89.8,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.guard;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_guard;atlassian2Lockup=0.288 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:140"
+  },
+  {
+   "id": "atlassian2Logos-20-guard-detect-logo",
+   "title": "Guard Detect Logo",
+   "tags": "atlassian2 guard detect product logo wordmark lockup atlassian access Guard Detect Logo",
+   "kind": "vertex",
+   "width": 120.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.guard-detect;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_guard_detect;atlassian2Lockup=0.278 0.437 -0.003;wordmarkColor=#292a2e;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:141"
+  },
+  {
+   "id": "atlassian2Logos-21-home-logo",
+   "title": "Home Logo",
+   "tags": "atlassian2 home product logo wordmark lockup atlas start Home Logo",
+   "kind": "vertex",
+   "width": 90.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.home;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_home;atlassian2Lockup=0.345 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:142"
+  },
+  {
+   "id": "atlassian2Logos-22-hub-logo",
+   "title": "Hub Logo",
+   "tags": "atlassian2 hub product logo wordmark lockup Hub Logo",
+   "kind": "vertex",
+   "width": 70.7,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.hub;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_hub;atlassian2Lockup=0.345 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:143"
+  },
+  {
+   "id": "atlassian2Logos-23-jira-logo",
+   "title": "Jira Logo",
+   "tags": "atlassian2 jira product logo wordmark lockup jira software jira core Jira Logo",
+   "kind": "vertex",
+   "width": 61.8,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira;tileColor=#1868db;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira;atlassian2Lockup=0.26 0.673 -0.035;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:144"
+  },
+  {
+   "id": "atlassian2Logos-24-jira-align-logo",
+   "title": "Jira Align Logo",
+   "tags": "atlassian2 jira align product logo wordmark lockup agilecraft Jira Align Logo",
+   "kind": "vertex",
+   "width": 124.7,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira_align;tileColor=none;fillColor=#1868db;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira_align;atlassian2Lockup=0.592 1.466 0.081;wordmarkColor=#101214;atlassian2LockupBox=1.466 0.152;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:145"
+  },
+  {
+   "id": "atlassian2Logos-25-jira-data-center-logo",
+   "title": "Jira Data Center Logo",
+   "tags": "atlassian2 jira data center product logo wordmark lockup jira software Jira Data Center Logo",
+   "kind": "vertex",
+   "width": 63.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira_data_center;atlassian2Lockup=0.293 0.702 -0.037;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:146"
+  },
+  {
+   "id": "atlassian2Logos-26-jira-product-discovery-logo",
+   "title": "Jira Product Discovery Logo",
+   "tags": "atlassian2 jira product discovery product logo wordmark lockup Jira Product Discovery Logo",
+   "kind": "vertex",
+   "width": 244.6,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-product-discovery;tileColor=#c97cf4;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira_product_discovery;atlassian2Lockup=0.26 0.872 0.048;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:147"
+  },
+  {
+   "id": "atlassian2Logos-27-jira-service-management-logo",
+   "title": "Jira Service Management Logo",
+   "tags": "atlassian2 jira service management product logo wordmark lockup jira service desk jsm Jira Service Management Logo",
+   "kind": "vertex",
+   "width": 278.5,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-service-management;tileColor=#ffc716;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira_service_management;atlassian2Lockup=0.26 0.856 0.056;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:148"
+  },
+  {
+   "id": "atlassian2Logos-28-jira-service-management-data-center-logo",
+   "title": "Jira Service Management Data Center Logo",
+   "tags": "atlassian2 jira service management data center product logo wordmark lockup jira service desk jsm Jira Service Management Data Center Logo",
+   "kind": "vertex",
+   "width": 288.6,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-service-management-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;atlassian2Wordmark=mxgraph.atlassian2.wordmark_jira_service_management_data_center;atlassian2Lockup=0.293 0.893 0.059;wordmarkColor=#1e1f21;atlassian2LockupBox=1.005 0;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:149"
+  },
+  {
+   "id": "atlassian2Logos-29-loom-logo",
+   "title": "Loom Logo",
+   "tags": "atlassian2 loom product logo wordmark lockup Loom Logo",
+   "kind": "vertex",
+   "width": 76.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.loom;tileColor=#1868db;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_loom;atlassian2Lockup=0.333 0.682 -0.036;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:150"
+  },
+  {
+   "id": "atlassian2Logos-30-loom-internal-logo",
+   "title": "Loom Internal Logo",
+   "tags": "atlassian2 loom internal product logo wordmark lockup Loom Internal Logo",
+   "kind": "vertex",
+   "width": 76.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.loom-internal;tileColor=#625df5;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_loom_internal;atlassian2Lockup=0.333 0.682 -0.036;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:151"
+  },
+  {
+   "id": "atlassian2Logos-31-opsgenie-logo",
+   "title": "Opsgenie Logo",
+   "tags": "atlassian2 opsgenie product logo wordmark lockup Opsgenie Logo",
+   "kind": "vertex",
+   "width": 122.6,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.opsgenie;tileColor=#ffc716;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_opsgenie;atlassian2Lockup=0.288 0.856 0.056;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:152"
+  },
+  {
+   "id": "atlassian2Logos-32-projects-logo",
+   "title": "Projects Logo",
+   "tags": "atlassian2 projects product logo wordmark lockup Projects Logo",
+   "kind": "vertex",
+   "width": 108.4,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.projects;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_projects;atlassian2Lockup=0.345 0.852 0.055;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:153"
+  },
+  {
+   "id": "atlassian2Logos-33-rovo-logo",
+   "title": "Rovo Logo",
+   "tags": "atlassian2 rovo product logo wordmark lockup Rovo Logo",
+   "kind": "vertex",
+   "width": 79.2,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo;tileColor=#1868db;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_rovo;atlassian2Lockup=0.345 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:154"
+  },
+  {
+   "id": "atlassian2Logos-34-rovo-dev-logo",
+   "title": "Rovo Dev Logo",
+   "tags": "atlassian2 rovo dev product logo wordmark lockup Rovo Dev Logo",
+   "kind": "vertex",
+   "width": 123.5,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo-dev;tileColor=#94c748;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_rovo_dev;atlassian2Lockup=0.345 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:155"
+  },
+  {
+   "id": "atlassian2Logos-35-rovo-dev-agent-logo",
+   "title": "Rovo Dev Agent Logo",
+   "tags": "atlassian2 rovo dev agent product logo wordmark lockup Rovo Dev Agent Logo",
+   "kind": "vertex",
+   "width": 119.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo-dev-agent;tileColor=#94c748;fillColor=#101214;tileShape=hex;glyphScale=0.98;atlassian2Wordmark=mxgraph.atlassian2.wordmark_rovo_dev_agent;atlassian2Lockup=0.296 0.639 -0.008;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:156"
+  },
+  {
+   "id": "atlassian2Logos-36-search-logo",
+   "title": "Search Logo",
+   "tags": "atlassian2 search product logo wordmark lockup rovo search Search Logo",
+   "kind": "vertex",
+   "width": 96.6,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.search;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_search;atlassian2Lockup=0.29 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:157"
+  },
+  {
+   "id": "atlassian2Logos-37-statuspage-logo",
+   "title": "Statuspage Logo",
+   "tags": "atlassian2 statuspage product logo wordmark lockup Statuspage Logo",
+   "kind": "vertex",
+   "width": 143.7,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.statuspage;tileColor=#ffc716;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_statuspage;atlassian2Lockup=0.29 0.831 0.068;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:158"
+  },
+  {
+   "id": "atlassian2Logos-38-studio-logo",
+   "title": "Studio Logo",
+   "tags": "atlassian2 studio product logo wordmark lockup Studio Logo",
+   "kind": "vertex",
+   "width": 93,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.studio;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_studio;atlassian2Lockup=0.29 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:159"
+  },
+  {
+   "id": "atlassian2Logos-39-talent-logo",
+   "title": "Talent Logo",
+   "tags": "atlassian2 talent product logo wordmark lockup Talent Logo",
+   "kind": "vertex",
+   "width": 90.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.talent;tileColor=#fb9700;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_talent;atlassian2Lockup=0.259 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:160"
+  },
+  {
+   "id": "atlassian2Logos-40-teams-logo",
+   "title": "Teams Logo",
+   "tags": "atlassian2 teams product logo wordmark lockup Teams Logo",
+   "kind": "vertex",
+   "width": 94.9,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.teams;tileColor=#dddee1;fillColor=#101214;atlassian2Wordmark=mxgraph.atlassian2.wordmark_teams;atlassian2Lockup=0.259 0.639 -0.018;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:161"
+  },
+  {
+   "id": "atlassian2Logos-41-trello-logo",
+   "title": "Trello Logo",
+   "tags": "atlassian2 trello product logo wordmark lockup Trello Logo",
+   "kind": "vertex",
+   "width": 84.1,
+   "height": 24,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.trello;tileColor=#1558bc;fillColor=#fff;atlassian2Wordmark=mxgraph.atlassian2.wordmark_trello;atlassian2Lockup=0.259 0.689 -0.043;wordmarkColor=#1e1f21;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:162"
+  }
+ ]
+}

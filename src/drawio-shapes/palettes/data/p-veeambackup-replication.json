@@ -1,0 +1,498 @@
+{
+ "id": "veeamBackup Replication",
+ "title": "Veeam / Backup and Replication",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamBackup Replication-0-built-in-wan-acceleration",
+   "title": "Built-in WAN Acceleration",
+   "tags": "veeam backup replication built in wan acceleration wireless area network veeam vmware virtual machine backup replication Built-in WAN Acceleration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.built_in_wan_acceleration;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.built_in_wan_acceleration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:545"
+  },
+  {
+   "id": "veeamBackup Replication-1-1-click-failover-orchestration",
+   "title": "1 Click Failover Orchestration",
+   "tags": "veeam backup replication one click failover orchestration veeam vmware virtual machine backup replication 1 Click Failover Orchestration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.1_click_failover_orchestration;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.1_click_failover_orchestration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:547"
+  },
+  {
+   "id": "veeamBackup Replication-2-advanced-refs-integration",
+   "title": "Advanced ReFS integration",
+   "tags": "veeam backup replication advanced refs integration veeam vmware virtual machine backup replication Advanced ReFS integration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.advanced_refs_integration;",
+   "shapeNames": [
+    "mxgraph.veeam.advanced_refs_integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:549"
+  },
+  {
+   "id": "veeamBackup Replication-3-assisted-failover-and-failback",
+   "title": "Assisted Failover and Failback",
+   "tags": "veeam backup replication assisted failover and failback veeam vmware virtual machine backup replication Assisted Failover and Failback",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.assisted_failover_and_failback;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.assisted_failover_and_failback"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:551"
+  },
+  {
+   "id": "veeamBackup Replication-4-chargeback-and-billing-capabilities",
+   "title": "Chargeback and billing capabilities",
+   "tags": "veeam backup replication chargeback and billing capabilities veeam vmware virtual machine backup replication Chargeback and billing capabilities",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.chargeback_and_billing_capabilities;",
+   "shapeNames": [
+    "mxgraph.veeam.chargeback_and_billing_capabilities"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:553"
+  },
+  {
+   "id": "veeamBackup Replication-5-cloud-connect",
+   "title": "Cloud Connect",
+   "tags": "veeam backup replication cloud connect veeam vmware virtual machine backup replication Cloud Connect",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_cloud_connect;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_cloud_connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:555"
+  },
+  {
+   "id": "veeamBackup Replication-6-built-in-management-for-agents",
+   "title": "Built-in Management for agents",
+   "tags": "veeam backup replication built in management for agents veeam vmware virtual machine backup replication Built-in Management for agents",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.built_in_management_for_agents;",
+   "shapeNames": [
+    "mxgraph.veeam.built_in_management_for_agents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:557"
+  },
+  {
+   "id": "veeamBackup Replication-7-disaster-recovery",
+   "title": "Disaster Recovery",
+   "tags": "veeam backup replication disaster recovery veeam vmware virtual machine backup replication Disaster Recovery",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.disaster_recovery;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.disaster_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:559"
+  },
+  {
+   "id": "veeamBackup Replication-8-dell-emc-data-domain-boost",
+   "title": "Dell EMC Data Domain Boost",
+   "tags": "veeam backup replication emc data domain boost veeam vmware virtual machine backup replication Dell EMC Data Domain Boost",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.emc_data_domain_boost;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.emc_data_domain_boost"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:561"
+  },
+  {
+   "id": "veeamBackup Replication-9-end-to-end-encryption",
+   "title": "End-to-end Encryption",
+   "tags": "veeam backup replication end to end encryption veeam vmware virtual machine backup replication End-to-end Encryption",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.end_to_end_encryption;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.end_to_end_encryption"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:563"
+  },
+  {
+   "id": "veeamBackup Replication-10-backup-from-storage-snapshots",
+   "title": "Backup from Storage Snapshots",
+   "tags": "veeam backup replication backup from storage snapshots veeam vmware virtual machine backup replication Backup from Storage Snapshots",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.backup_from_storage_snapshots;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.backup_from_storage_snapshots"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:565"
+  },
+  {
+   "id": "veeamBackup Replication-11-direct-restore-to-ms-azure",
+   "title": "Direct Restore to MS Azure",
+   "tags": "veeam backup replication direct restore to ms azure veeam vmware virtual machine backup replication Direct Restore to MS Azure",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.direct_restore_to_ms_azure;",
+   "shapeNames": [
+    "mxgraph.veeam.direct_restore_to_ms_azure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:567"
+  },
+  {
+   "id": "veeamBackup Replication-12-draas-enhancements",
+   "title": "DRaaS Enhancements",
+   "tags": "veeam backup replication draas enhancements veeam vmware virtual machine backup replication DRaaS Enhancements",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.draas_enhancements;",
+   "shapeNames": [
+    "mxgraph.veeam.draas_enhancements"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:569"
+  },
+  {
+   "id": "veeamBackup Replication-13-full-ms-integration",
+   "title": "Full MS Integration",
+   "tags": "veeam backup replication full ms integration veeam vmware virtual machine backup replication Full MS Integration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.full_ms_integration;",
+   "shapeNames": [
+    "mxgraph.veeam.full_ms_integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:571"
+  },
+  {
+   "id": "veeamBackup Replication-14-native-tape-support",
+   "title": "Native Tape Support",
+   "tags": "veeam backup replication native tape support veeam vmware virtual machine backup replication Native Tape Support",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.native_tape_support;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.native_tape_support"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:573"
+  },
+  {
+   "id": "veeamBackup Replication-15-enterprise-scalability-enhancements",
+   "title": "Enterprise scalability enhancements",
+   "tags": "veeam backup replication enterprise scalability enhancements veeam vmware virtual machine backup replication Enterprise scalability enhancements",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.enterprise_scalability_enhancements;",
+   "shapeNames": [
+    "mxgraph.veeam.enterprise_scalability_enhancements"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:575"
+  },
+  {
+   "id": "veeamBackup Replication-16-on-demand-sandbox",
+   "title": "On Demand Sandbox",
+   "tags": "veeam backup replication on demand sandbox veeam vmware virtual machine backup replication On Demand Sandbox",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.on_demand_sandbox;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.on_demand_sandbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:577"
+  },
+  {
+   "id": "veeamBackup Replication-17-nas-backup",
+   "title": "NAS Backup",
+   "tags": "veeam backup replication nas backup veeam vmware virtual machine backup replication NAS Backup",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.nas_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.nas_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:579"
+  },
+  {
+   "id": "veeamBackup Replication-18-quick-migration",
+   "title": "Quick Migration",
+   "tags": "veeam backup replication quick migration veeam vmware virtual machine backup replication Quick Migration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.quick_migration;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.quick_migration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:581"
+  },
+  {
+   "id": "veeamBackup Replication-19-replication-from-a-backup",
+   "title": "Replication from a Backup",
+   "tags": "veeam backup replication replication from a backup veeam vmware virtual machine backup replication Replication from a Backup",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.replication_from_a_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.replication_from_a_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:583"
+  },
+  {
+   "id": "veeamBackup Replication-20-primary-storage-integration",
+   "title": "Primary Storage integration",
+   "tags": "veeam backup replication primary storage integration veeam vmware virtual machine backup replication Primary Storage integration",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.primary_storage_integration;",
+   "shapeNames": [
+    "mxgraph.veeam.primary_storage_integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:585"
+  },
+  {
+   "id": "veeamBackup Replication-21-sure-replica",
+   "title": "Sure Replica",
+   "tags": "veeam backup replication sure replica veeam vmware virtual machine backup replication Sure Replica",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.sure_replica;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.sure_replica"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:587"
+  },
+  {
+   "id": "veeamBackup Replication-22-archive-tier",
+   "title": "Archive Tier",
+   "tags": "veeam backup replication archive tier veeam vmware virtual machine backup replication Archive Tier",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.archive_tier;",
+   "shapeNames": [
+    "mxgraph.veeam.archive_tier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:589"
+  },
+  {
+   "id": "veeamBackup Replication-23-restore-data-from-vm-backup",
+   "title": "Restore Data from VM Backup",
+   "tags": "veeam backup replication restore data from vm backup veeam vmware virtual machine backup replication Restore Data from VM Backup",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.restore_data_from_the_vm_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.restore_data_from_the_vm_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:591"
+  },
+  {
+   "id": "veeamBackup Replication-24-scheduled-backups",
+   "title": "Scheduled Backups",
+   "tags": "veeam backup replication Scheduled Backups veeam vmware virtual machine backup replication Scheduled Backups",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.scheduled_backups;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.scheduled_backups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:593"
+  },
+  {
+   "id": "veeamBackup Replication-25-restful-api",
+   "title": "RESTful API",
+   "tags": "veeam backup replication restful apis api veeam vmware virtual machine backup replication RESTful API",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.restful_apis;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.restful_apis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:595"
+  },
+  {
+   "id": "veeamBackup Replication-26-self-service-recovery",
+   "title": "Self-Service Recovery",
+   "tags": "veeam backup replication self service recovery veeam vmware virtual machine backup replication Self-Service Recovery",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.self_service_recovery;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.self_service_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:597"
+  },
+  {
+   "id": "veeamBackup Replication-27-reporting",
+   "title": "Reporting",
+   "tags": "veeam backup replication reporting veeam vmware virtual machine backup replication Reporting",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.reporting;",
+   "shapeNames": [
+    "mxgraph.veeam.reporting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:599"
+  },
+  {
+   "id": "veeamBackup Replication-28-continuous-data-protection",
+   "title": "Continuous Data Protection",
+   "tags": "veeam backup replication continuous data protection veeam vmware virtual machine backup replication Continuous Data Protection",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.continuous_data_protection;",
+   "shapeNames": [
+    "mxgraph.veeam.continuous_data_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:601"
+  },
+  {
+   "id": "veeamBackup Replication-29-vcloud-director-support",
+   "title": "vCloud Director Support",
+   "tags": "veeam backup replication vcloud director support veeam vmware virtual machine backup replication vCloud Director Support",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vcloud_director_support;",
+   "shapeNames": [
+    "mxgraph.veeam.vcloud_director_support"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:603"
+  },
+  {
+   "id": "veeamBackup Replication-30-virtual-lab",
+   "title": "Virtual Lab",
+   "tags": "veeam backup replication virtual lab veeam vmware virtual machine backup replication Virtual Lab",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.virtual_lab;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.virtual_lab"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:605"
+  },
+  {
+   "id": "veeamBackup Replication-31-surebackup",
+   "title": "SureBackup",
+   "tags": "veeam backup replication sure backup veeam vmware virtual machine backup replication SureBackup",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.sure_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.sure_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:607"
+  },
+  {
+   "id": "veeamBackup Replication-32-scale-out-repository",
+   "title": "Scale Out Repository",
+   "tags": "veeam backup replication scale out repository veeam vmware virtual machine backup replication Scale Out Repository",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 57.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.scale_out_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.scale_out_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:609"
+  },
+  {
+   "id": "veeamBackup Replication-33-veeamzip",
+   "title": "VeeamZIP",
+   "tags": "veeam backup replication veeamzip zip veeam vmware virtual machine backup replication VeeamZIP",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeamzip;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeamzip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:611"
+  },
+  {
+   "id": "veeamBackup Replication-34-veeam-explorer",
+   "title": "Veeam Explorer",
+   "tags": "veeam backup replication explorer veeam vmware virtual machine backup replication Veeam Explorer",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_explorer;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_explorer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:613"
+  }
+ ]
+}

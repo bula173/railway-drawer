@@ -1,0 +1,806 @@
+{
+ "id": "bpmn2Events",
+ "title": "BPMN 2.0  Events",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-BPMN.js:8",
+ "entries": [
+  {
+   "id": "bpmn2Events-0-none-start",
+   "title": "None Start",
+   "tags": "bpmn business process model notation event none start None Start",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1382"
+  },
+  {
+   "id": "bpmn2Events-1-none-intermediate-throwing",
+   "title": "None Intermediate, Throwing",
+   "tags": "bpmn business process model notation event none intermediate throwing None Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=general;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1383"
+  },
+  {
+   "id": "bpmn2Events-2-end",
+   "title": "End",
+   "tags": "bpmn business process model notation event end End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1384"
+  },
+  {
+   "id": "bpmn2Events-3-message-start-interrupting",
+   "title": "Message Start, Interrupting",
+   "tags": "bpmn business process model notation event message start interrupting Message Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1385"
+  },
+  {
+   "id": "bpmn2Events-4-message-start-non-interrupting",
+   "title": "Message Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event message start non interrupting noninterrupting Message Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1386"
+  },
+  {
+   "id": "bpmn2Events-5-message-intermediate-throwing",
+   "title": "Message Intermediate, Throwing",
+   "tags": "bpmn business process model notation event message intermediate throwing Message Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1387"
+  },
+  {
+   "id": "bpmn2Events-6-message-intermediate-catching",
+   "title": "Message Intermediate, Catching",
+   "tags": "bpmn business process model notation event message intermediate catching Message Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1388"
+  },
+  {
+   "id": "bpmn2Events-7-message-intermediate-boundary-interrupting",
+   "title": "Message Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event message intermediate boundary interrupting Message Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1389"
+  },
+  {
+   "id": "bpmn2Events-8-message-intermediate-boundary-non-interrupting",
+   "title": "Message Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event message intermediate boundary non interrupting noninterrupting Message Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1390"
+  },
+  {
+   "id": "bpmn2Events-9-message-end",
+   "title": "Message End",
+   "tags": "bpmn business process model notation event message end Message End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1391"
+  },
+  {
+   "id": "bpmn2Events-10-timer-start-interrupting",
+   "title": "Timer Start, Interrupting",
+   "tags": "bpmn business process model notation event timer start interrupting Timer Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1392"
+  },
+  {
+   "id": "bpmn2Events-11-timer-start-non-interrupting",
+   "title": "Timer Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event timer start non interrupting noninterrupting Timer Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1393"
+  },
+  {
+   "id": "bpmn2Events-12-timer-intermediate-catching",
+   "title": "Timer Intermediate, Catching",
+   "tags": "bpmn business process model notation event timer intermediate catching Timer Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1394"
+  },
+  {
+   "id": "bpmn2Events-13-timer-intermediate-boundary-interrupting",
+   "title": "Timer Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event timer intermediate boundary interrupting Timer Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1395"
+  },
+  {
+   "id": "bpmn2Events-14-timer-intermediate-boundary-non-interrupting",
+   "title": "Timer Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event timer intermediate boundary non interrupting noninterrupting Timer Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1396"
+  },
+  {
+   "id": "bpmn2Events-15-escalation-start-interrupting",
+   "title": "Escalation Start, Interrupting",
+   "tags": "bpmn business process model notation event escalation start interrupting Escalation Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventInt;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1397"
+  },
+  {
+   "id": "bpmn2Events-16-escalation-start-non-interrupting",
+   "title": "Escalation Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event escalation start non interrupting noninterrupting Escalation Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1398"
+  },
+  {
+   "id": "bpmn2Events-17-escalation-intermediate-boundary-throwing",
+   "title": "Escalation Intermediate, Boundary Throwing",
+   "tags": "bpmn business process model notation event escalation intermediate boundary throwing Escalation Intermediate, Boundary Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1399"
+  },
+  {
+   "id": "bpmn2Events-18-escalation-intermediate-boundary-interrupting",
+   "title": "Escalation Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event escalation intermediate boundary interrupting Escalation Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1400"
+  },
+  {
+   "id": "bpmn2Events-19-escalation-intermediate-non-interrupting",
+   "title": "Escalation Intermediate, Non-Interrupting",
+   "tags": "bpmn business process model notation event escalation intermediate non interrupting nonimpterrupting Escalation Intermediate, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1401"
+  },
+  {
+   "id": "bpmn2Events-20-escalation-end",
+   "title": "Escalation End",
+   "tags": "bpmn business process model notation event escalation end Escalation End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1402"
+  },
+  {
+   "id": "bpmn2Events-21-error-start-interrupting",
+   "title": "Error Start, Interrupting",
+   "tags": "bpmn business process model notation event error start interrupting Error Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventInt;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1403"
+  },
+  {
+   "id": "bpmn2Events-22-error-intermediate-boundary-interrupting",
+   "title": "Error Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event error intermediate boundary interrupting Error Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1404"
+  },
+  {
+   "id": "bpmn2Events-23-error-end",
+   "title": "Error End",
+   "tags": "bpmn business process model notation event error end Error End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1405"
+  },
+  {
+   "id": "bpmn2Events-24-compensation-start-interrupting",
+   "title": "Compensation Start, Interrupting",
+   "tags": "bpmn business process model notation event compensation start interrupting Compensation Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventInt;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1406"
+  },
+  {
+   "id": "bpmn2Events-25-compensation-intermediate-throwing",
+   "title": "Compensation Intermediate, Throwing",
+   "tags": "bpmn business process model notation event compensation intermediate throwing Compensation Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1407"
+  },
+  {
+   "id": "bpmn2Events-26-compensation-intermediate-boundary-interrupting",
+   "title": "Compensation Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event compensation intermediate boundary interrupting Compensation Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1408"
+  },
+  {
+   "id": "bpmn2Events-27-compensation-end",
+   "title": "Compensation End",
+   "tags": "bpmn business process model notation event compensation end Compensation End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1409"
+  },
+  {
+   "id": "bpmn2Events-28-conditional-start-interrupting",
+   "title": "Conditional Start, Interrupting",
+   "tags": "bpmn business process model notation event conditional start interrupting Conditional Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1410"
+  },
+  {
+   "id": "bpmn2Events-29-conditional-start-non-interrupting",
+   "title": "Conditional Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event conditional start non interrupting noninterrupting Conditional Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1411"
+  },
+  {
+   "id": "bpmn2Events-30-conditional-intermediate-catching",
+   "title": "Conditional Intermediate, Catching",
+   "tags": "bpmn business process model notation event conditional intermediate catching Conditional Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1412"
+  },
+  {
+   "id": "bpmn2Events-31-conditional-intermediate-boundary-interrupting",
+   "title": "Conditional Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event conditional intermediate boundary interrupting Conditional Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1413"
+  },
+  {
+   "id": "bpmn2Events-32-conditional-intermediate-boundary-non-interrupting",
+   "title": "Conditional Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event conditional intermediate boundary non interrupting noninterrupting Conditional Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1414"
+  },
+  {
+   "id": "bpmn2Events-33-link-intermediate-catching",
+   "title": "Link Intermediate, Catching",
+   "tags": "bpmn business process model notation event link intermediate catching Link Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=link;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1415"
+  },
+  {
+   "id": "bpmn2Events-34-link-intermediate-throwing",
+   "title": "Link Intermediate, Throwing",
+   "tags": "bpmn business process model notation event link intermediate throwing Link Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=link;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1416"
+  },
+  {
+   "id": "bpmn2Events-35-signal-start-interrupting",
+   "title": "Signal Start, Interrupting",
+   "tags": "bpmn business process model notation event signal start interrupting Signal Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1417"
+  },
+  {
+   "id": "bpmn2Events-36-signal-start-non-interrupting",
+   "title": "Signal Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event signal start non interrupting noninterrupting Signal Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1418"
+  },
+  {
+   "id": "bpmn2Events-37-signal-intermediate-catching",
+   "title": "Signal Intermediate, Catching",
+   "tags": "bpmn business process model notation event signal intermediate catching Signal Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1419"
+  },
+  {
+   "id": "bpmn2Events-38-signal-intermediate-throwing",
+   "title": "Signal Intermediate, Throwing",
+   "tags": "bpmn business process model notation event signal intermediate throwing Signal Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1420"
+  },
+  {
+   "id": "bpmn2Events-39-signal-intermediate-boundary-interrupting",
+   "title": "Signal Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event signal intermediate boundary interrupting Signal Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1421"
+  },
+  {
+   "id": "bpmn2Events-40-signal-intermediate-boundary-non-interrupting",
+   "title": "Signal Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event signal intermediate noundary non interrupting noninterrupting Signal Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1422"
+  },
+  {
+   "id": "bpmn2Events-41-signal-end",
+   "title": "Signal End",
+   "tags": "bpmn business process model notation event signal end Signal End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1423"
+  },
+  {
+   "id": "bpmn2Events-42-multiple-start-interrupting",
+   "title": "Multiple Start, Interrupting",
+   "tags": "bpmn business process model notation event multiple start interrupting Multiple Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1424"
+  },
+  {
+   "id": "bpmn2Events-43-multiple-start-non-interrupting",
+   "title": "Multiple Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event multiple start non interrupting noninterrupting Multiple Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1425"
+  },
+  {
+   "id": "bpmn2Events-44-multiple-intermediate-catching",
+   "title": "Multiple Intermediate, Catching",
+   "tags": "bpmn business process model notation event multiple intermediate catching Multiple Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1426"
+  },
+  {
+   "id": "bpmn2Events-45-multiple-intermediate-throwing",
+   "title": "Multiple Intermediate, Throwing",
+   "tags": "bpmn business process model notation event multiple intermediate throwing Multiple Intermediate, Throwing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=throwing;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1427"
+  },
+  {
+   "id": "bpmn2Events-46-multiple-intermediate-boundary-interrupting",
+   "title": "Multiple Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event multiple intermediate boundary interrupting Multiple Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1428"
+  },
+  {
+   "id": "bpmn2Events-47-multiple-intermediate-boundary-non-interrupting",
+   "title": "Multiple Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event multiple intermediate boundary non interrupting noninterrupting Multiple Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1429"
+  },
+  {
+   "id": "bpmn2Events-48-multiple-end",
+   "title": "Multiple End",
+   "tags": "bpmn business process model notation event multiple end Multiple End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1430"
+  },
+  {
+   "id": "bpmn2Events-49-parallel-multiple-start-interrupting",
+   "title": "Parallel Multiple Start, Interrupting",
+   "tags": "bpmn business process model notation event parallel multiple start interrupting Parallel Multiple Start, Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventInt;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1431"
+  },
+  {
+   "id": "bpmn2Events-50-parallel-multiple-start-non-interrupting",
+   "title": "Parallel Multiple Start, Non-Interrupting",
+   "tags": "bpmn business process model notation event parallel multiple start non interrupting noninterrupting Parallel Multiple Start, Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=eventNonint;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1432"
+  },
+  {
+   "id": "bpmn2Events-51-parallel-multiple-intermediate-catching",
+   "title": "Parallel Multiple Intermediate, Catching",
+   "tags": "bpmn business process model notation event parallel multiple intermediate catching Parallel Multiple Intermediate, Catching",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1433"
+  },
+  {
+   "id": "bpmn2Events-52-parallel-multiple-intermediate-boundary-interrupting",
+   "title": "Parallel Multiple Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event parallel multiple intermediate boundary interrupting Parallel Multiple Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1434"
+  },
+  {
+   "id": "bpmn2Events-53-parallel-multiple-intermediate-boundary-non-interrupting",
+   "title": "Parallel Multiple Intermediate, Boundary Non-Interrupting",
+   "tags": "bpmn business process model notation event parallel multiple intermediate boundary non interrupting noninterrupting Parallel Multiple Intermediate, Boundary Non-Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundNonint;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1435"
+  },
+  {
+   "id": "bpmn2Events-54-cancel-intermediate-boundary-interrupting",
+   "title": "Cancel Intermediate, Boundary Interrupting",
+   "tags": "bpmn business process model notation event cancel intermediate boundary interrupting Cancel Intermediate, Boundary Interrupting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=cancel;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1436"
+  },
+  {
+   "id": "bpmn2Events-55-cancel-end",
+   "title": "Cancel End",
+   "tags": "bpmn business process model notation event cancel end Cancel End",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=cancel;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1437"
+  },
+  {
+   "id": "bpmn2Events-56-terminate",
+   "title": "Terminate",
+   "tags": "bpmn business process model notation event terminate Terminate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate;",
+   "shapeNames": [
+    "mxgraph.bpmn.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:1438"
+  }
+ ]
+}

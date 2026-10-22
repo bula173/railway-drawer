@@ -1,0 +1,540 @@
+{
+ "id": "veeam2Storage",
+ "title": "Veeam / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2Storage-0-object-storage",
+   "title": "Object Storage",
+   "tags": "veeam2 object storage veeam vm vmware virtual machine storage Object Storage",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.object_storage;",
+   "shapeNames": [
+    "mxgraph.veeam2.object_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:699"
+  },
+  {
+   "id": "veeam2Storage-1-azure-blob",
+   "title": "Azure Blob",
+   "tags": "veeam2 azure blob veeam vm vmware virtual machine storage Azure Blob",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.azure_blob;",
+   "shapeNames": [
+    "mxgraph.veeam2.azure_blob"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:701"
+  },
+  {
+   "id": "veeam2Storage-2-aws-s3",
+   "title": "AWS S3",
+   "tags": "veeam2 aws s3 veeam vm vmware virtual machine storage AWS S3",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.aws_s3;",
+   "shapeNames": [
+    "mxgraph.veeam2.aws_s3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:703"
+  },
+  {
+   "id": "veeam2Storage-3-ibm-object-storage",
+   "title": "IBM Object Storage",
+   "tags": "veeam2 ibm object storage veeam vm vmware virtual machine storage IBM Object Storage",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.ibm_object_storage;",
+   "shapeNames": [
+    "mxgraph.veeam2.ibm_object_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:705"
+  },
+  {
+   "id": "veeam2Storage-4-s3-compatible",
+   "title": "S3-compatible",
+   "tags": "veeam2 s3 compatible veeam vm vmware virtual machine storage S3-compatible",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.s3_compatible;",
+   "shapeNames": [
+    "mxgraph.veeam2.s3_compatible"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:707"
+  },
+  {
+   "id": "veeam2Storage-5-vmware-vsan",
+   "title": "VMware vSAN",
+   "tags": "veeam2 vmware vsan veeam vm vmware virtual machine storage VMware vSAN",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vmware_vsan;",
+   "shapeNames": [
+    "mxgraph.veeam2.vmware_vsan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:709"
+  },
+  {
+   "id": "veeam2Storage-6-nas",
+   "title": "NAS",
+   "tags": "veeam2 nas veeam vm vmware virtual machine storage NAS",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.nas;",
+   "shapeNames": [
+    "mxgraph.veeam2.nas"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:711"
+  },
+  {
+   "id": "veeam2Storage-7-shared-folder",
+   "title": "Shared Folder",
+   "tags": "veeam2 shared folder veeam vm vmware virtual machine storage Shared Folder",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.shared_folder;",
+   "shapeNames": [
+    "mxgraph.veeam2.shared_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:713"
+  },
+  {
+   "id": "veeam2Storage-8-folder",
+   "title": "Folder",
+   "tags": "veeam2 folder veeam vm vmware virtual machine storage Folder",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.folder;",
+   "shapeNames": [
+    "mxgraph.veeam2.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:715"
+  },
+  {
+   "id": "veeam2Storage-9-datastore-empty",
+   "title": "Datastore empty",
+   "tags": "veeam2 datastore empty veeam vm vmware virtual machine storage Datastore empty",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.datastore_empty;",
+   "shapeNames": [
+    "mxgraph.veeam2.datastore_empty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:717"
+  },
+  {
+   "id": "veeam2Storage-10-datastore-33-full",
+   "title": "Datastore 33% full",
+   "tags": "veeam2 datastore 33 percentage third full 33% veeam vm vmware virtual machine storage Datastore 33% full",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.datastore_33_full;",
+   "shapeNames": [
+    "mxgraph.veeam2.datastore_33_full"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:719"
+  },
+  {
+   "id": "veeam2Storage-11-datastore-66-full",
+   "title": "Datastore 66% full",
+   "tags": "veeam2 datastore 66 percentage two thirds full 66% veeam vm vmware virtual machine storage Datastore 66% full",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.datastore_66_full;",
+   "shapeNames": [
+    "mxgraph.veeam2.datastore_66_full"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:721"
+  },
+  {
+   "id": "veeam2Storage-12-datastore",
+   "title": "Datastore",
+   "tags": "veeam2 datastore veeam vm vmware virtual machine storage Datastore",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.datastore;",
+   "shapeNames": [
+    "mxgraph.veeam2.datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:723"
+  },
+  {
+   "id": "veeam2Storage-13-sd-card",
+   "title": "SD Card",
+   "tags": "veeam2 sd card veeam vm vmware virtual machine storage SD Card",
+   "kind": "vertex",
+   "width": 23,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.sd_card;",
+   "shapeNames": [
+    "mxgraph.veeam2.sd_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:725"
+  },
+  {
+   "id": "veeam2Storage-14-storage",
+   "title": "Storage",
+   "tags": "veeam2 storage veeam vm vmware virtual machine storage Storage",
+   "kind": "vertex",
+   "width": 40,
+   "height": 11,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.storage;",
+   "shapeNames": [
+    "mxgraph.veeam2.storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:727"
+  },
+  {
+   "id": "veeam2Storage-15-storage-snapshot",
+   "title": "Storage Snapshot",
+   "tags": "veeam2 storage snapshot veeam vm vmware virtual machine storage Storage Snapshot",
+   "kind": "vertex",
+   "width": 40,
+   "height": 11,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.storage_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam2.storage_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:729"
+  },
+  {
+   "id": "veeam2Storage-16-storage-with-snapshot",
+   "title": "Storage with Snapshot",
+   "tags": "veeam2 storage with snapshot veeam vm vmware virtual machine storage Storage with Snapshot",
+   "kind": "vertex",
+   "width": 43,
+   "height": 15,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.storage_with_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam2.storage_with_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:731"
+  },
+  {
+   "id": "veeam2Storage-17-storage-stack",
+   "title": "Storage Stack",
+   "tags": "veeam2 storage stack veeam vm vmware virtual machine storage Storage Stack",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.storage_stack;",
+   "shapeNames": [
+    "mxgraph.veeam2.storage_stack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:733"
+  },
+  {
+   "id": "veeam2Storage-18-deduplicating-storage",
+   "title": "Deduplicating Storage",
+   "tags": "veeam2 deduplicating storage veeam vm vmware virtual machine storage Deduplicating Storage",
+   "kind": "vertex",
+   "width": 40,
+   "height": 11,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.deduplicating_storage;",
+   "shapeNames": [
+    "mxgraph.veeam2.deduplicating_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:735"
+  },
+  {
+   "id": "veeam2Storage-19-data-volume",
+   "title": "Data Volume",
+   "tags": "veeam2 data volume veeam vm vmware virtual machine storage Data Volume",
+   "kind": "vertex",
+   "width": 40,
+   "height": 11,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.data_volume;",
+   "shapeNames": [
+    "mxgraph.veeam2.data_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:737"
+  },
+  {
+   "id": "veeam2Storage-20-data-volume-snapshot",
+   "title": "Data Volume Snapshot",
+   "tags": "veeam2 data volume snapshot veeam vm vmware virtual machine storage Data Volume Snapshot",
+   "kind": "vertex",
+   "width": 40,
+   "height": 11,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.data_volume_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam2.data_volume_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:739"
+  },
+  {
+   "id": "veeam2Storage-21-data-volume-with-snapshot",
+   "title": "Data Volume with Snapshot",
+   "tags": "veeam2 data volume with snapshot veeam vm vmware virtual machine storage Data Volume with Snapshot",
+   "kind": "vertex",
+   "width": 43,
+   "height": 15,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.data_volume_with_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam2.data_volume_with_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:741"
+  },
+  {
+   "id": "veeam2Storage-22-file",
+   "title": "File",
+   "tags": "veeam2 file veeam vm vmware virtual machine storage File",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.file;",
+   "shapeNames": [
+    "mxgraph.veeam2.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:743"
+  },
+  {
+   "id": "veeam2Storage-23-backup-file",
+   "title": "Backup file",
+   "tags": "veeam2 backup file veeam vm vmware virtual machine storage Backup file",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.backup_file;",
+   "shapeNames": [
+    "mxgraph.veeam2.backup_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:745"
+  },
+  {
+   "id": "veeam2Storage-24-veeam-full-backup",
+   "title": "Veeam Full Backup",
+   "tags": "veeam2 full backup veeam vm vmware virtual machine storage Veeam Full Backup",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_full_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_full_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:747"
+  },
+  {
+   "id": "veeam2Storage-25-veeam-incremental-backup",
+   "title": "Veeam Incremental Backup",
+   "tags": "veeam2 incremental backup veeam vm vmware virtual machine storage Veeam Incremental Backup",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_incremental_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_incremental_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:749"
+  },
+  {
+   "id": "veeam2Storage-26-veeam-reversed-incremental-backup",
+   "title": "Veeam Reversed Incremental Backup",
+   "tags": "veeam2 reversed incremental backup veeam vm vmware virtual machine storage Veeam Reversed Incremental Backup",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_reversed_incremental_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_reversed_incremental_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:751"
+  },
+  {
+   "id": "veeam2Storage-27-veeam-backup-chain-metadata",
+   "title": "Veeam Backup Chain Metadata",
+   "tags": "veeam2 backup chain metadata veeam vm vmware virtual machine storage Veeam Backup Chain Metadata",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_backup_chain_metadata;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_backup_chain_metadata"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:753"
+  },
+  {
+   "id": "veeam2Storage-28-vbr-configuration-backup",
+   "title": "VBR Configuration Backup",
+   "tags": "veeam2 vbr configuration backup veeam vm vmware virtual machine storage VBR Configuration Backup",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbr_configuration_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbr_configuration_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:755"
+  },
+  {
+   "id": "veeam2Storage-29-vbr-transaction-log-backup",
+   "title": "VBR Transaction Log Backup",
+   "tags": "veeam2 vbr transaction log backup veeam vm vmware virtual machine storage VBR Transaction Log Backup",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbr_transaction_log_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbr_transaction_log_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:757"
+  },
+  {
+   "id": "veeam2Storage-30-tape",
+   "title": "Tape",
+   "tags": "veeam2 tape veeam vm vmware virtual machine storage Tape",
+   "kind": "vertex",
+   "width": 38,
+   "height": 22,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:759"
+  },
+  {
+   "id": "veeam2Storage-31-tape-checkout",
+   "title": "Tape Checkout",
+   "tags": "veeam2 tape checkout veeam vm vmware virtual machine storage Tape Checkout",
+   "kind": "vertex",
+   "width": 46,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_checkout;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_checkout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:761"
+  },
+  {
+   "id": "veeam2Storage-32-tape-encrypted",
+   "title": "Tape Encrypted",
+   "tags": "veeam2 tape encrypted veeam vm vmware virtual machine storage Tape Encrypted",
+   "kind": "vertex",
+   "width": 46,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_encrypted;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_encrypted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:763"
+  },
+  {
+   "id": "veeam2Storage-33-tape-locked",
+   "title": "Tape Locked",
+   "tags": "veeam2 tape locked veeam vm vmware virtual machine storage Tape Locked",
+   "kind": "vertex",
+   "width": 46,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_locked;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:765"
+  },
+  {
+   "id": "veeam2Storage-34-tape-recording",
+   "title": "Tape Recording",
+   "tags": "veeam2 tape recording veeam vm vmware virtual machine storage Tape Recording",
+   "kind": "vertex",
+   "width": 46,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_recording;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_recording"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:767"
+  },
+  {
+   "id": "veeam2Storage-35-tape-media-pool",
+   "title": "Tape Media Pool",
+   "tags": "veeam2 tape media pool veeam vm vmware virtual machine storage Tape Media Pool",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_media_pool;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_media_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:769"
+  },
+  {
+   "id": "veeam2Storage-36-tape-library",
+   "title": "Tape Library",
+   "tags": "veeam2 tape library veeam vm vmware virtual machine storage Tape Library",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_library;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:771"
+  },
+  {
+   "id": "veeam2Storage-37-tape-writing-device",
+   "title": "Tape Writing Device",
+   "tags": "veeam2 tape writing device veeam vm vmware virtual machine storage Tape Writing Device",
+   "kind": "vertex",
+   "width": 38,
+   "height": 14.000000000000002,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_writing_device;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_writing_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:773"
+  }
+ ]
+}

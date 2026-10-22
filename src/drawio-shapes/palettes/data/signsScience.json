@@ -1,0 +1,92 @@
+{
+ "id": "signsScience",
+ "title": "Signs / Science",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsScience-0-laboratory",
+   "title": "Laboratory",
+   "tags": "signs science  Laboratory Laboratory",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.science.laboratory;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.laboratory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsScience-1-magnet",
+   "title": "Magnet",
+   "tags": "signs science  Magnet Magnet",
+   "kind": "vertex",
+   "width": 74,
+   "height": 99,
+   "style": "shape=mxgraph.signs.science.magnet;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.magnet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsScience-2-microscope",
+   "title": "Microscope",
+   "tags": "signs science  Microscope Microscope",
+   "kind": "vertex",
+   "width": 64,
+   "height": 99,
+   "style": "shape=mxgraph.signs.science.microscope;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.microscope"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsScience-3-nuclear-1",
+   "title": "Nuclear 1",
+   "tags": "signs science  Nuclear 1 Nuclear 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 88,
+   "style": "shape=mxgraph.signs.science.nuclear_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.nuclear_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsScience-4-nuclear-2",
+   "title": "Nuclear 2",
+   "tags": "signs science  Nuclear 2 Nuclear 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.science.nuclear_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.nuclear_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsScience-5-windmill",
+   "title": "Windmill",
+   "tags": "signs science  Windmill Windmill",
+   "kind": "vertex",
+   "width": 72,
+   "height": 99,
+   "style": "shape=mxgraph.signs.science.windmill;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.science.windmill"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

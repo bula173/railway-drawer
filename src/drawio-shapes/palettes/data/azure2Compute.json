@@ -1,0 +1,568 @@
+{
+ "id": "azure2Compute",
+ "title": "Azure / Compute",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Compute-0-app-services",
+   "title": "App Services",
+   "tags": "azure2 app services azure compute  App Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/App_Services.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.865,0.153,0],[0.875,0.835,0],[0.125,0.835,0],[0.133,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:384"
+  },
+  {
+   "id": "azure2Compute-1-application-group",
+   "title": "Application Group",
+   "tags": "azure2 application group azure compute  Application Group",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Application_Group.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.837,0.128,0],[0.87,0.84,0],[0.133,0.842,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:386"
+  },
+  {
+   "id": "azure2Compute-2-automanaged-vm",
+   "title": "Automanaged VM",
+   "tags": "azure2 automanaged vm virtual machine azure compute  Automanaged VM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Automanaged_VM.svg;points=[[0.5,0,0],[0.5,1,0],[0.005,0.5,0],[0.995,0.5,0],[0.982,0.006,0],[0.747,1,0],[0.253,1,0],[0.018,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:388"
+  },
+  {
+   "id": "azure2Compute-3-availability-sets",
+   "title": "Availability Sets",
+   "tags": "azure2 availability sets azure compute  Availability Sets",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Availability_Sets.svg;points=[[0.5,0,0],[0.5,0.999,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:390"
+  },
+  {
+   "id": "azure2Compute-4-azure-linux",
+   "title": "Azure Linux",
+   "tags": "azure2 linux azure compute  Azure Linux",
+   "kind": "vertex",
+   "width": 66.44,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Azure_Linux.svg;points=[[0.538,0,0],[0.435,1,0],[0.174,0.5,0],[1,0.791,0],[0.864,0.075,0],[0.915,0.977,0],[0,1,0],[0.338,0.088,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:392"
+  },
+  {
+   "id": "azure2Compute-5-batch-accounts",
+   "title": "Batch Accounts",
+   "tags": "azure2 batch accounts azure compute  Batch Accounts",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Batch_Accounts.svg;points=[[0.5,0,0],[0.5,0.928,0],[0.001,0.5,0],[0.905,0.5,0],[0.725,0.006,0],[0.987,0.997,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:394"
+  },
+  {
+   "id": "azure2Compute-6-cloud-services-classic",
+   "title": "Cloud Services (Classic)",
+   "tags": "azure2 cloud services classic azure compute  Cloud Services (Classic)",
+   "kind": "vertex",
+   "width": 72,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Cloud_Services_Classic.svg;points=[[0.512,0,0],[0.521,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.697,0.084,0],[0.905,0.941,0],[0.108,0.923,0],[0.34,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:396"
+  },
+  {
+   "id": "azure2Compute-7-compute-galleries",
+   "title": "Compute Galleries",
+   "tags": "azure2 compute galleries azure compute  Compute Galleries",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Azure_Compute_Galleries.svg;points=[[0.5,0.104,0],[0.5,0.911,0],[0.094,0.5,0],[0.894,0.5,0],[0.877,0.118,0],[0.88,0.895,0],[0.105,0.89,0],[0.115,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:398"
+  },
+  {
+   "id": "azure2Compute-8-container-instances",
+   "title": "Container Instances",
+   "tags": "azure2 container instances azure compute  Container Instances",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Container_Instances.svg;points=[[0.516,0,0],[0.501,1,0],[0,0.417,0],[1,0.458,0],[0.742,0.095,0],[0.795,0.895,0],[0.229,0.945,0],[0.059,0.268,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:400"
+  },
+  {
+   "id": "azure2Compute-9-container-services-deprecated",
+   "title": "Container Services (deprecated)",
+   "tags": "azure2 container services deprecated azure compute  Container Services (deprecated)",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Container_Services_Deprecated.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.494,0],[1,0.493,0],[0.822,0.066,0],[0.817,0.929,0],[0.158,0.957,0],[0.163,0.034,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:402"
+  },
+  {
+   "id": "azure2Compute-10-disk-encryption-sets",
+   "title": "Disk Encryption Sets",
+   "tags": "azure2 disk encryption sets azure compute  Disk Encryption Sets",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Disk_Encryption_Sets.svg;points=[[0.5,0,0],[0.5,0.999,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:404"
+  },
+  {
+   "id": "azure2Compute-11-disks",
+   "title": "Disks",
+   "tags": "azure2 disks azure compute  Disks",
+   "kind": "vertex",
+   "width": 56.99999999999999,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Disks.svg;points=[[0.499,0.003,0],[0.494,0.997,0],[0.219,0.5,0],[0.779,0.5,0],[0.955,0.125,0],[0.95,0.88,0],[0.035,0.865,0],[0.045,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:406"
+  },
+  {
+   "id": "azure2Compute-12-disks-snapshots",
+   "title": "Disks Snapshots",
+   "tags": "azure2 disks snapshots azure compute  Disks Snapshots",
+   "kind": "vertex",
+   "width": 68,
+   "height": 71,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Disks_Snapshots.svg;points=[[0.5,0.003,0],[0.5,0.998,0],[0,0.5,0],[1,0.5,0],[0.994,0.015,0],[0.994,0.982,0],[0.006,0.985,0],[0.006,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:408"
+  },
+  {
+   "id": "azure2Compute-13-function-apps",
+   "title": "Function Apps",
+   "tags": "azure2 function apps azure compute  Function Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;points=[[0.5,0.003,0],[0.5,0.754,0],[0.005,0.499,0],[0.995,0.499,0],[0.752,0,0],[0.742,0.798,0],[0.278,1,0],[0.253,0.202,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:410"
+  },
+  {
+   "id": "azure2Compute-14-host-groups",
+   "title": "Host Groups",
+   "tags": "azure2 host groups azure compute  Host Groups",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Host_Groups.svg;points=[[0.436,0,0],[0.542,1,0],[0,0.5,0],[1,0.5,0],[0.994,0.095,0],[0.994,0.675,0],[0.009,0.612,0],[0.009,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:412"
+  },
+  {
+   "id": "azure2Compute-15-host-pools",
+   "title": "Host Pools",
+   "tags": "azure2 host pools azure compute  Host Pools",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Host_Pools.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:414"
+  },
+  {
+   "id": "azure2Compute-16-hosts",
+   "title": "Hosts",
+   "tags": "azure2 hosts azure compute  Hosts",
+   "kind": "vertex",
+   "width": 57.199999999999996,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Hosts.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.5,0],[0.997,0.5,0],[0.997,0.018,0],[0.991,0.665,0],[0.006,0.665,0],[0.003,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:416"
+  },
+  {
+   "id": "azure2Compute-17-image-definitions",
+   "title": "Image Definitions",
+   "tags": "azure2 image definitions azure compute  Image Definitions",
+   "kind": "vertex",
+   "width": 66,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Image_Definitions.svg;points=[[0.391,0,0],[0.391,1,0],[0.005,0.5,0],[0.995,0.706,0],[0.765,0.003,0],[0.765,0.997,0],[0.013,0.992,0],[0.013,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:418"
+  },
+  {
+   "id": "azure2Compute-18-image-templates",
+   "title": "Image Templates",
+   "tags": "azure2 image templates azure compute  Image Templates",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Image_Templates.svg;points=[[0.5,0,0],[0.427,1,0],[0,0.428,0],[0.856,0.5,0],[0.997,0.043,0],[0.782,0.923,0],[0.213,1,0],[0.005,0.114,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:420"
+  },
+  {
+   "id": "azure2Compute-19-image-versions",
+   "title": "Image Versions",
+   "tags": "azure2 image versions azure compute  Image Versions",
+   "kind": "vertex",
+   "width": 67,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Image_Versions.svg;points=[[0.5,0,0],[0.446,1,0],[0.003,0.45,0],[0.998,0.734,0],[0.685,0.008,0],[0.777,0.997,0],[0.115,0.997,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:422"
+  },
+  {
+   "id": "azure2Compute-20-images",
+   "title": "Images",
+   "tags": "azure2 images azure compute  Images",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Images.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.75,1,0],[0.25,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:424"
+  },
+  {
+   "id": "azure2Compute-21-kubernetes-services",
+   "title": "Kubernetes Services",
+   "tags": "azure2 kubernetes services azure compute  Kubernetes Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Kubernetes_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.494,0],[1,0.493,0],[0.822,0.066,0],[0.817,0.929,0],[0.158,0.957,0],[0.163,0.034,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:426"
+  },
+  {
+   "id": "azure2Compute-22-maintenance-configuration",
+   "title": "Maintenance Configuration",
+   "tags": "azure2 maintenance configuration azure compute  Maintenance Configuration",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Maintenance_Configuration.svg;points=[[0.398,0,0],[0.5,0.943,0],[0.005,0.418,0],[0.974,0.5,0],[0.987,0.365,0],[0.368,0.981,0],[0.12,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:428"
+  },
+  {
+   "id": "azure2Compute-23-managed-service-fabric",
+   "title": "Managed Service Fabric",
+   "tags": "azure2 managed service fabric azure compute  Managed Service Fabric",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Managed_Service_Fabric.svg;points=[[0.492,0,0],[0.695,1,0],[0.003,0.414,0],[0.998,0.414,0],[0.947,0.299,0],[0.83,0.948,0],[0.178,0.966,0],[0.053,0.299,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:430"
+  },
+  {
+   "id": "azure2Compute-24-mesh-applications",
+   "title": "Mesh Applications",
+   "tags": "azure2 mesh applications azure compute  Mesh Applications",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Mesh_Applications.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.5,0],[0.768,0.232,0],[0.768,0.768,0],[0.232,0.768,0],[0.232,0.232,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:432"
+  },
+  {
+   "id": "azure2Compute-25-metrics-advisor",
+   "title": "Metrics Advisor",
+   "tags": "azure2 metrics advisor azure compute  Metrics Advisor",
+   "kind": "vertex",
+   "width": 54.800000000000004,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Metrics_Advisor.svg;points=[[0.449,0,0],[0.5,0.755,0],[0,0.5,0],[0.985,0.5,0],[0.897,0.015,0],[0.996,0.882,0],[0.004,0.74,0],[0.004,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:434"
+  },
+  {
+   "id": "azure2Compute-26-os-images-classic",
+   "title": "OS Images (Classic)",
+   "tags": "azure2 os images classic azure compute  OS Images (Classic)",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/OS_Images_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.75,1,0],[0.25,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:436"
+  },
+  {
+   "id": "azure2Compute-27-restore-points",
+   "title": "Restore Points",
+   "tags": "azure2 restore points azure compute  Restore Points",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Restore_Points.svg;points=[[0.434,0,0],[0.5,0.916,0],[0,0.476,0],[1,0.464,0],[0.85,0.123,0],[0.875,0.783,0],[0.233,1,0],[0.145,0.128,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:438"
+  },
+  {
+   "id": "azure2Compute-28-restore-points-collections",
+   "title": "Restore Points Collections",
+   "tags": "azure2 restore points collections azure compute  Restore Points Collections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Restore_Points_Collections.svg;points=[[0.5,0.015,0],[0.5,0.915,0],[0,0.474,0],[1,0.465,0],[0.865,0.116,0],[0.862,0.817,0],[0.195,0.997,0],[0.14,0.11,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:440"
+  },
+  {
+   "id": "azure2Compute-29-scheduled-actions",
+   "title": "Scheduled Actions",
+   "tags": "azure2 scheduled actions azure compute  Scheduled Actions",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Scheduled_Actions.svg;points=[[0.5,0.06,0],[0.5,0.771,0],[0,0.481,0],[1,0.739,0],[0.682,0.118,0],[0.875,1,0],[0.003,0.837,0],[0.01,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:442"
+  },
+  {
+   "id": "azure2Compute-30-service-fabric-clusters",
+   "title": "Service Fabric Clusters",
+   "tags": "azure2 service fabric clusters azure compute  Service Fabric Clusters",
+   "kind": "vertex",
+   "width": 67,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Service_Fabric_Clusters.svg;points=[[0.5,0,0],[0.5,0.885,0],[0,0.411,0],[1,0.411,0],[0.95,0.296,0],[0.815,0.96,0],[0.183,0.966,0],[0.05,0.296,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:444"
+  },
+  {
+   "id": "azure2Compute-31-shared-image-galleries",
+   "title": "Shared Image Galleries",
+   "tags": "azure2 shared image galleries azure compute  Shared Image Galleries",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Shared_Image_Galleries.svg;points=[[0.595,0,0],[0.5,1,0],[0.12,0.5,0],[0.892,0.5,0],[0.89,0.013,0],[0.997,0.985,0],[0.013,0.995,0],[0.128,0.165,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:446"
+  },
+  {
+   "id": "azure2Compute-32-spring-cloud",
+   "title": "Spring Cloud",
+   "tags": "azure2 azure spring cloud azure compute  Spring Cloud",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Azure_Spring_Cloud.svg;points=[[0.5,0.126,0],[0.5,0.794,0],[0.188,0.5,0],[0.845,0.5,0],[0.997,0.005,0],[0.997,0.995,0],[0.003,0.995,0],[0.003,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:448"
+  },
+  {
+   "id": "azure2Compute-33-stage-maps",
+   "title": "Stage Maps",
+   "tags": "azure2 stage maps azure compute  Stage Maps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Stage_Maps.svg;points=[[0.743,0,0],[0.5,1,0],[0.091,0.5,0],[0.855,0.04,0],[1,1,0],[0,1,0],[0.143,0.375,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:450"
+  },
+  {
+   "id": "azure2Compute-34-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "azure2 virtual machine azure compute  Virtual Machine",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Virtual_Machine.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.75,1,0],[0.25,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:452"
+  },
+  {
+   "id": "azure2Compute-35-virtual-machines-classic",
+   "title": "Virtual Machines (Classic)",
+   "tags": "azure2 virtual machines classic azure compute  Virtual Machines (Classic)",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Virtual_Machines_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.75,1,0],[0.25,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:454"
+  },
+  {
+   "id": "azure2Compute-36-vm-images-classic",
+   "title": "VM Images (Classic)",
+   "tags": "azure2 vm images classic azure compute  VM Images (Classic)",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/VM_Images_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.75,1,0],[0.25,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:456"
+  },
+  {
+   "id": "azure2Compute-37-vm-scale-sets",
+   "title": "VM Scale Sets",
+   "tags": "azure2 vm scale sets azure compute  VM Scale Sets",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/VM_Scale_Sets.svg;points=[[0.5,0,0],[0.705,1,0],[0,0.198,0],[1,0.5,0],[0.817,0.228,0],[0.852,1,0],[0.409,0.836,0],[0.003,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:458"
+  },
+  {
+   "id": "azure2Compute-38-workspaces",
+   "title": "Workspaces",
+   "tags": "azure2 workspaces azure compute  Workspaces",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Workspaces2.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:460"
+  },
+  {
+   "id": "azure2Compute-39-workspaces",
+   "title": "Workspaces",
+   "tags": "azure2 workspaces azure compute  Workspaces",
+   "kind": "vertex",
+   "width": 65,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Workspaces.svg;points=[[0.5,0,0],[0.5,0.821,0],[0,0.41,0],[1,0.41,0],[0.992,0.009,0],[0.935,0.982,0],[0.008,0.811,0],[0.01,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:462"
+  }
+ ]
+}

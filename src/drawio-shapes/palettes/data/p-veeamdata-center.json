@@ -1,0 +1,428 @@
+{
+ "id": "veeamData Center",
+ "title": "Veeam / Data Center",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamData Center-0-vmware-hyper-v-host",
+   "title": "VMware/Hyper-V Host",
+   "tags": "veeam data center hyper vmware host veeam vmware virtual machine data center VMware/Hyper-V Host",
+   "kind": "vertex",
+   "width": 108,
+   "height": 104,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.hyper_v_vmware_host;",
+   "shapeNames": [
+    "mxgraph.veeam.hyper_v_vmware_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:50"
+  },
+  {
+   "id": "veeamData Center-1-hyper-v-host",
+   "title": "Hyper-V Host",
+   "tags": "veeam data center hyper host veeam vmware virtual machine data center Hyper-V Host",
+   "kind": "vertex",
+   "width": 108,
+   "height": 104,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.hyper_v_host;",
+   "shapeNames": [
+    "mxgraph.veeam.hyper_v_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:52"
+  },
+  {
+   "id": "veeamData Center-2-vmware-host",
+   "title": "VMware Host",
+   "tags": "veeam data center vmware host veeam vmware virtual machine data center VMware Host",
+   "kind": "vertex",
+   "width": 108,
+   "height": 104,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vmware_host;",
+   "shapeNames": [
+    "mxgraph.veeam.vmware_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:54"
+  },
+  {
+   "id": "veeamData Center-3-virtual-host",
+   "title": "Virtual Host",
+   "tags": "veeam data center virtual host veeam vmware virtual machine data center Virtual Host",
+   "kind": "vertex",
+   "width": 108,
+   "height": 104,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.virtual_host;",
+   "shapeNames": [
+    "mxgraph.veeam.virtual_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:56"
+  },
+  {
+   "id": "veeamData Center-4-production-site",
+   "title": "Production Site",
+   "tags": "veeam data center production site veeam vmware virtual machine data center Production Site",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.production_site;",
+   "shapeNames": [
+    "mxgraph.veeam.production_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:58"
+  },
+  {
+   "id": "veeamData Center-5-dr-site",
+   "title": "DR Site",
+   "tags": "veeam data center dr site veeam vmware virtual machine data center DR Site",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.dr_site;",
+   "shapeNames": [
+    "mxgraph.veeam.dr_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:60"
+  },
+  {
+   "id": "veeamData Center-6-physical-server",
+   "title": "Physical Server",
+   "tags": "veeam data center esx esxi veeam vmware virtual machine data center Physical Server",
+   "kind": "vertex",
+   "width": 33.2,
+   "height": 50.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.esx_esxi;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.esx_esxi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:62"
+  },
+  {
+   "id": "veeamData Center-7-server",
+   "title": "Server",
+   "tags": "veeam data center esx esxi veeam vmware virtual machine data center Server",
+   "kind": "vertex",
+   "width": 71.6,
+   "height": 18.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.server;",
+   "shapeNames": [
+    "mxgraph.veeam.server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:64"
+  },
+  {
+   "id": "veeamData Center-8-server-stack",
+   "title": "Server stack",
+   "tags": "veeam data center server stack veeam vmware virtual machine data center Server stack",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 49.6,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.server_stack;",
+   "shapeNames": [
+    "mxgraph.veeam.server_stack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:66"
+  },
+  {
+   "id": "veeamData Center-9-data-center",
+   "title": "Data center",
+   "tags": "veeam data center data center veeam vmware virtual machine data center Data center",
+   "kind": "vertex",
+   "width": 76,
+   "height": 50,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.data_center;",
+   "shapeNames": [
+    "mxgraph.veeam.data_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:68"
+  },
+  {
+   "id": "veeamData Center-10-cluster",
+   "title": "Cluster",
+   "tags": "veeam data center cluster veeam vmware virtual machine data center Cluster",
+   "kind": "vertex",
+   "width": 102.8,
+   "height": 49.2,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.cluster;",
+   "shapeNames": [
+    "mxgraph.veeam.cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:70"
+  },
+  {
+   "id": "veeamData Center-11-controller",
+   "title": "Controller",
+   "tags": "veeam data center controller veeam vmware virtual machine data center Controller",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.controller;",
+   "shapeNames": [
+    "mxgraph.veeam.controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:72"
+  },
+  {
+   "id": "veeamData Center-12-cpu",
+   "title": "CPU",
+   "tags": "veeam data center cpu veeam vmware virtual machine data center CPU",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.cpu;",
+   "shapeNames": [
+    "mxgraph.veeam.cpu"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:74"
+  },
+  {
+   "id": "veeamData Center-13-cpu-socket",
+   "title": "CPU socket",
+   "tags": "veeam data center cpu socket veeam vmware virtual machine data center CPU socket",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.cpu_socket;",
+   "shapeNames": [
+    "mxgraph.veeam.cpu_socket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:76"
+  },
+  {
+   "id": "veeamData Center-14-gateway",
+   "title": "Gateway",
+   "tags": "veeam data center cloud gateway veeam vmware virtual machine data center Gateway",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.cloud_gateway;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.cloud_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:78"
+  },
+  {
+   "id": "veeamData Center-15-laptop",
+   "title": "Laptop",
+   "tags": "veeam data center laptop veeam vmware virtual machine data center Laptop",
+   "kind": "vertex",
+   "width": 58.4,
+   "height": 44,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.laptop;",
+   "shapeNames": [
+    "mxgraph.veeam.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:80"
+  },
+  {
+   "id": "veeamData Center-16-monitor",
+   "title": "Monitor",
+   "tags": "veeam data center monitor veeam vmware virtual machine data center Monitor",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 47.6,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.monitor;",
+   "shapeNames": [
+    "mxgraph.veeam.monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:82"
+  },
+  {
+   "id": "veeamData Center-17-proxy",
+   "title": "Proxy",
+   "tags": "veeam data center proxy veeam vmware virtual machine data center Proxy",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.proxy;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:84"
+  },
+  {
+   "id": "veeamData Center-18-proxy-appliance",
+   "title": "Proxy Appliance",
+   "tags": "veeam data center proxy appliance veeam vmware virtual machine data center Proxy Appliance",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.proxy_appliance;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.proxy_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:86"
+  },
+  {
+   "id": "veeamData Center-19-ram",
+   "title": "RAM",
+   "tags": "veeam data center ram random access memory veeam vmware virtual machine data center RAM",
+   "kind": "vertex",
+   "width": 48.4,
+   "height": 25.2,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.ram;",
+   "shapeNames": [
+    "mxgraph.veeam.ram"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:88"
+  },
+  {
+   "id": "veeamData Center-20-raid-controller",
+   "title": "RAID controller",
+   "tags": "veeam data center raid controller veeam vmware virtual machine data center RAID controller",
+   "kind": "vertex",
+   "width": 42,
+   "height": 29.2,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.raid_controller;",
+   "shapeNames": [
+    "mxgraph.veeam.raid_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:90"
+  },
+  {
+   "id": "veeamData Center-21-sd-card",
+   "title": "SD card",
+   "tags": "veeam data center sd card veeam vmware virtual machine data center SD card",
+   "kind": "vertex",
+   "width": 32.4,
+   "height": 38.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.sd_card;",
+   "shapeNames": [
+    "mxgraph.veeam.sd_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:92"
+  },
+  {
+   "id": "veeamData Center-22-workstation",
+   "title": "Workstation",
+   "tags": "veeam data center workstation veeam vmware virtual machine data center Workstation",
+   "kind": "vertex",
+   "width": 76.4,
+   "height": 51.2,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.workstation;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:94"
+  },
+  {
+   "id": "veeamData Center-23-wan-accelerator",
+   "title": "WAN Accelerator",
+   "tags": "veeam data center wan accelerator wireless area network veeam vmware virtual machine data center WAN Accelerator",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.wan_accelerator;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.wan_accelerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:96"
+  },
+  {
+   "id": "veeamData Center-24-usb",
+   "title": "USB",
+   "tags": "veeam data center usb veeam vmware virtual machine data center USB",
+   "kind": "vertex",
+   "width": 52.8,
+   "height": 18.4,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.usb;",
+   "shapeNames": [
+    "mxgraph.veeam.usb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:98"
+  },
+  {
+   "id": "veeamData Center-25-network-card",
+   "title": "Network Card",
+   "tags": "veeam data center network card veeam vmware virtual machine data center Network Card",
+   "kind": "vertex",
+   "width": 42.8,
+   "height": 30,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.network_card;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.network_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:100"
+  },
+  {
+   "id": "veeamData Center-26-network-switch",
+   "title": "Network Switch",
+   "tags": "veeam data center network switch veeam vmware virtual machine data center Network Switch",
+   "kind": "vertex",
+   "width": 64,
+   "height": 10.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.switch;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:102"
+  },
+  {
+   "id": "veeamData Center-27-service-vnic",
+   "title": "Service vNIC",
+   "tags": "veeam data center service vnic veeam vmware virtual machine data center Service vNIC",
+   "kind": "vertex",
+   "width": 56.8,
+   "height": 54,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.service_vnic;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.service_vnic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:104"
+  },
+  {
+   "id": "veeamData Center-28-virtual-switch",
+   "title": "Virtual Switch",
+   "tags": "veeam data center switch veeam vmware virtual machine data center Virtual Switch",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.virtual_switch;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.virtual_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:106"
+  },
+  {
+   "id": "veeamData Center-29-vnic",
+   "title": "vNIC",
+   "tags": "veeam data center vnic veeam vmware virtual machine data center vNIC",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vnic;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vnic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:108"
+  }
+ ]
+}

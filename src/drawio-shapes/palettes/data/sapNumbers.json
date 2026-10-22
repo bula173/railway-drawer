@@ -1,0 +1,323 @@
+{
+ "id": "sapNumbers",
+ "title": "SAP / Numbers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapNumbers-0-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1197"
+  },
+  {
+   "id": "sapNumbers-1-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "2",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1199"
+  },
+  {
+   "id": "sapNumbers-2-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "3",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1201"
+  },
+  {
+   "id": "sapNumbers-3-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "4",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1203"
+  },
+  {
+   "id": "sapNumbers-4-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "5",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1205"
+  },
+  {
+   "id": "sapNumbers-5-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "6",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1207"
+  },
+  {
+   "id": "sapNumbers-6-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#223548;strokeColor=none;gradientDirection=east;fillColor=#5b738b;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "7",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1209"
+  },
+  {
+   "id": "sapNumbers-7-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1211"
+  },
+  {
+   "id": "sapNumbers-8-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "2",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1213"
+  },
+  {
+   "id": "sapNumbers-9-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "3",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1215"
+  },
+  {
+   "id": "sapNumbers-10-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "4",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1217"
+  },
+  {
+   "id": "sapNumbers-11-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "5",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1219"
+  },
+  {
+   "id": "sapNumbers-12-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "6",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1221"
+  },
+  {
+   "id": "sapNumbers-13-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "7",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1223"
+  },
+  {
+   "id": "sapNumbers-14-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#0057D2;strokeColor=none;gradientDirection=east;fillColor=#2395FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "8",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1225"
+  },
+  {
+   "id": "sapNumbers-15-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#470CED;strokeColor=none;gradientDirection=east;fillColor=#9B76FF;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1227"
+  },
+  {
+   "id": "sapNumbers-16-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#A100C2;strokeColor=none;gradientDirection=east;fillColor=#F65AF2;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1229"
+  },
+  {
+   "id": "sapNumbers-17-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#AA0808;strokeColor=none;gradientDirection=east;fillColor=#FF5C77;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1231"
+  },
+  {
+   "id": "sapNumbers-18-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#256F3A;strokeColor=none;gradientDirection=east;fillColor=#5DC122;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1233"
+  },
+  {
+   "id": "sapNumbers-19-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#C35500;strokeColor=none;gradientDirection=east;fillColor=#FFB300;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1235"
+  },
+  {
+   "id": "sapNumbers-20-default-number",
+   "title": "Default Number",
+   "tags": "sap  sap number default  Default Number",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#07838F;strokeColor=none;gradientDirection=east;fillColor=#00CEAC;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fontStyle=1",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1237"
+  }
+ ]
+}

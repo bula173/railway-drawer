@@ -1,0 +1,22 @@
+{
+ "id": "aws3Contact Center",
+ "title": "AWS17 / Contact Center",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Contact Center-0-connect",
+   "title": "Connect",
+   "tags": "aws3 connect aws amazon web service contact center Connect",
+   "kind": "vertex",
+   "width": 90,
+   "height": 69,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.connect;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:296"
+  }
+ ]
+}

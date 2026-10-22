@@ -1,0 +1,106 @@
+{
+ "id": "aws3Migration",
+ "title": "AWS17 / Migration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Migration-0-snowball",
+   "title": "Snowball",
+   "tags": "aws3 snowball aws amazon web service migration Snowball",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.snowball;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.snowball"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:799"
+  },
+  {
+   "id": "aws3Migration-1-server-migration-service",
+   "title": "Server Migration Service",
+   "tags": "aws3 server migration service aws amazon web service migration Server Migration Service",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.server_migration_service;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.server_migration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:801"
+  },
+  {
+   "id": "aws3Migration-2-import-export",
+   "title": "Import/Export",
+   "tags": "aws3 Import Export aws amazon web service migration Import/Export",
+   "kind": "vertex",
+   "width": 64.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.import_export;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.import_export"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:803"
+  },
+  {
+   "id": "aws3Migration-3-database-migration-service",
+   "title": "Database Migration Service",
+   "tags": "aws3 database migration service aws amazon web service migration Database Migration Service",
+   "kind": "vertex",
+   "width": 72,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.database_migration_service;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.database_migration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:805"
+  },
+  {
+   "id": "aws3Migration-4-database-migration-workflow-job",
+   "title": "Database Migration Workflow Job",
+   "tags": "aws3 database migration workflow job aws amazon web service migration Database Migration Workflow Job",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 87,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.database_migration_workflow_job;fillColor=#5294CF;gradientColor=none;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.aws3.database_migration_workflow_job"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:807"
+  },
+  {
+   "id": "aws3Migration-5-application-discovery-service",
+   "title": "Application Discovery Service",
+   "tags": "aws3 application discovery service aws amazon web service migration Application Discovery Service",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.application_discovery_service;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.application_discovery_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:809"
+  },
+  {
+   "id": "aws3Migration-6-migration-hub",
+   "title": "Migration Hub",
+   "tags": "aws3 migration hub aws amazon web service migration Migration Hub",
+   "kind": "vertex",
+   "width": 114,
+   "height": 121.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.migration_hub_2;fillColor=#ABABAB;gradientColor=none;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.aws3.migration_hub_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:811"
+  }
+ ]
+}

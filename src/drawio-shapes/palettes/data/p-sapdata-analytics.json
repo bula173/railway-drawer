@@ -1,0 +1,120 @@
+{
+ "id": "sapData Analytics",
+ "title": "SAP / Data Analytics",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapData Analytics-0-sap-master-data-governance",
+   "title": "SAP Master Data Governance",
+   "tags": "sap master data governance sap btp service icons data analytics  SAP Master Data Governance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Master_Data_Governance",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:373"
+  },
+  {
+   "id": "sapData Analytics-1-sap-analytics-cloud-embedded-edition",
+   "title": "SAP Analytics Cloud Embedded Edition",
+   "tags": "sap analytics cloud embedded edition sap btp service icons data analytics  SAP Analytics Cloud Embedded Edition",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Analytics_Cloud_Embedded_Edition",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:375"
+  },
+  {
+   "id": "sapData Analytics-2-sap-analytics-cloud",
+   "title": "SAP Analytics Cloud",
+   "tags": "sap analytics cloud sap btp service icons data analytics  SAP Analytics Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Analytics_Cloud",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:377"
+  },
+  {
+   "id": "sapData Analytics-3-sap-datasphere",
+   "title": "SAP Datasphere",
+   "tags": "sap datasphere sap btp service icons data analytics  SAP Datasphere",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Datasphere",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:379"
+  },
+  {
+   "id": "sapData Analytics-4-sap-hana-spatial-services",
+   "title": "SAP HANA Spatial Services",
+   "tags": "sap hana spatial services sap btp service icons data analytics  SAP HANA Spatial Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_HANA_Spatial_Services",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:381"
+  },
+  {
+   "id": "sapData Analytics-5-sap-persistence-service-ase",
+   "title": "SAP Persistence Service ASE",
+   "tags": "sap persistence service ase sap btp service icons data analytics  SAP Persistence Service ASE",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Persistence_Service_ASE",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:383"
+  },
+  {
+   "id": "sapData Analytics-6-sap-hana-cloud",
+   "title": "SAP HANA Cloud",
+   "tags": "sap hana cloud sap btp service icons data analytics  SAP HANA Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_HANA_Cloud",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:385"
+  },
+  {
+   "id": "sapData Analytics-7-sap-business-data-cloud",
+   "title": "SAP Business Data Cloud",
+   "tags": "sap business data cloud sap btp service icons data analytics  SAP Business Data Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Business_Data_Cloud",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:387"
+  }
+ ]
+}

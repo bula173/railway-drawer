@@ -1,0 +1,591 @@
+{
+ "id": "ibm_cloudGroups",
+ "title": "IBM / Groups",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudGroups-0-ibm-cloud",
+   "title": "IBM Cloud",
+   "tags": "ibm cloud groups prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"IBM Cloud\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.ibm-cloud;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-1-vpc",
+   "title": "VPC",
+   "tags": "ibm cloud groups vpc virtual private prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"VPC\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.ibm-cloud--vpc;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--vpc"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-2-subnet",
+   "title": "Subnet",
+   "tags": "ibm cloud groups subnet prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Subnet\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.ibm-cloud--subnets;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--subnets"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-3-enterprise-network",
+   "title": "Enterprise Network",
+   "tags": "ibm cloud groups enterprise network prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Enterprise Network\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.network--enterprise;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.network--enterprise"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-4-public-network",
+   "title": "Public Network",
+   "tags": "ibm cloud groups public network prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Public Network\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.network--public;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.network--public"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-5-cloud-services",
+   "title": "Cloud Services",
+   "tags": "ibm cloud groups services prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Cloud Services\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.cloud-services;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.cloud-services"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-6-internet-services",
+   "title": "Internet Services",
+   "tags": "ibm cloud groups internet services prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Internet Services\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.ibm-cloud--internet-services;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--internet-services"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-7-overlay-network",
+   "title": "Overlay Network",
+   "tags": "ibm cloud groups network overlay prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Overlay Network\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.network--overlay;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.network--overlay"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-8-power-workspace",
+   "title": "Power Workspace",
+   "tags": "ibm cloud groups power workspace prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Power Workspace\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.ibm--power-vs;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm--power-vs"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-9-z-system",
+   "title": "Z System",
+   "tags": "ibm cloud groups system prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Z System\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.z--systems;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.z--systems"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-10-internet",
+   "title": "Internet",
+   "tags": "ibm cloud groups internet prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Internet\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.wikis;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.wikis"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-11-vlan",
+   "title": "VLAN",
+   "tags": "ibm cloud groups vlan virtual lan local area network prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"VLAN\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.vlan;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.vlan"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-12-classic-vlan",
+   "title": "Classic VLAN",
+   "tags": "ibm cloud groups classic vlan virtual lan local area network prescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Classic VLAN\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.vlan--ibm;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.vlan--ibm"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-13-classic-infrastructure",
+   "title": "Classic Infrastructure",
+   "tags": "ibm cloud groups classic infrastructureprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#1192E8;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Classic Infrastructure\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#1192E8;shape=mxgraph.ibm_cloud.infrastructure--classic;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#1192E8;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.infrastructure--classic"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-14-openshift",
+   "title": "OpenShift",
+   "tags": "ibm cloud groups openshiftprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"OpenShift\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#198038;shape=mxgraph.ibm_cloud.logo--openshift;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.logo--openshift"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-15-kubernetes-service",
+   "title": "Kubernetes Service",
+   "tags": "ibm cloud groups kubernetes serviceprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Kubernetes Service\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#198038;shape=mxgraph.ibm_cloud.ibm-cloud--kubernetes-service;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--kubernetes-service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-16-z-containers",
+   "title": "Z Containers",
+   "tags": "ibm cloud groups containersprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Z Containers\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#198038;shape=mxgraph.ibm_cloud.ibm-z-os--containers;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-z-os--containers"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-17-watsonx",
+   "title": "watsonx",
+   "tags": "ibm cloud groups watsonxprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#A56EFF;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"watsonx\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#A56EFF;shape=mxgraph.ibm_cloud.watsonx;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.watsonx"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-18-watsonx-code-assistant",
+   "title": "watsonx Code Assistant",
+   "tags": "ibm cloud groups watsonx code assistantprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#A56EFF;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"watsonx Code Assistant\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#A56EFF;shape=mxgraph.ibm_cloud.ibm-watsonx--code-assistant;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-watsonx--code-assistant"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-19-watsonx-z-code-assistant",
+   "title": "watsonx Z Code Assistant",
+   "tags": "ibm cloud groups watsonx code assistant for zprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#A56EFF;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"watsonx Z Code Assistant\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#A56EFF;shape=mxgraph.ibm_cloud.ibm-watsonx--code-assistant-for-z;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-watsonx--code-assistant-for-z"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-20-authorization-boundary",
+   "title": "Authorization Boundary",
+   "tags": "ibm cloud groups authorization boundaryprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#FA4D56;fillColor=none;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Authorization Boundary\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#FA4D56;shape=mxgraph.ibm_cloud.flag;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.flag"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-21-point-of-presence",
+   "title": "Point of Presence",
+   "tags": "ibm cloud groups point of presenceprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#878D96;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Point of Presence\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#878D96;shape=mxgraph.ibm_cloud.point-of-presence;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#878D96;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.point-of-presence"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-22-region",
+   "title": "Region",
+   "tags": "ibm cloud groups regionprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#878D96;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Region\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#878D96;shape=mxgraph.ibm_cloud.location;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=rect;fillColor=#878D96;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.location"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-23-generic-group",
+   "title": "Generic Group",
+   "tags": "ibm cloud groups generic groupprescribed location",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#878D96;fillColor=none;strokeWidth=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Generic Group\" style=\"shape=rect;fillColor=#878D96;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"4\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:485"
+  },
+  {
+   "id": "ibm_cloudGroups-24-access-group",
+   "title": "Access Group",
+   "tags": "ibm cloud groups access groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#FA4D56;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Access Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#FA4D56;shape=mxgraph.ibm_cloud.group--access;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.group--access"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-25-account-group",
+   "title": "Account Group",
+   "tags": "ibm cloud groups account groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#FA4D56;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Account Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#FA4D56;shape=mxgraph.ibm_cloud.group--account;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.group--account"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-26-resource-group",
+   "title": "Resource Group",
+   "tags": "ibm cloud groups resource groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#FA4D56;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Resource Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#FA4D56;shape=mxgraph.ibm_cloud.group--resource;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.group--resource"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-27-security-group",
+   "title": "Security Group",
+   "tags": "ibm cloud groups security groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#FA4D56;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Security Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#FA4D56;shape=mxgraph.ibm_cloud.group--security;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.group--security"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-28-instance-group",
+   "title": "Instance Group",
+   "tags": "ibm cloud groups instance groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Instance Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#198038;shape=mxgraph.ibm_cloud.autoscaling;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.autoscaling"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-29-placement-group",
+   "title": "Placement Group",
+   "tags": "ibm cloud groups placement groupzone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Placement Group\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#198038;shape=mxgraph.ibm_cloud.group-objects;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.group-objects"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-30-availability-zone",
+   "title": "Availability Zone",
+   "tags": "ibm cloud groups availability zonezone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#878D96;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Availability Zone\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#878D96;shape=mxgraph.ibm_cloud.data--center;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.data--center"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-31-generic-zone",
+   "title": "Generic Zone",
+   "tags": "ibm cloud groups generic zonezone",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#878D96;fillColor=none;dashed=1;dashPattern=1 3;strokeWidth=2\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Generic Zone\" style=\"shape=rect;fillColor=none;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=-42;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:529"
+  },
+  {
+   "id": "ibm_cloudGroups-32-expanded-virtual-server",
+   "title": "Expanded Virtual Server",
+   "tags": "ibm cloud groups expanded virtual server",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Virtual Server\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.ibm-cloud--virtual-server-vpc;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--virtual-server-vpc"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-33-expanded-power-virtual-server",
+   "title": "Expanded Power Virtual Server",
+   "tags": "ibm cloud groups expanded power virtual server",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Power Virtual Server\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.ibm--power-vs;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm--power-vs"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-34-expanded-classic-virtual-server",
+   "title": "Expanded Classic Virtual\nServer",
+   "tags": "ibm cloud groups expanded classic virtual server",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Classic Virtual&#xa;Server\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.ibm-cloud--virtual-server-classic;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--virtual-server-classic"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-35-expanded-bare-metal-server",
+   "title": "Expanded Bare Metal\nServer",
+   "tags": "ibm cloud groups expanded bare metal server",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Bare Metal&#xa;Server\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.ibm-cloud--bare-metal-servers-vpc;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--bare-metal-servers-vpc"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-36-expanded-classic-bare-metal-server",
+   "title": "Expanded Classic Bare\nMetal Server",
+   "tags": "ibm cloud groups expanded classic bare metal server",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#198038;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Classic Bare&#xa;Metal Server\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.ibm-cloud--bare-metal-server;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--bare-metal-server"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-37-expanded-application",
+   "title": "Expanded Application",
+   "tags": "ibm cloud groups expanded application",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#A56EFF;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Application\" style=\"shape=rect;fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.application;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.application"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  },
+  {
+   "id": "ibm_cloudGroups-38-expanded-microservice",
+   "title": "Expanded Microservice",
+   "tags": "ibm cloud groups expanded microservice",
+   "kind": "cells",
+   "width": 220,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"container=1;collapsible=0;expand=0;recursiveResize=0;html=1;whiteSpace=wrap;strokeColor=#A56EFF;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Expanded Microservice\" style=\"shape=rect;fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=none;part=1;spacingLeft=5;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"48\" height=\"48\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"fillColor=#ffffff;shape=mxgraph.ibm_cloud.microservices--1;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.microservices--1"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:453"
+  }
+ ]
+}

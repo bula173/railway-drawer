@@ -1,0 +1,50 @@
+{
+ "id": "mscaeContainer Service",
+ "title": "CAE / Container Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeContainer Service-0-container-instances",
+   "title": "Container Instances",
+   "tags": "mscae container instances ms microsoft cloud enterprise container service Container Instances",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Container_Instances.svg;points=[[0.599,0,0],[0.497,0.998,0],[0,0.459,0],[0.995,0.43,0],[0.775,0.075,0],[0.752,0.995,0],[0.245,0.995,0],[0.165,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:785"
+  },
+  {
+   "id": "mscaeContainer Service-1-container-registries",
+   "title": "Container Registries",
+   "tags": "mscae container registries ms microsoft cloud enterprise container service Container Registries",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Container_Registries.svg;points=[[0.5,0.041,0],[0.489,0.991,0],[0,0.531,0],[1,0.5,0],[0.792,0.143,0],[1,0.877,0],[0.063,0.697,0],[0.208,0.067,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:787"
+  },
+  {
+   "id": "mscaeContainer Service-2-kubernetes-services",
+   "title": "Kubernetes Services",
+   "tags": "mscae kubernetes services ms microsoft cloud enterprise container service Kubernetes Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Kubernetes_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.495,0],[0.815,0.071,0],[0.815,0.922,0],[0.168,0.942,0],[0.168,0.051,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:789"
+  }
+ ]
+}

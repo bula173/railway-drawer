@@ -1,0 +1,358 @@
+{
+ "id": "mscaeGeneral Service",
+ "title": "CAE / General Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeGeneral Service-0-all-resources",
+   "title": "All Resources",
+   "tags": "mscae all resources ms microsoft cloud enterprise general service All Resources",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Grid3x3.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:896"
+  },
+  {
+   "id": "mscaeGeneral Service-1-azure-home",
+   "title": "Azure Home",
+   "tags": "mscae azure home ms microsoft cloud enterprise general service Azure Home",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Home.svg;points=[[0.494,0.005,0],[0.494,0.748,0],[0,0.605,0],[0.988,0.605,0],[0.738,0.302,0],[0.77,1,0],[0.178,1,0],[0.244,0.302,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:898"
+  },
+  {
+   "id": "mscaeGeneral Service-2-developer-tools",
+   "title": "Developer Tools",
+   "tags": "mscae developer tools ms microsoft cloud enterprise general service Developer Tools",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Developer_Tools.svg;points=[[0.242,0,0],[0.158,1,0],[0.396,0.5,0],[0.684,0.5,0],[1,0.053,0],[0.978,0.912,0],[0.006,0.855,0],[0.032,0.153,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:900"
+  },
+  {
+   "id": "mscaeGeneral Service-3-help-support",
+   "title": "Help, Support",
+   "tags": "mscae help support ms microsoft cloud enterprise general service Help, Support",
+   "kind": "vertex",
+   "width": 32,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Support_2.svg;points=[[0.498,0,0],[0.5,1,0],[0,0.77,0],[1,0.77,0],[0.906,0.148,0],[0.999,1,0],[0.001,1,0],[0.094,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:902"
+  },
+  {
+   "id": "mscaeGeneral Service-4-information",
+   "title": "Information",
+   "tags": "mscae info information ms microsoft cloud enterprise general service Information",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Info_2.svg;points=[[0.506,0,0],[0.506,1,0],[0,0.505,0],[1,0.505,0],[0.865,0.148,0],[0.852,0.865,0],[0.148,0.865,0],[0.153,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:904"
+  },
+  {
+   "id": "mscaeGeneral Service-5-management-groups",
+   "title": "Management Groups",
+   "tags": "mscae management groups ms microsoft cloud enterprise general service Management Groups",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Management_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0.005,0.498,0],[0.995,0.5,0],[0.962,0.107,0],[0.962,0.893,0],[0.035,0.89,0],[0.038,0.107,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:906"
+  },
+  {
+   "id": "mscaeGeneral Service-6-marketplace",
+   "title": "Marketplace",
+   "tags": "mscae marketplace store ms microsoft cloud enterprise general service Marketplace",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Store_Marketplace.svg;points=[[0.5,0.016,0],[0.5,0.978,0],[0.023,0.5,0],[0.977,0.5,0],[0.968,0.248,0],[0.994,0.897,0],[0.006,0.897,0],[0.032,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:908"
+  },
+  {
+   "id": "mscaeGeneral Service-7-marketplace",
+   "title": "Marketplace",
+   "tags": "mscae marketplace store ms microsoft cloud enterprise general service Marketplace",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Store_Marketplace.svg;points=[[0.5,0.016,0],[0.5,0.978,0],[0.023,0.5,0],[0.977,0.5,0],[0.968,0.248,0],[0.994,0.897,0],[0.006,0.897,0],[0.032,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:910"
+  },
+  {
+   "id": "mscaeGeneral Service-8-quick-start-center",
+   "title": "Quick Start Center",
+   "tags": "mscae quick start center ms microsoft cloud enterprise general service Quick Start Center",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Quick_Start_Center.svg;points=[[0.5,0.237,0],[0.501,0.985,0],[0,0.501,0],[0.766,0.492,0],[1,0,0],[0.637,0.887,0],[0.033,0.947,0],[0.065,0.403,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:912"
+  },
+  {
+   "id": "mscaeGeneral Service-9-recent",
+   "title": "Recent",
+   "tags": "mscae clock recent ms microsoft cloud enterprise general service Recent",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Clock.svg;points=[[0.501,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.85,0.14,0],[0.86,0.85,0],[0.128,0.837,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:914"
+  },
+  {
+   "id": "mscaeGeneral Service-10-reservations",
+   "title": "Reservations",
+   "tags": "mscae reservations ms microsoft cloud enterprise general service Reservations",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Reservations.svg;points=[[0.526,0,0],[0.495,0.998,0],[0,0.495,0],[0.998,0.499,0],[0.87,0.165,0],[0.865,0.837,0],[0.13,0.837,0],[0.13,0.165,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:916"
+  },
+  {
+   "id": "mscaeGeneral Service-11-resource-groups",
+   "title": "Resource Groups",
+   "tags": "mscae resource group groups ms microsoft cloud enterprise general service Resource Groups",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/ResourceGroup.svg;points=[[0.499,0,0],[0.5,1,0],[0.003,0.502,0],[0.998,0.5,0],[0.967,0.11,0],[0.967,0.89,0],[0.033,0.89,0],[0.03,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:918"
+  },
+  {
+   "id": "mscaeGeneral Service-12-service-health",
+   "title": "Service Health",
+   "tags": "mscae service health ms microsoft cloud enterprise general service Service Health",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/ServiceHealth.svg;points=[[0.5,0.139,0],[0.5,1,0],[0.062,0.5,0],[0.938,0.5,0],[0.92,0.083,0],[0.085,0.077,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:920"
+  },
+  {
+   "id": "mscaeGeneral Service-13-shared-dashboard",
+   "title": "Shared Dashboard",
+   "tags": "mscae shared dashboard ms microsoft cloud enterprise general service Shared Dashboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Shared_Dashboard.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:922"
+  },
+  {
+   "id": "mscaeGeneral Service-14-subscriptions",
+   "title": "Subscriptions",
+   "tags": "mscae subscriptions key ms microsoft cloud enterprise general service Subscriptions",
+   "kind": "vertex",
+   "width": 31,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Key.svg;points=[[0.5,0,0],[0.5,1,0],[0.228,0.5,0],[0.772,0.5,0],[0.971,0.245,0],[0.669,0.897,0],[0.331,0.897,0],[0.029,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:924"
+  },
+  {
+   "id": "mscaeGeneral Service-15-support-requests",
+   "title": "Support Requests",
+   "tags": "mscae support requests ms microsoft cloud enterprise general service Support Requests",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Support_Requests.svg;points=[[0.5,0.105,0],[0.49,0.995,0],[0,0.736,0],[1,0.736,0],[0.872,0.066,0],[1,0.956,0],[0,0.956,0],[0.13,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:926"
+  },
+  {
+   "id": "mscaeGeneral Service-16-tag",
+   "title": "Tag",
+   "tags": "mscae tag ms microsoft cloud enterprise general service Tag",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Tag.svg;points=[[0.5,0.079,0],[0.405,1,0],[0,0.594,0],[0.902,0.5,0],[0.91,0.09,0],[0.718,0.69,0],[0.203,0.797,0],[0.25,0.337,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:928"
+  },
+  {
+   "id": "mscaeGeneral Service-17-tags",
+   "title": "Tags",
+   "tags": "mscae tags ms microsoft cloud enterprise general service Tags",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Tags.svg;points=[[0.5,0.007,0],[0.494,1,0],[0.091,0.5,0],[1,0.429,0],[0.863,0.11,0],[0.985,0.59,0],[0.143,0.707,0],[0,0.42,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:930"
+  },
+  {
+   "id": "mscaeGeneral Service-18-templates",
+   "title": "Templates",
+   "tags": "mscae templates ms microsoft cloud enterprise general service Templates",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Templates.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0.175,0],[1,1,0],[0,1,0],[0,0.175,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:932"
+  },
+  {
+   "id": "mscaeGeneral Service-19-two-user-icon",
+   "title": "Two User Icon",
+   "tags": "mscae two user icon ms microsoft cloud enterprise general service Two User Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Two_User_Icon.svg;points=[[0.689,0,0],[0.496,0.985,0],[0,0.7,0],[0.993,0.5,0],[0.817,0.043,0],[0.992,0.985,0],[0,0.985,0],[0.099,0.451,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:934"
+  },
+  {
+   "id": "mscaeGeneral Service-20-user-health-icon",
+   "title": "User Health Icon",
+   "tags": "mscae user health icon ms microsoft cloud enterprise general service User Health Icon",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/User_Health_Icon.svg;points=[[0.323,0,0],[0.689,0.998,0],[0,0.6,0],[0.95,0.639,0],[0.99,0.754,0],[0,0.815,0],[0.182,0.055,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:936"
+  },
+  {
+   "id": "mscaeGeneral Service-21-user",
+   "title": "User",
+   "tags": "mscae user person ms microsoft cloud enterprise general service User",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Person.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.729,0.085,0],[1,1,0],[0,1,0],[0.274,0.08,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:938"
+  },
+  {
+   "id": "mscaeGeneral Service-22-user-privacy",
+   "title": "User Privacy",
+   "tags": "mscae user privacy ms microsoft cloud enterprise general service User Privacy",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/User_Privacy.svg;points=[[0.403,0,0],[0.736,0.998,0],[0,0.579,0],[0.986,0.698,0],[0.59,0.07,0],[0.947,0.89,0],[0.001,0.78,0],[0.223,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:940"
+  },
+  {
+   "id": "mscaeGeneral Service-23-user-resource",
+   "title": "User Resource",
+   "tags": "mscae user resource ms microsoft cloud enterprise general service User Resource",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/User_Resource.svg;points=[[0.5,0.036,0],[0.408,0.995,0],[0,0.5,0],[1,0.782,0],[1,0.892,0],[0,0.995,0],[0.214,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:942"
+  },
+  {
+   "id": "mscaeGeneral Service-24-what-s-new",
+   "title": "What's New",
+   "tags": "mscae info whats new ms microsoft cloud enterprise general service What's New",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Info.svg;points=[[0.506,0,0],[0.506,1,0],[0,0.505,0],[1,0.506,0],[0.825,0.12,0],[0.852,0.865,0],[0.148,0.865,0],[0.175,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:944"
+  }
+ ]
+}

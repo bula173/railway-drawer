@@ -1,0 +1,134 @@
+{
+ "id": "azure2App Services",
+ "title": "Azure / App Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2App Services-0-api-management-services",
+   "title": "API Management Services",
+   "tags": "azure2 api application programming interface management services azure app services  API Management Services",
+   "kind": "vertex",
+   "width": 65,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/API_Management_Services.svg;points=[[0.512,0,0],[0.477,1,0],[0,0.496,0],[1,0.541,0],[0.717,0.084,0],[0.92,0.729,0],[0.09,0.712,0],[0.085,0.285,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:245"
+  },
+  {
+   "id": "azure2App Services-1-app-service-certificates",
+   "title": "App Service Certificates",
+   "tags": "azure2 app service certificates azure app services  App Service Certificates",
+   "kind": "vertex",
+   "width": 70,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;points=[[0.5,0,0],[0.5,0.774,0],[0,0.387,0],[1,0.388,0],[0.987,0.006,0],[0.985,0.77,0],[0.093,0.997,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:247"
+  },
+  {
+   "id": "azure2App Services-2-app-service-domains",
+   "title": "App Service Domains",
+   "tags": "azure2 app service domains azure app services  App Service Domains",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Domains.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:249"
+  },
+  {
+   "id": "azure2App Services-3-app-service-environments",
+   "title": "App Service Environments",
+   "tags": "azure2 app service environments azure app services  App Service Environments",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Environments.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.98,0.018,0],[0.985,0.977,0],[0.015,0.977,0],[0.02,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:251"
+  },
+  {
+   "id": "azure2App Services-4-app-service-plans",
+   "title": "App Service Plans",
+   "tags": "azure2 app service plans azure app services  App Service Plans",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;points=[[0.5,0,0],[0.43,1,0],[0.005,0.5,0],[0.787,0.5,0],[0.582,0.008,0],[0.942,0.947,0],[0.013,0.99,0],[0.02,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:253"
+  },
+  {
+   "id": "azure2App Services-5-app-services",
+   "title": "App Services",
+   "tags": "azure2 app services azure app services  App Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.865,0.153,0],[0.875,0.835,0],[0.125,0.835,0],[0.133,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:255"
+  },
+  {
+   "id": "azure2App Services-6-cdn-profiles",
+   "title": "CDN Profiles",
+   "tags": "azure2 cdn profiles azure app services  CDN Profiles",
+   "kind": "vertex",
+   "width": 68,
+   "height": 40,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/CDN_Profiles.svg;points=[[0.611,0.004,0],[0.62,0.996,0],[0,0.638,0],[0.963,0.5,0],[0.735,0.06,0],[0.907,0.957,0],[0.105,0.914,0],[0.108,0.358,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:257"
+  },
+  {
+   "id": "azure2App Services-7-notification-hubs",
+   "title": "Notification Hubs",
+   "tags": "azure2 notification hubs azure app services  Notification Hubs",
+   "kind": "vertex",
+   "width": 67,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/Notification_Hubs.svg;points=[[0.5,0,0],[0.675,1,0],[0,0.424,0],[1,0.424,0],[0.992,0.012,0],[0.992,0.835,0],[0.015,0.844,0],[0.008,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:259"
+  },
+  {
+   "id": "azure2App Services-8-search-services",
+   "title": "Search Services",
+   "tags": "azure2 search services azure app services  Search Services",
+   "kind": "vertex",
+   "width": 72,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/Search_Services.svg;points=[[0.512,0,0],[0.524,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.69,0.077,0],[0.897,0.948,0],[0.108,0.92,0],[0.34,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:261"
+  }
+ ]
+}

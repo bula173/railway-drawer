@@ -1,0 +1,36 @@
+{
+ "id": "aws3Desktop and App Streaming",
+ "title": "AWS17 / Desktop and App Streaming",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Desktop and App Streaming-0-appstream",
+   "title": "AppStream",
+   "tags": "aws3 appstream aws amazon web service desktop app streaming application AppStream",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.appstream;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.appstream"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:386"
+  },
+  {
+   "id": "aws3Desktop and App Streaming-1-workspaces",
+   "title": "WorkSpaces",
+   "tags": "aws3 workspaces work spaces aws amazon web service desktop app streaming application WorkSpaces",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 94.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.workspaces;fillColor=#D16A28;gradientColor=#F58435;gradientDirection=north;",
+   "shapeNames": [
+    "mxgraph.aws3.workspaces"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:388"
+  }
+ ]
+}

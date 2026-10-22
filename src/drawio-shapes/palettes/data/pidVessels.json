@@ -1,0 +1,890 @@
+{
+ "id": "pidVessels",
+ "title": "Process Engineering / Vessels",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidVessels-0-bag",
+   "title": "Bag",
+   "tags": "pid vessels  Bag Bag",
+   "kind": "vertex",
+   "width": 50,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.bag;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.bag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-1-bag-iso",
+   "title": "Bag (ISO)",
+   "tags": "pid vessels  Bag (ISO) Bag (ISO)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.bag_(iso);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.bag_(iso)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-2-barrel-drum",
+   "title": "Barrel, Drum",
+   "tags": "pid vessels  Barrel, Drum Barrel, Drum",
+   "kind": "vertex",
+   "width": 62,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.barrel,_drum;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.barrel,_drum"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-3-barrel-drum-iso",
+   "title": "Barrel, Drum (ISO)",
+   "tags": "pid vessels  Barrel, Drum (ISO) Barrel, Drum (ISO)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.barrel,_drum_(iso);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.barrel,_drum_(iso)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-4-bunker-conical-bottom",
+   "title": "Bunker (Conical Bottom)",
+   "tags": "pid vessels  Bunker (Conical Bottom) Bunker (Conical Bottom)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.bunker_(conical_bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.bunker_(conical_bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-5-concrete-tank",
+   "title": "Concrete Tank",
+   "tags": "pid vessels  Concrete Tank Concrete Tank",
+   "kind": "vertex",
+   "width": 160,
+   "height": 75,
+   "style": "shape=mxgraph.pid.vessels.concrete_tank;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.concrete_tank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-6-container-tank-cistern",
+   "title": "Container, Tank, Cistern",
+   "tags": "pid vessels  Container, Tank, Cistern Container, Tank, Cistern",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.container,_tank,_cistern;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.container,_tank,_cistern"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-7-container-tank-cistern-boot",
+   "title": "Container, Tank, Cistern (Boot)",
+   "tags": "pid vessels  Container, Tank, Cistern (Boot) Container, Tank, Cistern (Boot)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.pid.vessels.container,_tank,_cistern_(boot);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.container,_tank,_cistern_(boot)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-8-container-tank-cistern-bottom",
+   "title": "Container, Tank, Cistern (Bottom)",
+   "tags": "pid vessels  Container, Tank, Cistern (Bottom) Container, Tank, Cistern (Bottom)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.container,_tank,_cistern_(bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.container,_tank,_cistern_(bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-9-container-tank-cistern-legs",
+   "title": "Container, Tank, Cistern (Legs)",
+   "tags": "pid vessels  Container, Tank, Cistern (Legs) Container, Tank, Cistern (Legs)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 105,
+   "style": "shape=mxgraph.pid.vessels.container,_tank,_cistern_(legs);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.container,_tank,_cistern_(legs)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-10-container-solids-liquids-gases",
+   "title": "Container (Solids, Liquids, Gases)",
+   "tags": "pid vessels  Container (Solids, Liquids, Gases) Container (Solids, Liquids, Gases)",
+   "kind": "vertex",
+   "width": 150,
+   "height": 50,
+   "style": "shape=mxgraph.pid.vessels.container_(solids,_liquids,_gases);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.container_(solids,_liquids,_gases)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-11-double-concrete-tank",
+   "title": "Double Concrete Tank",
+   "tags": "pid vessels  Double Concrete Tank Double Concrete Tank",
+   "kind": "vertex",
+   "width": 160,
+   "height": 75,
+   "style": "shape=mxgraph.pid.vessels.double_concrete_tank;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.double_concrete_tank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-12-drum-or-condenser",
+   "title": "Drum or Condenser",
+   "tags": "pid vessels  Drum or Condenser Drum or Condenser",
+   "kind": "vertex",
+   "width": 91,
+   "height": 30,
+   "style": "shape=mxgraph.pid.vessels.drum_or_condenser;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.drum_or_condenser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-13-forced-draft-cooling-tower",
+   "title": "Forced-Draft Cooling Tower",
+   "tags": "pid vessels  Forced-Draft Cooling Tower Forced-Draft Cooling Tower",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.pid.vessels.forced-draft_cooling_tower;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.forced-draft_cooling_tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-14-furnace",
+   "title": "Furnace",
+   "tags": "pid vessels  Furnace Furnace",
+   "kind": "vertex",
+   "width": 80,
+   "height": 99,
+   "style": "shape=mxgraph.pid.vessels.furnace;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.furnace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-15-furnace2",
+   "title": "Furnace2",
+   "tags": "pid vessels  Furnace2 Furnace2",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.furnace2;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.furnace2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-16-gas-bottle",
+   "title": "Gas Bottle",
+   "tags": "pid vessels  Gas Bottle Gas Bottle",
+   "kind": "vertex",
+   "width": 35,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.gas_bottle;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.gas_bottle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-17-gas-holder",
+   "title": "Gas Holder",
+   "tags": "pid vessels  Gas Holder Gas Holder",
+   "kind": "vertex",
+   "width": 70,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.gas_holder;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.gas_holder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-18-half-pipe-mixing-vessel",
+   "title": "Half Pipe Mixing Vessel",
+   "tags": "pid vessels  Half Pipe Mixing Vessel Half Pipe Mixing Vessel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 173,
+   "style": "shape=mxgraph.pid.vessels.half_pipe_mixing_vessel;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.half_pipe_mixing_vessel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-19-induced-draft-cooling-tower",
+   "title": "Induced-Draft Cooling Tower",
+   "tags": "pid vessels  Induced-Draft Cooling Tower Induced-Draft Cooling Tower",
+   "kind": "vertex",
+   "width": 98,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.induced-draft_cooling_tower;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.induced-draft_cooling_tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-20-jacketed-mixing-vessel",
+   "title": "Jacketed Mixing Vessel",
+   "tags": "pid vessels  Jacketed Mixing Vessel Jacketed Mixing Vessel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 174,
+   "style": "shape=mxgraph.pid.vessels.jacketed_mixing_vessel;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.jacketed_mixing_vessel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-21-knock-out-drum",
+   "title": "Knock-out Drum",
+   "tags": "pid vessels  Knock-out Drum Knock-out Drum",
+   "kind": "vertex",
+   "width": 51,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.knock-out_drum;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.knock-out_drum"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-22-mixer",
+   "title": "Mixer",
+   "tags": "pid vessels  Mixer Mixer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 88,
+   "style": "shape=mxgraph.pid.vessels.mixer;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.mixer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-23-mixing-reactor",
+   "title": "Mixing Reactor",
+   "tags": "pid vessels  Mixing Reactor Mixing Reactor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 96,
+   "style": "shape=mxgraph.pid.vessels.mixing_reactor;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.mixing_reactor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-24-open-bulk-storage",
+   "title": "Open Bulk Storage",
+   "tags": "pid vessels  Open Bulk Storage Open Bulk Storage",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=mxgraph.pid.vessels.open_bulk_storage;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.open_bulk_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-25-pressurized-vessel",
+   "title": "Pressurized Vessel",
+   "tags": "pid vessels  Pressurized Vessel Pressurized Vessel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 200,
+   "style": "shape=mxgraph.pid.vessels.pressurized_vessel;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.pressurized_vessel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-26-prop-agitator",
+   "title": "Prop Agitator",
+   "tags": "pid vessels  Prop Agitator Prop Agitator",
+   "kind": "vertex",
+   "width": 20,
+   "height": 88,
+   "style": "shape=mxgraph.pid.vessels.prop_agitator;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.prop_agitator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-27-reactor",
+   "title": "Reactor",
+   "tags": "pid vessels  Reactor Reactor",
+   "kind": "vertex",
+   "width": 40,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.reactor;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.reactor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-28-settling-tank",
+   "title": "Settling Tank",
+   "tags": "pid vessels  Settling Tank Settling Tank",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.pid.vessels.settling_tank;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.settling_tank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-29-spray-drier",
+   "title": "Spray Drier",
+   "tags": "pid vessels  Spray Drier Spray Drier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.pid.vessels.spray_drier;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.spray_drier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-30-storage-sphere",
+   "title": "Storage Sphere",
+   "tags": "pid vessels  Storage Sphere Storage Sphere",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.storage_sphere;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.storage_sphere"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-31-tank-vessel",
+   "title": "Tank, Vessel",
+   "tags": "pid vessels  Tank, Vessel Tank, Vessel",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.tank,_vessel;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank,_vessel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-32-tank",
+   "title": "Tank",
+   "tags": "pid vessels  Tank Tank",
+   "kind": "vertex",
+   "width": 40,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.tank;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-33-tank-boot",
+   "title": "Tank (Boot)",
+   "tags": "pid vessels  Tank (Boot) Tank (Boot)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "shape=mxgraph.pid.vessels.tank_(boot);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(boot)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-34-tank-concrete-base",
+   "title": "Tank (Concrete Base)",
+   "tags": "pid vessels  Tank (Concrete Base) Tank (Concrete Base)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 91,
+   "style": "shape=mxgraph.pid.vessels.tank_(concrete_base);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(concrete_base)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-35-tank-conical-bottom",
+   "title": "Tank (Conical Bottom)",
+   "tags": "pid vessels  Tank (Conical Bottom) Tank (Conical Bottom)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.vessels.tank_(conical_bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(conical_bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-36-tank-conical-roof",
+   "title": "Tank (Conical Roof)",
+   "tags": "pid vessels  Tank (Conical Roof) Tank (Conical Roof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "shape=mxgraph.pid.vessels.tank_(conical_roof);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(conical_roof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-37-tank-conical-roof-and-bottom",
+   "title": "Tank (Conical Roof and Bottom)",
+   "tags": "pid vessels  Tank (Conical Roof and Bottom) Tank (Conical Roof and Bottom)",
+   "kind": "vertex",
+   "width": 101,
+   "height": 150,
+   "style": "shape=mxgraph.pid.vessels.tank_(conical_roof_and_bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(conical_roof_and_bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-38-tank-covered",
+   "title": "Tank (Covered)",
+   "tags": "pid vessels  Tank (Covered) Tank (Covered)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "shape=mxgraph.pid.vessels.tank_(covered);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(covered)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-39-tank-covered-boot",
+   "title": "Tank (Covered, Boot)",
+   "tags": "pid vessels  Tank (Covered, Boot) Tank (Covered, Boot)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 85,
+   "style": "shape=mxgraph.pid.vessels.tank_(covered,_boot);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(covered,_boot)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-40-tank-dished-roof",
+   "title": "Tank (Dished Roof)",
+   "tags": "pid vessels  Tank (Dished Roof) Tank (Dished Roof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.tank_(dished_roof);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(dished_roof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-41-tank-dished-roof-conical-bottom",
+   "title": "Tank (Dished Roof, Conical Bottom)",
+   "tags": "pid vessels  Tank (Dished Roof, Conical Bottom) Tank (Dished Roof, Conical Bottom)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 125,
+   "style": "shape=mxgraph.pid.vessels.tank_(dished_roof,_conical_bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(dished_roof,_conical_bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-42-tank-false-bottom",
+   "title": "Tank (False Bottom)",
+   "tags": "pid vessels  Tank (False Bottom) Tank (False Bottom)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 112,
+   "style": "shape=mxgraph.pid.vessels.tank_(false_bottom);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(false_bottom)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-43-tank-floating-roof",
+   "title": "Tank (Floating Roof)",
+   "tags": "pid vessels  Tank (Floating Roof) Tank (Floating Roof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.tank_(floating_roof);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(floating_roof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-44-tank-floating-roof-boot",
+   "title": "Tank (Floating Roof, Boot)",
+   "tags": "pid vessels  Tank (Floating Roof, Boot) Tank (Floating Roof, Boot)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=mxgraph.pid.vessels.tank_(floating_roof,_boot);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tank_(floating_roof,_boot)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-45-tower",
+   "title": "Tower",
+   "tags": "pid vessels  Tower Tower",
+   "kind": "vertex",
+   "width": 14,
+   "height": 97,
+   "style": "shape=mxgraph.pid.vessels.tower;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-46-tower-with-packing",
+   "title": "Tower With Packing",
+   "tags": "pid vessels  Tower With Packing Tower With Packing",
+   "kind": "vertex",
+   "width": 14,
+   "height": 97,
+   "style": "shape=mxgraph.pid.vessels.tower_with_packing;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.tower_with_packing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-47-turbine-agitator",
+   "title": "Turbine Agitator",
+   "tags": "pid vessels  Turbine Agitator Turbine Agitator",
+   "kind": "vertex",
+   "width": 36,
+   "height": 93,
+   "style": "shape=mxgraph.pid.vessels.turbine_agitator;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.turbine_agitator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-48-vent-bent",
+   "title": "Vent (Bent)",
+   "tags": "pid vessels  Vent (Bent) Vent (Bent)",
+   "kind": "vertex",
+   "width": 10,
+   "height": 20,
+   "style": "shape=mxgraph.pid.vessels.vent_(bent);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vent_(bent)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-49-vent-cover",
+   "title": "Vent (Cover)",
+   "tags": "pid vessels  Vent (Cover) Vent (Cover)",
+   "kind": "vertex",
+   "width": 10,
+   "height": 20,
+   "style": "shape=mxgraph.pid.vessels.vent_(cover);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vent_(cover)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-50-vessel-different-diameters",
+   "title": "Vessel (Different Diameters)",
+   "tags": "pid vessels  Vessel (Different Diameters) Vessel (Different Diameters)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 97,
+   "style": "shape=mxgraph.pid.vessels.vessel_(different_diameters);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(different_diameters)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-51-vessel-dished-bottom-surface-indication",
+   "title": "Vessel (Dished Bottom, Surface Indication)",
+   "tags": "pid vessels  Vessel (Dished Bottom, Surface Indication) Vessel (Dished Bottom, Surface Indication)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 87,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_bottom,_surface_indication);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_bottom,_surface_indication)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-52-vessel-dished-ends-brackets",
+   "title": "Vessel (Dished Ends, Brackets)",
+   "tags": "pid vessels  Vessel (Dished Ends, Brackets) Vessel (Dished Ends, Brackets)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_brackets);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_brackets)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-53-vessel-dished-ends-electrical-heating",
+   "title": "Vessel (Dished Ends, Electrical Heating)",
+   "tags": "pid vessels  Vessel (Dished Ends, Electrical Heating) Vessel (Dished Ends, Electrical Heating)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_electrical_heating);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_electrical_heating)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-54-vessel-dished-ends-heating-cooling-jacket",
+   "title": "Vessel (Dished Ends, Heating-Cooling Jacket)",
+   "tags": "pid vessels  Vessel (Dished Ends, Heating-Cooling Jacket) Vessel (Dished Ends, Heating-Cooling Jacket)",
+   "kind": "vertex",
+   "width": 52,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_heating-cooling_jacket);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_heating-cooling_jacket)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-55-vessel-dished-ends-legs",
+   "title": "Vessel (Dished Ends, Legs)",
+   "tags": "pid vessels  Vessel (Dished Ends, Legs) Vessel (Dished Ends, Legs)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 122,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_legs);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_legs)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-56-vessel-dished-ends-ring",
+   "title": "Vessel (Dished Ends, Ring)",
+   "tags": "pid vessels  Vessel (Dished Ends, Ring) Vessel (Dished Ends, Ring)",
+   "kind": "vertex",
+   "width": 52,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_ring);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_ring)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-57-vessel-dished-ends-skirts",
+   "title": "Vessel (Dished Ends, Skirts)",
+   "tags": "pid vessels  Vessel (Dished Ends, Skirts) Vessel (Dished Ends, Skirts)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 122,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_skirts);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_skirts)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-58-vessel-dished-ends-thermal-insulation",
+   "title": "Vessel (Dished Ends, Thermal Insulation)",
+   "tags": "pid vessels  Vessel (Dished Ends, Thermal Insulation) Vessel (Dished Ends, Thermal Insulation)",
+   "kind": "vertex",
+   "width": 52,
+   "height": 95,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dished_ends,_thermal_insulation);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dished_ends,_thermal_insulation)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-59-vessel-dome",
+   "title": "Vessel (Dome)",
+   "tags": "pid vessels  Vessel (Dome) Vessel (Dome)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 55,
+   "style": "shape=mxgraph.pid.vessels.vessel_(dome);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(dome)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-60-vessel-full-tube-heating-cooling-coil",
+   "title": "Vessel (Full-Tube Heating-Cooling Coil)",
+   "tags": "pid vessels  Vessel (Full-Tube Heating-Cooling Coil) Vessel (Full-Tube Heating-Cooling Coil)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.vessel_(full-tube_heating-cooling_coil);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(full-tube_heating-cooling_coil)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-61-vessel-pit",
+   "title": "Vessel (Pit)",
+   "tags": "pid vessels  Vessel (Pit) Vessel (Pit)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 55,
+   "style": "shape=mxgraph.pid.vessels.vessel_(pit);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(pit)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidVessels-62-vessel-semi-tube-heating-cooling-coil",
+   "title": "Vessel (Semi-Tube Heating-Cooling Coil)",
+   "tags": "pid vessels  Vessel (Semi-Tube Heating-Cooling Coil) Vessel (Semi-Tube Heating-Cooling Coil)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 70,
+   "style": "shape=mxgraph.pid.vessels.vessel_(semi-tube_heating-cooling_coil);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.vessels.vessel_(semi-tube_heating-cooling_coil)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

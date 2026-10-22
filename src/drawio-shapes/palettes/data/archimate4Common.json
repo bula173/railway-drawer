@@ -1,0 +1,269 @@
+{
+ "id": "archimate4Common",
+ "title": "ArchiMate 4 / Common",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Common-0-role",
+   "title": "Role",
+   "tags": "archimate4  archimate 4 common role Role",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=role;archiType=square;archiDomain=common;",
+   "value": "Role",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:43"
+  },
+  {
+   "id": "archimate4Common-1-role",
+   "title": "Role",
+   "tags": "archimate4  archimate 4 common role Role",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.role;",
+   "shapeNames": [
+    "mxgraph.archimate4.role"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:45"
+  },
+  {
+   "id": "archimate4Common-2-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate4  archimate 4 common collaboration Collaboration",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=collab;archiType=square;archiDomain=common;",
+   "value": "Collaboration",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:47"
+  },
+  {
+   "id": "archimate4Common-3-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate4  archimate 4 common collaboration Collaboration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.collaboration;",
+   "shapeNames": [
+    "mxgraph.archimate4.collaboration"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:49"
+  },
+  {
+   "id": "archimate4Common-4-path",
+   "title": "Path",
+   "tags": "archimate4  archimate 4 common path Path",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=path;archiType=square;archiDomain=common;",
+   "value": "Path",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:51"
+  },
+  {
+   "id": "archimate4Common-5-path",
+   "title": "Path",
+   "tags": "archimate4  archimate 4 common path Path",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.path;strokeWidth=6;",
+   "shapeNames": [
+    "mxgraph.archimate4.path"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:53"
+  },
+  {
+   "id": "archimate4Common-6-service",
+   "title": "Service",
+   "tags": "archimate4  archimate 4 common service Service",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=serv;archiType=rounded;archiDomain=common;",
+   "value": "Service",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:55"
+  },
+  {
+   "id": "archimate4Common-7-service",
+   "title": "Service",
+   "tags": "archimate4  archimate 4 common service Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.service;",
+   "shapeNames": [
+    "mxgraph.archimate4.service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:57"
+  },
+  {
+   "id": "archimate4Common-8-process",
+   "title": "Process",
+   "tags": "archimate4  archimate 4 common process Process",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=proc;archiType=rounded;archiDomain=common;",
+   "value": "Process",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:59"
+  },
+  {
+   "id": "archimate4Common-9-process",
+   "title": "Process",
+   "tags": "archimate4  archimate 4 common process Process",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.process;",
+   "shapeNames": [
+    "mxgraph.archimate4.process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:61"
+  },
+  {
+   "id": "archimate4Common-10-function",
+   "title": "Function",
+   "tags": "archimate4  archimate 4 common function Function",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=func;archiType=rounded;archiDomain=common;",
+   "value": "Function",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:63"
+  },
+  {
+   "id": "archimate4Common-11-function",
+   "title": "Function",
+   "tags": "archimate4  archimate 4 common function Function",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.function;",
+   "shapeNames": [
+    "mxgraph.archimate4.function"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:65"
+  },
+  {
+   "id": "archimate4Common-12-event",
+   "title": "Event",
+   "tags": "archimate4  archimate 4 common event Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=event;archiType=rounded;archiDomain=common;",
+   "value": "Event",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:67"
+  },
+  {
+   "id": "archimate4Common-13-event",
+   "title": "Event",
+   "tags": "archimate4  archimate 4 common event Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.event;",
+   "shapeNames": [
+    "mxgraph.archimate4.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:69"
+  },
+  {
+   "id": "archimate4Common-14-grouping",
+   "title": "Grouping",
+   "tags": "archimate4  archimate 4 common grouping Grouping",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate4.element;appType=grouping;archiType=square;dashed=1;fillColor=none;archiDomain=common;",
+   "value": "Grouping",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:71"
+  },
+  {
+   "id": "archimate4Common-15-grouping",
+   "title": "Grouping",
+   "tags": "archimate4  archimate 4 common grouping Grouping",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate4.grouping;fillColor=none;dashed=1;",
+   "shapeNames": [
+    "mxgraph.archimate4.grouping"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:73"
+  },
+  {
+   "id": "archimate4Common-16-location",
+   "title": "Location",
+   "tags": "archimate4  archimate 4 common location Location",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.element;appType=location;archiType=square;archiDomain=common;",
+   "value": "Location",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:75"
+  },
+  {
+   "id": "archimate4Common-17-location",
+   "title": "Location",
+   "tags": "archimate4  archimate 4 common location Location",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#E5DFD3;shape=mxgraph.archimate4.locationIcon;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.archimate4.locationIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:77"
+  }
+ ]
+}

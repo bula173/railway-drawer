@@ -1,0 +1,288 @@
+{
+ "id": "ciscoComputers and Peripherals",
+ "title": "Cisco / Computers and Peripherals",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoComputers and Peripherals-0-ibm-mainframe",
+   "title": "IBM Mainframe",
+   "tags": "cisco ibm mainframe cisco computer peripheral  IBM Mainframe",
+   "kind": "vertex",
+   "width": 50,
+   "height": 70,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.ibm_mainframe;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.ibm_mainframe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:75"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-1-ibm-mini-as400",
+   "title": "IBM Mini AS400",
+   "tags": "cisco ibm mini as400 cisco computer peripheral  IBM Mini AS400",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.ibm_mini_as400;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.ibm_mini_as400"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:76"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-2-ibm-tower",
+   "title": "IBM Tower",
+   "tags": "cisco ibm tower cisco computer peripheral  IBM Tower",
+   "kind": "vertex",
+   "width": 42,
+   "height": 77,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.ibm_tower;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.ibm_tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:77"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-3-laptop",
+   "title": "Laptop",
+   "tags": "cisco laptop cisco computer peripheral  Laptop",
+   "kind": "vertex",
+   "width": 90,
+   "height": 61,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.laptop;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:78"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-4-macintosh",
+   "title": "Macintosh",
+   "tags": "cisco macintosh cisco computer peripheral  Macintosh",
+   "kind": "vertex",
+   "width": 99,
+   "height": 64,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.macintosh;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.macintosh"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:79"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-5-microphone",
+   "title": "Microphone",
+   "tags": "cisco microphone cisco computer peripheral  Microphone",
+   "kind": "vertex",
+   "width": 80,
+   "height": 96,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.microphone;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.microphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:80"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-6-pc",
+   "title": "PC",
+   "tags": "cisco pc personal computer cisco computer peripheral  PC",
+   "kind": "vertex",
+   "width": 78,
+   "height": 70,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.pc;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.pc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:81"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-7-pc-adapter-card",
+   "title": "PC Adapter Card",
+   "tags": "cisco pc adapter card personal computer cisco computer peripheral  PC Adapter Card",
+   "kind": "vertex",
+   "width": 64,
+   "height": 86,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.pc_adapter_card;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.pc_adapter_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:82"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-8-pc-routercard",
+   "title": "PC Routercard",
+   "tags": "cisco pc routercard cisco computer peripheral  PC Routercard",
+   "kind": "vertex",
+   "width": 78,
+   "height": 70,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.pc_routercard;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.pc_routercard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:83"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-9-printer",
+   "title": "Printer",
+   "tags": "cisco printer cisco computer peripheral  Printer",
+   "kind": "vertex",
+   "width": 91,
+   "height": 34,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.printer;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.printer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:84"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-10-scanner",
+   "title": "Scanner",
+   "tags": "cisco scanner cisco computer peripheral  Scanner",
+   "kind": "vertex",
+   "width": 80,
+   "height": 75,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.scanner;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.scanner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:85"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-11-speaker",
+   "title": "Speaker",
+   "tags": "cisco speaker cisco computer peripheral  Speaker",
+   "kind": "vertex",
+   "width": 53,
+   "height": 94,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.speaker;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.speaker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:86"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-12-sun-workstation",
+   "title": "Sun Workstation",
+   "tags": "cisco sun workstation cisco computer peripheral  Sun Workstation",
+   "kind": "vertex",
+   "width": 85,
+   "height": 67,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.sun_workstation;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.sun_workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:87"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-13-supercomputer",
+   "title": "Supercomputer",
+   "tags": "cisco supercomputer cisco computer peripheral  Supercomputer",
+   "kind": "vertex",
+   "width": 83,
+   "height": 99,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.supercomputer;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.supercomputer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:88"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-14-tablet",
+   "title": "Tablet",
+   "tags": "cisco tablet cisco computer peripheral  Tablet",
+   "kind": "vertex",
+   "width": 91,
+   "height": 50,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.tablet;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.tablet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:89"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-15-terminal",
+   "title": "Terminal",
+   "tags": "cisco terminal cisco computer peripheral  Terminal",
+   "kind": "vertex",
+   "width": 61,
+   "height": 54,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.terminal;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.terminal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:90"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-16-upc",
+   "title": "UPC",
+   "tags": "cisco upc cisco computer peripheral  UPC",
+   "kind": "vertex",
+   "width": 91,
+   "height": 86,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.upc;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.upc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:91"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-17-video-camera",
+   "title": "Video Camera",
+   "tags": "cisco video camera cisco computer peripheral  Video Camera",
+   "kind": "vertex",
+   "width": 67,
+   "height": 98,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.video_camera;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.video_camera"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:92"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-18-web-browser",
+   "title": "Web Browser",
+   "tags": "cisco web browser cisco computer peripheral  Web Browser",
+   "kind": "vertex",
+   "width": 62,
+   "height": 64,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.web_browser;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.web_browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:93"
+  },
+  {
+   "id": "ciscoComputers and Peripherals-19-workstation",
+   "title": "Workstation",
+   "tags": "cisco workstation cisco computer peripheral  Workstation",
+   "kind": "vertex",
+   "width": 83,
+   "height": 62,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.computers_and_peripherals.workstation;",
+   "shapeNames": [
+    "mxgraph.cisco.computers_and_peripherals.workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:94"
+  }
+ ]
+}

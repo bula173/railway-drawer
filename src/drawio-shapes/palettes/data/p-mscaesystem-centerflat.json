@@ -1,0 +1,148 @@
+{
+ "id": "mscaeSystem CenterFlat",
+ "title": "CAE / System Center (flat)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeSystem CenterFlat-0-admin-console",
+   "title": "Admin Console",
+   "tags": "mscae admin console ms microsoft cloud enterprise system center Admin Console",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.admin_console",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.admin_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:600"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-1-central-administration-site",
+   "title": "Central Administration Site",
+   "tags": "mscae central administration site ms microsoft cloud enterprise system center Central Administration Site",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.enterprise.database_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:602"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-2-central-administration-site-sql",
+   "title": "Central Administration Site SQL",
+   "tags": "mscae central administration site sql ms microsoft cloud enterprise system center Central Administration Site SQL",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.central_administration_site_sql",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.central_administration_site_sql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:604"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-3-cloud-distribution-point",
+   "title": "Cloud Distribution Point",
+   "tags": "mscae cloud distribution point ms microsoft cloud enterprise system center Cloud Distribution Point",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.cloud_distribution_point",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.cloud_distribution_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:606"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-4-distribution-point",
+   "title": "Distribution Point",
+   "tags": "mscae distribution point ms microsoft cloud enterprise system center Distribution Point",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.distribution_point",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.distribution_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:608"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-5-management-point",
+   "title": "Management Point",
+   "tags": "mscae management point ms microsoft cloud enterprise system center Management Point",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.management_point",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.management_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:610"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-6-primary-site",
+   "title": "Primary Site",
+   "tags": "mscae primary site ms microsoft cloud enterprise system center Primary Site",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.primary_site;",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.primary_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:612"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-7-roles",
+   "title": "Roles",
+   "tags": "mscae roles ms microsoft cloud enterprise system center Roles",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.roles",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.roles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:614"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-8-secondary-site",
+   "title": "Secondary Site",
+   "tags": "mscae secondary site ms microsoft cloud enterprise system center Secondary Site",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.secondary_site",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.secondary_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:616"
+  },
+  {
+   "id": "mscaeSystem CenterFlat-9-software-update-point",
+   "title": "Software Update Point",
+   "tags": "mscae software update point ms microsoft cloud enterprise system center Software Update Point",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.software_update_point",
+   "shapeNames": [
+    "mxgraph.mscae.system_center.software_update_point"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:618"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "rackHPE Aruba Security",
+ "title": "Rack / HPE Aruba / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackHPE Aruba Security-0-aruba-clearpass-c1000-front",
+   "title": "Aruba ClearPass C1000 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c1000 front Aruba ClearPass C1000 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c1000_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c1000_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:223"
+  },
+  {
+   "id": "rackHPE Aruba Security-1-aruba-clearpass-c1000-rear",
+   "title": "Aruba ClearPass C1000 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c1000 rear Aruba ClearPass C1000 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c1000_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c1000_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:224"
+  },
+  {
+   "id": "rackHPE Aruba Security-2-aruba-clearpass-c2000-front",
+   "title": "Aruba ClearPass C2000 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c2000 front Aruba ClearPass C2000 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c2000_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c2000_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:225"
+  },
+  {
+   "id": "rackHPE Aruba Security-3-aruba-clearpass-c2000-rear",
+   "title": "Aruba ClearPass C2000 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c2000 rear Aruba ClearPass C2000 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c2000_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c2000_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:226"
+  },
+  {
+   "id": "rackHPE Aruba Security-4-aruba-clearpass-c3000-front",
+   "title": "Aruba ClearPass C3000 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c3000 front Aruba ClearPass C3000 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c3000_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c3000_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:227"
+  },
+  {
+   "id": "rackHPE Aruba Security-5-aruba-clearpass-c3000-rear",
+   "title": "Aruba ClearPass C3000 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass c3000 rear Aruba ClearPass C3000 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.aruba_clearpass_c3000_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.aruba_clearpass_c3000_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:228"
+  },
+  {
+   "id": "rackHPE Aruba Security-6-direct-qsfp",
+   "title": "Direct QSFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba security clearpass direct qsfp Direct QSFP",
+   "kind": "vertex",
+   "width": 11,
+   "height": 5.7,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.security.direct_qsfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.security.direct_qsfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:229"
+  }
+ ]
+}

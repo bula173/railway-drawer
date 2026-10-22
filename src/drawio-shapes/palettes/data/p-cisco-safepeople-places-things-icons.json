@@ -1,0 +1,162 @@
+{
+ "id": "cisco_safePeople Places Things Icons",
+ "title": "Cisco Safe / People, Places, Things Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safePeople Places Things Icons-0-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon1;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:830"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-1-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:832"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-2-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon3;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:834"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-3-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 44.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon4;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:836"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-4-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon5;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:838"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-5-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon6;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:840"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-6-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon7;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:842"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-7-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 19.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon8;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:844"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-8-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon9;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon9"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:846"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-9-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon10;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:848"
+  },
+  {
+   "id": "cisco_safePeople Places Things Icons-10-entry",
+   "title": "",
+   "tags": "cisco safe people places things icons  cisco safe people places things ",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.people_places_things_icons.icon11;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.people_places_things_icons.icon11"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:850"
+  }
+ ]
+}

@@ -1,0 +1,414 @@
+{
+ "id": "pidFittings",
+ "title": "Process Engineering / Fittings",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidFittings-0-blind-disc",
+   "title": "Blind Disc",
+   "tags": "pid fittings blind disc process instrumentation fittings  Blind Disc",
+   "kind": "vertex",
+   "width": 40,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.blind_disc2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.blind_disc2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:423"
+  },
+  {
+   "id": "pidFittings-1-breakthrough",
+   "title": "Breakthrough",
+   "tags": "pid fittings breakthrough process instrumentation fittings  Breakthrough",
+   "kind": "vertex",
+   "width": 38,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.breakthrough2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.breakthrough2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:424"
+  },
+  {
+   "id": "pidFittings-2-clamped-flange-coupling",
+   "title": "Clamped Flange Coupling",
+   "tags": "pid fittings clamped flange coupling process instrumentation fittings  Clamped Flange Coupling",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.clamped_flange_coupling;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.clamped_flange_coupling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:425"
+  },
+  {
+   "id": "pidFittings-3-compensator",
+   "title": "Compensator",
+   "tags": "pid fittings compensator process instrumentation fittings  Compensator",
+   "kind": "vertex",
+   "width": 40,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.compensator;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.compensator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:426"
+  },
+  {
+   "id": "pidFittings-4-coupling",
+   "title": "Coupling",
+   "tags": "pid fittings coupling process instrumentation fittings  Coupling",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.coupling;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.coupling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:427"
+  },
+  {
+   "id": "pidFittings-5-flame-arrestor",
+   "title": "Flame Arrestor",
+   "tags": "pid fittings flame arrestor process instrumentation fittings  Flame Arrestor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flame_arrestor;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flame_arrestor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:428"
+  },
+  {
+   "id": "pidFittings-6-flame-arrestor-detonation-proof",
+   "title": "Flame Arrestor (Detonation-Proof)",
+   "tags": "pid fittings flame arrestor detonation proof process instrumentation fittings  Flame Arrestor (Detonation-Proof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flame_arrestor_(detonation-proof);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flame_arrestor_(detonation-proof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:429"
+  },
+  {
+   "id": "pidFittings-7-flame-arrestor-explosion-proof",
+   "title": "Flame Arrestor (Explosion-Proof)",
+   "tags": "pid fittings flame arrestor explosion proof) process instrumentation fittings  Flame Arrestor (Explosion-Proof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flame_arrestor_(explosion-proof);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flame_arrestor_(explosion-proof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:430"
+  },
+  {
+   "id": "pidFittings-8-flame-arrestor-fire-resistant",
+   "title": "Flame Arrestor (Fire-Resistant)",
+   "tags": "pid fittings flame arrestor fire resistant) process instrumentation fittings  Flame Arrestor (Fire-Resistant)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flame_arrestor_(fire-resistant);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flame_arrestor_(fire-resistant)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:431"
+  },
+  {
+   "id": "pidFittings-9-flame-arrestor-fire-resistant-detonation-proof",
+   "title": "Flame Arrestor (Fire-Resistant, Detonation-Proof)",
+   "tags": "pid fittings flame arrestor fire resistant detonation proof) process instrumentation fittings  Flame Arrestor (Fire-Resistant, Detonation-Proof)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flame_arrestor_(fire-resistant,_detonation-proof);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flame_arrestor_(fire-resistant,_detonation-proof)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:432"
+  },
+  {
+   "id": "pidFittings-10-flanged-connection",
+   "title": "Flanged Connection",
+   "tags": "pid fittings flanged connection process instrumentation fittings  Flanged Connection",
+   "kind": "vertex",
+   "width": 20,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flanged_connection;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flanged_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:433"
+  },
+  {
+   "id": "pidFittings-11-flanged-dummy-cover",
+   "title": "Flanged Dummy Cover",
+   "tags": "pid fittings flanged dummy cover process instrumentation fittings  Flanged Dummy Cover",
+   "kind": "vertex",
+   "width": 85,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.flanged_dummy_cover;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.flanged_dummy_cover"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:434"
+  },
+  {
+   "id": "pidFittings-12-funnel",
+   "title": "Funnel",
+   "tags": "pid fittings funnel process instrumentation fittings  Funnel",
+   "kind": "vertex",
+   "width": 80,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.funnel;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.funnel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:435"
+  },
+  {
+   "id": "pidFittings-13-hose",
+   "title": "Hose",
+   "tags": "pid fittings hose process instrumentation fittings  Hose",
+   "kind": "vertex",
+   "width": 180,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.hose;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.hose"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:436"
+  },
+  {
+   "id": "pidFittings-14-injector",
+   "title": "Injector",
+   "tags": "pid fittings injector process instrumentation fittings  Injector",
+   "kind": "vertex",
+   "width": 80,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.injector;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.injector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:437"
+  },
+  {
+   "id": "pidFittings-15-interchangeable-disc-blind-disc",
+   "title": "Interchangeable Disc (Blind Disc)",
+   "tags": "pid fittings interchangeable disc (blind disc) process instrumentation fittings  Interchangeable Disc (Blind Disc)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.interchangeable_disc_(blind_disc)2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.interchangeable_disc_(blind_disc)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:438"
+  },
+  {
+   "id": "pidFittings-16-interchangeable-disc-open-disc-in-function",
+   "title": "Interchangeable Disc (Open Disc In Function)",
+   "tags": "pid fittings interchangeable disc (open disc in function) process instrumentation fittings  Interchangeable Disc (Open Disc In Function)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.interchangeable_disc_(open_disc_in_function)2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.interchangeable_disc_(open_disc_in_function)2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:439"
+  },
+  {
+   "id": "pidFittings-17-open-disc",
+   "title": "Open Disc",
+   "tags": "pid fittings open disc process instrumentation fittings  Open Disc",
+   "kind": "vertex",
+   "width": 40,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.open_disc;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.open_disc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:440"
+  },
+  {
+   "id": "pidFittings-18-orifice-plate",
+   "title": "Orifice Plate",
+   "tags": "pid fittings orifice plate process instrumentation fittings  Orifice Plate",
+   "kind": "vertex",
+   "width": 40,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.orifice_plate2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.orifice_plate2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:441"
+  },
+  {
+   "id": "pidFittings-19-reducer",
+   "title": "Reducer",
+   "tags": "pid fittings reducer process instrumentation fittings  Reducer",
+   "kind": "vertex",
+   "width": 70,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.reducer;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.reducer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:442"
+  },
+  {
+   "id": "pidFittings-20-rupture-disc",
+   "title": "Rupture Disc",
+   "tags": "pid fittings rupture disc process instrumentation fittings  Rupture Disc",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.rupture_disc;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.rupture_disc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:443"
+  },
+  {
+   "id": "pidFittings-21-self-operating-release-valve",
+   "title": "Self-Operating Release Valve",
+   "tags": "pid fittings self operating release valve process instrumentation fittings  Self-Operating Release Valve",
+   "kind": "vertex",
+   "width": 105,
+   "height": 105,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.self-operating_release_valve2;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.self-operating_release_valve2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:444"
+  },
+  {
+   "id": "pidFittings-22-silencer",
+   "title": "Silencer",
+   "tags": "pid fittings silencer process instrumentation fittings  Silencer",
+   "kind": "vertex",
+   "width": 140,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.silencer;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.silencer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:445"
+  },
+  {
+   "id": "pidFittings-23-single-flange",
+   "title": "Single Flange",
+   "tags": "pid fittings single flange process instrumentation fittings  Single Flange",
+   "kind": "vertex",
+   "width": 5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.single_flange;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.single_flange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:446"
+  },
+  {
+   "id": "pidFittings-24-strainer",
+   "title": "Strainer",
+   "tags": "pid fittings strainer process instrumentation fittings  Strainer",
+   "kind": "vertex",
+   "width": 40,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.strainer;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:447"
+  },
+  {
+   "id": "pidFittings-25-strainer-cone",
+   "title": "Strainer (Cone)",
+   "tags": "pid fittings strainer (cone) process instrumentation fittings  Strainer (Cone)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.strainer_(cone);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.strainer_(cone)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:448"
+  },
+  {
+   "id": "pidFittings-26-vent",
+   "title": "Vent",
+   "tags": "pid fittings vent process instrumentation fittings  Vent",
+   "kind": "vertex",
+   "width": 80,
+   "height": 140,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.vent;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.vent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:449"
+  },
+  {
+   "id": "pidFittings-27-viewing-glass",
+   "title": "Viewing Glass",
+   "tags": "pid fittings viewing glass process instrumentation fittings  Viewing Glass",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.viewing_glass;",
+   "shapeNames": [
+    "mxgraph.pid.fittings.viewing_glass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:450"
+  },
+  {
+   "id": "pidFittings-28-viewing-glass-lighting",
+   "title": "Viewing Glass (Lighting)",
+   "tags": "pid fittings viewing glass (lighting) process instrumentation fittings  Viewing Glass (Lighting)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.fittings.viewing_glass_(lighting);",
+   "shapeNames": [
+    "mxgraph.pid.fittings.viewing_glass_(lighting)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:451"
+  }
+ ]
+}

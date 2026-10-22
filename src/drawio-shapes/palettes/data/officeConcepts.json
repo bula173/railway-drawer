@@ -1,0 +1,1968 @@
+{
+ "id": "officeConcepts",
+ "title": "Office / Concepts",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeConcepts-0-address-book",
+   "title": "Address Book",
+   "tags": "office concepts address book office concept  Address Book",
+   "kind": "vertex",
+   "width": 55,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.address_book;",
+   "shapeNames": [
+    "mxgraph.office.concepts.address_book"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:264"
+  },
+  {
+   "id": "officeConcepts-1-address-book-small",
+   "title": "Address Book (small)",
+   "tags": "office concepts address book small office concept  Address Book (small)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 31,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.address_book;",
+   "shapeNames": [
+    "mxgraph.office.concepts.address_book"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:266"
+  },
+  {
+   "id": "officeConcepts-2-anti-spam",
+   "title": "Anti-Spam",
+   "tags": "office concepts anti spam office concept  Anti-Spam",
+   "kind": "vertex",
+   "width": 55,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.anti_spam;",
+   "shapeNames": [
+    "mxgraph.office.concepts.anti_spam"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:268"
+  },
+  {
+   "id": "officeConcepts-3-application-android",
+   "title": "Application Android",
+   "tags": "office concepts application android office concept  Application Android",
+   "kind": "vertex",
+   "width": 60,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_android;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:270"
+  },
+  {
+   "id": "officeConcepts-4-application-generic",
+   "title": "Application Generic",
+   "tags": "office concepts application generic office concept  Application Generic",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_generic;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:272"
+  },
+  {
+   "id": "officeConcepts-5-application-generic-small",
+   "title": "Application Generic (small)",
+   "tags": "office concepts application generic small office concept  Application Generic (small)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_generic;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:274"
+  },
+  {
+   "id": "officeConcepts-6-application-hybrid",
+   "title": "Application Hybrid",
+   "tags": "office concepts application hybrid office concept  Application Hybrid",
+   "kind": "vertex",
+   "width": 59,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_hybrid;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_hybrid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:276"
+  },
+  {
+   "id": "officeConcepts-7-application-ios",
+   "title": "Application iOS",
+   "tags": "office concepts application ios office concept  Application iOS",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_ios;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_ios"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:278"
+  },
+  {
+   "id": "officeConcepts-8-application-web",
+   "title": "Application Web",
+   "tags": "office concepts application web office concept  Application Web",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_web;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_web"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:280"
+  },
+  {
+   "id": "officeConcepts-9-application-windows",
+   "title": "Application Windows",
+   "tags": "office concepts application windows office concept  Application Windows",
+   "kind": "vertex",
+   "width": 59,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.application_windows;",
+   "shapeNames": [
+    "mxgraph.office.concepts.application_windows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:282"
+  },
+  {
+   "id": "officeConcepts-10-app-for-office",
+   "title": "App for Office",
+   "tags": "office concepts app for office office concept  App for Office",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.app_for_office;",
+   "shapeNames": [
+    "mxgraph.office.concepts.app_for_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:284"
+  },
+  {
+   "id": "officeConcepts-11-app-for-sharepoint",
+   "title": "App For SharePoint",
+   "tags": "office concepts app for sharepoint office concept  App For SharePoint",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.app_for_sharepoint;",
+   "shapeNames": [
+    "mxgraph.office.concepts.app_for_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:286"
+  },
+  {
+   "id": "officeConcepts-12-app-part",
+   "title": "App Part",
+   "tags": "office concepts app part office concept  App Part",
+   "kind": "vertex",
+   "width": 46,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.app_part;",
+   "shapeNames": [
+    "mxgraph.office.concepts.app_part"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:288"
+  },
+  {
+   "id": "officeConcepts-13-archive",
+   "title": "Archive",
+   "tags": "office concepts archive office concept  Archive",
+   "kind": "vertex",
+   "width": 35,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.archive;",
+   "shapeNames": [
+    "mxgraph.office.concepts.archive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:290"
+  },
+  {
+   "id": "officeConcepts-14-attachment",
+   "title": "Attachment",
+   "tags": "office concepts attachment office concept  Attachment",
+   "kind": "vertex",
+   "width": 22,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.attachment;",
+   "shapeNames": [
+    "mxgraph.office.concepts.attachment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:292"
+  },
+  {
+   "id": "officeConcepts-15-backup-local",
+   "title": "Backup Local",
+   "tags": "office concepts backup local office concept  Backup Local",
+   "kind": "vertex",
+   "width": 48,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.backup_local;",
+   "shapeNames": [
+    "mxgraph.office.concepts.backup_local"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:294"
+  },
+  {
+   "id": "officeConcepts-16-backup-online",
+   "title": "Backup Online",
+   "tags": "office concepts backup online office concept  Backup Online",
+   "kind": "vertex",
+   "width": 55,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.backup_online;",
+   "shapeNames": [
+    "mxgraph.office.concepts.backup_online"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:296"
+  },
+  {
+   "id": "officeConcepts-17-bandwidth",
+   "title": "Bandwidth",
+   "tags": "office concepts bandwidth office concept  Bandwidth",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.bandwidth;",
+   "shapeNames": [
+    "mxgraph.office.concepts.bandwidth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:298"
+  },
+  {
+   "id": "officeConcepts-18-bandwidth-calculator",
+   "title": "Bandwidth Calculator",
+   "tags": "office concepts bandwidth calculator office concept  Bandwidth Calculator",
+   "kind": "vertex",
+   "width": 49,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.bandwidth_calculator;",
+   "shapeNames": [
+    "mxgraph.office.concepts.bandwidth_calculator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:300"
+  },
+  {
+   "id": "officeConcepts-19-best-practices",
+   "title": "Best Practices",
+   "tags": "office concepts best practices office concept  Best Practices",
+   "kind": "vertex",
+   "width": 53,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.best_practices;",
+   "shapeNames": [
+    "mxgraph.office.concepts.best_practices"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:302"
+  },
+  {
+   "id": "officeConcepts-20-book-journal",
+   "title": "Book, Journal",
+   "tags": "office concepts book journal office concept  Book, Journal",
+   "kind": "vertex",
+   "width": 41,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.book_journal;",
+   "shapeNames": [
+    "mxgraph.office.concepts.book_journal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:304"
+  },
+  {
+   "id": "officeConcepts-21-calculator",
+   "title": "Calculator",
+   "tags": "office concepts calculator office concept  Calculator",
+   "kind": "vertex",
+   "width": 32,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.calculator;",
+   "shapeNames": [
+    "mxgraph.office.concepts.calculator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:306"
+  },
+  {
+   "id": "officeConcepts-22-calendar",
+   "title": "Calendar",
+   "tags": "office concepts calendar office concept  Calendar",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.calendar;",
+   "shapeNames": [
+    "mxgraph.office.concepts.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:308"
+  },
+  {
+   "id": "officeConcepts-23-clipboard",
+   "title": "Clipboard",
+   "tags": "office concepts clipboard office concept  Clipboard",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.clipboard;",
+   "shapeNames": [
+    "mxgraph.office.concepts.clipboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:310"
+  },
+  {
+   "id": "officeConcepts-24-clipboard-small",
+   "title": "Clipboard (small)",
+   "tags": "office concepts clipboard small office concept  Clipboard (small)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.clipboard;",
+   "shapeNames": [
+    "mxgraph.office.concepts.clipboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:312"
+  },
+  {
+   "id": "officeConcepts-25-clock",
+   "title": "Clock",
+   "tags": "office concepts clock office concept  Clock",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.clock;",
+   "shapeNames": [
+    "mxgraph.office.concepts.clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:314"
+  },
+  {
+   "id": "officeConcepts-26-clock-small",
+   "title": "Clock (small)",
+   "tags": "office concepts clock small office concept  Clock (small)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.clock;",
+   "shapeNames": [
+    "mxgraph.office.concepts.clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:316"
+  },
+  {
+   "id": "officeConcepts-27-column",
+   "title": "Column",
+   "tags": "office concepts column office concept  Column",
+   "kind": "vertex",
+   "width": 52,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.column;",
+   "shapeNames": [
+    "mxgraph.office.concepts.column"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:318"
+  },
+  {
+   "id": "officeConcepts-28-connector",
+   "title": "Connector",
+   "tags": "office concepts connector office concept  Connector",
+   "kind": "vertex",
+   "width": 44,
+   "height": 32,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.connector;",
+   "shapeNames": [
+    "mxgraph.office.concepts.connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:320"
+  },
+  {
+   "id": "officeConcepts-29-connector-small",
+   "title": "Connector (small)",
+   "tags": "office concepts connector office concept  Connector (small)",
+   "kind": "vertex",
+   "width": 33,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.connector;",
+   "shapeNames": [
+    "mxgraph.office.concepts.connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:322"
+  },
+  {
+   "id": "officeConcepts-30-contacts",
+   "title": "Contacts",
+   "tags": "office concepts contacts office concept  Contacts",
+   "kind": "vertex",
+   "width": 53,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.contacts;",
+   "shapeNames": [
+    "mxgraph.office.concepts.contacts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:324"
+  },
+  {
+   "id": "officeConcepts-31-content-type",
+   "title": "Content Type",
+   "tags": "office concepts content type office concept  Content Type",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.content_type;",
+   "shapeNames": [
+    "mxgraph.office.concepts.content_type"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:326"
+  },
+  {
+   "id": "officeConcepts-32-credit-card",
+   "title": "Credit Card",
+   "tags": "office concepts credit card office concept  Credit Card",
+   "kind": "vertex",
+   "width": 55,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.credit_card;",
+   "shapeNames": [
+    "mxgraph.office.concepts.credit_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:328"
+  },
+  {
+   "id": "officeConcepts-33-document",
+   "title": "Document",
+   "tags": "office concepts document office concept  Document",
+   "kind": "vertex",
+   "width": 40,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.document;",
+   "shapeNames": [
+    "mxgraph.office.concepts.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:330"
+  },
+  {
+   "id": "officeConcepts-34-document-small",
+   "title": "Document (small)",
+   "tags": "office concepts document office concept  Document (small)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.document;",
+   "shapeNames": [
+    "mxgraph.office.concepts.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:332"
+  },
+  {
+   "id": "officeConcepts-35-documents",
+   "title": "Documents",
+   "tags": "office concepts documents office concept  Documents",
+   "kind": "vertex",
+   "width": 46,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.documents;",
+   "shapeNames": [
+    "mxgraph.office.concepts.documents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:334"
+  },
+  {
+   "id": "officeConcepts-36-documents-shared",
+   "title": "Documents Shared",
+   "tags": "office concepts documents shared office concept  Documents Shared",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.documents_shared;",
+   "shapeNames": [
+    "mxgraph.office.concepts.documents_shared"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:336"
+  },
+  {
+   "id": "officeConcepts-37-document-blank",
+   "title": "Document Blank",
+   "tags": "office concepts document blank office concept  Document Blank",
+   "kind": "vertex",
+   "width": 40,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.document_blank;",
+   "shapeNames": [
+    "mxgraph.office.concepts.document_blank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:338"
+  },
+  {
+   "id": "officeConcepts-38-document-blank-small",
+   "title": "Document Blank (small)",
+   "tags": "office concepts document blank office concept  Document Blank (small)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.document_blank;",
+   "shapeNames": [
+    "mxgraph.office.concepts.document_blank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:340"
+  },
+  {
+   "id": "officeConcepts-39-document-shared",
+   "title": "Document Shared",
+   "tags": "office concepts document shared office concept  Document Shared",
+   "kind": "vertex",
+   "width": 52,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.document_shared;",
+   "shapeNames": [
+    "mxgraph.office.concepts.document_shared"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:342"
+  },
+  {
+   "id": "officeConcepts-40-download",
+   "title": "Download",
+   "tags": "office concepts download office concept  Download",
+   "kind": "vertex",
+   "width": 48,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.download;",
+   "shapeNames": [
+    "mxgraph.office.concepts.download"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:344"
+  },
+  {
+   "id": "officeConcepts-41-email",
+   "title": "Email",
+   "tags": "office concepts email office concept  Email",
+   "kind": "vertex",
+   "width": 47,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.email;",
+   "shapeNames": [
+    "mxgraph.office.concepts.email"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:346"
+  },
+  {
+   "id": "officeConcepts-42-email-small",
+   "title": "Email (small)",
+   "tags": "office concepts email office concept  Email (small)",
+   "kind": "vertex",
+   "width": 31,
+   "height": 24,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.email;",
+   "shapeNames": [
+    "mxgraph.office.concepts.email"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:348"
+  },
+  {
+   "id": "officeConcepts-43-email-approved",
+   "title": "Email Approved",
+   "tags": "office concepts email approved office concept  Email Approved",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.email_approved;",
+   "shapeNames": [
+    "mxgraph.office.concepts.email_approved"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:350"
+  },
+  {
+   "id": "officeConcepts-44-email-expired",
+   "title": "Email Expired",
+   "tags": "office concepts email expired office concept  Email Expired",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.email_expired;",
+   "shapeNames": [
+    "mxgraph.office.concepts.email_expired"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:352"
+  },
+  {
+   "id": "officeConcepts-45-email-rejected",
+   "title": "Email Rejected",
+   "tags": "office concepts email rejected office concept  Email Rejected",
+   "kind": "vertex",
+   "width": 55,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.email_rejected;",
+   "shapeNames": [
+    "mxgraph.office.concepts.email_rejected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:354"
+  },
+  {
+   "id": "officeConcepts-46-file-key",
+   "title": "File Key",
+   "tags": "office concepts file key office concept  File Key",
+   "kind": "vertex",
+   "width": 48,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.file_key;",
+   "shapeNames": [
+    "mxgraph.office.concepts.file_key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:356"
+  },
+  {
+   "id": "officeConcepts-47-firewall",
+   "title": "Firewall",
+   "tags": "office concepts firewall office concept  Firewall",
+   "kind": "vertex",
+   "width": 47,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;",
+   "shapeNames": [
+    "mxgraph.office.concepts.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:358"
+  },
+  {
+   "id": "officeConcepts-48-firewall-blue",
+   "title": "Firewall (blue)",
+   "tags": "office concepts firewall office concept  Firewall (blue)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.concepts.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:360"
+  },
+  {
+   "id": "officeConcepts-49-firewall-orange",
+   "title": "Firewall (orange)",
+   "tags": "office concepts firewall office concept  Firewall (orange)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.concepts.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:362"
+  },
+  {
+   "id": "officeConcepts-50-firewall-green",
+   "title": "Firewall (green)",
+   "tags": "office concepts firewall office concept  Firewall (green)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.concepts.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:364"
+  },
+  {
+   "id": "officeConcepts-51-firewall-ghosted",
+   "title": "Firewall (ghosted)",
+   "tags": "office concepts firewall office concept  Firewall (ghosted)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.concepts.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:366"
+  },
+  {
+   "id": "officeConcepts-52-folder",
+   "title": "Folder",
+   "tags": "office concepts folder office concept  Folder",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:368"
+  },
+  {
+   "id": "officeConcepts-53-folder-blue",
+   "title": "Folder (blue)",
+   "tags": "office concepts folder office concept  Folder (blue)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:370"
+  },
+  {
+   "id": "officeConcepts-54-folder-orange",
+   "title": "Folder (orange)",
+   "tags": "office concepts folder office concept  Folder (orange)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:372"
+  },
+  {
+   "id": "officeConcepts-55-folder-green",
+   "title": "Folder (green)",
+   "tags": "office concepts folder office concept  Folder (green)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:374"
+  },
+  {
+   "id": "officeConcepts-56-folder-ghosted",
+   "title": "Folder (ghosted)",
+   "tags": "office concepts folder office concept  Folder (ghosted)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:376"
+  },
+  {
+   "id": "officeConcepts-57-folder-small",
+   "title": "Folder (small)",
+   "tags": "office concepts folder office concept  Folder (small)",
+   "kind": "vertex",
+   "width": 33,
+   "height": 30,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:378"
+  },
+  {
+   "id": "officeConcepts-58-folders",
+   "title": "Folders",
+   "tags": "office concepts folders office concept  Folders",
+   "kind": "vertex",
+   "width": 57,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folders;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folders"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:380"
+  },
+  {
+   "id": "officeConcepts-59-folder-open",
+   "title": "Folder, Open",
+   "tags": "office concepts folder open office concept  Folder, Open",
+   "kind": "vertex",
+   "width": 56,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder_open;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder_open"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:382"
+  },
+  {
+   "id": "officeConcepts-60-folder-public",
+   "title": "Folder, Public",
+   "tags": "office concepts folder public office concept  Folder, Public",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder_public;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder_public"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:384"
+  },
+  {
+   "id": "officeConcepts-61-folder-shared",
+   "title": "Folder, Shared",
+   "tags": "office concepts folder shared office concept  Folder, Shared",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder_shared;",
+   "shapeNames": [
+    "mxgraph.office.concepts.folder_shared"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:386"
+  },
+  {
+   "id": "officeConcepts-62-form",
+   "title": "Form",
+   "tags": "office concepts form office concept  Form",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.form;",
+   "shapeNames": [
+    "mxgraph.office.concepts.form"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:388"
+  },
+  {
+   "id": "officeConcepts-63-get-started",
+   "title": "Get Started",
+   "tags": "office concepts get started office concept  Get Started",
+   "kind": "vertex",
+   "width": 42,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.get_started;",
+   "shapeNames": [
+    "mxgraph.office.concepts.get_started"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:390"
+  },
+  {
+   "id": "officeConcepts-64-globe-internet",
+   "title": "Globe, Internet",
+   "tags": "office concepts globe internet office concept  Globe, Internet",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.globe_internet;",
+   "shapeNames": [
+    "mxgraph.office.concepts.globe_internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:392"
+  },
+  {
+   "id": "officeConcepts-65-help",
+   "title": "Help",
+   "tags": "office concepts help office concept  Help",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.help;",
+   "shapeNames": [
+    "mxgraph.office.concepts.help"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:394"
+  },
+  {
+   "id": "officeConcepts-66-help-small",
+   "title": "Help (small)",
+   "tags": "office concepts help office concept  Help (small)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.help;",
+   "shapeNames": [
+    "mxgraph.office.concepts.help"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:396"
+  },
+  {
+   "id": "officeConcepts-67-home",
+   "title": "Home",
+   "tags": "office concepts home office concept  Home",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:398"
+  },
+  {
+   "id": "officeConcepts-68-home-blue",
+   "title": "Home (blue)",
+   "tags": "office concepts home office concept  Home (blue)",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:400"
+  },
+  {
+   "id": "officeConcepts-69-home-orange",
+   "title": "Home (orange)",
+   "tags": "office concepts home office concept  Home (orange)",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:402"
+  },
+  {
+   "id": "officeConcepts-70-home-green",
+   "title": "Home (green)",
+   "tags": "office concepts home office concept  Home (green)",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:404"
+  },
+  {
+   "id": "officeConcepts-71-home-ghosted",
+   "title": "Home (ghosted)",
+   "tags": "office concepts home office concept  Home (ghosted)",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:406"
+  },
+  {
+   "id": "officeConcepts-72-home-small",
+   "title": "Home (small)",
+   "tags": "office concepts home office concept  Home (small)",
+   "kind": "vertex",
+   "width": 39,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:408"
+  },
+  {
+   "id": "officeConcepts-73-home-page",
+   "title": "Home Page",
+   "tags": "office concepts home page office concept  Home Page",
+   "kind": "vertex",
+   "width": 53,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:410"
+  },
+  {
+   "id": "officeConcepts-74-home-page-blue",
+   "title": "Home Page (blue)",
+   "tags": "office concepts home page office concept  Home Page (blue)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:412"
+  },
+  {
+   "id": "officeConcepts-75-home-page-orange",
+   "title": "Home Page (orange)",
+   "tags": "office concepts home page office concept  Home Page (orange)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:414"
+  },
+  {
+   "id": "officeConcepts-76-home-page-green",
+   "title": "Home Page (green)",
+   "tags": "office concepts home page office concept  Home Page (green)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:416"
+  },
+  {
+   "id": "officeConcepts-77-home-page-ghosted",
+   "title": "Home Page (ghosted)",
+   "tags": "office concepts home page office concept  Home Page (ghosted)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.concepts.home_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:418"
+  },
+  {
+   "id": "officeConcepts-78-hybrid",
+   "title": "Hybrid",
+   "tags": "office concepts hybrid office concept  Hybrid",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.hybrid;",
+   "shapeNames": [
+    "mxgraph.office.concepts.hybrid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:420"
+  },
+  {
+   "id": "officeConcepts-79-input-output-filter",
+   "title": "Input Output Filter",
+   "tags": "office concepts input output filter office concept  Input Output Filter",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.input_output_filter;",
+   "shapeNames": [
+    "mxgraph.office.concepts.input_output_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:422"
+  },
+  {
+   "id": "officeConcepts-80-install",
+   "title": "Install",
+   "tags": "office concepts install office concept  Install",
+   "kind": "vertex",
+   "width": 45,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.install;",
+   "shapeNames": [
+    "mxgraph.office.concepts.install"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:424"
+  },
+  {
+   "id": "officeConcepts-81-integration",
+   "title": "Integration",
+   "tags": "office concepts integration office concept  Integration",
+   "kind": "vertex",
+   "width": 44,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.integration;",
+   "shapeNames": [
+    "mxgraph.office.concepts.integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:426"
+  },
+  {
+   "id": "officeConcepts-82-lab",
+   "title": "Lab",
+   "tags": "office concepts lab office concept  Lab",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.lab;",
+   "shapeNames": [
+    "mxgraph.office.concepts.lab"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:428"
+  },
+  {
+   "id": "officeConcepts-83-learn",
+   "title": "Learn",
+   "tags": "office concepts learn office concept  Learn",
+   "kind": "vertex",
+   "width": 56,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.learn;",
+   "shapeNames": [
+    "mxgraph.office.concepts.learn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:430"
+  },
+  {
+   "id": "officeConcepts-84-license",
+   "title": "License",
+   "tags": "office concepts license office concept  License",
+   "kind": "vertex",
+   "width": 45,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.license;",
+   "shapeNames": [
+    "mxgraph.office.concepts.license"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:432"
+  },
+  {
+   "id": "officeConcepts-85-link",
+   "title": "Link",
+   "tags": "office concepts link office concept  Link",
+   "kind": "vertex",
+   "width": 61,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.link;",
+   "shapeNames": [
+    "mxgraph.office.concepts.link"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:434"
+  },
+  {
+   "id": "officeConcepts-86-list-library",
+   "title": "List Library",
+   "tags": "office concepts list library office concept  List Library",
+   "kind": "vertex",
+   "width": 52,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.list_library;",
+   "shapeNames": [
+    "mxgraph.office.concepts.list_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:436"
+  },
+  {
+   "id": "officeConcepts-87-mailbox",
+   "title": "Mailbox",
+   "tags": "office concepts mailbox office concept  Mailbox",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.mailbox;",
+   "shapeNames": [
+    "mxgraph.office.concepts.mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:438"
+  },
+  {
+   "id": "officeConcepts-88-mailbox-small",
+   "title": "Mailbox (small)",
+   "tags": "office concepts mailbox office concept  Mailbox (small)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.mailbox;",
+   "shapeNames": [
+    "mxgraph.office.concepts.mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:440"
+  },
+  {
+   "id": "officeConcepts-89-mailbox",
+   "title": "Mailbox",
+   "tags": "office concepts mailbox2 office concept  Mailbox",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.mailbox2;",
+   "shapeNames": [
+    "mxgraph.office.concepts.mailbox2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:442"
+  },
+  {
+   "id": "officeConcepts-90-mailbox-small",
+   "title": "Mailbox (small)",
+   "tags": "office concepts mailbox2 office concept  Mailbox (small)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.mailbox2;",
+   "shapeNames": [
+    "mxgraph.office.concepts.mailbox2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:444"
+  },
+  {
+   "id": "officeConcepts-91-maintenance",
+   "title": "Maintenance",
+   "tags": "office concepts maintenance office concept  Maintenance",
+   "kind": "vertex",
+   "width": 39,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.maintenance;",
+   "shapeNames": [
+    "mxgraph.office.concepts.maintenance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:446"
+  },
+  {
+   "id": "officeConcepts-92-marketplace-shopping-bag",
+   "title": "Marketplace, Shopping Bag",
+   "tags": "office concepts marketplace shopping bag office concept  Marketplace, Shopping Bag",
+   "kind": "vertex",
+   "width": 36,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.marketplace_shopping_bag;",
+   "shapeNames": [
+    "mxgraph.office.concepts.marketplace_shopping_bag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:448"
+  },
+  {
+   "id": "officeConcepts-93-meets-requirements",
+   "title": "Meets Requirements",
+   "tags": "office concepts meets requirements office concept  Meets Requirements",
+   "kind": "vertex",
+   "width": 56,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.meets_requirements;",
+   "shapeNames": [
+    "mxgraph.office.concepts.meets_requirements"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:450"
+  },
+  {
+   "id": "officeConcepts-94-migration",
+   "title": "Migration",
+   "tags": "office concepts migration office concept  Migration",
+   "kind": "vertex",
+   "width": 59,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.migration;",
+   "shapeNames": [
+    "mxgraph.office.concepts.migration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:452"
+  },
+  {
+   "id": "officeConcepts-95-moes",
+   "title": "MOEs",
+   "tags": "office concepts moes office concept  MOEs",
+   "kind": "vertex",
+   "width": 40,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.moes;",
+   "shapeNames": [
+    "mxgraph.office.concepts.moes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:454"
+  },
+  {
+   "id": "officeConcepts-96-navigation",
+   "title": "Navigation",
+   "tags": "office concepts navigation office concept  Navigation",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.navigation;",
+   "shapeNames": [
+    "mxgraph.office.concepts.navigation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:456"
+  },
+  {
+   "id": "officeConcepts-97-node-generic",
+   "title": "Node, Generic",
+   "tags": "office concepts node generic office concept  Node, Generic",
+   "kind": "vertex",
+   "width": 46,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.node_generic;",
+   "shapeNames": [
+    "mxgraph.office.concepts.node_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:458"
+  },
+  {
+   "id": "officeConcepts-98-node-generic-blue",
+   "title": "Node, Generic (blue)",
+   "tags": "office concepts node generic office concept  Node, Generic (blue)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.node_generic;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.concepts.node_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:460"
+  },
+  {
+   "id": "officeConcepts-99-node-generic-orange",
+   "title": "Node, Generic (orange)",
+   "tags": "office concepts node generic office concept  Node, Generic (orange)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.node_generic;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.concepts.node_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:462"
+  },
+  {
+   "id": "officeConcepts-100-node-generic-green",
+   "title": "Node, Generic (green)",
+   "tags": "office concepts node generic office concept  Node, Generic (green)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.node_generic;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.concepts.node_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:464"
+  },
+  {
+   "id": "officeConcepts-101-node-generic-ghosted",
+   "title": "Node, Generic (ghosted)",
+   "tags": "office concepts node generic office concept  Node, Generic (ghosted)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.node_generic;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.concepts.node_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:466"
+  },
+  {
+   "id": "officeConcepts-102-office-installed",
+   "title": "Office Installed",
+   "tags": "office concepts office installed office concept  Office Installed",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.office_installed;",
+   "shapeNames": [
+    "mxgraph.office.concepts.office_installed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:468"
+  },
+  {
+   "id": "officeConcepts-103-on-premises",
+   "title": "On Premises",
+   "tags": "office concepts on premises office concept  On Premises",
+   "kind": "vertex",
+   "width": 34,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.on_premises;",
+   "shapeNames": [
+    "mxgraph.office.concepts.on_premises"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:470"
+  },
+  {
+   "id": "officeConcepts-104-on-premises-directory",
+   "title": "On Premises Directory",
+   "tags": "office concepts on premises directory office concept  On Premises Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.on_premises_directory;",
+   "shapeNames": [
+    "mxgraph.office.concepts.on_premises_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:472"
+  },
+  {
+   "id": "officeConcepts-105-phishing",
+   "title": "Phishing",
+   "tags": "office concepts phishing office concept  Phishing",
+   "kind": "vertex",
+   "width": 59,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.phishing;",
+   "shapeNames": [
+    "mxgraph.office.concepts.phishing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:474"
+  },
+  {
+   "id": "officeConcepts-106-pin",
+   "title": "Pin",
+   "tags": "office concepts pin office concept  Pin",
+   "kind": "vertex",
+   "width": 24,
+   "height": 44,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.pin;",
+   "shapeNames": [
+    "mxgraph.office.concepts.pin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:476"
+  },
+  {
+   "id": "officeConcepts-107-platform-options",
+   "title": "Platform Options",
+   "tags": "office concepts platform options office concept  Platform Options",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.platform_options;",
+   "shapeNames": [
+    "mxgraph.office.concepts.platform_options"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:478"
+  },
+  {
+   "id": "officeConcepts-108-powershell",
+   "title": "PowerShell",
+   "tags": "office concepts powershell office concept  PowerShell",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.powershell;",
+   "shapeNames": [
+    "mxgraph.office.concepts.powershell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:480"
+  },
+  {
+   "id": "officeConcepts-109-properties",
+   "title": "Properties",
+   "tags": "office concepts properties office concept  Properties",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.properties;",
+   "shapeNames": [
+    "mxgraph.office.concepts.properties"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:482"
+  },
+  {
+   "id": "officeConcepts-110-publish",
+   "title": "Publish",
+   "tags": "office concepts publish office concept  Publish",
+   "kind": "vertex",
+   "width": 57,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.publish;",
+   "shapeNames": [
+    "mxgraph.office.concepts.publish"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:484"
+  },
+  {
+   "id": "officeConcepts-111-remote-access",
+   "title": "Remote Access",
+   "tags": "office concepts remote access office concept  Remote Access",
+   "kind": "vertex",
+   "width": 59,
+   "height": 41,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.remote_access;",
+   "shapeNames": [
+    "mxgraph.office.concepts.remote_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:486"
+  },
+  {
+   "id": "officeConcepts-112-script",
+   "title": "Script",
+   "tags": "office concepts script office concept  Script",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.script;",
+   "shapeNames": [
+    "mxgraph.office.concepts.script"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:488"
+  },
+  {
+   "id": "officeConcepts-113-search",
+   "title": "Search",
+   "tags": "office concepts search office concept  Search",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.search;",
+   "shapeNames": [
+    "mxgraph.office.concepts.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:490"
+  },
+  {
+   "id": "officeConcepts-114-search-small",
+   "title": "Search (small)",
+   "tags": "office concepts search office concept  Search (small)",
+   "kind": "vertex",
+   "width": 35,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.search;",
+   "shapeNames": [
+    "mxgraph.office.concepts.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:492"
+  },
+  {
+   "id": "officeConcepts-115-service-application",
+   "title": "Service Application",
+   "tags": "office concepts service application office concept  Service Application",
+   "kind": "vertex",
+   "width": 59,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.service_application;",
+   "shapeNames": [
+    "mxgraph.office.concepts.service_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:494"
+  },
+  {
+   "id": "officeConcepts-116-settings",
+   "title": "Settings",
+   "tags": "office concepts settings office concept  Settings",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.settings;",
+   "shapeNames": [
+    "mxgraph.office.concepts.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:496"
+  },
+  {
+   "id": "officeConcepts-117-settings-office-365",
+   "title": "Settings, Office 365",
+   "tags": "office concepts settings office 365 office concept  Settings, Office 365",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.settings_office_365;",
+   "shapeNames": [
+    "mxgraph.office.concepts.settings_office_365"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:498"
+  },
+  {
+   "id": "officeConcepts-118-settings-office-365-small",
+   "title": "Settings, Office 365 (small)",
+   "tags": "office concepts settings office 365 office concept  Settings, Office 365 (small)",
+   "kind": "vertex",
+   "width": 31,
+   "height": 31,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.settings_office_365;",
+   "shapeNames": [
+    "mxgraph.office.concepts.settings_office_365"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:500"
+  },
+  {
+   "id": "officeConcepts-119-sign-up",
+   "title": "Sign Up",
+   "tags": "office concepts sign up office concept  Sign Up",
+   "kind": "vertex",
+   "width": 51,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.sign_up;",
+   "shapeNames": [
+    "mxgraph.office.concepts.sign_up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:502"
+  },
+  {
+   "id": "officeConcepts-120-sound-file",
+   "title": "Sound File",
+   "tags": "office concepts sound file office concept  Sound File",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.sound_file;",
+   "shapeNames": [
+    "mxgraph.office.concepts.sound_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:504"
+  },
+  {
+   "id": "officeConcepts-121-tasks",
+   "title": "Tasks",
+   "tags": "office concepts tasks office concept  Tasks",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.tasks;",
+   "shapeNames": [
+    "mxgraph.office.concepts.tasks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:506"
+  },
+  {
+   "id": "officeConcepts-122-technical-diagram",
+   "title": "Technical Diagram",
+   "tags": "office concepts technical diagram office concept  Technical Diagram",
+   "kind": "vertex",
+   "width": 50,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.technical_diagram;",
+   "shapeNames": [
+    "mxgraph.office.concepts.technical_diagram"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:508"
+  },
+  {
+   "id": "officeConcepts-123-upgrade-application",
+   "title": "Upgrade Application",
+   "tags": "office concepts upgrade application office concept  Upgrade Application",
+   "kind": "vertex",
+   "width": 58,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.upgrade_application;",
+   "shapeNames": [
+    "mxgraph.office.concepts.upgrade_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:510"
+  },
+  {
+   "id": "officeConcepts-124-upgrade-server",
+   "title": "Upgrade Server",
+   "tags": "office concepts upgrade server office concept  Upgrade Server",
+   "kind": "vertex",
+   "width": 39,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.upgrade_server;",
+   "shapeNames": [
+    "mxgraph.office.concepts.upgrade_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:512"
+  },
+  {
+   "id": "officeConcepts-125-upgrade-site",
+   "title": "Upgrade Site",
+   "tags": "office concepts upgrade site office concept  Upgrade Site",
+   "kind": "vertex",
+   "width": 59,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.upgrade_site;",
+   "shapeNames": [
+    "mxgraph.office.concepts.upgrade_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:514"
+  },
+  {
+   "id": "officeConcepts-126-upload",
+   "title": "Upload",
+   "tags": "office concepts upload office concept  Upload",
+   "kind": "vertex",
+   "width": 48,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.upload;",
+   "shapeNames": [
+    "mxgraph.office.concepts.upload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:516"
+  },
+  {
+   "id": "officeConcepts-127-video-form",
+   "title": "Video Form",
+   "tags": "office concepts video form office concept  Video Form",
+   "kind": "vertex",
+   "width": 58,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.video_form;",
+   "shapeNames": [
+    "mxgraph.office.concepts.video_form"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:518"
+  },
+  {
+   "id": "officeConcepts-128-video-play",
+   "title": "Video Play",
+   "tags": "office concepts video play office concept  Video Play",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.video_play;",
+   "shapeNames": [
+    "mxgraph.office.concepts.video_play"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:520"
+  },
+  {
+   "id": "officeConcepts-129-voicemail",
+   "title": "Voicemail",
+   "tags": "office concepts voicemail office concept  Voicemail",
+   "kind": "vertex",
+   "width": 53,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.voicemail;",
+   "shapeNames": [
+    "mxgraph.office.concepts.voicemail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:522"
+  },
+  {
+   "id": "officeConcepts-130-voicemail-preview",
+   "title": "Voicemail Preview",
+   "tags": "office concepts voicemail preview office concept  Voicemail Preview",
+   "kind": "vertex",
+   "width": 57,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.voicemail_preview;",
+   "shapeNames": [
+    "mxgraph.office.concepts.voicemail_preview"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:524"
+  },
+  {
+   "id": "officeConcepts-131-walkthrough",
+   "title": "Walkthrough",
+   "tags": "office concepts walkthrough office concept  Walkthrough",
+   "kind": "vertex",
+   "width": 41,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.walkthrough;",
+   "shapeNames": [
+    "mxgraph.office.concepts.walkthrough"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:526"
+  },
+  {
+   "id": "officeConcepts-132-website",
+   "title": "Website",
+   "tags": "office concepts website office concept  Website",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.website;",
+   "shapeNames": [
+    "mxgraph.office.concepts.website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:528"
+  },
+  {
+   "id": "officeConcepts-133-web-conferencing",
+   "title": "Web Conferencing",
+   "tags": "office concepts web conferencing office concept  Web Conferencing",
+   "kind": "vertex",
+   "width": 60,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_conferencing;",
+   "shapeNames": [
+    "mxgraph.office.concepts.web_conferencing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:530"
+  },
+  {
+   "id": "officeConcepts-134-web-page",
+   "title": "Web Page",
+   "tags": "office concepts web page office concept  Web Page",
+   "kind": "vertex",
+   "width": 50,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;",
+   "shapeNames": [
+    "mxgraph.office.concepts.web_page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:532"
+  },
+  {
+   "id": "officeConcepts-135-web-part",
+   "title": "Web Part",
+   "tags": "office concepts web part office concept  Web Part",
+   "kind": "vertex",
+   "width": 45,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_part;",
+   "shapeNames": [
+    "mxgraph.office.concepts.web_part"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:534"
+  },
+  {
+   "id": "officeConcepts-136-web-services",
+   "title": "Web Services",
+   "tags": "office concepts web services office concept  Web Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_services;",
+   "shapeNames": [
+    "mxgraph.office.concepts.web_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:536"
+  },
+  {
+   "id": "officeConcepts-137-whats-new",
+   "title": "Whats New",
+   "tags": "office concepts whats new office concept  Whats New",
+   "kind": "vertex",
+   "width": 55,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.whats_new;",
+   "shapeNames": [
+    "mxgraph.office.concepts.whats_new"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:538"
+  },
+  {
+   "id": "officeConcepts-138-writing-pen",
+   "title": "Writing, Pen",
+   "tags": "office concepts writing pen office concept  Writing, Pen",
+   "kind": "vertex",
+   "width": 54,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.writing_pen;",
+   "shapeNames": [
+    "mxgraph.office.concepts.writing_pen"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:540"
+  },
+  {
+   "id": "officeConcepts-139-writing-pencil",
+   "title": "Writing, Pencil",
+   "tags": "office concepts writing pencil office concept  Writing, Pencil",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.writing_pencil;",
+   "shapeNames": [
+    "mxgraph.office.concepts.writing_pencil"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:542"
+  }
+ ]
+}

@@ -1,0 +1,428 @@
+{
+ "id": "electricalInductors",
+ "title": "Electrical / Inductors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalInductors-0-inductor-air-core",
+   "title": "Inductor (Air Core)",
+   "tags": "electrical inductors inductor 3 electrical inductor  Inductor (Air Core)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 8,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor_3;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.inductor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:199"
+  },
+  {
+   "id": "electricalInductors-1-inductor-air-core",
+   "title": "Inductor (Air Core)",
+   "tags": "electrical inductors inductor 5 electrical inductor  Inductor (Air Core)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 14,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor_5;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.inductor_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:201"
+  },
+  {
+   "id": "electricalInductors-2-inductor-air-core",
+   "title": "Inductor (Air Core)",
+   "tags": "electrical inductors inductor 1 electrical inductor  Inductor (Air Core)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 15,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.inductor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:203"
+  },
+  {
+   "id": "electricalInductors-3-variable",
+   "title": "Variable",
+   "tags": "electrical inductors variable inductor electrical inductor  Variable",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.variable_inductor;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.variable_inductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:205"
+  },
+  {
+   "id": "electricalInductors-4-ferrite-core",
+   "title": "Ferrite Core",
+   "tags": "electrical inductors ferrite core electrical inductor  Ferrite Core",
+   "kind": "vertex",
+   "width": 64,
+   "height": 4,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.ferrite_core;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.ferrite_core"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:207"
+  },
+  {
+   "id": "electricalInductors-5-iron-core",
+   "title": "Iron Core",
+   "tags": "electrical inductors iron core electrical inductor  Iron Core",
+   "kind": "vertex",
+   "width": 64,
+   "height": 4,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.iron_core;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.iron_core"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:209"
+  },
+  {
+   "id": "electricalInductors-6-magnetic-core",
+   "title": "Magnetic Core",
+   "tags": "electrical inductors magnetic core electrical inductor  Magnetic Core",
+   "kind": "vertex",
+   "width": 64,
+   "height": 3,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.magnetic_core;direction=north;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.magnetic_core"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:211"
+  },
+  {
+   "id": "electricalInductors-7-transformer-iron-core",
+   "title": "Transformer (Iron Core)",
+   "tags": "electrical inductors transformer 1 electrical inductor  Transformer (Iron Core)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.transformer_1;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.transformer_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:213"
+  },
+  {
+   "id": "electricalInductors-8-transformer-iron-core",
+   "title": "Transformer (Iron Core)",
+   "tags": "electrical inductors transformer 2 electrical inductor  Transformer (Iron Core)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.transformer_2;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.transformer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:215"
+  },
+  {
+   "id": "electricalInductors-9-half-inductor",
+   "title": "Half Inductor",
+   "tags": "electrical inductors half inductor electrical inductor  Half Inductor",
+   "kind": "vertex",
+   "width": 32,
+   "height": 23,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.half_inductor;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.half_inductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:217"
+  },
+  {
+   "id": "electricalInductors-10-transformer",
+   "title": "Transformer",
+   "tags": "electrical inductors transformer electrical inductor  Transformer",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.transformer;direction=north;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.transformer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:219"
+  },
+  {
+   "id": "electricalInductors-11-inductor",
+   "title": "Inductor",
+   "tags": "electrical inductors inductor electrical inductor  Inductor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 42,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.inductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:221"
+  },
+  {
+   "id": "electricalInductors-12-choke",
+   "title": "Choke",
+   "tags": "electrical inductors choke electrical inductor  Choke",
+   "kind": "vertex",
+   "width": 100,
+   "height": 200,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.choke;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.choke"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:223"
+  },
+  {
+   "id": "electricalInductors-13-variometer",
+   "title": "Variometer",
+   "tags": "electrical inductors variometer electrical inductor  Variometer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 88,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.electrical.inductors.variometer;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.variometer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:225"
+  },
+  {
+   "id": "electricalInductors-14-coaxial-choke",
+   "title": "Coaxial Choke",
+   "tags": "electrical inductors coaxial choke electrical inductor  Coaxial Choke",
+   "kind": "vertex",
+   "width": 300,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.coaxial_choke;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.coaxial_choke"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:227"
+  },
+  {
+   "id": "electricalInductors-15-transductor",
+   "title": "Transductor",
+   "tags": "electrical inductors transductor electrical inductor  Transductor",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.transductor;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.transductor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:229"
+  },
+  {
+   "id": "electricalInductors-16-saturating-transformer",
+   "title": "Saturating Transformer",
+   "tags": "electrical inductors saturating transformer electrical inductor  Saturating Transformer",
+   "kind": "vertex",
+   "width": 200,
+   "height": 150,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.saturating_transformer;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.saturating_transformer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:231"
+  },
+  {
+   "id": "electricalInductors-17-potential-transformer",
+   "title": "Potential Transformer",
+   "tags": "electrical inductors potential transformer electrical inductor  Potential Transformer",
+   "kind": "vertex",
+   "width": 92,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.potential_transformer_2;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.potential_transformer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:233"
+  },
+  {
+   "id": "electricalInductors-18-pot-trans-3-windings",
+   "title": "Pot. Trans. 3 Windings",
+   "tags": "electrical inductors potential transformer 3 three windings electrical inductor  Pot. Trans. 3 Windings",
+   "kind": "vertex",
+   "width": 67,
+   "height": 96,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.pot_trans_3_windings;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.pot_trans_3_windings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:235"
+  },
+  {
+   "id": "electricalInductors-19-transformer",
+   "title": "Transformer",
+   "tags": "electrical inductors  electrical inductor  Transformer",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.signal_sources.current_source;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.current_source"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:237"
+  },
+  {
+   "id": "electricalInductors-20-adjustable-transformer",
+   "title": "Adjustable Transformer",
+   "tags": "electrical inductors adjustable transformer electrical inductor  Adjustable Transformer",
+   "kind": "vertex",
+   "width": 46,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.adjustable_transformer;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.adjustable_transformer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:239"
+  },
+  {
+   "id": "electricalInductors-21-1-phase-induction-voltage-regulator",
+   "title": "1-Phase Induction Voltage Regulator",
+   "tags": "electrical inductors 1 phase induction voltage regulator monophase electrical inductor  1-Phase Induction Voltage Regulator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.1_phase_induction_volt_reg;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.1_phase_induction_volt_reg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:241"
+  },
+  {
+   "id": "electricalInductors-22-triplex-induction-voltage-regulator",
+   "title": "Triplex Induction Voltage Regulator",
+   "tags": "electrical inductors triplex induction voltage regulator electrical inductor  Triplex Induction Voltage Regulator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.triplex_induction_volt_reg;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.triplex_induction_volt_reg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:243"
+  },
+  {
+   "id": "electricalInductors-23-induction-voltage-regulator",
+   "title": "Induction Voltage Regulator",
+   "tags": "electrical inductors induction voltage regulator electrical inductor  Induction Voltage Regulator",
+   "kind": "vertex",
+   "width": 160,
+   "height": 210,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.induction_voltage_regulator;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.induction_voltage_regulator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:245"
+  },
+  {
+   "id": "electricalInductors-24-current-transformer",
+   "title": "Current Transformer",
+   "tags": "electrical inductors current transformer electrical inductor  Current Transformer",
+   "kind": "vertex",
+   "width": 12,
+   "height": 75,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.current_transformer_1;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.current_transformer_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:247"
+  },
+  {
+   "id": "electricalInductors-25-current-transformer",
+   "title": "Current Transformer",
+   "tags": "electrical inductors current transformer electrical inductor  Current Transformer",
+   "kind": "vertex",
+   "width": 125,
+   "height": 175,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.current_transformer_2;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.current_transformer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:249"
+  },
+  {
+   "id": "electricalInductors-26-current-transformer",
+   "title": "Current Transformer",
+   "tags": "electrical inductors current transformer electrical inductor  Current Transformer",
+   "kind": "vertex",
+   "width": 75,
+   "height": 10,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.current_transformer_3;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.current_transformer_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:251"
+  },
+  {
+   "id": "electricalInductors-27-potential-transformer",
+   "title": "Potential Transformer",
+   "tags": "electrical inductors potential transformer electrical inductor  Potential Transformer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.potential_transformer;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.potential_transformer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:253"
+  },
+  {
+   "id": "electricalInductors-28-outdoor-metering-device",
+   "title": "Outdoor Metering Device",
+   "tags": "electrical inductors outdoor metering device electrical inductor  Outdoor Metering Device",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.outdoor_metering_device;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.outdoor_metering_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:255"
+  },
+  {
+   "id": "electricalInductors-29-linear-coupler",
+   "title": "Linear Coupler",
+   "tags": "electrical inductors linear coupler electrical inductor  Linear Coupler",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.linear_coupler;",
+   "shapeNames": [
+    "mxgraph.electrical.inductors.linear_coupler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:257"
+  }
+ ]
+}

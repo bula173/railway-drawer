@@ -1,0 +1,344 @@
+{
+ "id": "gcp2User Device Cards",
+ "title": "GCP / User and Device Cards",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2User Device Cards-0-application",
+   "title": "Application",
+   "tags": "gcp google cloud platform user and device cards application",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Application\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.application;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"15\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.application"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-1-beacon",
+   "title": "Beacon",
+   "tags": "gcp google cloud platform user and device cards beacon",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Beacon\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.beacon;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"36.5\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-18.25\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.beacon"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-2-circuit-board",
+   "title": "Circuit-Board",
+   "tags": "gcp google cloud platform user and device cards circuit board",
+   "kind": "cells",
+   "width": 70,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Circuit-Board\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.circuit_board;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"12.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.circuit_board"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-3-database",
+   "title": "Database",
+   "tags": "gcp google cloud platform user and device cards database db",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Database\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.database;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"12.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.database"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-4-desktop",
+   "title": "Desktop",
+   "tags": "gcp google cloud platform user and device cards desktop",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Desktop\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.desktop;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"12.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.desktop"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-5-desktop-and-mobile",
+   "title": "Desktop and Mobile",
+   "tags": "gcp google cloud platform user and device cards desktop and mobile",
+   "kind": "cells",
+   "width": 70,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Desktop and Mobile\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.desktop_and_mobile;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"33\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"18.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.desktop_and_mobile"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-6-game",
+   "title": "Game",
+   "tags": "gcp google cloud platform user and device cards game",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Game\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.game;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"27\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"21.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.game"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-7-gateway",
+   "title": "Gateway",
+   "tags": "gcp google cloud platform user and device cards gateway icon",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Gateway\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.gateway_icon;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"22\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"24\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.gateway_icon"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-8-laptop",
+   "title": "Laptop",
+   "tags": "gcp google cloud platform user and device cards laptop",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Laptop\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.laptop;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"33\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"18.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.laptop"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-9-lightbulb",
+   "title": "Lightbulb",
+   "tags": "gcp google cloud platform user and device cards lighbulb",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lightbulb\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.lightbulb;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"35\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-17.5\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.lightbulb"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-10-list",
+   "title": "List",
+   "tags": "gcp google cloud platform user and device cards list",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"List\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.list;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"44.5\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-22.25\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.list"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-11-live",
+   "title": "Live",
+   "tags": "gcp google cloud platform user and device cards live",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Live\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.live;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"37\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-18.5\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.live"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-12-local-compute",
+   "title": "Local-Compute",
+   "tags": "gcp google cloud platform user and device cards local compute",
+   "kind": "cells",
+   "width": 70,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Local-Compute\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.compute_engine_icon;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"44.5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"12.75\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.compute_engine_icon"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-13-mobile-devices",
+   "title": "Mobile Devices",
+   "tags": "gcp google cloud platform user and device cards mobile devices",
+   "kind": "cells",
+   "width": 70,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Mobile Devices\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.mobile_devices;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"36.5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"16.75\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.mobile_devices"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-14-payment",
+   "title": "Payment",
+   "tags": "gcp google cloud platform user and device cards payment",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Payment\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.payment;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"15\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.payment"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-15-phone",
+   "title": "Phone",
+   "tags": "gcp google cloud platform user and device cards phone",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Phone\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.phone;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"32\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-16\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.phone"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-16-record",
+   "title": "Record",
+   "tags": "gcp google cloud platform user and device cards record",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Record\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.record;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"33\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"18.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.record"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-17-report",
+   "title": "Report",
+   "tags": "gcp google cloud platform user and device cards report",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Report\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.report;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.report"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-18-retail",
+   "title": "Retail",
+   "tags": "gcp google cloud platform user and device cards retail",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Retail\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.retail;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"44.5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"12.75\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.retail"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-19-speaker",
+   "title": "Speaker",
+   "tags": "gcp google cloud platform user and device cards speaker",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Speaker\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.speaker;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"35\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-17.5\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.speaker"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-20-storage",
+   "title": "Storage",
+   "tags": "gcp google cloud platform user and device cards storage",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Storage\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.storage;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"15\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.storage"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-21-stream",
+   "title": "Stream",
+   "tags": "gcp google cloud platform user and device cards stream",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Stream\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.stream;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"41\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"14.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.stream"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-22-users",
+   "title": "Users",
+   "tags": "gcp google cloud platform user and device cards users",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Users\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.users;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"50\" height=\"31.5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"19.25\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.users"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  },
+  {
+   "id": "gcp2User Device Cards-23-webcam",
+   "title": "Webcam",
+   "tags": "gcp google cloud platform user and device cards webcam",
+   "kind": "cells",
+   "width": 70,
+   "height": 85,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Webcam\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=bottom;spacingLeft=0;fontColor=#999999;fontSize=12;whiteSpace=wrap;spacingBottom=2;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"85\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.webcam;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" width=\"25\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-12.5\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.webcam"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2418"
+  }
+ ]
+}

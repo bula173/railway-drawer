@@ -1,0 +1,792 @@
+{
+ "id": "aws4General Resources",
+ "title": "AWS / General Resources",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4General Resources-0-marketplace",
+   "title": "Marketplace",
+   "tags": "aws4 marketplace aws amazon web service general resources  Marketplace",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.marketplace;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:123"
+  },
+  {
+   "id": "aws4General Resources-1-marketplace",
+   "title": "Marketplace",
+   "tags": "aws4 marketplace aws amazon web service general resources  Marketplace",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.marketplace;",
+   "shapeNames": [
+    "mxgraph.aws4.marketplace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:125"
+  },
+  {
+   "id": "aws4General Resources-2-general",
+   "title": "General",
+   "tags": "aws4 general aws amazon web service general resources  General",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.general;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:127"
+  },
+  {
+   "id": "aws4General Resources-3-all-products",
+   "title": "All Products",
+   "tags": "aws4 all products aws amazon web service general resources  All Products",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.all_products;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:129"
+  },
+  {
+   "id": "aws4General Resources-4-all-products",
+   "title": "All Products",
+   "tags": "aws4 all products aws amazon web service general resources  All Products",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.all_products;",
+   "shapeNames": [
+    "mxgraph.aws4.all_products"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:131"
+  },
+  {
+   "id": "aws4General Resources-5-alert",
+   "title": "Alert",
+   "tags": "aws4 alert aws amazon web service general resources  Alert",
+   "kind": "vertex",
+   "width": 78,
+   "height": 69,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.alert;",
+   "shapeNames": [
+    "mxgraph.aws4.alert"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:133"
+  },
+  {
+   "id": "aws4General Resources-6-authenticated-user",
+   "title": "Authenticated User",
+   "tags": "aws4 authenticated user aws amazon web service general resources  Authenticated User",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.authenticated_user;",
+   "shapeNames": [
+    "mxgraph.aws4.authenticated_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:135"
+  },
+  {
+   "id": "aws4General Resources-7-management-console",
+   "title": "Management Console",
+   "tags": "aws4 management console aws amazon web service general resources  Management Console",
+   "kind": "vertex",
+   "width": 78,
+   "height": 69,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.management_console2;",
+   "shapeNames": [
+    "mxgraph.aws4.management_console2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:137"
+  },
+  {
+   "id": "aws4General Resources-8-camera",
+   "title": "Camera",
+   "tags": "aws4 camera aws amazon web service general resources  Camera",
+   "kind": "vertex",
+   "width": 78,
+   "height": 62,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.camera2;",
+   "shapeNames": [
+    "mxgraph.aws4.camera2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:139"
+  },
+  {
+   "id": "aws4General Resources-9-chat",
+   "title": "Chat",
+   "tags": "aws4 chat aws amazon web service general resources  Chat",
+   "kind": "vertex",
+   "width": 78,
+   "height": 68,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.chat;",
+   "shapeNames": [
+    "mxgraph.aws4.chat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:141"
+  },
+  {
+   "id": "aws4General Resources-10-client",
+   "title": "Client",
+   "tags": "aws4 client aws amazon web service general resources  Client",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;",
+   "shapeNames": [
+    "mxgraph.aws4.client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:143"
+  },
+  {
+   "id": "aws4General Resources-11-cold-storage",
+   "title": "Cold Storage",
+   "tags": "aws4 cold storage aws amazon web service general resources  Cold Storage",
+   "kind": "vertex",
+   "width": 71,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cold_storage;",
+   "shapeNames": [
+    "mxgraph.aws4.cold_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:145"
+  },
+  {
+   "id": "aws4General Resources-12-credentials",
+   "title": "Credentials",
+   "tags": "aws4 credentials aws amazon web service general resources  Credentials",
+   "kind": "vertex",
+   "width": 56,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.credentials;",
+   "shapeNames": [
+    "mxgraph.aws4.credentials"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:147"
+  },
+  {
+   "id": "aws4General Resources-13-corporate-data-center",
+   "title": "Corporate Data Center",
+   "tags": "aws4 corporate data center aws amazon web service general resources  Corporate Data Center",
+   "kind": "vertex",
+   "width": 53,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.corporate_data_center;",
+   "shapeNames": [
+    "mxgraph.aws4.corporate_data_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:149"
+  },
+  {
+   "id": "aws4General Resources-14-data-stream",
+   "title": "Data Stream",
+   "tags": "aws4 data stream aws amazon web service general resources  Data Stream",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.data_stream;",
+   "shapeNames": [
+    "mxgraph.aws4.data_stream"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:151"
+  },
+  {
+   "id": "aws4General Resources-15-data-table",
+   "title": "Data Table",
+   "tags": "aws4 data table aws amazon web service general resources  Data Table",
+   "kind": "vertex",
+   "width": 78,
+   "height": 59,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.data_table;",
+   "shapeNames": [
+    "mxgraph.aws4.data_table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:153"
+  },
+  {
+   "id": "aws4General Resources-16-disk",
+   "title": "Disk",
+   "tags": "aws4 disk aws amazon web service general resources  Disk",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.disk;",
+   "shapeNames": [
+    "mxgraph.aws4.disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:155"
+  },
+  {
+   "id": "aws4General Resources-17-document",
+   "title": "Document",
+   "tags": "aws4 document aws amazon web service general resources  Document",
+   "kind": "vertex",
+   "width": 57,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.document;",
+   "shapeNames": [
+    "mxgraph.aws4.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:157"
+  },
+  {
+   "id": "aws4General Resources-18-documents",
+   "title": "Documents",
+   "tags": "aws4 documents aws amazon web service general resources  Documents",
+   "kind": "vertex",
+   "width": 57,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.documents3;",
+   "shapeNames": [
+    "mxgraph.aws4.documents3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:159"
+  },
+  {
+   "id": "aws4General Resources-19-documents",
+   "title": "Documents",
+   "tags": "aws4 documents aws amazon web service general resources  Documents",
+   "kind": "vertex",
+   "width": 64,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.documents;",
+   "shapeNames": [
+    "mxgraph.aws4.documents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:161"
+  },
+  {
+   "id": "aws4General Resources-20-documents",
+   "title": "Documents",
+   "tags": "aws4 documents aws amazon web service general resources  Documents",
+   "kind": "vertex",
+   "width": 67,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.documents2;",
+   "shapeNames": [
+    "mxgraph.aws4.documents2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:163"
+  },
+  {
+   "id": "aws4General Resources-21-email",
+   "title": "Email",
+   "tags": "aws4 email aws amazon web service general resources  Email",
+   "kind": "vertex",
+   "width": 78,
+   "height": 49,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.email_2;",
+   "shapeNames": [
+    "mxgraph.aws4.email_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:165"
+  },
+  {
+   "id": "aws4General Resources-22-forums",
+   "title": "Forums",
+   "tags": "aws4 forums aws amazon web service general resources  Forums",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.forums;",
+   "shapeNames": [
+    "mxgraph.aws4.forums"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:167"
+  },
+  {
+   "id": "aws4General Resources-23-gear",
+   "title": "Gear",
+   "tags": "aws4 gear aws amazon web service general resources  Gear",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.gear;",
+   "shapeNames": [
+    "mxgraph.aws4.gear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:169"
+  },
+  {
+   "id": "aws4General Resources-24-generic-application",
+   "title": "Generic Application",
+   "tags": "aws4 generic application aws amazon web service general resources  Generic Application",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.generic_application;",
+   "shapeNames": [
+    "mxgraph.aws4.generic_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:171"
+  },
+  {
+   "id": "aws4General Resources-25-generic-database",
+   "title": "Generic Database",
+   "tags": "aws4 generic database aws amazon web service general resources  Generic Database",
+   "kind": "vertex",
+   "width": 59,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.generic_database;",
+   "shapeNames": [
+    "mxgraph.aws4.generic_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:173"
+  },
+  {
+   "id": "aws4General Resources-26-git-repository",
+   "title": "Git Repository",
+   "tags": "aws4 git repository aws amazon web service general resources  Git Repository",
+   "kind": "vertex",
+   "width": 60,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.git_repository;",
+   "shapeNames": [
+    "mxgraph.aws4.git_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:175"
+  },
+  {
+   "id": "aws4General Resources-27-generic-firewall",
+   "title": "Generic Firewall",
+   "tags": "aws4 generic firewall aws amazon web service general resources  Generic Firewall",
+   "kind": "vertex",
+   "width": 78,
+   "height": 66,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.generic_firewall;",
+   "shapeNames": [
+    "mxgraph.aws4.generic_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:177"
+  },
+  {
+   "id": "aws4General Resources-28-globe",
+   "title": "Globe",
+   "tags": "aws4 globe aws amazon web service general resources  Globe",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.globe;",
+   "shapeNames": [
+    "mxgraph.aws4.globe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:179"
+  },
+  {
+   "id": "aws4General Resources-29-folder",
+   "title": "Folder",
+   "tags": "aws4 folder aws amazon web service general resources  Folder",
+   "kind": "vertex",
+   "width": 78,
+   "height": 71,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;",
+   "shapeNames": [
+    "mxgraph.aws4.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:181"
+  },
+  {
+   "id": "aws4General Resources-30-folders",
+   "title": "Folders",
+   "tags": "aws4 folders aws amazon web service general resources  Folders",
+   "kind": "vertex",
+   "width": 78,
+   "height": 71,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folders;",
+   "shapeNames": [
+    "mxgraph.aws4.folders"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:183"
+  },
+  {
+   "id": "aws4General Resources-31-internet",
+   "title": "Internet",
+   "tags": "aws4 internet aws amazon web service general resources  Internet",
+   "kind": "vertex",
+   "width": 78,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet;",
+   "shapeNames": [
+    "mxgraph.aws4.internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:185"
+  },
+  {
+   "id": "aws4General Resources-32-internet",
+   "title": "Internet",
+   "tags": "aws4 internet aws amazon web service general resources  Internet",
+   "kind": "vertex",
+   "width": 78,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_alt1;",
+   "shapeNames": [
+    "mxgraph.aws4.internet_alt1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:187"
+  },
+  {
+   "id": "aws4General Resources-33-internet",
+   "title": "Internet",
+   "tags": "aws4 internet gateway aws amazon web service general resources  Internet",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_alt2;",
+   "shapeNames": [
+    "mxgraph.aws4.internet_alt2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:189"
+  },
+  {
+   "id": "aws4General Resources-34-internet",
+   "title": "Internet",
+   "tags": "aws4 internet gateway aws amazon web service general resources  Internet",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_alt22;",
+   "shapeNames": [
+    "mxgraph.aws4.internet_alt22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:191"
+  },
+  {
+   "id": "aws4General Resources-35-json-script",
+   "title": "JSON Script",
+   "tags": "aws4 internet gateway aws amazon web service general resources  JSON Script",
+   "kind": "vertex",
+   "width": 57,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.json_script;",
+   "shapeNames": [
+    "mxgraph.aws4.json_script"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:193"
+  },
+  {
+   "id": "aws4General Resources-36-logs",
+   "title": "Logs",
+   "tags": "aws4 logs aws amazon web service general resources  Logs",
+   "kind": "vertex",
+   "width": 57,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.logs;",
+   "shapeNames": [
+    "mxgraph.aws4.logs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:195"
+  },
+  {
+   "id": "aws4General Resources-37-magnifying-glass",
+   "title": "Magnifying Glass",
+   "tags": "aws4 magnifying glass aws amazon web service general resources  Magnifying Glass",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.magnifying_glass_2;",
+   "shapeNames": [
+    "mxgraph.aws4.magnifying_glass_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:197"
+  },
+  {
+   "id": "aws4General Resources-38-metrics",
+   "title": "Metrics",
+   "tags": "aws4 metrics aws amazon web service general resources  Metrics",
+   "kind": "vertex",
+   "width": 78,
+   "height": 71,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.metrics;",
+   "shapeNames": [
+    "mxgraph.aws4.metrics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:199"
+  },
+  {
+   "id": "aws4General Resources-39-mobile-client",
+   "title": "Mobile Client",
+   "tags": "aws4 mobile client aws amazon web service general resources  Mobile Client",
+   "kind": "vertex",
+   "width": 41,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mobile_client;",
+   "shapeNames": [
+    "mxgraph.aws4.mobile_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:201"
+  },
+  {
+   "id": "aws4General Resources-40-multimedia",
+   "title": "Multimedia",
+   "tags": "aws4 multimedia aws amazon web service general resources  Multimedia",
+   "kind": "vertex",
+   "width": 78,
+   "height": 73,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.multimedia;",
+   "shapeNames": [
+    "mxgraph.aws4.multimedia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:203"
+  },
+  {
+   "id": "aws4General Resources-41-office-building",
+   "title": "Office Building",
+   "tags": "aws4 office building aws amazon web service general resources  Office Building",
+   "kind": "vertex",
+   "width": 50,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.office_building;",
+   "shapeNames": [
+    "mxgraph.aws4.office_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:205"
+  },
+  {
+   "id": "aws4General Resources-42-programming-language",
+   "title": "Programming Language",
+   "tags": "aws4 programming language aws amazon web service general resources  Programming Language",
+   "kind": "vertex",
+   "width": 78,
+   "height": 51,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.programming_language;",
+   "shapeNames": [
+    "mxgraph.aws4.programming_language"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:207"
+  },
+  {
+   "id": "aws4General Resources-43-question",
+   "title": "Question",
+   "tags": "aws4 question aws amazon web service general resources  Question",
+   "kind": "vertex",
+   "width": 41,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.question;",
+   "shapeNames": [
+    "mxgraph.aws4.question"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:209"
+  },
+  {
+   "id": "aws4General Resources-44-recover",
+   "title": "Recover",
+   "tags": "aws4 recover aws amazon web service general resources  Recover",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.recover;",
+   "shapeNames": [
+    "mxgraph.aws4.recover"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:211"
+  },
+  {
+   "id": "aws4General Resources-45-saml-token",
+   "title": "SAML Token",
+   "tags": "aws4 saml token aws amazon web service general resources  SAML Token",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.saml_token;",
+   "shapeNames": [
+    "mxgraph.aws4.saml_token"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:213"
+  },
+  {
+   "id": "aws4General Resources-46-ssl-padlock",
+   "title": "SSL Padlock",
+   "tags": "aws4 ssl padlock aws amazon web service general resources  SSL Padlock",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ssl_padlock;",
+   "shapeNames": [
+    "mxgraph.aws4.ssl_padlock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:215"
+  },
+  {
+   "id": "aws4General Resources-47-tape-storage",
+   "title": "Tape Storage",
+   "tags": "aws4 tape storage aws amazon web service general resources  Tape Storage",
+   "kind": "vertex",
+   "width": 78,
+   "height": 38,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.tape_storage;",
+   "shapeNames": [
+    "mxgraph.aws4.tape_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:217"
+  },
+  {
+   "id": "aws4General Resources-48-traditional-server",
+   "title": "Traditional Server",
+   "tags": "aws4 traditional server aws amazon web service general resources  Traditional Server",
+   "kind": "vertex",
+   "width": 45,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.traditional_server;",
+   "shapeNames": [
+    "mxgraph.aws4.traditional_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:219"
+  },
+  {
+   "id": "aws4General Resources-49-user",
+   "title": "User",
+   "tags": "aws4 user aws amazon web service general resources  User",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.user;",
+   "shapeNames": [
+    "mxgraph.aws4.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:221"
+  },
+  {
+   "id": "aws4General Resources-50-users",
+   "title": "Users",
+   "tags": "aws4 users aws amazon web service general resources  Users",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;",
+   "shapeNames": [
+    "mxgraph.aws4.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:223"
+  },
+  {
+   "id": "aws4General Resources-51-toolkit",
+   "title": "Toolkit",
+   "tags": "aws4 external toolkit aws amazon web service general resources  Toolkit",
+   "kind": "vertex",
+   "width": 68,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.external_toolkit;",
+   "shapeNames": [
+    "mxgraph.aws4.external_toolkit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:225"
+  },
+  {
+   "id": "aws4General Resources-52-sdk",
+   "title": "SDK",
+   "tags": "aws4 external sdk software development kit aws amazon web service general resources  SDK",
+   "kind": "vertex",
+   "width": 68,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.external_sdk;",
+   "shapeNames": [
+    "mxgraph.aws4.external_sdk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:227"
+  },
+  {
+   "id": "aws4General Resources-53-servers",
+   "title": "Servers",
+   "tags": "aws4 servers aws amazon web service general resources  Servers",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.servers;",
+   "shapeNames": [
+    "mxgraph.aws4.servers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:229"
+  },
+  {
+   "id": "aws4General Resources-54-shield",
+   "title": "Shield",
+   "tags": "aws4 shield aws amazon web service general resources  Shield",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.shield2;",
+   "shapeNames": [
+    "mxgraph.aws4.shield2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:231"
+  },
+  {
+   "id": "aws4General Resources-55-source-code",
+   "title": "Source Code",
+   "tags": "aws4 source code aws amazon web service general resources  Source Code",
+   "kind": "vertex",
+   "width": 57,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.source_code;",
+   "shapeNames": [
+    "mxgraph.aws4.source_code"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:233"
+  }
+ ]
+}

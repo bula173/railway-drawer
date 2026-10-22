@@ -1,0 +1,302 @@
+{
+ "id": "citrix2Cloud Services",
+ "title": "Citrix / Cloud Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Cloud Services-0-daas",
+   "title": "DaaS",
+   "tags": "citrix2 daas citrix cloud services  DaaS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.735,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.daas;",
+   "shapeNames": [
+    "mxgraph.citrix2.daas"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:82"
+  },
+  {
+   "id": "citrix2Cloud Services-1-cloud-storefront",
+   "title": "Cloud Storefront",
+   "tags": "citrix2 cloud storefront citrix cloud services  Cloud Storefront",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.879999999999995,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.cloud_storefront;",
+   "shapeNames": [
+    "mxgraph.citrix2.cloud_storefront"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:83"
+  },
+  {
+   "id": "citrix2Cloud Services-2-endpoint-management",
+   "title": "Endpoint Management",
+   "tags": "citrix2 endpoint management citrix cloud services  Endpoint Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.295,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.endpoint_management;",
+   "shapeNames": [
+    "mxgraph.citrix2.endpoint_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:84"
+  },
+  {
+   "id": "citrix2Cloud Services-3-secure-private-access",
+   "title": "Secure Private Access",
+   "tags": "citrix2 secure private access citrix cloud services  Secure Private Access",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36.025,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.secure_private_access;",
+   "shapeNames": [
+    "mxgraph.citrix2.secure_private_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:85"
+  },
+  {
+   "id": "citrix2Cloud Services-4-citrix-gateway-service",
+   "title": "Citrix Gateway Service",
+   "tags": "citrix2 gateway service citrix cloud services  Citrix Gateway Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.855,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_gateway_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_gateway_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:86"
+  },
+  {
+   "id": "citrix2Cloud Services-5-netscaler-console",
+   "title": "NetScaler Console",
+   "tags": "citrix2 netscaler console citrix cloud services  NetScaler Console",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.935,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_console;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:87"
+  },
+  {
+   "id": "citrix2Cloud Services-6-netscaler-itm",
+   "title": "NetScaler ITM",
+   "tags": "citrix2 netscaler itm citrix cloud services  NetScaler ITM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.35,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.netscaler_itm;",
+   "shapeNames": [
+    "mxgraph.citrix2.netscaler_itm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:88"
+  },
+  {
+   "id": "citrix2Cloud Services-7-citrix-analytics",
+   "title": "Citrix Analytics",
+   "tags": "citrix2 analytics citrix cloud services  Citrix Analytics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.55,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_analytics;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_analytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:89"
+  },
+  {
+   "id": "citrix2Cloud Services-8-workspace-environment-management",
+   "title": "Workspace Environment Management",
+   "tags": "citrix2 workspace environment management citrix cloud services  Workspace Environment Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.74,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.workspace_environment_management;",
+   "shapeNames": [
+    "mxgraph.citrix2.workspace_environment_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:90"
+  },
+  {
+   "id": "citrix2Cloud Services-9-itsm-adapter-for-servicenow",
+   "title": "ITSM Adapter for ServiceNow",
+   "tags": "citrix2 itsm adapter for servicenow citrix cloud services  ITSM Adapter for ServiceNow",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.275,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.itsm_adapter_for_servicenow;",
+   "shapeNames": [
+    "mxgraph.citrix2.itsm_adapter_for_servicenow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:91"
+  },
+  {
+   "id": "citrix2Cloud Services-10-remote-browser-isolation",
+   "title": "Remote Browser Isolation",
+   "tags": "citrix2 remote browser isolation citrix cloud services  Remote Browser Isolation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.949999999999996,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.remote_browser_isolation;",
+   "shapeNames": [
+    "mxgraph.citrix2.remote_browser_isolation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:92"
+  },
+  {
+   "id": "citrix2Cloud Services-11-citrix-cloud-api",
+   "title": "Citrix Cloud API",
+   "tags": "citrix2 cloud api application programming interface citrix cloud services  Citrix Cloud API",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.46,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_cloud_api;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_cloud_api"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:93"
+  },
+  {
+   "id": "citrix2Cloud Services-12-cloud-connector",
+   "title": "Cloud Connector",
+   "tags": "citrix2 cloud connector citrix cloud services  Cloud Connector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.934999999999995,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.cloud_connector;",
+   "shapeNames": [
+    "mxgraph.citrix2.cloud_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:94"
+  },
+  {
+   "id": "citrix2Cloud Services-13-global-app-configuration-service",
+   "title": "Global App Configuration Service",
+   "tags": "citrix2 global app configuration service citrix cloud services  Global App Configuration Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.705,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.global_app_configuration_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.global_app_configuration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:95"
+  },
+  {
+   "id": "citrix2Cloud Services-14-daas-monitor",
+   "title": "DaaS Monitor",
+   "tags": "citrix2 daas monitor citrix cloud services  DaaS Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.22,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.daas_monitor;",
+   "shapeNames": [
+    "mxgraph.citrix2.daas_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:96"
+  },
+  {
+   "id": "citrix2Cloud Services-15-device-posture-service",
+   "title": "Device Posture Service",
+   "tags": "citrix2 device posture service citrix cloud services  Device Posture Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.015,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.device_posture_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.device_posture_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:97"
+  },
+  {
+   "id": "citrix2Cloud Services-16-citrix-federated-authentication-service",
+   "title": "Citrix Federated Authentication Service",
+   "tags": "citrix2 federated authentication service citrix cloud services  Citrix Federated Authentication Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.275,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_federated_authentication_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_federated_authentication_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:98"
+  },
+  {
+   "id": "citrix2Cloud Services-17-session-recording-service",
+   "title": "Session Recording Service",
+   "tags": "citrix2 session recording service citrix cloud services  Session Recording Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.765,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.session_recording_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.session_recording_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:99"
+  },
+  {
+   "id": "citrix2Cloud Services-18-vda-upgrade-service",
+   "title": "VDA Upgrade Service",
+   "tags": "citrix2 vda upgrade service citrix cloud services  VDA Upgrade Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.395,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.vda_upgrade_service;",
+   "shapeNames": [
+    "mxgraph.citrix2.vda_upgrade_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:100"
+  },
+  {
+   "id": "citrix2Cloud Services-19-citrix-cloud",
+   "title": "Citrix Cloud",
+   "tags": "citrix2 cloud citrix cloud services  Citrix Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36.17,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_cloud;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:101"
+  },
+  {
+   "id": "citrix2Cloud Services-20-citrix-cloud-studio",
+   "title": "Citrix Cloud Studio",
+   "tags": "citrix2 cloud studio citrix cloud services  Citrix Cloud Studio",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.58,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_cloud_studio;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_cloud_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:102"
+  }
+ ]
+}

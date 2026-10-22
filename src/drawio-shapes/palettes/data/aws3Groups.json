@@ -1,0 +1,152 @@
+{
+ "id": "aws3Groups",
+ "title": "AWS17 / Groups",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Groups-0-auto-scaling-group",
+   "title": "Auto Scaling Group",
+   "tags": "aws3 auto scaling group aws group amazon web service group groups Auto Scaling Group",
+   "kind": "vertex",
+   "width": 199.5,
+   "height": 199.5,
+   "style": "rounded=1;arcSize=10;dashed=1;fillColor=none;gradientColor=none;dashPattern=8 3 1 3;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:496"
+  },
+  {
+   "id": "aws3Groups-1-availability-zone",
+   "title": "Availability Zone",
+   "tags": "aws3 availability zone aws group amazon web service group groups Availability Zone",
+   "kind": "vertex",
+   "width": 199.5,
+   "height": 199.5,
+   "style": "rounded=1;arcSize=10;dashed=1;strokeColor=#F59D56;fillColor=none;gradientColor=none;dashPattern=8 4;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:498"
+  },
+  {
+   "id": "aws3Groups-2-region",
+   "title": "Region",
+   "tags": "aws3 region aws group amazon web service group groups Region",
+   "kind": "vertex",
+   "width": 199.5,
+   "height": 199.5,
+   "style": "rounded=1;arcSize=10;dashed=1;fillColor=none;gradientColor=none;dashPattern=1 1;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:500"
+  },
+  {
+   "id": "aws3Groups-3-security-group",
+   "title": "Security Group",
+   "tags": "aws3 security group aws group amazon web service group groups Security Group",
+   "kind": "vertex",
+   "width": 199.5,
+   "height": 199.5,
+   "style": "rounded=1;arcSize=10;dashed=1;strokeColor=#ff0000;fillColor=none;gradientColor=none;dashPattern=8 4;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:502"
+  },
+  {
+   "id": "aws3Groups-4-elastic-beanstalk-container",
+   "title": "Elastic Beanstalk Container",
+   "tags": "aws group amazon web service group groupselastic beanstalk container",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.elastic_beanstalk;fillColor=#F58536;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"30\" height=\"41\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_beanstalk"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:505"
+  },
+  {
+   "id": "aws3Groups-5-ec2-instance-container",
+   "title": "EC2 Instance Container",
+   "tags": "aws group amazon web service group groupsec2 instance container",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.instance;fillColor=#F58536;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"40\" height=\"41\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.instance"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:515"
+  },
+  {
+   "id": "aws3Groups-6-vpc-subnet",
+   "title": "VPC Subnet",
+   "tags": "aws group amazon web service group groupsvpc subnet",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.permissions;fillColor=#D9A741;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"30\" height=\"35\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.permissions"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:525"
+  },
+  {
+   "id": "aws3Groups-7-server-contents",
+   "title": "Server Contents",
+   "tags": "aws3 server contents aws group amazon web service group groups Server Contents",
+   "kind": "vertex",
+   "width": 199.5,
+   "height": 199.5,
+   "style": "rounded=1;arcSize=10;strokeColor=none;fillColor=#DBDBDB;gradientColor=none;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:535"
+  },
+  {
+   "id": "aws3Groups-8-virtual-private-cloud",
+   "title": "Virtual Private Cloud",
+   "tags": "aws group amazon web service group groupsvirtual private cloud",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58536;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"52\" height=\"36\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.virtual_private_cloud"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:538"
+  },
+  {
+   "id": "aws3Groups-9-aws-cloud",
+   "title": "AWS Cloud",
+   "tags": "aws group amazon web service group groupscloud",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.cloud;fillColor=#F58536;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"52\" height=\"36\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.cloud"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:548"
+  },
+  {
+   "id": "aws3Groups-10-corporate-data-center",
+   "title": "Corporate Data Center",
+   "tags": "aws group amazon web service group groupscorporate data center",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"dashed=0;html=1;shape=mxgraph.aws3.corporate_data_center;fillColor=#7D7C7C;gradientColor=none;dashed=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"30\" height=\"42\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.corporate_data_center"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:558"
+  }
+ ]
+}

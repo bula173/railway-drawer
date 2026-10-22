@@ -1,0 +1,92 @@
+{
+ "id": "electricalPlcLadder",
+ "title": "Electrical / PLC Ladder",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalPlcLadder-0-contact",
+   "title": "Contact",
+   "tags": "electrical plc ladder contact electrical plc ladder programmable logic logical controller Contact",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.contact;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:838"
+  },
+  {
+   "id": "electricalPlcLadder-1-contact-n",
+   "title": "Contact (N)",
+   "tags": "electrical plc ladder not contact electrical plc ladder programmable logic logical controller Contact (N)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.not_contact;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.not_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:840"
+  },
+  {
+   "id": "electricalPlcLadder-2-output-n",
+   "title": "Output (N)",
+   "tags": "electrical plc ladder not output 1; electrical plc ladder programmable logic logical controller Output (N)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.not_output_1;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.not_output_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:842"
+  },
+  {
+   "id": "electricalPlcLadder-3-output-n",
+   "title": "Output (N)",
+   "tags": "electrical plc ladder not output 2 electrical plc ladder programmable logic logical controller Output (N)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.not_output_2;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.not_output_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:844"
+  },
+  {
+   "id": "electricalPlcLadder-4-output",
+   "title": "Output",
+   "tags": "electrical plc ladder output 1 electrical plc ladder programmable logic logical controller Output",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.output_1;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.output_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:846"
+  },
+  {
+   "id": "electricalPlcLadder-5-output",
+   "title": "Output",
+   "tags": "electrical plc ladder output 2 electrical plc ladder programmable logic logical controller Output",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.plc_ladder.output_2;",
+   "shapeNames": [
+    "mxgraph.electrical.plc_ladder.output_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:848"
+  }
+ ]
+}

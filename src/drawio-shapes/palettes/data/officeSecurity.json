@@ -1,0 +1,736 @@
+{
+ "id": "officeSecurity",
+ "title": "Office / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeSecurity-0-active-directory",
+   "title": "Active Directory",
+   "tags": "office security active directory office security  Active Directory",
+   "kind": "vertex",
+   "width": 53,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.active_directory;",
+   "shapeNames": [
+    "mxgraph.office.security.active_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:811"
+  },
+  {
+   "id": "officeSecurity-1-address-book-policies",
+   "title": "Address Book Policies",
+   "tags": "office security address book policies office security  Address Book Policies",
+   "kind": "vertex",
+   "width": 55,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.address_book_policies;",
+   "shapeNames": [
+    "mxgraph.office.security.address_book_policies"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:813"
+  },
+  {
+   "id": "officeSecurity-2-certificate",
+   "title": "Certificate",
+   "tags": "office security certificate office security  Certificate",
+   "kind": "vertex",
+   "width": 58,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.certificate;",
+   "shapeNames": [
+    "mxgraph.office.security.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:815"
+  },
+  {
+   "id": "officeSecurity-3-certificate-small",
+   "title": "Certificate (small)",
+   "tags": "office security certificate small office security  Certificate (small)",
+   "kind": "vertex",
+   "width": 39,
+   "height": 33,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.certificate;",
+   "shapeNames": [
+    "mxgraph.office.security.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:817"
+  },
+  {
+   "id": "officeSecurity-4-credentials",
+   "title": "Credentials",
+   "tags": "office security credentials office security  Credentials",
+   "kind": "vertex",
+   "width": 56,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.credentials;",
+   "shapeNames": [
+    "mxgraph.office.security.credentials"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:819"
+  },
+  {
+   "id": "officeSecurity-5-domain",
+   "title": "Domain",
+   "tags": "office security domain office security  Domain",
+   "kind": "vertex",
+   "width": 53,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.domain;",
+   "shapeNames": [
+    "mxgraph.office.security.domain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:821"
+  },
+  {
+   "id": "officeSecurity-6-domain-small",
+   "title": "Domain (small)",
+   "tags": "office security domain office security  Domain (small)",
+   "kind": "vertex",
+   "width": 41,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.domain;",
+   "shapeNames": [
+    "mxgraph.office.security.domain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:823"
+  },
+  {
+   "id": "officeSecurity-7-email-address-policy",
+   "title": "Email Address Policy",
+   "tags": "office security email address policy office security  Email Address Policy",
+   "kind": "vertex",
+   "width": 55,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.email_address_policy;",
+   "shapeNames": [
+    "mxgraph.office.security.email_address_policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:825"
+  },
+  {
+   "id": "officeSecurity-8-federation-service",
+   "title": "Federation Service",
+   "tags": "office security federation service office security  Federation Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.federation_service;",
+   "shapeNames": [
+    "mxgraph.office.security.federation_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:827"
+  },
+  {
+   "id": "officeSecurity-9-federation-trust",
+   "title": "Federation Trust",
+   "tags": "office security federation trust office security  Federation Trust",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.federation_trust;",
+   "shapeNames": [
+    "mxgraph.office.security.federation_trust"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:829"
+  },
+  {
+   "id": "officeSecurity-10-irm-protected-message",
+   "title": "IRM-Protected Message",
+   "tags": "office security irm protected message office security  IRM-Protected Message",
+   "kind": "vertex",
+   "width": 56,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.irm_protected_message;",
+   "shapeNames": [
+    "mxgraph.office.security.irm_protected_message"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:831"
+  },
+  {
+   "id": "officeSecurity-11-key-permissions",
+   "title": "Key, Permissions",
+   "tags": "office security key permissions office security  Key, Permissions",
+   "kind": "vertex",
+   "width": 25,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:833"
+  },
+  {
+   "id": "officeSecurity-12-key-permissions-blue",
+   "title": "Key, Permissions (blue)",
+   "tags": "office security key permissions office security  Key, Permissions (blue)",
+   "kind": "vertex",
+   "width": 25,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:835"
+  },
+  {
+   "id": "officeSecurity-13-key-permissions-orange",
+   "title": "Key, Permissions (orange)",
+   "tags": "office security key permissions office security  Key, Permissions (orange)",
+   "kind": "vertex",
+   "width": 25,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:837"
+  },
+  {
+   "id": "officeSecurity-14-key-permissions-green",
+   "title": "Key, Permissions (green)",
+   "tags": "office security key permissions office security  Key, Permissions (green)",
+   "kind": "vertex",
+   "width": 25,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:839"
+  },
+  {
+   "id": "officeSecurity-15-key-permissions-ghosted",
+   "title": "Key, Permissions (ghosted)",
+   "tags": "office security key permissions office security  Key, Permissions (ghosted)",
+   "kind": "vertex",
+   "width": 25,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:841"
+  },
+  {
+   "id": "officeSecurity-16-key-permissions-small",
+   "title": "Key, Permissions (small)",
+   "tags": "office security key permissions small office security  Key, Permissions (small)",
+   "kind": "vertex",
+   "width": 19,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;",
+   "shapeNames": [
+    "mxgraph.office.security.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:843"
+  },
+  {
+   "id": "officeSecurity-17-lock-protected",
+   "title": "Lock, Protected",
+   "tags": "office security lock protected office security  Lock, Protected",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:845"
+  },
+  {
+   "id": "officeSecurity-18-lock-protected-blue",
+   "title": "Lock, Protected (blue)",
+   "tags": "office security lock protected office security  Lock, Protected (blue)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:847"
+  },
+  {
+   "id": "officeSecurity-19-lock-protected-orange",
+   "title": "Lock, Protected (orange)",
+   "tags": "office security lock protected office security  Lock, Protected (orange)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:849"
+  },
+  {
+   "id": "officeSecurity-20-lock-protected-green",
+   "title": "Lock, Protected (green)",
+   "tags": "office security lock protected office security  Lock, Protected (green)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:851"
+  },
+  {
+   "id": "officeSecurity-21-lock-protected-ghosted",
+   "title": "Lock, Protected (ghosted)",
+   "tags": "office security lock protected office security  Lock, Protected (ghosted)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:853"
+  },
+  {
+   "id": "officeSecurity-22-lock-protected-small",
+   "title": "Lock, Protected (small)",
+   "tags": "office security lock protected small office security  Lock, Protected (small)",
+   "kind": "vertex",
+   "width": 28,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_protected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:855"
+  },
+  {
+   "id": "officeSecurity-23-lock-unprotected",
+   "title": "Lock, Unprotected",
+   "tags": "office security lock unprotected office security  Lock, Unprotected",
+   "kind": "vertex",
+   "width": 38,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:857"
+  },
+  {
+   "id": "officeSecurity-24-lock-unprotected-blue",
+   "title": "Lock, Unprotected (blue)",
+   "tags": "office security lock unprotected office security  Lock, Unprotected (blue)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:859"
+  },
+  {
+   "id": "officeSecurity-25-lock-unprotected-orange",
+   "title": "Lock, Unprotected (orange)",
+   "tags": "office security lock unprotected office security  Lock, Unprotected (orange)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:861"
+  },
+  {
+   "id": "officeSecurity-26-lock-unprotected-green",
+   "title": "Lock, Unprotected (green)",
+   "tags": "office security lock unprotected office security  Lock, Unprotected (green)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:863"
+  },
+  {
+   "id": "officeSecurity-27-lock-unprotected-ghosted",
+   "title": "Lock, Unprotected (ghosted)",
+   "tags": "office security lock unprotected office security  Lock, Unprotected (ghosted)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:865"
+  },
+  {
+   "id": "officeSecurity-28-lock-unprotected-small",
+   "title": "Lock, Unprotected (small)",
+   "tags": "office security lock unprotected small office security  Lock, Unprotected (small)",
+   "kind": "vertex",
+   "width": 28,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_unprotected;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_unprotected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:867"
+  },
+  {
+   "id": "officeSecurity-29-lock-with-key-security",
+   "title": "Lock With Key, Security",
+   "tags": "office security lock with key security office security  Lock With Key, Security",
+   "kind": "vertex",
+   "width": 47,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_with_key_security;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_with_key_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:869"
+  },
+  {
+   "id": "officeSecurity-30-lock-with-key-security-blue",
+   "title": "Lock With Key, Security (blue)",
+   "tags": "office security lock with key security office security  Lock With Key, Security (blue)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_with_key_security_blue;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_with_key_security_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:871"
+  },
+  {
+   "id": "officeSecurity-31-lock-with-key-security-orange",
+   "title": "Lock With Key, Security (orange)",
+   "tags": "office security lock with key security office security  Lock With Key, Security (orange)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_with_key_security_orange;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_with_key_security_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:873"
+  },
+  {
+   "id": "officeSecurity-32-lock-with-key-security-green",
+   "title": "Lock With Key, Security (green)",
+   "tags": "office security lock with key security office security  Lock With Key, Security (green)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_with_key_security_green;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_with_key_security_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:875"
+  },
+  {
+   "id": "officeSecurity-33-lock-with-key-security-ghosted",
+   "title": "Lock With Key, Security (ghosted)",
+   "tags": "office security lock with key security office security  Lock With Key, Security (ghosted)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_with_key_security_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.security.lock_with_key_security_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:877"
+  },
+  {
+   "id": "officeSecurity-34-management-role",
+   "title": "Management Role",
+   "tags": "office security management role office security  Management Role",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.management_role;",
+   "shapeNames": [
+    "mxgraph.office.security.management_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:879"
+  },
+  {
+   "id": "officeSecurity-35-policy",
+   "title": "Policy",
+   "tags": "office security policy office security  Policy",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.policy;",
+   "shapeNames": [
+    "mxgraph.office.security.policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:881"
+  },
+  {
+   "id": "officeSecurity-36-policy-small",
+   "title": "Policy (small)",
+   "tags": "office security policy small office security  Policy (small)",
+   "kind": "vertex",
+   "width": 39,
+   "height": 36,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.policy;",
+   "shapeNames": [
+    "mxgraph.office.security.policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:883"
+  },
+  {
+   "id": "officeSecurity-37-protected-voice-mail",
+   "title": "Protected Voice Mail",
+   "tags": "office security protected voice mail office security  Protected Voice Mail",
+   "kind": "vertex",
+   "width": 59,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.protected_voice_mail;",
+   "shapeNames": [
+    "mxgraph.office.security.protected_voice_mail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:885"
+  },
+  {
+   "id": "officeSecurity-38-retention-policy",
+   "title": "Retention Policy",
+   "tags": "office security retention policy office security  Retention Policy",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.retention_policy;",
+   "shapeNames": [
+    "mxgraph.office.security.retention_policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:887"
+  },
+  {
+   "id": "officeSecurity-39-retention-policy-tag",
+   "title": "Retention Policy Tag",
+   "tags": "office security retention policy tag office security  Retention Policy Tag",
+   "kind": "vertex",
+   "width": 56,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.retention_policy_tag;",
+   "shapeNames": [
+    "mxgraph.office.security.retention_policy_tag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:889"
+  },
+  {
+   "id": "officeSecurity-40-role-assignment-policy",
+   "title": "Role Assignment Policy",
+   "tags": "office security role assignment policy office security  Role Assignment Policy",
+   "kind": "vertex",
+   "width": 55,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.role_assignment_policy;",
+   "shapeNames": [
+    "mxgraph.office.security.role_assignment_policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:891"
+  },
+  {
+   "id": "officeSecurity-41-role-group",
+   "title": "Role Group",
+   "tags": "office security role group office security  Role Group",
+   "kind": "vertex",
+   "width": 59,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.role_group;",
+   "shapeNames": [
+    "mxgraph.office.security.role_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:893"
+  },
+  {
+   "id": "officeSecurity-42-secure-messaging",
+   "title": "Secure Messaging",
+   "tags": "office security secure messaging office security  Secure Messaging",
+   "kind": "vertex",
+   "width": 55,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.secure_messaging;",
+   "shapeNames": [
+    "mxgraph.office.security.secure_messaging"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:895"
+  },
+  {
+   "id": "officeSecurity-43-security-access-portal",
+   "title": "Security Access Portal",
+   "tags": "office security security access portal office security  Security Access Portal",
+   "kind": "vertex",
+   "width": 64,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.security_access_portal;",
+   "shapeNames": [
+    "mxgraph.office.security.security_access_portal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:897"
+  },
+  {
+   "id": "officeSecurity-44-sharing-policy",
+   "title": "Sharing Policy",
+   "tags": "office security sharing policy office security  Sharing Policy",
+   "kind": "vertex",
+   "width": 56,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.sharing_policy;",
+   "shapeNames": [
+    "mxgraph.office.security.sharing_policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:899"
+  },
+  {
+   "id": "officeSecurity-45-split-domain-user",
+   "title": "Split-Domain User",
+   "tags": "office security split domain user office security  Split-Domain User",
+   "kind": "vertex",
+   "width": 59,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.split_domain_user;",
+   "shapeNames": [
+    "mxgraph.office.security.split_domain_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:901"
+  },
+  {
+   "id": "officeSecurity-46-token",
+   "title": "Token",
+   "tags": "office security token office security  Token",
+   "kind": "vertex",
+   "width": 41,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.token;",
+   "shapeNames": [
+    "mxgraph.office.security.token"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:903"
+  },
+  {
+   "id": "officeSecurity-47-token-small",
+   "title": "Token (small)",
+   "tags": "office security token small office security  Token (small)",
+   "kind": "vertex",
+   "width": 29,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.token;",
+   "shapeNames": [
+    "mxgraph.office.security.token"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:905"
+  },
+  {
+   "id": "officeSecurity-48-token-service",
+   "title": "Token Service",
+   "tags": "office security token service office security  Token Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.token_service;",
+   "shapeNames": [
+    "mxgraph.office.security.token_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:907"
+  },
+  {
+   "id": "officeSecurity-49-trusted-application-server",
+   "title": "Trusted Application Server",
+   "tags": "office security trusted application server office security  Trusted Application Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.trusted_application_server;",
+   "shapeNames": [
+    "mxgraph.office.security.trusted_application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:909"
+  },
+  {
+   "id": "officeSecurity-50-um-mailbox-policy",
+   "title": "UM Mailbox Policy",
+   "tags": "office security um mailbox policy office security  UM Mailbox Policy",
+   "kind": "vertex",
+   "width": 55,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.um_mailbox_policy;",
+   "shapeNames": [
+    "mxgraph.office.security.um_mailbox_policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:911"
+  },
+  {
+   "id": "officeSecurity-51-universal-security-group",
+   "title": "Universal Security Group",
+   "tags": "office security universal security group office security  Universal Security Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.universal_security_group;",
+   "shapeNames": [
+    "mxgraph.office.security.universal_security_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:913"
+  }
+ ]
+}

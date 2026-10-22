@@ -1,0 +1,316 @@
+{
+ "id": "officeSites",
+ "title": "Office / Sites",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeSites-0-access-services",
+   "title": "Access Services",
+   "tags": "office sites access services office site  Access Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.access_services;",
+   "shapeNames": [
+    "mxgraph.office.sites.access_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1238"
+  },
+  {
+   "id": "officeSites-1-blog-site",
+   "title": "Blog Site",
+   "tags": "office sites blog site office site  Blog Site",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.blog_site;",
+   "shapeNames": [
+    "mxgraph.office.sites.blog_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1240"
+  },
+  {
+   "id": "officeSites-2-business-connectivity-services",
+   "title": "Business Connectivity Services",
+   "tags": "office sites business connectivity services office site  Business Connectivity Services",
+   "kind": "vertex",
+   "width": 34,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.business_connectivity_services;",
+   "shapeNames": [
+    "mxgraph.office.sites.business_connectivity_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1242"
+  },
+  {
+   "id": "officeSites-3-excel-services",
+   "title": "Excel Services",
+   "tags": "office sites excel services office site  Excel Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.excel_services;",
+   "shapeNames": [
+    "mxgraph.office.sites.excel_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1244"
+  },
+  {
+   "id": "officeSites-4-meeting-workspace-site",
+   "title": "Meeting Workspace Site",
+   "tags": "office sites meeting workspace site office site  Meeting Workspace Site",
+   "kind": "vertex",
+   "width": 58,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.meeting_workspace_site;",
+   "shapeNames": [
+    "mxgraph.office.sites.meeting_workspace_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1246"
+  },
+  {
+   "id": "officeSites-5-my-site",
+   "title": "My Site",
+   "tags": "office sites my site office site  My Site",
+   "kind": "vertex",
+   "width": 58,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.my_site;",
+   "shapeNames": [
+    "mxgraph.office.sites.my_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1248"
+  },
+  {
+   "id": "officeSites-6-powerpoint-automation-services",
+   "title": "PowerPoint Automation Services",
+   "tags": "office sites powerpoint automation services office site  PowerPoint Automation Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.powerpoint_automation_services;",
+   "shapeNames": [
+    "mxgraph.office.sites.powerpoint_automation_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1250"
+  },
+  {
+   "id": "officeSites-7-publish",
+   "title": "Publish",
+   "tags": "office sites publish office site  Publish",
+   "kind": "vertex",
+   "width": 57,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.publish;",
+   "shapeNames": [
+    "mxgraph.office.sites.publish"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1252"
+  },
+  {
+   "id": "officeSites-8-site-collection",
+   "title": "Site Collection",
+   "tags": "office sites site collection office site  Site Collection",
+   "kind": "vertex",
+   "width": 52,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.site_collection;",
+   "shapeNames": [
+    "mxgraph.office.sites.site_collection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1254"
+  },
+  {
+   "id": "officeSites-9-site-shared",
+   "title": "Site Shared",
+   "tags": "office sites site shared office site  Site Shared",
+   "kind": "vertex",
+   "width": 56,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.site_shared;",
+   "shapeNames": [
+    "mxgraph.office.sites.site_shared"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1256"
+  },
+  {
+   "id": "officeSites-10-site-team",
+   "title": "Site, Team",
+   "tags": "office sites site team office site  Site, Team",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.site_team;",
+   "shapeNames": [
+    "mxgraph.office.sites.site_team"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1258"
+  },
+  {
+   "id": "officeSites-11-subsite",
+   "title": "Subsite",
+   "tags": "office sites substitute office site  Subsite",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1260"
+  },
+  {
+   "id": "officeSites-12-subsite-blue",
+   "title": "Subsite (blue)",
+   "tags": "office sites substitute office site  Subsite (blue)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1262"
+  },
+  {
+   "id": "officeSites-13-subsite-orange",
+   "title": "Subsite (orange)",
+   "tags": "office sites substitute office site  Subsite (orange)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1264"
+  },
+  {
+   "id": "officeSites-14-subsite-green",
+   "title": "Subsite (green)",
+   "tags": "office sites substitute office site  Subsite (green)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1266"
+  },
+  {
+   "id": "officeSites-15-subsite-ghosted",
+   "title": "Subsite (ghosted)",
+   "tags": "office sites substitute office site  Subsite (ghosted)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1268"
+  },
+  {
+   "id": "officeSites-16-subsite-small",
+   "title": "Subsite (small)",
+   "tags": "office sites substitute small office site  Subsite (small)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 29,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.subsite;",
+   "shapeNames": [
+    "mxgraph.office.sites.subsite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1270"
+  },
+  {
+   "id": "officeSites-17-upgrade-site",
+   "title": "Upgrade Site",
+   "tags": "office sites upgrade site office site  Upgrade Site",
+   "kind": "vertex",
+   "width": 59,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.upgrade_site;",
+   "shapeNames": [
+    "mxgraph.office.sites.upgrade_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1272"
+  },
+  {
+   "id": "officeSites-18-website",
+   "title": "Website",
+   "tags": "office sites website office site  Website",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.website;",
+   "shapeNames": [
+    "mxgraph.office.sites.website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1274"
+  },
+  {
+   "id": "officeSites-19-website-public",
+   "title": "Website, Public",
+   "tags": "office sites website public office site  Website, Public",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.website_public;",
+   "shapeNames": [
+    "mxgraph.office.sites.website_public"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1276"
+  },
+  {
+   "id": "officeSites-20-wiki-site",
+   "title": "Wiki Site",
+   "tags": "office sites wiki site office site  Wiki Site",
+   "kind": "vertex",
+   "width": 59,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.wiki_site;",
+   "shapeNames": [
+    "mxgraph.office.sites.wiki_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1278"
+  },
+  {
+   "id": "officeSites-21-word-automation-services",
+   "title": "Word Automation Services",
+   "tags": "office sites word automation services office site  Word Automation Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.sites.word_automation_services;",
+   "shapeNames": [
+    "mxgraph.office.sites.word_automation_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1280"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "electricalVacuumTubes",
+ "title": "Electrical / Vacuum Tubes",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalVacuumTubes-0-diode",
+   "title": "Diode",
+   "tags": "electrical thermionic devices diode electrical thermionic thermo device vacuum tube  Diode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.diode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.diode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:890"
+  },
+  {
+   "id": "electricalVacuumTubes-1-double-diode",
+   "title": "Double Diode",
+   "tags": "electrical thermionic devices double diode electrical thermionic thermo device vacuum tube  Double Diode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.double_diode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.double_diode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:892"
+  },
+  {
+   "id": "electricalVacuumTubes-2-triode",
+   "title": "Triode",
+   "tags": "electrical thermionic devices triode electrical thermionic thermo device vacuum tube  Triode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.triode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.triode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:894"
+  },
+  {
+   "id": "electricalVacuumTubes-3-double-triode",
+   "title": "Double Triode",
+   "tags": "electrical thermionic devices double triode electrical thermionic thermo device vacuum tube  Double Triode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.double_triode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.double_triode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:896"
+  },
+  {
+   "id": "electricalVacuumTubes-4-tetrode",
+   "title": "Tetrode",
+   "tags": "electrical thermionic devices tetrode electrical thermionic thermo device vacuum tube  Tetrode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.tetrode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.tetrode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:898"
+  },
+  {
+   "id": "electricalVacuumTubes-5-pentode",
+   "title": "Pentode",
+   "tags": "electrical thermionic devices pentode electrical thermionic thermo device vacuum tube  Pentode",
+   "kind": "vertex",
+   "width": 70,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.pentode;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.pentode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:900"
+  },
+  {
+   "id": "electricalVacuumTubes-6-photocell",
+   "title": "Photocell",
+   "tags": "electrical thermionic devices photocell electrical thermionic thermo device vacuum tube  Photocell",
+   "kind": "vertex",
+   "width": 70,
+   "height": 87,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.thermionic_devices.photocell;",
+   "shapeNames": [
+    "mxgraph.electrical.thermionic_devices.photocell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:902"
+  }
+ ]
+}

@@ -1,0 +1,372 @@
+{
+ "id": "veeamStorage",
+ "title": "Veeam / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamStorage-0-backup-repository",
+   "title": "Backup Repository",
+   "tags": "veeam storage backup repository veeam vmware virtual machine storage Backup Repository",
+   "kind": "vertex",
+   "width": 54,
+   "height": 50,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.backup_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.backup_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:314"
+  },
+  {
+   "id": "veeamStorage-1-remote-repository",
+   "title": "Remote Repository",
+   "tags": "veeam storage remote repository veeam vmware virtual machine storage Remote Repository",
+   "kind": "vertex",
+   "width": 47.6,
+   "height": 46.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.remote_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.remote_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:316"
+  },
+  {
+   "id": "veeamStorage-2-shared-folder",
+   "title": "Shared Folder",
+   "tags": "veeam storage shared folder veeam vmware virtual machine storage Shared Folder",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 64,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.shared_folder;",
+   "shapeNames": [
+    "mxgraph.veeam.shared_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:318"
+  },
+  {
+   "id": "veeamStorage-3-datastore",
+   "title": "Datastore",
+   "tags": "veeam storage datastore veeam vmware virtual machine storage Datastore",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 45.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:320"
+  },
+  {
+   "id": "veeamStorage-4-snapshot",
+   "title": "Snapshot",
+   "tags": "veeam storage snapshot veeam vmware virtual machine storage Snapshot",
+   "kind": "vertex",
+   "width": 55.6,
+   "height": 48.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam.snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:322"
+  },
+  {
+   "id": "veeamStorage-5-storage-cluster",
+   "title": "Storage Cluster",
+   "tags": "veeam storage storage cluster veeam vmware virtual machine storage Storage Cluster",
+   "kind": "vertex",
+   "width": 55.6,
+   "height": 56,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.storage_cluster;",
+   "shapeNames": [
+    "mxgraph.veeam.storage_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:324"
+  },
+  {
+   "id": "veeamStorage-6-data-volume",
+   "title": "Data Volume",
+   "tags": "veeam storage data volume veeam vmware virtual machine storage Data Volume",
+   "kind": "vertex",
+   "width": 63.2,
+   "height": 16.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.datastore_volume;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.datastore_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:326"
+  },
+  {
+   "id": "veeamStorage-7-physical-storage",
+   "title": "Physical Storage",
+   "tags": "veeam storage physical storage veeam vmware virtual machine storage Physical Storage",
+   "kind": "vertex",
+   "width": 59.2,
+   "height": 20,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.physical_storage;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.physical_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:328"
+  },
+  {
+   "id": "veeamStorage-8-datastore",
+   "title": "Datastore",
+   "tags": "veeam storage datastore veeam vmware virtual machine storage Datastore",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#75B4DB;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:330"
+  },
+  {
+   "id": "veeamStorage-9-full-datastore",
+   "title": "Full Datastore",
+   "tags": "veeam storage full datastore veeam vmware virtual machine storage Full Datastore",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.full_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.full_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:332"
+  },
+  {
+   "id": "veeamStorage-10-medium-datastore",
+   "title": "Medium Datastore",
+   "tags": "veeam storage medium datastore veeam vmware virtual machine storage Medium Datastore",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.medium_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.medium_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:334"
+  },
+  {
+   "id": "veeamStorage-11-free-datastore",
+   "title": "Free Datastore",
+   "tags": "veeam storage free datastore veeam vmware virtual machine storage Free Datastore",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.free_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.free_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:336"
+  },
+  {
+   "id": "veeamStorage-12-remote-storage",
+   "title": "Remote Storage",
+   "tags": "veeam storage remote storage veeam vmware virtual machine storage Remote Storage",
+   "kind": "vertex",
+   "width": 46.4,
+   "height": 46.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.remote_storage;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.remote_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:338"
+  },
+  {
+   "id": "veeamStorage-13-vm-backup",
+   "title": "VM Backup",
+   "tags": "veeam storage vm backup veeam vmware virtual machine storage VM Backup",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 53.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vm_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vm_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:340"
+  },
+  {
+   "id": "veeamStorage-14-lost-space",
+   "title": "Lost Space",
+   "tags": "veeam storage lost space veeam vmware virtual machine storage Lost Space",
+   "kind": "vertex",
+   "width": 43.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.lost_space;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.lost_space"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:342"
+  },
+  {
+   "id": "veeamStorage-15-hard-drive",
+   "title": "Hard Drive",
+   "tags": "veeam storage hard drive veeam vmware virtual machine storage Hard Drive",
+   "kind": "vertex",
+   "width": 40,
+   "height": 48,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.hard_drive;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.hard_drive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:344"
+  },
+  {
+   "id": "veeamStorage-16-disk-partition",
+   "title": "Disk partition",
+   "tags": "veeam storage disk partition veeam vmware virtual machine storage Disk partition",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 57.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.disk_partition;",
+   "shapeNames": [
+    "mxgraph.veeam.disk_partition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:346"
+  },
+  {
+   "id": "veeamStorage-17-local-disk",
+   "title": "Local disk",
+   "tags": "veeam storage local disk veeam vmware virtual machine storage Local disk",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 56.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.local_disk;",
+   "shapeNames": [
+    "mxgraph.veeam.local_disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:348"
+  },
+  {
+   "id": "veeamStorage-18-audio-file",
+   "title": "Audio file",
+   "tags": "veeam storage audio file veeam vmware virtual machine storage Audio file",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.audio_file;",
+   "shapeNames": [
+    "mxgraph.veeam.audio_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:350"
+  },
+  {
+   "id": "veeamStorage-19-backup-file",
+   "title": "Backup file",
+   "tags": "veeam storage audio file veeam vmware virtual machine storage Backup file",
+   "kind": "vertex",
+   "width": 57.6,
+   "height": 53.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.backup_file;",
+   "shapeNames": [
+    "mxgraph.veeam.backup_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:352"
+  },
+  {
+   "id": "veeamStorage-20-data-file",
+   "title": "Data file",
+   "tags": "veeam storage data file veeam vmware virtual machine storage Data file",
+   "kind": "vertex",
+   "width": 47.2,
+   "height": 60.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.data_file;",
+   "shapeNames": [
+    "mxgraph.veeam.data_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:354"
+  },
+  {
+   "id": "veeamStorage-21-google-document",
+   "title": "Google document",
+   "tags": "veeam storage google document veeam vmware virtual machine storage Google document",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.google_document;",
+   "shapeNames": [
+    "mxgraph.veeam.google_document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:356"
+  },
+  {
+   "id": "veeamStorage-22-video-file",
+   "title": "Video file",
+   "tags": "veeam storage video file veeam vmware virtual machine storage Video file",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.video_file;",
+   "shapeNames": [
+    "mxgraph.veeam.video_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:358"
+  },
+  {
+   "id": "veeamStorage-23-vsb-file",
+   "title": "VSB file",
+   "tags": "veeam storage vsb file veeam vmware virtual machine storage VSB file",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vsb_file;",
+   "shapeNames": [
+    "mxgraph.veeam.vsb_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:360"
+  },
+  {
+   "id": "veeamStorage-24-windows-repository",
+   "title": "Windows Repository",
+   "tags": "veeam storage windows repository veeam vmware virtual machine storage Windows Repository",
+   "kind": "vertex",
+   "width": 53.2,
+   "height": 49.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.windows_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.windows_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:362"
+  },
+  {
+   "id": "veeamStorage-25-linux-repository",
+   "title": "Linux Repository",
+   "tags": "veeam storage linux repository veeam vmware virtual machine storage Linux Repository",
+   "kind": "vertex",
+   "width": 53.6,
+   "height": 49.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.linux_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.linux_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:364"
+  }
+ ]
+}

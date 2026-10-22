@@ -1,0 +1,50 @@
+{
+ "id": "azure2Azure Ecosystem",
+ "title": "Azure / Ecosystem",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Azure Ecosystem-0-applens",
+   "title": "Applens",
+   "tags": "azure2 applens azure ecosystem  Applens",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_ecosystem/Applens.svg;points=[[0.501,0,0],[0.502,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.867,0.842,0],[0.128,0.837,0],[0.185,0.11,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:280"
+  },
+  {
+   "id": "azure2Azure Ecosystem-1-collaborative-service",
+   "title": "Collaborative Service",
+   "tags": "azure2 collaborative service azure ecosystem  Collaborative Service",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_ecosystem/Collaborative_Service.svg;points=[[0.507,0,0],[0.657,1,0],[0,0.457,0],[0.938,0.5,0],[0.842,0.123,0],[0.925,0.824,0],[0.11,0.824,0],[0.06,0.329,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:282"
+  },
+  {
+   "id": "azure2Azure Ecosystem-2-hybrid-center",
+   "title": "Hybrid Center",
+   "tags": "azure2 hybrid center azure ecosystem  Hybrid Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_ecosystem/Azure_Hybrid_Center.svg;points=[[0.514,0,0],[0.5,1,0],[0.018,0.5,0],[0.95,0.5,0],[0.682,0.068,0],[0.902,0.939,0],[0.118,0.939,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:284"
+  }
+ ]
+}

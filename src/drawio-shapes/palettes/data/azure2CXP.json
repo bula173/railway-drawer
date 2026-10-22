@@ -1,0 +1,36 @@
+{
+ "id": "azure2CXP",
+ "title": "Azure / CXP",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2CXP-0-elixir",
+   "title": "Elixir",
+   "tags": "azure2 elixir azure cxp  Elixir",
+   "kind": "vertex",
+   "width": 49,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/cxp/Elixir.svg;points=[[0.682,0.003,0],[0.488,0.998,0],[0.041,0.5,0],[0.928,0.5,0],[0.989,0.103,0],[0.892,0.85,0],[0.091,0.852,0],[0.341,0.323,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:520"
+  },
+  {
+   "id": "azure2CXP-1-elixir-purple",
+   "title": "Elixir Purple",
+   "tags": "azure2 elixir purple azure cxp  Elixir Purple",
+   "kind": "vertex",
+   "width": 49,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/cxp/Elixir_Purple.svg;points=[[0.682,0.003,0],[0.488,0.998,0],[0.041,0.5,0],[0.928,0.5,0],[0.989,0.103,0],[0.892,0.85,0],[0.091,0.852,0],[0.341,0.323,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:522"
+  }
+ ]
+}

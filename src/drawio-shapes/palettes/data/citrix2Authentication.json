@@ -1,0 +1,232 @@
+{
+ "id": "citrix2Authentication",
+ "title": "Citrix / Authentication",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Authentication-0-authentication-adaptive",
+   "title": "Authentication: Adaptive",
+   "tags": "citrix2 authentication adaptive citrix authentication  Authentication: Adaptive",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_adaptive;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_adaptive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:217"
+  },
+  {
+   "id": "citrix2Authentication-1-authentication-cert",
+   "title": "Authentication: Cert",
+   "tags": "citrix2 authentication cert citrix authentication  Authentication: Cert",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_cert;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_cert"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:218"
+  },
+  {
+   "id": "citrix2Authentication-2-authentication-totp",
+   "title": "Authentication: TOTP",
+   "tags": "citrix2 authentication totp citrix authentication  Authentication: TOTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_totp;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_totp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:219"
+  },
+  {
+   "id": "citrix2Authentication-3-authentication-selection",
+   "title": "Authentication: Selection",
+   "tags": "citrix2 authentication selection citrix authentication  Authentication: Selection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_selection;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_selection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:220"
+  },
+  {
+   "id": "citrix2Authentication-4-authentication-saml",
+   "title": "Authentication: SAML",
+   "tags": "citrix2 authentication saml citrix authentication  Authentication: SAML",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_saml;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_saml"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:221"
+  },
+  {
+   "id": "citrix2Authentication-5-authentication-radius",
+   "title": "Authentication: RADIUS",
+   "tags": "citrix2 authentication radius citrix authentication  Authentication: RADIUS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_radius;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_radius"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:222"
+  },
+  {
+   "id": "citrix2Authentication-6-authentication-epa",
+   "title": "Authentication: EPA",
+   "tags": "citrix2 authentication epa citrix authentication  Authentication: EPA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_epa;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_epa"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:223"
+  },
+  {
+   "id": "citrix2Authentication-7-authentication-failure",
+   "title": "Authentication: Failure",
+   "tags": "citrix2 authentication failure citrix authentication  Authentication: Failure",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_failure;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_failure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:224"
+  },
+  {
+   "id": "citrix2Authentication-8-authentication-fido2",
+   "title": "Authentication: FIDO2",
+   "tags": "citrix2 authentication fido2 citrix authentication  Authentication: FIDO2",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_fido2;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_fido2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:225"
+  },
+  {
+   "id": "citrix2Authentication-9-authentication-mfa",
+   "title": "Authentication: MFA",
+   "tags": "citrix2 authentication mfa citrix authentication  Authentication: MFA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_mfa;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_mfa"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:226"
+  },
+  {
+   "id": "citrix2Authentication-10-authentication-oidc",
+   "title": "Authentication: OIDC",
+   "tags": "citrix2 authentication oidc citrix authentication  Authentication: OIDC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_oidc;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_oidc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:227"
+  },
+  {
+   "id": "citrix2Authentication-11-authentication-push",
+   "title": "Authentication: Push",
+   "tags": "citrix2 authentication push citrix authentication  Authentication: Push",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_push;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_push"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:228"
+  },
+  {
+   "id": "citrix2Authentication-12-authentication-okta",
+   "title": "Authentication: Okta",
+   "tags": "citrix2 authentication okta citrix authentication  Authentication: Okta",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_okta;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_okta"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:229"
+  },
+  {
+   "id": "citrix2Authentication-13-authentication-google",
+   "title": "Authentication: Google",
+   "tags": "citrix2 authentication google citrix authentication  Authentication: Google",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_google;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_google"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:230"
+  },
+  {
+   "id": "citrix2Authentication-14-authentication-ms-entra-id",
+   "title": "Authentication: MS Entra ID",
+   "tags": "citrix2 authentication ms entra id citrix authentication  Authentication: MS Entra ID",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.authentication_ms_entra_id;",
+   "shapeNames": [
+    "mxgraph.citrix2.authentication_ms_entra_id"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:231"
+  },
+  {
+   "id": "citrix2Authentication-15-ldap",
+   "title": "LDAP",
+   "tags": "citrix2 ldap citrix authentication  LDAP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.ldap;",
+   "shapeNames": [
+    "mxgraph.citrix2.ldap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:232"
+  }
+ ]
+}

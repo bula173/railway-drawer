@@ -1,0 +1,162 @@
+{
+ "id": "mscaeAnalytics Service",
+ "title": "CAE / Analytics Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeAnalytics Service-0-analysis-services",
+   "title": "Analysis Services",
+   "tags": "mscae analysis services ms microsoft cloud enterprise analytics service Analysis Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Analysis_Services.svg;points=[[0.206,0,0],[0.276,1,0],[0,0.205,0],[1,0.439,0],[1,0.234,0],[1,0.644,0],[0.07,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:670"
+  },
+  {
+   "id": "mscaeAnalytics Service-1-azure-data-explorer-clusters",
+   "title": "Azure Data Explorer Clusters",
+   "tags": "mscae azure data explorer clusters ms microsoft cloud enterprise analytics service Azure Data Explorer Clusters",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Data_Explorer_Clusters.svg;points=[[0.5,0,0],[0.5,0.851,0],[0.144,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0.013,0.957,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:672"
+  },
+  {
+   "id": "mscaeAnalytics Service-2-databricks",
+   "title": "Databricks",
+   "tags": "mscae azure databricks ms microsoft cloud enterprise analytics service Databricks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Databricks.svg;points=[[0.5,0,0],[0.5,1,0],[0.201,0.5,0],[0.799,0.5,0],[0.955,0.248,0],[0.955,0.752,0],[0.045,0.752,0],[0.045,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:674"
+  },
+  {
+   "id": "mscaeAnalytics Service-3-data-factories",
+   "title": "Data Factories",
+   "tags": "mscae data factory factories ms microsoft cloud enterprise analytics service Data Factories",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Factory.svg;points=[[0.224,0,0],[0.5,0.998,0],[0,0.534,0],[1,0.5,0],[1,0.348,0],[1,0.997,0],[0,0.997,0],[0.015,0.048,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:676"
+  },
+  {
+   "id": "mscaeAnalytics Service-4-data-lake-analytics",
+   "title": "Data Lake Analytics",
+   "tags": "mscae data lake analytics ms microsoft cloud enterprise analytics service Data Lake Analytics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Lake_Analytics.svg;points=[[0.5,0.05,0],[0.5,0.92,0],[0.08,0.5,0],[0.95,0.5,0],[0.89,0.105,0],[0.897,0.887,0],[0.105,0.89,0],[0.113,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:678"
+  },
+  {
+   "id": "mscaeAnalytics Service-5-data-lake-store",
+   "title": "Data Lake Store",
+   "tags": "mscae data lake store ms microsoft cloud enterprise analytics service Data Lake Store",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Lake_Store.svg;points=[[0.5,0,0],[0.5,0.994,0],[0,0.497,0],[1,0.574,0],[0.975,0.167,0],[0.975,0.98,0],[0.028,0.984,0],[0.025,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:680"
+  },
+  {
+   "id": "mscaeAnalytics Service-6-event-hub-clusters",
+   "title": "Event Hub Clusters",
+   "tags": "mscae event hub clusters ms microsoft cloud enterprise analytics service Event Hub Clusters",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Event_Hub_Clusters.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.78,0.188,0],[0.997,1,0],[0.22,0.812,0],[0.003,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:682"
+  },
+  {
+   "id": "mscaeAnalytics Service-7-event-hubs",
+   "title": "Event Hubs",
+   "tags": "mscae event hubs ms microsoft cloud enterprise analytics service Event Hubs",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Event_Hubs.svg;points=[[0.5,0,0],[0.5,1,0],[0.205,0.5,0],[0.863,0.5,0],[1,0.008,0],[1,0.992,0],[0,0.992,0],[0,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:684"
+  },
+  {
+   "id": "mscaeAnalytics Service-8-hdinsight-clusters",
+   "title": "HDInsight Clusters",
+   "tags": "mscae hdinsight clusters ms microsoft cloud enterprise analytics service HDInsight Clusters",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/HDInsightClusters.svg;points=[[0.499,0.003,0],[0.497,0.997,0],[0,0.392,0],[1,0.393,0],[0.845,0.113,0],[0.89,0.793,0],[0.1,0.785,0],[0.158,0.11,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:686"
+  },
+  {
+   "id": "mscaeAnalytics Service-9-log-analytics-workspaces",
+   "title": "Log Analytics Workspaces",
+   "tags": "mscae log analytics workspaces ms microsoft cloud enterprise analytics service Log Analytics Workspaces",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Log_Analytics_Workspaces.svg;points=[[0.5,0.025,0],[0.375,1,0],[0,0.625,0],[0.975,0.5,0],[0.877,0.088,0],[0.75,1,0],[0,1,0],[0,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:688"
+  },
+  {
+   "id": "mscaeAnalytics Service-10-stream-analytics",
+   "title": "Stream Analytics",
+   "tags": "mscae stream analytics ms microsoft cloud enterprise analytics service Stream Analytics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Stream_Analytics.svg;points=[[0.604,0,0],[0.61,0.997,0],[0,0.585,0],[1,0.49,0],[0.857,0.103,0],[0.862,0.887,0],[0.05,0.663,0],[0.355,0.106,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:690"
+  }
+ ]
+}

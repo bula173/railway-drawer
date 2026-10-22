@@ -1,0 +1,442 @@
+{
+ "id": "azure2Integration",
+ "title": "Azure / Integration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Integration-0-ai-gateway",
+   "title": "AI Gateway",
+   "tags": "azure2 ai gateway api management azure integration  AI Gateway",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.92,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/AI_Gateway.svg;points=[[0.499,0,0],[0.496,1,0],[0,0.5,0],[1,0.5,0],[0.785,0.215,0],[0.785,0.785,0],[0.212,0.788,0],[0.212,0.212,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1008"
+  },
+  {
+   "id": "azure2Integration-1-api-connections",
+   "title": "API Connections",
+   "tags": "azure2 api connections application programming interface azure integration  API Connections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 45.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/API_Connections.svg;points=[[0.5,0.007,0],[0.5,0.993,0],[0.015,0.5,0],[0.985,0.5,0],[0.897,0.341,0],[0.91,0.936,0],[0.093,0.647,0],[0.09,0.064,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1010"
+  },
+  {
+   "id": "azure2Integration-2-api-for-fhir",
+   "title": "API for FHIR",
+   "tags": "azure2 api application programming interface for fhir azure integration  API for FHIR",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Azure_API_for_FHIR.svg;points=[[0.5,0.174,0],[0.5,0.995,0],[0.035,0.5,0],[0.963,0.5,0],[0.902,0.06,0],[0.757,0.776,0],[0.245,0.781,0],[0.085,0.071,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1012"
+  },
+  {
+   "id": "azure2Integration-3-api-management-services",
+   "title": "API Management Services",
+   "tags": "azure2 api application programming interface management services azure integration  API Management Services",
+   "kind": "vertex",
+   "width": 65,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/API_Management_Services.svg;points=[[0.512,0,0],[0.477,1,0],[0,0.496,0],[1,0.541,0],[0.717,0.084,0],[0.92,0.729,0],[0.09,0.712,0],[0.085,0.285,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1014"
+  },
+  {
+   "id": "azure2Integration-4-app-configuration",
+   "title": "App Configuration",
+   "tags": "azure2 app configuration application azure integration  App Configuration",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;points=[[0.515,0,0],[0.303,1,0],[0.005,0.414,0],[0.995,0.453,0],[0.731,0.085,0],[0.933,0.832,0],[0.181,0.947,0],[0.072,0.255,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1016"
+  },
+  {
+   "id": "azure2Integration-5-data-catalog",
+   "title": "Data Catalog",
+   "tags": "azure2 data catalog azure integration  Data Catalog",
+   "kind": "vertex",
+   "width": 60,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Azure_Data_Catalog.svg;points=[[0.398,0,0],[0.5,0.975,0],[0,0.431,0],[1,0.5,0],[0.737,0.01,0],[0.994,0.937,0],[0.003,0.792,0],[0.056,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1018"
+  },
+  {
+   "id": "azure2Integration-6-data-factories",
+   "title": "Data Factories",
+   "tags": "azure2 data factories azure integration  Data Factories",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/databases/Data_Factory.svg;points=[[0.25,0,0],[0.5,1,0],[0,0.529,0],[1,0.5,0],[0.995,0.348,0],[0.997,0.985,0],[0.013,0.995,0],[0.013,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1020"
+  },
+  {
+   "id": "azure2Integration-7-databox-gateway",
+   "title": "Databox Gateway",
+   "tags": "azure2 databox gateway azure integration  Databox Gateway",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Azure_Stack_Edge.svg;points=[[0.514,0,0],[0.5,1,0],[0.018,0.5,0],[0.95,0.5,0],[0.682,0.068,0],[0.902,0.939,0],[0.118,0.939,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1022"
+  },
+  {
+   "id": "azure2Integration-8-event-grid-domains",
+   "title": "Event Grid Domains",
+   "tags": "azure2 event grid domains azure integration  Event Grid Domains",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Event_Grid_Domains.svg;points=[[0.501,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.985,0.994,0],[0.015,0.994,0],[0.013,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1024"
+  },
+  {
+   "id": "azure2Integration-9-event-grid-subscriptions",
+   "title": "Event Grid Subscriptions",
+   "tags": "azure2 event grid subscriptions azure integration  Event Grid Subscriptions",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Event_Grid_Subscriptions.svg;points=[[0.501,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.985,0.994,0],[0.015,0.994,0],[0.013,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1026"
+  },
+  {
+   "id": "azure2Integration-10-event-grid-topics",
+   "title": "Event Grid Topics",
+   "tags": "azure2 event grid topics azure integration  Event Grid Topics",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Event_Grid_Topics.svg;points=[[0.5,0,0],[0.497,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.982,0.994,0],[0.015,0.994,0],[0.013,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1028"
+  },
+  {
+   "id": "azure2Integration-11-integration-accounts",
+   "title": "Integration Accounts",
+   "tags": "azure2 integration accounts azure integration  Integration Accounts",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Integration_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.995,0.013,0],[0.995,0.987,0],[0.013,0.995,0],[0.013,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1030"
+  },
+  {
+   "id": "azure2Integration-12-integration-environments",
+   "title": "Integration Environments",
+   "tags": "azure2 integration environments azure integration  Integration Environments",
+   "kind": "vertex",
+   "width": 64.24,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Integration_Environments.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.5,0],[1,0.5,0],[0.92,0.185,0],[0.923,0.81,0],[0.082,0.817,0],[0.08,0.185,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1032"
+  },
+  {
+   "id": "azure2Integration-13-integration-service-environments",
+   "title": "Integration Service Environments",
+   "tags": "azure2 integration service environments azure integration  Integration Service Environments",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Integration_Service_Environments.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1034"
+  },
+  {
+   "id": "azure2Integration-14-logic-apps",
+   "title": "Logic Apps",
+   "tags": "azure2 logic apps azure integration  Logic Apps",
+   "kind": "vertex",
+   "width": 67,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Logic_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.932,0.03,0],[0.927,0.974,0],[0.068,0.97,0],[0.068,0.03,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1036"
+  },
+  {
+   "id": "azure2Integration-15-logic-apps",
+   "title": "Logic Apps",
+   "tags": "azure2 logic apps azure integration  Logic Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/internet_of_things/Logic_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.812,0],[1,0.812,0],[0.677,0.008,0],[0.995,0.985,0],[0.01,0.992,0],[0.325,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1038"
+  },
+  {
+   "id": "azure2Integration-16-logic-apps-custom-connector",
+   "title": "Logic Apps Custom Connector",
+   "tags": "azure2 logic apps custom connector azure integration  Logic Apps Custom Connector",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Logic_Apps_Custom_Connector.svg;points=[[0.236,0,0],[0.231,1,0],[0.201,0.5,0],[1,0.764,0],[0.392,0.008,0],[0.997,0.915,0],[0.025,0.812,0],[0.085,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1040"
+  },
+  {
+   "id": "azure2Integration-17-logic-apps-template",
+   "title": "Logic Apps Template",
+   "tags": "azure2 logic apps template azure integration  Logic Apps Template",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Logic_Apps_Template.svg;points=[[0.5,0,0],[0.431,1,0],[0,0.568,0],[1,0.5,0],[0.94,0,0],[0.85,0.975,0],[0.015,0.977,0],[0.028,0.148,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1042"
+  },
+  {
+   "id": "azure2Integration-18-partner-namespace",
+   "title": "Partner Namespace",
+   "tags": "azure2 partner namespace azure integration  Partner Namespace",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Partner_Namespace.svg;points=[[0.5,0,0],[0.497,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.982,0.994,0],[0.015,0.994,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1044"
+  },
+  {
+   "id": "azure2Integration-19-partner-registration",
+   "title": "Partner Registration",
+   "tags": "azure2 partner registration azure integration  Partner Registration",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Partner_Registration.svg;points=[[0.426,0,0],[0.5,1,0],[0,0.461,0],[1,0.5,0],[0.837,0.006,0],[0.987,0.997,0],[0.013,0.914,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1046"
+  },
+  {
+   "id": "azure2Integration-20-partner-topic",
+   "title": "Partner Topic",
+   "tags": "azure2 partner topic azure integration  Partner Topic",
+   "kind": "vertex",
+   "width": 68,
+   "height": 61,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Partner_Topic.svg;points=[[0.5,0.003,0],[0.499,0.997,0],[0,0.5,0],[1,0.5,0],[0.992,0.014,0],[0.985,0.991,0],[0.013,0.991,0],[0.01,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1048"
+  },
+  {
+   "id": "azure2Integration-21-power-platform",
+   "title": "Power Platform",
+   "tags": "azure2 power platform azure integration  Power Platform",
+   "kind": "vertex",
+   "width": 64.92,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Power_Platform.svg;points=[[0.61,0,0],[0.086,0.5,0],[1,0.164,0],[0.966,0.063,0],[0.814,0.552,0],[0.147,0.987,0],[0.343,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1050"
+  },
+  {
+   "id": "azure2Integration-22-pubsub",
+   "title": "PubSub",
+   "tags": "azure2 pubsub web pubsub publish subscribe websocket azure integration  PubSub",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.96,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Azure_PubSub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.499,0],[1,0.501,0],[0.975,0.013,0],[0.987,0.975,0],[0.013,0.975,0],[0.028,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1052"
+  },
+  {
+   "id": "azure2Integration-23-relays",
+   "title": "Relays",
+   "tags": "azure2 relays azure integration  Relays",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Relays.svg;points=[[0.499,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.987,0.009,0],[0.987,0.991,0],[0.015,0.994,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1054"
+  },
+  {
+   "id": "azure2Integration-24-sendgrid-accounts",
+   "title": "SendGrid Accounts",
+   "tags": "azure2 sendgrid send grid accounts azure integration  SendGrid Accounts",
+   "kind": "vertex",
+   "width": 66.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/SendGrid_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.995,0.01,0],[0.992,0.66,0],[0.005,0.985,0],[0.339,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1056"
+  },
+  {
+   "id": "azure2Integration-25-service-bus",
+   "title": "Service Bus",
+   "tags": "azure2 service bus azure integration  Service Bus",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Service_Bus.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.98,0.003,0],[0.98,0.997,0],[0.02,0.997,0],[0.02,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1058"
+  },
+  {
+   "id": "azure2Integration-26-software-as-a-service",
+   "title": "Software as a Service",
+   "tags": "azure2 software service azure integration  Software as a Service",
+   "kind": "vertex",
+   "width": 64,
+   "height": 53,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/Software_as_a_Service.svg;points=[[0.516,0,0],[0.502,1,0],[0,0.539,0],[1,0.591,0],[0.695,0.07,0],[0.915,0.797,0],[0.095,0.779,0],[0.09,0.306,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1060"
+  },
+  {
+   "id": "azure2Integration-27-sql-data-warehouses",
+   "title": "SQL Data Warehouses",
+   "tags": "azure2 sql data warehouses azure integration  SQL Data Warehouses",
+   "kind": "vertex",
+   "width": 64,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/SQL_Data_Warehouses.svg;points=[[0.402,0,0],[0.5,0.935,0],[0.072,0.5,0],[0.997,0.5,0],[0.802,0.228,0],[0.989,0.945,0],[0.074,0.712,0],[0,0.228,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1062"
+  },
+  {
+   "id": "azure2Integration-28-stack-edge",
+   "title": "Stack Edge",
+   "tags": "azure2 stack edge azure integration  Stack Edge",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Box_Edge.svg;points=[[0.546,0,0],[0.5,0.923,0],[0.058,0.5,0],[0.975,0.5,0],[0.715,0.074,0],[0.915,0.867,0],[0.09,0.951,0],[0.38,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1064"
+  },
+  {
+   "id": "azure2Integration-29-storsimple-device-managers",
+   "title": "StorSimple Device Managers",
+   "tags": "azure2 storsimple device managers azure integration  StorSimple Device Managers",
+   "kind": "vertex",
+   "width": 70,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/StorSimple_Device_Managers.svg;points=[[0.514,0,0],[0.631,1,0],[0,0.486,0],[1,0.531,0],[0.702,0.069,0],[0.74,1,0],[0.1,0.707,0],[0.09,0.276,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1066"
+  },
+  {
+   "id": "azure2Integration-30-system-topic",
+   "title": "System Topic",
+   "tags": "azure2 system topic azure integration  System Topic",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/integration/System_Topic.svg;points=[[0.5,0,0],[0.499,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.982,0.006,0],[0.977,0.997,0],[0.02,0.997,0],[0.018,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1068"
+  }
+ ]
+}

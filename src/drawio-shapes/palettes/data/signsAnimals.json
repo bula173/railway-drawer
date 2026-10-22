@@ -1,0 +1,218 @@
+{
+ "id": "signsAnimals",
+ "title": "Signs / Animals",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsAnimals-0-bear-1",
+   "title": "Bear 1",
+   "tags": "signs animals  Bear 1 Bear 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 62,
+   "style": "shape=mxgraph.signs.animals.bear_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.bear_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-1-bear-2",
+   "title": "Bear 2",
+   "tags": "signs animals  Bear 2 Bear 2",
+   "kind": "vertex",
+   "width": 101,
+   "height": 66,
+   "style": "shape=mxgraph.signs.animals.bear_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.bear_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-2-deer-1",
+   "title": "Deer 1",
+   "tags": "signs animals  Deer 1 Deer 1",
+   "kind": "vertex",
+   "width": 82,
+   "height": 98,
+   "style": "shape=mxgraph.signs.animals.deer_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.deer_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-3-deer-2",
+   "title": "Deer 2",
+   "tags": "signs animals  Deer 2 Deer 2",
+   "kind": "vertex",
+   "width": 97,
+   "height": 97,
+   "style": "shape=mxgraph.signs.animals.deer_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.deer_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-4-dog-on-leash",
+   "title": "Dog On Leash",
+   "tags": "signs animals  Dog On Leash Dog On Leash",
+   "kind": "vertex",
+   "width": 97,
+   "height": 91,
+   "style": "shape=mxgraph.signs.animals.dog_on_leash;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.dog_on_leash"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-5-duck",
+   "title": "Duck",
+   "tags": "signs animals  Duck Duck",
+   "kind": "vertex",
+   "width": 105,
+   "height": 73,
+   "style": "shape=mxgraph.signs.animals.duck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.duck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-6-fish-hatchery",
+   "title": "Fish Hatchery",
+   "tags": "signs animals  Fish Hatchery Fish Hatchery",
+   "kind": "vertex",
+   "width": 97,
+   "height": 85,
+   "style": "shape=mxgraph.signs.animals.fish_hatchery;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.fish_hatchery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-7-kennel",
+   "title": "Kennel",
+   "tags": "signs animals  Kennel Kennel",
+   "kind": "vertex",
+   "width": 97,
+   "height": 94,
+   "style": "shape=mxgraph.signs.animals.kennel;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.kennel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-8-moose",
+   "title": "Moose",
+   "tags": "signs animals  Moose Moose",
+   "kind": "vertex",
+   "width": 98,
+   "height": 65,
+   "style": "shape=mxgraph.signs.animals.moose;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.moose"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-9-no-dogs",
+   "title": "No Dogs",
+   "tags": "signs animals  No Dogs No Dogs",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.animals.no_dogs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.no_dogs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-10-seal",
+   "title": "Seal",
+   "tags": "signs animals  Seal Seal",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "shape=mxgraph.signs.animals.seal;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.seal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-11-sloth",
+   "title": "Sloth",
+   "tags": "signs animals  Sloth Sloth",
+   "kind": "vertex",
+   "width": 99,
+   "height": 81,
+   "style": "shape=mxgraph.signs.animals.sloth;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.sloth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-12-snake",
+   "title": "Snake",
+   "tags": "signs animals  Snake Snake",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.animals.snake;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.snake"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-13-stable",
+   "title": "Stable",
+   "tags": "signs animals  Stable Stable",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.animals.stable;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.stable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsAnimals-14-teddy-bear",
+   "title": "Teddy Bear",
+   "tags": "signs animals  Teddy Bear Teddy Bear",
+   "kind": "vertex",
+   "width": 69,
+   "height": 99,
+   "style": "shape=mxgraph.signs.animals.teddy_bear;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.animals.teddy_bear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "mockupMarkup",
+ "title": "Mockup Markup",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupMarkup-0-horizontal-curly-brace",
+   "title": "Horizontal Curly Brace",
+   "tags": "mockup markup curlyBrace horizontal curly brace Horizontal Curly Brace",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.curlyBrace;whiteSpace=wrap;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.curlyBrace"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:727"
+  },
+  {
+   "id": "mockupMarkup-1-vertical-curly-brace",
+   "title": "Vertical Curly Brace",
+   "tags": "mockup markup curlyBrace vertical curly brace Vertical Curly Brace",
+   "kind": "vertex",
+   "width": 20,
+   "height": 100,
+   "style": "labelPosition=right;align=left;strokeWidth=1;shape=mxgraph.mockup.markup.curlyBrace;html=1;shadow=0;dashed=0;strokeColor=#999999;direction=north;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.curlyBrace"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:729"
+  },
+  {
+   "id": "mockupMarkup-2-horizontal-line",
+   "title": "Horizontal Line",
+   "tags": "mockup markup line horizontal line Horizontal Line",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.line;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.line"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:731"
+  },
+  {
+   "id": "mockupMarkup-3-vertical-line",
+   "title": "Vertical Line",
+   "tags": "mockup markup line vertical line Vertical Line",
+   "kind": "vertex",
+   "width": 20,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.line;strokeColor=#999999;direction=north;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.line"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:733"
+  },
+  {
+   "id": "mockupMarkup-4-scratch-out",
+   "title": "Scratch Out",
+   "tags": "mockup markup scratchOut scratch out Scratch Out",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "shape=mxgraph.mockup.markup.scratchOut;shadow=0;dashed=0;html=1;whiteSpace=wrap;strokeColor=#999999;strokeWidth=4;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.scratchOut"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:735"
+  },
+  {
+   "id": "mockupMarkup-5-red-x",
+   "title": "Red X",
+   "tags": "mockup markup redX red Red X",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "shape=mxgraph.mockup.markup.redX;fillColor=#ff0000;html=1;shadow=0;whiteSpace=wrap;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.mockup.markup.redX"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:737"
+  }
+ ]
+}

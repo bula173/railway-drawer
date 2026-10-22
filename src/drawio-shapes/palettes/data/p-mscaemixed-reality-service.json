@@ -1,0 +1,22 @@
+{
+ "id": "mscaeMixed Reality Service",
+ "title": "CAE / Mixed Reality Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeMixed Reality Service-0-spatial-anchor",
+   "title": "Spatial Anchor",
+   "tags": "mscae spatial anchor ms microsoft cloud enterprise mixed reality service Spatial Anchor",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Spatial_Anchor.svg;points=[[0.456,0.3,0],[0.457,0.998,0],[0.226,0.499,0],[0.992,0.186,0],[0.95,0.065,0],[0.914,0.737,0],[0.019,0.697,0],[0.024,0.573,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1240"
+  }
+ ]
+}

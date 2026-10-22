@@ -1,0 +1,120 @@
+{
+ "id": "ciscoControllers and Modules",
+ "title": "Cisco / Controllers and Modules",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoControllers and Modules-0-10ge-fcoe",
+   "title": "10GE FCoE",
+   "tags": "cisco 10ge fcoe cisco controller module  10GE FCoE",
+   "kind": "vertex",
+   "width": 64,
+   "height": 88,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.10ge_fcoe;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.10ge_fcoe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:108"
+  },
+  {
+   "id": "ciscoControllers and Modules-1-3174-desktop-cluster-controller",
+   "title": "3174 (Desktop) Cluster Controller",
+   "tags": "cisco 3174 desktop cluster controller cisco controller module  3174 (Desktop) Cluster Controller",
+   "kind": "vertex",
+   "width": 77,
+   "height": 32,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.3174_(desktop)_cluster_controller;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.3174_(desktop)_cluster_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:109"
+  },
+  {
+   "id": "ciscoControllers and Modules-2-3x74-floor-cluster-controller",
+   "title": "3x74 (Floor) Cluster Controller",
+   "tags": "cisco 3x74 (floor) cluster controller cisco controller module  3x74 (Floor) Cluster Controller",
+   "kind": "vertex",
+   "width": 77,
+   "height": 66,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.3x74_(floor)_cluster_controller;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.3x74_(floor)_cluster_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:110"
+  },
+  {
+   "id": "ciscoControllers and Modules-3-content-switch-module",
+   "title": "Content Switch Module",
+   "tags": "cisco content switch module cisco controller module  Content Switch Module",
+   "kind": "vertex",
+   "width": 86,
+   "height": 64,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.content_switch_module;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.content_switch_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:111"
+  },
+  {
+   "id": "ciscoControllers and Modules-4-firewall-service-module-fwsm",
+   "title": "Firewall Service Module(FWSM)",
+   "tags": "cisco firewall service module fwsm cisco controller module  Firewall Service Module(FWSM)",
+   "kind": "vertex",
+   "width": 53,
+   "height": 85,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.firewall_service_module_(fwsm);",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.firewall_service_module_(fwsm)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:112"
+  },
+  {
+   "id": "ciscoControllers and Modules-5-service-module",
+   "title": "Service Module",
+   "tags": "cisco service module cisco controller module  Service Module",
+   "kind": "vertex",
+   "width": 51,
+   "height": 66,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.service_module;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.service_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:113"
+  },
+  {
+   "id": "ciscoControllers and Modules-6-system-controller",
+   "title": "System Controller",
+   "tags": "cisco system controller cisco controller module  System Controller",
+   "kind": "vertex",
+   "width": 61,
+   "height": 57.99999999999999,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.system_controller;",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.system_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:114"
+  },
+  {
+   "id": "ciscoControllers and Modules-7-virtual-switch-controller-vsc3000",
+   "title": "Virtual Switch Controller (VSC3000)",
+   "tags": "cisco virtual switch controller vsc3000 cisco controller module  Virtual Switch Controller (VSC3000)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 93,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.controllers_and_modules.virtual_switch_controller_(vsc3000);",
+   "shapeNames": [
+    "mxgraph.cisco.controllers_and_modules.virtual_switch_controller_(vsc3000)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:115"
+  }
+ ]
+}

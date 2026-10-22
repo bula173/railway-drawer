@@ -1,0 +1,135 @@
+{
+ "id": "pidCompressors",
+ "title": "Process Engineering / Compressors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidCompressors-0-ac-air-compressor",
+   "title": "AC Air Compressor",
+   "tags": "pid compressors ac air compressor pid process instrumentation engineering  AC Air Compressor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.ac_air_compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.ac_air_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:207"
+  },
+  {
+   "id": "pidCompressors-1-centrifugal-compressor",
+   "title": "Centrifugal Compressor",
+   "tags": "pid compressors centrifugal compressor pid process instrumentation engineering  Centrifugal Compressor",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.centrifugal_compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.centrifugal_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:208"
+  },
+  {
+   "id": "pidCompressors-2-centrifugal-compressor-turbine-driven",
+   "title": "Centrifugal Compressor - Turbine Driven",
+   "tags": "pid compressors centrifugal compressor - turbine driven pid process instrumentation engineering  Centrifugal Compressor - Turbine Driven",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "shape=mxgraph.pid.compressors.centrifugal_compressor_-_turbine_driven;dashed=0;fontSize=8;html=1;overflow=fill;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%;height:100%;\"><tr style=\"height:25%;\"><td></td></tr><tr style=\"height:75%;\"><td align=\"left\" style=\"padding-left:11%;width:100%\">T</td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid.compressors.centrifugal_compressor_-_turbine_driven"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:209"
+  },
+  {
+   "id": "pidCompressors-3-compressor",
+   "title": "Compressor",
+   "tags": "pid compressors compressor pid process instrumentation engineering  Compressor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:219"
+  },
+  {
+   "id": "pidCompressors-4-compressor-and-silencers",
+   "title": "Compressor and Silencers",
+   "tags": "pid compressors compressor and silencers pid process instrumentation engineering silencer Compressor and Silencers",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.compressor_and_silencers;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.pid.compressors.compressor_and_silencers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:220"
+  },
+  {
+   "id": "pidCompressors-5-liquid-ring-compressor",
+   "title": "Liquid Ring Compressor",
+   "tags": "pid compressors liquid ring compressor pid process instrumentation engineering  Liquid Ring Compressor",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.liquid_ring_compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.liquid_ring_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:221"
+  },
+  {
+   "id": "pidCompressors-6-reciprocating-compressor",
+   "title": "Reciprocating Compressor",
+   "tags": "pid compressors reciprocating compressor pid process instrumentation engineering  Reciprocating Compressor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.reciprocating_compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.reciprocating_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:222"
+  },
+  {
+   "id": "pidCompressors-7-reciprocating-compressor-2",
+   "title": "Reciprocating Compressor 2",
+   "tags": "pid compressors reciprocating compressor 2 pid process instrumentation engineering  Reciprocating Compressor 2",
+   "kind": "vertex",
+   "width": 50,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.reciprocating_compressor_2",
+   "shapeNames": [
+    "mxgraph.pid.compressors.reciprocating_compressor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:223"
+  },
+  {
+   "id": "pidCompressors-8-rotary-compressor",
+   "title": "Rotary Compressor",
+   "tags": "pid compressors rotary compressor pid process instrumentation engineering  Rotary Compressor",
+   "kind": "vertex",
+   "width": 42,
+   "height": 91,
+   "style": "verticalLabelPosition=bottom;outlineConnect=0;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.compressors.rotary_compressor",
+   "shapeNames": [
+    "mxgraph.pid.compressors.rotary_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:224"
+  }
+ ]
+}

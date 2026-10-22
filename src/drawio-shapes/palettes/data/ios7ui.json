@@ -1,0 +1,1266 @@
+{
+ "id": "ios7ui",
+ "title": "iOS UI",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Ios7.js:8",
+ "entries": [
+  {
+   "id": "ios7ui-0-iphone-portrait",
+   "title": "iPhone (Portrait)",
+   "tags": "ios7ui phone ios ui iphone portrait iPhone (Portrait)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 400,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.iphone;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.iphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:153"
+  },
+  {
+   "id": "ios7ui-1-ipad-7",
+   "title": "iPad (7'')",
+   "tags": "ios7ui tablet tab 7 ios ui ipad portrait iPad (7'')",
+   "kind": "vertex",
+   "width": 366,
+   "height": 549,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.ipad7inch;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.ipad7inch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:156"
+  },
+  {
+   "id": "ios7ui-2-ipad-10",
+   "title": "iPad (10'')",
+   "tags": "ios7ui tablet tab 10 ios ui ipad portrait iPad (10'')",
+   "kind": "vertex",
+   "width": 488,
+   "height": 693,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.ipad10inch;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.ipad10inch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:159"
+  },
+  {
+   "id": "ios7ui-3-ipad-13",
+   "title": "iPad (13'')",
+   "tags": "ios7ui tablet tab 10 ios ui ipad portrait iPad (13'')",
+   "kind": "vertex",
+   "width": 572,
+   "height": 813.0000000000001,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.ipad13inch;strokeColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.ipad13inch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:162"
+  },
+  {
+   "id": "ios7ui-4-app-bar-portrait",
+   "title": "App Bar (portrait)",
+   "tags": "ios ui app bar portrait App Bar (portrait)",
+   "kind": "cells",
+   "width": 175,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.appBar;fillColor=#ffffff;gradientColor=none;sketch=0;hachureGap=4;pointerEvents=0;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"-2.842170943040401e-14\" width=\"175\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"shape=rect;sketch=0;align=left;fontSize=8;spacingLeft=24;fontSize=4;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=4;hachureGap=4;pointerEvents=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"50\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"11:55PM\" style=\"shape=rect;sketch=0;fontSize=8;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=4;hachureGap=4;pointerEvents=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"50\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-30\" y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"98%\" style=\"shape=rect;align=right;fontSize=8;spacingRight=19;fontSize=6;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=4;sketch=0;hachureGap=4;pointerEvents=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"45\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-45\" y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios7ui.appBar",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:165"
+  },
+  {
+   "id": "ios7ui-5-app-bar-landscape",
+   "title": "App Bar (landscape)",
+   "tags": "ios ui app bar landscape App Bar (landscape)",
+   "kind": "cells",
+   "width": 280,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.appBar;fillColor=#ffffff;gradientColor=none;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"280\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"shape=rect;align=left;fontSize=8;spacingLeft=24;fontSize=4;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"50\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"11:55PM\" style=\"shape=rect;fontSize=8;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"50\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"98%\" style=\"shape=rect;align=right;fontSize=8;spacingRight=19;fontSize=6;fontColor=#aaaaaa;strokeColor=none;fillColor=none;spacingTop=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"45\" height=\"13\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-45\" y=\"-6.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios7ui.appBar",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:167"
+  },
+  {
+   "id": "ios7ui-6-slider",
+   "title": "Slider",
+   "tags": "ios7ui ios ui slider Slider",
+   "kind": "vertex",
+   "width": 150,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.slider;barPos=20;strokeColor=#0080f0;strokeColor2=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.ios7ui.slider"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:170"
+  },
+  {
+   "id": "ios7ui-7-download-bar",
+   "title": "Download bar",
+   "tags": "ios7ui downloadBar ios ui  Download bar",
+   "kind": "vertex",
+   "width": 150,
+   "height": 30,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;",
+   "value": "Downloading 2 of 6\n\n",
+   "shapeNames": [
+    "mxgraph.ios7ui.downloadBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:173"
+  },
+  {
+   "id": "ios7ui-8-adjust",
+   "title": "Adjust",
+   "tags": "ios7ui adjust ios ui  Adjust",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.adjust;gradientColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.adjust"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:176"
+  },
+  {
+   "id": "ios7ui-9-horizontal-button-bar",
+   "title": "Horizontal button bar",
+   "tags": "horizontal button bar",
+   "kind": "cells",
+   "width": 164,
+   "height": 12.5,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#0080F0;fillColor=#ffffff;fontColor=#000000;fontStyle=0;childLayout=stackLayout;horizontal=0;startSize=0;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.leftButton;rSize=3;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=3;fillColor=#0080F0;fontColor=#ffffff;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 3\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=3;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Item 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.rightButton;rSize=3;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41\" height=\"12.5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.bootstrap.leftButton",
+    "mxgraph.bootstrap.rightButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:180"
+  },
+  {
+   "id": "ios7ui-10-select-bar",
+   "title": "Select Bar",
+   "tags": "ios ui select bar Select Bar",
+   "kind": "cells",
+   "width": 165,
+   "height": 27,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;strokeWidth=2;shadow=0;dashed=0;shape=mxgraph.ios7ui.selectBar;dx=120;dy=5;dx2=75;size=5;strokeColor=#ffffff;fillColor=#222222;gradientColor=none;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"27\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Select\" style=\"shape=rect;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=12;fontFamily=Helvetica;perimeter=none;resizeHeight=1;sketch=0;hachureGap=4;pointerEvents=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"75\" height=\"27\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Select All\" style=\"shape=rect;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=12;fontFamily=Helvetica;perimeter=none;resizeHeight=1;sketch=0;hachureGap=4;pointerEvents=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"75\" height=\"27\" relative=\"1\" as=\"geometry\"><mxPoint x=\"75\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios7ui.selectBar",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:205"
+  },
+  {
+   "id": "ios7ui-11-select-bar",
+   "title": "Select Bar",
+   "tags": "ios ui select bar Select Bar",
+   "kind": "cells",
+   "width": 165,
+   "height": 27,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;strokeWidth=2;shadow=0;dashed=0;shape=mxgraph.ios7ui.selectBar;dx=120;dy=5;dx2=50;size=5;strokeColor=#ffffff;fillColor=#222222;gradientColor=none;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"27\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Select\" style=\"shape=rect;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=10;fontFamily=Helvetica;perimeter=none;resizeHeight=1;sketch=1;hachureGap=4;pointerEvents=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"50\" height=\"27\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Select All\" style=\"shape=rect;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=10;fontFamily=Helvetica;perimeter=none;resizeHeight=1;sketch=1;hachureGap=4;pointerEvents=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"50\" height=\"27\" relative=\"1\" as=\"geometry\"><mxPoint x=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Paste\" style=\"shape=rect;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=10;fontFamily=Helvetica;perimeter=none;resizeHeight=1;sketch=1;hachureGap=4;pointerEvents=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"50\" height=\"27\" relative=\"1\" as=\"geometry\"><mxPoint x=\"100\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios7ui.selectBar",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:207"
+  },
+  {
+   "id": "ios7ui-12-labels",
+   "title": "Labels",
+   "tags": "ios ui labels",
+   "kind": "cells",
+   "width": 164,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#F6F6F8;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Label\" style=\"text;fontSize=10;verticalAlign=middle;align=center;spacingTop=2;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"55\" width=\"54\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Label\" style=\"text;fontColor=#0080f0;fontSize=10;verticalAlign=middle;align=right;spacingTop=2;spacingRight=4;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"109\" width=\"55\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:210"
+  },
+  {
+   "id": "ios7ui-13-search-box",
+   "title": "Search Box",
+   "tags": "ios ui search box",
+   "kind": "cells",
+   "width": 164,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#e0e0e0;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.marginRect;rx=3;ry=3;rectMargin=5;strokeColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Search\" style=\"shape=mxgraph.ios7.icons.looking_glass;strokeColor=#e0e0e0;fillColor=none;fontColor=#e0e0e0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontSize=6;fontStyle=0;spacingTop=2;sketch=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"6\" height=\"6\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-17\" y=\"-3\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7ui.marginRect",
+    "mxgraph.ios7.icons.looking_glass"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:224"
+  },
+  {
+   "id": "ios7ui-14-search-box",
+   "title": "Search Box",
+   "tags": "ios ui search box",
+   "kind": "cells",
+   "width": 164,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#F6F6F6;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.marginRect;rx=3;ry=3;rectMargin=5;fillColor=#E4E4E4;strokeColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Search\" style=\"shape=mxgraph.ios7.icons.looking_glass;strokeColor=#878789;fillColor=none;fontColor=#878789;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontSize=6;fontStyle=0;spacingTop=2;sketch=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"6\" height=\"6\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-17\" y=\"-3\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7ui.marginRect",
+    "mxgraph.ios7.icons.looking_glass"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:240"
+  },
+  {
+   "id": "ios7ui-15-status",
+   "title": "Status",
+   "tags": "ios ui status Status",
+   "kind": "cells",
+   "width": 164,
+   "height": 25,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#F6F6F6;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Updated Just Now\" style=\"text;fontColor=#000000;fontSize=5;verticalAlign=top;align=center;spacingTop=-2;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"2 Unread\" style=\"text;fontColor=#bbbbbb;fontSize=5;verticalAlign=middle;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"5\" width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=mxgraph.ios7.icons.compose;strokeColor=#0080f0;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7.icons.compose"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:255"
+  },
+  {
+   "id": "ios7ui-16-message",
+   "title": "Message",
+   "tags": "ios ui message Message",
+   "kind": "cells",
+   "width": 164,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#F7F7F7;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"iMessage\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.marginRect;rx=3;ry=3;rectMarginLeft=25;rectMarginRight=25;rectMarginTop=3;rectMarginBottom=3;fillColor=#FBFBFB;strokeColor=#B3B3B3;fontColor=#B3B3B3;align=left;spacingLeft=29;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=1;strokeColor=#F7F7F7;fillColor=#666666;shape=mxgraph.ios7.icons.camera;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"15\" height=\"9\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-4.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeColor=none;fillColor=#666666;shape=ellipse;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"14\" height=\"14\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-19\" y=\"-7\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeColor=#F7F7F7;fillColor=none;shape=mxgraph.ios7.icons.microphone;strokeWidth=1;\" vertex=\"1\" parent=\"5\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"4\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-2\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7ui.marginRect",
+    "mxgraph.ios7.icons.camera",
+    "ellipse",
+    "mxgraph.ios7.icons.microphone"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:257"
+  },
+  {
+   "id": "ios7ui-17-action-sheet",
+   "title": "Action Sheet",
+   "tags": "ios ui action sheet Action Sheet",
+   "kind": "cells",
+   "width": 164,
+   "height": 115,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;rSize=3;strokeColor=none;fillColor=#D2D3D5;gradientColor=none;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"115\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Label\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.topButton;rSize=3;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Label\" style=\"shape=rect;html=1;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"25\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Label\" style=\"shape=rect;html=1;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"45\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Label\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.bottomButton;rSize=3;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"65\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Cancel\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.marginRect;rx=5;ry=5;rectMargin=5;strokeColor=#D2D3D5;fontSize=8;fillColor=#ffffff;fontColor=#0080F0;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"164\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-30\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7ui.topButton",
+    "mxgraph.ios7ui.bottomButton",
+    "mxgraph.ios7ui.marginRect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:259"
+  },
+  {
+   "id": "ios7ui-18-action-sheet",
+   "title": "Action Sheet",
+   "tags": "ios ui action sheet Action Sheet",
+   "kind": "cells",
+   "width": 164,
+   "height": 115,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;rSize=3;strokeColor=none;fillColor=#D2D3D5;gradientColor=none;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"115\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.topButton;rSize=3;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Message\" style=\"shape=rect;rounded=1;strokeColor=none;fontSize=5;fillColor=#68F783;fontColor=#000000;gradientColor=#05B61E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-4;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"0.5\" width=\"22\" height=\"22\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=mxgraph.basic.oval_callout;strokeColor=none;fillColor=#ffffff;\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"2\" y=\"3\" width=\"18\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Mail\" style=\"shape=rect;rounded=1;strokeColor=none;fontSize=5;fillColor=#1960EC;fontColor=#000000;gradientColor=#1FDCFF;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-4;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"0.5\" width=\"22\" height=\"22\" relative=\"1\" as=\"geometry\"><mxPoint x=\"37\" y=\"-15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=mxgraph.ios7.icons.mail;strokeColor=#2299F3;fillColor=#ffffff;\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"3\" y=\"6\" width=\"16\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.bottomButton;rSize=3;strokeColor=#D2D3D5;fontSize=8;fillColor=#F1F1F1;fontColor=#0080F0;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"154\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"45\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Open in App\" style=\"shape=rect;rounded=1;strokeColor=none;fontSize=5;fillColor=#ffffff;fontColor=#000000;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-7;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"8\"><mxGeometry y=\"0.5\" width=\"22\" height=\"22\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Open Link\" style=\"shape=rect;rounded=1;strokeColor=none;fontSize=5;fillColor=#ffffff;fontColor=#000000;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-7;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"8\"><mxGeometry y=\"0.5\" width=\"22\" height=\"22\" relative=\"1\" as=\"geometry\"><mxPoint x=\"37\" y=\"-15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"Cancel\" style=\"shape=mxgraph.ios7ui.marginRect;rx=3;ry=3;rectMargin=5;strokeColor=#D2D3D5;fontSize=8;fillColor=#ffffff;fontColor=#0080F0;resizeWidth=1;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"164\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-30\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7ui.topButton",
+    "mxgraph.basic.oval_callout",
+    "mxgraph.ios7.icons.mail",
+    "mxgraph.ios7ui.bottomButton",
+    "mxgraph.ios7ui.marginRect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:262"
+  },
+  {
+   "id": "ios7ui-19-cell-list",
+   "title": "Cell list",
+   "tags": "cell list",
+   "kind": "cells",
+   "width": 164,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=none;fillColor=#ffffff;fontColor=#000000;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#FF9501;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#FF3B2F;\" vertex=\"1\" parent=\"6\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#4CDA64;\" vertex=\"1\" parent=\"9\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"9\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#007AFF;\" vertex=\"1\" parent=\"12\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"12\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"15\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#5855D6;\" vertex=\"1\" parent=\"15\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"17\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"15\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"18\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=25;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"19\" value=\"\" style=\"shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#8F8E94;\" vertex=\"1\" parent=\"18\"><mxGeometry y=\"0.5\" width=\"15\" height=\"15\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-7.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"20\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;\" vertex=\"1\" parent=\"18\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "rect",
+    "mxgraph.ios7.misc.right"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:265"
+  },
+  {
+   "id": "ios7ui-20-cell-list",
+   "title": "Cell list",
+   "tags": "cell list",
+   "kind": "cells",
+   "width": 164,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=none;fillColor=#ffffff;fontColor=#000000;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=5;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Label\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=10;spacingRight=4;fontColor=#999999;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=5;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Label\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=10;spacingRight=4;fontColor=#999999;html=1;\" vertex=\"1\" parent=\"5\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Label\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;spacingLeft=5;dropTarget=0;fontSize=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Label\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=10;spacingRight=4;fontColor=#999999;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"1\" y=\"0.5\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"-5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.ios7.misc.right"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:358"
+  },
+  {
+   "id": "ios7ui-21-message",
+   "title": "Message",
+   "tags": "ios ui message Message",
+   "kind": "cells",
+   "width": 164,
+   "height": 35,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;strokeColor=none;fillColor=default;gradientColor=none;shadow=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"35\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Peter Gilles\" style=\"shape=ellipse;strokeColor=none;fillColor=#007FF8;fontSize=8;fontColor=#000000;align=left;spacingTop=1;spacingLeft=2;labelPosition=right;verticalLabelPosition=middle;verticalAlign=middle;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"10\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"22:45\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#666666;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=8;spacingRight=4;fontColor=#999999;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"5\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-15\" y=\"5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"I just got a new friend\" style=\"shape=text;strokeColor=none;align=left;verticalAlign=middle;fontSize=7;spacingLeft=17;fontColor=#000000;spacingTop=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;whiteSpace=wrap;html=1;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"You know I wanted a dog. Yesterday I got a puppy ...\" style=\"shape=text;strokeColor=none;align=left;verticalAlign=middle;fontSize=5;spacingLeft=17;fontColor=#808080;spacingTop=0;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;html=1;whiteSpace=wrap;spacingBottom=2;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint y=\"25\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "ellipse",
+    "mxgraph.ios7.misc.right",
+    "text"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:394"
+  },
+  {
+   "id": "ios7ui-22-message",
+   "title": "Message",
+   "tags": "ios ui message Message",
+   "kind": "cells",
+   "width": 164,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;strokeColor=none;fillColor=#ffffff;gradientColor=none;shadow=0;sketch=1;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Saturday 10:12 AM\" style=\"shape=text;align=center;verticalAlign=middle;fontSize=5;fontColor=#999999;strokeColor=none;fillColor=none;spacingTop=0;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Hey man, got a sec?\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.callout;strokeColor=none;fillColor=#E7E6EC;align=left;verticalAlign=middle;fontSize=6;spacingLeft=17;fontColor=#000000;spacingTop=0;whiteSpace=wrap;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"90\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"15\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Hi Tim, of course, just give me a couple minutes to finish breakfast.\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.callout;strokeColor=none;fillColor=#0680FF;flipH=1;align=left;verticalAlign=top;fontSize=6;spacingLeft=2;fontColor=#ffffff;spacingTop=-2;whiteSpace=wrap;spacingRight=12;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.35\" width=\"100\" height=\"35\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Read Friday\" style=\"shape=text;align=right;verticalAlign=middle;fontSize=5;fontColor=#999999;strokeColor=none;fillColor=none;spacingTop=0;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Verdana;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"164\" height=\"10\" relative=\"1\" as=\"geometry\"><mxPoint y=\"80\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "text",
+    "mxgraph.ios7ui.callout"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:396"
+  },
+  {
+   "id": "ios7ui-23-alert",
+   "title": "Alert",
+   "tags": "ios ui alert",
+   "kind": "cells",
+   "width": 120,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"A dialog text that notifies you of something of which you don't need to make a decision, just to acknowledge it by pressing the close button.\" style=\"shape=rect;rounded=1;strokeColor=none;fillColor=#F6F6F8;gradientColor=none;shadow=0;glass=0;dashed=1;fontFamily=Helvetica;fontSize=7;fontColor=#333333;align=center;html=1;verticalAlign=top;whiteSpace=wrap;spacing=8;spacingTop=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Close\" style=\"shape=text;align=center;verticalAlign=middle;fontSize=8;fontColor=#0680FF;strokeColor=none;fillColor=none;spacingTop=3;resizeWidth=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"120\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "text"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:399"
+  },
+  {
+   "id": "ios7ui-24-dialog",
+   "title": "Dialog",
+   "tags": "ios ui dialog Dialog",
+   "kind": "cells",
+   "width": 120,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"A dialog title\" style=\"shape=rect;rounded=1;strokeColor=none;fillColor=#F6F6F8;gradientColor=none;shadow=0;glass=0;dashed=1;fontFamily=Helvetica;fontSize=8;fontColor=#333333;align=center;html=1;verticalAlign=top;whiteSpace=wrap;spacing=2;spacingTop=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"A dialog text that notifies you of something and you need to decide which action to take.\" style=\"shape=text;align=center;verticalAlign=middle;fontSize=7;fontColor=#333333;strokeColor=none;fillColor=none;spacingTop=-6;resizeWidth=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"120\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Action 1\" style=\"shape=text;align=center;verticalAlign=middle;fontSize=8;fontColor=#0680FF;strokeColor=none;fillColor=none;spacingTop=0;resizeWidth=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"60\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Action 2\" style=\"shape=text;align=center;verticalAlign=middle;fontSize=8;fontColor=#0680FF;strokeColor=none;fillColor=none;spacingTop=0;resizeWidth=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"60\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "text"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:412"
+  },
+  {
+   "id": "ios7ui-25-bluetooth",
+   "title": "Bluetooth",
+   "tags": "ios7ui bluetooth ios ui  Bluetooth",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.bluetooth;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.bluetooth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:415"
+  },
+  {
+   "id": "ios7ui-26-broadcast",
+   "title": "Broadcast",
+   "tags": "ios7ui broadcast ios ui  Broadcast",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.broadcast;fillColor=#4CDA64;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.broadcast"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:418"
+  },
+  {
+   "id": "ios7ui-27-link",
+   "title": "Link",
+   "tags": "ios7ui link ios ui  Link",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.link;fillColor=#4CDA64;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.link"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:421"
+  },
+  {
+   "id": "ios7ui-28-night",
+   "title": "Night",
+   "tags": "ios7ui night ios ui  Night",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.night;fillColor=#5855D6;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.night"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:424"
+  },
+  {
+   "id": "ios7ui-29-notification",
+   "title": "Notification",
+   "tags": "ios7ui notification ios ui  Notification",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.notification;fillColor=#FF3B2F;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.notification"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:427"
+  },
+  {
+   "id": "ios7ui-30-settings",
+   "title": "Settings",
+   "tags": "ios7ui settings ios ui  Settings",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.settings;fillColor=#8F8E94;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:430"
+  },
+  {
+   "id": "ios7ui-31-switch",
+   "title": "Switch",
+   "tags": "ios7ui switch ios ui  Switch",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.switch;fillColor=#8F8E94;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:433"
+  },
+  {
+   "id": "ios7ui-32-text-size",
+   "title": "Text Size",
+   "tags": "ios7ui text size ios ui  Text Size",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.text_size;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.text_size"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:436"
+  },
+  {
+   "id": "ios7ui-33-travel",
+   "title": "Travel",
+   "tags": "ios7ui travel ios ui  Travel",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.travel;fillColor=#FF9501;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.travel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:439"
+  },
+  {
+   "id": "ios7ui-34-vpn",
+   "title": "VPN",
+   "tags": "ios7ui vpn virtual private network ios ui  VPN",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.vpn;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:442"
+  },
+  {
+   "id": "ios7ui-35-wifi",
+   "title": "WiFi",
+   "tags": "ios7ui wifi ios ui  WiFi",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.wifi;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.wifi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:445"
+  },
+  {
+   "id": "ios7ui-36-url",
+   "title": "URL",
+   "tags": "ios7ui url ios ui url URL",
+   "kind": "vertex",
+   "width": 165,
+   "height": 12.5,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.url;fillColor=#e0e0e0;strokeColor=#c0c0c0;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;spacingTop=2;fieldColor=#d8d8d8;align=center;whiteSpace=wrap;",
+   "value": "draw.io",
+   "shapeNames": [
+    "mxgraph.ios7ui.url"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:448"
+  },
+  {
+   "id": "ios7ui-37-icon-grid",
+   "title": "Icon grid",
+   "tags": "ios7ui iconGrid ios ui icon grid Icon grid",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.iconGrid;fillColor=#c0c0c0;gridSize=3,3;",
+   "shapeNames": [
+    "mxgraph.ios7ui.iconGrid"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:451"
+  },
+  {
+   "id": "ios7ui-38-action-dialog",
+   "title": "Action Dialog",
+   "tags": "ios ui action dialog",
+   "kind": "cells",
+   "width": 164,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;fillColor=#a0a0a0;strokeColor=none;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"164\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;rounded=1;absoluteArcSize=1;arcSize=6;fontColor=#0080F0;fontSize=7;fontSize=14;fillColor=#e0e0e0;strokeColor=none;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"8\" y=\"6\" width=\"148\" height=\"21\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Cancel\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;rounded=1;absoluteArcSize=1;arcSize=6;fontColor=#0080F0;fontSize=7;fontSize=14;fillColor=#e0e0e0;strokeColor=none;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"8\" y=\"33\" width=\"148\" height=\"21\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:455"
+  },
+  {
+   "id": "ios7ui-39-iphone-keyboard-letters",
+   "title": "iPhone Keyboard (letters)",
+   "tags": "ios7 misc keyboard letters ios ui  iPhone Keyboard (letters)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybLett;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybLett"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:469"
+  },
+  {
+   "id": "ios7ui-40-iphone-keyboard-numbers",
+   "title": "iPhone Keyboard (numbers)",
+   "tags": "ios7 misc keyboard letters ios ui  iPhone Keyboard (numbers)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybNumb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybNumb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:471"
+  },
+  {
+   "id": "ios7ui-41-iphone-keyboard-symbols",
+   "title": "iPhone Keyboard (symbols)",
+   "tags": "ios7 misc keyboard symbols ios ui  iPhone Keyboard (symbols)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybSymb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybSymb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:473"
+  },
+  {
+   "id": "ios7ui-42-ipad-7-keyboard-letters",
+   "title": "iPad 7''Keyboard (letters)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 7''Keyboard (letters)",
+   "kind": "vertex",
+   "width": 332,
+   "height": 144,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybLett;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybLett"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:475"
+  },
+  {
+   "id": "ios7ui-43-ipad-7-keyboard-numbers",
+   "title": "iPad 7'' Keyboard (numbers)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 7'' Keyboard (numbers)",
+   "kind": "vertex",
+   "width": 332,
+   "height": 144,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybNumb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybNumb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:477"
+  },
+  {
+   "id": "ios7ui-44-ipad-7-keyboard-symbols",
+   "title": "iPad 7'' Keyboard (symbols)",
+   "tags": "ios7 misc keyboard symbols ios ui  iPad 7'' Keyboard (symbols)",
+   "kind": "vertex",
+   "width": 332,
+   "height": 144,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybSymb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybSymb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:479"
+  },
+  {
+   "id": "ios7ui-45-ipad-10-keyboard-letters",
+   "title": "iPad 10''Keyboard (letters)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 10''Keyboard (letters)",
+   "kind": "vertex",
+   "width": 442,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybLett;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybLett"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:481"
+  },
+  {
+   "id": "ios7ui-46-ipad-10-keyboard-numbers",
+   "title": "iPad 10'' Keyboard (numbers)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 10'' Keyboard (numbers)",
+   "kind": "vertex",
+   "width": 442,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybNumb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybNumb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:483"
+  },
+  {
+   "id": "ios7ui-47-ipad-10-keyboard-symbols",
+   "title": "iPad 10'' Keyboard (symbols)",
+   "tags": "ios7 misc keyboard symbols ios ui  iPad 10'' Keyboard (symbols)",
+   "kind": "vertex",
+   "width": 442,
+   "height": 192,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybSymb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybSymb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:485"
+  },
+  {
+   "id": "ios7ui-48-ipad-13-keyboard-letters",
+   "title": "iPad 13''Keyboard (letters)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 13''Keyboard (letters)",
+   "kind": "vertex",
+   "width": 505.99999999999994,
+   "height": 220.00000000000003,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybLett;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybLett"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:487"
+  },
+  {
+   "id": "ios7ui-49-ipad-13-keyboard-numbers",
+   "title": "iPad 13'' Keyboard (numbers)",
+   "tags": "ios7 misc keyboard letters ios ui  iPad 13'' Keyboard (numbers)",
+   "kind": "vertex",
+   "width": 505.99999999999994,
+   "height": 220.00000000000003,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybNumb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybNumb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:489"
+  },
+  {
+   "id": "ios7ui-50-ipad-13-keyboard-symbols",
+   "title": "iPad 13'' Keyboard (symbols)",
+   "tags": "ios7 misc keyboard symbols ios ui  iPad 13'' Keyboard (symbols)",
+   "kind": "vertex",
+   "width": 505.99999999999994,
+   "height": 220.00000000000003,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybSymb;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybSymb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:491"
+  },
+  {
+   "id": "ios7ui-51-call-pad",
+   "title": "Call Pad",
+   "tags": "ios7 misc call pad ios ui  Call Pad",
+   "kind": "vertex",
+   "width": 140,
+   "height": 160,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.call_pad;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.call_pad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:493"
+  },
+  {
+   "id": "ios7ui-52-number-pad",
+   "title": "Number Pad",
+   "tags": "ios7 misc number pad ios ui  Number Pad",
+   "kind": "vertex",
+   "width": 140,
+   "height": 160,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.number_pad;strokeWidth=1;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.number_pad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:495"
+  },
+  {
+   "id": "ios7ui-53-keyboard",
+   "title": "Keyboard",
+   "tags": "ios7 misc keyboard (letters) ios ui  Keyboard",
+   "kind": "vertex",
+   "width": 175,
+   "height": 120,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.keyboard_(letters);sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.keyboard_(letters)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:498"
+  },
+  {
+   "id": "ios7ui-54-scroll-horizontal",
+   "title": "Scroll (Horizontal)",
+   "tags": "ios7 misc scroll (horizontal) ios ui  Scroll (Horizontal)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.scroll_(horizontal);fillColor=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.scroll_(horizontal)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:501"
+  },
+  {
+   "id": "ios7ui-55-scroll-vertical",
+   "title": "Scroll (Vertical)",
+   "tags": "ios7 misc scroll (vertical) ios ui  Scroll (Vertical)",
+   "kind": "vertex",
+   "width": 6,
+   "height": 80,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.scroll_(vertical);fillColor=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.scroll_(vertical)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:504"
+  },
+  {
+   "id": "ios7ui-56-add",
+   "title": "Add",
+   "tags": "ios7 misc add ios ui  Add",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.add;fillColor=#00dd00;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.add"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:507"
+  },
+  {
+   "id": "ios7ui-57-delete",
+   "title": "Delete",
+   "tags": "ios7 misc delete ios ui  Delete",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.delete;fillColor=#ff0000;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.delete"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:510"
+  },
+  {
+   "id": "ios7ui-58-select",
+   "title": "Select",
+   "tags": "ios7 misc select ios ui  Select",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.select;fillColor=#0080f0;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.select"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:513"
+  },
+  {
+   "id": "ios7ui-59-remove",
+   "title": "Remove",
+   "tags": "ios7 misc remove ios ui  Remove",
+   "kind": "vertex",
+   "width": 16,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.remove;fillColor=#0080f0;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.remove"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:516"
+  },
+  {
+   "id": "ios7ui-60-check",
+   "title": "Check",
+   "tags": "ios7 misc check ios ui  Check",
+   "kind": "vertex",
+   "width": 10,
+   "height": 8,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.check;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:519"
+  },
+  {
+   "id": "ios7ui-61-flagged",
+   "title": "Flagged",
+   "tags": "ios7 misc flagged ios ui  Flagged",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.flagged;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.flagged"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:522"
+  },
+  {
+   "id": "ios7ui-62-up",
+   "title": "Up",
+   "tags": "ios7 misc up ios ui  Up",
+   "kind": "vertex",
+   "width": 12,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.up;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:525"
+  },
+  {
+   "id": "ios7ui-63-down",
+   "title": "Down",
+   "tags": "ios7 misc down ios ui  Down",
+   "kind": "vertex",
+   "width": 12,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.down;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.down"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:528"
+  },
+  {
+   "id": "ios7ui-64-left",
+   "title": "Left",
+   "tags": "ios7 misc left ios ui  Left",
+   "kind": "vertex",
+   "width": 6,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.left;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.left"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:531"
+  },
+  {
+   "id": "ios7ui-65-right",
+   "title": "Right",
+   "tags": "ios7 misc right ios ui  Right",
+   "kind": "vertex",
+   "width": 6,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.right;strokeColor=#0080f0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.right"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:534"
+  },
+  {
+   "id": "ios7ui-66-increase",
+   "title": "Increase",
+   "tags": "ios7 misc increase ios ui  Increase",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.increase;strokeColor=#0080f0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.increase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:537"
+  },
+  {
+   "id": "ios7ui-67-info",
+   "title": "Info",
+   "tags": "ios7 misc info ios ui  Info",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.info;strokeColor=#0080f0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.info"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:540"
+  },
+  {
+   "id": "ios7ui-68-more-2",
+   "title": "More 2",
+   "tags": "ios7 misc more 2 ios ui  More 2",
+   "kind": "vertex",
+   "width": 6,
+   "height": 8,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.more_2;strokeColor=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.more_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:543"
+  },
+  {
+   "id": "ios7ui-69-more",
+   "title": "More",
+   "tags": "ios7 misc more ios ui  More",
+   "kind": "vertex",
+   "width": 5,
+   "height": 8,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.more;strokeColor=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.more"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:546"
+  },
+  {
+   "id": "ios7ui-70-options",
+   "title": "Options",
+   "tags": "ios7 misc options ios ui  Options",
+   "kind": "vertex",
+   "width": 12,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.options;fillColor=#222222;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.options"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:549"
+  },
+  {
+   "id": "ios7ui-71-pause",
+   "title": "Pause",
+   "tags": "ios7 misc pause ios ui  Pause",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.pause;strokeColor=#0080f0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.pause"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:552"
+  },
+  {
+   "id": "ios7ui-72-star",
+   "title": "Star",
+   "tags": "ios7 misc star ios ui  Star",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.star;fillColor=#0080f0;strokeColor=none;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:555"
+  },
+  {
+   "id": "ios7ui-73-contacts-bar",
+   "title": "Contacts Bar",
+   "tags": "ios7 misc contacts bar ios ui  Contacts Bar",
+   "kind": "vertex",
+   "width": 175,
+   "height": 28.000000000000004,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.contacts_bar;strokeColor=#0080F0;fillColor=#e0e0e0",
+   "shapeNames": [
+    "mxgraph.ios7.misc.contacts_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:558"
+  },
+  {
+   "id": "ios7ui-74-edit-bar",
+   "title": "Edit Bar",
+   "tags": "ios7 misc edit bar ios ui  Edit Bar",
+   "kind": "vertex",
+   "width": 175,
+   "height": 28.000000000000004,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.edit_bar;strokeColor=#0080F0;fillColor=#e0e0e0",
+   "shapeNames": [
+    "mxgraph.ios7.misc.edit_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:561"
+  },
+  {
+   "id": "ios7ui-75-message-bar",
+   "title": "Message Bar",
+   "tags": "ios7 misc message bar ios ui  Message Bar",
+   "kind": "vertex",
+   "width": 175,
+   "height": 28.000000000000004,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.message_bar;strokeColor=#0080F0;fillColor=#e0e0e0",
+   "shapeNames": [
+    "mxgraph.ios7.misc.message_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:564"
+  },
+  {
+   "id": "ios7ui-76-misc-bar",
+   "title": "Misc Bar",
+   "tags": "ios7 misc misc bar ios ui  Misc Bar",
+   "kind": "vertex",
+   "width": 175,
+   "height": 28.000000000000004,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.misc_bar;strokeColor=#0080F0;fillColor=#e0e0e0",
+   "shapeNames": [
+    "mxgraph.ios7.misc.misc_bar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:567"
+  },
+  {
+   "id": "ios7ui-77-on-off-button-on",
+   "title": "On-off button (On)",
+   "tags": "ios7ui onOffButton ios ui  On-off button (On)",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.onOffButton;buttonState=on;strokeColor=#38D145;strokeColor2=#aaaaaa;fillColor=#38D145;fillColor2=#ffffff;handleColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.ios7ui.onOffButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:570"
+  },
+  {
+   "id": "ios7ui-78-on-off-button-off",
+   "title": "On-off button (Off)",
+   "tags": "ios7ui onOffButton ios ui  On-off button (Off)",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.onOffButton;buttonState=off;strokeColor=#38D145;strokeColor2=#aaaaaa;fillColor=#38D145;fillColor2=#ffffff;handleColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.ios7ui.onOffButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:573"
+  },
+  {
+   "id": "ios7ui-79-icon",
+   "title": "Icon",
+   "tags": "ios7ui icon ios ui  Icon",
+   "kind": "vertex",
+   "width": 40,
+   "height": 36,
+   "style": "html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.icon;fontSize=8;fontColor=#ffffff;buttonText=;fillColor2=#00D0F0;fillColor3=#0080F0;whiteSpace=wrap;align=center;",
+   "value": "Icon",
+   "shapeNames": [
+    "mxgraph.ios7ui.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:576"
+  },
+  {
+   "id": "ios7ui-80-loading-circle",
+   "title": "Loading Circle",
+   "tags": "ios7 misc loading circle ios ui  Loading Circle",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.loading_circle;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.loading_circle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:579"
+  },
+  {
+   "id": "ios7ui-81-circle",
+   "title": "Circle",
+   "tags": "ios7 misc circle ios ui  Circle",
+   "kind": "vertex",
+   "width": 12,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.circle;strokeColor=#222222;fillColor=none;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.circle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:582"
+  },
+  {
+   "id": "ios7ui-82-page-control",
+   "title": "Page control",
+   "tags": "ios7ui pageControl ios ui  Page control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 5,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.pageControl;fillColor=#222222;strokeColor=#aaaaaa;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7ui.pageControl"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:585"
+  },
+  {
+   "id": "ios7ui-83-current-location",
+   "title": "Current Location",
+   "tags": "ios7 misc current location ios ui  Current Location",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.current_location;strokeColor=#ffffff;fillColor=#0080F0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.current_location"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:588"
+  },
+  {
+   "id": "ios7ui-84-expand",
+   "title": "Expand",
+   "tags": "ios7 misc expand ios ui  Expand",
+   "kind": "vertex",
+   "width": 24,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.expand;fillColor=#c0c0c0;",
+   "shapeNames": [
+    "mxgraph.ios7.misc.expand"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:591"
+  },
+  {
+   "id": "ios7ui-85-volume-control",
+   "title": "Volume Control",
+   "tags": "ios ui volume control Volume Control",
+   "kind": "cells",
+   "width": 160,
+   "height": 14,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;strokeColor=none;fillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=mxgraph.ios7.misc.volume_down;fillColor=#666666;strokeColor=none;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"6\" height=\"8\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-4\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.ios7.misc.volume_up;fillColor=#666666;strokeColor=none;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"14\" height=\"14\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-14\" y=\"-7\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.slider;barPos=60;strokeColor=#0680FF;opacity=100;fillColor=#FFFFFF;handleSize=14;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"18\" width=\"116\" height=\"14\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ios7.misc.volume_down",
+    "mxgraph.ios7.misc.volume_up",
+    "mxgraph.ios7ui.slider"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:594"
+  },
+  {
+   "id": "ios7ui-86-picker",
+   "title": "Picker",
+   "tags": "picker",
+   "kind": "cells",
+   "width": 175,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=none;fillColor=none;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"175\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#A0A0A0;spacingLeft=5;dropTarget=0;fontSize=15;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"175\" height=\"32\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#A0A0A0;spacingLeft=5;dropTarget=0;fontSize=15;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"175\" height=\"32\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 3\" style=\"text;shape=mxgraph.ios7ui.horLines;strokeColor=#A0A0A0;align=center;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#222222;spacingLeft=5;dropTarget=0;fontSize=15;strokeWidth=2;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"172\" height=\"32\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Item 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#A0A0A0;spacingLeft=5;dropTarget=0;fontSize=15;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"175\" height=\"32\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Item 5\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;overflow=visible;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#A0A0A0;spacingLeft=5;dropTarget=0;fontSize=15;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"175\" height=\"32\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.ios7ui.horLines"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:597"
+  }
+ ]
+}

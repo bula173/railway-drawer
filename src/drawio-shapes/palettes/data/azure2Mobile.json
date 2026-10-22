@@ -1,0 +1,50 @@
+{
+ "id": "azure2Mobile",
+ "title": "Azure / Mobile",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Mobile-0-app-services",
+   "title": "App Services",
+   "tags": "azure2 app services azure mobile  App Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.865,0.153,0],[0.875,0.835,0],[0.125,0.835,0],[0.133,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1375"
+  },
+  {
+   "id": "azure2Mobile-1-notification-hubs",
+   "title": "Notification Hubs",
+   "tags": "azure2 notification hubs azure mobile  Notification Hubs",
+   "kind": "vertex",
+   "width": 67,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/Notification_Hubs.svg;points=[[0.5,0,0],[0.675,1,0],[0,0.424,0],[1,0.424,0],[0.992,0.012,0],[0.992,0.835,0],[0.015,0.844,0],[0.008,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1377"
+  },
+  {
+   "id": "azure2Mobile-2-power-platform",
+   "title": "Power Platform",
+   "tags": "azure2 power platform azure mobile  Power Platform",
+   "kind": "vertex",
+   "width": 64.92,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Power_Platform.svg;points=[[0.61,0,0],[0.086,0.5,0],[1,0.164,0],[0.966,0.063,0],[0.814,0.552,0],[0.147,0.987,0],[0.343,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1379"
+  }
+ ]
+}

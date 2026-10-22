@@ -1,0 +1,232 @@
+{
+ "id": "allied_telesisSwitch",
+ "title": "Allied Telesis / Switch",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisSwitch-0-industrial-ethernet-ie200",
+   "title": "Industrial Ethernet IE200",
+   "tags": "industrial ethernet ie200 allied telesis Industrial Ethernet IE200",
+   "kind": "vertex",
+   "width": 40.2,
+   "height": 56.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Industrial_Ethernet_IE200.svg;points=[[0.561,0,0],[0.432,1,0],[0,0.512,0],[0.993,0.486,0],[0.985,0.18,0],[0.989,0.787,0],[0.011,0.822,0],[0.004,0.213,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:201"
+  },
+  {
+   "id": "allied_telesisSwitch-1-industrial-ethernet-ie200-poe",
+   "title": "Industrial Ethernet IE200 POE",
+   "tags": "industrial ethernet ie200 poe allied telesis Industrial Ethernet IE200 POE",
+   "kind": "vertex",
+   "width": 40.2,
+   "height": 56.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Industrial_Ethernet_IE200_POE.svg;points=[[0.563,0,0],[0.432,1,0],[0,0.512,0],[0.993,0.486,0],[0.985,0.18,0],[0.989,0.787,0],[0.011,0.822,0],[0.004,0.213,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:203"
+  },
+  {
+   "id": "allied_telesisSwitch-2-industrial-ethernet-ie300",
+   "title": "Industrial_Ethernet_IE300",
+   "tags": "industrial ethernet ie300 allied telesis Industrial_Ethernet_IE300",
+   "kind": "vertex",
+   "width": 69.6,
+   "height": 77.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Industrial_Ethernet_IE300.svg;points=[[0.415,0,0],[0.583,0.998,0],[0,0.446,0],[0.997,0.55,0],[0.997,0.298,0],[0.997,0.802,0],[0,0.697,0],[0,0.195,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:205"
+  },
+  {
+   "id": "allied_telesisSwitch-3-modular-switch-sbx8106",
+   "title": "Modular Switch SBx8106",
+   "tags": "modular switch sbx8106 allied telesis Modular Switch SBx8106",
+   "kind": "vertex",
+   "width": 85.8,
+   "height": 73.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Modular_Switch_SBx8106.svg;points=[[0.444,0,0],[0.559,0.997,0],[0,0.442,0],[1,0.557,0],[1,0.381,0],[1,0.732,0],[0.005,0.619,0],[0.005,0.265,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:207"
+  },
+  {
+   "id": "allied_telesisSwitch-4-modular-switch-sbx8112",
+   "title": "Modular Switch SBx8112",
+   "tags": "modular switch sbx8112 allied telesis Modular Switch SBx8112",
+   "kind": "vertex",
+   "width": 89.4,
+   "height": 91.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Modular_Switch_SBx8112.svg;points=[[0.463,0,0],[0.54,1,0],[0,0.46,0],[1,0.535,0],[1,0.3,0],[1,0.77,0],[0,0.685,0],[0,0.235,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:209"
+  },
+  {
+   "id": "allied_telesisSwitch-5-modular-switch-sxx908gen2",
+   "title": "Modular Switch SXx908GEN2",
+   "tags": "modular switch sxx908gen2 allied telesis Modular Switch SXx908GEN2",
+   "kind": "vertex",
+   "width": 78,
+   "height": 66.60000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Modular_Switch_SXx908GEN2.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.405,0],[1,0.595,0],[0.997,0.424,0],[0.997,0.766,0],[0.005,0.576,0],[0.005,0.234,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:211"
+  },
+  {
+   "id": "allied_telesisSwitch-6-switch-24-port-l2",
+   "title": "Switch 24 port L2",
+   "tags": "switch 24 port l2 allied telesis Switch 24 port L2",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 51,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_24_port_L2.svg;points=[[0.352,0,0],[0.5,0.876,0],[0.077,0.5,0],[0.93,0.5,0],[0.992,0.555,0],[0.99,0.733,0],[0.005,0.441,0],[0.005,0.263,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:213"
+  },
+  {
+   "id": "allied_telesisSwitch-7-switch-24-port-l2-poe",
+   "title": "Switch 24 port L2 POE",
+   "tags": "switch 24 port l2 poe allied telesis Switch 24 port L2 POE",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 51,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_24_port_L2_POE.svg;points=[[0.352,0,0],[0.5,0.876,0],[0.077,0.5,0],[0.93,0.5,0],[0.992,0.555,0],[0.99,0.733,0],[0.005,0.441,0],[0.005,0.263,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:215"
+  },
+  {
+   "id": "allied_telesisSwitch-8-switch-24-port-l3",
+   "title": "Switch 24 port L3",
+   "tags": "switch 24 port l3 allied telesis Switch 24 port L3",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 51,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_24_port_L3.svg;points=[[0.352,0,0],[0.5,0.876,0],[0.077,0.5,0],[0.93,0.5,0],[0.992,0.555,0],[0.99,0.733,0],[0.005,0.441,0],[0.005,0.263,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:217"
+  },
+  {
+   "id": "allied_telesisSwitch-9-switch-24-port-l3-alternative",
+   "title": "Switch 24 port L3 Alternative",
+   "tags": "switch 24 port l3 alternative allied telesis Switch 24 port L3 Alternative",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_24_port_L3_Alternative.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:219"
+  },
+  {
+   "id": "allied_telesisSwitch-10-switch-24-port-l3-poe",
+   "title": "Switch 24 port L3 POE",
+   "tags": "switch 24 port l3 poe allied telesis Switch 24 port L3 POE",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 51,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_24_port_L3_POE.svg;points=[[0.352,0,0],[0.5,0.876,0],[0.077,0.5,0],[0.93,0.5,0],[0.992,0.555,0],[0.99,0.733,0],[0.005,0.441,0],[0.005,0.263,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:221"
+  },
+  {
+   "id": "allied_telesisSwitch-11-switch-48-port-l2",
+   "title": "Switch 48 port L2",
+   "tags": "switch 48 port l2 allied telesis Switch 48 port L2",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_48_port_L2.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:223"
+  },
+  {
+   "id": "allied_telesisSwitch-12-switch-48-port-l2-poe",
+   "title": "Switch 48 port L2 POE",
+   "tags": "switch 48 port l2 poe allied telesis Switch 48 port L2 POE",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_48_port_L2_POE.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:225"
+  },
+  {
+   "id": "allied_telesisSwitch-13-switch-48-port-l3",
+   "title": "Switch 48 port L3",
+   "tags": "switch 48 port l3 allied telesis Switch 48 port L3",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_48_port_L3.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:227"
+  },
+  {
+   "id": "allied_telesisSwitch-14-switch-48-port-l3-poe",
+   "title": "Switch 48 port L3 POE",
+   "tags": "switch 48 port l3 poe allied telesis Switch 48 port L3 POE",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_48_port_L3_POE.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:229"
+  },
+  {
+   "id": "allied_telesisSwitch-15-switch-52-port-l3",
+   "title": "Switch 52 port L3",
+   "tags": "switch 52 port l3 allied telesis Switch 52 port L3",
+   "kind": "vertex",
+   "width": 78,
+   "height": 52.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/switch/Switch_52_port_L3.svg;points=[[0.386,0,0],[0.615,1,0],[0,0.38,0],[1,0.62,0],[0.997,0.536,0],[0.997,0.704,0],[0.005,0.464,0],[0.008,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:231"
+  }
+ ]
+}

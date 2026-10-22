@@ -1,0 +1,316 @@
+{
+ "id": "aws3Analytics",
+ "title": "AWS17 / Analytics",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Analytics-0-athena",
+   "title": "Athena",
+   "tags": "aws3 athena aws amazon web service analytics Athena",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 76.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.athena;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.athena"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:67"
+  },
+  {
+   "id": "aws3Analytics-1-cloudsearch",
+   "title": "CloudSearch",
+   "tags": "aws3 cloudsearch cloud search aws amazon web service analytics CloudSearch",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudsearch;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloudsearch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:69"
+  },
+  {
+   "id": "aws3Analytics-2-elasticsearch-service",
+   "title": "ElasticSearch Service",
+   "tags": "aws3 elasticsearch elastic search service aws amazon web service analytics ElasticSearch Service",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elasticsearch_service;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elasticsearch_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:71"
+  },
+  {
+   "id": "aws3Analytics-3-emr",
+   "title": "EMR",
+   "tags": "aws3 emr aws amazon web service analytics EMR",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:73"
+  },
+  {
+   "id": "aws3Analytics-4-kinesis",
+   "title": "Kinesis",
+   "tags": "aws3 kinesis aws amazon web service analytics Kinesis",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.kinesis;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.kinesis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:75"
+  },
+  {
+   "id": "aws3Analytics-5-quicksight",
+   "title": "QuickSight",
+   "tags": "aws3 quicksight quick sight aws amazon web service analytics QuickSight",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.quicksight;fillColor=#00B7F4;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.quicksight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:77"
+  },
+  {
+   "id": "aws3Analytics-6-redshift",
+   "title": "Redshift",
+   "tags": "aws3 redshift aws amazon web service analytics Redshift",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redshift;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.redshift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:79"
+  },
+  {
+   "id": "aws3Analytics-7-data-pipeline",
+   "title": "Data Pipeline",
+   "tags": "aws3 data pipeline aws amazon web service analytics Data Pipeline",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.data_pipeline;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.data_pipeline"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:81"
+  },
+  {
+   "id": "aws3Analytics-8-search-documents",
+   "title": "Search Documents",
+   "tags": "aws3 search documents aws amazon web service analytics Search Documents",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.search_documents;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.search_documents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:83"
+  },
+  {
+   "id": "aws3Analytics-9-cluster",
+   "title": "Cluster",
+   "tags": "aws3 emr cluster aws amazon web service analytics Cluster",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr_cluster;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:85"
+  },
+  {
+   "id": "aws3Analytics-10-emr-engine",
+   "title": "EMR engine",
+   "tags": "aws3 emr engine aws amazon web service analytics EMR engine",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr_engine;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:87"
+  },
+  {
+   "id": "aws3Analytics-11-emr-engine-mapr-m3",
+   "title": "EMR engine MapR M3",
+   "tags": "aws3 emr engine MapR M3 aws amazon web service analytics EMR engine MapR M3",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr_engine_mapr_m3;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr_engine_mapr_m3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:89"
+  },
+  {
+   "id": "aws3Analytics-12-emr-engine-mapr-m5",
+   "title": "EMR engine MapR M5",
+   "tags": "aws3 emr engine MapR M5 aws amazon web service analytics EMR engine MapR M5",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr_engine_mapr_m5;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr_engine_mapr_m5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:91"
+  },
+  {
+   "id": "aws3Analytics-13-emr-engine-mapr-m7",
+   "title": "EMR engine MapR M7",
+   "tags": "aws3 emr engine MapR M7 aws amazon web service analytics EMR engine MapR M7",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.emr_engine_mapr_m7;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.emr_engine_mapr_m7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:93"
+  },
+  {
+   "id": "aws3Analytics-14-glue",
+   "title": "Glue",
+   "tags": "aws3 glue aws amazon web service analytics Glue",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 99,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.glue;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.glue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:95"
+  },
+  {
+   "id": "aws3Analytics-15-hdfs-cluster",
+   "title": "HDFS Cluster",
+   "tags": "aws3 hdfs Cluster aws amazon web service analytics HDFS Cluster",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.hdfs_cluster;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.hdfs_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:97"
+  },
+  {
+   "id": "aws3Analytics-16-kinesis-analytics",
+   "title": "Kinesis Analytics",
+   "tags": "aws3 kinesis analytics aws amazon web service analytics Kinesis Analytics",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.kinesis_analytics;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.kinesis_analytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:99"
+  },
+  {
+   "id": "aws3Analytics-17-kinesis-enabled-app",
+   "title": "Kinesis-enabled app",
+   "tags": "aws3 kinesis enabled app aws amazon web service analytics Kinesis-enabled app",
+   "kind": "vertex",
+   "width": 64.5,
+   "height": 67.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.kinesis_enabled_app;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.kinesis_enabled_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:101"
+  },
+  {
+   "id": "aws3Analytics-18-kinesis-firehose",
+   "title": "Kinesis Firehose",
+   "tags": "aws3 kinesis firehose aws amazon web service analytics Kinesis Firehose",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.kinesis_firehose;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.kinesis_firehose"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:103"
+  },
+  {
+   "id": "aws3Analytics-19-kinesis-streams",
+   "title": "Kinesis Streams",
+   "tags": "aws3 kinesis streams aws amazon web service analytics Kinesis Streams",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.kinesis_streams;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.kinesis_streams"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:105"
+  },
+  {
+   "id": "aws3Analytics-20-dense-compute-node",
+   "title": "Dense Compute Node",
+   "tags": "aws3 dense compute node aws amazon web service analytics Dense Compute Node",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dense_compute_node;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.dense_compute_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:107"
+  },
+  {
+   "id": "aws3Analytics-21-dense-storage-node",
+   "title": "Dense Storage Node",
+   "tags": "aws3 dense storage node aws amazon web service analytics Dense Storage Node",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dense_storage_node;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.dense_storage_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:109"
+  }
+ ]
+}

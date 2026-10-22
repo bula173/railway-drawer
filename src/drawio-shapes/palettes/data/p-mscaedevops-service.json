@@ -1,0 +1,120 @@
+{
+ "id": "mscaeDevOps Service",
+ "title": "CAE / DevOps Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeDevOps Service-0-application-insights",
+   "title": "Application Insights",
+   "tags": "mscae application insights ms microsoft cloud enterprise devops service Application Insights",
+   "kind": "vertex",
+   "width": 32,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Application_Insights.svg;points=[[0.486,0,0],[0.496,0.998,0],[0,0.294,0],[0.988,0.302,0],[0.913,0.13,0],[0.656,0.93,0],[0.337,0.93,0],[0.063,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:863"
+  },
+  {
+   "id": "mscaeDevOps Service-1-azure-artifacts",
+   "title": "Azure Artifacts",
+   "tags": "mscae azure artifacts ms microsoft cloud enterprise devops service Azure Artifacts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Artifacts.svg;points=[[0.501,0,0],[0.5,1,0],[0.03,0.5,0],[0.97,0.5,0],[0.817,0.008,0],[0.992,0.985,0],[0.013,0.99,0],[0.183,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:865"
+  },
+  {
+   "id": "mscaeDevOps Service-2-azure-boards",
+   "title": "Azure Boards",
+   "tags": "mscae azure boards ms microsoft cloud enterprise devops service Azure Boards",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Boards.svg;points=[[0.449,0,0],[0.5,0.915,0],[0,0.5,0],[0.91,0.5,0],[0.88,0.005,0],[0.922,0.9,0],[0.013,0.74,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:867"
+  },
+  {
+   "id": "mscaeDevOps Service-3-azure-devops",
+   "title": "Azure DevOps",
+   "tags": "mscae azure devops ms microsoft cloud enterprise devops service Azure DevOps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_DevOps.svg;points=[[0.43,0,0],[0.5,0.911,0],[0,0.511,0],[1,0.49,0],[1,0.183,0],[1,0.797,0],[0,0.657,0],[0.098,0.238,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:869"
+  },
+  {
+   "id": "mscaeDevOps Service-4-azure-devtest-labs",
+   "title": "Azure DevTest Labs",
+   "tags": "mscae azure devtest labs ms microsoft cloud enterprise devops service Azure DevTest Labs",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/DevTest_Labs.svg;points=[[0.571,0,0],[0.603,1,0],[0,0.412,0],[1,0.511,0],[0.77,0.07,0],[0.93,0.985,0],[0.278,0.985,0],[0.078,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:871"
+  },
+  {
+   "id": "mscaeDevOps Service-5-azure-pipelines",
+   "title": "Azure Pipelines",
+   "tags": "mscae azure pipelines ms microsoft cloud enterprise devops service Azure Pipelines",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Pipelines.svg;points=[[0.5,0.06,0],[0.499,0.999,0],[0,0.499,0],[0.932,0.5,0],[0.985,0.013,0],[0.737,0.98,0],[0,0.997,0],[0.015,0.26,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:873"
+  },
+  {
+   "id": "mscaeDevOps Service-6-azure-repos",
+   "title": "Azure Repos",
+   "tags": "mscae azure repos ms microsoft cloud enterprise devops service Azure Repos",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Repos.svg;points=[[0.5,0,0],[0.5,0.995,0],[0,0.569,0],[1,0.57,0],[0.991,0.168,0],[0.991,0.972,0],[0.009,0.972,0],[0.009,0.168,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:875"
+  },
+  {
+   "id": "mscaeDevOps Service-7-azure-test-plans",
+   "title": "Azure Test Plans",
+   "tags": "mscae azure test plans ms microsoft cloud enterprise devops service Azure Test Plans",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Test_Plans.svg;points=[[0.496,0.04,0],[0.5,0.96,0],[0.197,0.5,0],[0.8,0.5,0],[0.711,0.05,0],[0.977,0.912,0],[0.025,0.915,0],[0.287,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:877"
+  }
+ ]
+}

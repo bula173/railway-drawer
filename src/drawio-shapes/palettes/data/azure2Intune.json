@@ -1,0 +1,260 @@
+{
+ "id": "azure2Intune",
+ "title": "Azure / Intune",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Intune-0-ad-roles-and-administrators",
+   "title": "AD Roles and Administrators",
+   "tags": "azure2 ad roles administrators azure intune  AD Roles and Administrators",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Azure_AD_Roles_and_Administrators.svg;points=[[0.439,0,0],[0.5,0.963,0],[0.186,0.5,0],[1,0.75,0],[0.605,0.063,0],[1,0.877,0],[0.025,0.942,0],[0.25,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1087"
+  },
+  {
+   "id": "azure2Intune-1-client-apps",
+   "title": "Client Apps",
+   "tags": "azure2 client apps azure intune  Client Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Client_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.013,0],[0.995,0.982,0],[0.013,0.99,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1089"
+  },
+  {
+   "id": "azure2Intune-2-device-compliance",
+   "title": "Device Compliance",
+   "tags": "azure2 device compliance azure intune  Device Compliance",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Compliance.svg;points=[[0.5,0,0],[0.507,1,0],[0.003,0.499,0],[0.997,0.779,0],[0.654,0.013,0],[0.997,0.992,0],[0.009,0.99,0],[0.006,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1091"
+  },
+  {
+   "id": "azure2Intune-3-device-configuration",
+   "title": "Device Configuration",
+   "tags": "azure2 device configuration azure intune  Device Configuration",
+   "kind": "vertex",
+   "width": 62,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Configuration.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.734,0],[0.649,0.008,0],[0.945,0.91,0],[0.006,0.99,0],[0.003,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1093"
+  },
+  {
+   "id": "azure2Intune-4-device-enrollment",
+   "title": "Device Enrollment",
+   "tags": "azure2 device enrollment azure intune  Device Enrollment",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.4,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Enrollment.svg;points=[[0.463,0,0],[0.5,0.927,0],[0,0.5,0],[1,0.597,0],[0.92,0.012,0],[0.995,0.997,0],[0.015,0.74,0],[0.01,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1095"
+  },
+  {
+   "id": "azure2Intune-5-device-security-apple",
+   "title": "Device Security Apple",
+   "tags": "azure2 device security apple azure intune  Device Security Apple",
+   "kind": "vertex",
+   "width": 68,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Security_Apple.svg;points=[[0.5,0.055,0],[0.5,0.998,0],[0.023,0.5,0],[1,0.5,0],[0.698,0.11,0],[1,0.985,0],[0.32,0.987,0],[0,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1097"
+  },
+  {
+   "id": "azure2Intune-6-device-security-google",
+   "title": "Device Security Google",
+   "tags": "azure2 device security google azure intune  Device Security Google",
+   "kind": "vertex",
+   "width": 68,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Security_Google.svg;points=[[0.5,0.055,0],[0.5,0.998,0],[0.023,0.5,0],[1,0.5,0],[0.698,0.11,0],[1,0.985,0],[0.32,0.987,0],[0,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1099"
+  },
+  {
+   "id": "azure2Intune-7-device-security-windows",
+   "title": "Device Security Windows",
+   "tags": "azure2 device security windows azure intune  Device Security Windows",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Device_Security_Windows.svg;points=[[0.5,0.05,0],[0.5,1,0],[0.025,0.5,0],[0.998,0.5,0],[0.692,0.103,0],[0.992,0.995,0],[0.32,0.99,0],[0.01,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1101"
+  },
+  {
+   "id": "azure2Intune-8-devices",
+   "title": "Devices",
+   "tags": "azure2 devices azure intune  Devices",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Devices.svg;points=[[0.463,0,0],[0.785,1,0],[0,0.5,0],[1,0.596,0],[0.912,0.006,0],[0.99,1,0],[0.018,0.742,0],[0.018,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1103"
+  },
+  {
+   "id": "azure2Intune-9-ebooks",
+   "title": "eBooks",
+   "tags": "azure2 ebooks azure intune  eBooks",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/eBooks.svg;points=[[0.5,0.072,0],[0.5,0.997,0],[0,0.561,0],[1,0.561,0],[0.887,0.006,0],[0.99,0.983,0],[0.013,0.985,0],[0.11,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1105"
+  },
+  {
+   "id": "azure2Intune-10-engage-center-connect",
+   "title": "Engage Center Connect",
+   "tags": "azure2 engage center connect services hub azure intune  Engage Center Connect",
+   "kind": "vertex",
+   "width": 68,
+   "height": 54.04,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Engage_Center_Connect.svg;points=[[0.364,0.003,0],[0.5,1,0],[0.184,0.5,0],[0.968,0.5,0],[0.902,0.076,0],[0.955,0.827,0],[0.023,0.984,0],[0.238,0.057,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1107"
+  },
+  {
+   "id": "azure2Intune-11-exchange-access",
+   "title": "Exchange Access",
+   "tags": "azure2 exchange access azure intune  Exchange Access",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Exchange_Access.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.5,0],[0.993,0.13,0],[0.854,0.757,0],[0.152,0.765,0],[0.007,0.13,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1109"
+  },
+  {
+   "id": "azure2Intune-12-intune",
+   "title": "Intune",
+   "tags": "azure2 intune azure intune  Intune",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Intune.svg;points=[[0.445,0,0],[0.5,0.901,0],[0,0.5,0],[1,0.5,0],[0.875,0.003,0],[0.992,0.997,0],[0.22,0.901,0],[0.01,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1111"
+  },
+  {
+   "id": "azure2Intune-13-intune-for-education",
+   "title": "Intune for Education",
+   "tags": "azure2 intune for education azure intune  Intune for Education",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Intune_For_Education.svg;points=[[0.445,0,0],[0.5,0.901,0],[0,0.5,0],[1,0.5,0],[0.875,0.003,0],[0.992,0.997,0],[0.22,0.901,0],[0.01,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1113"
+  },
+  {
+   "id": "azure2Intune-14-mindaro",
+   "title": "Mindaro",
+   "tags": "azure2 mindaro azure intune  Mindaro",
+   "kind": "vertex",
+   "width": 67.2,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Mindaro.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.593,0],[1,0.58,0],[0.734,0.135,0],[1,0.865,0],[0,0.865,0],[0.264,0.135,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1115"
+  },
+  {
+   "id": "azure2Intune-15-security-baselines",
+   "title": "Security Baselines",
+   "tags": "azure2 security baselines azure intune  Security Baselines",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Security_Baselines.svg;points=[[0.5,0.05,0],[0.5,1,0],[0.025,0.5,0],[0.998,0.5,0],[0.692,0.103,0],[0.992,0.995,0],[0.32,0.99,0],[0.01,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1117"
+  },
+  {
+   "id": "azure2Intune-16-software-updates",
+   "title": "Software Updates",
+   "tags": "azure2 software updates azure intune  Software Updates",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Software_Updates.svg;points=[[0.5,0.003,0],[0.715,0.997,0],[0,0.408,0],[1,0.408,0],[0.992,0.015,0],[0.865,0.937,0],[0.015,0.807,0],[0.008,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1119"
+  },
+  {
+   "id": "azure2Intune-17-tenant-status",
+   "title": "Tenant Status",
+   "tags": "azure2 tenant status azure intune  Tenant Status",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/intune/Tenant_Status.svg;points=[[0.447,0,0],[0.5,0.927,0],[0.17,0.499,0],[1,0.741,0],[0.641,0.085,0],[0.922,0.887,0],[0.016,0.9,0],[0.258,0.08,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1121"
+  }
+ ]
+}

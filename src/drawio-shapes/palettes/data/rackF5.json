@@ -1,0 +1,358 @@
+{
+ "id": "rackF5",
+ "title": "Rack / F5",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackF5-0-arx-500",
+   "title": "ARX 500",
+   "tags": "rack equipment f5 arx ARX 500",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_500;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_500"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:98"
+  },
+  {
+   "id": "rackF5-1-arx-1000",
+   "title": "ARX 1000",
+   "tags": "rack equipment f5 arx ARX 1000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_1000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_1000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:99"
+  },
+  {
+   "id": "rackF5-2-arx-1500",
+   "title": "ARX 1500",
+   "tags": "rack equipment f5 arx ARX 1500",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_1500;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_1500"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:100"
+  },
+  {
+   "id": "rackF5-3-arx-2000",
+   "title": "ARX 2000",
+   "tags": "rack equipment f5 arx ARX 2000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_2000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_2000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:101"
+  },
+  {
+   "id": "rackF5-4-arx-2500",
+   "title": "ARX 2500",
+   "tags": "rack equipment f5 arx ARX 2500",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_2500;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_2500"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:102"
+  },
+  {
+   "id": "rackF5-5-arx-4000",
+   "title": "ARX 4000",
+   "tags": "rack equipment f5 arx ARX 4000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 60,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_4000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_4000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:103"
+  },
+  {
+   "id": "rackF5-6-arx-5000",
+   "title": "ARX 5000",
+   "tags": "rack equipment f5 arx ARX 5000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_5000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_5000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:104"
+  },
+  {
+   "id": "rackF5-7-arx-6000",
+   "title": "ARX 6000",
+   "tags": "rack equipment f5 arx ARX 6000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 240,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.arx_6000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.arx_6000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:105"
+  },
+  {
+   "id": "rackF5-8-big-ip-1600",
+   "title": "BIG-IP 1600",
+   "tags": "rack equipment f5 big ip BIG-IP 1600",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_1600;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_1600"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:106"
+  },
+  {
+   "id": "rackF5-9-big-ip-2x00",
+   "title": "BIG-IP 2x00",
+   "tags": "rack equipment f5 big ip BIG-IP 2x00",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_2x00;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_2x00"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:107"
+  },
+  {
+   "id": "rackF5-10-big-ip-3600",
+   "title": "BIG-IP 3600",
+   "tags": "rack equipment f5 big ip BIG-IP 3600",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_3600;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_3600"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:108"
+  },
+  {
+   "id": "rackF5-11-big-ip-3900",
+   "title": "BIG-IP 3900",
+   "tags": "rack equipment f5 big ip BIG-IP 3900",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_3900;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_3900"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:109"
+  },
+  {
+   "id": "rackF5-12-big-ip-4x00",
+   "title": "BIG-IP 4x00",
+   "tags": "rack equipment f5 big ip BIG-IP 4x00",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_4x00;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_4x00"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:110"
+  },
+  {
+   "id": "rackF5-13-big-ip-5x00",
+   "title": "BIG-IP 5x00",
+   "tags": "rack equipment f5 big ip BIG-IP 5x00",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_5x00;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_5x00"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:111"
+  },
+  {
+   "id": "rackF5-14-big-ip-6900",
+   "title": "BIG-IP 6900",
+   "tags": "rack equipment f5 big ip BIG-IP 6900",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_6900;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_6900"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:112"
+  },
+  {
+   "id": "rackF5-15-big-ip-89x0",
+   "title": "BIG-IP 89x0",
+   "tags": "rack equipment f5 big ip BIG-IP 89x0",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_89x0;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_89x0"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:113"
+  },
+  {
+   "id": "rackF5-16-big-ip-7x00",
+   "title": "BIG-IP 7x00",
+   "tags": "rack equipment f5 big ip BIG-IP 7x00",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_7x00;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_7x00"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:114"
+  },
+  {
+   "id": "rackF5-17-big-ip-10x00",
+   "title": "BIG-IP 10x00",
+   "tags": "rack equipment f5 big ip BIG-IP 10x00",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_10x00;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_10x00"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:115"
+  },
+  {
+   "id": "rackF5-18-big-ip-110x0",
+   "title": "BIG-IP 110x0",
+   "tags": "rack equipment f5 big ip BIG-IP 110x0",
+   "kind": "vertex",
+   "width": 168,
+   "height": 60,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.big_ip_110x0;",
+   "shapeNames": [
+    "mxgraph.rack.f5.big_ip_110x0"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:116"
+  },
+  {
+   "id": "rackF5-19-em-4000",
+   "title": "EM 4000",
+   "tags": "rack equipment f5 big ip EM 4000",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.em_4000;",
+   "shapeNames": [
+    "mxgraph.rack.f5.em_4000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:117"
+  },
+  {
+   "id": "rackF5-20-firepass-1200",
+   "title": "FirePass 1200",
+   "tags": "rack equipment f5 big ip FirePass 1200",
+   "kind": "vertex",
+   "width": 168,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.firepass_1200;",
+   "shapeNames": [
+    "mxgraph.rack.f5.firepass_1200"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:118"
+  },
+  {
+   "id": "rackF5-21-firepass-4100",
+   "title": "FirePass 4100",
+   "tags": "rack equipment f5 big ip FirePass 4100",
+   "kind": "vertex",
+   "width": 168,
+   "height": 40,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.firepass_4100;",
+   "shapeNames": [
+    "mxgraph.rack.f5.firepass_4100"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:119"
+  },
+  {
+   "id": "rackF5-22-viprion-2400",
+   "title": "VIPRION 2400",
+   "tags": "rack equipment f5 big ip VIPRION 2400",
+   "kind": "vertex",
+   "width": 168,
+   "height": 60,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.viprion_2400;",
+   "shapeNames": [
+    "mxgraph.rack.f5.viprion_2400"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:120"
+  },
+  {
+   "id": "rackF5-23-viprion-4400",
+   "title": "VIPRION 4400",
+   "tags": "rack equipment f5 big ip VIPRION 4400",
+   "kind": "vertex",
+   "width": 168,
+   "height": 120,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.viprion_4400;",
+   "shapeNames": [
+    "mxgraph.rack.f5.viprion_4400"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:121"
+  },
+  {
+   "id": "rackF5-24-viprion-4800",
+   "title": "VIPRION 4800",
+   "tags": "rack equipment f5 big ip VIPRION 4800",
+   "kind": "vertex",
+   "width": 168,
+   "height": 320,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.f5.viprion_4800;",
+   "shapeNames": [
+    "mxgraph.rack.f5.viprion_4800"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:122"
+  }
+ ]
+}

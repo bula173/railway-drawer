@@ -1,0 +1,288 @@
+{
+ "id": "signsSafety",
+ "title": "Signs / Safety",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsSafety-0-biohazard",
+   "title": "Biohazard",
+   "tags": "signs safety  Biohazard Biohazard",
+   "kind": "vertex",
+   "width": 106,
+   "height": 97,
+   "style": "shape=mxgraph.signs.safety.biohazard;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.biohazard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-1-caution",
+   "title": "Caution",
+   "tags": "signs safety  Caution Caution",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.caution;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.caution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-2-chemical-weapon",
+   "title": "Chemical Weapon",
+   "tags": "signs safety  Chemical Weapon Chemical Weapon",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.safety.chemical_weapon;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.chemical_weapon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-3-falling-rocks",
+   "title": "Falling Rocks",
+   "tags": "signs safety  Falling Rocks Falling Rocks",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.falling_rocks;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.falling_rocks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-4-fallout-shelter",
+   "title": "Fallout Shelter",
+   "tags": "signs safety  Fallout Shelter Fallout Shelter",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.fallout_shelter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.fallout_shelter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-5-fragile",
+   "title": "Fragile",
+   "tags": "signs safety  Fragile Fragile",
+   "kind": "vertex",
+   "width": 73,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.fragile;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.fragile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-6-handle-with-care",
+   "title": "Handle With Care",
+   "tags": "signs safety  Handle With Care Handle With Care",
+   "kind": "vertex",
+   "width": 91,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.handle_with_care;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.handle_with_care"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-7-high-voltage-1",
+   "title": "High Voltage 1",
+   "tags": "signs safety  High Voltage 1 High Voltage 1",
+   "kind": "vertex",
+   "width": 49,
+   "height": 98,
+   "style": "shape=mxgraph.signs.safety.high_voltage_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.high_voltage_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-8-high-voltage-2",
+   "title": "High Voltage 2",
+   "tags": "signs safety  High Voltage 2 High Voltage 2",
+   "kind": "vertex",
+   "width": 40,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.high_voltage_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.high_voltage_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-9-high-voltage-3",
+   "title": "High Voltage 3",
+   "tags": "signs safety  High Voltage 3 High Voltage 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 88,
+   "style": "shape=mxgraph.signs.safety.high_voltage_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.high_voltage_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-10-keep-dry",
+   "title": "Keep Dry",
+   "tags": "signs safety  Keep Dry Keep Dry",
+   "kind": "vertex",
+   "width": 83,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.keep_dry;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.keep_dry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-11-no",
+   "title": "No",
+   "tags": "signs safety  No No",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.no;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.no"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-12-non-ionizing-radiation",
+   "title": "Non-Ionizing Radiation",
+   "tags": "signs safety  Non-Ionizing Radiation Non-Ionizing Radiation",
+   "kind": "vertex",
+   "width": 98,
+   "height": 83,
+   "style": "shape=mxgraph.signs.safety.non-ionizing_radiation;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.non-ionizing_radiation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-13-no-entry",
+   "title": "No Entry",
+   "tags": "signs safety  No Entry No Entry",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.no_entry;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.no_entry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-14-no-smoking",
+   "title": "No Smoking",
+   "tags": "signs safety  No Smoking No Smoking",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.safety.no_smoking;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.no_smoking"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-15-pedestrian-crossing",
+   "title": "Pedestrian Crossing",
+   "tags": "signs safety  Pedestrian Crossing Pedestrian Crossing",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.safety.pedestrian_crossing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.pedestrian_crossing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-16-radiation",
+   "title": "Radiation",
+   "tags": "signs safety  Radiation Radiation",
+   "kind": "vertex",
+   "width": 102,
+   "height": 94,
+   "style": "shape=mxgraph.signs.safety.radiation;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.radiation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-17-slip-hazard",
+   "title": "Slip Hazard",
+   "tags": "signs safety  Slip Hazard Slip Hazard",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "shape=mxgraph.signs.safety.slip_hazard;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.slip_hazard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-18-store-right-up-1",
+   "title": "Store Right Up 1",
+   "tags": "signs safety  Store Right Up 1 Store Right Up 1",
+   "kind": "vertex",
+   "width": 70,
+   "height": 99,
+   "style": "shape=mxgraph.signs.safety.store_right_up_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.store_right_up_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSafety-19-store-right-up-2",
+   "title": "Store Right Up 2",
+   "tags": "signs safety  Store Right Up 2 Store Right Up 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.safety.store_right_up_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.safety.store_right_up_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

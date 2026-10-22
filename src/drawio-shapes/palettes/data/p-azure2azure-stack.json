@@ -1,0 +1,120 @@
+{
+ "id": "azure2Azure Stack",
+ "title": "Azure / Azure Stack",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Azure Stack-0-capacity",
+   "title": "Capacity",
+   "tags": "azure2 capacity azure stack  Capacity",
+   "kind": "vertex",
+   "width": 63,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Capacity.svg;points=[[0.5,0,0],[0.5,0.995,0],[0,0.497,0],[0.799,0.5,0],[0.625,0.013,0],[0.986,0.93,0],[0.008,0.985,0],[0.008,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:303"
+  },
+  {
+   "id": "azure2Azure Stack-1-infrastructure-backup",
+   "title": "Infrastructure Backup",
+   "tags": "azure2 infrastructure backup azure stack  Infrastructure Backup",
+   "kind": "vertex",
+   "width": 60,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Infrastructure_Backup.svg;points=[[0.5,0.003,0],[0.5,0.988,0],[0,0.496,0],[1,0.57,0],[0.781,0.115,0],[0.991,0.95,0],[0.003,0.972,0],[0.003,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:305"
+  },
+  {
+   "id": "azure2Azure Stack-2-multi-tenancy",
+   "title": "Multi Tenancy",
+   "tags": "azure2 multi tenancy azure stack  Multi Tenancy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Multi_Tenancy.svg;points=[[0.349,0,0],[0.754,1,0],[0.066,0.5,0],[0.914,0.5,0],[0.797,0.165,0],[1,0.895,0],[0.023,0.788,0],[0.22,0.05,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:307"
+  },
+  {
+   "id": "azure2Azure Stack-3-offers",
+   "title": "Offers",
+   "tags": "azure2 offers azure stack  Offers",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Offers.svg;points=[[0.5,0.079,0],[0.398,1,0],[0.001,0.588,0],[0.905,0.5,0],[0.922,0.078,0],[0.705,0.705,0],[0.192,0.808,0],[0.29,0.29,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:309"
+  },
+  {
+   "id": "azure2Azure Stack-4-plans",
+   "title": "Plans",
+   "tags": "azure2 plans azure stack  Plans",
+   "kind": "vertex",
+   "width": 52,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Plans.svg;points=[[0.5,0.003,0],[0.5,0.998,0],[0,0.5,0],[1,0.5,0],[0.984,0.32,0],[0.993,0.985,0],[0.007,0.985,0],[0.01,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:311"
+  },
+  {
+   "id": "azure2Azure Stack-5-stack",
+   "title": "Stack",
+   "tags": "azure2 azure stack azure stack  Stack",
+   "kind": "vertex",
+   "width": 62,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Azure_Stack.svg;points=[[0.5,0,0],[0.539,1,0],[0.108,0.5,0],[1,0.497,0],[0.992,0.01,0],[0.997,0.977,0],[0.047,0.78,0],[0.402,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:313"
+  },
+  {
+   "id": "azure2Azure Stack-6-updates",
+   "title": "Updates",
+   "tags": "azure2 updates azure stack  Updates",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/Updates.svg;points=[[0.535,0,0],[0.723,1,0],[0,0.555,0],[1,0.641,0],[0.75,0.005,0],[0.817,0.997,0],[0.043,0.657,0],[0.32,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:315"
+  },
+  {
+   "id": "azure2Azure Stack-7-user-subscriptions",
+   "title": "User Subscriptions",
+   "tags": "azure2 user subscriptions azure stack  User Subscriptions",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/azure_stack/User_Subscriptions.svg;points=[[0.436,0,0],[0.5,0.985,0],[0.204,0.5,0],[0.998,0.599,0],[0.602,0.065,0],[0.827,0.997,0],[0.028,0.966,0],[0.265,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:317"
+  }
+ ]
+}

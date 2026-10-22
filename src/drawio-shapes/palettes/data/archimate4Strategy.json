@@ -1,0 +1,124 @@
+{
+ "id": "archimate4Strategy",
+ "title": "ArchiMate 4 / Strategy",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Strategy-0-resource",
+   "title": "Resource",
+   "tags": "archimate4  archimate 4 strategy resource Resource",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.element;appType=resource;archiType=square;archiDomain=strategy;",
+   "value": "Resource",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:256"
+  },
+  {
+   "id": "archimate4Strategy-1-resource",
+   "title": "Resource",
+   "tags": "archimate4  archimate 4 strategy resource Resource",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.resource;",
+   "shapeNames": [
+    "mxgraph.archimate4.resource"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:258"
+  },
+  {
+   "id": "archimate4Strategy-2-capability",
+   "title": "Capability",
+   "tags": "archimate4  archimate 4 strategy capability Capability",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.element;appType=capability;archiType=rounded;archiDomain=strategy;",
+   "value": "Capability",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:260"
+  },
+  {
+   "id": "archimate4Strategy-3-capability",
+   "title": "Capability",
+   "tags": "archimate4  archimate 4 strategy capability Capability",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.capability;",
+   "shapeNames": [
+    "mxgraph.archimate4.capability"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:262"
+  },
+  {
+   "id": "archimate4Strategy-4-value-stream",
+   "title": "Value Stream",
+   "tags": "archimate4  archimate 4 strategy value stream Value Stream",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.element;appType=valueStream;archiType=rounded;archiDomain=strategy;",
+   "value": "Value Stream",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:264"
+  },
+  {
+   "id": "archimate4Strategy-5-value-stream",
+   "title": "Value Stream",
+   "tags": "archimate4  archimate 4 strategy value stream Value Stream",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.valueStream;",
+   "shapeNames": [
+    "mxgraph.archimate4.valueStream"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:266"
+  },
+  {
+   "id": "archimate4Strategy-6-course-of-action",
+   "title": "Course of Action",
+   "tags": "archimate4  archimate 4 strategy course of action Course of Action",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.element;appType=course;archiType=rounded;archiDomain=strategy;",
+   "value": "Course of Action",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:268"
+  },
+  {
+   "id": "archimate4Strategy-7-course-of-action",
+   "title": "Course of Action",
+   "tags": "archimate4  archimate 4 strategy course of action Course of Action",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#EFBD5D;shape=mxgraph.archimate4.course;",
+   "shapeNames": [
+    "mxgraph.archimate4.course"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:270"
+  }
+ ]
+}

@@ -1,0 +1,414 @@
+{
+ "id": "cisco_safeTechnology Icons",
+ "title": "Cisco Safe / Technology Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeTechnology Icons-0-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon1;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1028"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-1-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1030"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-2-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon3;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1032"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-3-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon4;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1034"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-4-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon5;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1036"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-5-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon6;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1038"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-6-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 34.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon7;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1040"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-7-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 45.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon8;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1042"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-8-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon9;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon9"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1044"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-9-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon10;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1046"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-10-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon11;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon11"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1048"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-11-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 39.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon12;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon12"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1050"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-12-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon13;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon13"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1052"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-13-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon14;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon14"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1054"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-14-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon15;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon15"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1056"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-15-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon16;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon16"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1058"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-16-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon17;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon17"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1060"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-17-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon18;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon18"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1062"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-18-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon19;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon19"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1064"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-19-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon20;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon20"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1066"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-20-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon21;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon21"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1068"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-21-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.000000000000004,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon22;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1070"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-22-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 23.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon23;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon23"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1072"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-23-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon24;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon24"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1074"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-24-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon25;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon25"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1076"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-25-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon26;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon26"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1078"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-26-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon27;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon27"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1080"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-27-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 21.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon28;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon28"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1082"
+  },
+  {
+   "id": "cisco_safeTechnology Icons-28-entry",
+   "title": "",
+   "tags": "cisco safe technology icons  cisco safe technology ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.technology_icons.icon29;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.technology_icons.icon29"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1084"
+  }
+ ]
+}

@@ -1,0 +1,368 @@
+{
+ "id": "pidInstruments",
+ "title": "Process Engineering / Instruments",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidInstruments-0-discrete-instrument-control-room",
+   "title": "Discrete Instrument (control room)",
+   "tags": "pid2inst discInst pid process instrumentation engineering instrument engineering discrete control room Discrete Instrument (control room)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.discInst;mounting=room",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.discInst"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:59"
+  },
+  {
+   "id": "pidInstruments-1-discrete-instrument-field",
+   "title": "Discrete Instrument (field)",
+   "tags": "pid2inst discInst pid process instrumentation engineering instrument engineering discrete field Discrete Instrument (field)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.discInst;mounting=field",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.discInst"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:62"
+  },
+  {
+   "id": "pidInstruments-2-discrete-instrument-inaccessible",
+   "title": "Discrete Instrument (inaccessible)",
+   "tags": "pid2inst discInst pid process instrumentation engineering instrument engineering discrete inaccessible Discrete Instrument (inaccessible)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.discInst;mounting=inaccessible",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.discInst"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:65"
+  },
+  {
+   "id": "pidInstruments-3-discrete-instrument-local-panel",
+   "title": "Discrete Instrument (local panel)",
+   "tags": "pid2inst discInst pid process instrumentation engineering instrument engineering discrete local panel Discrete Instrument (local panel)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.discInst;mounting=local",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.discInst"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:68"
+  },
+  {
+   "id": "pidInstruments-4-shared-control-display-in-dcs-control-room",
+   "title": "Shared Control/Display in DCS (control room)",
+   "tags": "pid2inst sharedCont pid process instrumentation engineering instrument engineering shared control display room Shared Control/Display in DCS (control room)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.sharedCont;mounting=room",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.sharedCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:72"
+  },
+  {
+   "id": "pidInstruments-5-shared-control-display-in-dcs-field",
+   "title": "Shared Control/Display in DCS (field)",
+   "tags": "pid2inst sharedCont pid process instrumentation engineering instrument engineering shared control display dcs field Shared Control/Display in DCS (field)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.sharedCont;mounting=field",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.sharedCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:75"
+  },
+  {
+   "id": "pidInstruments-6-shared-control-display-in-dcs-inaccessible",
+   "title": "Shared Control/Display in DCS (inaccessible)",
+   "tags": "pid2inst sharedCont pid process instrumentation engineering instrument engineering shared control display dcs inaccessible Shared Control/Display in DCS (inaccessible)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.sharedCont;mounting=inaccessible",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.sharedCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:78"
+  },
+  {
+   "id": "pidInstruments-7-shared-control-display-in-dcs-local-panel",
+   "title": "Shared Control/Display in DCS (local panel)",
+   "tags": "pid2inst sharedCont pid process instrumentation engineering instrument engineering shared control display dcs local panel Shared Control/Display in DCS (local panel)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.sharedCont;mounting=local",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.sharedCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:81"
+  },
+  {
+   "id": "pidInstruments-8-computer-function-control-room",
+   "title": "Computer Function (control room)",
+   "tags": "pid2inst compFunc pid process instrumentation engineering instrument engineering computer function control room Computer Function (control room)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.compFunc;mounting=room",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.compFunc"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:85"
+  },
+  {
+   "id": "pidInstruments-9-computer-function-field",
+   "title": "Computer Function (field)",
+   "tags": "pid2inst compFunc pid process instrumentation engineering instrument engineering computer function field Computer Function (field)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.compFunc;mounting=field",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.compFunc"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:88"
+  },
+  {
+   "id": "pidInstruments-10-computer-function-inaccessible",
+   "title": "Computer Function (inaccessible)",
+   "tags": "pid2inst compFunc pid process instrumentation engineering instrument engineering computer function inaccessible Computer Function (inaccessible)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.compFunc;mounting=inaccessible",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.compFunc"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:91"
+  },
+  {
+   "id": "pidInstruments-11-computer-function-local-panel",
+   "title": "Computer Function (local panel)",
+   "tags": "pid2inst compFunc pid process instrumentation engineering instrument engineering computer function local panel Computer Function (local panel)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.compFunc;mounting=local",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.compFunc"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:94"
+  },
+  {
+   "id": "pidInstruments-12-programmable-logic-control-control-room",
+   "title": "Programmable Logic Control (control room)",
+   "tags": "pid2inst progLogCont pid process instrumentation engineering instrument engineering programmable logic control plc room Programmable Logic Control (control room)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.progLogCont;mounting=room",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.progLogCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:98"
+  },
+  {
+   "id": "pidInstruments-13-programmable-logic-control-field",
+   "title": "Programmable Logic Control (field)",
+   "tags": "pid2inst progLogCont pid process instrumentation engineering instrument engineering programmable logic control plc field Programmable Logic Control (field)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.progLogCont;mounting=field",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.progLogCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:101"
+  },
+  {
+   "id": "pidInstruments-14-programmable-logic-control-inaccessible",
+   "title": "Programmable Logic Control (inaccessible)",
+   "tags": "pid2inst progLogCont pid process instrumentation engineering instrument engineering programmable logic control plc inaccessible Programmable Logic Control (inaccessible)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.progLogCont;mounting=inaccessible",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.progLogCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:104"
+  },
+  {
+   "id": "pidInstruments-15-programmable-logic-control-local-panel",
+   "title": "Programmable Logic Control (local panel)",
+   "tags": "pid2inst progLogCont pid process instrumentation engineering instrument engineering programmable logic control plc local panel Programmable Logic Control (local panel)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.progLogCont;mounting=local",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:width;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.progLogCont"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:107"
+  },
+  {
+   "id": "pidInstruments-16-logic-control-room",
+   "title": "Logic (control room)",
+   "tags": "pid2inst logic pid process instrumentation engineering instrument engineering control room Logic (control room)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.logic;mounting=room",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.logic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:111"
+  },
+  {
+   "id": "pidInstruments-17-logic-field",
+   "title": "Logic (field)",
+   "tags": "pid2inst logic pid process instrumentation engineering instrument engineering field Logic (field)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.logic;mounting=field",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.logic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:114"
+  },
+  {
+   "id": "pidInstruments-18-logic-inaccessible",
+   "title": "Logic (inaccessible)",
+   "tags": "pid2inst logic pid process instrumentation engineering instrument engineering inaccessible Logic (inaccessible)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.logic;mounting=inaccessible",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.logic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:117"
+  },
+  {
+   "id": "pidInstruments-19-logic-local-panel",
+   "title": "Logic (local panel)",
+   "tags": "pid2inst logic pid process instrumentation engineering instrument engineering local panel Logic (local panel)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;aspect=fixed;shape=mxgraph.pid2inst.logic;mounting=local",
+   "value": "<table cellpadding=\"4\" cellspacing=\"0\" border=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td>TI</td></tr><tr><td>##</td></table> ",
+   "shapeNames": [
+    "mxgraph.pid2inst.logic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:120"
+  },
+  {
+   "id": "pidInstruments-20-indicator-instrument",
+   "title": "Indicator (Instrument)",
+   "tags": "pid2inst indicator pid process instrumentation engineering instrument engineering indicator Indicator (Instrument)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;shape=mxgraph.pid2inst.indicator;mounting=room;overflow=fill;indType=inst",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td align=\"center\" height=\"25\">TI</td></tr><tr><td align=\"center\" height=\"25\">##</td></tr><tr><td align=\"center\" valign=\"bottom\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid2inst.indicator"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:124"
+  },
+  {
+   "id": "pidInstruments-21-indicator-control",
+   "title": "Indicator (Control)",
+   "tags": "pid2inst indicator pid process instrumentation engineering instrument engineering indicator control Indicator (Control)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;shape=mxgraph.pid2inst.indicator;mounting=room;overflow=fill;indType=ctrl",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td align=\"center\" height=\"25\">TI</td></tr><tr><td align=\"center\" height=\"25\">##</td></tr><tr><td align=\"center\" valign=\"bottom\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid2inst.indicator"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:127"
+  },
+  {
+   "id": "pidInstruments-22-indicator-function",
+   "title": "Indicator (Function)",
+   "tags": "pid2inst indicator pid process instrumentation engineering instrument engineering indicator function Indicator (Function)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;shape=mxgraph.pid2inst.indicator;mounting=room;overflow=fill;indType=func",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td align=\"center\" height=\"25\">TI</td></tr><tr><td align=\"center\" height=\"25\">##</td></tr><tr><td align=\"center\" valign=\"bottom\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid2inst.indicator"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:130"
+  },
+  {
+   "id": "pidInstruments-23-indicator-plc",
+   "title": "Indicator (PLC)",
+   "tags": "pid2inst indicator pid process instrumentation engineering instrument engineering indicator plc programmable logic control Indicator (PLC)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;outlineConnect=0;align=center;dashed=0;shape=mxgraph.pid2inst.indicator;mounting=room;overflow=fill;indType=plc",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr><td align=\"center\" height=\"25\">TI</td></tr><tr><td align=\"center\" height=\"25\">##</td></tr><tr><td align=\"center\" valign=\"bottom\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid2inst.indicator"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:133"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "id": "finance",
+ "title": "Clipart / Finance",
+ "drawioTag": "v32.4.1",
+ "source": "",
+ "entries": [
+  {
+   "id": "finance-0-arrow-down",
+   "title": "Arrow_Down",
+   "tags": "arrow_down",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Arrow_Down_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-1-arrow-up",
+   "title": "Arrow Up",
+   "tags": "arrow up",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Arrow_Up_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-2-coins",
+   "title": "Coins",
+   "tags": "coins",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Coins_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-3-credit-card",
+   "title": "Credit Card",
+   "tags": "credit card",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Credit_Card_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-4-dollar",
+   "title": "Dollar",
+   "tags": "dollar",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Dollar_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-5-graph",
+   "title": "Graph",
+   "tags": "graph",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Graph_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-6-pie-chart",
+   "title": "Pie Chart",
+   "tags": "pie chart",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Pie_Chart_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-7-piggy-bank",
+   "title": "Piggy Bank",
+   "tags": "piggy bank",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Piggy_Bank_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-8-safe",
+   "title": "Safe",
+   "tags": "safe",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Safe_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-9-shopping-basket",
+   "title": "Shopping Basket",
+   "tags": "shopping basket",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Shopping_Cart_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-10-stock-down",
+   "title": "Stock Down",
+   "tags": "stock down",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Stock_Down_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  },
+  {
+   "id": "finance-11-stock-up",
+   "title": "Stock Up",
+   "tags": "stock up",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/finance/Stock_Up_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1509"
+  }
+ ]
+}

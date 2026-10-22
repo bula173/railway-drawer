@@ -1,0 +1,316 @@
+{
+ "id": "electricalTransistors",
+ "title": "Electrical / Transistors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalTransistors-0-bjt-npn",
+   "title": "BJT (NPN)",
+   "tags": "electrical transistors npn transistor 1 electrical transistor  BJT (NPN)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.npn_transistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.npn_transistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:535"
+  },
+  {
+   "id": "electricalTransistors-1-bjt-npn",
+   "title": "BJT (NPN)",
+   "tags": "electrical transistors npn transistor 5 electrical transistor  BJT (NPN)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.npn_transistor_5;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.npn_transistor_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:537"
+  },
+  {
+   "id": "electricalTransistors-2-nigbt",
+   "title": "NIGBT",
+   "tags": "electrical transistors nigbt electrical transistor  NIGBT",
+   "kind": "vertex",
+   "width": 64,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.nigbt;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.nigbt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:539"
+  },
+  {
+   "id": "electricalTransistors-3-bjt-pnp",
+   "title": "BJT (PNP)",
+   "tags": "electrical transistors pnp transistor 1 electrical transistor  BJT (PNP)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.pnp_transistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.pnp_transistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:541"
+  },
+  {
+   "id": "electricalTransistors-4-bjt-pnp",
+   "title": "BJT (PNP)",
+   "tags": "electrical transistors pnp transistor 5 electrical transistor  BJT (PNP)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.pnp_transistor_5;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.pnp_transistor_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:543"
+  },
+  {
+   "id": "electricalTransistors-5-pigbt",
+   "title": "PIGBT",
+   "tags": "electrical transistors pigbt electrical transistor  PIGBT",
+   "kind": "vertex",
+   "width": 64,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.pigbt;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.pigbt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:545"
+  },
+  {
+   "id": "electricalTransistors-6-n-channel-jfet",
+   "title": "N Channel JFET",
+   "tags": "electrical transistors n-channel jfet 1 electrical transistor  N Channel JFET",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.n-channel_jfet_1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.n-channel_jfet_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:547"
+  },
+  {
+   "id": "electricalTransistors-7-p-channel-jfet",
+   "title": "P Channel JFET",
+   "tags": "electrical transistors p-channel jfet 1 electrical transistor  P Channel JFET",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.p-channel_jfet_1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.p-channel_jfet_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:549"
+  },
+  {
+   "id": "electricalTransistors-8-mosfet-n",
+   "title": "MOSFET (N)",
+   "tags": "electrical transistors n-channel mosfet 1 electrical transistor  MOSFET (N)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.n-channel_mosfet_1;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.n-channel_mosfet_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:551"
+  },
+  {
+   "id": "electricalTransistors-9-mosfet-p",
+   "title": "MOSFET (P)",
+   "tags": "electrical transistors p-channel mosfet 1 electrical transistor  MOSFET (P)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.p-channel_mosfet_1;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.p-channel_mosfet_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:553"
+  },
+  {
+   "id": "electricalTransistors-10-nmos",
+   "title": "NMOS",
+   "tags": "electrical transistors mosfet ic n electrical transistor  NMOS",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_ic_n;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_ic_n"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:555"
+  },
+  {
+   "id": "electricalTransistors-11-pmos",
+   "title": "PMOS",
+   "tags": "electrical transistors mosfet ic p electrical transistor  PMOS",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_ic_p;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_ic_p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:557"
+  },
+  {
+   "id": "electricalTransistors-12-nmos-with-body-diode",
+   "title": "NMOS with Body Diode",
+   "tags": "electrical transistors mosfet ic n body diode electrical transistor  NMOS with Body Diode",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_ic_n_body_diode;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_ic_n_body_diode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:559"
+  },
+  {
+   "id": "electricalTransistors-13-pmos-with-body-diode",
+   "title": "PMOS with Body Diode",
+   "tags": "electrical transistors mosfet ic p body diode electrical transistor  PMOS with Body Diode",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_ic_p_body_diode;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_ic_p_body_diode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:561"
+  },
+  {
+   "id": "electricalTransistors-14-mosfet-no-bulk-n",
+   "title": "MOSFET No Bulk (N)",
+   "tags": "electrical transistors mosfet n no bulk electrical transistor  MOSFET No Bulk (N)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_n_no_bulk;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_n_no_bulk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:563"
+  },
+  {
+   "id": "electricalTransistors-15-mosfet-no-bulk-p",
+   "title": "MOSFET No Bulk (P)",
+   "tags": "electrical transistors mosfet p no bulk electrical transistor  MOSFET No Bulk (P)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.mosfet_p_no_bulk;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.mosfet_p_no_bulk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:565"
+  },
+  {
+   "id": "electricalTransistors-16-dual-gate-mosfet-n",
+   "title": "Dual Gate MOSFET (N)",
+   "tags": "electrical transistors dual gate mosfet n electrical transistor  Dual Gate MOSFET (N)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.dual_gate_mosfet_n;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.dual_gate_mosfet_n"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:567"
+  },
+  {
+   "id": "electricalTransistors-17-dual-gate-mosfet-p",
+   "title": "Dual Gate MOSFET (P)",
+   "tags": "electrical transistors dual gate mosfet p electrical transistor  Dual Gate MOSFET (P)",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.mosfets1.dual_gate_mosfet_p;",
+   "shapeNames": [
+    "mxgraph.electrical.mosfets1.dual_gate_mosfet_p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:569"
+  },
+  {
+   "id": "electricalTransistors-18-nmos",
+   "title": "NMOS",
+   "tags": "electrical transistors nmos electrical transistor  NMOS",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.nmos;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.nmos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:571"
+  },
+  {
+   "id": "electricalTransistors-19-nmos-with-bulk",
+   "title": "NMOS with Bulk",
+   "tags": "electrical transistors nmos bulk electrical transistor  NMOS with Bulk",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.nmos_bulk;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.nmos_bulk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:573"
+  },
+  {
+   "id": "electricalTransistors-20-pmos",
+   "title": "PMOS",
+   "tags": "electrical transistors pmos electrical transistor  PMOS",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.pmos;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.pmos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:575"
+  },
+  {
+   "id": "electricalTransistors-21-pmos-with-bulk",
+   "title": "PMOS with Bulk",
+   "tags": "electrical transistors pmos bulk electrical transistor  PMOS with Bulk",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.transistors.pmos_bulk;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.transistors.pmos_bulk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:577"
+  }
+ ]
+}

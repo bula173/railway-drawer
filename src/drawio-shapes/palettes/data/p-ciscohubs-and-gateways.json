@@ -1,0 +1,120 @@
+{
+ "id": "ciscoHubs and Gateways",
+ "title": "Cisco / Hubs and Gateways",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoHubs and Gateways-0-100baset-hub",
+   "title": "100BaseT Hub",
+   "tags": "cisco 100baset hub cisco hubs and gateways  100BaseT Hub",
+   "kind": "vertex",
+   "width": 90,
+   "height": 45,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.100baset_hub;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.100baset_hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:147"
+  },
+  {
+   "id": "ciscoHubs and Gateways-1-cisco-hub",
+   "title": "Cisco Hub",
+   "tags": "cisco cisco hub cisco hubs and gateways  Cisco Hub",
+   "kind": "vertex",
+   "width": 66,
+   "height": 57.99999999999999,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.cisco_hub;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.cisco_hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:148"
+  },
+  {
+   "id": "ciscoHubs and Gateways-2-generic-gateway",
+   "title": "Generic Gateway",
+   "tags": "cisco generic gateway cisco hubs and gateways  Generic Gateway",
+   "kind": "vertex",
+   "width": 66,
+   "height": 74,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.generic_gateway;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.generic_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:149"
+  },
+  {
+   "id": "ciscoHubs and Gateways-3-hub",
+   "title": "Hub",
+   "tags": "cisco hub cisco hubs and gateways  Hub",
+   "kind": "vertex",
+   "width": 66,
+   "height": 57.99999999999999,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.hub;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:150"
+  },
+  {
+   "id": "ciscoHubs and Gateways-4-mas-gateway",
+   "title": "MAS Gateway",
+   "tags": "cisco mas gateway cisco hubs and gateways  MAS Gateway",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 59,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.mas_gateway;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.mas_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:151"
+  },
+  {
+   "id": "ciscoHubs and Gateways-5-small-hub",
+   "title": "Small Hub",
+   "tags": "cisco small hub cisco hubs and gateways  Small Hub",
+   "kind": "vertex",
+   "width": 90,
+   "height": 45,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.small_hub;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.small_hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:152"
+  },
+  {
+   "id": "ciscoHubs and Gateways-6-universal-gateway",
+   "title": "Universal Gateway",
+   "tags": "cisco universal gateway cisco hubs and gateways  Universal Gateway",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.universal_gateway;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.universal_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:153"
+  },
+  {
+   "id": "ciscoHubs and Gateways-7-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "cisco vpn gateway virtual private network cisco hubs and gateways  VPN Gateway",
+   "kind": "vertex",
+   "width": 91,
+   "height": 48,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.hubs_and_gateways.vpn_gateway;",
+   "shapeNames": [
+    "mxgraph.cisco.hubs_and_gateways.vpn_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:154"
+  }
+ ]
+}

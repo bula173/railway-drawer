@@ -1,0 +1,164 @@
+{
+ "id": "mockupNavigation",
+ "title": "Mockup Navigation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupNavigation-0-breadcrumb",
+   "title": "Breadcrumb",
+   "tags": "mockup navigation breadcrumb Breadcrumb",
+   "kind": "cells",
+   "width": 300,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Layer 1\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=17;fontColor=#666666;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&gt;\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=24;fontColor=#aaaaaa;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"60\" width=\"20\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Layer 2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=17;fontColor=#666666;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"80\" width=\"60\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"&gt;\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=24;fontColor=#aaaaaa;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"140\" width=\"20\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Layer 3\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=17;fontColor=#666666;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"160\" width=\"60\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"&gt;\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=24;fontColor=#aaaaaa;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"220\" width=\"20\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Layer 4\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.anchor;fontSize=17;fontColor=#008cff;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"60\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:867"
+  },
+  {
+   "id": "mockupNavigation-1-step-bar",
+   "title": "Step Bar",
+   "tags": "mockup navigation stepBar mockup navigation step bar Step Bar",
+   "kind": "vertex",
+   "width": 300,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.stepBar;strokeColor=#c4c4c4;textColor=#666666;textColor2=#008cff;haloColor=#ffffff;mainText=,,+,;textSize=17;fillColor=#666666;overflow=fill;fontSize=17;fontColor=#666666;",
+   "value": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" height=\"100%\" style=\"font-size:1em;\"><tr height=\"0%\"><td width=\"25%\">Layer 1</td><td width=\"25%\">Layer 2</td><td width=\"25%\" style=\"color:#008cff;\">Layer 3</td><td width=\"25%\">Layer 4</td></tr><tr height=\"100%\"><td/></tr></table>",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.stepBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:870"
+  },
+  {
+   "id": "mockupNavigation-2-step-bar",
+   "title": "Step Bar",
+   "tags": "mockup navigation stepBar mockup navigation step bar Step Bar",
+   "kind": "vertex",
+   "width": 300,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.stepBar;strokeColor=#c4c4c4;textColor=#666666;textColor2=#008cff;haloColor=#ffffff;mainText=Layer 1,Layer 2,+Layer 3,Layer 4;textSize=17;fillColor=#666666;overflow=fill;fontSize=17;fontColor=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.stepBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:874"
+  },
+  {
+   "id": "mockupNavigation-3-cover-flow",
+   "title": "Cover Flow",
+   "tags": "mockup navigation coverFlow mockup navigation cover flow Cover Flow",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.navigation.coverFlow;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.coverFlow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:876"
+  },
+  {
+   "id": "mockupNavigation-4-horizontal-scroll-bar",
+   "title": "Horizontal Scroll Bar",
+   "tags": "mockup navigation scrollBar mockup navigation scroll bar Horizontal Scroll Bar",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.navigation.scrollBar;strokeColor=#999999;barPos=20;fillColor2=#99ddff;strokeColor2=none;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.scrollBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:878"
+  },
+  {
+   "id": "mockupNavigation-5-vertical-scroll-bar",
+   "title": "Vertical Scroll Bar",
+   "tags": "mockup navigation scrollBar mockup navigation scroll bar Vertical Scroll Bar",
+   "kind": "vertex",
+   "width": 20,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.navigation.scrollBar;strokeColor=#999999;barPos=20;fillColor2=#99ddff;strokeColor2=none;direction=north;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.scrollBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:880"
+  },
+  {
+   "id": "mockupNavigation-6-pagination",
+   "title": "Pagination",
+   "tags": "mockup navigation pagination mockup navigation  Pagination",
+   "kind": "vertex",
+   "width": 350,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.navigation.pagination;linkText=;fontSize=17;fontColor=#0000ff;fontStyle=4;",
+   "value": "<< Prev 1 2 3 4 5 6 7 8 9 10 Next >>",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.pagination"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:882"
+  },
+  {
+   "id": "mockupNavigation-7-page-control",
+   "title": "Page Control",
+   "tags": "mockup navigation pageControl mockup navigation page control Page Control",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.navigation.pageControl;fillColor=#999999;strokeColor=#ddeeff;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.pageControl"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:884"
+  },
+  {
+   "id": "mockupNavigation-8-map-navigator",
+   "title": "Map Navigator",
+   "tags": "mockup navigation mapNavigator mockup navigation map navigator Map Navigator",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.navigation.mapNavigator;fillColor2=#99ddff;strokeColor2=none;strokeColor3=#ffffff;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.navigation.mapNavigator"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:886"
+  },
+  {
+   "id": "mockupNavigation-9-wheel-throbber-1",
+   "title": "Wheel Throbber 1",
+   "tags": "mockup navigation loading circle 1 mockup navigation wheel throbber Wheel Throbber 1",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.loading_circle_1;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.loading_circle_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:888"
+  },
+  {
+   "id": "mockupNavigation-10-wheel-throbber-2",
+   "title": "Wheel Throbber 2",
+   "tags": "mockup navigation loading circle 2 mockup navigation wheel throbber Wheel Throbber 2",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.loading_circle_2;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.loading_circle_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:889"
+  }
+ ]
+}

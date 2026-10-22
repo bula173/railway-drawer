@@ -1,0 +1,974 @@
+{
+ "id": "active_directory",
+ "title": "Active Directory",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:7",
+ "entries": [
+  {
+   "id": "active_directory-0-active-directory",
+   "title": "Active Directory",
+   "tags": "active directory ibm Active Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/active_directory.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:17"
+  },
+  {
+   "id": "active_directory-1-cd-dvd",
+   "title": "CD / DVD",
+   "tags": "cd dvd compact digital video disc ibm CD / DVD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/cd_dvd.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:19"
+  },
+  {
+   "id": "active_directory-2-cell-phone",
+   "title": "Cell Phone",
+   "tags": "cell phone ibm Cell Phone",
+   "kind": "vertex",
+   "width": 21,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/cell_phone.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:21"
+  },
+  {
+   "id": "active_directory-3-cluster-server",
+   "title": "Cluster Server",
+   "tags": "active ibm Cluster Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/cluster_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:23"
+  },
+  {
+   "id": "active_directory-4-community-discussion",
+   "title": "Community Discussion",
+   "tags": "community discussion ibm Community Discussion",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/community_discussion.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:25"
+  },
+  {
+   "id": "active_directory-5-data-jack",
+   "title": "Data Jack",
+   "tags": "data jack ibm Data Jack",
+   "kind": "vertex",
+   "width": 27.500000000000004,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/data_jack.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:27"
+  },
+  {
+   "id": "active_directory-6-database",
+   "title": "Database",
+   "tags": "database ibm Database",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:29"
+  },
+  {
+   "id": "active_directory-7-database-cube",
+   "title": "Database Cube",
+   "tags": "database cube ibm Database Cube",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_cube.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:31"
+  },
+  {
+   "id": "active_directory-8-database-partition-2",
+   "title": "Database Partition 2",
+   "tags": "database partition two ibm Database Partition 2",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_partition_2.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:33"
+  },
+  {
+   "id": "active_directory-9-database-partition-3",
+   "title": "Database Partition 3",
+   "tags": "database partition three ibm Database Partition 3",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_partition_3.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:35"
+  },
+  {
+   "id": "active_directory-10-database-partition-4",
+   "title": "Database Partition 4",
+   "tags": "database partition four ibm Database Partition 4",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_partition_4.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:37"
+  },
+  {
+   "id": "active_directory-11-database-partition-5",
+   "title": "Database Partition 5",
+   "tags": "database partition five ibm Database Partition 5",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_partition_5.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:39"
+  },
+  {
+   "id": "active_directory-12-database-server",
+   "title": "Database Server",
+   "tags": "database server ibm Database Server",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:41"
+  },
+  {
+   "id": "active_directory-13-databases",
+   "title": "Databases",
+   "tags": "databases ibm Databases",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/databases.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:43"
+  },
+  {
+   "id": "active_directory-14-documents",
+   "title": "Documents",
+   "tags": "documents ibm Documents",
+   "kind": "vertex",
+   "width": 33,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/documents.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:45"
+  },
+  {
+   "id": "active_directory-15-domain-controller",
+   "title": "Domain Controller",
+   "tags": "domain controller ibm Domain Controller",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/domain_controller.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:47"
+  },
+  {
+   "id": "active_directory-16-fax",
+   "title": "Fax",
+   "tags": "fax ibm Fax",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/fax.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:49"
+  },
+  {
+   "id": "active_directory-17-firewall",
+   "title": "Firewall",
+   "tags": "firewall ibm Firewall",
+   "kind": "vertex",
+   "width": 30.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/firewall.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:51"
+  },
+  {
+   "id": "active_directory-18-folder",
+   "title": "Folder",
+   "tags": "folder ibm Folder",
+   "kind": "vertex",
+   "width": 36.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/folder.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:53"
+  },
+  {
+   "id": "active_directory-19-folder-open",
+   "title": "Folder Open",
+   "tags": "folder open ibm Folder Open",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/folder_open.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:55"
+  },
+  {
+   "id": "active_directory-20-generic-node",
+   "title": "Generic Node",
+   "tags": "generic node ibm Generic Node",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_node.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:57"
+  },
+  {
+   "id": "active_directory-21-generic-server",
+   "title": "Generic Server",
+   "tags": "generic server ibm Generic Server",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:59"
+  },
+  {
+   "id": "active_directory-22-hard-disk",
+   "title": "Hard Disk",
+   "tags": "hard disk ibm Hard Disk",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/hard_disk.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:61"
+  },
+  {
+   "id": "active_directory-23-home",
+   "title": "Home",
+   "tags": "home ibm Home",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/home.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:63"
+  },
+  {
+   "id": "active_directory-24-home-page",
+   "title": "Home Page",
+   "tags": "home page ibm Home Page",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/home_page.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:65"
+  },
+  {
+   "id": "active_directory-25-input-output-filter",
+   "title": "Input/Output Filter",
+   "tags": "input output filter io ibm Input/Output Filter",
+   "kind": "vertex",
+   "width": 33.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/input_output_filter.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:67"
+  },
+  {
+   "id": "active_directory-26-interface",
+   "title": "Interface",
+   "tags": "active ibm Interface",
+   "kind": "vertex",
+   "width": 50,
+   "height": 23.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/interface.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:69"
+  },
+  {
+   "id": "active_directory-27-internet-cloud",
+   "title": "Internet Cloud",
+   "tags": "internet cloud ibm Internet Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_cloud.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:71"
+  },
+  {
+   "id": "active_directory-28-internet-globe",
+   "title": "Internet Globe",
+   "tags": "internet globe ibm Internet Globe",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:73"
+  },
+  {
+   "id": "active_directory-29-key",
+   "title": "Key",
+   "tags": "key ibm Key",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/key.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:75"
+  },
+  {
+   "id": "active_directory-30-laptop-client",
+   "title": "Laptop Client",
+   "tags": "laptop client ibm Laptop Client",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/laptop_client.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:77"
+  },
+  {
+   "id": "active_directory-31-list",
+   "title": "List",
+   "tags": "list ibm List",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/list.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:79"
+  },
+  {
+   "id": "active_directory-32-mac-client",
+   "title": "Mac Client",
+   "tags": "mac macintosh client ibm Mac Client",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/mac_client.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:81"
+  },
+  {
+   "id": "active_directory-33-mainframe",
+   "title": "Mainframe",
+   "tags": "mainframe ibm Mainframe",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/mainframe.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:83"
+  },
+  {
+   "id": "active_directory-34-mainframe-host",
+   "title": "Mainframe Host",
+   "tags": "mainframe host ibm Mainframe Host",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/mainframe_host.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:85"
+  },
+  {
+   "id": "active_directory-35-meeting",
+   "title": "Meeting",
+   "tags": "meeting ibm Meeting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/meeting.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:87"
+  },
+  {
+   "id": "active_directory-36-modem",
+   "title": "Modem",
+   "tags": "modem ibm Modem",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/modem.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:89"
+  },
+  {
+   "id": "active_directory-37-my-sites",
+   "title": "My Sites",
+   "tags": "my sites ibm My Sites",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/my_sites.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:91"
+  },
+  {
+   "id": "active_directory-38-not-secure",
+   "title": "Not Secure",
+   "tags": "not secure ibm Not Secure",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/not_secure.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:93"
+  },
+  {
+   "id": "active_directory-39-pda",
+   "title": "PDA",
+   "tags": "pda personal digital assistant ibm PDA",
+   "kind": "vertex",
+   "width": 27,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/pda.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:95"
+  },
+  {
+   "id": "active_directory-40-phone",
+   "title": "Phone",
+   "tags": "phone ibm Phone",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/phone.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:97"
+  },
+  {
+   "id": "active_directory-41-printer",
+   "title": "Printer",
+   "tags": "printer ibm Printer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 33,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/printer.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:99"
+  },
+  {
+   "id": "active_directory-42-router",
+   "title": "Router",
+   "tags": "router ibm Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/router.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:101"
+  },
+  {
+   "id": "active_directory-43-secure",
+   "title": "Secure",
+   "tags": "secure ibm Secure",
+   "kind": "vertex",
+   "width": 32,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/secure.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:103"
+  },
+  {
+   "id": "active_directory-44-security",
+   "title": "Security",
+   "tags": "security ibm Security",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/security.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:105"
+  },
+  {
+   "id": "active_directory-45-server-farm",
+   "title": "Server Farm",
+   "tags": "server farm ibm Server Farm",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/server_farm.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:107"
+  },
+  {
+   "id": "active_directory-46-shadowed-router",
+   "title": "Shadowed Router",
+   "tags": "shadowed router ibm Shadowed Router",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/shadowed_router.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:109"
+  },
+  {
+   "id": "active_directory-47-site-collection",
+   "title": "Site Collection",
+   "tags": "site collection ibm Site Collection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/site_collection.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:111"
+  },
+  {
+   "id": "active_directory-48-sql-server",
+   "title": "SQL Server",
+   "tags": "sql server ibm SQL Server",
+   "kind": "vertex",
+   "width": 38.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/sql_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:113"
+  },
+  {
+   "id": "active_directory-49-sub-site",
+   "title": "Sub-site",
+   "tags": "sub site ibm Sub-site",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/sub_site.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:115"
+  },
+  {
+   "id": "active_directory-50-switch",
+   "title": "Switch",
+   "tags": "switch ibm Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/switch.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:117"
+  },
+  {
+   "id": "active_directory-51-tablet-pc",
+   "title": "Tablet PC",
+   "tags": "tablet pc ibm Tablet PC",
+   "kind": "vertex",
+   "width": 36.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/tablet_pc.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:119"
+  },
+  {
+   "id": "active_directory-52-tunnel",
+   "title": "Tunnel",
+   "tags": "tunnel ibm Tunnel",
+   "kind": "vertex",
+   "width": 50,
+   "height": 10,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/tunnel.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:121"
+  },
+  {
+   "id": "active_directory-53-user",
+   "title": "User",
+   "tags": "user ibm User",
+   "kind": "vertex",
+   "width": 18.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/user.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:123"
+  },
+  {
+   "id": "active_directory-54-user-accounts",
+   "title": "User Accounts",
+   "tags": "user accounts ibm User Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/user_accounts.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:125"
+  },
+  {
+   "id": "active_directory-55-users",
+   "title": "Users",
+   "tags": "users ibm Users",
+   "kind": "vertex",
+   "width": 33,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/users.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:127"
+  },
+  {
+   "id": "active_directory-56-vista-client",
+   "title": "Vista Client",
+   "tags": "vista client ibm Vista Client",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/vista_client.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:129"
+  },
+  {
+   "id": "active_directory-57-vista-terminal",
+   "title": "Vista Terminal",
+   "tags": "vista terminal ibm Vista Terminal",
+   "kind": "vertex",
+   "width": 32.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/vista_terminal.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:131"
+  },
+  {
+   "id": "active_directory-58-web-server",
+   "title": "Web Server",
+   "tags": "web server ibm Web Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:133"
+  },
+  {
+   "id": "active_directory-59-wiki-site",
+   "title": "Wiki Site",
+   "tags": "wiki site ibm Wiki Site",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/wiki_site.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:135"
+  },
+  {
+   "id": "active_directory-60-windows-domain",
+   "title": "Windows Domain",
+   "tags": "windows domain ibm Windows Domain",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_domain.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:137"
+  },
+  {
+   "id": "active_directory-61-windows-router",
+   "title": "Windows Router",
+   "tags": "windows router ibm Windows Router",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_router.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:139"
+  },
+  {
+   "id": "active_directory-62-windows-server",
+   "title": "Windows Server",
+   "tags": "windows server ibm Windows Server",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:141"
+  },
+  {
+   "id": "active_directory-63-windows-server",
+   "title": "Windows Server",
+   "tags": "windows server ibm Windows Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_server_2.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:143"
+  },
+  {
+   "id": "active_directory-64-wiring-hub",
+   "title": "Wiring Hub",
+   "tags": "wiring hub ibm Wiring Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/wiring_hub.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:145"
+  },
+  {
+   "id": "active_directory-65-workspace-site",
+   "title": "Workspace Site",
+   "tags": "workspace site ibm Workspace Site",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.5,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/workspace_site.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:147"
+  },
+  {
+   "id": "active_directory-66-workstation-client",
+   "title": "Workstation Client",
+   "tags": "workstation client ibm Workstation Client",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/workstation_client.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:149"
+  },
+  {
+   "id": "active_directory-67-writer",
+   "title": "Writer",
+   "tags": "writer ibm Writer",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/writer.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:151"
+  },
+  {
+   "id": "active_directory-68-writing",
+   "title": "Writing",
+   "tags": "writing ibm Writing",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/writing.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ActiveDirectory.js:153"
+  }
+ ]
+}

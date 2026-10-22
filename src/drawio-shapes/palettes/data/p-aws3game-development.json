@@ -1,0 +1,22 @@
+{
+ "id": "aws3Game Development",
+ "title": "AWS17 / Game Development",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Game Development-0-gamelift",
+   "title": "GameLift",
+   "tags": "aws3 gamelift game lift aws amazon web service game development GameLift",
+   "kind": "vertex",
+   "width": 70.5,
+   "height": 85.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.gamelift;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.gamelift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:428"
+  }
+ ]
+}

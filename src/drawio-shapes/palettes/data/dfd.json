@@ -1,0 +1,354 @@
+{
+ "id": "dfd",
+ "title": "Data Flow Diagram",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-DFD.js:7",
+ "entries": [
+  {
+   "id": "dfd-0-start-end",
+   "title": "Start / End",
+   "tags": "flowchart start end dfd data flow diagram  Start / End",
+   "kind": "vertex",
+   "width": 80,
+   "height": 30,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start",
+   "shapeNames": [
+    "mxgraph.dfd.start"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:21"
+  },
+  {
+   "id": "dfd-1-activity-process-entity-external-interactor",
+   "title": "Activity / Process / Entity / External Interactor",
+   "tags": "flowchart activity process entity external interactor dfd data flow diagram  Activity / Process / Entity / External Interactor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "html=1;dashed=0;whiteSpace=wrap;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:22"
+  },
+  {
+   "id": "dfd-2-decision-entity-relationship",
+   "title": "Decision / Entity Relationship",
+   "tags": "flowchart decision entity relationship dfd data flow diagram  Decision / Entity Relationship",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:23"
+  },
+  {
+   "id": "dfd-3-reference",
+   "title": "Reference",
+   "tags": "flowchart reference dfd data flow diagram  Reference",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:24"
+  },
+  {
+   "id": "dfd-4-product-result",
+   "title": "Product / Result",
+   "tags": "flowchart product result dfd data flow diagram  Product / Result",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;",
+   "shapeNames": [
+    "parallelogram"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:25"
+  },
+  {
+   "id": "dfd-5-order-command",
+   "title": "Order / Command",
+   "tags": "flowchart order command dfd data flow diagram  Order / Command",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=manualInput;boundedLbl=1;whiteSpace=wrap;html=1;dashed=0;size=15;",
+   "shapeNames": [
+    "manualInput"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:26"
+  },
+  {
+   "id": "dfd-6-information-data-carrier-sop",
+   "title": "Information / Data Carrier / SOP",
+   "tags": "flowchart information data carrier sop dfd data flow diagram  Information / Data Carrier / SOP",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "shape=document;whiteSpace=wrap;html=1;boundedLbl=1;dashed=0;flipH=1;",
+   "shapeNames": [
+    "document"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:27"
+  },
+  {
+   "id": "dfd-7-information-data-carrier-sop-stop-state",
+   "title": "Information/Data Carrier/SOP / Stop State",
+   "tags": "flowchart information data carrier sop dfd data flow diagram  Information/Data Carrier/SOP / Stop State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "triangle;whiteSpace=wrap;html=1;dashed=0;direction=south;",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:28"
+  },
+  {
+   "id": "dfd-8-final-report-archive",
+   "title": "Final Report / Archive",
+   "tags": "flowchart final report archive dfd data flow diagram  Final Report / Archive",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.archive",
+   "shapeNames": [
+    "mxgraph.dfd.archive"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:29"
+  },
+  {
+   "id": "dfd-9-check",
+   "title": "Check",
+   "tags": "flowchart check dfd data flow diagram  Check",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;size=0.25",
+   "shapeNames": [
+    "hexagon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:30"
+  },
+  {
+   "id": "dfd-10-check-2",
+   "title": "Check 2",
+   "tags": "flowchart check dfd data flow diagram  Check 2",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.check2",
+   "shapeNames": [
+    "mxgraph.dfd.check2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:31"
+  },
+  {
+   "id": "dfd-11-data-process",
+   "title": "Data Process",
+   "tags": "flowchart data process dfd data flow diagram  Data Process",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:32"
+  },
+  {
+   "id": "dfd-12-data-process-state",
+   "title": "Data Process / State",
+   "tags": "flowchart data process dfd data flow diagram  Data Process / State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:33"
+  },
+  {
+   "id": "dfd-13-multiple-process-start-state-multi-state",
+   "title": "Multiple Process / Start State / Multi State",
+   "tags": "flowchart multiple process start state multi dfd data flow diagram  Multiple Process / Start State / Multi State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "ellipse;shape=doubleEllipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;",
+   "shapeNames": [
+    "doubleEllipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:34"
+  },
+  {
+   "id": "dfd-14-stop-state",
+   "title": "Stop State",
+   "tags": "flowchart stop state dfd data flow diagram  Stop State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;strokeWidth=5;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:35"
+  },
+  {
+   "id": "dfd-15-data-store",
+   "title": "Data Store",
+   "tags": "flowchart data store dfd data flow diagram  Data Store",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:36"
+  },
+  {
+   "id": "dfd-16-data-store",
+   "title": "Data Store",
+   "tags": "flowchart data store dfd data flow diagram  Data Store",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:37"
+  },
+  {
+   "id": "dfd-17-data-store-with-id",
+   "title": "Data Store with ID",
+   "tags": "flowchart data store with id identification dfd data flow diagram  Data Store with ID",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.dataStoreID;align=left;spacingLeft=3;points=[[0,0],[0.5,0],[1,0],[0,0.5],[1,0.5],[0,1],[0.5,1],[1,1]];",
+   "shapeNames": [
+    "mxgraph.dfd.dataStoreID"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:38"
+  },
+  {
+   "id": "dfd-18-entity",
+   "title": "Entity",
+   "tags": "flowchart entity dfd data flow diagram  Entity",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=20;fillColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;swimlaneFillColor=#ffffff;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:39"
+  },
+  {
+   "id": "dfd-19-object",
+   "title": "Object",
+   "tags": "flowchart object dfd data flow diagram  Object",
+   "kind": "vertex",
+   "width": 120,
+   "height": 120,
+   "style": "shape=cloud;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "cloud"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:40"
+  },
+  {
+   "id": "dfd-20-oval-process",
+   "title": "Oval Process",
+   "tags": "flowchart oval process dfd data flow diagram  Oval Process",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:41"
+  },
+  {
+   "id": "dfd-21-data-store",
+   "title": "Data Store",
+   "tags": "flowchart data store dfd data flow diagram  Data Store",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;",
+   "shapeNames": [
+    "cylinder"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:42"
+  },
+  {
+   "id": "dfd-22-external-entity",
+   "title": "External Entity",
+   "tags": "dfd data flow diagram external entity",
+   "kind": "cells",
+   "width": 100,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.externalEntity\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Id\" style=\"autosize=1;part=1;resizable=0;strokeColor=inherit;fillColor=inherit;gradientColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"15\" y=\"15\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.dfd.externalEntity"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:44"
+  },
+  {
+   "id": "dfd-23-loop",
+   "title": "Loop",
+   "tags": "flowchart loop dfd data flow diagram  Loop",
+   "kind": "vertex",
+   "width": 80,
+   "height": 30,
+   "style": "html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.loop",
+   "shapeNames": [
+    "mxgraph.dfd.loop"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:57"
+  },
+  {
+   "id": "dfd-24-directional-connector",
+   "title": "Directional Connector",
+   "tags": "dfd data flow diagram directional directed",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=classic;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-DFD.js:59"
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "id": "salesforceProduct",
+ "title": "Salesforce / Product",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:8",
+ "entries": [
+  {
+   "id": "salesforceProduct-0-sales",
+   "title": "Sales",
+   "tags": "salesforce sales salesforce product  Sales",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.sales;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.sales"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:653"
+  },
+  {
+   "id": "salesforceProduct-1-service",
+   "title": "Service",
+   "tags": "salesforce service salesforce product  Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49.199999999999996,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.service;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:654"
+  },
+  {
+   "id": "salesforceProduct-2-marketing",
+   "title": "Marketing",
+   "tags": "salesforce marketing salesforce product  Marketing",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.marketing;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.marketing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:655"
+  },
+  {
+   "id": "salesforceProduct-3-commerce",
+   "title": "Commerce",
+   "tags": "salesforce commerce salesforce product  Commerce",
+   "kind": "vertex",
+   "width": 60,
+   "height": 52.8,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.commerce;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.commerce"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:656"
+  },
+  {
+   "id": "salesforceProduct-4-platform",
+   "title": "Platform",
+   "tags": "salesforce platform salesforce product  Platform",
+   "kind": "vertex",
+   "width": 39,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.platform;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:657"
+  },
+  {
+   "id": "salesforceProduct-5-analytics",
+   "title": "Analytics",
+   "tags": "salesforce salesforce salesforce product  Analytics",
+   "kind": "vertex",
+   "width": 60,
+   "height": 58.8,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.analytics;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.analytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:658"
+  },
+  {
+   "id": "salesforceProduct-6-integration",
+   "title": "Integration",
+   "tags": "salesforce integration salesforce product  Integration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.integration;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:659"
+  },
+  {
+   "id": "salesforceProduct-7-employees",
+   "title": "Employees",
+   "tags": "salesforce employees salesforce product  Employees",
+   "kind": "vertex",
+   "width": 58.199999999999996,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.employees;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.employees"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:660"
+  },
+  {
+   "id": "salesforceProduct-8-learning",
+   "title": "Learning",
+   "tags": "salesforce learning salesforce product  Learning",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.learning;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.learning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:661"
+  },
+  {
+   "id": "salesforceProduct-9-industries",
+   "title": "Industries",
+   "tags": "salesforce industries salesforce product  Industries",
+   "kind": "vertex",
+   "width": 53.4,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.industries;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.industries"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:662"
+  },
+  {
+   "id": "salesforceProduct-10-partners",
+   "title": "Partners",
+   "tags": "salesforce partners salesforce product  Partners",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.partners;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.partners"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:663"
+  },
+  {
+   "id": "salesforceProduct-11-success",
+   "title": "Success",
+   "tags": "salesforce success salesforce product  Success",
+   "kind": "vertex",
+   "width": 40.800000000000004,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.success;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.success"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:664"
+  },
+  {
+   "id": "salesforceProduct-12-inbox",
+   "title": "Inbox",
+   "tags": "salesforce inbox salesforce product  Inbox",
+   "kind": "vertex",
+   "width": 60,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.inbox;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.inbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:665"
+  },
+  {
+   "id": "salesforceProduct-13-field-service",
+   "title": "Field Service",
+   "tags": "salesforce field service salesforce product  Field Service",
+   "kind": "vertex",
+   "width": 45,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.field_service;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.field_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:666"
+  },
+  {
+   "id": "salesforceProduct-14-iot",
+   "title": "IoT",
+   "tags": "salesforce iot salesforce product  IoT",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.iot;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.iot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:667"
+  },
+  {
+   "id": "salesforceProduct-15-social-studio",
+   "title": "Social Studio",
+   "tags": "salesforce social studio salesforce product  Social Studio",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.social_studio;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.social_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:668"
+  },
+  {
+   "id": "salesforceProduct-16-customer-360",
+   "title": "Customer 360",
+   "tags": "salesforce customer 360 salesforce product  Customer 360",
+   "kind": "vertex",
+   "width": 60,
+   "height": 54.6,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.customer_360;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.customer_360"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:669"
+  },
+  {
+   "id": "salesforceProduct-17-heroku",
+   "title": "Heroku",
+   "tags": "salesforce heroku salesforce product  Heroku",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.heroku;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.heroku"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:670"
+  },
+  {
+   "id": "salesforceProduct-18-work-com",
+   "title": "Work.com",
+   "tags": "salesforce work com salesforce product  Work.com",
+   "kind": "vertex",
+   "width": 60,
+   "height": 58.8,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.work_com;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.work_com"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:671"
+  },
+  {
+   "id": "salesforceProduct-19-loyalty",
+   "title": "Loyalty",
+   "tags": "salesforce loyalty salesforce product  Loyalty",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40.800000000000004,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.loyalty;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.loyalty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:672"
+  },
+  {
+   "id": "salesforceProduct-20-sales",
+   "title": "Sales",
+   "tags": "salesforce sales salesforce product  Sales",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.sales2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.sales2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:674"
+  },
+  {
+   "id": "salesforceProduct-21-service",
+   "title": "Service",
+   "tags": "salesforce service salesforce product  Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.service2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.service2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:675"
+  },
+  {
+   "id": "salesforceProduct-22-marketing",
+   "title": "Marketing",
+   "tags": "salesforce marketing salesforce product  Marketing",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.marketing2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.marketing2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:676"
+  },
+  {
+   "id": "salesforceProduct-23-commerce",
+   "title": "Commerce",
+   "tags": "salesforce commerce salesforce product  Commerce",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.commerce2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.commerce2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:677"
+  },
+  {
+   "id": "salesforceProduct-24-platform",
+   "title": "Platform",
+   "tags": "salesforce platform salesforce product  Platform",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.platform2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.platform2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:678"
+  },
+  {
+   "id": "salesforceProduct-25-analytics",
+   "title": "Analytics",
+   "tags": "salesforce salesforce salesforce product  Analytics",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.analytics2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.analytics2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:679"
+  },
+  {
+   "id": "salesforceProduct-26-integration",
+   "title": "Integration",
+   "tags": "salesforce integration salesforce product  Integration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.integration2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.integration2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:680"
+  },
+  {
+   "id": "salesforceProduct-27-employees",
+   "title": "Employees",
+   "tags": "salesforce employees salesforce product  Employees",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.employees2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.employees2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:681"
+  },
+  {
+   "id": "salesforceProduct-28-learning",
+   "title": "Learning",
+   "tags": "salesforce learning salesforce product  Learning",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.learning2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.learning2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:682"
+  },
+  {
+   "id": "salesforceProduct-29-industries",
+   "title": "Industries",
+   "tags": "salesforce industries salesforce product  Industries",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.industries2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.industries2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:683"
+  },
+  {
+   "id": "salesforceProduct-30-partners",
+   "title": "Partners",
+   "tags": "salesforce partners salesforce product  Partners",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.partners2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.partners2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:684"
+  },
+  {
+   "id": "salesforceProduct-31-success",
+   "title": "Success",
+   "tags": "salesforce success salesforce product  Success",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.success2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.success2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:685"
+  },
+  {
+   "id": "salesforceProduct-32-inbox",
+   "title": "Inbox",
+   "tags": "salesforce inbox salesforce product  Inbox",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.inbox2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.inbox2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:686"
+  },
+  {
+   "id": "salesforceProduct-33-field-service",
+   "title": "Field Service",
+   "tags": "salesforce field service salesforce product  Field Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.field_service2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.field_service2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:687"
+  },
+  {
+   "id": "salesforceProduct-34-iot",
+   "title": "IoT",
+   "tags": "salesforce iot salesforce product  IoT",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.iot2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.iot2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:688"
+  },
+  {
+   "id": "salesforceProduct-35-social-studio",
+   "title": "Social Studio",
+   "tags": "salesforce social studio salesforce product  Social Studio",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.social_studio2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.social_studio2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:689"
+  },
+  {
+   "id": "salesforceProduct-36-customer-360",
+   "title": "Customer 360",
+   "tags": "salesforce customer 360 salesforce product  Customer 360",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.customer_3602;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.customer_3602"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:690"
+  },
+  {
+   "id": "salesforceProduct-37-heroku",
+   "title": "Heroku",
+   "tags": "salesforce heroku salesforce product  Heroku",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.heroku2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.heroku2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:691"
+  },
+  {
+   "id": "salesforceProduct-38-work-com",
+   "title": "Work.com",
+   "tags": "salesforce work com salesforce product  Work.com",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.work_com2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.work_com2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:692"
+  },
+  {
+   "id": "salesforceProduct-39-loyalty",
+   "title": "Loyalty",
+   "tags": "salesforce loyalty salesforce product  Loyalty",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.loyalty2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.loyalty2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:693"
+  }
+ ]
+}

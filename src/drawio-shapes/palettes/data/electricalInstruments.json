@@ -1,0 +1,80 @@
+{
+ "id": "electricalInstruments",
+ "title": "Electrical / Instruments",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalInstruments-0-ammeter",
+   "title": "Ammeter",
+   "tags": "electrical instruments ampermeter ammeter electrical instrument  Ammeter",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;strokeWidth=1;shape=ellipse;aspect=fixed;fontSize=50;",
+   "value": "A",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:585"
+  },
+  {
+   "id": "electricalInstruments-1-galvanometer",
+   "title": "Galvanometer",
+   "tags": "electrical instruments galvanometer electrical instrument  Galvanometer",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "perimeter=ellipsePerimeter;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.instruments.galvanometer;",
+   "shapeNames": [
+    "mxgraph.electrical.instruments.galvanometer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:587"
+  },
+  {
+   "id": "electricalInstruments-2-oscilloscope",
+   "title": "Oscilloscope",
+   "tags": "electrical instruments oscilloscope electrical instrument  Oscilloscope",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "perimeter=ellipsePerimeter;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.instruments.oscilloscope;",
+   "shapeNames": [
+    "mxgraph.electrical.instruments.oscilloscope"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:589"
+  },
+  {
+   "id": "electricalInstruments-3-signal-generator",
+   "title": "Signal Generator",
+   "tags": "electrical instruments signal generator electrical instrument  Signal Generator",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "perimeter=ellipsePerimeter;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.instruments.signal_generator;",
+   "shapeNames": [
+    "mxgraph.electrical.instruments.signal_generator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:591"
+  },
+  {
+   "id": "electricalInstruments-4-voltmeter",
+   "title": "Voltmeter",
+   "tags": "electrical instruments ampermeter ammeter electrical instrument  Voltmeter",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;strokeWidth=1;shape=ellipse;aspect=fixed;fontSize=50;",
+   "value": "V",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:593"
+  }
+ ]
+}

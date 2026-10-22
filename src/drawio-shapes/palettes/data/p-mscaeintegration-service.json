@@ -1,0 +1,260 @@
+{
+ "id": "mscaeIntegration Service",
+ "title": "CAE / Integration Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeIntegration Service-0-api-management-service",
+   "title": "API Management Service",
+   "tags": "mscae api application programming interface management service ms microsoft cloud enterprise integration service API Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/API_Management.svg;points=[[0.565,0,0],[0.461,0.994,0],[0,0.484,0],[1,0.579,0],[0.775,0.081,0],[0.95,0.714,0],[0.083,0.696,0],[0.08,0.277,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1006"
+  },
+  {
+   "id": "mscaeIntegration Service-1-app-configuration",
+   "title": "App Configuration",
+   "tags": "mscae app configuration ms microsoft cloud enterprise integration service App Configuration",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Configuration.svg;points=[[0.604,0,0],[0.497,0.919,0],[0,0.457,0],[0.965,0.5,0],[0.762,0.054,0],[0.88,0.923,0],[0.165,0.987,0],[0.18,0.115,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1008"
+  },
+  {
+   "id": "mscaeIntegration Service-2-azure-api-for-fhir",
+   "title": "Azure API for FHIR",
+   "tags": "mscae azure api application programming interface for fhir ms microsoft cloud enterprise integration service Azure API for FHIR",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_API_for_FHIR.svg;points=[[0.5,0.151,0],[0.499,1,0],[0.03,0.5,0],[0.97,0.5,0],[0.905,0.065,0],[0.767,0.807,0],[0.233,0.807,0],[0.108,0.05,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1010"
+  },
+  {
+   "id": "mscaeIntegration Service-3-azure-data-catalog",
+   "title": "Azure Data Catalog",
+   "tags": "mscae azure data catalog ms microsoft cloud enterprise integration service Azure Data Catalog",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Catalog.svg;points=[[0.457,0,0],[0.5,0.95,0],[0,0.424,0],[1,0.5,0],[0.795,0,0],[0.994,0.937,0],[0.067,0.77,0],[0.07,0.043,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1012"
+  },
+  {
+   "id": "mscaeIntegration Service-4-azure-service-bus-relays",
+   "title": "Azure Service Bus Relays",
+   "tags": "mscae azure service bus relay relays ms microsoft cloud enterprise integration service Azure Service Bus Relays",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Bus_Relay.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.992,0,0],[1,0.992,0],[0,0.992,0],[0.008,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1014"
+  },
+  {
+   "id": "mscaeIntegration Service-5-azure-service-bus-relays",
+   "title": "Azure Service Bus Relays",
+   "tags": "mscae azure service bus relay relays ms microsoft cloud enterprise integration service Azure Service Bus Relays",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Bus_Relay.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.992,0,0],[1,0.992,0],[0,0.992,0],[0.008,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1016"
+  },
+  {
+   "id": "mscaeIntegration Service-6-azure-service-bus",
+   "title": "Azure Service Bus",
+   "tags": "mscae azure service bus ms microsoft cloud enterprise integration service Azure Service Bus",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Bus.svg;points=[[0.5,0,0],[0.5,1,0],[0.214,0.5,0],[0.786,0.5,0],[0.992,0,0],[1,0.992,0],[0,0.992,0],[0.008,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1018"
+  },
+  {
+   "id": "mscaeIntegration Service-7-azure-storsimple-device-managers",
+   "title": "Azure StorSimple Device Managers",
+   "tags": "mscae azure storsimple device managers ms microsoft cloud enterprise integration service Azure StorSimple Device Managers",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/StorSimple.svg;points=[[0.583,0,0],[0.647,0.997,0],[0,0.471,0],[1,0.576,0],[0.787,0.087,0],[0.765,0.997,0],[0.063,0.647,0],[0.08,0.278,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1020"
+  },
+  {
+   "id": "mscaeIntegration Service-8-event-grid-domains-and-subscriptions",
+   "title": "Event Grid Domains and Subscriptions",
+   "tags": "mscae event grid domains subscriptions ms microsoft cloud enterprise integration service Event Grid Domains and Subscriptions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Event_Grid.svg;points=[[0.501,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.995,0,0],[1,0.992,0],[0,0.992,0],[0.008,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1022"
+  },
+  {
+   "id": "mscaeIntegration Service-9-event-grid-topics",
+   "title": "Event Grid Topics",
+   "tags": "mscae event grid topics ms microsoft cloud enterprise integration service Event Grid Topics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Event_Grid_Topics.svg;points=[[0.565,0,0],[0.564,1,0],[0.099,0.5,0],[0.799,0.5,0],[0.992,0,0],[0.995,0.997,0],[0.138,1,0],[0.138,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1024"
+  },
+  {
+   "id": "mscaeIntegration Service-10-event-grid-topics",
+   "title": "Event Grid Topics",
+   "tags": "mscae event grid topics ms microsoft cloud enterprise integration service Event Grid Topics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Event_Grid_Topics.svg;points=[[0.565,0,0],[0.564,1,0],[0.099,0.5,0],[0.799,0.5,0],[0.992,0,0],[0.995,0.997,0],[0.138,1,0],[0.138,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1026"
+  },
+  {
+   "id": "mscaeIntegration Service-11-integration-accounts",
+   "title": "Integration Accounts",
+   "tags": "mscae integration accounts ms microsoft cloud enterprise integration service Integration Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Integration_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1028"
+  },
+  {
+   "id": "mscaeIntegration Service-12-integration-service-environments",
+   "title": "Integration Service Environments",
+   "tags": "mscae integration service environments ms microsoft cloud enterprise integration service Integration Service Environments",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Integration_Service_Environments.svg;points=[[0.499,0,0],[0.499,0.995,0],[0,0.497,0],[0.995,0.499,0],[0.85,0.143,0],[0.867,0.835,0],[0.143,0.85,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1030"
+  },
+  {
+   "id": "mscaeIntegration Service-13-logic-apps-custom-connector",
+   "title": "Logic Apps Custom Connector",
+   "tags": "mscae logic apps custom connector ms microsoft cloud enterprise integration service Logic Apps Custom Connector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Logic_Apps_Custom_Connector.svg;points=[[0.245,0,0],[0.245,1,0],[0.211,0.5,0],[1,0.755,0],[0.41,0,0],[1,0.92,0],[0.013,0.77,0],[0.08,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1032"
+  },
+  {
+   "id": "mscaeIntegration Service-14-logic-apps",
+   "title": "Logic Apps",
+   "tags": "mscae logic apps ms microsoft cloud enterprise integration service Logic Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Logic_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.497,0],[0.932,0.026,0],[0.925,0.974,0],[0.07,0.971,0],[0.07,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1034"
+  },
+  {
+   "id": "mscaeIntegration Service-15-sendgrid-accounts",
+   "title": "SendGrid Accounts",
+   "tags": "mscae sendgrid accounts ms microsoft cloud enterprise integration service SendGrid Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SendGrid_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,0.667,0],[0,1,0],[0.333,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1036"
+  },
+  {
+   "id": "mscaeIntegration Service-16-service-catalog-managed-application-definitions",
+   "title": "Service Catalog Managed Application Definitions",
+   "tags": "mscae service catalog managed application definitions ms microsoft cloud enterprise integration service Service Catalog Managed Application Definitions",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Catalog_Managed_Application_Definitions.svg;points=[[0.5,0,0],[0.511,1,0],[0,0.519,0],[1,0.46,0],[1,0,0],[0.933,1,0],[0.088,1,0],[0.019,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1038"
+  },
+  {
+   "id": "mscaeIntegration Service-17-software-as-a-service-saas",
+   "title": "Software as a Service (SaaS)",
+   "tags": "mscae software service saas ms microsoft cloud enterprise integration service Software as a Service (SaaS)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Software_as_a_Service.svg;points=[[0.56,0,0],[0.516,1,0],[0,0.422,0],[0.995,0.479,0],[0.765,0.088,0],[0.717,0.995,0],[0.315,0.995,0],[0.075,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1040"
+  }
+ ]
+}

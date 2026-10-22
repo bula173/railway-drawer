@@ -1,0 +1,288 @@
+{
+ "id": "mscaeOMSFlat",
+ "title": "CAE / OMS (flat)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeOMSFlat-0-alerts",
+   "title": "Alerts",
+   "tags": "mscae alerts ms microsoft cloud enterprise oms Alerts",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.alerts",
+   "shapeNames": [
+    "mxgraph.mscae.oms.alerts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:541"
+  },
+  {
+   "id": "mscaeOMSFlat-1-app-with-changes",
+   "title": "App With Changes",
+   "tags": "mscae app with changes ms microsoft cloud enterprise oms App With Changes",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.app_with_changes",
+   "shapeNames": [
+    "mxgraph.mscae.oms.app_with_changes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:543"
+  },
+  {
+   "id": "mscaeOMSFlat-2-assessments",
+   "title": "Assessments",
+   "tags": "mscae assessments ms microsoft cloud enterprise oms Assessments",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.assessments",
+   "shapeNames": [
+    "mxgraph.mscae.oms.assessments"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:545"
+  },
+  {
+   "id": "mscaeOMSFlat-3-capacity",
+   "title": "Capacity",
+   "tags": "mscae capacity ms microsoft cloud enterprise oms Capacity",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.capacity",
+   "shapeNames": [
+    "mxgraph.mscae.oms.capacity"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:547"
+  },
+  {
+   "id": "mscaeOMSFlat-4-config-assessment",
+   "title": "Config Assessment",
+   "tags": "mscae config assessment ms microsoft cloud enterprise oms Config Assessment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.config_assessment",
+   "shapeNames": [
+    "mxgraph.mscae.oms.config_assessment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:549"
+  },
+  {
+   "id": "mscaeOMSFlat-5-dashboard",
+   "title": "Dashboard",
+   "tags": "mscae dashboard ms microsoft cloud enterprise oms Dashboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.dashboard",
+   "shapeNames": [
+    "mxgraph.mscae.oms.dashboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:551"
+  },
+  {
+   "id": "mscaeOMSFlat-6-dependency-monitor",
+   "title": "Dependency Monitor",
+   "tags": "mscae dependency monitor ms microsoft cloud enterprise oms Dependency Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.dependency_monitor",
+   "shapeNames": [
+    "mxgraph.mscae.oms.dependency_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:553"
+  },
+  {
+   "id": "mscaeOMSFlat-7-diagnostics",
+   "title": "Diagnostics",
+   "tags": "mscae diagnostics ms microsoft cloud enterprise oms Diagnostics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.diagnostics",
+   "shapeNames": [
+    "mxgraph.mscae.oms.diagnostics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:555"
+  },
+  {
+   "id": "mscaeOMSFlat-8-jobs",
+   "title": "Jobs",
+   "tags": "mscae jobs ms microsoft cloud enterprise oms Jobs",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.jobs",
+   "shapeNames": [
+    "mxgraph.mscae.oms.jobs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:557"
+  },
+  {
+   "id": "mscaeOMSFlat-9-log-management",
+   "title": "Log Management",
+   "tags": "mscae log management ms microsoft cloud enterprise oms Log Management",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.log_management",
+   "shapeNames": [
+    "mxgraph.mscae.oms.log_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:559"
+  },
+  {
+   "id": "mscaeOMSFlat-10-log-search",
+   "title": "Log Search",
+   "tags": "mscae log search ms microsoft cloud enterprise oms Log Search",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.log_search",
+   "shapeNames": [
+    "mxgraph.mscae.oms.log_search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:561"
+  },
+  {
+   "id": "mscaeOMSFlat-11-malware-assessment",
+   "title": "Malware Assessment",
+   "tags": "mscae malware assessment ms microsoft cloud enterprise oms Malware Assessment",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.malware_assessment",
+   "shapeNames": [
+    "mxgraph.mscae.oms.malware_assessment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:563"
+  },
+  {
+   "id": "mscaeOMSFlat-12-overview",
+   "title": "Overview",
+   "tags": "mscae overview ms microsoft cloud enterprise oms Overview",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.overview",
+   "shapeNames": [
+    "mxgraph.mscae.oms.overview"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:565"
+  },
+  {
+   "id": "mscaeOMSFlat-13-security",
+   "title": "Security",
+   "tags": "mscae security ms microsoft cloud enterprise oms Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.security",
+   "shapeNames": [
+    "mxgraph.mscae.oms.security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:567"
+  },
+  {
+   "id": "mscaeOMSFlat-14-server-width-changes",
+   "title": "Server Width Changes",
+   "tags": "mscae server width changes ms microsoft cloud enterprise oms Server Width Changes",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.server_width_changes",
+   "shapeNames": [
+    "mxgraph.mscae.oms.server_width_changes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:569"
+  },
+  {
+   "id": "mscaeOMSFlat-15-services",
+   "title": "Services",
+   "tags": "mscae services ms microsoft cloud enterprise oms Services",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.services",
+   "shapeNames": [
+    "mxgraph.mscae.oms.services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:571"
+  },
+  {
+   "id": "mscaeOMSFlat-16-solutions",
+   "title": "Solutions",
+   "tags": "mscae solutions ms microsoft cloud enterprise oms Solutions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.solutions",
+   "shapeNames": [
+    "mxgraph.mscae.oms.solutions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:573"
+  },
+  {
+   "id": "mscaeOMSFlat-17-system-update",
+   "title": "System Update",
+   "tags": "mscae system update ms microsoft cloud enterprise oms System Update",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.system_update",
+   "shapeNames": [
+    "mxgraph.mscae.oms.system_update"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:575"
+  },
+  {
+   "id": "mscaeOMSFlat-18-track-changes",
+   "title": "Track Changes",
+   "tags": "mscae track changes ms microsoft cloud enterprise oms Track Changes",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.track_changes",
+   "shapeNames": [
+    "mxgraph.mscae.oms.track_changes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:577"
+  },
+  {
+   "id": "mscaeOMSFlat-19-wire-data",
+   "title": "Wire Data",
+   "tags": "mscae wire data ms microsoft cloud enterprise oms Wire Data",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.oms.wire_data",
+   "shapeNames": [
+    "mxgraph.mscae.oms.wire_data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:579"
+  }
+ ]
+}

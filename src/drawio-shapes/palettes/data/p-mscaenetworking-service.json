@@ -1,0 +1,386 @@
+{
+ "id": "mscaeNetworking Service",
+ "title": "CAE / Networking Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeNetworking Service-0-application-gateway",
+   "title": "Application Gateway",
+   "tags": "mscae application gateway ms microsoft cloud enterprise networking service Application Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Application_Gateway.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.5,0],[1,0.5,0],[0.77,0.23,0],[0.77,0.77,0],[0.23,0.77,0],[0.23,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1282"
+  },
+  {
+   "id": "mscaeNetworking Service-1-application-security-groups",
+   "title": "Application Security Groups",
+   "tags": "mscae application security groups ms microsoft cloud enterprise networking service Application Security Groups",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Application_Security_Groups.svg;points=[[0.495,0,0],[0.493,1,0],[0,0.394,0],[0.99,0.395,0],[0.989,0.125,0],[0.935,0.76,0],[0.055,0.76,0],[0,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1284"
+  },
+  {
+   "id": "mscaeNetworking Service-2-azure-firewall",
+   "title": "Azure Firewall",
+   "tags": "mscae azure firewall ms microsoft cloud enterprise networking service Azure Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Firewall.svg;points=[[0.5,0.033,0],[0.41,0.998,0],[0,0.5,0],[0.998,0.451,0],[0.807,0.083,0],[0.812,0.985,0],[0.013,0.99,0],[0.018,0.403,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1286"
+  },
+  {
+   "id": "mscaeNetworking Service-3-cdn-profiles",
+   "title": "CDN Profiles",
+   "tags": "mscae cdn profiles content delivery network ms microsoft cloud enterprise networking service CDN Profiles",
+   "kind": "vertex",
+   "width": 50,
+   "height": 23,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Content_Delivery_Network.svg;points=[[0.5,0.087,0],[0.507,0.995,0],[0,0.552,0],[0.912,0.5,0],[0.78,0.039,0],[0.942,0.983,0],[0.083,0.988,0],[0.153,0.093,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1288"
+  },
+  {
+   "id": "mscaeNetworking Service-4-connections",
+   "title": "Connections",
+   "tags": "mscae connections ms microsoft cloud enterprise networking service Connections",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Connections.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.496,0],[1,0.504,0],[0.825,0.118,0],[0.877,0.827,0],[0.145,0.855,0],[0.175,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1290"
+  },
+  {
+   "id": "mscaeNetworking Service-5-connections",
+   "title": "Connections",
+   "tags": "mscae connections ms microsoft cloud enterprise networking service Connections",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Connections.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.496,0],[1,0.504,0],[0.825,0.118,0],[0.877,0.827,0],[0.145,0.855,0],[0.175,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1292"
+  },
+  {
+   "id": "mscaeNetworking Service-6-ddos-protection-plans",
+   "title": "DDOS Protection Plans",
+   "tags": "mscae ddos protection plans ms microsoft cloud enterprise networking service DDOS Protection Plans",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/DDOS_Protection_Plans.svg;points=[[0.5,0,0],[0.498,1,0],[0,0.395,0],[1,0.394,0],[1,0.125,0],[0.935,0.77,0],[0.055,0.76,0],[0,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1294"
+  },
+  {
+   "id": "mscaeNetworking Service-7-dns-private-zones",
+   "title": "DNS Private Zones",
+   "tags": "mscae dns domain name server private zones ms microsoft cloud enterprise networking service DNS Private Zones",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/DNS_Private_Zones.svg;points=[[0.42,0,0],[0.74,1,0],[0,0.419,0],[1,0.743,0],[0.72,0.123,0],[0.937,0.912,0],[0.123,0.717,0],[0.12,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1296"
+  },
+  {
+   "id": "mscaeNetworking Service-8-dns-zones",
+   "title": "DNS Zones",
+   "tags": "mscae dns domain name server zones ms microsoft cloud enterprise networking service DNS Zones",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/DNS.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.133,0.842,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1298"
+  },
+  {
+   "id": "mscaeNetworking Service-9-express-route-circuits",
+   "title": "Express Route Circuits",
+   "tags": "mscae express route circuits ms microsoft cloud enterprise networking service Express Route Circuits",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Express_Route.svg;points=[[0.5,0,0],[0.5,0.872,0],[0,0.806,0],[1,0.808,0],[0.945,0.966,0],[0.048,0.958,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1300"
+  },
+  {
+   "id": "mscaeNetworking Service-10-front-doors",
+   "title": "Front Doors",
+   "tags": "mscae front doors ms microsoft cloud enterprise networking service Front Doors",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Front_Doors.svg;points=[[0.399,0,0],[0.491,0.997,0],[0,0.567,0],[0.995,0.614,0],[0.84,0.148,0],[0.945,0.758,0],[0.075,0.758,0],[0.233,0.066,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1302"
+  },
+  {
+   "id": "mscaeNetworking Service-11-load-balancers",
+   "title": "Load Balancers",
+   "tags": "mscae load balancer balancers ms microsoft cloud enterprise networking service Load Balancers",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Load_Balancer_feature.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.5,0],[1,0.5,0],[0.77,0.23,0],[0.77,0.77,0],[0.23,0.77,0],[0.23,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1304"
+  },
+  {
+   "id": "mscaeNetworking Service-12-local-network-gateways",
+   "title": "Local Network Gateways",
+   "tags": "mscae local network gateways ms microsoft cloud enterprise networking service Local Network Gateways",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Local_Network_Gateways.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.5,0],[1,0.5,0],[0.77,0.23,0],[0.77,0.77,0],[0.23,0.77,0],[0.23,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1306"
+  },
+  {
+   "id": "mscaeNetworking Service-13-network-interface-card",
+   "title": "Network Interface Card",
+   "tags": "mscae network interface card ms microsoft cloud enterprise networking service Network Interface Card",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/NetworkInterfaceCard.svg;points=[[0.447,0,0],[0.447,1,0],[0,0.5,0],[0.994,0.427,0],[0.994,0.078,0],[0.894,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1308"
+  },
+  {
+   "id": "mscaeNetworking Service-14-network-security-groups-classic",
+   "title": "Network Security Groups (Classic)",
+   "tags": "mscae network security group classic ms microsoft cloud enterprise networking service Network Security Groups (Classic)",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Network_Security_Groups_Classic.svg;points=[[0.495,0,0],[0.495,0.998,0],[0,0.393,0],[0.99,0.39,0],[0.989,0.123,0],[0.918,0.775,0],[0.065,0.77,0],[0,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1310"
+  },
+  {
+   "id": "mscaeNetworking Service-15-network-watcher",
+   "title": "Network Watcher",
+   "tags": "mscae network watcher ms microsoft cloud enterprise networking service Network Watcher",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Network_watcher.svg;points=[[0.5,0.03,0],[0.499,0.849,0],[0.151,0.5,0],[0.97,0.5,0],[0.905,0.118,0],[0.912,0.595,0],[0.01,0.975,0],[0.405,0.088,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1312"
+  },
+  {
+   "id": "mscaeNetworking Service-16-on-premises-data-gateways",
+   "title": "On-Premises Data Gateways",
+   "tags": "mscae on premises data gateways ms microsoft cloud enterprise networking service On-Premises Data Gateways",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/On_Premises_Data_Gateways.svg;points=[[0.5,0.03,0],[0.51,1,0],[0,0.461,0],[1,0.463,0],[0.8,0.065,0],[0.957,0.592,0],[0.053,0.605,0],[0.18,0.12,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1314"
+  },
+  {
+   "id": "mscaeNetworking Service-17-public-ip-addresses",
+   "title": "Public IP Addresses",
+   "tags": "mscae app service ip internet protocol address addresses ms microsoft cloud enterprise networking service Public IP Addresses",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Service_IPAddress.svg;points=[[0.5,0,0],[0.5,0.991,0],[0,0.496,0],[1,0.496,0],[0.99,0.012,0],[0.987,0.982,0],[0.013,0.982,0],[0.01,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1316"
+  },
+  {
+   "id": "mscaeNetworking Service-18-reserved-ip-addresses-classic",
+   "title": "Reserved IP Addresses (Classic)",
+   "tags": "mscae classic ip internet protocol address adresses ms microsoft cloud enterprise networking service Reserved IP Addresses (Classic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/ClassicIPAddress.svg;points=[[0.5,0,0],[0.5,0.991,0],[0,0.496,0],[1,0.496,0],[0.99,0.012,0],[0.982,0.985,0],[0.018,0.985,0],[0.01,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1318"
+  },
+  {
+   "id": "mscaeNetworking Service-19-route-filters",
+   "title": "Route Filters",
+   "tags": "mscae route filters ms microsoft cloud enterprise networking service Route Filters",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Route_Filter.svg;points=[[0.44,0.215,0],[0.44,0.785,0],[0,0.5,0],[1,0.5,0],[0.785,0,0],[0.785,1,0],[0.03,0.782,0],[0.028,0.221,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1320"
+  },
+  {
+   "id": "mscaeNetworking Service-20-route-tables",
+   "title": "Route Tables",
+   "tags": "mscae route tables ms microsoft cloud enterprise networking service Route Tables",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/UserDefinedRoute.svg;points=[[0.369,0,0],[0.5,1,0],[0,0.338,0],[1,0.777,0],[0.797,0.18,0],[1,1,0],[0.37,1,0],[0.13,0.203,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1322"
+  },
+  {
+   "id": "mscaeNetworking Service-21-service-endpoint-policies",
+   "title": "Service Endpoint Policies",
+   "tags": "mscae service endpoint policies ms microsoft cloud enterprise networking service Service Endpoint Policies",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Service_Endpoint_Policies.svg;points=[[0.5,0,0],[0.427,1,0],[0.15,0.5,0],[1,0.12,0],[0.969,0.033,0],[0.813,0.972,0],[0.023,0.955,0],[0.197,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1324"
+  },
+  {
+   "id": "mscaeNetworking Service-22-traffic-manager-profiles",
+   "title": "Traffic Manager Profiles",
+   "tags": "mscae traffic manager profiles ms microsoft cloud enterprise networking service Traffic Manager Profiles",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Traffic_Manager.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.855,0.145,0],[0.855,0.855,0],[0.145,0.855,0],[0.147,0.147,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1326"
+  },
+  {
+   "id": "mscaeNetworking Service-23-virtual-network-classic",
+   "title": "Virtual Network (Classic)",
+   "tags": "mscae virtual network classic ms microsoft cloud enterprise networking service Virtual Network (Classic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.000000000000004,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Network_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.491,0],[1,0.489,0],[0.727,0.005,0],[0.72,0.99,0],[0.278,0.986,0],[0.278,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1328"
+  },
+  {
+   "id": "mscaeNetworking Service-24-virtual-network-gateways",
+   "title": "Virtual Network Gateways",
+   "tags": "mscae vpn gateway gateways virtual private network ms microsoft cloud enterprise networking service Virtual Network Gateways",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VPN_Gateway.svg;points=[[0.497,0,0],[0.499,1,0],[0,0.5,0],[0.997,0.5,0],[0.777,0.093,0],[0.975,0.967,0],[0.023,0.965,0],[0.225,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1330"
+  },
+  {
+   "id": "mscaeNetworking Service-25-virtual-networks",
+   "title": "Virtual Networks",
+   "tags": "mscae virtual network networks ms microsoft cloud enterprise networking service Virtual Networks",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.000000000000004,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Network.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.491,0],[1,0.489,0],[0.727,0.005,0],[0.72,0.99,0],[0.278,0.986,0],[0.278,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1332"
+  },
+  {
+   "id": "mscaeNetworking Service-26-virtual-wans",
+   "title": "Virtual WANs",
+   "tags": "mscae virtual wans wan wide area network networks ms microsoft cloud enterprise networking service Virtual WANs",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_WANs.svg;points=[[0.54,0,0],[0.519,0.995,0],[0.033,0.5,0],[0.995,0.434,0],[0.725,0.073,0],[0.772,0.89,0],[0.253,0.877,0],[0.085,0.193,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1334"
+  }
+ ]
+}

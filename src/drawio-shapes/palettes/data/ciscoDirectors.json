@@ -1,0 +1,78 @@
+{
+ "id": "ciscoDirectors",
+ "title": "Cisco / Directors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoDirectors-0-content-engine-cache-director",
+   "title": "Content Engine (Cache Director)",
+   "tags": "cisco content engine cache director cisco director  Content Engine (Cache Director)",
+   "kind": "vertex",
+   "width": 90,
+   "height": 64,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.directors.content_engine_(cache_director);",
+   "shapeNames": [
+    "mxgraph.cisco.directors.content_engine_(cache_director)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:129"
+  },
+  {
+   "id": "ciscoDirectors-1-director-class-fibre-channel-director",
+   "title": "Director-Class Fibre Channel Director",
+   "tags": "cisco director class fibre channel cisco director  Director-Class Fibre Channel Director",
+   "kind": "vertex",
+   "width": 51,
+   "height": 69,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.directors.director-class_fibre_channel_director;",
+   "shapeNames": [
+    "mxgraph.cisco.directors.director-class_fibre_channel_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:130"
+  },
+  {
+   "id": "ciscoDirectors-2-distributed-director",
+   "title": "Distributed Director",
+   "tags": "cisco distributed director cisco director  Distributed Director",
+   "kind": "vertex",
+   "width": 91,
+   "height": 64,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.directors.distributed_director;",
+   "shapeNames": [
+    "mxgraph.cisco.directors.distributed_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:131"
+  },
+  {
+   "id": "ciscoDirectors-3-localdirector",
+   "title": "LocalDirector",
+   "tags": "cisco localdirector local director cisco director  LocalDirector",
+   "kind": "vertex",
+   "width": 78,
+   "height": 51,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.directors.localdirector;",
+   "shapeNames": [
+    "mxgraph.cisco.directors.localdirector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:132"
+  },
+  {
+   "id": "ciscoDirectors-4-workgroup-director",
+   "title": "Workgroup Director",
+   "tags": "cisco workgroup director cisco director  Workgroup Director",
+   "kind": "vertex",
+   "width": 83,
+   "height": 67,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.directors.workgroup_director;",
+   "shapeNames": [
+    "mxgraph.cisco.directors.workgroup_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:133"
+  }
+ ]
+}

@@ -1,0 +1,204 @@
+{
+ "id": "ibmMiscellaneous",
+ "title": "IBM / Miscellaneous",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmMiscellaneous-0-bluemix",
+   "title": "Bluemix",
+   "tags": "bluemix ibm  Bluemix",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/bluemix.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:377"
+  },
+  {
+   "id": "ibmMiscellaneous-1-cloudant",
+   "title": "Cloudant",
+   "tags": "cloudant ibm  Cloudant",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/cloudant.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:379"
+  },
+  {
+   "id": "ibmMiscellaneous-2-cognitive-services",
+   "title": "Cognitive Services",
+   "tags": "cognitive services ibm  Cognitive Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/cognitive_services.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:381"
+  },
+  {
+   "id": "ibmMiscellaneous-3-ibm-containers",
+   "title": "IBM Containers",
+   "tags": "ibm containers ibm  IBM Containers",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/ibm_containers.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:383"
+  },
+  {
+   "id": "ibmMiscellaneous-4-ibm-public-cloud",
+   "title": "IBM Public Cloud",
+   "tags": "ibm public cloud ibm  IBM Public Cloud",
+   "kind": "vertex",
+   "width": 60,
+   "height": 46.2,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/ibm_public_cloud.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:385"
+  },
+  {
+   "id": "ibmMiscellaneous-5-iot-cloud",
+   "title": "IoT Cloud",
+   "tags": "iot cloud internet of things ibm  IoT Cloud",
+   "kind": "vertex",
+   "width": 60,
+   "height": 46.2,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/iot_cloud.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:387"
+  },
+  {
+   "id": "ibmMiscellaneous-6-microservices-application",
+   "title": "Microservices Application",
+   "tags": "microservices application ibm  Microservices Application",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/microservices_application.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:389"
+  },
+  {
+   "id": "ibmMiscellaneous-7-object-storage",
+   "title": "Object Storage",
+   "tags": "object storage ibm  Object Storage",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/object_storage.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:391"
+  },
+  {
+   "id": "ibmMiscellaneous-8-offline-capabilities",
+   "title": "Offline Capabilities",
+   "tags": "offline capabilities ibm  Offline Capabilities",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/offline_capabilities.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:393"
+  },
+  {
+   "id": "ibmMiscellaneous-9-openwhisk",
+   "title": "Openwhisk",
+   "tags": "openwhisk ibm  Openwhisk",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/openwhisk.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:395"
+  },
+  {
+   "id": "ibmMiscellaneous-10-peer-cloud",
+   "title": "Peer Cloud",
+   "tags": "peer cloud ibm  Peer Cloud",
+   "kind": "vertex",
+   "width": 60,
+   "height": 46.2,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/peer_cloud.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:397"
+  },
+  {
+   "id": "ibmMiscellaneous-11-retrieve-rank",
+   "title": "Retrieve Rank",
+   "tags": "retrieve rank ibm  Retrieve Rank",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/retrieve_rank.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:399"
+  },
+  {
+   "id": "ibmMiscellaneous-12-scalable",
+   "title": "Scalable",
+   "tags": "scalable ibm  Scalable",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/scalable.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:401"
+  },
+  {
+   "id": "ibmMiscellaneous-13-text-to-speech",
+   "title": "Text to Speech",
+   "tags": "text to speech ibm  Text to Speech",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/miscellaneous/text_to_speech.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:403"
+  }
+ ]
+}

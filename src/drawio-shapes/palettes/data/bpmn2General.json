@@ -1,0 +1,537 @@
+{
+ "id": "bpmn2General",
+ "title": "BPMN 2.0  General",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-BPMN.js:8",
+ "entries": [
+  {
+   "id": "bpmn2General-0-data-object",
+   "title": "Data Object",
+   "tags": "bpmn business process model notation data object Data Object",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:42"
+  },
+  {
+   "id": "bpmn2General-1-data-object-collection",
+   "title": "Data Object Collection",
+   "tags": "bpmn business process model notation data object collection Data Object Collection",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;bpmnTransferType=none;isCollection=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:43"
+  },
+  {
+   "id": "bpmn2General-2-data-input",
+   "title": "Data Input",
+   "tags": "bpmn business process model notation data input Data Input",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;bpmnTransferType=input;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:44"
+  },
+  {
+   "id": "bpmn2General-3-data-input-collection",
+   "title": "Data Input Collection",
+   "tags": "bpmn business process model notation data input collection Data Input Collection",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;bpmnTransferType=input;isCollection=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:45"
+  },
+  {
+   "id": "bpmn2General-4-data-output",
+   "title": "Data Output",
+   "tags": "bpmn business process model notation data output Data Output",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;bpmnTransferType=output;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:46"
+  },
+  {
+   "id": "bpmn2General-5-data-output-collection",
+   "title": "Data Output Collection",
+   "tags": "bpmn business process model notation data output collection Data Output Collection",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=15;html=1;bpmnTransferType=output;isCollection=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.data2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:47"
+  },
+  {
+   "id": "bpmn2General-6-data-store",
+   "title": "Data Store",
+   "tags": "bpmn business process model notation data store Data Store",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=datastore;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;",
+   "shapeNames": [
+    "datastore"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:48"
+  },
+  {
+   "id": "bpmn2General-7-data-object",
+   "title": "Data Object",
+   "tags": "bpmn business process model notation data object Data Object",
+   "kind": "vertex",
+   "width": 140,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;dashed=1;dashPattern=5 2 1 2;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;fontSize=8;html=1;whiteSpace=wrap;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:49"
+  },
+  {
+   "id": "bpmn2General-8-text-annotation",
+   "title": "Text Annotation",
+   "tags": "bpmn business process model notation text annotation label Text Annotation",
+   "kind": "vertex",
+   "width": 80,
+   "height": 30,
+   "style": "text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;",
+   "value": "Text",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:50"
+  },
+  {
+   "id": "bpmn2General-9-horizontal-lane",
+   "title": "Horizontal Lane",
+   "tags": "bpmn business process model notation horizontal lane Horizontal Lane",
+   "kind": "vertex",
+   "width": 440,
+   "height": 100,
+   "style": "swimlane;html=1;startSize=20;fontStyle=0;collapsible=0;horizontal=0;swimlaneLine=0;fillColor=none;whiteSpace=wrap;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:51"
+  },
+  {
+   "id": "bpmn2General-10-vertical-lane",
+   "title": "Vertical Lane",
+   "tags": "bpmn business process model notation vertical lane Vertical Lane",
+   "kind": "vertex",
+   "width": 440,
+   "height": 100,
+   "style": "swimlane;html=1;startSize=20;fontStyle=0;collapsible=0;horizontal=1;swimlaneLine=0;fillColor=none;whiteSpace=wrap;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:52"
+  },
+  {
+   "id": "bpmn2General-11-horizontal-lane",
+   "title": "Horizontal Lane",
+   "tags": "bpmn business process model notation horizontal lane Horizontal Lane",
+   "kind": "vertex",
+   "width": 440,
+   "height": 100,
+   "style": "swimlane;html=1;startSize=20;fontStyle=0;collapsible=0;horizontal=0;swimlaneLine=1;swimlaneFillColor=#ffffff;strokeWidth=2;whiteSpace=wrap;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:53"
+  },
+  {
+   "id": "bpmn2General-12-horizontal-lane",
+   "title": "Horizontal Lane",
+   "tags": "bpmn business process model notation horizontal lane Horizontal Lane",
+   "kind": "vertex",
+   "width": 440,
+   "height": 100,
+   "style": "shape=mxgraph.bpmn.swimlane;html=1;startSize=20;horizontal=0;swimlaneLine=1;collapsible=0;fontStyle=0;swimlaneFillColor=#ffffff;strokeWidth=2;isCollection=1;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.bpmn.swimlane"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:54"
+  },
+  {
+   "id": "bpmn2General-13-vertical-lane",
+   "title": "Vertical Lane",
+   "tags": "bpmn business process model notation vertical lane Vertical Lane",
+   "kind": "vertex",
+   "width": 220,
+   "height": 100,
+   "style": "swimlane;html=1;startSize=20;fontStyle=0;collapsible=0;horizontal=1;swimlaneLine=1;strokeWidth=2;swimlaneFillColor=#ffffff;whiteSpace=wrap;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:55"
+  },
+  {
+   "id": "bpmn2General-14-vertical-lane",
+   "title": "Vertical Lane",
+   "tags": "bpmn business process model notation vertical lane Vertical Lane",
+   "kind": "vertex",
+   "width": 220,
+   "height": 100,
+   "style": "shape=mxgraph.bpmn.swimlane;html=1;startSize=20;horizontal=1;swimlaneLine=1;collapsible=0;fontStyle=0;strokeWidth=2;swimlaneFillColor=#ffffff;isCollection=1;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.bpmn.swimlane"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:56"
+  },
+  {
+   "id": "bpmn2General-15-conversation",
+   "title": "Conversation",
+   "tags": "bpmn business process model notation conversation Conversation",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.conversation2;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;aspect=fixed;bpmnConversationType=conv;",
+   "shapeNames": [
+    "mxgraph.bpmn.conversation2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:58"
+  },
+  {
+   "id": "bpmn2General-16-sub-conversation",
+   "title": "Sub-Conversation",
+   "tags": "bpmn business process model notation sub conversation Sub-Conversation",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.conversation2;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;aspect=fixed;bpmnConversationType=conv;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.conversation2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:59"
+  },
+  {
+   "id": "bpmn2General-17-call-conversation",
+   "title": "Call Conversation",
+   "tags": "bpmn business process model notation call conversation Call Conversation",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.conversation2;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;aspect=fixed;bpmnConversationType=call;",
+   "shapeNames": [
+    "mxgraph.bpmn.conversation2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:60"
+  },
+  {
+   "id": "bpmn2General-18-call-sub-conversation",
+   "title": "Call Sub-Conversation",
+   "tags": "bpmn business process model notation call sub conversation Call Sub-Conversation",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "shape=mxgraph.bpmn.conversation2;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;aspect=fixed;bpmnConversationType=call;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.conversation2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:61"
+  },
+  {
+   "id": "bpmn2General-19-annotation",
+   "title": "Annotation",
+   "tags": "annotation 1 bpmn business process model  Annotation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;",
+   "shapeNames": [
+    "mxgraph.flowchart.annotation_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:63"
+  },
+  {
+   "id": "bpmn2General-20-cross-functional-flowchart",
+   "title": "Cross-Functional Flowchart",
+   "tags": "crossfunctional cross-functional cross functional flowchart swimlane table Cross-Functional Flowchart",
+   "kind": "cells",
+   "width": 400,
+   "height": 400,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Cross-Functional Flowchart\" style=\"shape=table;childLayout=tableLayout;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;fontStyle=1\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"400\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Actor 1\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=1;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Phase 1\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Phase 2\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Phase 3\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Actor 2\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=1;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"160\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"Actor 3\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=1;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"280\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=1;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:64"
+  },
+  {
+   "id": "bpmn2General-21-horizontal-pool-1",
+   "title": "Horizontal Pool 1",
+   "tags": "container swimlane pool horizontal Horizontal Pool 1",
+   "kind": "cells",
+   "width": 480,
+   "height": 380,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Pool\" style=\"swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=20;horizontalStack=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"480\" height=\"380\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lane 1\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"480\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lane 2\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"140\" width=\"480\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Lane 3\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"260\" width=\"480\" height=\"120\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:66"
+  },
+  {
+   "id": "bpmn2General-22-horizontal-pool-2",
+   "title": "Horizontal Pool 2",
+   "tags": "container swimlane pool horizontal Horizontal Pool 2",
+   "kind": "cells",
+   "width": 480,
+   "height": 360,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Pool\" style=\"swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"480\" height=\"360\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lane 1\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" width=\"460\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lane 2\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"120\" width=\"460\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Lane 3\" style=\"swimlane;html=1;startSize=20;horizontal=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"240\" width=\"460\" height=\"120\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:68"
+  },
+  {
+   "id": "bpmn2General-23-horizontal-swimlane",
+   "title": "Horizontal Swimlane",
+   "tags": "swimlane lane pool Horizontal Swimlane",
+   "kind": "vertex",
+   "width": 320,
+   "height": 120,
+   "style": "swimlane;startSize=20;horizontal=0;html=1;whiteSpace=wrap;",
+   "value": "Lane",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:70"
+  },
+  {
+   "id": "bpmn2General-24-vertical-pool-1",
+   "title": "Vertical Pool 1",
+   "tags": "container swimlane pool horizontal Vertical Pool 1",
+   "kind": "cells",
+   "width": 360,
+   "height": 480,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Pool\" style=\"swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"360\" height=\"480\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lane 1\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"120\" height=\"460\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lane 2\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"120\" y=\"20\" width=\"120\" height=\"460\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Lane 3\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"240\" y=\"20\" width=\"120\" height=\"460\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:71"
+  },
+  {
+   "id": "bpmn2General-25-vertical-pool-2",
+   "title": "Vertical Pool 2",
+   "tags": "container swimlane pool vertical Vertical Pool 2",
+   "kind": "cells",
+   "width": 380,
+   "height": 480,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Pool\" style=\"swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;horizontal=0;horizontalStack=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"380\" height=\"480\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lane 1\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" width=\"120\" height=\"480\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lane 2\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"140\" width=\"120\" height=\"480\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Lane 3\" style=\"swimlane;html=1;startSize=20;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"260\" width=\"120\" height=\"480\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:73"
+  },
+  {
+   "id": "bpmn2General-26-vertical-swimlane",
+   "title": "Vertical Swimlane",
+   "tags": "swimlane lane pool Vertical Swimlane",
+   "kind": "vertex",
+   "width": 120,
+   "height": 320,
+   "style": "swimlane;startSize=20;whiteSpace=wrap;html=1;",
+   "value": "Lane",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:75"
+  },
+  {
+   "id": "bpmn2General-27-group",
+   "title": "Group",
+   "tags": "group bpmn business process model  Group",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;arcSize=10;dashed=1;fillColor=none;gradientColor=none;dashPattern=8 3 1 3;strokeWidth=2;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:76"
+  },
+  {
+   "id": "bpmn2General-28-association",
+   "title": "Association",
+   "tags": "bpmn business process model notation association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endFill=0;startFill=0;endSize=6;startSize=6;dashed=1;dashPattern=1 4;endArrow=none;startArrow=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:79"
+  },
+  {
+   "id": "bpmn2General-29-directional-directed-data-association",
+   "title": "Directional / Directed Data Association",
+   "tags": "bpmn business process model notation directed data directional association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endFill=0;startFill=0;endSize=6;startSize=6;dashed=1;dashPattern=1 4;endArrow=openThin;startArrow=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:80"
+  },
+  {
+   "id": "bpmn2General-30-bi-directional-association",
+   "title": "Bi-Directional Association",
+   "tags": "bpmn business process model notation bi directional bidirectional association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endFill=0;startFill=0;endSize=6;startSize=6;dashed=1;dashPattern=1 4;endArrow=openThin;startArrow=openThin;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:81"
+  },
+  {
+   "id": "bpmn2General-31-data-association",
+   "title": "Data Association",
+   "tags": "bpmn business process model notation data association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endFill=0;startFill=0;endSize=6;startSize=6;dashed=1;dashPattern=1 4;endArrow=none;startArrow=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:82"
+  },
+  {
+   "id": "bpmn2General-32-conversation-link",
+   "title": "Conversation Link",
+   "tags": "bpmn business process model notation conversation link",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;shape=link;",
+   "shapeNames": [
+    "link"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:83"
+  },
+  {
+   "id": "bpmn2General-33-sequence-flow",
+   "title": "Sequence Flow",
+   "tags": "bpmn business process model notation sequence flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=blockThin;endFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:85"
+  },
+  {
+   "id": "bpmn2General-34-conditional-sequence-flow",
+   "title": "Conditional Sequence Flow",
+   "tags": "bpmn business process model notation conditional sequence flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=blockThin;endFill=1;startArrow=diamondThin;startFill=0;endSize=6;startSize=10;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:86"
+  },
+  {
+   "id": "bpmn2General-35-default-sequence-flow",
+   "title": "Default Sequence Flow",
+   "tags": "bpmn business process model notation default sequence flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=blockThin;endFill=1;startArrow=dash;startFill=0;endSize=6;startSize=6;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:87"
+  },
+  {
+   "id": "bpmn2General-36-message-flow",
+   "title": "Message Flow",
+   "tags": "bpmn business process model notation message flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "dashed=1;dashPattern=8 4;endArrow=blockThin;endFill=1;startArrow=oval;startFill=0;endSize=6;startSize=4;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:88"
+  },
+  {
+   "id": "bpmn2General-37-initiating-message-flow-with-decorator",
+   "title": "Initiating Message Flow with Decorator",
+   "tags": "edge shape symbol message mail email initiating message flow with decorator",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=blockThin;html=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;dashed=1;dashPattern=8 4;endFill=0;startArrow=oval;startFill=0;endSize=6;startSize=4;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;outlineConnect=0;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=5;labelBackgroundColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:90"
+  },
+  {
+   "id": "bpmn2General-38-non-initiating-message-flow-with-decorator",
+   "title": "Non-Initiating Message Flow with Decorator",
+   "tags": "edge shape symbol message mail email non initiating message flow with decorator",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=blockThin;html=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;dashed=1;dashPattern=8 4;endFill=0;startArrow=oval;startFill=0;endSize=6;startSize=4;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;outlineConnect=0;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=5;labelBackgroundColor=#ffffff;fillColor=#C0C0C0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:107"
+  }
+ ]
+}

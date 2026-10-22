@@ -1,0 +1,164 @@
+{
+ "id": "mockupGraphics",
+ "title": "Mockup Graphics",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupGraphics-0-bar-chart",
+   "title": "Bar Chart",
+   "tags": "mockup graphics barChart mockup graphics  Bar Chart",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.barChart;strokeColor=none;strokeColor2=none;strokeColor3=#666666;fillColor2=#008cff;fillColor3=#dddddd;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.barChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:535"
+  },
+  {
+   "id": "mockupGraphics-1-column-chart",
+   "title": "Column Chart",
+   "tags": "mockup graphics columnChart mockup graphics  Column Chart",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.columnChart;strokeColor=none;strokeColor2=none;strokeColor3=#666666;fillColor2=#008cff;fillColor3=#dddddd;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.columnChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:537"
+  },
+  {
+   "id": "mockupGraphics-2-line-chart",
+   "title": "Line Chart",
+   "tags": "mockup graphics lineChart mockup graphics  Line Chart",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.lineChart;strokeColor=none;strokeColor2=#666666;strokeColor3=#008cff;strokeColor4=#dddddd;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.lineChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:539"
+  },
+  {
+   "id": "mockupGraphics-3-pie-chart",
+   "title": "Pie Chart",
+   "tags": "mockup graphics pieChart mockup graphics  Pie Chart",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.pieChart;strokeColor=#008cff;parts=10,20,35;partColors=#e0e0e0,#d0d0d0,#c0c0c0,#b0b0b0,#a0a0a0;strokeWidth=2;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.pieChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:541"
+  },
+  {
+   "id": "mockupGraphics-4-icon-placeholder",
+   "title": "Icon Placeholder",
+   "tags": "mockup graphics simpleIcon mockup graphics icon placeholder Icon Placeholder",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.simpleIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:543"
+  },
+  {
+   "id": "mockupGraphics-5-icon-grid",
+   "title": "Icon Grid",
+   "tags": "mockup graphics icon grid placeholder Icon Grid",
+   "kind": "cells",
+   "width": 200,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"75\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"150\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"75\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"75\" y=\"75\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"150\" y=\"75\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"150\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"75\" y=\"150\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"150\" y=\"150\" width=\"50\" height=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.simpleIcon"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:545"
+  },
+  {
+   "id": "mockupGraphics-6-bubble-chart",
+   "title": "Bubble Chart",
+   "tags": "mockup graphics bubbleChart mockup graphics bubble chart Bubble Chart",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.bubbleChart;strokeColor=none;strokeColor2=none;strokeColor3=#666666;fillColor2=#008cff;fillColor3=#dddddd;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.bubbleChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:547"
+  },
+  {
+   "id": "mockupGraphics-7-gauge",
+   "title": "Gauge",
+   "tags": "mockup graphics gauge; Gauge",
+   "kind": "cells",
+   "width": 100,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.gauge;fillColor=#ffffff;strokeColor=#999999;gaugePos=25;scaleColors=#bbddff,#ddeeff,#99ccff;gaugeLabels=,,;needleColor=#008cff;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CPU[%]\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"25\" y=\"20\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"0\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;align=left;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"75\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"100\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;align=right;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"75\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.gauge",
+    "mxgraph.mockup.graphics.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:549"
+  },
+  {
+   "id": "mockupGraphics-8-plot-chart",
+   "title": "Plot Chart",
+   "tags": "mockup graphics plotChart mockup graphics plot chart Plot Chart",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.plotChart;strokeColor=none;strokeColor2=#aaaaaa;strokeColor3=#666666;fillColor2=#99aaff,#0022ff,#008cff;",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.plotChart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:552"
+  },
+  {
+   "id": "mockupGraphics-9-gantt-chart",
+   "title": "Gantt Chart",
+   "tags": "mockup graphics gantt chart",
+   "kind": "cells",
+   "width": 600,
+   "height": 300,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;strokeColor=#999999;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"600\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"#\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Task\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Start\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" width=\"130\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Effort\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"190\" width=\"50\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"20//10//2014\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"240\" width=\"210\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"27//10//2014\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"450\" width=\"150\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"M\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"240\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"T\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"270\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"W\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"300\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"T\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"330\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"F\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"360\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"S\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"390\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"15\" value=\"S\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"420\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"M\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"450\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"17\" value=\"T\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"480\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"18\" value=\"W\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"510\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"19\" value=\"T\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"540\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"20\" value=\"F\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"570\" y=\"20\" width=\"30\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"21\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"240\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"22\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"240\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"23\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"300\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"24\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"360\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"25\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"420\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"26\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"480\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"27\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"540\" y=\"40\" width=\"60\" height=\"260\" as=\"geometry\"/></mxCell><mxCell id=\"28\" value=\"1\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"29\" value=\"Task 1\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"40\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"30\" value=\"20//10//2014 8:00 AM\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"40\" width=\"130\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"31\" value=\"40h\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"190\" y=\"40\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"32\" value=\"2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"33\" value=\"Task 2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"60\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"34\" value=\"20//10//2014 8:00 AM\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"60\" width=\"130\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"35\" value=\"40h\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"190\" y=\"60\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"36\" value=\"3\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"80\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"37\" value=\"Task 3\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"80\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"38\" value=\"20//10//2014 8:00 AM\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"80\" width=\"130\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"39\" value=\"40h\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"190\" y=\"80\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"40\" value=\"4\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"100\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"41\" value=\"Task 4\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"100\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"42\" value=\"20//10//2014 8:00 AM\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"100\" width=\"130\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"43\" value=\"40h\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.anchor;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"190\" y=\"100\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"44\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;strokeColor=none;fillColor=#aaddff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"250\" y=\"45\" width=\"130\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"45\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;strokeColor=none;fillColor=#aaddff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"250\" y=\"65\" width=\"40\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"46\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;strokeColor=none;fillColor=#aaddff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"280\" y=\"85\" width=\"100\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"47\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.graphics.rrect;rSize=0;strokeColor=none;fillColor=#aaddff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"340\" y=\"105\" width=\"70\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.graphics.rrect",
+    "mxgraph.mockup.graphics.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:555"
+  },
+  {
+   "id": "mockupGraphics-10-map",
+   "title": "Map",
+   "tags": "mockup graphics map mockup graphics  Map",
+   "kind": "vertex",
+   "width": 250,
+   "height": 250,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.map;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.map"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:698"
+  }
+ ]
+}

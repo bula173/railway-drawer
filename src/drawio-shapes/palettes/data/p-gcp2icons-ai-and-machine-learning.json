@@ -1,0 +1,443 @@
+{
+ "id": "gcp2Icons AI and Machine Learning",
+ "title": "GCP Icons / AI and Machine Learning",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2Icons AI and Machine Learning-0-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute ai platform artificial intelligence",
+   "kind": "vertex",
+   "width": 37,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmc1IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9Ii0wLjAwMDAwNzYyOTM5NDUzMTI1IDAuMDAwMDAzODE0Njk3MjY1NjI1IDIzOS43MDgyNjcyMTE5MTQwNiAyNzQuODYzMzQyMjg1MTU2MjUiIGhlaWdodD0iMjc0Ljg2MzM0MjI4NTE1NjI1IiB3aWR0aD0iMjM5LjcwODI2NzIxMTkxNDA2Ij4mI3hhOwk8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgkuc3Qwe2ZpbGw6I2I1Y2JmOTt9CS5zdDF7ZmlsbDojNzY5ZWY1O30JLnN0MntmaWxsOiM1OTg2ZjI7fQk8L3N0eWxlPgkmI3hhOyAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTY2LjY4NjM2MSw2MC4yNTk3NjYpIiBpZD0ibGF5ZXIxIj4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJtIDE1My4wODEyLDEwOS4wMzU2OCBjIDAsNi4xMjA0NyAtNC45NjE2MiwxMS4wODIwOSAtMTEuMDgyMDksMTEuMDgyMDkgLTYuMTIwNDcsMCAtMTEuMDgyMDgsLTQuOTYxNjIgLTExLjA4MjA4LC0xMS4wODIwOSAwLC02LjEyMDQ2IDQuOTYxNjIsLTExLjA4MjA4MiAxMS4wODIwOCwtMTEuMDgyMDg3IDYuMTIwNDcsLTEwZS03IDExLjA4MjA5LDQuOTYxNjE3IDExLjA4MjA5LDExLjA4MjA4NyB6IG0gMCwtOTIuNTEzMzgxIGMgMCw2LjEyMDQ2OSAtNC45NjE2MiwxMS4wODIwOSAtMTEuMDgyMDksMTEuMDgyMDg5IC02LjEyMDQ3LC01ZS02IC0xMS4wODIwOCwtNC45NjE2MjQgLTExLjA4MjA4LC0xMS4wODIwODkgMCwtNi4xMjA0NjUgNC45NjE2MSwtMTEuMDgyMDg0NiAxMS4wODIwOCwtMTEuMDgyMDg5NiA2LjEyMDQ3LC02ZS03IDExLjA4MjA5LDQuOTYxNjIwNiAxMS4wODIwOSwxMS4wODIwODk2IHogbSAwLC0zMi45MjE2ODMgYyAwLDYuMTIwNDY5IC00Ljk2MTYyLDExLjA4MjA5MDUgLTExLjA4MjA5LDExLjA4MjA4OTkgLTYuMTIwNDcsLTVlLTYgLTExLjA4MjA4LC00Ljk2MTYyMzkgLTExLjA4MjA4LC0xMS4wODIwODk5IDAsLTYuMTIwNDY1IDQuOTYxNjEsLTExLjA4MjA4NCAxMS4wODIwOCwtMTEuMDgyMDg5IDYuMTIwNDcsLTEwZS03IDExLjA4MjA5LDQuOTYxNjIgMTEuMDgyMDksMTEuMDgyMDg5IHogTSAxMDguNzQxODEsNzYuNzE4MDEgYyAwLDYuMTIwNDY5IC00Ljk2MTYyLDExLjA4MjA4OSAtMTEuMDgyMDg5LDExLjA4MjA4OSAtNi4xMjA0NjksMCAtMTEuMDgyMDg5LC00Ljk2MTYyIC0xMS4wODIwODksLTExLjA4MjA4OSAwLC02LjEyMDQ2OSA0Ljk2MTYyLC0xMS4wODIwODkgMTEuMDgyMDg5LC0xMS4wODIwODkgNi4xMjA0NjksMCAxMS4wODIwODksNC45NjE2MiAxMS4wODIwODksMTEuMDgyMDg5IHogbSAwLC0zMi42ODA2MjYgYyAwLDYuMTIwNDY5IC00Ljk2MTYyLDExLjA4MjA4OSAtMTEuMDgyMDg5LDExLjA4MjA4OSAtNi4xMjA0NjksMCAtMTEuMDgyMDg5LC00Ljk2MTYyIC0xMS4wODIwODksLTExLjA4MjA4OSAwLC02LjEyMDQ2OSA0Ljk2MTYyLC0xMS4wODIwODkgMTEuMDgyMDg5LC0xMS4wODIwODkgNi4xMjA0NjksMCAxMS4wODIwODksNC45NjE2MiAxMS4wODIwODksMTEuMDgyMDg5IHogbSAwLC0zMi42NzgyNDMgYyAwLDYuMTIwNDY5IC00Ljk2MTYyLDExLjA4MjA5IC0xMS4wODIwODksMTEuMDgyMDkgLTYuMTIwNDY5LDAgLTExLjA4MjA5LC00Ljk2MTYyMSAtMTEuMDgyMDg5LC0xMS4wODIwOSAwLC02LjEyMDQ2ODggNC45NjE2MiwtMTEuMDgyMDg5MDcgMTEuMDgyMDg5LC0xMS4wODIwODkwNyA2LjEyMDQ2OSwwIDExLjA4MjA4OSw0Ljk2MTYyMDI3IDExLjA4MjA4OSwxMS4wODIwODkwNyB6IE0gMTQyLDM3Ljc3OTI5NyBjIC01Ljc5ODk5LDAgLTEwLjUsNC43MDEwMSAtMTAuNSwxMC41IHYgMjguOTk0MTQgYyAwLDUuNzk4OTkgNC43MDEwMSwxMC41IDEwLjUsMTAuNSA1Ljc5ODk5LDAgMTAuNSwtNC43MDEwMSAxMC41LC0xMC41IHYgLTI4Ljk5NDE0IGMgMCwtNS43OTg5OSAtNC43MDEwMSwtMTAuNSAtMTAuNSwtMTAuNSB6IG0gLTguOWUtNCwxMC41MDAzNzcgViA3Ny4yNzM2OTEgTSA5Ny42NjAxNTYsLTYwLjI1OTc2NiBjIC01Ljc5ODk5LDAgLTEwLjUsNC43MDEwMSAtMTAuNSwxMC41IHYgMjguOTk0MTQxIGMgMCw1Ljc5ODk5IDQuNzAxMDEsMTAuNSAxMC41LDEwLjUgNS43OTg5OTQsMmUtNiAxMC41MDAwMDQsLTQuNzAxMDA5IDEwLjUwMDAwNCwtMTAuNSB2IC0yOC45OTQxNDEgYyAwLC01Ljc5ODk5MSAtNC43MDEwMSwtMTAuNTAwMDAyIC0xMC41MDAwMDQsLTEwLjUgeiBtIC00LjM1ZS00LDEwLjQ5OTc2NSB2IDI4Ljk5NDAxNyBNIDc1LjYzNDc2NiwxMDAuNDk4MDUgYyAtMi43NTQxOTEsMC40MTE0OCAtNS4yMzIxMTksMS45MDAyMSAtNi44ODg2NzIsNC4xMzg2NyAtMy40NDg4NzQsNC42NjE1NyAtMi40NjYwMjQsMTEuMjM2MzUgMi4xOTUzMTIsMTQuNjg1NTUgbCA5NC4yMzgyODQsNjkuNzQ2MDkgMTIuNzg2MDQsLTE2LjY2NjU5IC05NC41MzIxMzYsLTY5Ljk1ODQxIGMgLTIuMjM4Njk5LC0xLjY1NzE2IC01LjA0NDEwMSwtMi4zNTY5MyAtNy43OTg4MjgsLTEuOTQ1MzEgeiIvPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Im0gMTk3LjM5Mjc2LDE0MS45NzM2NiBjIDAsNi4xMjA0NyAtNC45NjE2MiwxMS4wODIwOSAtMTEuMDgyMDksMTEuMDgyMDkgLTYuMTIwNDcsMCAtMTEuMDgyMDksLTQuOTYxNjIgLTExLjA4MjA5LC0xMS4wODIwOSAwLC02LjEyMDQ3IDQuOTYxNjIsLTExLjA4MjA5IDExLjA4MjA5LC0xMS4wODIwOSA2LjEyMDQ3LDAgMTEuMDgyMDksNC45NjE2MiAxMS4wODIwOSwxMS4wODIwOSB6IG0gMCwtOTIuNzI1NTg2IGMgMCw2LjEyMDQ2OSAtNC45NjE2MiwxMS4wODIwOSAtMTEuMDgyMDksMTEuMDgyMDg5IC02LjEyMDQ3LDFlLTYgLTExLjA4MjA5LC00Ljk2MTYyIC0xMS4wODIwOSwtMTEuMDgyMDg5IDAsLTYuMTIwNDcgNC45NjE2MiwtMTEuMDgyMDkxIDExLjA4MjA5LC0xMS4wODIwOSA2LjEyMDQ3LC0xZS02IDExLjA4MjA5LDQuOTYxNjIgMTEuMDgyMDksMTEuMDgyMDkgeiBtIDAsLTMyLjg1NDQ1OCBjIDAsNi4xMjA0NjkgLTQuOTYxNjIsMTEuMDgyMDkgLTExLjA4MjA5LDExLjA4MjA4OSAtNi4xMjA0NywxMGUtNyAtMTEuMDgyMDksLTQuOTYxNjIgLTExLjA4MjA5LC0xMS4wODIwODkgMCwtNi4xMjA0NjkgNC45NjE2MiwtMTEuMDgyMDkwMyAxMS4wODIwOSwtMTEuMDgyMDg5NyA2LjEyMDQ3LC02ZS03IDExLjA4MjA5LDQuOTYxNjIwNyAxMS4wODIwOSwxMS4wODIwODk3IHogbSAxMDAuMDI5MTEsODQuMDA2Nzc0IGMgLTIuNzU1MTcsLTAuNDA1MDA0IC01LjU1ODM4LDAuMzAxMDcgLTcuNzkyOTYsMS45NjI4OSBsIC05NC43NDYxLDcwLjQzNzUgMTIuNTI5MywxNi44NTM1MiA5NC43NDYwOSwtNzAuNDM3NSBjIDQuNjU0MTIsLTMuNDU5NzggNS42MjIxNSwtMTAuMDM3NDggMi4xNjIxMSwtMTQuNjkxNDEgLTEuNjYxMzYsLTIuMjM1NTMgLTQuMTQyODcsLTMuNzE5MzcgLTYuODk4NDQsLTQuMTI1IHogTSAxODYuMzEwNTUsNzAuODY3MTg3IGMgLTUuNzk4OTksMCAtMTAuNSw0LjcwMTAxIC0xMC41LDEwLjUgdiAyOC45OTQxNDMgYyAwLDUuNzk4OTkgNC43MDEwMSwxMC41IDEwLjUsMTAuNSA1Ljc5ODk5LDAgMTAuNSwtNC43MDEwMSAxMC41LC0xMC41IFYgODEuMzY3MTg3IGMgMCwtNS43OTg5OSAtNC43MDEwMSwtMTAuNSAtMTAuNSwtMTAuNSB6IG0gMS4yZS00LDEwLjUwMDgyNyB2IDI4Ljk5NDAxNiIvPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Im0gMTg2LjM0NTcsMTcwLjY4MTY0IGMgLTEyLjA0NTcsMCAtMjEuOTYwOTMsOS45MTUyNCAtMjEuOTYwOTMsMjEuOTYwOTQgMCwxMi4wNDU3IDkuOTE1MjMsMjEuOTYwOTQgMjEuOTYwOTMsMjEuOTYwOTQgMTIuMDQ1NywwIDIxLjk2MDk0LC05LjkxNTI0IDIxLjk2MDk0LC0yMS45NjA5NCAwLC0xMi4wNDU3IC05LjkxNTI0LC0yMS45NjA5NCAtMjEuOTYwOTQsLTIxLjk2MDk0IHogbSAwLDE0IGMgNC40Nzk1NSwwIDcuOTYwOTQsMy40ODEzOSA3Ljk2MDk0LDcuOTYwOTQgMCw0LjQ3OTU1IC0zLjQ4MTM5LDcuOTYwOTQgLTcuOTYwOTQsNy45NjA5NCAtNC40Nzk1NCwwIC03Ljk2MDkzLC0zLjQ4MTM5IC03Ljk2MDkzLC03Ljk2MDk0IDAsLTQuNDc5NTUgMy40ODEzOSwtNy45NjA5NCA3Ljk2MDkzLC03Ljk2MDk0IHogTSAyODYuMTYxMzcsNzYuNzkxMDA4IEEgMTEuMDgyMDg5LDExLjA4MjA4OSAwIDAgMSAyNzUuMDc5MjgsODcuODczMDk3IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgMjYzLjk5NzIsNzYuNzkxMDA4IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgMjc1LjA3OTI4LDY1LjcwODkxOSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDI4Ni4xNjEzNyw3Ni43OTEwMDggWiBtIDAsLTMzLjE0NTQzNSBhIDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA5LDExLjA4MjA4OSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIC0xMS4wODIwOCwtMTEuMDgyMDg5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgMTEuMDgyMDgsLTExLjA4MjA5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgMTEuMDgyMDksMTEuMDgyMDkgeiBtIDAsLTkyLjQ2ODIyNCBhIDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA5LDExLjA4MjA5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA4LC0xMS4wODIwOSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDExLjA4MjA4LC0xMS4wODIwODkgMTEuMDgyMDg5LDExLjA4MjA4OSAwIDAgMSAxMS4wODIwOSwxMS4wODIwODkgeiBtIC00NC4yMTM2MiwzMi41NTc3MTYgYSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIC0xMS4wODIwOSwxMS4wODIwODk5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA5LC0xMS4wODIwODk5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgMTEuMDgyMDksLTExLjA4MjA4OSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDExLjA4MjA5LDExLjA4MjA4OSB6IG0gMCw5Mi41MzU0NDMgYSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIC0xMS4wODIwOSwxMS4wODIwODkgMTEuMDgyMDg5LDExLjA4MjA4OSAwIDAgMSAtMTEuMDgyMDksLTExLjA4MjA4OSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDExLjA4MjA5LC0xMS4wODIwOSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDExLjA4MjA5LDExLjA4MjA5IHogbSAwLDMyLjg4MjMxMiBhIDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA5LDExLjA4MjA5IDExLjA4MjA4OSwxMS4wODIwODkgMCAwIDEgLTExLjA4MjA5LC0xMS4wODIwOSAxMS4wODIwODksMTEuMDgyMDg5IDAgMCAxIDExLjA4MjA5LC0xMS4wODIwOTMgMTEuMDgyMDg5LDExLjA4MjA4OSAwIDAgMSAxMS4wODIwOSwxMS4wODIwOTMgeiBtIDMzLjEzMjMzLC0xMzYuNTg4MzY3IGEgMTAuNSwxMC41IDAgMCAwIC0xMC41LDEwLjUgdiAyOC45OTQxNDEgYSAxMC41LDEwLjUgMCAwIDAgMTAuNSwxMC41IDEwLjUsMTAuNSAwIDAgMCAxMC41LC0xMC41IHYgLTI4Ljk5NDE0MSBhIDEwLjUsMTAuNSAwIDAgMCAtMTAuNSwtMTAuNSB6IG0gLThlLTQsMTAuNTAwNzU5IFYgMTIuMDU5MjI5IE0gMjMwLjg2NTIzLDUuMjQwMjM0NCBhIDEwLjUsMTAuNSAwIDAgMCAtMTAuNSwxMC40OTk5OTk2IHYgMjguOTk0MTQxIGEgMTAuNSwxMC41IDAgMCAwIDEwLjUsMTAuNSAxMC41LDEwLjUgMCAwIDAgMTAuNSwtMTAuNSBWIDE1Ljc0MDIzNCBhIDEwLjUsMTAuNSAwIDAgMCAtMTAuNSwtMTAuNDk5OTk5NiB6IG0gNC4yZS00LDEwLjQ5OTQzMDYgdiAyOC45OTQwMTciLz4mI3hhOyAgPC9nPiYjeGE7PC9zdmc+;",
+   "value": "Vertex AI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1395"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-1-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl",
+   "kind": "vertex",
+   "width": 42,
+   "height": 38,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMjAgMTgiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O2ZpbGwtb3BhY2l0eTouOH0mI3hhOwkuc3Qye2ZpbGw6I2FlY2JmYTtmaWxsLW9wYWNpdHk6LjZ9JiN4YTsJPC9zdHlsZT4mI3hhOwk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNOS4xNyA1LjE0bDEuNjYtMi41N0w5LjE1IDBINUwwIDguNThsMi41IDUuMTQgNS04LjU4eiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNC4xNyA1LjE0bDEuNjYtMi41N0wxNC4xNyAwaC0zLjM0bDEuNjcgMi41Ny0xLjY3IDIuNTd6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MiIgZD0iTTEwLjgzIDEyLjg2bC0xLjY2IDIuNTdMMTAuODUgMThIMTVsNS04LjU4LTIuNS01LjE0LTUgOC41OHoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNOS4xNyAxMi44Nkg1LjgzbC0xLjY2IDIuNTdMNS44MyAxOGgzLjM0TDcuNSAxNS40M3oiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "AutoML",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1397"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-2-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl natural language",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM4MC41MTE5Nzg1NDYzNTQ0NCIgaGVpZ2h0PSIyNzQuOTI5OTg3NzczNzYyNTUiIHZpZXdCb3g9IjAgMCAxMDAuNjc2OTk0MzIzNzMwNDcgNzIuNzQxOTk2NzY1MTM2NzIiPiYjeGE7PHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzQyODVmNDt9JiN4YTs8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zNy41NyA0NC43MjRoMjUuNDc3djUuNDY5SDM3LjU3em0wLTEwLjE0NmgyNS40Nzd2NS40NjlIMzcuNTd6bTAtMTAuMTQ2aDI1LjQ3N3Y1LjQ2OUgzNy41N3ptNTMuNTIgMi4yNzhsOS41ODcgMTMuMTQzLTIzLjc4MiAzMi44ODlIMjkuMDdsLTQuNzQxLTYuNTY4IDQuODExLTYuNTYxaDM4LjEwMXpNOS41ODcgNDYuMDMyTDAgMzIuODg5IDIzLjc4MiAwaDQ3LjgyNWw0Ljc0MSA2LjU2OC00LjgxMSA2LjU2MUgzMy40Mzd6Ii8+JiN4YTs8L3N2Zz4=;",
+   "value": "AutoML Natural\nLanguage",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1399"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-3-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl tables",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM4MC42MzY0OTE2NzUyNjI0NSIgaGVpZ2h0PSIyNzUuNjgyNTM0NzQ5ODYxMTMiIHZpZXdCb3g9Ii0wLjM2OTAwMDAxNzY0Mjk3NDg1IDAgMTAwLjcxMDAwNjcxMzg2NzE5IDcyLjk0MTAwMTg5MjA4OTg0Ij4mI3hhOzxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojYWVjYmZhO30mI3hhOwkuc3Qye2ZpbGw6IzY2OWRmNjt9JiN4YTs8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAuMzQxIDQwLjA4TDc2LjQ0IDcyLjk0MWwtNDcuNjkyLS4wNy00Ljg0Ni02LjY1OSA0Ljg4MS02LjU4OSAzOC4xMDUuMDcgMjMuNzY1LTMyLjg0NXpNLS4zNjkgMzIuODYxTDIzLjUzMiAwbDQ3LjY5Mi4wNyA0Ljg0NiA2LjY1OS00Ljg4MSA2LjU4OS0zOC4xMDUtLjA3TDkuMzE5IDQ2LjA5M3oiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzYuMjQgNDMuNzUyVjI3LjU3NmwxNy4xMTcgOC4wMTh2MTYuOTc4eiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik01OC4wMTEgNDEuNjk1di04LjgybC05Ljk1My00LjYzN3YtNy45ODNsMTcuMTE3IDguMTIzdjE3LjAxM3oiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "AutoML\nTables",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1401"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-4-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl translation",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM4MC42MzY0OTE2NzUyNjI0NSIgaGVpZ2h0PSIyNzUuNjgyNTM0NzQ5ODYxMTMiIHZpZXdCb3g9Ii0wLjM2OTAwMDAxNzY0Mjk3NDg1IDAgMTAwLjcxMDAwNjcxMzg2NzE5IDcyLjk0MTAwMTg5MjA4OTg0Ij4mI3hhOzxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O30mI3hhOwkuc3Qye2ZpbGw6I2FlY2JmYTt9JiN4YTs8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAuMzQxIDQwLjA4TDc2LjQ0IDcyLjk0MWwtNDcuNjkyLS4wNy00Ljg0Ni02LjY1OSA0Ljg4MS02LjU4OSAzOC4xMDUuMDcgMjMuNzY1LTMyLjg0NXpNLS4zNjkgMzIuODYxTDIzLjUzMiAwbDQ3LjY5Mi4wNyA0Ljg0NiA2LjY1OS00Ljg4MSA2LjU4OS0zOC4xMDUtLjA3TDkuMzE5IDQ2LjA5M3oiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzMuOTc0IDI5Ljg3N3YtNC4wNjFoMTIuODk5di00LjYzN2g1LjUyNnY0LjYzN2gxMy4zMTd2NC4wNjF6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MiIgZD0iTTYzLjg2OCA1MS43N2MtNC40NTItLjY4Mi05LjQ4MS0yLjk1NS0xMy43MzYtNS45NjEtNC4wNjUgMi41MzItOC41ODIgNC43NDEtMTMuOTQ1IDYuMzQ1bC0zLjEwMy00LjAwOWM0Ljc2NS0xLjA2MSA5LjIzNy0yLjk5NSAxMy4wNzMtNS41NDMtMi41NDQtMi41NDMtNC43MjktNS4zNTQtNi4zNDUtOC40NTRoNi4xMDFjMS4xNDYgMS45ODcgMi41NjMgMy42NTMgNC4wNzkgNS4xNzcgMS43NTgtMS41OSAzLjAyOC0zLjMwOSA0LjA0NC01LjE3N2g2LjIwNWMtMS40MzIgMi44ODktMy4yMTggNS43MDItNi4zMSA4LjMxNWEzNS43NyAzNS43NyAwIDAgMCAxMi43NiA1LjEyNXoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "AutoML\nTranslation",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1403"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-5-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl video intelligence",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM4MC42MzY0OTE2NzUyNjI0NSIgaGVpZ2h0PSIyNzUuNjgyNTM0NzQ5ODYxMTMiIHZpZXdCb3g9Ii0wLjM2OTAwMDAxNzY0Mjk3NDg1IDAgMTAwLjcxMDAwNjcxMzg2NzE5IDcyLjk0MTAwMTg5MjA4OTg0Ij4mI3hhOzxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojYWVjYmZhO30mI3hhOwkuc3Qye2ZpbGw6IzY2OWRmNjt9JiN4YTs8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAuMzQxIDQwLjA4TDc2LjQ0IDcyLjk0MWwtNDcuNjkyLS4wNy00Ljg0Ni02LjY1OSA0Ljg4MS02LjU4OSAzOC4xMDUuMDcgMjMuNzY1LTMyLjg0NXpNLS4zNjkgMzIuODYxTDIzLjUzMiAwbDQ3LjY5Mi4wNyA0Ljg0NiA2LjY1OS00Ljg4MSA2LjU4OS0zOC4xMDUtLjA3TDkuMzE5IDQ2LjA5M3oiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzIuNjUxIDQ1Ljg4OFYyNi44ODJoOC45MzZsNC41NzMgNS43MzEgNi4wMjcuMDQ5di0zLjAwN0g0OC40NGwtMi4xNjktMi43NzNoMTAuMTU2djguMTcySDQzLjk2NmwtMS44MjQtMi42MDFoLTQuNjU5bDIuODk3IDQuMDA2LTIuODk3IDMuODdoNC42NTlsMS44MjQtMi44MWgxMi40NjF2OC4zNjlINDYuMjcxbDIuMTY5LTIuNzYxaDMuNzQ3di0yLjk0Nkg0Ni4xNmwtNC41NzMgNS43MDd6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MiIgZD0iTTY3LjM4NyA0NC42MzNsLTYuNjM4LTQuMDA4di04LjMxOGw2LjYzOC0zLjkwOXoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "AutoML Video\nIntelligence",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1405"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-6-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute automl vision",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM3OS4yNTY5MTM2MjgxNTg1NCIgaGVpZ2h0PSIyNzEuOTY3NzQwMjY0MjUzMyIgdmlld0JveD0iLTAuMTQ0OTk5OTk1ODI3Njc0ODcgMC4wMTEwMDAwMDA4NzE3MTc5MyAxMDAuMzQ0OTkzNTkxMzA4NiA3MS45NTgwMDAxODMxMDU0NyI+JiN4YTs8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiYjeGE7CS5zdDB7ZmlsbDojNDI4NWY0O30mI3hhOwkuc3Qxe2ZpbGw6IzY2OWRmNjt9JiN4YTs8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAuMiAzOS40ODNMNzYuNDI4IDcxLjk2OUgyOC44NjVsLTQuNzgzLTYuNTgyIDQuNzgzLTYuNDIyaDM4LjAxM0w5MC42MyAyNi40MzJ6TS0uMTQ1IDMyLjQ5OEwyMy42MjcuMDExSDcxLjE5bDQuNzgzIDYuNTgyLTQuNzgzIDYuNDIySDMzLjE3N0w5LjQyNSA0NS41NDl6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MSIgZD0iTTMzLjAzNCA0My4xMjJsMTAuMDctMTQuMDIzaDI0LjAybC05Ljc4OSAxNC4wMjN6Ii8+JiN4YTs8L3N2Zz4=;",
+   "value": "AutoML\nVision",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1407"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-7-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud inference api application programming interface",
+   "kind": "vertex",
+   "width": 42,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM3NS41MDQwMTg5MTYxMTE2IiBoZWlnaHQ9IjM3Ni40MTEwMTA4NDIxNTg5MyIgdmlld0JveD0iMCAwIDk5LjM1MjAwNTAwNDg4MjgxIDk5LjU5MjAwMjg2ODY1MjM0Ij4mI3hhOzxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM2NjlkZjY7fSYjeGE7CS5zdDF7ZmlsbDojYWVjYmZhO30mI3hhOzwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTcwLjc2MyA0OS43ODZhMzAuOTkgMzAuOTkgMCAwIDAtNC40OTkuNDQydjI3LjA3OGgxMXYtMjYuOTdsLTIuNjg2LS4zOTFjLTEuMjc5LS4xMzEtMi41NC0uMTg2LTMuODE1LS4xNTl6bS0xNS41ODcgMy43NjZsLTQuNDcxIDEuODcxLS4wMTYuMDA2LS4wMTYuMDA4LTYuNDk4IDIuNTIydjMwLjg4NGgxMXptMzMuMTc2LjEwNHY0NS45MzZoMTFWNTguMTk4Yy00LjEzOC0xLjc5OC03Ljc4My0zLjMyNS0xMS00LjU0MXpNMCA1My43Njh2MjMuNTM5aDExVjU4LjAxMmMtMy40MzYtMS4xMjYtNy4wNTItMi41NTItMTEtNC4yNDR6bTMzLjA4OCA2Ljg2Yy0zLjcwNS40NzItNy4zMjUuNDc4LTExIC4wMDd2MzguOTU3aDExeiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0wIDB2NDEuNzM0YzQuMTA1IDEuODE5IDcuNzQgMy4zNSAxMSA0LjU3MlYwem02Ni4yNjQgMHYzOS4xNTRjMy4xNzgtLjQxMiA2LjI4Mi0uNDczIDkuNDM0LS4xNS41MjMuMDUzIDEuMDQ0LjExOSAxLjU2Ni4xOTFWMHpNNDQuMTc2IDExLjUzOHYzNC42OTRsMi4xMzctLjg5NWMzLjE0LTEuMzc5IDYuMDY5LTIuNTM5IDguODYzLTMuNDl2LTMwLjMxek0yMi4wODggMjIuMjg1djI3LjIzYy4wMTEuMDAyLjAyMi4wMDQuMDMzLjAwNiAzLjc3NC42NCA3LjIxNS43MDcgMTAuOTY3LjA4VjIyLjI4NXptNjYuMjY0IDB2MTkuNjQxYzMuMzg4IDEuMTQ0IDcuMDE1IDIuNTk3IDExIDQuMjlWMjIuMjg1eiIvPiYjeGE7PC9zdmc+;",
+   "value": "Cloud\nInference API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1409"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-8-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud talent solution solutions",
+   "kind": "vertex",
+   "width": 42,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE5LjkyMTQ0MjAzMTg2MDM1IiBoZWlnaHQ9IjE5Ljc3ODMyMDMxMjUiIHZpZXdCb3g9Ii0wLjAwMDQ0MTU1NzE3NDc4MTMzNzQgMC4yNSAxOS45MjE0NDIwMzE4NjAzNSAxOS43NzgzMjAzMTI1Ij4mI3hhOwk8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiYjeGE7CS5zdDB7ZmlsbDojNDI4NWY0O30mI3hhOwkuc3Qxe2ZpbGw6I2FlY2JmYTt9JiN4YTsJLnN0MntmaWxsLXJ1bGU6ZXZlbm9kZH0mI3hhOwkuc3Qze2ZpbGw6IzY2OWRmNjt9JiN4YTsJPC9zdHlsZT4mI3hhOwk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNC40NjEgMTYuMjRhMyAzIDAgMSAxIDAtNiAzIDMgMCAxIDEgMCA2em0zLjYzLS40YTQuNDMgNC40MyAwIDAgMC01LjA0OS02LjcxNEE0LjQzIDQuNDMgMCAwIDAgLjAxMSAxMy4zMmE0LjkxIDQuOTEgMCAwIDAgMCAuNjcgMy40MyAzLjQzIDAgMCAwIC4wOS40NGwuMDYuMjFhNC41OSA0LjU5IDAgMCAwIC4zNC43OSA0LjI0IDQuMjQgMCAwIDAgLjc2IDFsLjE1LjE1LjMzLjI3YTQuMTYgNC4xNiAwIDAgMCAuNzMuNDQgNC40NCA0LjQ0IDAgMCAwIDQuNTQtLjI5bDIuOTMgMi45M2EuMzMuMzMgMCAwIDAgLjQ3IDBsLjY2LS42NWEuMzMuMzMgMCAwIDAgMC0uNDd6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MSIgZD0iTTkuODExIDE0LjU4YTUuNDEgNS40MSAwIDAgMCAuMi0xLjUxIDUuNTMgNS41MyAwIDAgMC01LjYxLTUuNDIgNS44MiA1LjgyIDAgMCAwLTEuOTIuMzVWMy44M2EuNjIuNjIgMCAwIDEgLjYyLS42MmgxNi4xOWEuNjMuNjMgMCAwIDEgLjYzLjYyVjE0YS42My42MyAwIDAgMS0uNjMuNjN6Ii8+JiN4YTsJPGcgY2xhc3M9InN0MiI+JiN4YTsJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0xMy41OTEgMy4yMVYxLjczaC00LjQ0djEuNDhoLTEuNDlWLjg3YS42My42MyAwIDAgMSAuNjMtLjYyaDYuMTZhLjYyLjYyIDAgMCAxIC42Mi42MnYyLjM0eiIvPiYjeGE7CQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUuMDcxIDMuMjFoLTEuNDhsMS40OC0uNDd6bS01LjkzIDBoLTEuNDlsMS40OS0uNTR6Ii8+JiN4YTsJPC9nPiYjeGE7PC9zdmc+;",
+   "value": "Cloud\nTalent Solutions",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1411"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-9-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud natural language api",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjAgMTYiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM2NjlkZjY7fSYjeGE7CS5zdDF7ZmlsbDojNDI4NWY0O30mI3hhOwkuc3Qye2ZpbGw6I2FlY2JmYTt9JiN4YTsJPC9zdHlsZT4mI3hhOwk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUgMmgzdjEyaC0zdjJoMyAydi0yVjIgMGgtMi0zeiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xOCAydjFsMi0xem0yIDEydi0xbC0yIDF6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTUgMTRIMlYyaDNWMEgyIDB2MiAxMiAyaDIgM3oiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMCAxNHYtMWwyIDF6TTIgMnYxTDAgMnoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNSA3aDEwdjJINXptMCAzaDEwdjJINXptMC02aDEwdjJINXoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Cloud Natural\nLanguage API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1413"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-10-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud tpu",
+   "kind": "vertex",
+   "width": 42,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMTggMTgiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O30mI3hhOwk8L3N0eWxlPiYjeGE7CTxnIGNsYXNzPSJzdDAiIGZpbGw9IiM0Mjg1ZjQiPiYjeGE7CQk8cGF0aCBkPSJNMy40OCA2LjYyYS4zNy4zNyAwIDAgMS0uMzU4LS41MzMuMzcuMzcgMCAwIDEgLjMwOC0uMjA3bDIuMy0uMzJhLjM3LjM3IDAgMCAxIC40Mi4zMi4zOC4zOCAwIDAgMS0uMzIuNDNsLTIuMy4zMXoiLz4mI3hhOwkJPHBhdGggZD0iTTYuMjk5IDYuMjkybC4yMzMtLjcxMyA0LjE0NSAxLjM1Mi0uMjMzLjcxM3oiLz4mI3hhOwkJPHBhdGggZD0iTTYuMTggNi4xNmgtLjExYS4zNy4zNyAwIDAgMS0uMjQtLjQ2bC44My0yLjg0YS4zNy4zNyAwIDAgMSAuNDYtLjI0LjM2LjM2IDAgMCAxIC4yNi40NWwtLjg0IDIuODFhLjM4LjM4IDAgMCAxLS4zNi4yOHptNS4xMyAxLjRBLjM2LjM2IDAgMCAxIDExIDdsMS42Ny00LjIzYS4zOC4zOCAwIDAgMSAuNDctLjE4LjM4LjM4IDAgMCAxIC4yMy40NWwtMS42OCA0LjI0YS4zOS4zOSAwIDAgMS0uMzguMjh6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik0yLjY2OSAxMy42MDRMNi42IDEwLjQ2NWwuNDY4LjU4Ni0zLjkzMSAzLjEzOXpNMTUuMDUgOC42MWwtLjMuNjgtMy42My0xLjU4LjI5LS42OXptLS4zMSA1LjQ4bC0uNTIuNTQtMy4yMy0zLjA0LjUyLS41NXpNNS43ODggNi4xMTNsLjczNS0uMTQ5LjgwOCAzLjk3OS0uNzM1LjE0OXoiLz4mI3hhOwkJPHBhdGggZD0iTTExLjU2IDcuNTZsLTQuMSAzLjYtLjUtLjU2IDQuMS0zLjZ6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik0xMS43NCA3LjNsLS4yNSAzLjk3LS43NC0uMDUuMjQtMy45N3oiLz4mI3hhOwkJPGNpcmNsZSBjeD0iNy4wMSIgY3k9IjEwLjgyIiByPSIxLjM2Ii8+JiN4YTsJCTxjaXJjbGUgY3g9IjExLjM3IiBjeT0iNy4zNiIgcj0iMS42MSIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIxMS4zNiIgY3k9IjExLjU0IiByPSIuODQiLz4mI3hhOwkJPGNpcmNsZSBjeD0iNi4wNCIgY3k9IjUuNjciIHI9Ii45OSIvPiYjeGE7CTwvZz4mI3hhOwk8ZyBjbGFzcz0ic3QxIiBmaWxsPSIjNjY5ZGY2Ij4mI3hhOwkJPHBhdGggZD0iTTggNGgyVjBIOHptNCAwaDJWMGgtMnpNNCA0aDJWMEg0em00IDE0aDJ2LTRIOHoiLz4mI3hhOwkJPHBhdGggZD0iTTEyIDE4aDJ2LTRoLTJ6bS04IDBoMnYtNEg0em0tNC04aDRWOEgwem0wLTRoNFY0SDB6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik0wIDE0aDR2LTJIMHptMTQtNGg0VjhoLTR6bTAtNGg0VjRoLTR6bTAgOGg0di0yaC00eiIvPiYjeGE7CQk8cGF0aCBkPSJNMTUgMkgzYTEgMSAwIDAgMC0xIDF2MTJhMSAxIDAgMCAwIDEgMWgxMmExIDEgMCAwIDAgMS0xVjNhMSAxIDAgMCAwLTEtMXptLTEgMTEuNDdhLjUzLjUzIDAgMCAxLS41My41M0g0LjUzYS41My41MyAwIDAgMS0uNTMtLjUzVjQuNTNBLjUzLjUzIDAgMCAxIDQuNTMgNGg4Ljk0YS41My41MyAwIDAgMSAuNTMuNTN6Ii8+JiN4YTsJPC9nPiYjeGE7PC9zdmc+;",
+   "value": "Cloud\nTPU",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1415"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-11-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud translation api application programming interface",
+   "kind": "vertex",
+   "width": 42,
+   "height": 38,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMjAgMTgiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O2ZpbGwtcnVsZTpldmVub2RkfSYjeGE7CTwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTE1LjkxIDcuMmgtMS44MkwxMCAxOGgxLjgybDEtMi43aDQuMzJsMSAyLjdIMjB6bS0yLjM5IDYuM0wxNSA5LjZsMS40OCAzLjl6Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MSIgZD0iTTEwLjc5IDExLjc3TDguNDggOS41MWgwYTE1LjYyIDE1LjYyIDAgMCAwIDMuNC01LjkxaDIuNjdWMS44SDguMThWMEg2LjM2djEuOEgwdjEuNzloMTAuMTVhMTQuMDYgMTQuMDYgMCAwIDEtMi44OCA0LjgyIDE0LjU1IDE0LjU1IDAgMCAxLTIuMS0zSDMuMzVhMTYgMTYgMCAwIDAgMi43MSA0LjFMMS40NCAxNGwxLjI5IDEuMyA0LjU0LTQuNSAyLjgzIDIuOHoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Cloud\nTranslation API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1417"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-12-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud translation api application programming interface",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjAgMTYiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM2NjlkZjY7fSYjeGE7CS5zdDF7ZmlsbDojYWVjYmZhO30mI3hhOwkuc3Qye2ZpbGw6IzQyODVmNDt9JiN4YTsJPC9zdHlsZT4mI3hhOwk8ZyBjbGFzcz0ic3QwIj4mI3hhOwkJPHBhdGggZD0iTTEwIDE2TDAgOGg0bDYgNC45OXoiLz4mI3hhOwkJPHBhdGggZD0iTTIwIDhsLTEwIDh2LTMuMDFMMTYgOHoiLz4mI3hhOwk8L2c+JiN4YTsJPGcgY2xhc3M9InN0MSI+JiN4YTsJCTxwYXRoIGQ9Ik0xMCAzLjAxTDQgOEgwbDEwLTh6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik0yMCA4TDEwIDB2My4wMUwxNiA4eiIvPiYjeGE7CTwvZz4mI3hhOwk8Y2lyY2xlIGNsYXNzPSJzdDIiIGN4PSIxMCIgY3k9IjgiIHI9IjIiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Cloud\nVision API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1419"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-13-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute data labeling",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM3Ny42MDkwNzg2ODcyMTAwNiIgaGVpZ2h0PSIzMDYuMjk2NTE2MDQzNTQ3NzQiIHZpZXdCb3g9IjAuMDE5MDAwMDAxMjUxNjk3NTQgMC4yMzIwMDAwMDgyMjU0NDA5OCA5OS45MDkwMDQyMTE0MjU3OCA4MS4wNDEwMDAzNjYyMTA5NCI+JiN4YTs8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiYjeGE7CS5zdDB7ZmlsbDojNjY5ZGY2O30mI3hhOwkuc3Qxe2ZpbGw6I2FlY2JmYTt9JiN4YTsJLnN0MntmaWxsOiM0Mjg1ZjQ7fSYjeGE7PC9zdHlsZT4mI3hhOwk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjUuMTgzLjIzMkw3LjM1MyAzNy4zNjYuMDQ4IDM3LjMzbC0uMDI5IDYgMjkuNDkyLjE0NmMxLjA4NiA2LjE1IDYuNDk5IDEwLjg3NiAxMi45NDQgMTAuODc2IDcuMjE4IDAgMTMuMTQ0LTUuOTI3IDEzLjE0NC0xMy4xNDRzLTUuOTI3LTEzLjE0NS0xMy4xNDQtMTMuMTQ1Yy01LjkyNCAwLTEwLjk3NiAzLjk5My0xMi41OTcgOS40MTVsLTEyLjU0NC0uMDYyTDMwLjg0NSA5LjIzMmgzMC4xMjl2LTlIMjUuMTgzem0xNy4yNzEgMzQuODNhNi4wOSA2LjA5IDAgMCAxIDYuMTQ1IDYuMTQ1IDYuMDkgNi4wOSAwIDAgMS02LjE0NSA2LjE0NGMtMi42MTYgMC00LjgwOS0xLjU3My01LjcwNi0zLjg0bDMuMjE0LjAxNi4wMjktNi0yLjQ3My0uMDEyYzEuMTEyLTEuNDk2IDIuODk2LTIuNDUzIDQuOTM2LTIuNDUzek0xNy44ODIgNDUuNzExbC04LjA4NiAzLjk1MSAxNS40NDEgMzEuNjExaDM1LjczNnYtOUgzMC44NThMMTcuODgyIDQ1LjcxMXoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNjAuOTc0IDgxLjI3M2gzOC45NTRWNjAuOTIyaC05LjAwM3YxMS4zNTJINjAuOTc0em0wLTcyLjA0MWgyOS45NTF2MTEuNzU1aDkuMDAzVi4yMzJINjAuOTc0eiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik03NS43OTYgMjAuOTg3djguOTk5aDI0LjEzMnYtOC45OTl6TTYxLjExIDM1LjkyOHY5aDM4LjgxN3YtOXpNNzEuMjc0IDUxLjkxdjkuMDEyaDI4LjY1M1Y1MS45MXoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Data\nLabeling",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1421"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-14-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute speech to text",
+   "kind": "vertex",
+   "width": 38,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMTggMjAiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O30mI3hhOwk8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04IDBoMnYyMEg4ek00IDZoMnY4SDR6bTggMGgydjhoLTJ6TTAgM2gydjE0SDB6bTE2IDBoMnYxNGgtMnoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNOCAwaDJ2MTBIOHpNNCA2aDJ2NEg0em04IDBoMnY0aC0yek0wIDNoMnY3SDB6bTE2IDBoMnY3aC0yeiIvPiYjeGE7PC9zdmc+;",
+   "value": "Speech-to-Text",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1423"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-15-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute text to speech",
+   "kind": "vertex",
+   "width": 42,
+   "height": 36,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwLjAwMDQ2MzQ4NTcxNzc3MyIgaGVpZ2h0PSIxNi42MzE1MTU1MDI5Mjk2ODgiIHZpZXdCb3g9IjAgMC4wMDAyNDE0MDk2NTI1MTcxNzcxNiAyMC4wMDA0NjM0ODU3MTc3NzMgMTYuNjMxNTE1NTAyOTI5Njg4Ij4mI3hhOwk8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiYjeGE7CS5zdDB7ZmlsbDojNjY5ZGY2O30mI3hhOwkuc3Qxe2ZpbGw6IzQyODVmNDt9JiN4YTsJPC9zdHlsZT4mI3hhOwk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLjAxIDMuMzA2aDYuNjR2MS42N0guMDF6bS0uMDEgMTBoMCA5LjE3di0xLjY3SDB6bTAtNC4xN2g0LjE4SDEwbC0xLjY3LTEuNjZIMi41MSAweiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xMCA1LjM4NmEuNDIuNDIgMCAwIDEgLjQyLS4zNi40MS40MSAwIDAgMSAuNDEuMzZ2OS4xOGEyLjA5IDIuMDkgMCAwIDAgMi42MSAyIDIuMTYgMi4xNiAwIDAgMCAxLjU2LTIuMTFWMi4wNjZhLjQuNCAwIDAgMSAuMTktLjQuNDEuNDEgMCAwIDEgLjQ1IDAgLjQuNCAwIDAgMSAuMTkuNHY5LjE2YTIuMDcgMi4wNyAwIDAgMCAuODEgMS42NCAyIDIgMCAwIDAgMS44LjM3IDIuMTYgMi4xNiAwIDAgMCAxLjU2LTIuMTJ2LTIuOGgtMS42N3YyLjkyYS40LjQgMCAwIDEtLjE5LjQuNDEuNDEgMCAwIDEtLjQ1IDAgLjQuNCAwIDAgMS0uMTktLjR2LTkuMTdhMi4wOSAyLjA5IDAgMCAwLTIuNjEtMiAyLjE2IDIuMTYgMCAwIDAtMS41NiAyLjEzdjEyLjM3YS40LjQgMCAwIDEtLjE5LjQuNDEuNDEgMCAwIDEtLjQ1IDAgLjQuNCAwIDAgMS0uMTktLjR2LTkuMTdhMi4wNyAyLjA3IDAgMCAwLTQuMTEtLjM2IDIuNCAyLjQgMCAwIDAtLjA1LjQ2djJMMTAgOS4xMzZ6Ii8+JiN4YTs8L3N2Zz4=;",
+   "value": "Text-to-Speech",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1425"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-16-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute video intelligence api application programming interface",
+   "kind": "vertex",
+   "width": 42,
+   "height": 29,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE5Ljk4OTk5OTc3MTExODE2NCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE5Ljk4OTk5OTc3MTExODE2NCAxNCI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzY2OWRmNjt9JiN4YTsJLnN0MXtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CTwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTEwLjI3IDIuMzNoMi4wNXYxLjMzSDkuNEw3LjA3IDBIMHY0LjMzaDEuOTlMMy4yNSAyaDIuNTdsLjg2IDEuMzNINC4xMUwyLjg1IDUuNjZIMHYyLjU5aDIuODVsMS4yNiAyLjQxaDIuNTdMNS44MiAxMkgzLjI1TDEuOTkgOS42NkgwVjE0aDcuMDdsMi4zMy0zLjY3aDIuOTJ2MS4zM2gtMi4wNUw4LjggMTRoNS41MlY3LjY2SDcuOTFMNy4wOCA5SDUuMjRMNi41IDcgNS4yNCA1aDEuODRsLjggMS4zM2g2LjQ0VjBIOC44eiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNS45OSAxMC4xMWw0IDIuOTVWMS4xbC00IDIuOTF6Ii8+JiN4YTs8L3N2Zz4=;",
+   "value": "Video\nIntelligence API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1427"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-17-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute document ai artificial intelligence",
+   "kind": "vertex",
+   "width": 34,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmcyNDYzMyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSItMi4zODQxODU3OTEwMTU2MjVlLTcgLTAuMDAwMDAxOTA3MzQ4NjMyODEyNSAyMDguNzEzMzQ4Mzg4NjcxODggMjU4Ljk2NjA5NDk3MDcwMzEiIGhlaWdodD0iMjU4Ljk2NjA5NDk3MDcwMzEiIHdpZHRoPSIyMDguNzEzMzQ4Mzg4NjcxODgiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CS5zdDB7ZmlsbDojNTk4NmYyO30JPC9zdHlsZT4JJiN4YTsgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zLjM5NDYyNDgsLTE3LjgxMDI4MikiIGlkPSJsYXllcjEiPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDAiIHRyYW5zZm9ybT0ic2NhbGUoMC4yNjQ1ODMzMykiIGQ9Im0gMTEyLjQ3MDcsNjcuMzE0NDUzIGMgLTU4LjMyOTU1MiwwIC05OS42NDA2MjIsNDEuMDM3NjQ3IC05OS42NDA2MjIsMTA2Ljg1MTU2NyB2IDc3NC4xODc1IGMgMCw1Ni4zMTM3OCA0My4yNjY1OTYsOTcuNzMwNDggMTAxLjI3NzM0Miw5Ny43MzA0OCBIIDQxMC4wOTk2MSBWIDk0Ny41MDU4NiBIIDEwOS4zODI4MSBWIDE2My4yMTg3NSBoIDMwMC43MTY4IFYgNjcuMzE0NDUzIFogbSA0NzEuNzIwNzEsMjguNzc3MzQ0IGEgNjkuODg0NDg5LDY5Ljg4NDQ4OSAwIDAgMCAtNjkuODg0NzcsNjkuODg0NzYzIDY5Ljg4NDQ4OSw2OS44ODQ0ODkgMCAwIDAgNDkuMDY0NDUsNjYuNzAxMTcgdiA3Ni44ODg2OCBjIDAsMzIuMTczNTQgLTMuMDAyNDksNTQuMjA4MzYgLTkuMDA1ODYsNjQuMzQ3NjUgLTYuMDAzMzYsMTAuMTM5MyAtMTQuMDEyNDIsMTUuMjk2ODggLTQyLjIzODI4LDE1LjI5Njg4IGggLTQ5LjE0MjU3IHYgMzkuOTk0MTQgaCA0OS4xNDI1NyBjIDM1LjMwNTEsMCA2Mi45MTM3NiwtMTEuNzEyNTIgNzYuNjUyMzUsLTM0LjkxNjAyIDEzLjczODU4LC0yMy4yMDM1NSAxNC41OTM3NSwtNTAuOTg3NjggMTQuNTkzNzUsLTg0LjcyMjY1IFYgMjMzLjEzNDc3IEEgNjkuODg0NDg5LDY5Ljg4NDQ4OSAwIDAgMCA2NTQuMDc0MjIsMTY1Ljk3NjU2IDY5Ljg4NDQ4OSw2OS44ODQ0ODkgMCAwIDAgNTg0LjE5MTQxLDk2LjA5MTc5NyBaIE0gMjA5LjEwNzQyLDM1OS43OTY4OCB2IDk2LjYzNjcxIGggMjAwLjkxNzk3IHYgLTk2LjYzNjcxIHogbSA1MjIuNjc3NzQsMjguNjkzMzUgYSA2OS44ODQ0ODksNjkuODg0NDg5IDAgMCAwIC02OS44ODQ3Nyw2OS44ODQ3NyA2OS44ODQ0ODksNjkuODg0NDg5IDAgMCAwIDQ0LjUzMzIsNjUuMTE5MTQgYyAtMC44MjI3MiwyOC4wMzEwNCAtOC4yMTYzLDQwLjA3MTk4IC0yMC44MTgzNiw0OC40NzY1NiAtMTMuMzg1NTMsOC45MjcxNyAtMzcuNzE0NzQsMTMuMzk4NDQgLTcxLjI3OTI5LDEzLjM5ODQ0IEggNDYzLjY2NDA2IHYgMzkuOTk0MTQgaCAxNTAuNjcxODggYyAzNi41Mjk0MywwIDY4LjI5MTkyLC0zLjMyNDIzIDkzLjQ2ODc1LC0yMC4xMTUyMyAyMy4zMjM0OCwtMTUuNTU0OTYgMzYuNjM5MTcsLTQyLjk3NzMxIDM4LjQ3NDYxLC03OC41NDEwMiBBIDY5Ljg4NDQ4OSw2OS44ODQ0ODkgMCAwIDAgODAxLjY2Nzk3LDQ1OC4zNzUgNjkuODg0NDg5LDY5Ljg4NDQ4OSAwIDAgMCA3MzEuNzg1MTYsMzg4LjQ5MDIzIFogTSAyMDkuMTA3NDIsNTU2LjQ4MjQyIHYgOTYuNjM2NzIgaCAyMDAuOTE3OTcgdiAtOTYuNjM2NzIgeiBtIDAsMTk2LjY4NzUgdiA5Ni42MzY3MiBoIDIwMC45MTc5NyB2IC05Ni42MzY3MiB6IG0gMjU0Ljk3NjU2LDI3LjU0Njg4IHYgMzkuOTk0MTQgaCA5OC41OTk2MSBjIDMyLjMxNDI1LDAgNTUuNDQ0MTIsMi41Mjc5NSA2Ni4yMzA0Nyw4LjAwMTk1IDUuMzkzMTYsMi43MzcwMiA4LjA4NDg4LDUuMzU1MzIgMTAuNTQyOTcsMTAuMjMyNDIgMi40NTgwOSw0Ljg3NzE0IDQuNDA2MjUsMTIuNzc3NjggNC40MDYyNSwyNS4wMzEyNSB2IDE5LjgxODM2IGEgNjkuODg0NDg5LDY5Ljg4NDQ4OSAwIDAgMCAtNDkuNzIyNjYsNjYuODk2NDkgNjkuODg0NDg5LDY5Ljg4NDQ4OSAwIDAgMCA2OS44ODQ3Nyw2OS44ODQ3OSA2OS44ODQ0ODksNjkuODg0NDg5IDAgMCAwIDY5Ljg4NDc3LC02OS44ODQ3OSA2OS44ODQ0ODksNjkuODg0NDg5IDAgMCAwIC01MC4wNDQ5MywtNjYuOTgyNDMgdiAtMTkuNzMyNDIgYyAwLC0xNi4zNjg4MyAtMi40NjIyLC0zMC42ODU1IC04LjY4NzUsLTQzLjAzNzExIC02LjIyNTI2LC0xMi4zNTE2MSAtMTYuNDkwMTcsLTIxLjk3MzAyIC0yOC4xNjIxMSwtMjcuODk2NDggQyA2MjMuNjcxNzUsNzgxLjE5NjA4IDU5Ni4yMTY3LDc4MC43MTY4IDU2Mi42ODM1OSw3ODAuNzE2OCBaIi8+JiN4YTsgIDwvZz4mI3hhOzwvc3ZnPg==;",
+   "value": "Document AI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1429"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-18-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute document ai warehouse artificial intelligence",
+   "kind": "vertex",
+   "width": 42,
+   "height": 32,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmc4MjciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE3Ni4zNzUwOTE1NTI3MzQzOCAxMzYuMDc2MTcxODc1IiBoZWlnaHQ9IjEzNi4wNzYxNzE4NzUiIHdpZHRoPSIxNzYuMzc1MTAxNTUyNzM1NiI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4JLnN0MHtmaWxsOiNhZWNiZmE7fQkuc3Qxe2ZpbGw6IzY2OWRmNjt9CS5zdDJ7ZmlsbDojNDI4NWY0O30JPC9zdHlsZT4JJiN4YTsgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0gNjEuMzg0ODQ3LDAgOC40ZS01LDM0LjA0MzQ1OSBsIDYuNzUsMTIuMjkyNDcgTCA2NC45ODA1NSwxNCBoIDUwLjI3NTM5IFYgMCBaIi8+JiN4YTsgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0gMCwzNC4wNDMzODkgViAxMzYuMDc1OTMgSCA2MS4xNDY2NTMgViAxMjIuMDc2MjYgSCAxNC4wMDAxNzkgViA0OC4wNzA0NDkgaCA0Ny44MDQ4MzQgdiAtMTQuMDI3MDYgeiBtIDExNS4yMzI3Niw3LjEzNjUyIGMgLTE4LjY3NTk1MSwwIC0zMy45NjQ4NTEsMTUuMjg4OTEgLTMzLjk2NDg1MSwzMy45NjQ4NSAwLDE4LjY3NTk1IDE1LjI4ODksMzMuOTY2NDAxIDMzLjk2NDg1MSwzMy45NjY0MDEgNi44ODA0MiwwIDEzLjI5OTg0LC0yLjA3NzMgMTguNjY2MDQsLTUuNjMyNzMgbCAyMi4zNzQ4NiwyMy4wNzQwNSAxMC4wNTA1NSwtOS43NDU2NiAtMjIuNTcxNzUsLTIzLjI3ODE3MSBjIDMuNDQyMTQsLTUuMzA4MzkgNS40NDY3LC0xMS42MjM4NyA1LjQ0NjcsLTE4LjM4Mzg5IDAsLTE4LjY3NTk0IC0xNS4yOTA0NiwtMzMuOTY0ODUgLTMzLjk2NjQsLTMzLjk2NDg1IHogbSAwLDEzLjk5OTY2IGMgMTEuMTA5NzksMCAxOS45NjY3NCw4Ljg1NTQgMTkuOTY2NzQsMTkuOTY1MTkgMWUtNSwxMS4xMDk4IC04Ljg1Njk1LDE5Ljk2Njc0IC0xOS45NjY3NCwxOS45NjY3NCAtMTEuMTA5OCwwIC0xOS45NjUxOTEsLTguODU2OTQgLTE5Ljk2NTE5MSwtMTkuOTY2NzQgMCwtMTEuMTA5NzkgOC44NTU0MDEsLTE5Ljk2NTE5IDE5Ljk2NTE5MSwtMTkuOTY1MTkgeiIvPiYjeGE7ICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNIDExNS4yNTU5NCwwIDU0LjEwMTY0NiwzNC4wNDM0NTkgViAxMzYuMDc2MTcgaCA3IDExNS4yNzM0MzQgViAzNC4wNDM0NTkgWiBtIC0wLjAwMiwxNi4wMjM0MzcgNDcuMTIxMDksMjYuMjQwMjMyIFYgMTIyLjA3NjE3IEggNjguMTAxNjQ2IFYgNDIuMjYzNjY5IFoiLz4mI3hhOzwvc3ZnPg==",
+   "value": "Document AI\nWarehouse",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1431"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-19-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute visual inspection ai artificial intelligence",
+   "kind": "vertex",
+   "width": 42,
+   "height": 34,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmcyNDYzMyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIxLjQ5MDExNjExOTM4NDc2NTZlLTcgOS41MzY3NDMxNjQwNjI1ZS03IDMxOC44NzA5NzE2Nzk2ODc1IDI1NC42NzY0MzczNzc5Mjk3IiBoZWlnaHQ9IjI1NC42NzY0NDczNzc5Mjk5NyIgd2lkdGg9IjMxOC44NzA5NzE2Nzk2ODc1Ij4mI3hhOyAgPGRlZnMgaWQ9ImRlZnMyNDYzMCIvPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CS5zdDB7ZmlsbDojYjVjYmY5O30JLnN0MXtmaWxsOiM3NjllZjU7fQkuc3Qye2ZpbGw6IzU5ODZmMjt9CS5zdDN7ZmlsbDojZmZmZmZmO30JPC9zdHlsZT4JJiN4YTsgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjE5NDMwMzQyLC01LjQzMTE5MjkpIiBpZD0ibGF5ZXIxIj4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QwIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjI2NDU4MzMzLDAsMCwwLjI2NDU4MzMzLDMuMzk0NjI0OCwxNy44MTAyODIpIiBkPSJNIDU5MC4wMzUxNiwtNDYuNzg3MTA5IC0xMi4wOTU3MDMsNDM1LjE5NzI3IEggMTE5My4wODU5IFoiLz4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QxIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjI2NDU4MzMzLDAsMCwwLjI2NDU4MzMzLDMuMzk0NjI0OCwxNy44MTAyODIpIiBkPSJNIC0xMi4wOTU3MDMsNDM1LjE5NzI3IDU5MC40OTQxNCw5MTUuNzY5NTMgMTE5My4wODU5LDQzNS4xOTcyNyBaIi8+JiN4YTsgICAgPHBhdGggY2xhc3M9InN0MiIgZD0ibSAxNTkuMjA4ODgsOTguNTE5NTY3IGMgMTkuMDY5MDUsMCAzNC4yNTk5MiwxNS4xOTA4NzMgMzQuMjU5OTIsMzQuMjU5OTIzIDAsMTkuMDY5MDUgLTE1LjE5MDg3LDM0LjI1OTQxIC0zNC4yNTk5MiwzNC4yNTk0MSAtMTkuMDY5MDQsMCAtMzQuMjU5OTIsLTE1LjE5MDM2IC0zNC4yNTk5MiwtMzQuMjU5NDEgMCwtMTkuMDY5MDUgMTUuMTkwODcsLTM0LjI1OTkyMyAzNC4yNTk5MiwtMzQuMjU5OTIzIHoiLz4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QzIiBkPSJtIDIyMS42NTIzNywyMTAuNjQzOTkgLTI4LjkzMzY1LC0yOS4wNzIxMyBjIC05LjU0OTIzLDYuNTkzMTUgLTIxLjEwMDUyLDEwLjQ2NzA2IC0zMy41MTAwOCwxMC40NjcwNiAtMzIuNTIwOTcsMCAtNTkuMTYwODYsLTI2LjU4MzE2IC01OS4yNTczNTcsLTU5LjA4MjcgLTEuOGUtNCwtMC4wNTkgLTAuMDAzLC0wLjExNzY2IC0wLjAwMywtMC4xNzY3MyAwLC0zMi41ODAwNCAyNi42NzkzODcsLTU5LjI1OTk0NyA1OS4yNTk0MzcsLTU5LjI1OTk0NyAzMi41ODAwNSwwIDU5LjI1OTk1LDI2LjY3OTkwNyA1OS4yNTk5NSw1OS4yNTk5NDcgMCwwLjA1OTIgLTAuMDAzLDAuMTE3NjIgLTAuMDAzLDAuMTc2NzMgLTAuMDM0NiwxMS42MTk5OCAtMy40NjA0OCwyMi40ODM0NyAtOS4zMzc0MSwzMS42NDYxMyBsIDMxLjA4NzUxLDMxLjIzNjg2IHogTSAxNTkuMjA4NjQsOTguNTE5NTY3IGMgLTE5LjA2OTA1LDAgLTM0LjI1OTkyLDE1LjE5MDg3MyAtMzQuMjU5OTIsMzQuMjU5OTIzIDAsMTkuMDY5MDUgMTUuMTkwODcsMzQuMjU5NDEgMzQuMjU5OTIsMzQuMjU5NDEgMTkuMDY5MDUsMCAzNC4yNTk5MSwtMTUuMTkwMzYgMzQuMjU5OTEsLTM0LjI1OTQxIDAsLTE5LjA2OTA1IC0xNS4xOTA4NiwtMzQuMjU5OTIzIC0zNC4yNTk5MSwtMzQuMjU5OTIzIHoiLz4mI3hhOyAgPC9nPiYjeGE7PC9zdmc+",
+   "value": "Visual\nInspection AI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1433"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-20-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute retail api application programming interface",
+   "kind": "vertex",
+   "width": 42,
+   "height": 41,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmcyNDYzMyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSItMC4wMDAwMDE5MDczNDg2MzI4MTI1IDcuMzM4ODIxODg3OTY5OTcxZS03IDI2My4zMDg4MDczNzMwNDY5IDI1OC4xNDg4MDM3MTA5Mzc1IiBoZWlnaHQ9IjI1OC4xNDg4MDM3MTA5Mzc1IiB3aWR0aD0iMjYzLjMwODgwNzM3MzA0NjkiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CS5zdDB7ZmlsbDojNTk4NmYyO30JLnN0MXtmaWxsOiNiNWNiZjk7fQkuc3Qye2ZpbGw6Izc2OWVmNTt9CTwvc3R5bGU+CSYjeGE7ICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTguNTI5ODk4LDAuMDQyMDczMjUpIiBpZD0ibGF5ZXIxIj4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QwIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjI2NDU4MzMzLDAsMCwwLjI2NDU4MzMzLDAuMTk0MzAzNDIsNS40MzExOTI5KSIgZD0ibSAyNDcuMDUyNzMsLTIwLjY4MTY0MSAtMTQwLjU1ODU5LDIuMjI4NTE2IGMgLTIwLjg2OTIwMiwwLjMzMTk2IC0zNy41MTg3MDcsMTcuNTE3NDc0MzggLTM3LjE4OTQ1MiwzOC4zODY3MTkgMC4zMjc2OTMsMjAuODcyMjczIDE3LjUxNDQ3MywzNy41MjY1MDEgMzguMzg2NzIyLDM3LjE5NzI2NSBsIDExNS44NjUyMywtMS44NDU3MDMgMTg3LjIyMDcsNDA5LjQyOTY4NCAtNjIuNjYwOTEsMTI0LjkzOTQ5IGMgLTIyLjcxMjgyLDQ3LjMwMjg0IDguMTkzNzEsMTEwLjY4MTYxIDY2LjQ4NTk3LDExMC42ODE2MSBsIDU3NC41MzA0MSwxLjE3MzgzIGMgMjAuODczNDksMC4wMzY1IDM3LjgyNDQ5LC0xNi44NTUwNCAzNy44NjEyOSwtMzcuNzI4NTIgMC4wMzcsLTIwLjg3MDQzIC0xNi44NTAyLC0zNy44MjAxNiAtMzcuNzIwNjYsLTM3Ljg2MTMzIGwgLTU3MS41OTU3MSwtMS4wNjI1IDU4LjYzNDc3LC0xMjIuMDA5NzYgMzY4Ljk3NjU2LC0wLjgxODM2IGMgMTMuNjI4NTUsLTAuMDI5OCAyNi4xODU4LC03LjM5MzkxIDMyLjg2NTI0LC0xOS4yNzM0NCBsIDE4MS40NzQ2LC0zMjIuOTM1NTUgYyAxMC4yMjc1LC0xOC4xOTcyNyAzLjc2NjIsLTQxLjI0MDE0IC0xNC40MzE2LC01MS40NjY3OSAtOC43MzkzLC00LjkxMDA4IC0xOS4wNzEyLC02LjE0NzMgLTI4LjcyMjcsLTMuNDM5NDYgLTkuNjUwNCwyLjcwNTk5IC0xNy44MzA4Niw5LjEzNDMgLTIyLjc0MjE4LDE3Ljg3MTEgTCA4MjMuMDYyNSw0MjYuNDkwMjMgNDc2Ljc2OTUzLDQyNy4yNTU4NiAyODIuMDIxNDgsMS4zODg2NzE5IEMgMjc1Ljc3OTMsLTEyLjI1Njk0MSAyNjIuMDU2NDUsLTIwLjkxODAzIDI0Ny4wNTI3MywtMjAuNjgxNjQxIFoiLz4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QxIiBpZD0icmVjdDE3NzYzIiBkPSJtIDEyMy4yNjYsNDEuMzc2NjU5IGggMjIuMzQ2MDcgYyAyLjI4OTIzLDAgNC4xMzIyLDEuODQyOTYyIDQuMTMyMiw0LjEzMjIwMiB2IDYyLjA2ODMyOSBoIC0xNi42Mzk3IEwgMTE5LjEzMzgsNzYuMzQyMDc5IFYgNDUuNTA4ODYxIGMgMCwtMi4yODkyNCAxLjg0Mjk2LC00LjEzMjIwMiA0LjEzMjIsLTQuMTMyMjAyIHoiLz4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QyIiBpZD0icmVjdDE3NzYzLTUiIGQ9Im0gMTY0LjQ5MTk4LDI3LjEwNjAwOSBoIDIxLjQ2MTA5IGMgMi42OTc5LDAgNC44Njk4NSwyLjE3MTk1MSA0Ljg2OTg1LDQuODY5ODQ1IFYgMTA3LjU3NzE5IEggMTU5LjYyMjEzIFYgMzEuOTc1ODU0IGMgMCwtMi42OTc4OTQgMi4xNzE5NSwtNC44Njk4NDUgNC44Njk4NSwtNC44Njk4NDUgeiIvPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDAiIGlkPSJyZWN0MTc3NjMtMyIgZD0ibSAyMDUuNTAxOTYsMC4zNDUwODY2MyBoIDIxLjEwMTMyIGMgMi44NTIwNiwwIDUuMTQ4MTIsMi4yOTYwNjI3NyA1LjE0ODEyLDUuMTQ4MTIyNzcgViA3MS44Nzc5MzEgTCAyMTEuNzk4NjUsMTA3LjU3NzE5IEggMjAwLjM1Mzg0IFYgNS40OTMyMDk0IGMgMCwtMi44NTIwNiAyLjI5NjA2LC01LjE0ODEyMjc3IDUuMTQ4MTIsLTUuMTQ4MTIyNzcgeiIvPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDIiIHRyYW5zZm9ybT0ibWF0cml4KDAuMjY0NTgzMzMsMCwwLDAuMjY0NTgzMzMsMC4xOTQzMDM0Miw1LjQzMTE5MjkpIiBkPSJtIDg5MC4yNTE5NSw3NTYuNzc1MzkgYSA5OC44NjQ5ODYsOTguODY0OTg2IDAgMCAwIC05OC44NjUyMyw5OC44NjUyMyA5OC44NjQ5ODYsOTguODY0OTg2IDAgMCAwIDk4Ljg2NTIzLDk4Ljg2NTI0IDk4Ljg2NDk4Niw5OC44NjQ5ODYgMCAwIDAgOTguODY1MjQsLTk4Ljg2NTI0IDk4Ljg2NDk4Niw5OC44NjQ5ODYgMCAwIDAgLTk4Ljg2NTI0LC05OC44NjUyMyB6IG0gLTQ4OS41MzMyLDAuNDg4MjggYSA5OC44NjQ5ODYsOTguODY0OTg2IDAgMCAwIC05OC44NjUyMyw5OC44NjUyNCA5OC44NjQ5ODYsOTguODY0OTg2IDAgMCAwIDk4Ljg2NTIzLDk4Ljg2NTIzIDk4Ljg2NDk4Niw5OC44NjQ5ODYgMCAwIDAgOTguODY1MjMsLTk4Ljg2NTIzIDk4Ljg2NDk4Niw5OC44NjQ5ODYgMCAwIDAgLTk4Ljg2NTIzLC05OC44NjUyNCB6Ii8+JiN4YTsgIDwvZz4mI3hhOzwvc3ZnPg==;",
+   "value": "Retail API",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1435"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-21-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute recommendations ai",
+   "kind": "vertex",
+   "width": 42,
+   "height": 38,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM3Ny42ODQ2NTY1OTk1Nzg4MyIgaGVpZ2h0PSIzMzguNTIwNDc5NDMzNDQ2MiIgdmlld0JveD0iMC4wNjUwMDAwMDUwNjYzOTQ4IDAuNDc5OTk5NTQyMjM2MzI4MSA5OS45MjkwMDA4NTQ0OTIxOSA4OS41NjcwMDEzNDI3NzM0NCI+JiN4YTs8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiYjeGE7CS5zdDB7ZmlsbDojYWVjYmZhO30mI3hhOwkuc3Qxe2ZpbGw6IzY2OWRmNjt9JiN4YTsJLnN0MntmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDN7ZmlsbDojZmZmO30mI3hhOzwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTU5LjU1NCAzNS42MmgzMC45NFY5Ljk4bDkuNS05LjVoLTQ5Ljk0djQ0LjY0em0yOS45ODEgNTQuNDI3VjUzLjYzNWwtOS41IDkuNXYxNy40MTJ6bS01MC4xMjggMFY1My42MzVsLTkuNSA5LjV2MTcuNDEyem0wLTQ0LjU3OVY5LjA1NmwtOS41IDkuNXYxNy40MTJ6IiBmaWxsPSIjYWVjYmZhIi8+JiN4YTsJPHBhdGggY2xhc3M9InN0MSIgZD0iTTk5Ljk5NCA0NS4xMlYuNDhsLTkuNSA5LjV2MjUuNjR6bS00OS44IDQ0LjkyN2gzOS4zNDJsLTkuNS05LjVINTkuNjkzem0tNTAuMTI4IDBoMzkuMzQybC05LjUtOS41SDkuNTY1em0wLTQ0LjU3OWgzOS4zNDJsLTkuNS05LjVIOS41NjV6IiBmaWxsPSIjNjY5ZGY2Ii8+JiN4YTsJPHBhdGggY2xhc3M9InN0MiIgZD0iTTUwLjA1NCA0NS4xMmg0OS45NGwtOS41LTkuNWgtMzAuOTR6bTkuNjM5IDM1LjQyN1Y2My4xMzVoMjAuMzQybDkuNS05LjVINTAuMTkzdjM2LjQxMnptLTUwLjEyOCAwVjYzLjEzNWgyMC4zNDJsOS41LTkuNUguMDY1djM2LjQxMnptMC00NC41NzlWMTguNTU2aDIwLjM0Mmw5LjUtOS41SC4wNjV2MzYuNDEyeiIgZmlsbD0iIzQyODVmNCIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik04Mi42ODUgMTQuMTk4bC0xMC4yNjcgOS4yMDgtNC43ODUtNC4zNS00LjExMiAzLjY3IDguOTMgNy44ODYgMTQuMTgyLTEyLjcyNnoiIGZpbGw9IiNmZmYiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Recommendations\nAI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1437"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-22-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute cloud ai artificial intelligence",
+   "kind": "vertex",
+   "width": 42,
+   "height": 38,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE3LjUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdmlld0JveD0iMCAwIDIwIDE3LjUiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O30mI3hhOwk8L3N0eWxlPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOC45MSAxMC42M0wyMCA4Ljc1IDE3LjgyIDVoLTMuMDdsLTEuMDYtMS44NkgxMi41VjEuODhoMS45NGwxLjA2IDEuODdoMS41OUwxNC45IDBoLTQuMjd2NWgxLjczbC43MyAxLjI1aC0yLjQ2djIuNWgyLjI2bDEuMDUtMS44N2gyLjgxbC43MiAxLjI1aC0yLjhMMTMuNjIgMTBoLTIuOTl2NC4zOGgzLjRsLS43MiAxLjI1aC0yLjY4djEuODdoNC4yN2wzLjI4LTUuNjJoLTIuMDlsLS43MyAxLjI1SDEyLjV2LTEuMjVoMi4xNGwuNzQtMS4yNXoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMS4wOSAxMC42M0wwIDguNzUgMi4xOCA1aDMuMDdsMS4wNi0xLjg2SDcuNVYxLjg4SDUuNTZMNC41IDMuNzVIMi45MUw1LjEgMGg0LjI4djVINy42NGwtLjczIDEuMjVoMi40N3YyLjVINy4xMUw2LjA2IDYuODhIMy4yNWwtLjcyIDEuMjVoMi44TDYuMzggMTBoM3Y0LjM4SDUuOTdsLjcyIDEuMjVoMi42OXYxLjg3SDUuMWwtMy4yOC01LjYyaDIuMDlsLjczIDEuMjVINy41di0xLjI1SDUuMzZsLS43NC0xLjI1eiIvPiYjeGE7PC9zdmc+;",
+   "value": "Cloud AI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1439"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-23-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute contact center ai artificial intelligence",
+   "kind": "vertex",
+   "width": 32,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmc0Njc2OCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSItMS4xOTIwOTI4OTU1MDc4MTI1ZS03IDAgMjA5LjI1MjM2NTExMjMwNDcgMjc2LjIwMzU1MjI0NjA5Mzc1IiBoZWlnaHQ9IjI3Ni4yMDM1NTIyNDYwOTM3NSIgd2lkdGg9IjIwOS4yNTIzNjUxMTIzMDQ3Ij4mI3hhOwk8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgkuc3Qwe2ZpbGw6IzU5ODZmMjt9CTwvc3R5bGU+CSYjeGE7ICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS41MDc4NTk1LC05Ljc3OTM3ODMpIiBpZD0ibGF5ZXIxIj4mI3hhOyAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJtIDE2My41OTU1NywxMTYuMTQyMDIgNDcuMTY0NjUsMjguMDI0MzIgdiA0NC42MzY2NyBjIDAsNy45NjA3IC0zLjQyNjIxLDEyLjQwOTQ2IC05LjI0NTE1LDE2LjMyMzQ0IEwgNjcuMTkzNDY5LDI4NC4wNTE2IGMgLTUuNTE0MTUzLDMuNTg0IC05LjM3OTMyNSwxLjkyNjIxIC05LjM3OTMyNSwtMi44ODMwOSBWIDIzMy41NzM4OCBMIDE2My41OTU1NywxNzAuNzQ2MTEgWiBNIDYyLjYyMTM1Miw4Ny42ODQzMzkgViAzMS45MjQ2MSBMIDk1LjM0MDQ2NSwxMy4wMDA5NzMgYyA3LjUxNDMxNSwtNC42MDE4NzE3IDE1LjA5MjA3NSwtNC4wOTkzMDM2IDIxLjYwODQ0NSwwLjM5NzM5OSBsIDgxLjM4ODE1LDQ3LjEyODM4IGMgOS44NzAwNSw1LjYwNDA1OSAxMi4zNTYzOSwxMC41Nzc5MjggMTIuNDIzMTYsMjAuMDc5Mjc4IFYgMTI1LjQyMjIgTCAxMDUuNTk2NzgsNjMuMTI2OTQ1IFogTSA0Mi45MDMyMDgsMjI0LjA1MDEgMTMuMjg5ODgzLDIwNi44NTk5MiBDIDYuMTQyMjM5OCwyMDIuNDY5NTUgMS41MTY3ODAxLDE5OS43NTAxNyAxLjUxNjc4MDEsMTg3LjY0NzM3IFYgODMuNjM5NTkyIEMgMS4zOTg2OSw3NC4wOTg0NzkgMi4zMDMwNTY5LDY4LjUwMTMyOSAxMy40MzQzMzgsNjEuOTcxMzA0IEwgNDcuMjM2ODY3LDQyLjE4MDkzMyBWIDE3MS4xNzk0OCBsIDQzLjA0NzY2NiwyNC43MDE4NCB6Ii8+JiN4YTsgIDwvZz4mI3hhOzwvc3ZnPg==;",
+   "value": "Contact\nCenter AI",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1441"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-24-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute contact center ai artificial intelligence platform",
+   "kind": "vertex",
+   "width": 32,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmc2MjQ2IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9Ii0wLjAwMDAwMzgxNDY5NzI2NTYyNSAtMC4wMDAwMDM4MTQ2OTcyNjU2MjUgMTQyLjM2NTczNzkxNTAzOTA2IDE4NS40MDA0NTE2NjAxNTYyNSIgaGVpZ2h0PSIxODUuNDAwNDUxNjYwMTU2MjUiIHdpZHRoPSIxNDIuMzY1NzM3OTE1MDM5MDYiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CS5zdDB7ZmlsbDojNDI4NWY0O30JLnN0MXtmaWxsOiNmZmZmZmY7fQk8L3N0eWxlPgkmI3hhOyAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM3LjQ1MjcxMSwtNTUuMDE0ODM4KSIgaWQ9ImxheWVyMSI+JiN4YTsgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTSA3NS42NTQ0NzYsMjA0Ljc3MjcgNDUuMTMwNTE3LDE4Ni43OTU0IGMgLTUuODQwMzQ1LC0zLjMxMzMyIC03LjM5NjkxMiwtNS45MjE4NCAtNy4zOTY5MTIsLTEzLjk1MTE0IGwgLTAuMjgwODk0LC02Ny4yMjc2MiBjIDAsLTkuMzA5NTUgMi42NTc3MywtMTEuOTA5ODY4IDguODAxMzg3LC0xNS45MTczOTggTCAxMDIuODA3Nyw1Ni4zNjYzMjkgYyAyLjkzMjI5LC0xLjUzNTAwMSA4LjY2MjA2LC0yLjEyMTEzNyAxMi4xNzIxMiwwLjE4NzI2NCBsIDU2LjQ2NjYyLDMzLjM3ODM1MSBjIDYuNTQxMzYsMy42ODA5NTMgOC4zNzIwMSw2LjY5Mzg4MyA4LjM3MjAxLDE0Ljk4MTA4NiBsIC0wLjI4NzU1LDY4Ljk4MTE0IGMgLTAuMTcxNzEsNi4xMzYxNCAtMi4xOTk1NCw5LjgwODQyIC03LjExNjAxLDEyLjkwNzg4IGwgLTg5LjU1MDc2OCw1Mi4zMzM1MSBjIC0zLjk4NjEzMSwyLjczMDI0IC03LjAyMjM4MiwwLjgzODE3IC03LjAyMjM4MiwtMy4yNzcxMSB6Ii8+JiN4YTsgICAgPHBhdGggY2xhc3M9InN0MSIgZD0ibSA5OC41MDA2MjksMTc0LjkwNDE2IGEgMTAuMTEyMjMyLDEwLjExMjIzMiAwIDAgMSAtMTAuMTEyMjMyLDEwLjExMjIzIDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgLTEwLjExMjIzMiwtMTAuMTEyMjMgMTAuMTEyMjMyLDEwLjExMjIzMiAwIDAgMSAxMC4xMTIyMzIsLTEwLjExMjIzIDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgMTAuMTEyMjMyLDEwLjExMjIzIHogbSA2Mi41NDYwNDEsLTM1Ljk1NDYxIGEgMTAuMTEyMjMyLDEwLjExMjIzMiAwIDAgMSAtMTAuMTEyMjQsMTAuMTEyMjQgMTAuMTEyMjMyLDEwLjExMjIzMiAwIDAgMSAtMTAuMTEyMjMsLTEwLjExMjI0IDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgMTAuMTEyMjMsLTEwLjExMjIzIDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgMTAuMTEyMjQsMTAuMTEyMjMgeiBtIC0zMC4xNDk0NCwtMC4zNzQ1MiBhIDIxLjUzNTMwOSwyMS41MzUzMDkgMCAwIDEgLTIxLjUzNTMxLDIxLjUzNTMxIDIxLjUzNTMwOSwyMS41MzUzMDkgMCAwIDEgLTIxLjUzNTMwNiwtMjEuNTM1MzEgMjEuNTM1MzA5LDIxLjUzNTMwOSAwIDAgMSAyMS41MzUzMDYsLTIxLjUzNTMxIDIxLjUzNTMwOSwyMS41MzUzMDkgMCAwIDEgMjEuNTM1MzEsMjEuNTM1MzEgeiBNIDk4LjMxMzM2NiwxMDIuNjIwNDIgQSAxMC4xMTIyMzIsMTAuMTEyMjMyIDAgMCAxIDg4LjIwMTEzNCwxMTIuNzMyNjUgMTAuMTEyMjMyLDEwLjExMjIzMiAwIDAgMSA3OC4wODg5MDIsMTAyLjYyMDQyIDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgODguMjAxMTM0LDkyLjUwODE5IDEwLjExMjIzMiwxMC4xMTIyMzIgMCAwIDEgOTguMzEzMzY2LDEwMi42MjA0MiBaIG0gNDYuNDQwNTQ0LDUxLjI0Mjg2IGEgNSw1IDAgMCAwIC0zLDIuMzc2OTUgYyAtNy45MzcwOCwxNC4yNTY2NiAtMTYuNzMzNDIsMTguNTQ2IC0zMy43NTE5NiwxOS41NzgxMyBhIDUsNSAwIDAgMCAtNC42ODc1LDUuMjk0OTIgNSw1IDAgMCAwIDUuMjkyOTcsNC42ODc1IGMgMTguODQyMDUsLTEuMTQyNzIgMzIuNjM3MzgsLTguMDg1MDUgNDEuODg0NzcsLTI0LjY5NTMxIGEgNSw1IDAgMCAwIC0xLjkzNzUsLTYuODAwNzggNSw1IDAgMCAwIC0zLjgwMDc4LC0wLjQ0MTQxIHogTSAxMDcuNzQyMTksOTIuMzYzMjgxIGEgNSw1IDAgMCAwIC00Ljg0NzY2LDUuMTQ2NDg1IDUsNSAwIDAgMCA1LjE0ODQ0LDQuODQ3NjU0IGMgMTYuMzA5NzgsLTAuNDg5OTEgMjQuNTAwMTYsNC44NjU4NSAzNC4xMDc0MiwxOC45NTExNyBhIDUsNSAwIDAgMCA2Ljk0OTIyLDEuMzE0NDYgNSw1IDAgMCAwIDEuMzEyNSwtNi45NDkyMiBDIDEzOS43NzU0MywxMDAuMDc5MjggMTI2Ljc0NDUzLDkxLjc5MjQ5MyAxMDcuNzQyMTksOTIuMzYzMjgxIFogTSA3Mi4wODAwNzgsMTEyLjI3NTM5IGEgNSw1IDAgMCAwIC0yLjkyNTc4MSwyLjQ2NjggYyAtOC42NzU5NzgsMTYuNzY0NzIgLTkuNzg0Nzk2LDMyLjE2NzM0IC0wLjI2MTcxOSw0OC42MjEwOSBhIDUsNSAwIDAgMCA2LjgzMjAzMSwxLjgyNDIyIDUsNSAwIDAgMCAxLjgyMjI2NiwtNi44MzIwMyBjIC04LjE3MzY5NSwtMTQuMTIyMzIgLTcuMzQ4MDQzLC0yMy44NzUzMyAwLjQ4ODI4MSwtMzkuMDE3NTggYSA1LDUgMCAwIDAgLTIuMTQyNTc4LC02LjczODI4IDUsNSAwIDAgMCAtMy44MTI1LC0wLjMyNDIyIHoiLz4mI3hhOyAgPC9nPiYjeGE7PC9zdmc+;",
+   "value": "Contact Center\nAI Platform",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1443"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-25-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute dialogflow enterprise edition",
+   "kind": "vertex",
+   "width": 34,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE2LjAwMDAwNzYyOTM5NDUzIiBoZWlnaHQ9IjE5LjgzNjQ5NDQ0NTgwMDc4IiB2aWV3Qm94PSItMC4wMDAwMDY3MzA4MDY0ODk5NDA3MzMgMC4wMDAzMTcxNzE4ODUzOTkxNDc4NyAxNi4wMDAwMDc2MjkzOTQ1MyAxOS44MzY0OTQ0NDU4MDA3OCI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzQyODVmNDt9JiN4YTsJLnN0MXtmaWxsOiM2NjlkZjY7fSYjeGE7CTwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTggOS45NzFsLTgtNHY2Ljc2YS40OS40OSAwIDAgMCAuMTkuMzlsNC42NCAyLjc1YS4zMi4zMiAwIDAgMSAuMTcuMjl2My41MWEuMTcuMTcgMCAwIDAgLjI2LjE0bDEwLjUxLTYuNjlhLjUuNSAwIDAgMCAuMjMtLjQydi02LjczeiIvPiYjeGE7CTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik04IDcuOTcxbDgtNEw4LjEyLjAzMWEuMjUuMjUgMCAwIDAtLjI0IDBMMCAzLjk3MXoiLz4mI3hhOzwvc3ZnPg==;",
+   "value": "Dialogflow\nEnterprise Edition",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1445"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-26-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute agent assist",
+   "kind": "vertex",
+   "width": 32,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmcxNzUwNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIC0wLjAwMDAwMzgxNDY5NzI2NTYyNSAxMzkuNTIyNzIwMzM2OTE0MDYgMTgzLjYwODg1NjIwMTE3MTg4IiBoZWlnaHQ9IjE4My42MDg4NTYyMDExNzE4OCIgd2lkdGg9IjEzOS41MjI3MjAzMzY5MTQwNiI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4JLnN0MHtmaWxsOiM0Mjg1ZjQ7fQkuc3Qxe2ZpbGw6I2ZmZmZmZjt9CTwvc3R5bGU+CSYjeGE7ICA8ZGVmcyBpZD0iZGVmczE3NTAxIi8+JiN4YTsgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNS44NDQ5MDUsLTU1LjU2Mzg5NSkiIGlkPSJsYXllcjEiPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0gNzIuOTAwMzc3LDIwMy41NDIxOCA0Mi45MzQzMDQsMTg2LjE1ODggYyAtNC44NzkwNTgsLTMuNTY2MTIgLTcuMDg5Mzk5LC00LjIwOTM0IC03LjA4OTM5OSwtMTMuNzQzOTEgdiAtNzAuMTQ2MjcgYyAwLC01LjU1Nzk3MSAxLjM3NjEzMSwtOC44NTYzNDMgNy4yMDI5OTEsLTExLjk4NDg2OCBMIDk4LjY1MTg3MSw1Ny40MzUwNjMgYyAzLjkxOTEwOSwtMS44OTQxNDEgOS40NzAxNzksLTIuOTc1Nzc5IDEzLjY4MzUzOSwtMC4xMzI0MTUgbCA1Ni45NTA4NCwzMy4zMzI5MTIgYyA0LjU2NTQ4LDMuNDY4MzIxIDUuOTYwOTksNi43OTc1MDggNi4wODEzNywxMi4xNTg4MyB2IDcxLjM0MTg5IGMgMCw2LjQyMDA0IC0xLjg5MjE5LDkuMjg4NzEgLTUuNTkzMjQsMTEuMDc2NzggbCAtODguODUzNzk2LDUyLjQ3OTIzIGMgLTUuNjU3NTcsMy4yMTExNyAtNy44MTIzMDgsMC43NjAzNiAtOC4wMjAyMDcsLTMuMTcwMTYgeiIvPiYjeGE7ICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Im0gMTE3LjYxOTE0LDEzNy4zOTA2MiB2IDMyLjkyNTc5IGggMjEuMjMyNDIgdiAtOSBoIC0xMi4yMzI0MiB2IC0xNC45MjU3OSBoIDEyLjIzMjQyIHYgLTkgeiBNIDEwNi4wOTM3NSw5Mi45ODYzMjggYyAtMjEuMDE0OTA1LDAgLTM5LjE4NzUsMTYuNjY0NTAyIC0zOS4xODc1LDM1LjgzNTk0MiB2IDI5LjgyMjI2IGwgMC4wMDIsMC4wMzcxIGMgMC4wNTIyMSwzLjE2NTUxIDEuMTIwNDQxLDYuMjcyMjYgMy4yODcxMDksOC42NDQ1MyAyLjE2NjY2OSwyLjM3MjI3IDUuNDY1NjE0LDMuODM3ODkgOS4wMTc1NzksMy44Mzc4OSBIIDkzLjczMDQ2OSBWIDEzNy42MzI4MSBIIDc1LjkwNjI1IHYgLTguODEwNTQgYyAwLC0xMy4xOTUwOCAxNC4wNjkyNTQsLTI2LjgzNTk0IDMwLjE4NzUsLTI2LjgzNTk0IDE2LjYxNjMyLDAgMjkuNDkyMTksMTQuNDQ1MzYgMjkuNDkyMTksMjYuMjgzMiB2IDQ2LjI1MzkxIGggLTI1Ljg3MzA1IHYgOSBoIDM0Ljg3MzA1IHYgLTU1LjI1MzkxIGMgMCwtMTcuODUwNjEgLTE2Ljg3MzQ1LC0zNS4yODMyMDIgLTM4LjQ5MjE5LC0zNS4yODMyMDIgeiBtIC0zMC4xODc1LDUzLjY0NjQ4MiBoIDguODI0MjE5IHYgMTUuNTMxMjUgaCAtNS41MTc1NzggYyAtMS4zMDExMywwIC0xLjg2ODQ0NiwtMC4zNTM3NiAtMi4zNzMwNDcsLTAuOTA2MjUgLTAuNTA0NjAyLC0wLjU1MjQ4IC0wLjkxMjk2LC0xLjQ3MzQ2IC0wLjkzMzU5NCwtMi43MjQ2MSB6Ii8+JiN4YTsgIDwvZz4mI3hhOzwvc3ZnPg==;",
+   "value": "Agent Assist",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1447"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-27-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute ai hub artificial intelligence",
+   "kind": "vertex",
+   "width": 40,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjM2Mi4yMjI0NzgzNzUzNTMxNSIgaGVpZ2h0PSIzNzcuMzU5NDg0NzI1NTkyNSIgdmlld0JveD0iNjcuMzQ3OTk5NTcyNzUzOSAxMDguNjg4MDAzNTQwMDM5MDYgOTUuODM4MDA1MDY1OTE3OTcgOTkuODQzMDAyMzE5MzM1OTQiPiYjeGE7PHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzY2OWRmNjt9JiN4YTsJLnN0MXtmaWxsOiNhZWNiZmE7fSYjeGE7CS5zdDJ7ZmlsbDojNDI4NWY0O30mI3hhOzwvc3R5bGU+JiN4YTsJPHBhdGggY2xhc3M9InN0MCIgZD0iTTk2LjE5OSAxNzMuODAxdjI1Ljk5bDE5LjE4MSA4Ljc0di0yNS45MjZ6bTQuNzcxIDguNjYybDkuNjczIDQuNDA4djEyLjk4NWwtOS42NzMtNC4zNzV6bS00Ljc3MS0zOC45Njl2MjEuNjg2bDE5LjE4MSA4LjczMnYtMjEuNjg0bC00LjczNy0yLjA5NXYxNS4wNmwtOS42NzMtNC4zOTV2LTE1LjE3ek02Ny4zNDggMTMwLjMydjU2LjU1bDE5LjExNCA4Ljc4M3YtNTYuNjU4bC00LjczNC0yLjEyN3Y0OS45MDhsLTkuNTUzLTQuMzgxVjEzMi40OXoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNOTYuMTE2IDExNy4zMTZsMTkuMjY0LTguNjI4IDQ3LjgwNiAyMS43NjMtMTguNzkgOC42MzJ6bTE5LjI2NCAzNC45MTJsLTE5LjE4MS04Ljc0NiAxOS4xODEtOC43MzkgMTkuMjE1IDguNzU5ek04Ni40NjIgMTM5LjA2bC0xOS4xMTQtOC43NDYgMTkuMTE0LTguNzM5IDE5LjM2MiA4Ljc1OXoiLz4mI3hhOwk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTQ0LjM5NiAxNjAuNjEzdi0yMS41M2wxOC43OS04LjYzMnYyMS42NTd6TTExNS4zOCAxODIuNTNsNDcuODA2LTIxLjcxMnYyNS45MDRsLTQ3LjgwNiAyMS42MjZ6bTAtOC42MTh2LTIxLjY4NGwxOS4yMTUtOC43MzJ2MjEuNTQ1eiIvPiYjeGE7PC9zdmc+;",
+   "value": "AI Hub",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1449"
+  },
+  {
+   "id": "gcp2Icons AI and Machine Learning-28-entry",
+   "title": "",
+   "tags": "gcp2  gcp google cloud platform icons icon compute advanced solutions lab",
+   "kind": "vertex",
+   "width": 36,
+   "height": 42,
+   "style": "editableCssRules=.*;sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE2Ljk3OTk5OTU0MjIzNjMyOCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDE2Ljk3OTk5OTU0MjIzNjMyOCAyMCI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzY2OWRmNjt9JiN4YTsJLnN0MXtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDJ7ZmlsbDojYWVjYmZhO30mI3hhOwk8L3N0eWxlPiYjeGE7CTxnIGNsYXNzPSJzdDAiPiYjeGE7CQk8cGF0aCBkPSJNOC40OSAxMC4yOUwuMjQgNS4zNSA4LjQ5LjU4bDguMjQgNC42N3pNMS43NiA1LjM2bDYuNzIgNCA2LjcyLTQuMTEtNi43MS0zLjc4eiIvPiYjeGE7CQk8cGF0aCBkPSJNOC40OSAxOS40NEwuMjEgMTMuODkgOC40OSA5LjNsOC4xNSA0LjY0em0tNi44LTUuNWw2LjggNC41NiA2LjctNC41LTYuNy0zLjgyeiIvPiYjeGE7CTwvZz4mI3hhOwk8ZyBjbGFzcz0ic3QxIj4mI3hhOwkJPHBhdGggZD0iTS42MTMgNS41MDJsLjY3NS0uMzcxIDcuNDc3IDEzLjYtLjY3NS4zNzF6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik04LjE5NCAxOC44MjZsNy4zMDEtMTMuNTU5LjY3OC4zNjUtNy4zMDEgMTMuNTU5ek0uNzE2IDEzLjY4N0w4LjA5Ni45MDRsLjY2Ny4zODUtNy4zOCAxMi43ODN6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik04LjE5NCAxLjIxNGwuNjY5LS4zODEgNy40MDUgMTIuOTg3LS42NjkuMzgxeiIvPiYjeGE7CQk8cGF0aCBkPSJNOC4xMy45NmguNzdWMTguOWgtLjc3ek0uNTUgNS40M2guNzd2OC42NkguNTV6bTE0Ljk3LS4wOWguNzdWMTRoLS43N3oiLz4mI3hhOwk8L2c+JiN4YTsJPGcgY2xhc3M9InN0MiI+JiN4YTsJCTxjaXJjbGUgY3g9IjguNTIiIGN5PSIxLjA3IiByPSIxLjA3Ii8+JiN4YTsJCTxjaXJjbGUgY3g9IjE1LjkxIiBjeT0iNS4zNCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIxLjA3IiBjeT0iNS4zNCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSI4LjUyIiBjeT0iOS45MyIgcj0iMS42OCIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIxNS45MSIgY3k9IjEzLjk0IiByPSIxLjA3Ii8+JiN4YTsJCTxjaXJjbGUgY3g9IjEuMDciIGN5PSIxMy45NCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSI4LjUyIiBjeT0iMTguOTMiIHI9IjEuMDciLz4mI3hhOwkJPHBhdGggZD0iTTguNDkgMTAuMjlMLjI0IDUuMzUgOC40OS41OGw4LjI0IDQuNjd6TTEuNzYgNS4zNmw2LjcyIDQgNi43Mi00LjExLTYuNzEtMy43OHoiLz4mI3hhOwkJPHBhdGggZD0iTTguNDkgMTkuNDRMLjIxIDEzLjg5IDguNDkgOS4zbDguMTUgNC42NHptLTYuOC01LjVsNi44IDQuNTYgNi43LTQuNS02LjctMy44MnoiLz4mI3hhOwkJPHBhdGggZD0iTS42MTMgNS41MDJsLjY3NS0uMzcxIDcuNDc3IDEzLjYtLjY3NS4zNzF6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik04LjE5NCAxOC44MjZsNy4zMDEtMTMuNTU5LjY3OC4zNjUtNy4zMDEgMTMuNTU5ek0uNzE2IDEzLjY4N0w4LjA5Ni45MDRsLjY2Ny4zODUtNy4zOCAxMi43ODN6Ii8+JiN4YTsJCTxwYXRoIGQ9Ik04LjE5NCAxLjIxNGwuNjY5LS4zODEgNy40MDUgMTIuOTg3LS42NjkuMzgxeiIvPiYjeGE7CQk8cGF0aCBkPSJNOC4xMy45NmguNzdWMTguOWgtLjc3ek0uNTUgNS40M2guNzd2OC42NkguNTV6bTE0Ljk3LS4wOWguNzdWMTRoLS43N3oiLz4mI3hhOwk8L2c+JiN4YTsJPGcgY2xhc3M9InN0MCI+JiN4YTsJCTxjaXJjbGUgY3g9IjguNTIiIGN5PSIxLjA3IiByPSIxLjA3Ii8+JiN4YTsJCTxjaXJjbGUgY3g9IjE1LjkxIiBjeT0iNS4zNCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIxLjA3IiBjeT0iNS4zNCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSI4LjUyIiBjeT0iOS45MyIgcj0iMS42OCIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIxNS45MSIgY3k9IjEzLjk0IiByPSIxLjA3Ii8+JiN4YTsJCTxjaXJjbGUgY3g9IjEuMDciIGN5PSIxMy45NCIgcj0iMS4wNyIvPiYjeGE7CQk8Y2lyY2xlIGN4PSI4LjUyIiBjeT0iMTguOTMiIHI9IjEuMDciLz4mI3hhOwk8L2c+JiN4YTs8L3N2Zz4=;",
+   "value": "Advanced\nSolutions Lab",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:1451"
+  }
+ ]
+}
