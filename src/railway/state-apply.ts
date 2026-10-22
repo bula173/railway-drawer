@@ -28,6 +28,7 @@ import {
   composeVisual,
   parseBaseStyles,
   schemeDimensions,
+  scaledStrokeWidth,
   schemeIdFor,
   serializeBaseStyles,
   stateOption,
@@ -176,10 +177,10 @@ function cellAtPath(cell: Cell, path: string): Cell | null {
 function applyLook(graph: Graph, cell: Cell, scheme: SchemeId, values: Record<StateDimension, string>): BaseStyles {
   const base = parseBaseStyles(readAttr(cell, BASE_STYLE_ATTR));
   const visual = composeVisual(scheme, values);
-  const desired = new Map<string, { cell: Cell; keys: Record<string, unknown> }>();
+  const desired = new Map<string, { cell: Cell; keys: Record<string, unknown>; role: TargetRole }>();
   for (const t of targetsFor(graph, cell, scheme)) {
     const keys = visualStyleKeys(visual, t.role);
-    if (Object.keys(keys).length > 0) desired.set(t.path, { cell: t.cell, keys });
+    if (Object.keys(keys).length > 0) desired.set(t.path, { cell: t.cell, keys, role: t.role });
   }
   const paths = new Set([...Object.keys(base), ...desired.keys()]);
   const next: BaseStyles = {};
@@ -198,6 +199,11 @@ function applyLook(graph: Graph, cell: Cell, scheme: SchemeId, values: Record<St
       for (const [key, value] of Object.entries(keys)) {
         if (!(key in remembered)) remembered[key] = style[key] === undefined ? null : style[key];
         style[key] = value;
+      }
+      // occupied: thicker than drawn (the drawn width is the remembered one once a look set it)
+      if (visual.widthScale !== undefined && desired.get(path)?.role === 'stroke') {
+        if (!('strokeWidth' in remembered)) remembered.strokeWidth = style.strokeWidth === undefined ? null : style.strokeWidth;
+        style.strokeWidth = scaledStrokeWidth(remembered.strokeWidth, visual.widthScale);
       }
     });
     if (Object.keys(remembered).length > 0) next[path] = remembered;

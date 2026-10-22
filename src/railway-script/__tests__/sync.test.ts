@@ -12,6 +12,8 @@ import { findRoutePaths } from '../../railway/routes';
 import { buildTopology } from '../../railway/topology';
 import { collectObjects } from '../../railway/validation';
 import { generatedCells } from '../apply';
+import { setStateOnCells, signalLamps } from '../../railway/state-apply';
+import { STATE_COLORS } from '../../railway/states';
 import { generateScript } from '../generate';
 import { parseScript } from '../parse';
 import { SCRIPT_TEMPLATES } from '../templates';
@@ -236,6 +238,93 @@ describe('drawing -> text', () => {
     await f.session.apply();
     f.graph.moveCells([cellOf(f.graph, 'signal:S1')], 50, 0);
     expect(JSON.parse(f.store.get()).signals[0]).toEqual({ id: 'S1', track: 'T1', at: 0.3 });
+  });
+});
+
+const STATES = `railwayScript: 1
+tracks:
+  - id: T1
+    startKm: 0.000
+    endKm: 1.000
+    points:
+      - { id: W1, at: 0.300, to: T2, hand: right, position: reverse }
+  - { id: T2, startKm: 0.400, endKm: 1.000, lane: 1 }
+sections:
+  - { id: TC1, track: T1, from: 0.000, to: 0.300, state: occupied }
+  - { id: TC2, track: T1, from: 0.300, to: 1.000 }
+signals:
+  - { id: S1, track: T1, at: 0.100, aspect: proceed }
+  - { id: S2, track: T1, at: 0.900 }
+`;
+
+describe('runtime states in the script (state / aspect / position)', () => {
+  const style = (key: string, name: string): unknown => (cellOf(f!.graph, key).getStyle() as Record<string, unknown>)[name];
+
+  it('apply sets the states with their look (one undo step); the same text again changes nothing; a removed key resets', async () => {
+    f = fixture(STATES);
+    const r0 = await f.session.apply();
+    expect(r0.ok).toBe(true);
+    expect(attr(f.graph, 'trackSection:TC1', 'rdState')).toBe('occupied');
+    expect(style('trackSection:TC1', 'strokeColor')).toBe(STATE_COLORS.occupied);
+    expect(attr(f.graph, 'trackSection:TC1', 'rdBaseStyle')).not.toBe('');
+    expect(attr(f.graph, 'signal:S1', 'rdAspect')).toBe('proceed');
+    const lamps = signalLamps(f.graph, cellOf(f.graph, 'signal:S1'));
+    expect(lamps.length).toBeGreaterThan(0);
+    for (const l of lamps) expect((l.getStyle() as Record<string, unknown>).fillColor).toBe(STATE_COLORS.lampProceed);
+    expect(attr(f.graph, 'points:W1', 'rdPosition')).toBe('reverse');
+    expect(attr(f.graph, 'trackSection:TC2', 'rdState')).toBe('');
+
+    f.commands.clearHistory();
+    const again = await f.session.apply();
+    expect(again.counts).toEqual({ added: 0, updated: 0, replaced: 0, removed: 0 });
+    expect(f.commands.canUndo()).toBe(false);
+
+    // TC2 occupied, TC1's key removed (= free: as drawn), S1 back to stop
+    const drawnTc2 = { ...(cellOf(f.graph, 'trackSection:TC2').getStyle() as object) };
+    f.store.set(STATES.replace(', state: occupied', '').replace('to: 1.000 }', 'to: 1.000, state: reserved }').replace(', aspect: proceed', ''), 'editor');
+    const r = await f.session.apply();
+    expect(r.ok).toBe(true);
+    expect(attr(f.graph, 'trackSection:TC1', 'rdState')).toBe('');
+    expect(attr(f.graph, 'trackSection:TC1', 'rdBaseStyle')).toBe('');
+    expect(style('trackSection:TC2', 'strokeColor')).toBe(STATE_COLORS.reserved);
+    expect(attr(f.graph, 'signal:S1', 'rdAspect')).toBe('');
+    // one undo step back
+    f.commands.undo();
+    expect(attr(f.graph, 'trackSection:TC1', 'rdState')).toBe('occupied');
+    expect(cellOf(f.graph, 'trackSection:TC2').getStyle()).toEqual(drawnTc2);
+  });
+
+  it('state changes on the canvas update the text (state / aspect / position); defaults remove the key', async () => {
+    f = fixture(STATES);
+    await f.session.apply();
+    setStateOnCells(f.graph, [cellOf(f.graph, 'trackSection:TC2')], 'state', 'occupied');
+    let text = f.store.get();
+    expect(text).toContain('- { id: TC2, track: T1, from: 0.300, to: 1.000, state: occupied }');
+    setStateOnCells(f.graph, [cellOf(f.graph, 'signal:S2')], 'aspect', 'caution');
+    setStateOnCells(f.graph, [cellOf(f.graph, 'points:W1')], 'position', 'normal');
+    setStateOnCells(f.graph, [cellOf(f.graph, 'trackSection:TC1')], 'state', 'free');
+    text = f.store.get();
+    expect(text).toContain('- { id: S2, track: T1, at: 0.900, aspect: caution }');
+    expect(text).toContain('- { id: W1, at: 0.300, to: T2, hand: right, position: normal }');
+    expect(text).toContain('- { id: TC1, track: T1, from: 0.000, to: 0.300 }');
+    // the synced text applies without changes
+    f.commands.clearHistory();
+    const r = await f.session.apply();
+    expect(r.counts).toEqual({ added: 0, updated: 0, replaced: 0, removed: 0 });
+    // Generate from drawing writes the non-default states
+    const g = generateScript(f.graph.getDataModel(), 'X').text;
+    expect(g).toMatch(/id: TC2[^}\n]*state: occupied/);
+    expect(g).toMatch(/id: S2[^}\n]*aspect: caution/);
+    expect(g).not.toMatch(/id: TC1[^}\n]*state:/);
+  });
+
+  it('validates the values: unknown state = error, a state on a kind without states = warning', () => {
+    const msgs = (text: string): string[] => parseScript(text).diagnostics.map((d) => `${d.severity}: ${d.message}`);
+    expect(msgs(STATES.replace('state: occupied', 'state: busy'))).toContain('error: sections[0].state: "busy" is not one of free, occupied, reserved, overlap, locked, disturbed');
+    // signals have no `state` (schema: unknown key); a marker board has no aspect
+    const m = msgs(STATES.replace('{ id: S2, track: T1, at: 0.900 }', '{ id: S2, track: T1, at: 0.900, state: occupied, type: markerBoard, aspect: stop }'));
+    expect(m.some((x) => x.startsWith('warning') && x.includes('unknown key "state"'))).toBe(true);
+    expect(m.some((x) => x.startsWith('warning') && x.includes('Signal S2: has no aspect'))).toBe(true);
   });
 });
 

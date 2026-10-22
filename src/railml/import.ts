@@ -119,7 +119,7 @@ const DEFAULT_ATTRS: Record<string, Record<string, string>> = {
 const KNOWN_VALUES: Record<string, Record<string, readonly string[]>> = {
   signalIL: { function: ['main', 'shunting'] },
   tvdSection: { technology: ['axleCounter', 'trackCircuit'] },
-  trainDetectionElement: { type: ['axleCounter', 'axleCountingCircuit'], detectedObject: ['axle'] },
+  trainDetectionElement: { type: ['axleCounter', 'axleCountingCircuit', 'insulatedRailJoint'], detectedObject: ['axle'] },
 };
 
 /**
@@ -356,6 +356,10 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
   });
   for (const el of childrenNamed(childNamed(fi, 'trainDetectionElements'), 'trainDetectionElement')) {
     const type = el.getAttribute('type');
+    if (type === 'insulatedRailJoint') {
+      readItem(el, 'insulatedJoint');
+      continue;
+    }
     if (type && type !== 'axleCounter' && type !== 'axleCountingCircuit') {
       store.addElement(el, { path: pathOf(el.parentElement!) });
       continue;
@@ -390,11 +394,11 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
       if (name === 'signalIL' && target) ilFunction.set(target.railId, el.getAttribute('function') ?? '');
     }
   }
-  // axle counters bound sections
+  // axle counters / insulated joints bound sections
   for (const it of items.filter((x) => x.kind === 'trackSection')) {
     for (const d of childrenNamed(it.el, 'hasDemarcatingTraindetector')) {
       const ac = itemByRailId.get(d.getAttribute('ref') ?? '');
-      if (ac?.kind === 'axleCounter') ac.values.sections = ac.values.sections ? `${ac.values.sections}, ${it.values.id}` : it.values.id;
+      if (ac?.kind === 'axleCounter' || ac?.kind === 'insulatedJoint') ac.values.sections = ac.values.sections ? `${ac.values.sections}, ${it.values.id}` : it.values.id;
     }
   }
   // balise group membership

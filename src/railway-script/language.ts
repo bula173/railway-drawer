@@ -7,6 +7,7 @@
  */
 import type { KindId } from '../railway/catalogue';
 import { getKind } from '../railway/catalogue';
+import { ASPECT_ATTR, STATE_ATTR, STATE_SCHEME, schemeIdFor } from '../railway/states';
 
 /** Value of the required `railwayScript` key. */
 export const SCRIPT_VERSION = 1;
@@ -22,6 +23,7 @@ export const LISTS: ReadonlyArray<{ key: string; kind: KindId }> = [
   { key: 'baliseGroups', kind: 'baliseGroup' },
   { key: 'balises', kind: 'balise' },
   { key: 'axleCounters', kind: 'axleCounter' },
+  { key: 'joints', kind: 'insulatedJoint' },
   { key: 'sections', kind: 'trackSection' },
   { key: 'levelCrossings', kind: 'levelCrossing' },
   { key: 'bufferStops', kind: 'bufferStop' },
@@ -32,7 +34,7 @@ export const LISTS: ReadonlyArray<{ key: string; kind: KindId }> = [
 ];
 
 /** Lists that may also be written inside a track item (the track is then implied). */
-export const TRACK_NESTED_LISTS: readonly string[] = ['points', 'signals', 'baliseGroups', 'balises', 'axleCounters', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'trains'];
+export const TRACK_NESTED_LISTS: readonly string[] = ['points', 'signals', 'baliseGroups', 'balises', 'axleCounters', 'joints', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'trains'];
 
 export function listForKind(kind: KindId): string {
   return LISTS.find((l) => l.kind === kind)!.key;
@@ -43,7 +45,7 @@ export function kindForList(key: string): KindId | null {
 }
 
 /** Kinds placed by `track` + `at` (km). */
-export const ON_TRACK_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'levelCrossing', 'bufferStop', 'leu', 'train', 'points']);
+export const ON_TRACK_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'insulatedJoint', 'levelCrossing', 'bufferStop', 'leu', 'train', 'points']);
 
 /**
  * Script key -> catalogue field key, per kind, for keys whose name differs from the catalogue
@@ -72,6 +74,21 @@ export const EXTRA_ATTRS: Partial<Record<KindId, Record<string, string>>> = {
   points: { type: 'rdPointsType', to: 'rdDivergingTrack' },
   train: { direction: 'rdDirection', track: 'rdTrackId', at: 'rdKm' },
 };
+
+/**
+ * Runtime state keys (docs/STATES.md; scenarios in text): `state` -> `rdState` (sections, tracks,
+ * points, routes, level crossings, balises / LEUs / axle counters / joints), `aspect` -> `rdAspect`
+ * (signals). The points position is the catalogue field `position`. Missing = the default (free,
+ * open, stop): the script is the source, applying it sets the look (state-apply.ts).
+ */
+export const STATE_KEYS: Readonly<Record<'state' | 'aspect', string>> = { state: STATE_ATTR, aspect: ASPECT_ATTR };
+
+/** Allowed values of a state key for a kind (signals: by type), or null when the kind has none. */
+export function stateValuesFor(kind: KindId, key: 'state' | 'aspect', signalType = ''): string[] | null {
+  const scheme = schemeIdFor(kind, signalType);
+  const dim = scheme ? STATE_SCHEME[scheme][key] : undefined;
+  return dim ? dim.options.map((o) => o.value) : null;
+}
 
 /** Layout keys (x/y of the object's centre; a track: its first point). */
 export const LAYOUT_KEYS = ['x', 'y'] as const;

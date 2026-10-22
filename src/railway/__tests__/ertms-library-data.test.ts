@@ -24,7 +24,7 @@ import { findRoutePaths } from '../routes';
 import { getCellKind } from '../object-data';
 import { buildTopology, linkLine, projectPoint } from '../topology';
 import type { RailObject } from '../validation';
-import { collectObjects } from '../validation';
+import { collectObjects, validateModel } from '../validation';
 
 const ROOT = resolve(__dirname, '../../..');
 const LIBRARY = readFileSync(resolve(ROOT, 'public/libraries/ertms.xml'), 'utf8');
@@ -121,6 +121,62 @@ describe('ERTMS templates: railway symbols typed, tracks split into TVD sections
     }
   });
 
+  it('every balise belongs to a balise group; balises without a BG label are grouped on their function label', () => {
+    for (const t of templates) {
+      const objs = objectsOf(t.xml);
+      const groups = objs.filter((o) => o.getAttribute('rdKind') === 'baliseGroup');
+      for (const o of objs.filter((x) => x.getAttribute('rdKind') === 'balise')) {
+        expect(o.getAttribute('rdGroupId'), `${t.name} ${o.getAttribute('rdId')}`).toBeTruthy();
+      }
+      // NID_BG = the number of the group ID; NID_C comes from the diagram default (not pinned)
+      for (const g of groups) {
+        expect(g.getAttribute('rdNidBg'), `${t.name} ${g.getAttribute('rdId')}`).toBe(/^BG(\d+)$/.exec(g.getAttribute('rdId') ?? '')?.[1]);
+        expect(g.hasAttribute('rdNidC')).toBe(false);
+      }
+    }
+    // the level transition templates (L1 -> L2 and staff responsible) had balises without BG labels:
+    // one group per balise on its function label; neighbouring balises are not merged (LTA / infill)
+    const groupsOf = (t: DiagramTemplate): string[] =>
+      objectsOf(t.xml)
+        .filter((o) => o.getAttribute('rdKind') === 'baliseGroup')
+        .map((o) => `${o.getAttribute('rdId')}:${(o.getAttribute('label') ?? '').replace(/<[^>]+>/g, '')}:${o.getAttribute('rdCount')}${o.getAttribute('rdFunction') ? `:${o.getAttribute('rdFunction')}` : ''}`)
+        .sort();
+    const transitions = templates.filter((t) => t.name.startsWith('Level transition L1 → L2'));
+    expect(transitions.map((t) => t.name).sort()).toEqual(['Level transition L1 → L2', 'Level transition L1 → L2, staff responsible']);
+    for (const t of transitions) expect(groupsOf(t), t.name).toEqual(['BG1:S2_BG:1', 'BG2:LTA:1', 'BG3:S4_infill:1:infill', 'BG4:LTO:1']);
+    // checks: no balise without group, no required NID_C warning (diagram default 510)
+    for (const t of templates) {
+      const issues = validateModel(graphWith(t).getDataModel());
+      expect(issues.filter((i) => i.rule === 'balise-without-group' || (i.rule === 'required' && i.field === 'nidC')).map((i) => i.message), t.name).toEqual([]);
+    }
+  });
+
+  it('TC joint markers on a track are insulated joints (J<n>) naming the sections they separate', () => {
+    let total = 0;
+    for (const t of templates) {
+      const objs = objectsOf(t.xml);
+      const sections = new Set(objs.filter((o) => o.getAttribute('rdKind') === 'trackSection').map((o) => o.getAttribute('rdId')));
+      const tracks = new Set(objs.filter((o) => o.getAttribute('rdKind') === 'track').map((o) => o.getAttribute('rdId')));
+      const joints = objs.filter((o) => o.getAttribute('rdKind') === 'insulatedJoint');
+      total += joints.length;
+      for (const j of joints) {
+        const what = `${t.name} ${j.getAttribute('rdId')}`;
+        expect(j.getAttribute('rdId'), what).toMatch(/^J\d+$/);
+        expect(tracks.has(j.getAttribute('rdTrackId')), what).toBe(true);
+        const secs = (j.getAttribute('rdSections') ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+        expect(secs.length, what).toBeGreaterThanOrEqual(1);
+        expect(secs.length, what).toBeLessThanOrEqual(2);
+        for (const sec of secs) expect(sections.has(sec), `${what} -> ${sec}`).toBe(true);
+      }
+      // sections split by TC markers (rdSectionType=tc, more than one on the track) have joints
+      if (objs.some((o) => o.getAttribute('rdSectionType') === 'tc')) expect(joints.length, t.name).toBeGreaterThan(0);
+    }
+    expect(total).toBe(111);
+    // the palette's TC tile is the same joint marker
+    const tc = elements.find((e) => e.entry.title === 'TC')!;
+    expect(objectsOf(tc.entry.xml!).map((o) => o.getAttribute('rdKind'))).toEqual(['insulatedJoint']);
+  });
+
   it('every template track is covered by section cells (TC<n>, typed, on the track, end to end)', () => {
     for (const t of templates) {
       const graph = graphWith(t);
@@ -203,6 +259,15 @@ describe('railML export of the templates', { timeout: 120_000 }, () => {
       expect(r.extensionOnly.filter((p) => p.kind !== 'train').map((p) => `${p.kind} ${p.id}: ${p.message}`), t.name).toEqual([]);
       const sections = objects.filter((o) => o.kind.id === 'trackSection').length;
       expect(r.counts.tvdSection ?? 0, t.name).toBe(sections);
+      // joints: trainDetectionElement insulatedRailJoint demarcating their sections
+      for (const j of objects.filter((o) => o.kind.id === 'insulatedJoint')) {
+        const tde = Array.from(r.doc.getElementsByTagNameNS('*', 'trainDetectionElement')).find((e) => e.getAttribute('id') === `ij_${j.id}`);
+        expect(tde?.getAttribute('type'), `${t.name} ${j.id}`).toBe('insulatedRailJoint');
+        for (const sec of j.values.sections.split(',').map((x) => x.trim())) {
+          const tvd = Array.from(r.doc.getElementsByTagNameNS('*', 'tvdSection')).find((e) => e.getAttribute('id') === `tvd_${sec}`)!;
+          expect(Array.from(tvd.getElementsByTagNameNS('*', 'hasDemarcatingTraindetector')).map((e) => e.getAttribute('ref')), `${t.name} ${sec}`).toContain(`ij_${j.id}`);
+        }
+      }
       unplacedAll.push(...r.unplaced.map((p) => `${t.name}: ${p.kind} ${p.id}`));
     }
     expect(unplacedAll).toEqual([]);

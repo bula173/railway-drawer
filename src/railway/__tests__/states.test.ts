@@ -20,6 +20,7 @@ import {
   composeVisual,
   describeStateChanges,
   parseBaseStyles,
+  scaledStrokeWidth,
   schemeIdFor,
   styleWithoutState,
   visualStyleKeys,
@@ -111,9 +112,9 @@ describe('state scheme', () => {
   });
 
   it('gives each state a look and the free / reverse states none', () => {
-    expect(composeVisual('section', { state: 'occupied' })).toEqual({ stroke: STATE_COLORS.occupied });
+    expect(composeVisual('section', { state: 'occupied' })).toEqual({ stroke: STATE_COLORS.occupied, widthScale: 1.5 });
     expect(composeVisual('section', { state: 'free' })).toEqual({});
-    expect(composeVisual('points', { state: 'occupied', position: 'normal' })).toEqual({ stroke: STATE_COLORS.occupied, opacity: 30 });
+    expect(composeVisual('points', { state: 'occupied', position: 'normal' })).toEqual({ stroke: STATE_COLORS.occupied, widthScale: 1.5, opacity: 30 });
     expect(composeVisual('points', { state: 'reserved', position: 'outOfControl' })).toMatchObject({ stroke: STATE_COLORS.disturbed, dashPattern: '2 2' });
     expect(visualStyleKeys({ stroke: '#ff0000', dashPattern: '8 4' }, 'stroke')).toEqual({ strokeColor: '#ff0000', dashed: 1, dashPattern: '8 4' });
     expect(visualStyleKeys({ stroke: '#ff0000' }, 'fill')).toEqual({ fillColor: '#ff0000' });
@@ -168,6 +169,31 @@ describe('state scheme', () => {
   });
 });
 
+describe('occupied width', () => {
+  it('scaledStrokeWidth: x 1.5, at least + 2, absent = 1', () => {
+    expect(scaledStrokeWidth(6, 1.5)).toBe(9);
+    expect(scaledStrokeWidth('4', 1.5)).toBe(6);
+    expect(scaledStrokeWidth(1, 1.5)).toBe(3);
+    expect(scaledStrokeWidth(undefined, 1.5)).toBe(3);
+    expect(scaledStrokeWidth(null, 1.5)).toBe(3);
+  });
+
+  it('occupied differs from a track drawn red: thicker; re-applying keeps the drawn width; free restores it', () => {
+    const { graph, cell } = setup();
+    const t1 = cell('t1');
+    graph.getDataModel().setStyle(t1, { ...(t1.getStyle() as object), strokeColor: STATE_COLORS.occupied } as never);
+    const drawn = ownStyle(t1);
+    setStateOnCells(graph, [t1], 'state', 'occupied');
+    expect(ownStyle(t1)).toMatchObject({ strokeColor: STATE_COLORS.occupied, strokeWidth: 4 });
+    setStateOnCells(graph, [t1], 'state', 'occupied');
+    expect(ownStyle(t1).strokeWidth).toBe(4);
+    setStateOnCells(graph, [t1], 'state', 'reserved');
+    expect(ownStyle(t1).strokeWidth).toBe(2);
+    setStateOnCells(graph, [t1], 'state', 'free');
+    expect(ownStyle(t1)).toEqual(drawn);
+  });
+});
+
 describe('applying states', () => {
   it('section: attribute + strokeColor in one undo step; free restores the exact drawn style', () => {
     const { graph, cell, commands } = setup();
@@ -177,7 +203,9 @@ describe('applying states', () => {
     setStateOnCells(graph, [tc1], 'state', 'occupied');
     expect(readAttr(tc1, 'rdState')).toBe('occupied');
     expect(ownStyle(tc1).strokeColor).toBe(STATE_COLORS.occupied);
-    expect(JSON.parse(readAttr(tc1, 'rdBaseStyle'))).toEqual({ '': { strokeColor: '#000000' } });
+    // occupied is drawn thicker (4 -> 6) so it differs from a line drawn red
+    expect(ownStyle(tc1).strokeWidth).toBe(6);
+    expect(JSON.parse(readAttr(tc1, 'rdBaseStyle'))).toEqual({ '': { strokeColor: '#000000', strokeWidth: 4 } });
     const saved = exportModelToDrawioXml(graph.getDataModel());
     expect(saved).toMatch(/<object [^>]*rdState="occupied"[^>]*>\s*<mxCell [^>]*strokeColor=#ff0000/);
 
@@ -190,7 +218,7 @@ describe('applying states', () => {
 
     // overlap: dashes; then free: back to exactly the drawn style (byte-identical file)
     setStateOnCells(graph, [tc1], 'state', 'overlap');
-    expect(ownStyle(tc1)).toMatchObject({ strokeColor: STATE_COLORS.overlap, dashed: 1, dashPattern: '8 4' });
+    expect(ownStyle(tc1)).toMatchObject({ strokeColor: STATE_COLORS.overlap, dashed: 1, dashPattern: '8 4', strokeWidth: 4 });
     setStateOnCells(graph, [tc1], 'state', 'free');
     expect(readAttr(tc1, 'rdState')).toBe('free');
     expect(readAttr(tc1, 'rdBaseStyle')).toBe('');

@@ -8,12 +8,18 @@
  *        railway object without `rdScript` whose kind and ID match a script object (inserted from
  *        the palette, or drawn before "Generate from drawing") is adopted: replaced by the
  *        generated cell. Applying the same script twice changes nothing (no undo entry).
+ *        Runtime states (`state` / `aspect` keys -> rdState / rdAspect, points `position`): the script
+ *        is the source (missing = default); where the live object differs, the state AND its look are
+ *        set with state-apply.ts `applyObjectStates` inside the same edit.
  */
 import type { Cell, Geometry, Graph, GraphDataModel, Point } from '@maxgraph/core';
 import { ALL_DATA_ATTRS } from '../railway/catalogue';
 import { allCells, getCellKind, isElementValue, readObjectId } from '../railway/object-data';
 import { ROUTES_LAYER_ID, ensureRoutesLayer } from '../railway/route-store';
 import { withSnapSuspended } from '../railway/snap';
+import { applyObjectStates, cellSchemeId } from '../railway/state-apply';
+import type { StateItem } from '../railway/state-apply';
+import { ASPECT_ATTR, BASE_STYLE_ATTR, DIMENSION_ATTR, STATE_ATTR, effectiveValue, schemeDimensions } from '../railway/states';
 import { SCRIPT_ATTR, SCRIPT_SHAPE_ATTR } from './build';
 import { EXTRA_ATTRS, matchKey } from './language';
 
@@ -128,6 +134,7 @@ export function applyGenerated(graph: Graph, scratch: GraphDataModel): ApplyCoun
   const wanted = new Set(desired.map((d) => d.key));
   const { byKey, extra } = generatedCells(model);
   const adoptable = adoptableCells(model);
+  const states: StateItem[] = [];
   withSnapSuspended(() => {
     model.beginUpdate();
     try {
@@ -156,9 +163,15 @@ export function applyGenerated(graph: Graph, scratch: GraphDataModel): ApplyCoun
             model.setGeometry(current, geo!.clone());
             changed = true;
           }
-          const value = mergedValue(current.getValue(), desiredValue);
+          const before = current.getValue();
+          const value = mergedValue(before, desiredValue);
           if (value) {
             model.setValue(current, value);
+            changed = true;
+          }
+          const state = stateChangeFor(current, isElementValue(before) ? before : null, desiredValue, false);
+          if (state) {
+            states.push(state);
             changed = true;
           }
           if (changed) counts.updated++;
@@ -169,7 +182,17 @@ export function applyGenerated(graph: Graph, scratch: GraphDataModel): ApplyCoun
         if (current) {
           // another symbol (or an adopted cell): replace in place, keeping user attributes
           const value = mergedValue(current.getValue(), desiredValue);
-          if (value) clone.setValue(value);
+          if (value) {
+            // the old drawing's remembered style belongs to the replaced shape; the states are the
+            // script's (the new shape gets their look below)
+            value.removeAttribute(BASE_STYLE_ATTR);
+            for (const attr of [STATE_ATTR, ASPECT_ATTR]) {
+              const v = desiredValue.getAttribute(attr);
+              if (v) value.setAttribute(attr, v);
+              else value.removeAttribute(attr);
+            }
+            clone.setValue(value);
+          }
           const parent = current.getParent()!;
           const index = parent.getIndex(current);
           model.remove(current);
@@ -190,12 +213,36 @@ export function applyGenerated(graph: Graph, scratch: GraphDataModel): ApplyCoun
           counts.added++;
         }
         byKey.set(d.key, clone);
+        const state = stateChangeFor(clone, null, desiredValue, true);
+        if (state) states.push(state);
       });
+      // states and their look (same undoable edit)
+      if (states.length > 0) applyObjectStates(graph, states);
     } finally {
       model.endUpdate();
     }
   });
   return counts;
+}
+
+/**
+ * The state change that brings `cell` (its live attributes `live`) to the states of `desired`
+ * (generated value), or null when they already match (effective values: missing = default).
+ */
+function stateChangeFor(cell: Cell, live: Element | null, desired: Element, fresh: boolean): StateItem | null {
+  const scheme = cellSchemeId(cell);
+  if (!scheme) return null;
+  const change: StateItem['change'] = {};
+  let differs = false;
+  for (const dim of schemeDimensions(scheme)) {
+    const attr = DIMENSION_ATTR[dim.dimension];
+    const want = effectiveValue(scheme, dim.dimension, desired.getAttribute(attr) ?? '');
+    // a fresh cell has no look yet: only a non-default state needs one
+    const have = fresh ? dim.defaultValue : effectiveValue(scheme, dim.dimension, live?.getAttribute(attr) ?? '');
+    if (want !== have) differs = true;
+    change[dim.dimension] = desired.getAttribute(attr) || null;
+  }
+  return differs ? { cell, change } : null;
 }
 
 function readShape(cell: Cell): string {

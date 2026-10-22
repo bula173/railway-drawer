@@ -56,11 +56,11 @@ points*, *ETCS Level 2 block* (marker boards, balise groups, axle counter sectio
 | `railwayScript` | `1` (required) |
 | `name` | diagram name (tab / project name on import) |
 | `page` | layout options: `scale` (drawing units per metre, default `0.5`), `laneSpacing` (default `80`), `origin: { x, y }` (where the smallest km of lane 0 is drawn, default `40, 80`) |
-| `tracks`, `points`, `signals`, `baliseGroups`, `balises`, `axleCounters`, `sections`, `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` | lists of objects |
+| `tracks`, `points`, `signals`, `baliseGroups`, `balises`, `axleCounters`, `joints`, `sections`, `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` | lists of objects |
 
 Every object has an `id` (unique per kind, case-insensitive). Objects on a track have `track`
 (track ID) and `at` (km). Objects can also be written **inside a track item** (`tracks[].signals`,
-`.points`, `.balises`, `.baliseGroups`, `.axleCounters`, `.sections`, `.levelCrossings`,
+`.points`, `.balises`, `.baliseGroups`, `.axleCounters`, `.joints`, `.sections`, `.levelCrossings`,
 `.bufferStops`, `.leus`, `.trains`): the track is then implied.
 
 **km values** are numbers (`12.345`) or chainage text (`"12+345"`). Metres are only used by the
@@ -88,6 +88,7 @@ script keys:
 | `baliseGroups` | baliseGroup | `track`, `at`, `direction`, `nidC`, `nidBg`, `function`, `leu`, `balises`: a count (`2` → balises `<group>-1`, `<group>-2`) or a list of IDs / `{ id, at, direction }` |
 | `balises` | balise | `track`, `at`, `group` (= `groupId`), `position`, `direction` |
 | `axleCounters` | axleCounter | `track`, `at`; `sections` is filled from the sections that start/end at it |
+| `joints` | insulatedJoint (track circuit joint, the ERTMS "TC" marker) | `track`, `at`; `sections` is filled from the sections that start/end at it |
 | `sections` | trackSection | `track`, `from`/`to` (km or the ID of a detection point on the track), or `startKm`/`endKm`; `type` (= `sectionType`: `tc`, `axleCounter`) |
 | `levelCrossings` | levelCrossing | `track`, `at`, `protection` |
 | `bufferStops` | bufferStop | `track`, `at` (km, `start` or `end`) |
@@ -95,6 +96,37 @@ script keys:
 | `rbcs` | rbc | `nidC`, `nidRbc` (drawn in a row below the layout unless `x`/`y`) |
 | `trains` | train | `track`, `at` (front), `direction`, `length`, `etcsLevel`, `maxSpeed`, `rbc` |
 | `routes` | route | `from`/`to` (= `entrySignal`/`exitSignal`), `via: { W1: reverse }` or `"W1:reverse, W2:normal"` (required points positions; the path is computed with the route search, `src/railway/routes.ts`), `overlap`, `sections` (optional; computed); `length` is computed |
+
+### Runtime states (scenarios in text)
+
+Optional keys describe the runtime state of an object (docs/STATES.md), so a scenario can be written
+as text:
+
+| Key | Objects | Values (default first) |
+|---|---|---|
+| `state` | tracks, sections, points, routes | `free`, `occupied`, `reserved`, `overlap`, `locked`, `disturbed` |
+| `state` | level crossings | `open`, `closed`, `disturbed` |
+| `state` | balise groups' balises, LEUs, axle counters, joints | `free`, `disturbed` |
+| `aspect` | signals (not marker boards / ETCS stop markers) | `stop`, `proceed`, `caution`, `shunt`, `dark` |
+| `position` | points (the catalogue field) | `normal`, `reverse`, `moving`, `outOfControl` |
+
+```yaml
+sections:
+  - { id: TC1, track: T1, from: 0.000, to: 0.300, state: occupied }
+signals:
+  - { id: S1, track: T1, at: 0.100, aspect: proceed }
+tracks:
+  - id: T1
+    points:
+      - { id: W1, at: 0.300, to: T2, hand: right, position: reverse }
+```
+
+The script is the source: a missing key is the default (as drawn). Applying sets the state **and
+its look** (colours, lamps, faded legs; `applyObjectStates`, same undo step); objects whose state
+already matches are not touched (applying twice changes nothing). An unknown value is an error, a
+key on an object without that state a warning (ignored). Drawing -> text: a state set on the canvas
+(context menu, Railway menu, Data panel, Alt shortcuts, route commands) writes the key; back to the
+default removes it. "Generate from drawing" writes the non-default states.
 
 ### Layout rules
 

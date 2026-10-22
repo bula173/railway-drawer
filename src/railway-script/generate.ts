@@ -20,7 +20,7 @@ import { parsePointsList } from '../railway/routes';
 import { projectPoint, polylineLength } from '../railway/topology';
 import { collectObjects } from '../railway/validation';
 import type { RailObject } from '../railway/validation';
-import { COMPUTED_FIELDS, ON_TRACK_KINDS, SCRIPT_VERSION, listForKind, scriptKeysForField } from './language';
+import { COMPUTED_FIELDS, ON_TRACK_KINDS, SCRIPT_VERSION, STATE_KEYS, listForKind, scriptKeysForField, stateValuesFor } from './language';
 import { DEFAULT_PAGE } from './model';
 
 export interface GenerateResult {
@@ -58,6 +58,12 @@ function fields(o: RailObject, skip: string[] = []): Record<string, unknown> {
     if (['id', 'km', 'trackId', ...skip].includes(f.key) || computed.has(f.key)) continue;
     const v = (o.values[f.key] ?? '').trim();
     if (v) out[scriptKeysForField(o.kind.id, f.key)[0]] = value(o.kind.id, f.key, v);
+  }
+  // runtime states other than the default (free / open / stop)
+  for (const [key, attr] of Object.entries(STATE_KEYS) as Array<['state' | 'aspect', string]>) {
+    const v = readAttr(o.cell, attr).trim();
+    const allowed = stateValuesFor(o.kind.id, key, o.values.signalType ?? '');
+    if (v && allowed && allowed.includes(v) && v !== allowed[0]) out[key] = v;
   }
   return out;
 }
@@ -290,7 +296,7 @@ export function generateScript(model: GraphDataModel, name = ''): GenerateResult
   if (Object.keys(page).length > 0) root.page = page;
   if (trackItems.length > 0) root.tracks = trackItems;
   if (pointsItems.length > 0) root.points = pointsItems;
-  for (const key of ['signals', 'baliseGroups', 'balises', 'axleCounters', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'rbcs', 'trains', 'routes']) {
+  for (const key of ['signals', 'baliseGroups', 'balises', 'axleCounters', 'joints', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'rbcs', 'trains', 'routes']) {
     const list = lists.get(key);
     if (list && list.length > 0) root[key] = list;
   }

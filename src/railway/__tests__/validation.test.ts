@@ -8,6 +8,7 @@ import { buildDataValue } from '../object-data';
 import { SIGNAL_TRACK_DISTANCE, collectObjects, countIssues, validateModel } from '../validation';
 import type { Issue, RuleId } from '../validation';
 import { centerOf, projectOnPolyline, trackPolyline } from '../geometry';
+import { COUNTRY_ATTR, DEFAULT_COUNTRY_ID, applyProjectDefaults, readCountryId, readCountryIdRaw, setCountryId } from '../project-settings';
 
 class Builder {
   model = new GraphDataModel();
@@ -41,6 +42,55 @@ class Builder {
   }
 }
 
+function setCountryRaw(model: GraphDataModel, value: string): void {
+  const v = document.implementation.createDocument(null, null, null).createElement('object');
+  v.setAttribute(COUNTRY_ATTR, value);
+  model.getRoot()!.setValue(v);
+}
+
+describe('diagram default NID_C (rdCountryId)', () => {
+  it('a balise group without NID_C uses the default (510 when not set): no required warning', () => {
+    const b = new Builder();
+    b.obj('baliseGroup', { id: 'BG1', nidBg: '1' });
+    expect(readCountryId(b.model)).toBe(DEFAULT_COUNTRY_ID);
+    expect(DEFAULT_COUNTRY_ID).toBe('510');
+    expect(b.issues('required')).toEqual([]);
+    expect(setCountryId(b.model, '353')).toBe(true);
+    expect(readCountryId(b.model)).toBe('353');
+    expect(b.issues('required')).toEqual([]);
+    // cleared: back to the built-in default (attribute removed)
+    expect(setCountryId(b.model, '')).toBe(true);
+    expect(readCountryIdRaw(b.model)).toBeNull();
+    expect(setCountryId(b.model, '')).toBe(false);
+    expect(() => setCountryId(b.model, '1024')).toThrow(/0–1023/);
+  });
+
+  it('setCountryId is one undoable edit and keeps other root data (rdRailml)', () => {
+    const b = new Builder();
+    const v = document.implementation.createDocument(null, null, null).createElement('object');
+    v.setAttribute('label', '');
+    v.setAttribute('rdRailml', '{"x":1}');
+    b.model.getRoot()!.setValue(v);
+    const edits: unknown[] = [];
+    b.model.addListener('undo', (_s: unknown, evt: { getProperty(n: string): unknown }) => edits.push(evt.getProperty('edit')));
+    setCountryId(b.model, '42');
+    expect(edits).toHaveLength(1);
+    const root = b.model.getRoot()!.getValue() as Element;
+    expect(root.getAttribute('rdRailml')).toBe('{"x":1}');
+    expect(root.getAttribute(COUNTRY_ATTR)).toBe('42');
+    expect(v.getAttribute(COUNTRY_ATTR)).toBeNull(); // the old value is untouched (undo)
+  });
+
+  it('applyProjectDefaults fills only balise groups without NID_C', () => {
+    const b = new Builder();
+    b.obj('baliseGroup', { id: 'BG1' });
+    b.obj('baliseGroup', { id: 'BG2', nidC: '7' });
+    b.obj('rbc', { id: 'RBC1' });
+    const objects = applyProjectDefaults(collectObjects(b.model), '510');
+    expect(objects.map((o) => o.values.nidC)).toEqual(['510', '7', '']);
+  });
+});
+
 describe('validation rules', () => {
   it('duplicate-id: same kind, case-insensitive; other kinds may share an ID', () => {
     const b = new Builder();
@@ -63,6 +113,8 @@ describe('validation rules', () => {
     const b = new Builder();
     b.obj('signal', {});
     b.obj('baliseGroup', { id: 'BG1' });
+    // no usable diagram default NID_C (an invalid rdCountryId): NID_C is required
+    setCountryRaw(b.model, 'abc');
     const req = b.issues('required');
     expect(req.map((i) => [i.severity, i.field])).toEqual([
       ['error', 'id'],
@@ -217,8 +269,11 @@ describe('validation rules', () => {
 
   it('sorts errors first and counts', () => {
     const b = new Builder();
-    b.obj('baliseGroup', { id: 'BG1' }); // 2 warnings
+    b.obj('baliseGroup', { id: 'BG1' }); // 2 warnings (no usable default NID_C)
     b.obj('signal', {}); // error
+    setCountryRaw(b.model, '');
+    expect(readCountryId(b.model)).toBe(DEFAULT_COUNTRY_ID); // empty attribute = built-in default
+    setCountryRaw(b.model, '-1');
     const issues = b.issues();
     expect(issues.map((i) => i.severity)).toEqual(['error', 'warning', 'warning']);
     expect(countIssues(issues)).toEqual({ errors: 1, warnings: 2 });

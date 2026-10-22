@@ -6,8 +6,10 @@
  * The bindings themselves live in the handlers: the capture-phase dispatcher in main-editor.ts
  * (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete, Escape, Alt+Shift+A), ZoomController (Ctrl/Cmd +/-/0/1),
  * GroupingController (Ctrl/Cmd+G, Ctrl/Cmd+Shift+G), DuplicateOffsetController (Ctrl/Cmd+D) and
- * ShortcutsHelpController (F1). Keep this table in step with them: it only describes them.
+ * ShortcutsHelpController (F1), install-railway-states.ts (Alt+F/O/R/N/V/1-4: object states, table in
+ * src/railway/state-shortcuts.ts). Keep this table in step with them: it only describes them.
  */
+import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
 
 export interface ShortcutSpec {
   /** Ctrl (Windows/Linux) or Cmd (macOS); the handlers accept either. */
@@ -39,6 +41,8 @@ export const ACTION_SHORTCUTS: Readonly<Record<string, ShortcutSpec>> = {
   toggleLeftPanel: { mod: true, shift: true, key: 'K' },
   toggleRightPanel: { mod: true, shift: true, key: 'P' },
   shortcuts: { key: 'F1' },
+  // Railway > Object State ▸ items (`railwayState:<command>`)
+  ...Object.fromEntries(STATE_SHORTCUTS.map((s): [string, ShortcutSpec] => [`railwayState:${s.command}`, { alt: true, key: s.key }])),
 };
 
 /** True on Apple platforms (Cmd instead of Ctrl, symbol modifiers). */

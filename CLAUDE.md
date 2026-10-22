@@ -660,12 +660,17 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   palette elements = the title presets (`kindForLibraryTitle`, no ID: generated on insert); templates: signals
   (group with heads 229/231: type main / shunting for `SS<n>`, direction nominal when the mast is left of the lamps,
   aspects = lamps, ID from the label), balises (12x12 triangles within 40 of a track; direction west = reverse;
-  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count), trains,
+  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count; a balise
+  without a BG label becomes its own group (count 1, next free BG<n>, NID_BG n, `infill` for `*_infill`) on its function
+  label within 25 (LTA/LTO/S2_BG/S4_infill in the two "Level transition L1 → L2" templates; not grouped by distance:
+  LTA and S4_infill are 26 px apart but different groups); no NID_C (diagram default)), trains,
   tracks (all `vsdxID=17` stroke >= 4 horizontal edges on one y merged into one `track` T<n> edge; extra grey edges
   removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
   left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
   top of the track (below the highlights), split at the TC joint markers on it (fallback: points legs, then
-  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC markers, labels, arrows, highlights: no kind.
+  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC joint markers on a track (centre within 8 of the line)
+  = `insulatedJoint` J<n> with `rdTrackId` + `rdSections` (sections starting/ending within 15: railML
+  `hasDemarcatingTraindetector`); markers off the tracks, labels, arrows, highlights: no kind.
   Sections drawn ON the track = topology.ts "sections on tracks" (names the pieces, not separate links), so routes,
   snap and the railML export (tracks + `tvdSection`s) work; recolouring a section = its own edge's strokeColor.
   The library stores no `rdState`/`rdAspect` (state feature: defaults free/stop/normal). `insertTemplate` renumbers
@@ -706,19 +711,25 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   and `convertValueToString` the raw `%rdId%`). Writes: `setRailwayData(model, cells, change, {autoId})` = one
   `model.setValue` per cell inside one update (one undo step, values cloned, never mutated); no-op edits add no history.
   Stored numbers are canonical (`12+345` / `12,345` -> `12.345`); unparseable input is stored as typed and reported.
-- **Catalogue** (`catalogue.ts`): 13 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
-  bufferStop, rbc, leu, axleCounter, train, route), fields typed text/number/integer/km/enum/ref/refList with
+- **Catalogue** (`catalogue.ts`): 14 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
+  bufferStop, rbc, leu, axleCounter, insulatedJoint, train, route; insulatedJoint = the TC joint marker, ID `J<n>`,
+  `sections` it separates), fields typed text/number/integer/km/enum/ref/refList with
   unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6); route fields see
   "Railway engineering tools" below. Every kind has `id`
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
 - **Pre-assigned kinds**: the ERTMS library entries store them (generated, see Templates); on insert also by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
-  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
+  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> insulatedJoint (the tile is the 10x12 joint marker; sections are lines on the track), Track ->
   track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
   handler in `main-editor.ts`). Templates/paste keep the data they carry.
+- **Diagram settings** (`project-settings.ts`): root cell (id 0) attribute `rdCountryId` = default NID_C of the
+  diagram (missing = `DEFAULT_COUNTRY_ID` 510, Poland; invalid = no default); balise groups without NID_C use it
+  (`applyProjectDefaults` in `validateModel` and the railML export -> `countryID`; the drawing is not changed). Edited
+  in the Data panel with nothing selected ("Diagram railway settings", `#rd-rw-country`, one undo step); a balise
+  group's empty NID_C field shows it as placeholder. Library templates do not pin NID_C (they follow the diagram).
 - **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
-  NID_C/NID_BG warning), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
+  NID_C/NID_BG warning; NID_C only when the diagram has no usable default), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
   (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its
   track, or from every track when it names none and tracks/sections/points exist), km-order (warning: majority
   direction of km along the track polyline, needs >= 3 objects), km-outside-track (warning).
@@ -807,7 +818,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   disturbed), `rdAspect` (signals except marker boards / stop markers: stop | proceed | caution | shunt | dark), `rdPosition`
   (points: the catalogue field, normal | reverse | moving | outOfControl). Missing = default (free / open / stop / normal) =
   as drawn. **One table** `STATE_SCHEME` + `STATE_COLORS` (saturated, >= 3:1 on white and >= 4.5:1 on #121212, so the dark
-  rendering keeps them unchanged; unit-tested).
+  rendering keeps them unchanged; unit-tested). Occupied
+  also draws the line thicker (`widthScale` 1.5, at least +2; drawn width kept in `rdBaseStyle`) so it differs from tracks drawn red.
 - `applyObjectStates` = attributes + style keys (`strokeColor`/`fillColor`/`gradientColor`/`dashed`/`dashPattern`/`opacity`)
   of the object, its drawn parts (groups) or a signal's lamps (round-ish filled leaf vertices; else the signal's own fill)
   via `applyStyleToCells`, ONE undo step; the drawn values are remembered in `rdBaseStyle` (JSON per part path) and put back
@@ -821,7 +833,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `railway-state-request`, handled on the active tab's selection); State Legend (`rd.railway.stateLegend`); Data panel
   State/Aspect selects (points Position field applies its look). Scenario diff: `TC3: free → occupied`, colour keys and
   lamp parts folded in (`describeStateChanges`). railML export skips the state attributes and writes the drawn style.
-- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `tests/e2e/object-states.spec.ts`.
+- Keyboard: Alt+F/O/R (free/occupied/reserved), Alt+N/V (points), Alt+1..4 (aspects) on the selection
+  (`state-shortcuts.ts` by `event.code`; keydown listener in install-railway-states.ts, canvas focus only; hints via
+  `ACTION_SHORTCUTS['railwayState:<cmd>']`, context menu kbd, Help section "Object states").
+- Points reverse: the straight continuation (part of the track) is faded by a view overlay (`points-fade.ts`
+  `installPointsFade` per tab graph from install-railway-states: topology junction -> normal piece for the leg's
+  length, canvas-coloured line at 70 % in the overlay pane, class `rd-points-fade`; not in the model/exports).
+- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `points-fade.test.ts`, `tests/e2e/object-states.spec.ts`.
 
 ### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
 
@@ -839,10 +857,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `locateObject` (points: toe piece at the junction) -> `spotLocation` (`intrinsicCoord`, `applicationDirection`,
   km). `infrastructureVisualization` = piece polylines + cell centres. Objects sorted by kind, natural ID (stable
   output). Result: `xml`, `counts`, `unplaced` (no location), `extensionOnly` (LEU, train), `issues`, `preserved`.
-- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ bus_ lc_ rbc_ rt_`, IL `il_`):
+- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ ij_ bus_ lc_ rbc_ rt_`, IL `il_`):
   track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand, left/rightBranch
   netRelationRef) + `switchIL`; signal -> `signalIS` (main/shunting: isTrainMovementSignal + signalConstruction light;
-  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; balise -> `balise` (belongsToBaliseGroup,
+  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; insulatedJoint -> `trainDetectionElement` type insulatedRailJoint (+ demarcation like axle counters); balise -> `balise` (belongsToBaliseGroup,
   isEurobalise positionInGroup = position-1); baliseGroup -> `baliseGroup` (applicationType ETCS, isEurobaliseGroup
   countryID/groupID); axleCounter -> `trainDetectionElement` axleCounter; trackSection -> IL `tvdSection`
   (hasDemarcatingTraindetector; no location in 3.2); bufferStop, levelCrossing (`protection`) -> IS; rbc -> IL
@@ -879,6 +897,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (`from`/`to` km or detection point IDs), `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` (`from`, `to`,
   `via`, `overlap`); catalogue field names are keys, `x`/`y` override positions; unknown keys = warnings (kept).
   `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).
+  Runtime states: optional `state` / `aspect` keys (`STATE_KEYS` -> rdState/rdAspect, enums from `STATE_SCHEME` per kind,
+  `stateValuesFor`), points `position` = catalogue field; the script is the source (missing = default): `apply.ts`
+  `stateChangeFor` -> `applyObjectStates` (look) in the same edit only where the effective state differs; `sync.ts`
+  writes/unsets the keys on canvas state changes; `generate.ts` writes non-default states.
 - Schema: `schema.ts` builds the draft-07 JSON Schema; `public/schemas/railway-script-1.schema.json` must equal it (test;
   `UPDATE_RS_SCHEMA=1 npx vitest run src/railway-script/__tests__/schema-storage.test.ts` rewrites it). `validate.ts` is a
   small validator interpreting that schema (agreement with ajv is tested: devDependency `ajv` 8.20.0 pinned, test-only,

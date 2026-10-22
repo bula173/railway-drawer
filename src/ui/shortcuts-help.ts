@@ -6,6 +6,7 @@
  */
 import { openAppModal, type AppModal } from './app-dialogs';
 import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
+import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
 
 export interface ShortcutRow {
   keys: string;
@@ -81,6 +82,10 @@ export function shortcutSections(mac: boolean = isMacPlatform()): ShortcutSectio
         { keys: 'Drag arrow', description: 'Connect to the shape you drop on, or add a connected copy on blank canvas' },
         { keys: `${mac ? '⌥' : 'Alt'} (hold)`, description: 'Hide the arrows' },
       ],
+    },
+    {
+      section: 'Object states (selected railway objects)',
+      items: STATE_SHORTCUTS.map((s) => ({ keys: f({ alt: true, key: s.key }), description: s.description })),
     },
     {
       section: 'Menus',
