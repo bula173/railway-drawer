@@ -10,7 +10,7 @@ exported to railML.
 |---|---|---|
 | `rdState` | track sections, tracks, points, routes | `free` (default), `occupied`, `reserved` (route set), `overlap`, `locked`, `disturbed` |
 | `rdState` | level crossings | `open` (default), `closed`, `disturbed` (failure) |
-| `rdState` | balises, LEUs, axle counters | `free` (working, default), `disturbed` (failed) |
+| `rdState` | balises, LEUs, axle counters, insulated joints | `free` (working, default), `disturbed` (failed) |
 | `rdAspect` | signals (main / shunting; not marker boards or ETCS stop markers) | `stop` (default), `proceed`, `caution`, `shunt`, `dark` |
 | `rdPosition` | points (also the points' Data field "Position") | `normal` (default), `reverse`, `moving`, `outOfControl` |
 | `rdBaseStyle` | any object with a state look | JSON of the drawn values of the style keys a state changed, per part |
@@ -46,7 +46,7 @@ the Data panel, the legend and the change lists all read it.
 | | Shunt (lunar white) | lamp fill `#9aa7ff` |
 | | Dark (no light) | lamp fill `none` |
 | Level crossings | Open / Closed (secured) / Failure | as drawn / stroke `#2979ff` / stroke `#e000e0` dashed |
-| Balises, LEUs, axle counters | Working / Failed | as drawn / stroke `#e000e0` dashed |
+| Balises, LEUs, axle counters, joints | Working / Failed | as drawn / stroke `#e000e0` dashed |
 
 A position look wins over the state look (points out of control are magenta even when occupied);
 occupancy and position combine otherwise (occupied + normal = red, faint leg).

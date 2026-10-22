@@ -56,11 +56,11 @@ points*, *ETCS Level 2 block* (marker boards, balise groups, axle counter sectio
 | `railwayScript` | `1` (required) |
 | `name` | diagram name (tab / project name on import) |
 | `page` | layout options: `scale` (drawing units per metre, default `0.5`), `laneSpacing` (default `80`), `origin: { x, y }` (where the smallest km of lane 0 is drawn, default `40, 80`) |
-| `tracks`, `points`, `signals`, `baliseGroups`, `balises`, `axleCounters`, `sections`, `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` | lists of objects |
+| `tracks`, `points`, `signals`, `baliseGroups`, `balises`, `axleCounters`, `joints`, `sections`, `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` | lists of objects |
 
 Every object has an `id` (unique per kind, case-insensitive). Objects on a track have `track`
 (track ID) and `at` (km). Objects can also be written **inside a track item** (`tracks[].signals`,
-`.points`, `.balises`, `.baliseGroups`, `.axleCounters`, `.sections`, `.levelCrossings`,
+`.points`, `.balises`, `.baliseGroups`, `.axleCounters`, `.joints`, `.sections`, `.levelCrossings`,
 `.bufferStops`, `.leus`, `.trains`): the track is then implied.
 
 **km values** are numbers (`12.345`) or chainage text (`"12+345"`). Metres are only used by the
@@ -88,6 +88,7 @@ script keys:
 | `baliseGroups` | baliseGroup | `track`, `at`, `direction`, `nidC`, `nidBg`, `function`, `leu`, `balises`: a count (`2` → balises `<group>-1`, `<group>-2`) or a list of IDs / `{ id, at, direction }` |
 | `balises` | balise | `track`, `at`, `group` (= `groupId`), `position`, `direction` |
 | `axleCounters` | axleCounter | `track`, `at`; `sections` is filled from the sections that start/end at it |
+| `joints` | insulatedJoint (track circuit joint, the ERTMS "TC" marker) | `track`, `at`; `sections` is filled from the sections that start/end at it |
 | `sections` | trackSection | `track`, `from`/`to` (km or the ID of a detection point on the track), or `startKm`/`endKm`; `type` (= `sectionType`: `tc`, `axleCounter`) |
 | `levelCrossings` | levelCrossing | `track`, `at`, `protection` |
 | `bufferStops` | bufferStop | `track`, `at` (km, `start` or `end`) |

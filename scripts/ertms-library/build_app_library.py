@@ -22,7 +22,12 @@ Steps (deterministic; entries that do not change keep their exact bytes):
       top of the track, below the highlights) split at the TC joint markers drawn on it and at the
       points legs' ends; a track without markers or points is split at its signals; a track
       without any of these is one section. Sections carry rdTrackId and rdSectionType=tc (when
-      demarcated by TC markers). TC joint markers themselves stay untyped (decoration);
+      demarcated by TC markers);
+    - TC joint markers on a track (the marker group, or a loose vsdxID 73 bar; centre within 8 px
+      of the track line, within its ends +- 8): `insulatedJoint` J<n> (railML trainDetectionElement
+      insulatedRailJoint) with rdTrackId and rdSections = the sections that start or end within
+      15 px of it (railML tvdSection hasDemarcatingTraindetector); markers away from the tracks
+      (legends) stay decoration;
     - signals: groups with signal heads (vsdxID 229/231): `signal`, type main (shunting for
       "SS<n>" labels), direction nominal when the mast is left of the lamps ("Signal Right"),
       reverse otherwise, aspects = number of lamps, ID from the label inside/next to it (S<n>, ...);
@@ -237,7 +242,8 @@ def element_preset(title):
     if m:
         return {'rdKind': 'balise', 'rdDirection': 'reverse' if m.group(1) == 'left' else 'nominal'}
     if t == 'tc':
-        return {'rdKind': 'trackSection', 'rdSectionType': 'tc'}
+        # the "TC" tile is the joint marker (10x12), not a section line
+        return {'rdKind': 'insulatedJoint'}
     if t == 'track':
         return {'rdKind': 'track'}
     m = re.match(r'^point (left|right)$', t)
@@ -503,12 +509,12 @@ def annotate_template(xml, report):
         elif kind == 'train':
             set_data(model, el, {'rdKind': 'train', 'rdId': unique('TR')})
         elif kind == 'tc':
-            tcs.append(b)
+            tcs.append((el, b))
     # loose TC joint bars (vsdxID 73 without their group)
     for el in model.top():
         if model.is_edge(el) or model.children(el) or style_map(el).get('vsdxID') != '73':
             continue
-        tcs.append(model.box(el))
+        tcs.append((el, model.box(el)))
 
     balises = []
     for el in list(model.top()):
@@ -592,7 +598,7 @@ def annotate_template(xml, report):
         y, x0, x1 = line['y'], line['x0'], line['x1']
         cuts = []
         by_tc = False
-        for (bx, by, bw, bh) in tcs:
+        for _el, (bx, by, bw, bh) in tcs:
             cx, cy = bx + bw / 2, by + bh / 2
             if abs(cy - y) <= 8 and x0 + 15 < cx < x1 - 15:
                 cuts.append(cx)
@@ -616,6 +622,7 @@ def annotate_template(xml, report):
         bounds = [x0] + clean + [x1]
         insert_at = list(model.root).index(line['el']) + 1
         names = []
+        spans = []
         for a, b in zip(bounds, bounds[1:]):
             sec_n += 1
             ident = unique('TC', f'TC{sec_n}')
@@ -624,7 +631,25 @@ def annotate_template(xml, report):
             model.root.insert(insert_at, cell)
             insert_at += 1
             names.append(ident)
+            spans.append((a, b, ident))
+        line['spans'] = spans
         sections_report.append(f"{line['id']}: {', '.join(names)} ({rule})")
+    # ---- TC joint markers on a track: insulated rail joints demarcating the sections next to them
+    joints = []
+    for el, (bx, by, bw, bh) in tcs:
+        cx, cy = bx + bw / 2, by + bh / 2
+        for line in lines:
+            if abs(cy - line['y']) <= 8 and line['x0'] - 8 <= cx <= line['x1'] + 8:
+                joints.append((lines.index(line), cx, el, line))
+                break
+    for _i, cx, el, line in sorted(joints, key=lambda j: (j[0], j[1])):
+        near = [ident for a, b, ident in line['spans'] if abs(a - cx) <= 15 or abs(b - cx) <= 15]
+        attrs = {'rdKind': 'insulatedJoint', 'rdId': unique('J'), 'rdTrackId': line['id']}
+        if near:
+            attrs['rdSections'] = ', '.join(near)
+        set_data(model, el, attrs)
+    if joints:
+        sections_report.append(f'{len(joints)} joints')
     report.append('; '.join(sections_report) + (f'; {len(report_ungrouped)} balise(s) without group' if report_ungrouped else ''))
     return model_text(model.doc)
 

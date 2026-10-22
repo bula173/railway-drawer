@@ -61,6 +61,7 @@ the main bundle only carries `install-railml.ts` and the root sniffing (`xml.ts`
 | balise | `balise` `belongsToBaliseGroup`, `isEurobalise positionInGroup` = position - 1 | id, group, position, direction, km | remarks |
 | baliseGroup | `baliseGroup` `numberOfBalisesInGroup`, `applicationType value="ETCS"`, `isEurobaliseGroup countryID` (NID_C) `groupID` (NID_BG) | id, NID_C + NID_BG (both needed; a group without NID_C exports the diagram's default `rdCountryId`, 510 when not set), count, direction, km | function, LEU, remarks |
 | axleCounter | `trainDetectionElement type="axleCounter" detectedObject="axle"` | id, km, sections (via `tvdSection/hasDemarcatingTraindetector`) | remarks |
+| insulatedJoint | `trainDetectionElement type="insulatedRailJoint"` (railML 3.2 enum value; the ERTMS "TC" joint marker of a track circuit) | id, km, sections (via `tvdSection/hasDemarcatingTraindetector`) | remarks |
 | trackSection | interlocking `tvdSection` (`technology` trackCircuit/axleCounter); railML 3.2 gives TVD sections no location: geometry only as a visualization projection | id, detection type | track, length, km start/end, remarks, the section line's netElements |
 | bufferStop | `bufferStop` with `spotLocation` | id, km | remarks |
 | levelCrossing | `levelCrossingIS`, `protection` (full barriers = `barriers="singleFullBarrier"`, half = `singleHalfBarrier` (import also `doubleHalfBarrier`), lights only = `barriers="none" lights="flashing"`, passive = `hasActiveProtection="false"`) | id, protection, km | remarks |
@@ -80,7 +81,7 @@ nominal direction, so `applicationDirection="normal"` (intrinsic 0 -> 1) is our 
 `"reverse"` our *reverse*; objects without a direction get `"both"` (signals, balises, groups) or none.
 
 **Ids**: railML ids are NCNames, unique per document: `<prefix><rdId>` (`sig_S1`, `bal_B1`, `bg_BG1`,
-`trk_T1`, `sw_W1`, `tvd_TS1`, `tde_AC1`, `bus_`, `lc_`, `rbc_`, `rt_R1`; IL objects `il_<id>`;
+`trk_T1`, `sw_W1`, `tvd_TS1`, `tde_AC1`, `ij_J1`, `bus_`, `lc_`, `rbc_`, `rt_R1`; IL objects `il_<id>`;
 netElements `ne_<link>_<n>` along the link; netRelations `nr_<A>_<B>`), duplicates get `_2`, ...
 Our rdId stays the designator. Imported objects keep their railML ids in the cell attributes
 `rdRailmlId`, `rdRailmlIlId` and `rdRailmlNetElements`, so export -> import -> export is stable and

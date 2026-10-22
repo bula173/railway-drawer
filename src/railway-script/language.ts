@@ -22,6 +22,7 @@ export const LISTS: ReadonlyArray<{ key: string; kind: KindId }> = [
   { key: 'baliseGroups', kind: 'baliseGroup' },
   { key: 'balises', kind: 'balise' },
   { key: 'axleCounters', kind: 'axleCounter' },
+  { key: 'joints', kind: 'insulatedJoint' },
   { key: 'sections', kind: 'trackSection' },
   { key: 'levelCrossings', kind: 'levelCrossing' },
   { key: 'bufferStops', kind: 'bufferStop' },
@@ -32,7 +33,7 @@ export const LISTS: ReadonlyArray<{ key: string; kind: KindId }> = [
 ];
 
 /** Lists that may also be written inside a track item (the track is then implied). */
-export const TRACK_NESTED_LISTS: readonly string[] = ['points', 'signals', 'baliseGroups', 'balises', 'axleCounters', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'trains'];
+export const TRACK_NESTED_LISTS: readonly string[] = ['points', 'signals', 'baliseGroups', 'balises', 'axleCounters', 'joints', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'trains'];
 
 export function listForKind(kind: KindId): string {
   return LISTS.find((l) => l.kind === kind)!.key;
@@ -43,7 +44,7 @@ export function kindForList(key: string): KindId | null {
 }
 
 /** Kinds placed by `track` + `at` (km). */
-export const ON_TRACK_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'levelCrossing', 'bufferStop', 'leu', 'train', 'points']);
+export const ON_TRACK_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'insulatedJoint', 'levelCrossing', 'bufferStop', 'leu', 'train', 'points']);
 
 /**
  * Script key -> catalogue field key, per kind, for keys whose name differs from the catalogue

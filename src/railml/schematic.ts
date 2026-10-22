@@ -31,6 +31,7 @@ export function defaultSize(kind: KindId): [number, number] {
     case 'balise':
       return [12, 12];
     case 'trackSection':
+    case 'insulatedJoint':
       return [10, 12];
     case 'train':
       return [50, 20];
@@ -117,6 +118,7 @@ export class Symbols {
         return this.get(t) ? t : null;
       }
       case 'trackSection':
+      case 'insulatedJoint':
         return this.get('tc') ? 'tc' : null;
       case 'train':
         return this.get('train') ? 'train' : null;

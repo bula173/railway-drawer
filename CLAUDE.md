@@ -639,7 +639,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
   left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
   top of the track (below the highlights), split at the TC joint markers on it (fallback: points legs, then
-  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC markers, labels, arrows, highlights: no kind.
+  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC joint markers on a track (centre within 8 of the line)
+  = `insulatedJoint` J<n> with `rdTrackId` + `rdSections` (sections starting/ending within 15: railML
+  `hasDemarcatingTraindetector`); markers off the tracks, labels, arrows, highlights: no kind.
   Sections drawn ON the track = topology.ts "sections on tracks" (names the pieces, not separate links), so routes,
   snap and the railML export (tracks + `tvdSection`s) work; recolouring a section = its own edge's strokeColor.
   The library stores no `rdState`/`rdAspect` (state feature: defaults free/stop/normal). `insertTemplate` renumbers
@@ -680,13 +682,14 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   and `convertValueToString` the raw `%rdId%`). Writes: `setRailwayData(model, cells, change, {autoId})` = one
   `model.setValue` per cell inside one update (one undo step, values cloned, never mutated); no-op edits add no history.
   Stored numbers are canonical (`12+345` / `12,345` -> `12.345`); unparseable input is stored as typed and reported.
-- **Catalogue** (`catalogue.ts`): 13 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
-  bufferStop, rbc, leu, axleCounter, train, route), fields typed text/number/integer/km/enum/ref/refList with
+- **Catalogue** (`catalogue.ts`): 14 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
+  bufferStop, rbc, leu, axleCounter, insulatedJoint, train, route; insulatedJoint = the TC joint marker, ID `J<n>`,
+  `sections` it separates), fields typed text/number/integer/km/enum/ref/refList with
   unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6); route fields see
   "Railway engineering tools" below. Every kind has `id`
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
 - **Pre-assigned kinds**: the ERTMS library entries store them (generated, see Templates); on insert also by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
-  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
+  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> insulatedJoint (the tile is the 10x12 joint marker; sections are lines on the track), Track ->
   track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
@@ -819,10 +822,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `locateObject` (points: toe piece at the junction) -> `spotLocation` (`intrinsicCoord`, `applicationDirection`,
   km). `infrastructureVisualization` = piece polylines + cell centres. Objects sorted by kind, natural ID (stable
   output). Result: `xml`, `counts`, `unplaced` (no location), `extensionOnly` (LEU, train), `issues`, `preserved`.
-- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ bus_ lc_ rbc_ rt_`, IL `il_`):
+- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ ij_ bus_ lc_ rbc_ rt_`, IL `il_`):
   track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand, left/rightBranch
   netRelationRef) + `switchIL`; signal -> `signalIS` (main/shunting: isTrainMovementSignal + signalConstruction light;
-  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; balise -> `balise` (belongsToBaliseGroup,
+  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; insulatedJoint -> `trainDetectionElement` type insulatedRailJoint (+ demarcation like axle counters); balise -> `balise` (belongsToBaliseGroup,
   isEurobalise positionInGroup = position-1); baliseGroup -> `baliseGroup` (applicationType ETCS, isEurobaliseGroup
   countryID/groupID); axleCounter -> `trainDetectionElement` axleCounter; trackSection -> IL `tvdSection`
   (hasDemarcatingTraindetector; no location in 3.2); bufferStop, levelCrossing (`protection`) -> IS; rbc -> IL

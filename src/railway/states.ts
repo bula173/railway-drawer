@@ -6,7 +6,7 @@
  * Edit Data), the colours they stand for are written into the cells' own styles by state-apply.ts:
  * - `rdState`: track sections, tracks, points, routes (`free` | `occupied` | `reserved` (route
  *   set) | `overlap` | `locked` | `disturbed`), level crossings (`open` | `closed` | `disturbed`),
- *   balises / LEUs / axle counters (`free` = working | `disturbed` = failed);
+ *   balises / LEUs / axle counters / insulated joints (`free` = working | `disturbed` = failed);
  * - `rdAspect`: signals (`stop` | `proceed` | `caution` | `shunt` | `dark`);
  * - `rdPosition`: points (`normal` | `reverse` | `moving` | `outOfControl`; the catalogue field).
  * A missing attribute is the default (free / open / stop / normal) and draws the object as drawn.
@@ -198,6 +198,7 @@ const SCHEME_BY_KIND: Partial<Record<KindId, SchemeId>> = {
   balise: 'equipment',
   leu: 'equipment',
   axleCounter: 'equipment',
+  insulatedJoint: 'equipment',
 };
 
 /** Signal types without lamps (no aspects). */

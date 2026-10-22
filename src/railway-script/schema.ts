@@ -176,11 +176,12 @@ export function buildRailwayScriptSchema(): JsonSchema {
     ),
     balise: objectDef('balise', {}, ['id', 'at']),
     axleCounter: objectDef('axleCounter', {}, ['id', 'at']),
+    insulatedJoint: objectDef('insulatedJoint', {}, ['id', 'at']),
     trackSection: objectDef(
       'trackSection',
       {
-        from: { anyOf: [ref('km'), ref('id')], description: 'Start: km, or the ID of an axle counter / balise on the track', 'x-expected': 'a km value or a detection point ID' },
-        to: { anyOf: [ref('km'), ref('id')], description: 'End: km, or the ID of an axle counter on the track', 'x-expected': 'a km value or a detection point ID' },
+        from: { anyOf: [ref('km'), ref('id')], description: 'Start: km, or the ID of an axle counter / insulated joint / balise on the track', 'x-expected': 'a km value or a detection point ID' },
+        to: { anyOf: [ref('km'), ref('id')], description: 'End: km, or the ID of an axle counter / insulated joint on the track', 'x-expected': 'a km value or a detection point ID' },
       },
       ['id'],
       { allOf: [anyRequired('from', 'startKm', 'kmStart'), anyRequired('to', 'endKm', 'kmEnd')] }

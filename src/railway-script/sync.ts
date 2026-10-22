@@ -224,7 +224,7 @@ export function drawingEdits(ctx: SyncContext): ScriptEdit[] {
     for (const f of def.fields) {
       if (f.key === 'id' || handled.has(f.key) || computed.has(f.key)) continue;
       if (obj.kind === 'baliseGroup' && f.key === 'count') continue;
-      if (obj.kind === 'axleCounter' && f.key === 'sections') continue;
+      if ((obj.kind === 'axleCounter' || obj.kind === 'insulatedJoint') && f.key === 'sections') continue;
       const a = before.attrs[f.attr] ?? '';
       const b = now[f.attr] ?? '';
       if (a === b) continue;

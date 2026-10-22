@@ -110,6 +110,22 @@
         ]
       }
     },
+    "joints": {
+      "type": "array",
+      "description": "Insulated rail joints",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/insulatedJoint"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
     "sections": {
       "type": "array",
       "description": "Track sections",
@@ -424,6 +440,13 @@
           "description": "Axle counters on this track",
           "items": {
             "$ref": "#/definitions/axleCounter"
+          }
+        },
+        "joints": {
+          "type": "array",
+          "description": "Insulated rail joints on this track",
+          "items": {
+            "$ref": "#/definitions/insulatedJoint"
           }
         },
         "sections": {
@@ -863,6 +886,52 @@
         }
       }
     },
+    "insulatedJoint": {
+      "type": "object",
+      "description": "Insulated rail joint (railway object kind \"insulatedJoint\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Joint ID"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "sections": {
+          "$ref": "#/definitions/idList",
+          "description": "Track sections — Track circuit sections it separates, comma separated"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
     "trackSection": {
       "type": "object",
       "description": "Track section (railway object kind \"trackSection\")",
@@ -934,7 +1003,7 @@
               "$ref": "#/definitions/id"
             }
           ],
-          "description": "Start: km, or the ID of an axle counter / balise on the track",
+          "description": "Start: km, or the ID of an axle counter / insulated joint / balise on the track",
           "x-expected": "a km value or a detection point ID"
         },
         "to": {
@@ -946,7 +1015,7 @@
               "$ref": "#/definitions/id"
             }
           ],
-          "description": "End: km, or the ID of an axle counter on the track",
+          "description": "End: km, or the ID of an axle counter / insulated joint on the track",
           "x-expected": "a km value or a detection point ID"
         },
         "x": {

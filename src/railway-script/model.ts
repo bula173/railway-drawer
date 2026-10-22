@@ -386,7 +386,7 @@ export function readScriptModel(doc: unknown): ReadResult {
     const km = kmOf(ref);
     if (km !== null && !(typeof ref === 'string' && !/^\s*-?\d/.test(ref))) return km;
     const id = str(ref);
-    const target = model.objects.find((o) => (o.kind === 'axleCounter' || o.kind === 'balise' || o.kind === 'signal' || o.kind === 'baliseGroup') && o.id.toUpperCase() === id.toUpperCase());
+    const target = model.objects.find((o) => (o.kind === 'axleCounter' || o.kind === 'insulatedJoint' || o.kind === 'balise' || o.kind === 'signal' || o.kind === 'baliseGroup') && o.id.toUpperCase() === id.toUpperCase());
     if (!target || target.km === undefined) {
       issues.push({ severity: 'error', path: [...path, key], message: `Section ${s.id}: "${id}" is not a detection point with a km on a track` });
       return null;
@@ -395,7 +395,7 @@ export function readScriptModel(doc: unknown): ReadResult {
       s.trackId = target.trackId;
       s.values.trackId = target.trackId;
     }
-    if (target.kind === 'axleCounter') {
+    if (target.kind === 'axleCounter' || target.kind === 'insulatedJoint') {
       const list = splitRefList(target.values.sections);
       if (!list.some((x) => x.toUpperCase() === s.id.toUpperCase())) target.values.sections = [...list, s.id].join(', ');
     }

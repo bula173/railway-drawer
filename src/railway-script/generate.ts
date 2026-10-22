@@ -290,7 +290,7 @@ export function generateScript(model: GraphDataModel, name = ''): GenerateResult
   if (Object.keys(page).length > 0) root.page = page;
   if (trackItems.length > 0) root.tracks = trackItems;
   if (pointsItems.length > 0) root.points = pointsItems;
-  for (const key of ['signals', 'baliseGroups', 'balises', 'axleCounters', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'rbcs', 'trains', 'routes']) {
+  for (const key of ['signals', 'baliseGroups', 'balises', 'axleCounters', 'joints', 'sections', 'levelCrossings', 'bufferStops', 'leus', 'rbcs', 'trains', 'routes']) {
     const list = lists.get(key);
     if (list && list.length > 0) root[key] = list;
   }

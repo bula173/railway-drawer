@@ -91,7 +91,7 @@ function legendRows(): Array<[string, Array<[string, StateVisual, boolean]>]> {
     ['Routes', of('route', 'state')],
     ['Signal aspects (lamps)', of('signal', 'aspect', true)],
     ['Level crossings', of('levelCrossing', 'state')],
-    ['Balises, LEUs, axle counters', of('equipment', 'state')],
+    ['Balises, LEUs, axle counters, joints', of('equipment', 'state')],
   ];
 }
 

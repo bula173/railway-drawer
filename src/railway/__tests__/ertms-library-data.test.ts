@@ -151,6 +151,32 @@ describe('ERTMS templates: railway symbols typed, tracks split into TVD sections
     }
   });
 
+  it('TC joint markers on a track are insulated joints (J<n>) naming the sections they separate', () => {
+    let total = 0;
+    for (const t of templates) {
+      const objs = objectsOf(t.xml);
+      const sections = new Set(objs.filter((o) => o.getAttribute('rdKind') === 'trackSection').map((o) => o.getAttribute('rdId')));
+      const tracks = new Set(objs.filter((o) => o.getAttribute('rdKind') === 'track').map((o) => o.getAttribute('rdId')));
+      const joints = objs.filter((o) => o.getAttribute('rdKind') === 'insulatedJoint');
+      total += joints.length;
+      for (const j of joints) {
+        const what = `${t.name} ${j.getAttribute('rdId')}`;
+        expect(j.getAttribute('rdId'), what).toMatch(/^J\d+$/);
+        expect(tracks.has(j.getAttribute('rdTrackId')), what).toBe(true);
+        const secs = (j.getAttribute('rdSections') ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+        expect(secs.length, what).toBeGreaterThanOrEqual(1);
+        expect(secs.length, what).toBeLessThanOrEqual(2);
+        for (const sec of secs) expect(sections.has(sec), `${what} -> ${sec}`).toBe(true);
+      }
+      // sections split by TC markers (rdSectionType=tc, more than one on the track) have joints
+      if (objs.some((o) => o.getAttribute('rdSectionType') === 'tc')) expect(joints.length, t.name).toBeGreaterThan(0);
+    }
+    expect(total).toBe(111);
+    // the palette's TC tile is the same joint marker
+    const tc = elements.find((e) => e.entry.title === 'TC')!;
+    expect(objectsOf(tc.entry.xml!).map((o) => o.getAttribute('rdKind'))).toEqual(['insulatedJoint']);
+  });
+
   it('every template track is covered by section cells (TC<n>, typed, on the track, end to end)', () => {
     for (const t of templates) {
       const graph = graphWith(t);
@@ -233,6 +259,15 @@ describe('railML export of the templates', { timeout: 120_000 }, () => {
       expect(r.extensionOnly.filter((p) => p.kind !== 'train').map((p) => `${p.kind} ${p.id}: ${p.message}`), t.name).toEqual([]);
       const sections = objects.filter((o) => o.kind.id === 'trackSection').length;
       expect(r.counts.tvdSection ?? 0, t.name).toBe(sections);
+      // joints: trainDetectionElement insulatedRailJoint demarcating their sections
+      for (const j of objects.filter((o) => o.kind.id === 'insulatedJoint')) {
+        const tde = Array.from(r.doc.getElementsByTagNameNS('*', 'trainDetectionElement')).find((e) => e.getAttribute('id') === `ij_${j.id}`);
+        expect(tde?.getAttribute('type'), `${t.name} ${j.id}`).toBe('insulatedRailJoint');
+        for (const sec of j.values.sections.split(',').map((x) => x.trim())) {
+          const tvd = Array.from(r.doc.getElementsByTagNameNS('*', 'tvdSection')).find((e) => e.getAttribute('id') === `tvd_${sec}`)!;
+          expect(Array.from(tvd.getElementsByTagNameNS('*', 'hasDemarcatingTraindetector')).map((e) => e.getAttribute('ref')), `${t.name} ${sec}`).toContain(`ij_${j.id}`);
+        }
+      }
       unplacedAll.push(...r.unplaced.map((p) => `${t.name}: ${p.kind} ${p.id}`));
     }
     expect(unplacedAll).toEqual([]);
