@@ -34,7 +34,7 @@ the Data panel, the legend and the change lists all read it.
 | | Locked | stroke `#2979ff` (blue) |
 | | Disturbed | stroke `#e000e0` (magenta), dashed `2 2` ("flashing") |
 | Points position (the diverging leg = the points cell) | Normal | leg at opacity 30 (faint) |
-| | Reverse | leg as drawn |
+| | Reverse | leg as drawn; the straight continuation faded (view overlay, 30 % visible) |
 | | Moving | leg dashed `4 4` |
 | | Out of control | stroke `#e000e0`, dashed `2 2` |
 | Routes (edges on the Routes layer) | Not set | as drawn (translucent orange) |
@@ -73,8 +73,14 @@ rendered SVG in the dark theme).
 - Signals: the lamps = round-ish filled leaf vertices of the symbol (|w - h| <= 25 %, not text; the
   ERTMS signal groups' 9x9 lamp stencils); they get `fillColor` + `gradientColor=none`. All lamps take
   the aspect colour. A signal without such parts (a single shape) gets its own fill.
-- Points: the points cell is the diverging leg (ERTMS "Point Left/Right"); the straight leg belongs
-  to the track and is not faded.
+- Points: the points cell is the diverging leg (ERTMS "Point Left/Right"): faint while normal. The
+  straight leg belongs to the track (one track edge), so in **Reverse** it is faded by a view overlay
+  (`points-fade.ts`): from the junction along the straight continuation, for the length of the
+  diverging leg along it (at least 15), a line in the canvas colour at 70 % opacity (2 wider than the
+  drawn track / section) covers the track, so it shows at the same 30 % as a normal-position leg.
+  Chosen over splitting the tracks at the points: no model change (topology, railML, templates and
+  saved files unchanged); the overlay follows the model and the zoom but is not saved and not in
+  image exports (like the km ruler).
 
 ## Applying and resetting (`src/railway/state-apply.ts`)
 

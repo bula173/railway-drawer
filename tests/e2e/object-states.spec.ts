@@ -175,11 +175,17 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   await pickState(page, 'position', 'normal');
   expect(await styleKey(page, 'w1', 'opacity')).toBe(30);
   expect(Number((await rendered(page, 'w1')).opacity)).toBeCloseTo(0.3, 2);
+  const fade = page.locator('#graph-container .rd-points-fade polyline');
+  await expect(fade).toHaveCount(0);
   await rightClick(page, 190, 140);
   await pickState(page, 'position', 'reverse');
   expect(await attr(page, 'w1', 'rdPosition')).toBe('reverse');
   expect(await styleKey(page, 'w1', 'opacity')).toBeNull();
   expect((await rendered(page, 'w1')).opacity).not.toBe('0.3');
+  // reverse: the straight continuation (TC2 from the junction for the leg's length) is faded
+  await expect(fade).toHaveCount(1);
+  await expect(fade).toHaveAttribute('points', '150,100 230,100');
+  await expect(fade).toHaveAttribute('stroke-opacity', '0.7');
 
   // multi-selection: TC1 + TC3 locked together (one undo step)
   await inGraph(page, "graph.setSelectionCells(['tc1', 'tc3'].map((id) => graph.getDataModel().getCell(id)));");

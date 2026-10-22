@@ -12,6 +12,7 @@ import type { TabManager } from '../ui/tabs';
 import type { RailwayNotifier } from './install-railway-data';
 import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
+import { installPointsFade } from './points-fade';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { STATE_SCHEME, scaledStrokeWidth } from './states';
@@ -233,9 +234,24 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     const detail = (evt as CustomEvent<string>).detail;
     if (typeof detail === 'string') run(detail);
   };
+  // points in reverse: the straight continuation faded (view overlay per tab graph, points-fade.ts)
+  const fades = new Map<Graph, () => void>();
+  const syncFades = (): void => {
+    const graphs = new Set(tabManager.getAllTabs().map((t) => t.graph));
+    for (const g of graphs) if (!fades.has(g)) fades.set(g, installPointsFade(g));
+    for (const [g, off] of fades) {
+      if (graphs.has(g)) continue;
+      off();
+      fades.delete(g);
+    }
+  };
+
   window.addEventListener(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
+  window.addEventListener('tab-changed', syncFades);
+  window.addEventListener('tab-closed', syncFades);
   syncLegend();
+  syncFades();
 
   const handle: RailwayStatesHandle = {
     run,
@@ -243,6 +259,10 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     destroy() {
       window.removeEventListener(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
+      window.removeEventListener('tab-changed', syncFades);
+      window.removeEventListener('tab-closed', syncFades);
+      for (const off of fades.values()) off();
+      fades.clear();
       legend?.remove();
       legend = null;
       if (current === handle) current = null;

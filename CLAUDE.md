@@ -804,7 +804,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `railway-state-request`, handled on the active tab's selection); State Legend (`rd.railway.stateLegend`); Data panel
   State/Aspect selects (points Position field applies its look). Scenario diff: `TC3: free → occupied`, colour keys and
   lamp parts folded in (`describeStateChanges`). railML export skips the state attributes and writes the drawn style.
-- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `tests/e2e/object-states.spec.ts`.
+- Points reverse: the straight continuation (part of the track) is faded by a view overlay (`points-fade.ts`
+  `installPointsFade` per tab graph from install-railway-states: topology junction -> normal piece for the leg's
+  length, canvas-coloured line at 70 % in the overlay pane, class `rd-points-fade`; not in the model/exports).
+- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `points-fade.test.ts`, `tests/e2e/object-states.spec.ts`.
 
 ### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
 
