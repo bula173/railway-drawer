@@ -268,7 +268,9 @@ describe('applying states', () => {
     expect(ownStyle(w1)).toMatchObject({ strokeColor: STATE_COLORS.disturbed, dashPattern: '2 2' });
     resetObjectStates(graph, [w1]);
     expect(ownStyle(w1)).toEqual(before);
-    expect(readAttr(w1, 'rdPosition')).toBe('');
+    // the position is also data: kept, only its look goes
+    expect(readAttr(w1, 'rdPosition')).toBe('outOfControl');
+    expect(readAttr(w1, 'rdState')).toBe('');
   });
 
   it('multi-selection: one undo step for all cells, only cells that allow the value', () => {

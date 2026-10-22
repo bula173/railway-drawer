@@ -46,6 +46,8 @@ export interface StateChange {
 export interface StateItem {
   cell: Cell;
   change: StateChange;
+  /** Dimensions whose value stays but is not drawn (reset keeps the points position data). */
+  lookless?: StateDimension[];
 }
 
 /** The state scheme of a cell (by kind; signals by type), or null. */
@@ -74,7 +76,7 @@ export function hasRuntimeState(cell: Cell): boolean {
   const id = cellSchemeId(cell);
   if (readAttr(cell, BASE_STYLE_ATTR)) return true;
   if (!id) return false;
-  return schemeDimensions(id).some((d) => readAttr(cell, DIMENSION_ATTR[d.dimension]).trim() !== '');
+  return schemeDimensions(id).some((d) => d.dimension !== 'position' && readAttr(cell, DIMENSION_ATTR[d.dimension]).trim() !== '');
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -221,7 +223,7 @@ export function applyObjectStates(graph: Graph, items: StateItem[]): Cell[] {
   if (items.length === 0) return [];
   model.beginUpdate();
   try {
-    for (const { cell, change } of items) {
+    for (const { cell, change, lookless } of items) {
       if (!model.contains(cell)) continue;
       const scheme = cellSchemeId(cell);
       const attrs: Record<string, string | null> = { ...(change.attrs ?? {}) };
@@ -236,7 +238,9 @@ export function applyObjectStates(graph: Graph, items: StateItem[]): Cell[] {
         }
         const styleBefore = new Map(descendants(cell).map((x) => [x.cell, x.cell.getStyle()]));
         styleBefore.set(cell, cell.getStyle());
-        const base = applyLook(graph, cell, scheme, values);
+        const drawn = { ...values };
+        for (const d of lookless ?? []) drawn[d] = '';
+        const base = applyLook(graph, cell, scheme, drawn);
         attrs[BASE_STYLE_ATTR] = serializeBaseStyles(base) || null;
         for (const [c, s] of styleBefore) if (c.getStyle() !== s) changed.add(c);
       }
@@ -265,11 +269,15 @@ export function applicableCells(cells: Cell[], dimension: StateDimension, value?
   });
 }
 
-/** Back to the defaults and the drawn look (state, aspect, position, remembered style). */
+/**
+ * Back to the drawn look: state and aspect removed, the remembered style put back. The points
+ * position stays (it is also the points' data, e.g. `rdPosition="normal"` in the templates); only
+ * its look goes.
+ */
 export function resetObjectStates(graph: Graph, cells: Cell[]): Cell[] {
   const items: StateItem[] = cells
     .filter((cell) => hasRuntimeState(cell) || !!readAttr(cell, ROUTE_RESTORE_ATTR))
-    .map((cell) => ({ cell, change: { state: null, aspect: null, position: null, attrs: { [ROUTE_RESTORE_ATTR]: null } } }));
+    .map((cell) => ({ cell, change: { state: null, aspect: null, attrs: { [ROUTE_RESTORE_ATTR]: null } }, lookless: ['position'] }));
   return applyObjectStates(graph, items);
 }
 
