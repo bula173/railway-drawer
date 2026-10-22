@@ -58,6 +58,7 @@ import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
+import { RAILWAY_LIBRARIES, railwayLibrarySources } from './ui/railway-libraries';
 import { installToolbar } from './ui/toolbar';
 import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
@@ -507,10 +508,12 @@ const shapesPaletteView = createDrawioPaletteView({
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
   palettes: [
     withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL)),
+    // ERTMS/ETCS extra, Polish signalling (PKP PLK), Track layout (src/ui/railway-libraries.ts)
+    ...railwayLibrarySources(import.meta.env.BASE_URL),
     ...shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
   ],
   defaultExpanded: ['ertms', 'general'],
-  captionPalettes: ['ertms'],
+  captionPalettes: ['ertms', ...RAILWAY_LIBRARIES.map((lib) => lib.id)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,

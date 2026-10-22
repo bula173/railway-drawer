@@ -416,9 +416,14 @@ export function isErtmsLibraryEntry(entry: { id: string; source?: string }): boo
   return entry.id.startsWith('ertms-') || (entry.source ?? '').includes('ertms.xml');
 }
 
-/** Kind pre-assigned for a palette entry, or null (only ERTMS library entries have one). */
-export function kindForPaletteEntry(entry: { id: string; title: string; source?: string }): KindPreset | null {
-  return isErtmsLibraryEntry(entry) ? kindForLibraryTitle(entry.title) : null;
+/**
+ * Kind of a palette entry, or null: ERTMS library entries by title (preset values), other library
+ * entries by the `rdKind` their (first) object carries (railway libraries, user libraries).
+ */
+export function kindForPaletteEntry(entry: { id: string; title: string; source?: string; xml?: string }): KindPreset | null {
+  if (isErtmsLibraryEntry(entry)) return kindForLibraryTitle(entry.title);
+  const kind = entry.xml ? /<(?:object|UserObject)\b[^>]*?\srdKind="([A-Za-z]+)"/.exec(entry.xml)?.[1] : undefined;
+  return isKindId(kind) ? { kind } : null;
 }
 
 /** App railway shapes (src/shapes/railway, src/shapes/ertms) by style `shape`. */

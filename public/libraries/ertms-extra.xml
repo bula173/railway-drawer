@@ -1,0 +1,359 @@
+<mxlibrary>[
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"signal\" rdSignalType=\"etcsStopMarker\" rdDirection=\"nominal\" id=\"2\"&gt;&lt;mxCell style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"17\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(pVJbkoMgEDwNvymEjTmAMRfYXGCiY6REsYC8bh/IWIlY5X5svpjuaXumQSYL18KITPABemRyz4Qoj8VvIJw3Yzh6sB3aQIe6JUEmCN5SCG7EyhN3BavgpJE6zlvT4U3VfnJQQ4tW+diVJZPFCarubM1lqAnbaCT4ndScXB4JWgxPVzuQTSiWzo2xmGClNa33/ipSldEmhOZ0vqwjXUQ4TayxgYue8jIhm6bOOZ+PHyHmjVVvrvjJkyd5ko21GmbCLE2eryt3m+1/pRlf1/58of1jBbEurLRxOH/AzyXGB5h3lk8ZKPqZZfkE);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 17,
+    "h": 14,
+    "title": "ETCS Stop Marker Right",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs stop marker marker board eob wskaźnik zatrzymania etcs"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"signal\" rdSignalType=\"etcsStopMarker\" rdDirection=\"reverse\" id=\"2\"&gt;&lt;mxCell style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"17\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"16\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"16\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"16\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"12\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(pVJbkoMgEDwNvymEjTmAMRfYXGCiY6REsYC8bh/IWIlY5X5svpjuaXumQSYL18KITPABemRyz4Qoj8VvIJw3Yzh6sB3aQIe6JUEmCN5SCG7EyhN3BavgpJE6zlvT4U3VfnJQQ4tW+diVJZPFCarubM1lqAnbaCT4ndScXB4JWgxPVzuQTSiWzo2xmGClNa33/ipSldEmhOZ0vqwjXUQ4TayxgYue8jIhm6bOOZ+PHyHmjVVvrvjJkyd5ko21GmbCLE2eryt3m+1/pRlf1/58of1jBbEurLRxOH/AzyXGB5h3lk8ZKPqZZfkE);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;flipV=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"0\" y=\"1\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 17,
+    "h": 14,
+    "title": "ETCS Stop Marker Left",
+    "tags": "board tablica tarcza wskaźnik wskaznik left reverse lewy etcs stop marker marker board eob wskaźnik zatrzymania etcs"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"signal\" rdSignalType=\"markerBoard\" rdDirection=\"nominal\" id=\"2\"&gt;&lt;mxCell style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"17\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(fVLLjsMgDPwarisK2kp7zqY/0P0BlzgNCsERoa+/L6yjFnLoCc94GHsQQjfLADMKJT1MKPSvUKr9a46JcGQgWvKpnCCMGFIr1QOLdorhrYawzGgic1cIFk4OubPEQCPebBdXB+sHDDbmrm6Fbk5gxnOgi+8Yh2yk5J3Vkl0eFdoMr1c7sE0qts49BaywdY7Xe93KlCFHKbTk8986002G68QOe7i4Na9Quu+7vZTl+Bly3lxNdMV3nn2VR319l5ec9YV0V2f/+aRVn6TG0YLlw7yXy8HKzvaJEsUfRbdP);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 17,
+    "h": 14,
+    "title": "ETCS Location Marker Right",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs location marker marker board tablica etcs"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"signal\" rdSignalType=\"markerBoard\" rdDirection=\"reverse\" id=\"2\"&gt;&lt;mxCell style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"17\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"16\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"16\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"16\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"12\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(fVLLjsMgDPwarisK2kp7zqY/0P0BlzgNCsERoa+/L6yjFnLoCc94GHsQQjfLADMKJT1MKPSvUKr9a46JcGQgWvKpnCCMGFIr1QOLdorhrYawzGgic1cIFk4OubPEQCPebBdXB+sHDDbmrm6Fbk5gxnOgi+8Yh2yk5J3Vkl0eFdoMr1c7sE0qts49BaywdY7Xe93KlCFHKbTk8986002G68QOe7i4Na9Quu+7vZTl+Bly3lxNdMV3nn2VR319l5ec9YV0V2f/+aRVn6TG0YLlw7yXy8HKzvaJEsUfRbdP);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;flipV=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"0\" y=\"1\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 17,
+    "h": 14,
+    "title": "ETCS Location Marker Left",
+    "tags": "board tablica tarcza wskaźnik wskaznik left reverse lewy etcs location marker marker board tablica etcs"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"L0\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition L0",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition execution board l0 poziom zmiana poziomu"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"L1\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition L1",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition execution board l1 poziom zmiana poziomu"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"L2\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition L2",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition execution board l2 poziom zmiana poziomu"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"L3\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition L3",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition execution board l3 poziom zmiana poziomu"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"NTC\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition NTC",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition execution board ntc poziom zmiana poziomu"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"L2\" style=\"shape=card;size=5;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Level Transition Announcement",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy etcs level transition announcement board zapowiedź zapowiedz poziom"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"RBC\" style=\"shape=card;size=5;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "RBC Border Announcement",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy rbc border handover announcement board granica zapowiedź"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"RBC\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "RBC Border",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy rbc border handover execution board granica"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"CAB\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "Cab Signalling Begin",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy cab signalling begin start board etcs sygnalizacja kabinowa początek poczatek"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"CAB\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"6\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"5\" y=\"13\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"23\" y=\"1\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "Cab Signalling End",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy cab signalling end board etcs sygnalizacja kabinowa koniec"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"19\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(jVJBcoMwDHyNrx2wmwNnmh77BwWL4omxGdsk6e8ro0yxOXTChV2xWq1shOrjBAsK2TiYUagPIeUXrimApVrEIRnvCIFzfnUDzugSSagysbh9Z3qvKcSFerl2g2DgYpG/xBT8Fe9Gp6eDcRMGs7mqs1D9BYbrd6BpmnnIRrJ5sLphl5+KHYbX0T7ZhsDRefQBK26s5Xh/XUwHb30gY35v5lnbZyp5psYRVvvcWEg1bk8ZoFycIu8H0L6dSp2GOKHOlgxYUyoWyK0Zzf6G+9nI6my6ssUaVwhPrwq7SljFrEd3rzq2/4QksK92uAgCx+uiEv+86vwL);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"0\" width=\"14\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 19,
+    "h": 14,
+    "title": "Neutral Section Announcement",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy neutral section announcement phase break board sekcja izolowana zapowiedź we"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"19\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(jVLLEoIwDPyaXh1o9cAZ9eg/BAjSsbZMKT7+3tQ40nJw5NJsstlsWoSqpwFGFLKwcEWh9kLKE87Bg6HchG3QzlLU4FnTKSkcmFVuGd5zCNNITZy7gdfQGOTKFLy74F134aOg7YBeh1hVB6HqBtrL2bvZdox9FJLFg9kFqzwztBqeWzuyDAVr5d55zLA2hu19uxi2zjhPwny+xSO3jlDyzA57mM1nYyFV//5SA+niZHm5gHKzS3kjxEKMru6Gy+Yy27xKW4y2CXH3L7HKiJmJfHT1r2L5wyQFy2qra6Zg/RiU4n9SHV4=);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"0\" width=\"14\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 19,
+    "h": 14,
+    "title": "Neutral Section Begin",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy neutral section begin open main circuit breaker board sekcja izolowana wyłącz wylacz"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"19\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(jVLLjoMwDPyaXFeQbLXqmbbH/QcXzBI1JCiEPv5+HYxKksNqucRjj8djC6GaeYAJhawsjCjUSUj5jUvwYCg3Yxu0sxSh7ahCwcCc+pPhI4cwT9TCuTt4DVeDXJmDdzd86C5sCtoO6HWIVXUWqrlCe/vxbqFBK/ZRSFZPZles8spQMTy3dmEZCkrl3nnMsDaG7b27GLbOOE/C/K7ikdtEKHlmhz0sZttYSNWvX2ogXZws7weoPw4pb4JYiNHo7rhvLrPNj2mL0TYh1n8wc8mv/0rmxENx191xcT0KyhtTin80df4F);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"0\" width=\"14\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 19,
+    "h": 14,
+    "title": "Neutral Section End",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy neutral section end close main circuit breaker board sekcja izolowana załącz zalacz"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"19\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(jVNBbsMgEHwN18pAreTupqd+gtjrGIUAwiRuf1/IujUgBZmLd3aHYXbBhHfzJCwQ1mhxA8I/CGNfZgEXMlZoby5O2CkkA56wTN8RLjkUs4XeY+4hnBRnBViZvTNXWOTgVwWpJ3DSxyo/Ed6dRX+9OHPXA2IXhVjzjewGVX4yVByeW/tEmRCUyqNxkGGpFNr734WwN8rEGeD3KR65XYQMzxxgFHe1dkwYH58rNZA2HixvA6BvbcqzIhZidDMP2DpnWeeUpnuU1AmT1qi56CFnNq9F+eryj3vMXefkXPZQsdrUZXtlZtjlne11076eRluY4ft7rBCPddUQbFdePL8QlI80pPAn5adf);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"0\" width=\"14\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 19,
+    "h": 14,
+    "title": "Lower Pantograph",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy pantograph lower down board opuść opusc pantograf"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"19\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"\" style=\"shape=stencil(fZJRbsMgDIZPw+sUoFUPkHUH2A3cxGlQKSCg7Xb7QV0tOFKaF/zbPx82ROg+zRBQqM7BFYX+FEp9g0k1E8Blf44Q5pIseqay3JF8cAkp4JApd4do4GSRKilHf8GHGfOLYNyM0eRa1Ueh+xMMl3P0NzeSjhWkuh9yd0T5ZWp1OG/tizAlWJMnH5FpYy2197+L5OCtjwVM6xNevX2Vis4ccYKbfU0slJ6eX9tAO3hpebkA+bFvfQFqoUZXf8dlcsUml6rdY41rnPKdlUMP3Cm3oTvmPGwbOVK/abPbRg7WJ2zfbrmV1QuVYP2OJUX/sT7+AQ==);whiteSpace=wrap;html=1;fillColor=#0050aa;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"0\" width=\"14\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 19,
+    "h": 14,
+    "title": "Raise Pantograph",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy pantograph raise up board podnieś podnies pantograf"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"TC\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "Track Condition Board",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy track condition board etcs warunki toru"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"23\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"STOP\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=6;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"18\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"6\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"5\" y=\"13\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"23\" y=\"1\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 23,
+    "h": 14,
+    "title": "Non-Stopping Area Board",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy non stopping area track condition board zakaz zatrzymania"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"40\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Release Speed Board",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy release speed vrelease board etcs prędkość zwolnienia predkosc"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"balise\" rdDirection=\"nominal\" rdNotes=\"Fixed balise\" id=\"2\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 12,
+    "title": "Fixed Balise Right",
+    "tags": "balise balisa eurobalise right nominal prawy fixed stała stala"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"balise\" rdDirection=\"reverse\" rdNotes=\"Fixed balise\" id=\"2\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 12,
+    "title": "Fixed Balise Left",
+    "tags": "balise balisa eurobalise left reverse lewy fixed stała stala"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"balise\" rdDirection=\"nominal\" rdNotes=\"Switchable (controlled) balise\" id=\"2\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 12,
+    "title": "Switchable Balise Right",
+    "tags": "balise balisa eurobalise right nominal prawy switchable controlled transparent przełączalna przelaczalna sterowana"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"balise\" rdDirection=\"reverse\" rdNotes=\"Switchable (controlled) balise\" id=\"2\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 12,
+    "title": "Switchable Balise Left",
+    "tags": "balise balisa eurobalise left reverse lewy switchable controlled transparent przełączalna przelaczalna sterowana"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"nominal\" rdFunction=\"fixed\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"nominal\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"nominal\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 24,
+    "title": "Balise Group 2 Right",
+    "tags": "balise balisa eurobalise group grupa bg right nominal prawy double podwójna podwojna fixed"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"reverse\" rdFunction=\"fixed\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"reverse\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"reverse\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 24,
+    "title": "Balise Group 2 Left",
+    "tags": "balise balisa eurobalise group grupa bg left reverse lewy double podwójna podwojna fixed"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"nominal\" rdFunction=\"switchable\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"nominal\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"nominal\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 24,
+    "title": "Switchable Balise Group 2 Right",
+    "tags": "balise balisa eurobalise group grupa bg right nominal prawy double switchable controlled leu przełączalna"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"reverse\" rdFunction=\"switchable\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"reverse\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"reverse\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#000000;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 24,
+    "title": "Switchable Balise Group 2 Left",
+    "tags": "balise balisa eurobalise group grupa bg left reverse lewy double switchable controlled leu przełączalna"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"3\" rdDirection=\"nominal\" rdFunction=\"fixed\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"44\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"nominal\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"nominal\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B3\" rdGroupId=\"BG1\" rdPosition=\"3\" rdDirection=\"nominal\" id=\"5\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"32\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 44,
+    "h": 24,
+    "title": "Balise Group 3 Right",
+    "tags": "balise balisa eurobalise group grupa bg right nominal prawy triple fixed"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"nominal\" rdFunction=\"fixed\" rdNotes=\"Linked balise group\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"nominal\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"nominal\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"5\" value=\"\" style=\"endArrow=open;endSize=4;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;dashed=1;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"25\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"28\" y=\"25\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 26,
+    "title": "Linked Balise Group Right",
+    "tags": "balise balisa eurobalise group grupa bg right nominal prawy linked powiązana powiazana linking"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"%rdId%\" placeholders=\"1\" rdKind=\"baliseGroup\" rdId=\"BG1\" rdCount=\"2\" rdDirection=\"reverse\" rdFunction=\"fixed\" rdNotes=\"Linked balise group\" id=\"2\"&gt;&lt;mxCell style=\"text;html=1;align=center;verticalAlign=middle;fontSize=8;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"28\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B1\" rdGroupId=\"BG1\" rdPosition=\"1\" rdDirection=\"reverse\" id=\"3\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"16\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"balise\" rdId=\"B2\" rdGroupId=\"BG1\" rdPosition=\"2\" rdDirection=\"reverse\" id=\"4\"&gt;&lt;mxCell style=\"triangle;whiteSpace=wrap;html=1;direction=west;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"11\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;mxCell id=\"5\" value=\"\" style=\"endArrow=open;endSize=4;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;dashed=1;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"28\" y=\"25\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"0\" y=\"25\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 28,
+    "h": 26,
+    "title": "Linked Balise Group Left",
+    "tags": "balise balisa eurobalise group grupa bg left reverse lewy linked powiązana powiazana linking"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(nVLLcsIwDPwaX5kQT6B3mv5CzyIRjQfH9sgGWr4eBXnIg9JDb7trab2SrfQudhBQlYWDHpV+V2VZn8hb7wND1jsR14XQi9C3TCEGbJJoZyADe4tyEhP5I15Mm7KDcR2SScOprpXeNd457jXexYfATWAc1xTf0pSv+clsVQkP7NRjQppVjSN83oWP177r//nWU18GTzPsoTl+kT+5Vvgd0rCiFyOVv641r2yTl0xNNNccoSoWGZZXHjzhjBtr5TEeXS3EDlt2zmCyklwRYHi2AfX+jGP4aha+mrZY4yaF2z8qGYz+i2gMlgOwJJ9U1zc=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"80\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 80,
+    "h": 10,
+    "title": "Euroloop",
+    "tags": "euroloop loop infill pętla petla"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"RBC\" rdKind=\"rbc\" id=\"2\"&gt;&lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=10;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"40\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 40,
+    "h": 24,
+    "title": "RBC",
+    "tags": "rbc radio block centre center centrum"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"LEU\" rdKind=\"leu\" id=\"2\"&gt;&lt;mxCell style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"30\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 30,
+    "h": 16,
+    "title": "LEU",
+    "tags": "leu lineside electronic unit koder"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"axleCounter\" id=\"2\"&gt;&lt;mxCell style=\"shape=stencil(nZNNU8MgEIZ/DVcnAXXs0anx6MWDZ5quZqcEGMB+/HsXySQhbdrojXc/nl2WhYm1b6QFxgstW2DihXH+fFTRUJtvHcCRgUSTXCVP8pBL6S3UIdn20qHcREL0+ODMDg64DR0BdQMOQ/SKiol1bbSmXDTa9wZKkqgppjimpCLBTp26e0jaEqmF2OM4arjIx6/hdZ5b/o9b3eL2pFNGuMV9+yu3XMZ9H3PpcDbzjax3X47ee5s0KIXWw+wDXFyCfEWGalP4p3GQaVQqrUmfZWVcl3hqzX7UxuOFNroUhXo28Kylgb+wMJ8M/n6+9DT0aRyaU1fLqatr1Gs3osN04GRKn15UPw==);whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 12,
+    "title": "Axle Counter Head",
+    "tags": "axle counter head detection point licznik osi czujnik punkt detekcji"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"ACE\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"30\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 30,
+    "h": 16,
+    "title": "Axle Counter Evaluator",
+    "tags": "axle counter evaluator ace evaluation licznik osi ewaluator"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(jVJdD4IwDPw1ezXIIvEdNfFnFKgyhY5sw49/b6EEFEPC03rX9e7WTOnUl9CgiiOCGpU+qDg+k28rCFgw68BUfNysocAtLku5tE0EPgXuBYFvMA9CPcAZyCqUjg/O3vFpijAIGCrRmV5UH5VOc0vEs8aSHwkegt44eslQtNmJ3HuGG9aqMaAbeGGnN6U9cRJlLv7cMsjvV2dbKgQ30AXtqto+cEoQ//p/y1aGFi8O65oCTPoM5uYX6/Aby/LG8aVsydpsydpsM2Mu5tGYkh+kjx8=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"8\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 8,
+    "h": 16,
+    "title": "Insulated Rail Joint",
+    "tags": "insulated rail joint track circuit joint irj tc styk izolowany obwód torowy obwod"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"RIU\" style=\"shape=stencil(nZNBcoMwDEVP420G7IZmn9IDtIuuHVCKJiAzxkna21dUTIJpnHa6+/p8PWMJlNkOje1B6YxsB8o8Ka1fbI2OHaQ9ti2LI2Fgn1UjCf0g5Tku7dBDFcQ7WY9214I8GYJ3BzhjHSYCUgNeqKZUZls5Iu5FR8PF4CaLxJnsQ5oygX1O1ap4FKNnVAcBfBS7Xujt23hOg/N/gsvfwNlqHaHzv3Ff51wWP6azs9Xh3bsj1VL7ce6JOW1u7mraQ14sjlqS985DVPMnIdu8dPV23OqoOneC2VT1jfeYelqkdDKfJ2PmJh28i1zfSRZpJovr7RbXZrEcDlvyO5nyCw==);whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;verticalAlign=bottom;spacingBottom=1;fontSize=7;fontStyle=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"24\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 24,
+    "h": 24,
+    "title": "Radio Infill Unit",
+    "tags": "radio infill unit riu euroradio"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(pVRBcsIwDHxNjs3EdgrcKe2pl/ICE0TjwbE9dgrt7ytQhsQueDLTm1ZZrVaKkkKsQysdFLwysoNCvBScv23fnz4w08nQI8SopQeCEzwT5BVBGRw0PeVO0iu500BPQu/tEc5q3w8KyrTg1VVVbAqxbqwxWKusCbcEFkllkFN9U1FVPpPcD2FGyKFSBz34gUXZcYztNfFKuhj86bWTzfHT2y+zJ+zkxeYl6uwJxv5x92EJg65WZsJkVURdZZg5UQxGLwhSowfrYYppzbfyR3MsymXUlNcZf6IUGXIsvEq4bJERZomLmPwPx3nhaKfJwkBr5cJ0oEiojq6+jj6JyNBBaT3zXdy76Ltj8eT4M6tNNNnjvbLZ7dlyfn+WM5DbPwbpSWOKfkxi8ws=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"20\" height=\"32\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 20,
+    "h": 32,
+    "title": "GSM-R Mast",
+    "tags": "gsm-r gsmr mast bts radio antenna maszt"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"IXL\" style=\"shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=10;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"44\" height=\"28\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 44,
+    "h": 28,
+    "title": "Interlocking",
+    "tags": "interlocking ixl electronic interlocking nastawnia urządzenia srk"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"OC\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"30\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 30,
+    "h": 16,
+    "title": "Object Controller",
+    "tags": "object controller oc sterownik obiektowy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"train\" rdEtcsLevel=\"2\" id=\"2\"&gt;&lt;mxCell style=\"shape=stencil(rVTBcoMgEP0arhkVJe3Zmi/oTM9EsTJBcNAk7d93yTKJ2sLYTk/sWx5v9y0MhJZjxwdBskTzXhD6QrLs1XKpYYVkh5mUIbwiZAlCPg6injB34VbyoxK4M07WnMRVNpNXkLoTVk5ul1aElrXRGs5Ko8d7Ag5BYeAkH3jIl/n0aFcgHkCpF5OwC9aj/7db4hDWTVe6T9t0q7kuBN88HHl9erfmrBvEA3f2XdSbiwj5SueySuoZMWdbmWylmW2nFmFqjFkrM4r5OB5uAaxH0RorFlgqhY/kLhGaVr5fdEF3kYaLfMF9jox2H2ZGrG3teSGeh9vwF/V7ZszafzhzF1QbZSwo4XpTc+nSQd9NI1p+Vv4PIBlt24YlybxkaESUbXWe0z8yIzNaVd86pB+eLQTrxw0p/FVp9QU=);whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"60\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 16,
+    "title": "ETCS Train Right",
+    "tags": "train pociąg pociag etcs onboard obu evc right nominal prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"train\" rdEtcsLevel=\"2\" id=\"2\"&gt;&lt;mxCell style=\"shape=stencil(rVTBcoMgEP0arhkVJe3Zmi/oTM9EsTJBcNAk7d93yTKJ2sLYTk/sWx5v9y0MhJZjxwdBskTzXhD6QrLs1XKpYYVkh5mUIbwiZAlCPg6injB34VbyoxK4M07WnMRVNpNXkLoTVk5ul1aElrXRGs5Ko8d7Ag5BYeAkH3jIl/n0aFcgHkCpF5OwC9aj/7db4hDWTVe6T9t0q7kuBN88HHl9erfmrBvEA3f2XdSbiwj5SueySuoZMWdbmWylmW2nFmFqjFkrM4r5OB5uAaxH0RorFlgqhY/kLhGaVr5fdEF3kYaLfMF9jox2H2ZGrG3teSGeh9vwF/V7ZszafzhzF1QbZSwo4XpTc+nSQd9NI1p+Vv4PIBlt24YlybxkaESUbXWe0z8yIzNaVd86pB+eLQTrxw0p/FVp9QU=);whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;flipH=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"60\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 16,
+    "title": "ETCS Train Left",
+    "tags": "train pociąg pociag etcs onboard obu evc left reverse lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"MA\" style=\"endArrow=block;endFill=1;html=1;rounded=0;strokeColor=#00a651;strokeWidth=3;fontSize=8;labelBackgroundColor=none;verticalAlign=bottom;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"6\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"6\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 12,
+    "title": "MA Arrow Right",
+    "tags": "movement authority ma arrow zezwolenie na jazdę jazde right nominal prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"MA\" style=\"endArrow=block;endFill=1;html=1;rounded=0;strokeColor=#00a651;strokeWidth=3;fontSize=8;labelBackgroundColor=none;verticalAlign=bottom;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"100\" y=\"6\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"0\" y=\"6\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 12,
+    "title": "MA Arrow Left",
+    "tags": "movement authority ma arrow zezwolenie na jazdę jazde left reverse lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"EoA\" style=\"shape=line;direction=south;html=1;strokeColor=#e00000;strokeWidth=3;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"10\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 10,
+    "h": 24,
+    "title": "End of Authority",
+    "tags": "end of authority eoa koniec zezwolenia"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"DP\" style=\"shape=stencil(jVJbEoIwDDxNfx1o1Qv4uIAnCBClg6SdUl+3NxJGpD7Gv+w22d1kqsyqq8Gj0hlBi8qsldZroAMGpryzFJngspYnPRd4EZhrgdB5LKNwZwgWiiPKSxeDa/BiqzgoWKox2F7VbJRZlY6IZ62j7knwEPTO2VWGstlC5G6DryDPSi1Gzipdwo6L7HpiK7pcvHkVUDaH4E5UCfbwiPmoWnfG0X85cc9eZY+WvjYO1xoDjPoMUvO9C/iK5XTP8W/Z8g+X+ZgtTzonrYnm/6I/NCcLJ9twke7LlPxFs7kD);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e00000;strokeWidth=1;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 24,
+    "title": "Danger Point",
+    "tags": "danger point dp punkt niebezpieczny"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"SvL\" style=\"shape=stencil(jVJbjsIwDDxNfldtsiDtN48L7AlMarYWaVIlobC3XxdXtHQp4s8ztmfGUZTZpBpaVLrw0KAyW6X197nF2FHCimkXLGQKnnlGtUzoT4EXgaUWCKlFm4XrIBIcHEon5RhOeKEqDwrka4yU+67ZKbOxwXveZaN0J3gJyPNMcZWl4mMlcr+DryBOSw1mjMOUsJN7bsRedLn453UAe/qJ4ewrwS30MfuqCR2O/usH92Iq68gvDg6vNQYY9RnMzY8h4hTL093X38tWLmcry4fJ1btXfL2QXFa0LiR8fvuRnJsdx8X8fKbkh5rdHw==);whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"12\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 12,
+    "h": 24,
+    "title": "Supervised Location",
+    "tags": "supervised location svl nadzorowane miejsce"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"OL\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#c05000;strokeWidth=2;fontSize=8;labelBackgroundColor=none;verticalAlign=bottom;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"14\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"14\" as=\"targetPoint\"/&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"0\" y=\"4\"/&gt;&lt;mxPoint x=\"60\" y=\"4\"/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 14,
+    "title": "Overlap",
+    "tags": "overlap ol bracket zakres ochronny"
+  }
+]</mxlibrary>

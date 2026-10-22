@@ -12,7 +12,8 @@ import type { TabManager } from '../ui/tabs';
 import type { RightPanelView } from '../scenarios/scenarios-panel';
 import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { PaletteEntry } from '../ui/drawio-palette/contracts';
-import { KINDS, kindForPaletteEntry, kindForStyle } from './catalogue';
+import { KINDS, isErtmsLibraryEntry, kindForPaletteEntry, kindForStyle } from './catalogue';
+import { renumberInsertedObjects } from './insert-ids';
 import { applyPresetToNewCells, setRailwayData } from './object-data';
 import { createRailwayDataPanel } from './data-panel';
 import type { RailwayDataPanel } from './data-panel';
@@ -80,9 +81,16 @@ export function downloadBlob(blob: Blob, fileName: string): void {
 
 /**
  * Palette hook (`prepareInsert`): ERTMS library entries that are railway objects get their kind,
- * preset values and a free generated ID, as part of the insert edit. Only single-cell entries.
+ * preset values and a free generated ID, as part of the insert edit (only single-cell entries).
+ * Entries of other libraries carry their data in the cells (the railway libraries,
+ * src/ui/railway-libraries.ts, or user libraries): objects without an ID or with a taken one get
+ * the next free ID and references between the inserted objects follow (insert-ids.ts).
  */
 export function prepareRailwayInsert(graph: Graph, cells: Cell[], entry: PaletteEntry): void {
+  if (!isErtmsLibraryEntry(entry)) {
+    renumberInsertedObjects(graph.getDataModel(), cells);
+    return;
+  }
   const preset = kindForPaletteEntry(entry);
   if (!preset || cells.length !== 1) return;
   applyPresetToNewCells(graph.getDataModel(), cells, preset);
