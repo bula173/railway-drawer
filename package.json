@@ -23,8 +23,10 @@
     "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/extract-palettes.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "1.1.0",
     "@azure/msal-browser": "5.24.0",
     "@maxgraph/core": "^0.10.0",
+    "@modelcontextprotocol/server": "2.3.1",
     "dejavu-fonts-ttf": "2.37.3",
     "jspdf": "4.2.1",
     "roughjs": "4.6.6",
@@ -32,11 +34,13 @@
     "yaml": "2.9.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261022.1",
     "@eslint/js": "^9.39.5",
     "@playwright/test": "^1.61.1",
     "@testing-library/dom": "^10.4.1",
     "@types/node": "^20.19.43",
     "@types/pngjs": "^6.0.5",
+    "@types/ws": "8.18.2",
     "@vitest/coverage-v8": "^4.1.10",
     "ajv": "8.20.0",
     "eslint": "^9.39.5",
@@ -48,6 +52,7 @@
     "typescript-eslint": "^8.71.2",
     "vite": "~7.3.3",
     "vitest": "^4.1.10",
-    "wrangler": "^4.151.0"
+    "wrangler": "^4.151.0",
+    "ws": "8.22.0"
   }
 }
