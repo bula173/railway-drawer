@@ -19,7 +19,7 @@ import type { GraphCommandService } from '../services/graph-command-service';
 import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 import type { GroupingController } from './grouping';
 import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
-import { applyShortcutHints, setMenuItemLabel } from './shortcut-keys';
+import { ACTION_SHORTCUTS, applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel } from './shortcut-keys';
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
 import type { StateMenuEntry } from '../railway/state-menu';
 
@@ -305,6 +305,16 @@ export class ContextMenuController {
         text.className = 'rd-menu-label';
         text.textContent = o.label;
         item.append(check, this.stateSwatch(o.visual, entry.dimension === 'aspect'), text);
+        // Alt+key of the common states (src/railway/state-shortcuts.ts)
+        const spec = ACTION_SHORTCUTS[`railwayState:${o.command}`];
+        if (spec) {
+          const kbd = document.createElement('kbd');
+          kbd.className = 'rd-kbd';
+          kbd.setAttribute('aria-hidden', 'true');
+          kbd.textContent = formatShortcut(spec);
+          item.append(kbd);
+          item.setAttribute('aria-keyshortcuts', ariaKeyShortcut(spec));
+        }
         list.append(item);
       }
       sub.append(label, caret, list);

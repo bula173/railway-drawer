@@ -196,6 +196,25 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   await page.keyboard.press('ControlOrMeta+z');
   expect([await attr(page, 'tc1', 'rdState'), await attr(page, 'tc3', 'rdState')]).toEqual(['', '']);
 
+  // keyboard: Alt+O / Alt+F on the selection, Alt+V / Alt+N on points (matched by event.code)
+  await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('tc1')]);");
+  await page.keyboard.press('Alt+KeyO');
+  expect(await attr(page, 'tc1', 'rdState')).toBe('occupied');
+  await page.keyboard.press('Alt+KeyF');
+  expect(await attr(page, 'tc1', 'rdState')).toBe('free');
+  await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('w1')]);");
+  await page.keyboard.press('Alt+KeyN');
+  expect(await attr(page, 'w1', 'rdPosition')).toBe('normal');
+  await page.keyboard.press('Alt+KeyV');
+  expect(await attr(page, 'w1', 'rdPosition')).toBe('reverse');
+  // the context menu shows the hints
+  await rightClick(page, 75, 100);
+  await page.locator('#context-menu .rd-ctx-sub[data-state-submenu="state"]').hover();
+  await expect(page.locator('#context-menu [data-state-cmd="state:occupied"] kbd.rd-kbd')).toHaveText(/O$/);
+  await page.keyboard.press('Escape');
+  await page.locator('#graph-container').click({ position: { x: 5, y: 5 } });
+  await expect(page.locator('#context-menu')).toBeHidden();
+
   // Data panel: the state select of the selected section
   await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('tc3')]);");
   await page.locator('[data-right-panel="data"]').click();

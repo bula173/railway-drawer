@@ -13,6 +13,8 @@ import type { RailwayNotifier } from './install-railway-data';
 import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
 import { installPointsFade } from './points-fade';
+import { stateShortcutCommand } from './state-shortcuts';
+import { shouldIgnoreGraphShortcut } from '../ui/delete';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { STATE_SCHEME, scaledStrokeWidth } from './states';
@@ -246,8 +248,23 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     }
   };
 
+  // Alt+F/O/R/N/V/1-4 on the selection (state-shortcuts.ts; event.code: Alt types characters on
+  // macOS). Bubble phase after main-editor's dispatcher; the scenario view swallows Alt keys before.
+  const onKey = (e: KeyboardEvent): void => {
+    const command = stateShortcutCommand(e);
+    const graph = getGraph();
+    if (!command || !graph || e.defaultPrevented || shouldIgnoreGraphShortcut(e, graph)) return;
+    if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu, [role="dialog"]')) return;
+    // only for the canvas (panels use their own keys)
+    const focus = document.activeElement;
+    if (focus && focus !== document.body && !graph.container.contains(focus)) return;
+    e.preventDefault();
+    if (!e.repeat) run(command);
+  };
+
   window.addEventListener(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
+  document.addEventListener('keydown', onKey);
   window.addEventListener('tab-changed', syncFades);
   window.addEventListener('tab-closed', syncFades);
   syncLegend();
@@ -259,6 +276,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     destroy() {
       window.removeEventListener(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
+      document.removeEventListener('keydown', onKey);
       window.removeEventListener('tab-changed', syncFades);
       window.removeEventListener('tab-closed', syncFades);
       for (const off of fades.values()) off();

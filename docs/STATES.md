@@ -113,6 +113,12 @@ train's base line, else tracks.
   localStorage `rd.railway.stateLegend`).
 - Data panel: "State" / "Aspect" selects for objects with states; the points' Position field applies
   its look too.
+- Keyboard (selected objects; `src/railway/state-shortcuts.ts`, dispatched by install-railway-states.ts):
+  **Alt+F** free, **Alt+O** occupied, **Alt+R** reserved, **Alt+N** / **Alt+V** points normal / reverse,
+  **Alt+1..4** aspect stop / proceed / caution / shunt. Matched by `event.code` (Alt types characters
+  on macOS: ⌥O = "ø"); no Ctrl/Cmd/Shift, so no clash with the app's bindings (only Alt+Shift+A uses
+  Alt); only while the focus is on the canvas (not in fields or panels). Shown in Railway > Object
+  State, the context menu's state submenus and Help > Keyboard Shortcuts.
 - Scenarios: a step stores the drawing, so states are part of the step; "Show changes" lists
   `TC3: free → occupied`, `S1: aspect stop → proceed`, `W1: position normal → reverse` (the colour
   keys and lamp parts are folded into that line).
