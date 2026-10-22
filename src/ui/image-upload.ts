@@ -75,7 +75,7 @@ export class ImageUploadController {
       margin-bottom: 16px;
       transition: background 0.2s;
     `;
-    uploadArea.textContent = '📁 Drop image here or click to select';
+    uploadArea.textContent = 'Drop image here or click to select';
     uploadArea.style.cursor = 'pointer';
 
     const fileInput = document.createElement('input');

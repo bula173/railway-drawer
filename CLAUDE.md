@@ -44,7 +44,7 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes). No
+railway-shapes, backlog-ui). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -209,6 +209,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   toggle opens one), left tab strip (one row, » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable
   and reopened from Extras, a wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
   `revealMenuItem`, `openLeftTab` (row or » menu), `leftTabLabels`.
+- `tests/e2e/backlog-ui.spec.ts` (any port, real mouse / keyboard input): Align left / Distribute vertically on a
+  rubber-band selection with a locked cell (locked one stays, one Ctrl+Z step each, Ctrl+Y); left tabs: no button in a
+  button, PlantUML's "Close PlantUML tab" reached by Tab + Enter, Delete on the focused tab closes it (the selected shape
+  stays), with a 180 px panel the » menu's "Close PlantUML" item (keyboard); 390 px: start card "Insert ERTMS symbols"
+  opens the left panel for the session (`rd-panel-open-narrow`, stored state unchanged, hidden again after a reload);
+  File > Open of a draw.io file with `grid="0" gridSize="20"` -> grid off (View > Grid / toolbar / `.rd-grid-on`), a new
+  tab has its own grid, switching back, Download .drawio writes grid/gridSize back, toolbar toggle -> `grid="1"`, kept
+  over a reload; palette click next to a selection: below when the east side is taken, Shift east, Ctrl/Cmd north,
+  Ctrl/Cmd+Shift west, one undo each; tab label rename renames the matching project (title, export name), Save As
+  relabels a tab named like the project, a label of its own stays (also over a reload).
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -232,9 +242,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Rarely used features are separate chunks loaded with `import()` on first use: the shape designer
   (`ui/shape-designer.ts`, opened from Extras > Design Custom Shapes… = `open-shape-designer` / `edit-custom-shape`), the
   route tables dialog (`railway/route-tables-dialog.ts`), the XLSX writer (`railway/xlsx.ts`), scenario PDF/slides
-  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON and railML import/export
-  (`railml/railml-ui.ts` with export/import/structure). Keep new heavy,
-  user-triggered UI lazy the same way.
+  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON, railML import/export
+  (`railml/railml-ui.ts` with export/import/structure) and the local PlantUML sequence renderer
+  (`services/plantuml-sequence-svg.ts`, imported by `scenarios/step-uml.ts` on the first rendering). Keep new heavy,
+  user-triggered UI lazy the same way. Build chunks (vite.config.ts `manualChunks`): `maxgraph` (@maxgraph/core,
+  ~542 kB), `drawio-shapes` (`src/drawio-shapes/js`, ~228 kB, self-contained: only maxGraph imports, so no chunk cycle;
+  preloaded in parallel with `main-editor`, ~700 kB, was ~941 kB); `chunkSizeWarningLimit` 800 (reason in the config).
 - Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
   the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
   `src/types`, the color picker/palette controllers etc. were removed in the cleanup.
@@ -367,14 +380,22 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Left tab strip (`src/ui/left-panel-tabs.ts`): one row; tabs that do not fit (the active one always stays) get
   `.rd-tab-overflow` and are listed in the "»" menu (`.left-panel-tab-more` -> `.left-panel-overflow-menu` role=menu,
   `.left-panel-overflow-item[data-tab]`, arrows/Esc), relaid on resize / switch / close. Every tab button has `data-tab`.
-  PlantUML and ERTMS are closeable (×); reopened by Extras > PlantUML Editor / View > ERTMS Tab.
+  Each tab is a `.left-panel-tab-btn[data-tab]` wrapper (no button in a button) with its `button.left-panel-tab-label`
+  (label in a span); PlantUML and ERTMS also get a sibling `button.tab-close-btn` ("Close <tab> tab", Tab-reachable),
+  Delete on the focused tab closes it (main-editor's dispatcher ignores Delete/Backspace on `.left-panel-tabbar`), and
+  the » menu lists `.left-panel-overflow-close[data-tab]` "Close <tab>" after such a tab (Delete on its item too);
+  reopened by Extras > PlantUML Editor / View > ERTMS Tab.
 - Toolbar (`index.html` `#toolbar-container` role=toolbar, chrome by `src/ui/toolbar.ts` `installToolbar`, once): groups
   (role=group) Zoom | Edit (Undo, Redo, Delete) | Insert (rectangle, ellipse, diamond, line, connect two selected, image as
   custom shape) | Arrange (Grid toggle = View > Grid, format painter, Align / distribute dropdown `#btn-align` ->
   `#align-menu` with AlignmentController's `#btn-align-*` / `#btn-distribute-*`) | Railway (Route tool, Run checks, km
   ruler mirroring the menu item via `data-mirror-action`) | View (panels, fullscreen). Buttons carry `data-icon`
   (`TOOLBAR_ICONS`, inline 24x24 stroke SVG, no emoji), `data-label` (-> aria-label) and optional `data-shortcut` (an
-  `ACTION_SHORTCUTS` key -> tooltip "Undo (Ctrl+Z)"); toggles use aria-pressed. Actions stay bound by id in the per-tab
+  `ACTION_SHORTCUTS` key -> tooltip "Undo (Ctrl+Z)"); toggles use aria-pressed. The same icon set serves the rest of the
+  chrome (`applyInlineIcons` for `[data-rd-icon]`, `setInlineIcon`): top-bar logo (train) and Share, Properties text
+  alignment, layer eye/lock, shape designer, remote file browser; no emoji anywhere in the chrome. Align / distribute
+  (AlignmentController): cloned geometries via `model.setGeometry` in one batchUpdate (one undo step), locked cells
+  skipped (also as reference). Actions stay bound by id in the per-tab
   controllers (InteractiveUIController, ZoomController, ...). Removed: pan ‹ ›, the green "+" rectangle, the toolbar
   shape-designer button (Extras), the single Distribute button.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
@@ -431,7 +452,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   connectable (its points show, an edge end dropped in a gap connects). `installRailwaySplitRules`: no edge split when a
   railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
   edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
-  grid (gridSize 10, `gridEnabled` = View > Grid; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
+  grid (gridSize 10, `gridEnabled` = View > Grid; per tab: a file's `grid` / `gridSize` on `<mxGraphModel>` are applied on
+  load and written back on save, `grid-toggle.ts` `applyGridSettings` / `syncGridUi` on tab switch and load; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
   more), Alt held during the drag = no grid and no track snap (Alt or Shift pressed before a press on the empty
   background = rubber band; a plain drag there pans, src/ui/pan.ts), no guides, drag start tolerance 4 px. Context menu
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
@@ -491,15 +513,20 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
   unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
   of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry
-  -> 80 px east, vertically centred, moved down while taken, connected by an edge (draw.io dropAndConnect EAST; draw.io
-  needs Alt+Click, here Alt+Click skips it); else the view centre, cascading right/down to a free spot. One model update
-  (one undo), new cell selected, no container drop.
+  -> 80 px beside it, centred on that side, moved along the side while taken (down for east/west, right for
+  south/north), connected by an edge (draw.io dropAndConnect). Side = draw.io itemClicked's modifiers without its Alt
+  (draw.io connects only on Alt+Click; here Alt+Click skips it): plain click east, or south when a shape already lies
+  in the band east of the selection (`hasEastNeighbour`), Shift east, Ctrl/Cmd north, Ctrl/Cmd+Shift west (also Enter /
+  Space on a tile; `clickDirection`, `placeBeside`). Else the view centre, cascading right/down to a free spot. One
+  model update (one undo), new cell selected, no container drop. Not ported: draw.io's Shift+Click shape replace.
 - Start card (`src/ui/start-card.ts`, main-editor.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
   Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
   Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
   Automated browsers (`navigator.webdriver`) do not get it unless `rd.startCard.force` = '1' (e2e clicks the canvas centre).
 - Narrow screens (`src/ui/narrow-screen.ts`): < 900 px -> `body.rd-narrow` (fallback CSS hides both side panels and
-  `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`).
+  `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`). Start card actions that need the left
+  panel (Insert ERTMS symbols, Open template…, Railway Script…) call `ensurePanelShown('left')` (side-panels.ts): opened
+  for the session there (`.rd-panel-open-narrow`), stored state untouched.
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
@@ -517,7 +544,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `<diagram name>`). Top-bar `.document-title` shows the active tab's (`TabManager.switchTab`; a background tab's
   `setProjectName` does not touch it). Rename (`ProjectNameEditor(tabManager)`) -> `tabManager.renameActiveProject`:
   the active tab's project, and its tab label too when the label equals the old project name (tabs opened from
-  links/remote files are named after it); cached at once. Cache: `tabs[].projectName` per tab (top-level
+  links/remote files are named after it); cached at once. File > Save As… goes through it too. Mirror rule: renaming a
+  tab label (double-click, `editTabName`) that equals the tab's project name renames the project as well. Cache: `tabs[].projectName` per tab (top-level
   `projectName` = active tab's; caches of earlier versions without it give it to the active tab).
 - Image export: File > Export > PNG Image…/SVG Image… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
   on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io

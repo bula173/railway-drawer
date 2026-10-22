@@ -53,13 +53,22 @@ export default defineConfig(({ mode }) => {
       sourcemap: true,
       rollupOptions: {
         output: {
-          manualChunks: {
-            // put the maxgraph code in a dedicated file. It lets know the size the produced bundle in an external application and if tree shaking works
-            maxgraph: ['@maxgraph/core'],
+          manualChunks(id: string) {
+            // maxGraph in its own file (its size shows whether tree shaking works)
+            if (id.includes('/node_modules/@maxgraph/core/')) return 'maxgraph'
+            // draw.io's JavaScript shapes (src/drawio-shapes/js, self-contained: only @maxgraph/core):
+            // a separate chunk the entry preloads in parallel with main-editor (modulepreload)
+            if (id.includes('/src/drawio-shapes/js/')) return 'drawio-shapes'
+            return undefined
           },
         },
       },
-      chunkSizeWarningLimit: 367, // @maxgraph/core
+      // The two big startup chunks cannot be split further cheaply: @maxgraph/core is one library
+      // (~542 kB minified, ~144 kB gzip, no deep imports in 0.10) and main-editor is the editor itself
+      // (~700 kB / ~219 kB gzip: every per-tab controller is built for the first tab; it was ~941 kB
+      // before draw.io's JS shapes got their own chunk). Rarely used features are lazy chunks
+      // (CLAUDE.md "Boot"). 800 kB leaves room for growth while a chunk beyond it still warns.
+      chunkSizeWarningLimit: 800,
   },
   test: {
     environment: 'jsdom',

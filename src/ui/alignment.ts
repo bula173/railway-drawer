@@ -3,6 +3,14 @@ import { Graph, type Cell, type Geometry } from '@maxgraph/core';
 /** A selected vertex; alignment assumes vertices carry a geometry */
 type VertexCell = Cell & { geometry: Geometry };
 
+type Axis = 'x' | 'y';
+
+/**
+ * Align / distribute (toolbar Align dropdown, `#btn-align-*` / `#btn-distribute-*`).
+ * Like draw.io's alignCells/distributeCells: every command is ONE model update (one undo step) that
+ * writes cloned geometries through `model.setGeometry`; locked cells (`locked=1` on the cell, its group or
+ * its layer, i.e. not movable) are skipped and do not count as a reference either.
+ */
 export class AlignmentController {
   private graph: Graph;
 
@@ -12,205 +20,115 @@ export class AlignmentController {
   }
 
   private setupAlignmentButtons(): void {
-    const alignLeftBtn = document.getElementById('btn-align-left');
-    const alignCenterBtn = document.getElementById('btn-align-center');
-    const alignRightBtn = document.getElementById('btn-align-right');
-    const alignTopBtn = document.getElementById('btn-align-top');
-    const alignMiddleBtn = document.getElementById('btn-align-middle');
-    const alignBottomBtn = document.getElementById('btn-align-bottom');
-    const distributeHBtn = document.getElementById('btn-distribute-h');
-    const distributeVBtn = document.getElementById('btn-distribute-v');
-
-    if (alignLeftBtn) {
-      alignLeftBtn.addEventListener('click', () => this.alignLeft());
-    }
-    if (alignCenterBtn) {
-      alignCenterBtn.addEventListener('click', () => this.alignCenter());
-    }
-    if (alignRightBtn) {
-      alignRightBtn.addEventListener('click', () => this.alignRight());
-    }
-    if (alignTopBtn) {
-      alignTopBtn.addEventListener('click', () => this.alignTop());
-    }
-    if (alignMiddleBtn) {
-      alignMiddleBtn.addEventListener('click', () => this.alignMiddle());
-    }
-    if (alignBottomBtn) {
-      alignBottomBtn.addEventListener('click', () => this.alignBottom());
-    }
-    if (distributeHBtn) {
-      distributeHBtn.addEventListener('click', () => this.distributeHorizontally());
-    }
-    if (distributeVBtn) {
-      distributeVBtn.addEventListener('click', () => this.distributeVertically());
+    const bindings: Array<[string, () => void]> = [
+      ['btn-align-left', () => this.alignLeft()],
+      ['btn-align-center', () => this.alignCenter()],
+      ['btn-align-right', () => this.alignRight()],
+      ['btn-align-top', () => this.alignTop()],
+      ['btn-align-middle', () => this.alignMiddle()],
+      ['btn-align-bottom', () => this.alignBottom()],
+      ['btn-distribute-h', () => this.distributeHorizontally()],
+      ['btn-distribute-v', () => this.distributeVertically()],
+    ];
+    for (const [id, run] of bindings) {
+      document.getElementById(id)?.addEventListener('click', run);
     }
   }
 
+  /** Selected, unlocked (movable) vertices with an absolute geometry */
   private getSelectedVertices(): VertexCell[] {
-    const selected = this.graph.getSelectionCells();
-    return selected.filter((cell: Cell): cell is VertexCell => cell.isVertex?.());
+    return this.graph
+      .getSelectionCells()
+      .filter(
+        (cell: Cell): cell is VertexCell =>
+          !!cell.isVertex?.() &&
+          !!cell.geometry &&
+          !cell.geometry.relative &&
+          this.graph.isCellMovable(cell)
+      );
+  }
+
+  /** Writes new x (or y) values as cloned geometries in one undoable model update */
+  private applyPositions(axis: Axis, moves: Array<[VertexCell, number]>): void {
+    const changed = moves.filter(([cell, value]) => cell.geometry[axis] !== value);
+    if (changed.length === 0) return;
+    const model = this.graph.getDataModel();
+    this.graph.batchUpdate(() => {
+      for (const [cell, value] of changed) {
+        const geo = cell.geometry.clone();
+        geo[axis] = value;
+        model.setGeometry(cell, geo);
+      }
+    });
+  }
+
+  private align(axis: Axis, where: 'start' | 'center' | 'end'): void {
+    const vertices = this.getSelectedVertices();
+    if (vertices.length < 2) return;
+    const size = (v: VertexCell) => (axis === 'x' ? v.geometry.width : v.geometry.height);
+    const min = Math.min(...vertices.map((v) => v.geometry[axis]));
+    const max = Math.max(...vertices.map((v) => v.geometry[axis] + size(v)));
+    this.applyPositions(
+      axis,
+      vertices.map((v) => {
+        if (where === 'start') return [v, min];
+        if (where === 'end') return [v, max - size(v)];
+        return [v, (min + max) / 2 - size(v) / 2];
+      })
+    );
+  }
+
+  private distribute(axis: Axis): void {
+    const vertices = this.getSelectedVertices();
+    if (vertices.length < 3) return;
+    const size = (v: VertexCell) => (axis === 'x' ? v.geometry.width : v.geometry.height);
+    const sorted = [...vertices].sort((a, b) => a.geometry[axis] - b.geometry[axis]);
+    const min = sorted[0].geometry[axis];
+    const max = Math.max(...sorted.map((v) => v.geometry[axis] + size(v)));
+    const total = sorted.reduce((sum, v) => sum + size(v), 0);
+    const spacing = (max - min - total) / (sorted.length - 1);
+    let current = min;
+    const moves: Array<[VertexCell, number]> = sorted.map((v) => {
+      const pos = current;
+      current += size(v) + spacing;
+      return [v, pos];
+    });
+    this.applyPositions(axis, moves);
   }
 
   alignLeft(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const minX = Math.min(...vertices.map((v: VertexCell) => v.geometry.x));
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.x = minX;
-        this.graph.refresh();
-      });
-    });
+    this.align('x', 'start');
   }
 
   alignCenter(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const minX = Math.min(...vertices.map((v: VertexCell) => v.geometry.x));
-    const maxX = Math.max(
-      ...vertices.map((v: VertexCell) => v.geometry.x + v.geometry.width)
-    );
-    const centerX = (minX + maxX) / 2;
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.x = centerX - vertex.geometry.width / 2;
-        this.graph.refresh();
-      });
-    });
+    this.align('x', 'center');
   }
 
   alignRight(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const maxX = Math.max(
-      ...vertices.map((v: VertexCell) => v.geometry.x + v.geometry.width)
-    );
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.x = maxX - vertex.geometry.width;
-        this.graph.refresh();
-      });
-    });
+    this.align('x', 'end');
   }
 
   alignTop(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const minY = Math.min(...vertices.map((v: VertexCell) => v.geometry.y));
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.y = minY;
-        this.graph.refresh();
-      });
-    });
+    this.align('y', 'start');
   }
 
   alignMiddle(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const minY = Math.min(...vertices.map((v: VertexCell) => v.geometry.y));
-    const maxY = Math.max(
-      ...vertices.map((v: VertexCell) => v.geometry.y + v.geometry.height)
-    );
-    const centerY = (minY + maxY) / 2;
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.y = centerY - vertex.geometry.height / 2;
-        this.graph.refresh();
-      });
-    });
+    this.align('y', 'center');
   }
 
   alignBottom(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 2) return;
-
-    const maxY = Math.max(
-      ...vertices.map((v: VertexCell) => v.geometry.y + v.geometry.height)
-    );
-
-    this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: VertexCell) => {
-        vertex.geometry.y = maxY - vertex.geometry.height;
-        this.graph.refresh();
-      });
-    });
+    this.align('y', 'end');
   }
 
   distributeHorizontally(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 3) return;
-
-    // Sort by x position
-    const sorted = [...vertices].sort(
-      (a: VertexCell, b: VertexCell) => a.geometry.x - b.geometry.x
-    );
-
-    const minX = sorted[0].geometry.x;
-    const maxX =
-      sorted[sorted.length - 1].geometry.x +
-      sorted[sorted.length - 1].geometry.width;
-
-    const totalWidth = sorted.reduce(
-      (sum: number, v: VertexCell) => sum + v.geometry.width,
-      0
-    );
-    const gaps = sorted.length - 1;
-    const spacing = (maxX - minX - totalWidth) / gaps;
-
-    this.graph.batchUpdate(() => {
-      let currentX = minX;
-      sorted.forEach((vertex: VertexCell) => {
-        vertex.geometry.x = currentX;
-        currentX += vertex.geometry.width + spacing;
-        this.graph.refresh();
-      });
-    });
+    this.distribute('x');
   }
 
   distributeVertically(): void {
-    const vertices = this.getSelectedVertices();
-    if (vertices.length < 3) return;
-
-    // Sort by y position
-    const sorted = [...vertices].sort(
-      (a: VertexCell, b: VertexCell) => a.geometry.y - b.geometry.y
-    );
-
-    const minY = sorted[0].geometry.y;
-    const maxY =
-      sorted[sorted.length - 1].geometry.y +
-      sorted[sorted.length - 1].geometry.height;
-
-    const totalHeight = sorted.reduce(
-      (sum: number, v: VertexCell) => sum + v.geometry.height,
-      0
-    );
-    const gaps = sorted.length - 1;
-    const spacing = (maxY - minY - totalHeight) / gaps;
-
-    this.graph.batchUpdate(() => {
-      let currentY = minY;
-      sorted.forEach((vertex: VertexCell) => {
-        vertex.geometry.y = currentY;
-        currentY += vertex.geometry.height + spacing;
-        this.graph.refresh();
-      });
-    });
+    this.distribute('y');
   }
 
   destroy(): void {
-    // Cleanup if needed
+    // Listeners are on shared DOM and recorded by the tab's listener capture
   }
 }

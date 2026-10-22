@@ -240,6 +240,11 @@
   cursor: pointer;
 }
 
+.rd-share-entry > svg {
+  align-self: center;
+  flex-shrink: 0;
+}
+
 .rd-share-entry:hover {
   background: var(--rd-hover);
 }
