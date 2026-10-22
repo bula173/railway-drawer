@@ -7,6 +7,10 @@ import { exportRailml } from '../export';
 import { checkRailmlStructure } from '../structure';
 import { RAILML_NS, RD_NS, isNcName } from '../xml';
 import { Layout, all, fixture, parse, specLayout } from './helpers';
+import { readCountryId, setCountryId } from '../../railway/project-settings';
+import { exportModelToDrawioXml, importDrawioXmlIntoModel } from '../../services/drawio-xml';
+import { GraphDataModel } from '@maxgraph/core';
+import { collectObjects } from '../../railway/validation';
 
 const DATE = '2026-01-01T00:00:00Z';
 
@@ -195,5 +199,39 @@ describe('railML export details', () => {
         '<associatedNetElement> (ll) @netElementRef="zz" refers to no element',
       ])
     );
+  });
+});
+
+describe('railML export: diagram default NID_C (rdCountryId)', () => {
+  const countryOf = (model: Parameters<typeof exportRailml>[0], id: string): string | null => {
+    const doc = parse(exportRailml(model, { date: DATE }).xml);
+    const eu = all(doc, 'isEurobaliseGroup').find((e) => (e.parentNode as Element).getAttribute('id') === id);
+    return eu?.getAttribute('countryID') ?? null;
+  };
+
+  it('a balise group without NID_C gets countryID from the diagram default (510 when not set)', () => {
+    const l = new Layout();
+    l.line('track', { id: 'T1', kmStart: '0', kmEnd: '1' }, [[0, 100], [600, 100]]);
+    l.obj('baliseGroup', { id: 'BG1', nidBg: '12', count: '1' }, 100, 100, 40, 24, 'rounded=1;dashed=1;fillColor=none;');
+    l.obj('baliseGroup', { id: 'BG2', nidC: '7', nidBg: '13', count: '1' }, 300, 100, 40, 24, 'rounded=1;dashed=1;fillColor=none;');
+    expect(countryOf(l.model, 'bg_BG1')).toBe('510');
+    expect(countryOf(l.model, 'bg_BG2')).toBe('7');
+    setCountryId(l.model, '353');
+    expect(countryOf(l.model, 'bg_BG1')).toBe('353');
+    const r = exportRailml(l.model, { date: DATE });
+    expect(r.issues.filter((i) => i.rule === 'required')).toEqual([]);
+    expect(checkRailmlStructure(parse(r.xml))).toEqual([]);
+    // the default is not written into the drawing
+    expect(collectObjects(l.model).find((o) => o.id === 'BG1')!.values.nidC).toBe('');
+  });
+
+  it('the setting is saved in the .drawio file (root cell attribute) and read back', () => {
+    const l = new Layout();
+    setCountryId(l.model, '353');
+    const xml = exportModelToDrawioXml(l.model);
+    expect(xml).toMatch(/<object [^>]*rdCountryId="353"[^>]*id="0"/);
+    const back = new GraphDataModel();
+    importDrawioXmlIntoModel(xml, back);
+    expect(readCountryId(back)).toBe('353');
   });
 });

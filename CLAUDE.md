@@ -688,8 +688,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
   handler in `main-editor.ts`). Templates/paste keep the data they carry.
+- **Diagram settings** (`project-settings.ts`): root cell (id 0) attribute `rdCountryId` = default NID_C of the
+  diagram (missing = `DEFAULT_COUNTRY_ID` 510, Poland; invalid = no default); balise groups without NID_C use it
+  (`applyProjectDefaults` in `validateModel` and the railML export -> `countryID`; the drawing is not changed). Edited
+  in the Data panel with nothing selected ("Diagram railway settings", `#rd-rw-country`, one undo step); a balise
+  group's empty NID_C field shows it as placeholder. Library templates do not pin NID_C (they follow the diagram).
 - **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
-  NID_C/NID_BG warning), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
+  NID_C/NID_BG warning; NID_C only when the diagram has no usable default), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
   (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its
   track, or from every track when it names none and tracks/sections/points exist), km-order (warning: majority
   direction of km along the track polyline, needs >= 3 objects), km-outside-track (warning).

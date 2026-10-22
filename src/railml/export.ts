@@ -17,6 +17,7 @@
  * - **rd extension** (`rd:railwayDrawer`, last child of the root, optional): data railML cannot hold.
  * - **Preserved** unknown railML of an imported file is written back (preserve.ts).
  */
+import { applyProjectDefaults, readCountryId } from '../railway/project-settings';
 import type { Cell, GraphDataModel } from '@maxgraph/core';
 import type { KindId } from '../railway/catalogue';
 import { ALL_DATA_ATTRS, KIND_ATTR, parseNumber, splitRefList } from '../railway/catalogue';
@@ -126,7 +127,8 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
   // Stable order (kind, then natural ID): independent of the z-order of the drawing
   const kindOrder = new Map(KIND_MAPPINGS.map((m, i) => [m.kind, i]));
   const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-  const objects = collectObjects(model).sort(
+  // balise groups without NID_C: the diagram's default country (project-settings.ts)
+  const objects = applyProjectDefaults(collectObjects(model), readCountryId(model)).sort(
     (a, b) => (kindOrder.get(a.kind.id) ?? 99) - (kindOrder.get(b.kind.id) ?? 99) || collator.compare(a.id, b.id) || collator.compare(a.cellId, b.cellId)
   );
   const issues = validateModel(model);
