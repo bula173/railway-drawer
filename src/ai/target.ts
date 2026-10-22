@@ -48,6 +48,8 @@ export interface AiTarget {
   scriptSession(): Promise<AiScriptSession>;
   undo(): void;
   canUndo(): boolean;
+  /** The edit undo() would undo next (turn undo checks it is the AI's own edit). */
+  nextUndoEdit?(): object | null;
   /** draw.io `<mxGraphModel>` of the tab. */
   modelXml(): string;
   /** The tab as a `.drawio` file (`<mxfile>`). */

@@ -113,6 +113,12 @@ export class GraphCommandService {
     return this.undoManager.canRedo();
   }
 
+  /** The edit the next undo() would undo (null: none). Lets the AI chat undo exactly its own edits. */
+  nextUndoEdit(): object | null {
+    const m = this.undoManager;
+    return m.indexOfNextAdd > 0 ? (m.history[m.indexOfNextAdd - 1] ?? null) : null;
+  }
+
   copy(): void {
     const cells = this.graph.getSelectionCells();
     if (cells.length > 0) {

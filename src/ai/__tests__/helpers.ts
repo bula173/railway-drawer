@@ -43,6 +43,7 @@ export function createTestTarget(text = ''): TestTarget {
     scriptSession: async () => fx.session,
     undo: () => fx.commands.undo(),
     canUndo: () => fx.commands.canUndo(),
+    nextUndoEdit: () => fx.commands.nextUndoEdit(),
     modelXml: () => exportModelToDrawioXml(fx.graph.getDataModel()),
     projectXml: () => `<mxfile><diagram name="Test diagram">${exportModelToDrawioXml(fx.graph.getDataModel())}</diagram></mxfile>`,
     catalog: { all: async () => catalogShapes() },
