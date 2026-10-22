@@ -72,7 +72,7 @@ describe('railway libraries', () => {
   it('has the three libraries with many entries', () => {
     expect(LIBS.map((l) => l.id)).toEqual(['etcs-extra', 'rail-pl', 'track-layout']);
     expect(LIBS[0].entries.length).toBeGreaterThanOrEqual(45);
-    expect(LIBS[1].entries.length).toBeGreaterThanOrEqual(55);
+    expect(LIBS[1].entries.length).toBeGreaterThanOrEqual(60);
     expect(LIBS[2].entries.length).toBeGreaterThanOrEqual(30);
   });
 

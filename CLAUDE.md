@@ -43,7 +43,8 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
+railway-shapes). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -109,7 +110,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   train, a Text and a default Rectangle from the palette plus a `mxgraph.basic.star` with `strokeColor=#000000`, an
   inline `stencil(...)` whose own XML paints `#000000`, a dark-grey HTML label and blue text, and requires every
   rendered SVG stroke >= 3:1 and every label colour >= 4.5:1 against the canvas (#121212); the stored cell styles stay
-  unchanged; selection border/handles and `feedbackColor('#0000FF')` >= 3:1. General + ERTMS palette thumbnails (strokes
+  unchanged; selection border/handles and `feedbackColor('#0000FF')` >= 3:1. General + ERTMS + the three railway library thumbnails (strokes
   and text against the thumb's background) and the first template thumbnails (strokes) likewise; the Track thumbnail has
   the canvas's stroke; View > Dark Mode back to light re-renders thumbnails light. File > Export As (.drawio, minus
   `modified`/`etag`/`agent`/`version`) and the PNG export (decoded pixels, SHA-256) are identical in light and dark.
@@ -180,7 +181,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import > Railway Script… (new
   tab named after `name`), File > Export > Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
-- `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search (zwrotnica, semafor,
+- `tests/e2e/railway-shapes.spec.ts` (any port): the railway library sections follow ERTMS (ERTMS/ETCS extra, Polish
+  signalling (PKP PLK), Track layout; captioned, > 30 tiles each); "Semafor 3-komorowy prawy" inserts as signal S1
+  (main, nominal, 3 aspects) and Railway > Object State > Proceed / Stop paints its 3 lamps; a second semafor gets S2;
+  search "tarcza" (Polish tarcze) and "marker board" (the 4 ETCS marker boards); "Turnout 1:9 Left (toe left)" inserts T1
+  + W1 (hand left) and File > Export railML 3.2… downloads a parseable file with one `switchIS`.
+- `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search in the ERTMS section (zwrotnica, semafor,
   balisa); palette click placement (cascade without overlap, next to the selected shape + edge, balise onto the selected
   track = its track reference, one undo each); scenario "▶ Present" + "⋯" menu (items, Esc, Duplicate, 24 px targets);
   start card (forced via `rd.startCard.force`: Esc, drop passes and dismisses, ERTMS action focuses the palette, "Don't
@@ -458,6 +464,30 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (catalogue label "Points"). ERTMS is the FIRST section of the Shapes tab (`palettes: [ertms, ...shapesTabPalettes()]`,
   `defaultExpanded: ['ertms', 'general']`, stored flags win) with captioned tiles (`captionPalettes: ['ertms']`,
   `.rd-dp-caption`); the optional ERTMS tab stays off by default (the Shapes tab already leads with ERTMS).
+- **Railway libraries** (`src/ui/railway-libraries.ts` `RAILWAY_LIBRARIES` / `railwayLibrarySources`, the only hook:
+  three entries in the Shapes-tab `palettes` after ERTMS + `captionPalettes`): "ERTMS/ETCS extra" (`etcs-extra`,
+  `public/libraries/ertms-extra.xml`: ETCS stop/location marker boards, level transition / RBC border / cab signalling /
+  neutral section / pantograph / track condition / release speed boards, fixed + switchable balises, balise groups (2, 3,
+  linked), Euroloop, RBC, LEU, axle counter head + evaluator, insulated rail joint, radio infill, GSM-R mast, IXL, OC,
+  ETCS trains, MA arrows, EoA, danger point, SvL, overlap), "Polish signalling (PKP PLK)" (`rail-pl`,
+  `railway-pl.xml`: semafory 2–5-komorowe, wjazdowy/wyjazdowy/drogowy/odstępowy, powtarzacz, tarcze To/Osp/Tz/Tm,
+  Sz, semafory kształtowe, wskaźniki W1/W4/W8/W9/W24/D1 (code boards), przejazdy kat. A–D, rogatka, sygnalizator,
+  kozioł, rozjazdy zwyczajne/łukowe, skrzyżowanie, Rkp/Rkpd, krzyżownica, styk, wykolejnice, perony, nastawnia,
+  posterunek, hektometr, km) and "Track layout" (`track-layout`, `track-layout.xml`: straight/vertical/diagonal
+  tracks, track section, track ends, turnouts 1:9/1:12 x hand x toe side, crossovers single/scissors, diamond, slips,
+  platforms, bridge, tunnel, level crossing, km post/hectometre/km ruler, gradient/speed boards, track number). Lazy
+  (fetched when a section opens or a search runs). **Generated**: `python3 -I scripts/railway-libraries/build_railway_libraries.py
+  public/libraries` (deterministic; never hand-edit the three files; the docstring has the conventions). Plain
+  draw.io styles and inline `stencil(...)` shapes (accents `fillColor2`), editable colours, connection points; tags EN +
+  PL per entry (`tags` key of the `<mxlibrary>` entries, ignored by draw.io). Typed entries store catalogue
+  attributes (`rdKind`, `rdSignalType`, `rdDirection` Right/prawy = nominal, `rdAspects` = lamps, `rdHand` physical
+  from the toe, `rdProtection`, `rdFunction`, ...); signals are groups with round filled lamp vertices (states);
+  turnouts/crossovers/slips are multi-cell sets (track edges + points legs, topology.ts). On insert
+  `prepareRailwayInsert` runs `renumberInsertedObjects` for every non-ERTMS entry (free IDs, `BG1`/`B1` references
+  follow); `kindForPaletteEntry` reads the first `rdKind` of a non-ERTMS entry's XML (click placement). **Licensing:
+  the symbols are original work of this repository (no proprietary symbol files copied); the Polish/ETCS pictograms
+  are conventional schematic depictions, not copies of PKP PLK / ERA drawings.** Tests:
+  `src/railway/__tests__/railway-libraries.test.ts`, `tests/e2e/railway-shapes.spec.ts`, dark-shapes thumbnails.
 - Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
   unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
   of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry

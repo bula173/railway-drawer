@@ -50,8 +50,9 @@ test.describe('UX batch 2b', () => {
     await expect(ertms.locator('.rd-dp-caption')).toHaveCount(18);
     await expect(ertms.locator('.rd-dp-item[title="Signal Right 4"] .rd-dp-caption')).toHaveText('Signal Right 4');
 
+    // the ERTMS section's hits (the railway libraries after it have more, see railway-shapes.spec.ts)
     const visibleTitles = () =>
-      page.locator(`${PALETTE} .rd-dp-category:not([hidden]) .rd-dp-item:not([hidden])`).evaluateAll((n) => n.map((e) => (e as HTMLElement).title));
+      page.locator(`${PALETTE} section[data-palette-id="ertms"]:not([hidden]) .rd-dp-item:not([hidden])`).evaluateAll((n) => n.map((e) => (e as HTMLElement).title));
     await page.locator(`${PALETTE} .rd-dp-search`).fill('zwrotnica');
     await expect.poll(visibleTitles).toEqual(['Point Left', 'Point Right']);
     await page.locator(`${PALETTE} .rd-dp-search`).fill('semafor');

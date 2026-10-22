@@ -266,7 +266,7 @@
     "tags": "axle counter evaluator ace evaluation licznik osi ewaluator"
   },
   {
-    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(jVJdD4IwDPw1ezXIIvEdNfFnFKgyhY5sw49/b6EEFEPC03rX9e7WTOnUl9CgiiOCGpU+qDg+k28rCFgw68BUfNysocAtLku5tE0EPgXuBYFvMA9CPcAZyCqUjg/O3vFpijAIGCrRmV5UH5VOc0vEs8aSHwkegt44eslQtNmJ3HuGG9aqMaAbeGGnN6U9cRJlLv7cMsjvV2dbKgQ30AXtqto+cEoQ//p/y1aGFi8O65oCTPoM5uYX6/Aby/LG8aVsydpsydpsM2Mu5tGYkh+kjx8=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"8\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"insulatedJoint\" id=\"2\"&gt;&lt;mxCell style=\"shape=stencil(jVJdD4IwDPw1ezXIIvEdNfFnFKgyhY5sw49/b6EEFEPC03rX9e7WTOnUl9CgiiOCGpU+qDg+k28rCFgw68BUfNysocAtLku5tE0EPgXuBYFvMA9CPcAZyCqUjg/O3vFpijAIGCrRmV5UH5VOc0vEs8aSHwkegt44eslQtNmJ3HuGG9aqMaAbeGGnN6U9cRJlLv7cMsjvV2dbKgQ30AXtqto+cEoQ//p/y1aGFi8O65oCTPoM5uYX6/Aby/LG8aVsydpsydpsM2Mu5tGYkh+kjx8=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"8\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 8,
     "h": 16,
     "title": "Insulated Rail Joint",

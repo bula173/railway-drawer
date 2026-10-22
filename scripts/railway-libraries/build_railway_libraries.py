@@ -594,7 +594,8 @@ def ertms_extra():
     out.append(single('Axle Counter Evaluator', 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;',
                       30, 16, 'axle counter evaluator ace evaluation licznik osi ewaluator', label='ACE'))
     out.append(single('Insulated Rail Joint', stencil_style(RAIL_JOINT, 'none'), 8, 16,
-                      'insulated rail joint track circuit joint irj tc styk izolowany obwód torowy obwod'))
+                      'insulated rail joint track circuit joint irj tc styk izolowany obwód torowy obwod',
+                      data={'rdKind': 'insulatedJoint'}))
     out.append(single('Radio Infill Unit', stencil_style(RADIO_INFILL, extra='verticalAlign=bottom;spacingBottom=1;fontSize=7;fontStyle=1;'),
                       24, 24, 'radio infill unit riu euroradio', label='RIU'))
     out.append(single('GSM-R Mast', stencil_style(GSMR_MAST, 'none'), 20, 32, 'gsm-r gsmr mast bts radio antenna maszt'))
@@ -705,6 +706,8 @@ def railway_pl():
     out.append(diamond('Skrzyżowanie torów', 0, 'skrzyżowanie torów torow diamond crossing'))
     out.append(diamond('Rozjazd krzyżowy pojedynczy', 1, 'rozjazd krzyżowy krzyzowy pojedynczy rkp single slip zwrotnica points'))
     out.append(diamond('Rozjazd krzyżowy podwójny', 2, 'rozjazd krzyżowy krzyzowy podwójny podwojny rkpd double slip zwrotnica points'))
+    out.append(single('Styk izolowany', stencil_style(RAIL_JOINT, 'none'), 8, 16,
+                      'styk izolowany insulated rail joint obwód torowy obwod tc', data={'rdKind': 'insulatedJoint'}))
     out.append(single('Krzyżownica', stencil_style(FROG, 'none'), 24, 12, 'krzyżownica krzyzownica frog crossing nose'))
     for side, flip in (('prawa', ''), ('lewa', 'flipH=1;')):
         out.append(single(f'Wykolejnica {side}', stencil_style(DERAILER, WHITE, BLACK, flip), 14, 10,
