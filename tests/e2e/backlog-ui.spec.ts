@@ -9,6 +9,8 @@ import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import { clickMenuItem } from './menu-helpers';
 
+const PALETTE = '#drawio-palette-container';
+
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
   return page.evaluate(async ({ body, arg }) => {
     const registry = await import('/src/services/service-registry.ts' as string);
@@ -135,5 +137,27 @@ test.describe('UI backlog', () => {
     await more.click();
     await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]')).toHaveCount(0);
     await page.keyboard.press('Escape');
+  });
+
+  test('narrow screen: start card "Insert ERTMS symbols" opens the left panel for the session', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('rd.startCard.force', '1'));
+    await fresh(page, { width: 390, height: 844 });
+    await page.evaluate(() => localStorage.setItem('rd.startCard.force', '1'));
+    await page.reload();
+    await expect(page.locator('body')).toHaveClass(/rd-narrow/);
+    const left = page.locator('#leftpanel-container');
+    await expect(left).toBeHidden();
+    const stored = await page.evaluate(() => localStorage.getItem('rd.sidePanels'));
+    await page.locator('.rd-start-card [data-start-action="ertms"]').click();
+    await expect(left).toBeVisible();
+    await expect(left).toHaveClass(/rd-panel-open-narrow/);
+    await expect(page.locator('#btn-toggle-left-panel')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator(`${PALETTE} section[data-palette-id="ertms"] .rd-dp-item`).first()).toBeVisible();
+    await expect(page.locator(`${PALETTE} section[data-palette-id="ertms"] .rd-dp-item`).first()).toBeFocused();
+    // session only: the stored panel state is unchanged, a reload hides it again
+    expect(await page.evaluate(() => localStorage.getItem('rd.sidePanels'))).toBe(stored);
+    await page.reload();
+    await expect(page.locator('body')).toHaveClass(/rd-narrow/);
+    await expect(left).toBeHidden();
   });
 });

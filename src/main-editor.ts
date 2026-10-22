@@ -26,7 +26,7 @@ import { TabManager } from './ui/tabs';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
-import { installSidePanels, togglePanel } from './ui/side-panels';
+import { ensurePanelShown, installSidePanels, togglePanel } from './ui/side-panels';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from './config/build-id';
 import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
@@ -607,6 +607,8 @@ installNarrowScreen();
  * Script… (its tab), F1 shortcuts. Rechecked on tab switches and new tabs.
  */
 const focusErtmsPalette = (): void => {
+  // the palette lives in the left panel: hidden on narrow screens (body.rd-narrow) or collapsed
+  ensurePanelShown('left');
   leftPanelTabs.switchTab('shapes');
   shapesPaletteView.setPaletteVisible('ertms', true);
   shapesPaletteView.setExpanded('ertms', true);
@@ -625,10 +627,16 @@ const startCard = createStartCard({
   },
   onAction: (action) => {
     if (action === 'ertms') focusErtmsPalette();
-    else if (action === 'template') leftPanelTabs.switchTab('templates');
+    else if (action === 'template') {
+      ensurePanelShown('left');
+      leftPanelTabs.switchTab('templates');
+    }
     else if (action === 'open') runMenuAction('open');
     else if (action === 'railml') runMenuAction('importRailml');
-    else if (action === 'script') leftPanelTabs.switchTab('railwayScript');
+    else if (action === 'script') {
+      ensurePanelShown('left');
+      leftPanelTabs.switchTab('railwayScript');
+    }
     else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
   },
 });
