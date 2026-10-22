@@ -581,6 +581,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   acknowledgement area (L2)", "On-sight movement authority (L1)", "PCA window and berth (L2)") were removed on the
   user's request; `REMOVED_ERTMS_SCENARIOS` keeps the original numbers in `originalName` (scenario 16 stays
   "ERTMS scenario 16"). Template ids `ertms-tpl-<library index>` follow the app file.
+- Signal labels in the app library are `S<n>` (the user's `KBS<n>` labels were renamed in the app copy only); drawings
+  opened from files keep whatever labels they have (no migration of user files).
 - **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
   `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
   native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes

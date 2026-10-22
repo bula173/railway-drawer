@@ -46,6 +46,11 @@ describe('ERTMS library classification', () => {
     expect(templates.map((t) => t.originalName)).toEqual(
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 19, 20, 21, 22].map((n) => `ERTMS scenario ${n}`));
     expect(originalScenarioNumber(13)).toBe(16);
+    // signals are named S<n> (the user's "KBS<n>" labels were renamed in the app library only)
+    const labels = templates.flatMap((t) => modelLabels(t.xml));
+    expect(labels.filter((l) => /kbs/i.test(l))).toEqual([]);
+    expect(LIBRARY_TEXT).not.toMatch(/(?<![A-Za-z0-9+/])kbs\d/i);
+    expect(labels).toContain('S4');
     const names = templates.map((t) => t.name);
     for (const removed of ['On-sight acknowledgement area (L2)', 'On-sight movement authority (L1)', 'PCA window and berth (L2)']) {
       expect(names).not.toContain(removed);
