@@ -7,6 +7,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
   return page.evaluate(async ({ body, arg }) => {
@@ -84,5 +85,55 @@ test.describe('UI backlog', () => {
     await expect.poll(async () => [(await geo(page, a)).x, (await geo(page, b)).x, (await geo(page, c)).x]).toEqual([100, 260, 180]);
     await page.keyboard.press('ControlOrMeta+y');
     await expect.poll(async () => (await geo(page, b)).x).toBe(100);
+  });
+  test('left tabs: close buttons are real buttons (Tab + Enter), Delete on the tab, Close in the » menu', async ({ page }) => {
+    await fresh(page);
+    await page.evaluate(() => localStorage.setItem('rd.sidePanels', JSON.stringify({ left: { width: 520 } })));
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 60_000 });
+    // valid HTML: no button inside a button anywhere in the tab strip
+    expect(await page.locator('.left-panel-tabbar button button').count()).toBe(0);
+
+    const plantuml = page.locator('.left-panel-tab-btn[data-tab="plantuml"]');
+    const label = plantuml.locator('.left-panel-tab-label');
+    const close = plantuml.getByRole('button', { name: 'Close PlantUML tab' });
+    await expect(close).toBeVisible();
+    // keyboard: the tab, Tab -> its close button, Enter closes
+    await label.focus();
+    await page.keyboard.press('Tab');
+    await expect(close).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(plantuml).toBeHidden();
+    await expect(page.locator('.left-panel-tab-btn[data-tab="shapes"] .left-panel-tab-label')).toBeFocused();
+
+    // Delete on the focused tab closes it and keeps the selected shape
+    await clickMenuItem(page, 'extras', 'plantumlEditor');
+    await expect(plantuml).toBeVisible();
+    const [rect] = await addRects(page, [[100, 100, 80, 40]]);
+    await inGraph(page, 'graph.setSelectionCell(graph.getDataModel().getCell(arg));', rect);
+    await label.focus();
+    await page.keyboard.press('Delete');
+    await expect(plantuml).toBeHidden();
+    expect(await inGraph<boolean>(page, 'return !!graph.getDataModel().getCell(arg);', rect)).toBe(true);
+
+    // narrow left panel: PlantUML in the » menu has a "Close PlantUML" item (keyboard)
+    await page.evaluate(() => localStorage.setItem('rd.sidePanels', JSON.stringify({ left: { width: 180 } })));
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 60_000 });
+    await clickMenuItem(page, 'extras', 'plantumlEditor');
+    await page.locator('.left-panel-tab-btn[data-tab="shapes"] .left-panel-tab-label').click();
+    await expect(plantuml).toBeHidden();
+    const more = page.locator('.left-panel-tab-more');
+    await more.focus();
+    await page.keyboard.press('ArrowDown');
+    const closeItem = page.locator('.left-panel-overflow-close[data-tab="plantuml"]');
+    await expect(closeItem).toHaveText('Close PlantUML');
+    for (let i = 0; i < 12 && !(await closeItem.evaluate((el) => el === document.activeElement)); i++) await page.keyboard.press('ArrowDown');
+    await expect(closeItem).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('.left-panel-overflow-menu')).toBeHidden();
+    await more.click();
+    await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]')).toHaveCount(0);
+    await page.keyboard.press('Escape');
   });
 });

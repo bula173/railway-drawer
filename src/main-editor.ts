@@ -252,6 +252,10 @@ document.addEventListener('keydown', (e) => {
   if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu')) {
     return;
   }
+  // Delete / Backspace on a left-panel tab closes that tab (left-panel-tabs.ts), never the diagram selection
+  if ((e.key === 'Delete' || e.key === 'Backspace') && e.target instanceof Element && e.target.closest('.left-panel-tabbar')) {
+    return;
+  }
 
   // Side panels like draw.io: Ctrl/Cmd+Shift+K = Shapes, Ctrl/Cmd+Shift+P = Format (src/ui/side-panels.ts)
   if (mod && e.shiftKey && !e.altKey && (key === 'k' || key === 'p')) {
