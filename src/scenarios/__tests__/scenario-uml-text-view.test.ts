@@ -114,8 +114,8 @@ describe('scenario steps with UML and text', () => {
       uml: '@startuml\nTrain -> RBC : MA Request\nRBC --> Train : MA\n@enduml',
       text: '## Żądanie MA\n- pociąg pyta\n- RBC odpowiada',
     });
-    // live previews
-    expect(document.querySelector('.rd-scn-uml-preview svg')).not.toBeNull();
+    // live previews (the sequence renderer is loaded on first use)
+    await vi.waitFor(() => expect(document.querySelector('.rd-scn-uml-preview svg')).not.toBeNull());
     expect(document.querySelector('.rd-scn-uml-preview')?.textContent).toContain('MA Request');
     expect(document.querySelector('.rd-scn-md-preview h2')?.textContent).toBe('Żądanie MA');
     expect(document.querySelectorAll('.rd-scn-md-preview li')).toHaveLength(2);

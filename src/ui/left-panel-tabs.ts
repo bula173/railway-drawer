@@ -3,11 +3,18 @@ export type CloseableTab = 'plantuml' | 'ertms';
 
 const CLOSEABLE: readonly CloseableTab[] = ['plantuml', 'ertms'];
 
+function isCloseable(tabId: LeftPanelTab): tabId is CloseableTab {
+  return (CLOSEABLE as readonly LeftPanelTab[]).includes(tabId);
+}
+
 /**
  * The left panel's tab strip: one row; the tabs that do not fit go into the "»" overflow menu
  * (`.left-panel-tab-more` -> `.left-panel-overflow-menu` with `.left-panel-overflow-item[data-tab]`).
- * The active tab always stays in the row. PlantUML and ERTMS are closeable (× in the tab; reopened
- * from Extras > PlantUML Editor / View > ERTMS Tab).
+ * The active tab always stays in the row. Each tab is a `.left-panel-tab-btn[data-tab]` wrapper (no
+ * button nesting) holding the tab's `button.left-panel-tab-label`; PlantUML and ERTMS also get a sibling
+ * `button.tab-close-btn` ("Close <tab> tab", focusable; Delete on the tab closes it too) and in the »
+ * menu a `.left-panel-overflow-close[data-tab]` item. Reopened from Extras > PlantUML Editor / View >
+ * ERTMS Tab.
  */
 export class LeftPanelTabs {
   private container: HTMLElement;
@@ -88,37 +95,63 @@ export class LeftPanelTabs {
   }
 
   private createTabButton(tabId: LeftPanelTab, label: string): HTMLElement {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'left-panel-tab-btn';
-    btn.dataset.tab = tabId;
+    // Wrapper (layout, active / overflow state, title) with the tab button and, for closeable tabs,
+    // a separate close button: a button inside a button is invalid HTML and not keyboard reachable
+    const tab = document.createElement('div');
+    tab.className = 'left-panel-tab-btn';
+    tab.dataset.tab = tabId;
     if (tabId === this.activeTab) {
-      btn.classList.add('active');
+      tab.classList.add('active');
     }
 
-    // Create tab label container
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'left-panel-tab-label';
+    btn.dataset.tab = tabId;
     const labelSpan = document.createElement('span');
     labelSpan.textContent = label;
     btn.appendChild(labelSpan);
+    tab.appendChild(btn);
     this.tabLabels.set(tabId, label);
 
-    // Close button for closeable tabs
-    if (CLOSEABLE.includes(tabId as CloseableTab)) {
-      const closeBtn = document.createElement('span');
+    if (isCloseable(tabId)) {
+      const closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
       closeBtn.className = 'tab-close-btn';
       closeBtn.textContent = '×';
       closeBtn.title = `Close the ${label} tab`;
+      closeBtn.setAttribute('aria-label', `Close ${label} tab`);
       closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        this.closeTab(tabId as CloseableTab);
+        this.closeTabFromUi(tabId);
       });
-      btn.appendChild(closeBtn);
+      tab.appendChild(closeBtn);
+      btn.setAttribute('aria-keyshortcuts', 'Delete');
+      btn.addEventListener('keydown', (e) => {
+        if (e.key !== 'Delete') return;
+        // the tab, not the diagram selection (the global dispatcher must not delete cells)
+        e.preventDefault();
+        e.stopPropagation();
+        this.closeTabFromUi(tabId);
+      });
     }
 
-    btn.addEventListener('click', () => this.switchTab(tabId));
+    // a click anywhere on the tab (except its close button) switches to it
+    tab.addEventListener('click', () => this.switchTab(tabId));
 
-    this.tabButtons.set(tabId, btn);
-    return btn;
+    this.tabButtons.set(tabId, tab);
+    return tab;
+  }
+
+  /** Closes a tab from its × / Delete / the » menu and keeps the keyboard focus in the strip. */
+  private closeTabFromUi(tabId: CloseableTab): void {
+    this.closeTab(tabId);
+    this.focusTab(this.activeTab);
+  }
+
+  /** Focuses the tab's own button (in the row). */
+  focusTab(tabId: LeftPanelTab): void {
+    this.tabButtons.get(tabId)?.querySelector<HTMLElement>('.left-panel-tab-label')?.focus();
   }
 
   /** One row: hides the tabs that do not fit (the active one always stays) behind "»". */
@@ -154,21 +187,39 @@ export class LeftPanelTabs {
 
   private renderOverflowMenu(): void {
     this.overflowMenu.replaceChildren(
-      ...this.overflowTabs.map((id) => {
+      ...this.overflowTabs.flatMap((id) => {
+        const label = this.tabLabels.get(id) ?? id;
         const item = document.createElement('button');
         item.type = 'button';
         item.className = 'left-panel-overflow-item';
         item.dataset.tab = id;
         item.setAttribute('role', 'menuitem');
         item.tabIndex = -1;
-        item.textContent = this.tabLabels.get(id) ?? id;
+        item.textContent = label;
         item.addEventListener('click', (e) => {
           e.stopPropagation();
           this.closeOverflowMenu(false);
           this.switchTab(id);
-          this.tabButtons.get(id)?.focus();
+          this.focusTab(id);
         });
-        return item;
+        if (!isCloseable(id)) return [item];
+        // closeable tabs: a "Close <tab>" item right after it (Delete on the tab item does the same)
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'left-panel-overflow-close';
+        close.dataset.tab = id;
+        close.setAttribute('role', 'menuitem');
+        close.tabIndex = -1;
+        close.textContent = `Close ${label}`;
+        close.setAttribute('aria-label', `Close ${label} tab`);
+        close.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.closeOverflowMenu(false);
+          this.closeTab(id);
+          if (this.moreButton.hidden) this.focusTab(this.activeTab);
+          else this.moreButton.focus();
+        });
+        return [item, close];
       })
     );
   }
@@ -201,7 +252,17 @@ export class LeftPanelTabs {
     else if (e.key === 'ArrowUp') focus(i - 1);
     else if (e.key === 'Home') focus(0);
     else if (e.key === 'End') focus(items.length - 1);
-    else if (e.key === 'Escape') {
+    else if (e.key === 'Delete') {
+      const id = (document.activeElement as HTMLElement | null)?.dataset.tab as LeftPanelTab | undefined;
+      if (id && isCloseable(id)) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.closeOverflowMenu(false);
+        this.closeTab(id);
+        if (this.moreButton.hidden) this.focusTab(this.activeTab);
+        else this.moreButton.focus();
+      }
+    } else if (e.key === 'Escape') {
       e.preventDefault();
       e.stopPropagation();
       this.closeOverflowMenu(true);

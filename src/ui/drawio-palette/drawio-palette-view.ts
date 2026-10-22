@@ -33,6 +33,18 @@ export interface LazyPaletteSource extends PaletteMeta {
 
 export type PaletteSource = PaletteDef | LazyPaletteSource;
 
+/** Modifier keys of a palette click / Enter (click-insert.ts maps them to draw.io's directions). */
+export interface PaletteClickModifiers {
+  alt: boolean;
+  shift: boolean;
+  /** Ctrl or Cmd */
+  mod: boolean;
+}
+
+function clickModifiers(evt: MouseEvent | KeyboardEvent): PaletteClickModifiers {
+  return { alt: evt.altKey, shift: evt.shiftKey, mod: evt.ctrlKey || evt.metaKey };
+}
+
 export interface DrawioPaletteViewOptions {
   container: HTMLElement;
   /** The graph insertions go to (the active tab's graph); null disables insertion. */
@@ -56,7 +68,7 @@ export interface DrawioPaletteViewOptions {
   clickPlacement?: (
     graph: Graph,
     entry: PaletteEntry,
-    alt: boolean
+    modifiers: PaletteClickModifiers
   ) => { at: { x: number; y: number }; connectFrom?: Cell } | null;
   /** Called after an insertion (e.g. to focus the graph). */
   onInsert?: (entry: PaletteEntry) => void;
@@ -330,14 +342,14 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   // ------------------------------------------------------------------ insertion
 
-  function doInsert(entry: PaletteEntry, at?: { x: number; y: number }, alt?: boolean): void {
+  function doInsert(entry: PaletteEntry, at?: { x: number; y: number }, mods?: PaletteClickModifiers): void {
     const graph = options.getGraph();
     if (!graph) return;
     try {
       const prepare = options.prepareInsert;
       const prep = prepare ? (cells: Cell[]) => prepare(graph, cells, entry) : undefined;
       // A click (no drop point): placement next to the selection / on a track / free spot
-      const placed = !at && alt !== undefined ? options.clickPlacement?.(graph, entry, alt) ?? null : null;
+      const placed = !at && mods !== undefined ? options.clickPlacement?.(graph, entry, mods) ?? null : null;
       let inserted: Cell[] = [];
       const model = graph.getDataModel();
       model.beginUpdate();
@@ -456,12 +468,12 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
     item.addEventListener('click', (evt) => {
       hidePreview();
-      doInsert(entry, undefined, evt.altKey);
+      doInsert(entry, undefined, clickModifiers(evt));
     });
     item.addEventListener('keydown', (evt) => {
       if (evt.key === 'Enter' || evt.key === ' ') {
         evt.preventDefault();
-        doInsert(entry, undefined, evt.altKey);
+        doInsert(entry, undefined, clickModifiers(evt));
       }
     });
     item.addEventListener('dragstart', (evt) => {

@@ -15,6 +15,7 @@ import type {
   StorageProvider,
 } from '../providers/types';
 import { button, copyText, el, openModal } from './modal';
+import { createToolbarIcon } from '../../ui/toolbar';
 
 export type BrowseResult =
   | { mode: 'open'; path: BrowseEntry[]; file: BrowseEntry }
@@ -222,8 +223,9 @@ export function browseRemote(provider: StorageProvider, opts: BrowseOptions): Pr
       for (const entry of entries) {
         const li = el('li');
         const item = button('', 'rd-share-entry');
-        const icon = entry.kind === 'file' ? '📄' : entry.kind === 'folder' ? '📁' : '🗂️';
-        item.append(el('span', undefined, icon), el('span', 'rd-share-entry-name', entry.name));
+        const icon = createToolbarIcon(entry.kind === 'file' ? 'file' : entry.kind === 'folder' ? 'folder' : 'folders', 16);
+        if (icon) item.append(icon);
+        item.append(el('span', 'rd-share-entry-name', entry.name));
         if (entry.detail) item.appendChild(el('span', 'rd-share-entry-detail', entry.detail));
         item.dataset.kind = entry.kind;
         if (entry.kind === 'file') {

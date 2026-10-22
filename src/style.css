@@ -45,14 +45,15 @@ body {
 }
 
 .logo {
-  font-size: 24px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--rd-hover);
+  color: var(--rd-text);
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .document-title {
@@ -226,6 +227,9 @@ body {
 }
 
 .share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 16px;
   background: var(--rd-accent);
   color: var(--rd-accent-text);
@@ -239,6 +243,12 @@ body {
 
 .share-btn:hover {
   background: var(--rd-accent-hover);
+}
+
+/* Inline chrome icons (toolbar.ts applyInlineIcons / setInlineIcon): currentColor, never emoji */
+.rd-icon {
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 /* Toolbar */
@@ -688,8 +698,11 @@ body.rd-col-resizing {
 }
 
 .left-panel-tab-btn {
+  /* wrapper: the tab's button + (PlantUML, ERTMS) its own close button (left-panel-tabs.ts) */
   flex: 1 0 auto;
-  padding: 7px 6px;
+  display: flex;
+  align-items: center;
+  padding: 0;
   white-space: nowrap;
   background: var(--rd-surface-3);
   border: none;
@@ -710,7 +723,34 @@ body.rd-col-resizing {
   display: none;
 }
 
-.left-panel-tab-btn:focus-visible,
+.left-panel-tab-label {
+  flex: 1 0 auto;
+  padding: 7px 6px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.left-panel-tab-btn .tab-close-btn {
+  align-self: stretch;
+  min-width: 24px;
+  margin-left: -4px;
+  padding: 0 6px;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.left-panel-tab-btn .tab-close-btn:hover {
+  background: var(--rd-hover);
+}
+
+.left-panel-tab-label:focus-visible,
+.left-panel-tab-btn .tab-close-btn:focus-visible,
+.left-panel-overflow-close:focus-visible,
 .left-panel-tab-more:focus-visible,
 .left-panel-overflow-item:focus-visible {
   outline: 2px solid var(--rd-focus);
@@ -768,6 +808,21 @@ body.rd-col-resizing {
   cursor: pointer;
 }
 
+.left-panel-overflow-close {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 12px 4px 24px;
+  border: 0;
+  background: transparent;
+  color: var(--rd-text-muted);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.left-panel-overflow-close:hover,
+.left-panel-overflow-close:focus,
 .left-panel-overflow-item:hover,
 .left-panel-overflow-item:focus {
   background: var(--rd-surface-3);

@@ -51,8 +51,8 @@ export class PlantUmlEditorController extends UIController {
 
     const html = `
       <div class="editor-toolbar" style="flex-shrink: 0;">
-        <button id="render-plantuml-btn" class="btn btn-primary" title="Render diagram to canvas" style="flex: 1;">🎨 Render</button>
-        <button id="plantuml-example-btn" class="btn" title="Insert example" style="flex: 1;">📝 Example</button>
+        <button id="render-plantuml-btn" class="btn btn-primary" title="Render diagram to canvas" style="flex: 1;">Render</button>
+        <button id="plantuml-example-btn" class="btn" title="Insert example" style="flex: 1;">Example</button>
         <button id="clear-plantuml-btn" class="btn" title="Clear" style="flex: 1;">Clear</button>
       </div>
       <div id="plantuml-error" class="error-display" style="display: none;"></div>
@@ -225,7 +225,7 @@ Bob --> Alice: Hi
       // Render diagram inside the group using the appropriate renderer
       this.renderDiagramWithAppropriateRenderer(diagramData, groupToRender);
 
-      this.showSuccess(`✅ ${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
+      this.showSuccess(`${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
     } catch (error) {
       this.showError(`Error parsing PlantUML: ${error instanceof Error ? error.message : String(error)}`);
       console.error('[PlantUML]', error);
@@ -467,7 +467,7 @@ api --> db
    */
   private showError(message: string): void {
     if (this.errorDisplay) {
-      this.errorDisplay.textContent = `❌ ${message}`;
+      this.errorDisplay.textContent = message;
       this.errorDisplay.style.display = 'block';
     }
   }

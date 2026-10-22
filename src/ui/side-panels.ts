@@ -113,6 +113,14 @@ export function setPanelShown(side: SidePanel, shown: boolean): void {
   window.dispatchEvent(new Event('resize'));
 }
 
+/**
+ * Shows the panel when it is hidden, e.g. before an action that needs it (start card "Insert ERTMS
+ * symbols" on a narrow screen): in the narrow layout only for the session (`rd-panel-open-narrow`).
+ */
+export function ensurePanelShown(side: SidePanel): void {
+  if (!isPanelShown(side)) setPanelShown(side, true);
+}
+
 export function togglePanel(side: SidePanel): void {
   setPanelShown(side, !isPanelShown(side));
 }

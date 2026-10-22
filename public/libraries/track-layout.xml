@@ -1,0 +1,247 @@
+<mxlibrary>[
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 1,
+    "title": "Straight Track",
+    "tags": "track tor straight prosty"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 1,
+    "title": "Straight Track Short",
+    "tags": "track tor straight short krótki krotki"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"0\" y=\"60\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 1,
+    "h": 60,
+    "title": "Vertical Track",
+    "tags": "track tor vertical pionowy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"40\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"40\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 40,
+    "h": 40,
+    "title": "Diagonal Track Up",
+    "tags": "track tor diagonal skośny skosny up"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"40\" y=\"40\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 40,
+    "h": 40,
+    "title": "Diagonal Track Down",
+    "tags": "track tor diagonal skośny skosny down"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"trackSection\" rdSectionType=\"tc\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#0050aa;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 1,
+    "title": "Track Section",
+    "tags": "track tor track section tvd odcinek izolowany obwód torowy obwod tc"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(jVLRDoIwDPyavRpgkegz4heY+DygygJsZJugf2+hBAaGxLe7W9vrNWM8saVogUWBEg0wfmFRdDMir1ABVSBDUJIenoj2Ew2ICttC7kjrhJEiq4FerDO6gl4WbpogVQlGuuGVp4wnuVYKe6VWdhawSUiFNcGbmiabz8QOR+ItTmrAgVlVLSnuo3CluQh+vDJM+TT6hSlH3ophzQE1uoM9/7M/tpbKK4z3CxEs45FsvR/agM/pcnO7f0i8/3JQ7pvsBVjvFf0bIIx3E2zWQ7ANgBJ9LJ5+AQ==);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"10\" height=\"18\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 10,
+    "h": 18,
+    "title": "Track End Right",
+    "tags": "track end end of track koniec toru buffer"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(jVLRDoIwDPyavRpgkegz4heY+DygygJsZJugf2+hBAaGxLe7W9vrNWM8saVogUWBEg0wfmFRdDMir1ABVSBDUJIenoj2Ew2ICttC7kjrhJEiq4FerDO6gl4WbpogVQlGuuGVp4wnuVYKe6VWdhawSUiFNcGbmiabz8QOR+ItTmrAgVlVLSnuo3CluQh+vDJM+TT6hSlH3ophzQE1uoM9/7M/tpbKK4z3CxEs45FsvR/agM/pcnO7f0i8/3JQ7pvsBVjvFf0bIIx3E2zWQ7ANgBJ9LJ5+AQ==);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;flipH=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"10\" height=\"18\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 10,
+    "h": 18,
+    "title": "Track End Left",
+    "tags": "track end end of track koniec toru buffer"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 20,
+    "title": "Turnout 1:9 Left (toe left)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 left lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 20,
+    "title": "Turnout 1:9 Right (toe left)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 right prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"80\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 20,
+    "title": "Turnout 1:9 Right (toe right)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 right prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 20,
+    "title": "Turnout 1:9 Left (toe right)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 left lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 20,
+    "title": "Turnout 1:12 Left (toe left)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 left lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 20,
+    "title": "Turnout 1:12 Right (toe left)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 right prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 20,
+    "title": "Turnout 1:12 Right (toe right)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 right prawy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 20,
+    "title": "Turnout 1:12 Left (toe right)",
+    "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 left lewy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"30\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"4\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"30\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"15\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"5\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"90\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"15\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 30,
+    "title": "Single Crossover Down",
+    "tags": "crossover rozjazd przejście przejscie zwrotnica points switch track tor single pojedynczy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"30\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"4\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"30\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"15\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"5\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"90\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"60\" y=\"15\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 30,
+    "title": "Single Crossover Up",
+    "tags": "crossover rozjazd przejście przejscie zwrotnica points switch track tor single pojedynczy"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"30\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"4\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"30\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"50\" y=\"10\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"5\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"90\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"50\" y=\"10\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"6\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"30\" y=\"30\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"70\" y=\"10\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"7\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"90\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"70\" y=\"10\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 30,
+    "title": "Scissors Crossover",
+    "tags": "crossover rozjazd przejście przejscie zwrotnica points switch track tor scissors double nożycowy nozycowy podwójny"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"40\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 40,
+    "title": "Diamond Crossing",
+    "tags": "crossing skrzyżowanie skrzyzowanie diamond track tor diamond crossing"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"40\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"4\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;curved=1;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"65\" y=\"10\" as=\"targetPoint\"/&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"45\" y=\"18\"/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 40,
+    "title": "Single Slip",
+    "tags": "crossing skrzyżowanie skrzyzowanie diamond track tor single slip rkp points switch"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"track\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"40\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"4\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;curved=1;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"65\" y=\"10\" as=\"targetPoint\"/&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"45\" y=\"18\"/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"5\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;curved=1;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"80\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"35\" y=\"30\" as=\"targetPoint\"/&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"55\" y=\"22\"/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 40,
+    "title": "Double Slip",
+    "tags": "crossing skrzyżowanie skrzyzowanie diamond track tor double slip rkpd points switch"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(nZVNc4MgEIZ/jXc+DCHn1J5z65kojUwiOkiT9t93LU6iduK87W132X2AeUbM5L6vTWczwbxpbCZfMiEOFxPf29BQ0VYnWhMU1WlNp+yWMi5Yyk3f2TKm4tUEZ46Xca6PoT3bm6viSHC+tsHFYVUWmdyXrfc061rf3ws0ZJynHvaZhsZtvmZZR5zGRhtm1cc93n4Kr8+p/D/UYkql4Nf5j6Y8n0L74auUd2a4+hA17dWu32nEXpyfNPK1VgoeG1Cy3J1E2mmefNzHnx2OC/R0etaop41z5B8urGCmRpkiR5lSoUwpUGaeo8ycocwNrCiHHSnY0QZ2pGBHCna0hR1tYUcadqRhRzv8M4IdcQZL2ikcClviDNbEOeyJ8xVRs0du8YJRsHzjqJT+arL4Bg==);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"120\" height=\"8\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 8,
+    "title": "Platform Edge",
+    "tags": "platform edge krawędź peronu krawedz peron"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"Platform 1\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#d9d9d9;strokeColor=#000000;strokeWidth=1;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"120\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 120,
+    "h": 16,
+    "title": "Platform",
+    "tags": "platform peron"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(nVNbDoIwEDxNfw22yAFEvILfBVZpgJa0FfX2Li6Rh4EQ/3aGmdkOTZmIXSEbYDzQsgYmTozzo1X5DSmObEEUDwk+CEYBQekayDxxrbRKplXvc96aEh4q932C0gVY5buvImEizozW6FVGuy+BJqk0aoInmfo1rx7tDoQbTKrBg52ohgKXD3Fezt3/l5uMc3H46ZDKrLxZc9c54UZ29bupNi0s9hrHVkqPhNFEGC4LD+FWZbSyHIfhyAjmfa7GwhjTLX/t2+quHm6qDDYXXv2Ja/snlWd9cJg3RooejEje);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"60\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 24,
+    "title": "Bridge",
+    "tags": "bridge most wiadukt viaduct"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=stencil(nVRRboMwDD0Nv1MglAt09AST9p2CW6JCgpK03W4/M0eFMBFl/Pk59nt+DiHjR9uJEbKCKTFAxt+zovi4KwU9BpjtKFWUBJ8EK0ZQ2BEaR7mHMFKce6AT64y+wVO2zjNI1YGRbjrldcaPjUaRxkmt7CuBTUIqrGFf1ORlvj16OxAekWkAByaomg18/iZO27z5Pt56yYvBHw9n0dyuRt9VS3gUk/0pGvQDZv0q1F/S9lJtFvpbmAeY+RGsxS/awBLTlbzat2Y7lKnDrSoj0yVKs31rCXRjjGFldNNsm7NiOxdUJnPGBl1vnaVuvRW2gxY7fbB4Caf/fK48eTYeMRyayNP95ql+MVg/AUzR747XPw==);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"60\" height=\"24\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 60,
+    "h": 24,
+    "title": "Tunnel",
+    "tags": "tunnel tunel"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"levelCrossing\" rdProtection=\"fullBarriers\" id=\"2\"&gt;&lt;mxCell style=\"shape=stencil(nZQ9c4MwDIZ/DWN7YNNc115Kpl6XDp0dogRfjM3ZlLT/vgKRYNPycZnQK8uPZFso4ltXiAoiFmtRQsRfI8beoAGFntwa56Q+ofmCbvwUFJDGJC8kWS+FqyCvydcIK8VeAa242pozXOSh7glSF2Bl3a7yLOLb3GiNe6XR7ubATUJqjIm/aVP8+ES4n16TqpBUQg028A7Hee8cu/XcZB33Y5EbVnvNssT9XOIm93Ezn4vGnzvfi/x8suZLH0hXon2u1ipNA0P+9J9X6LFK6snANB4VMPBRjJMfjQVfUwvdtk/VlmzWFjeKnKlulNpvZvwHhqZmPmGqwLApNtP1zUXOIXm6mhmGzp35KJXKjTK2HQvdtwNcowYIKCUr51/zc3jNweRIw7Hig9qM09QHFh6E3YVFY9xm6KKByLNf);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"20\" height=\"40\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 20,
+    "h": 40,
+    "title": "Level Crossing",
+    "tags": "level crossing przejazd road barriers rogatki"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"12.0\" style=\"shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"8\" height=\"16\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 8,
+    "h": 16,
+    "title": "km Post",
+    "tags": "km post kilometre marker kilometraż kilometraz chainage"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"12.3\" style=\"shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=1;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"8\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 8,
+    "h": 10,
+    "title": "Hectometre Mark",
+    "tags": "hectometre hektometr mark chainage km"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"1 km\" style=\"shape=stencil(pZTRVoMwDIafprceSsc2rie+gtcdi9IDtJzSbfr2BoOsoOxEvcuf/vma0BOEOvSV7kCkidUtCPUo0rRuUfpzAx4FhhWlZULy+iVHrfsOykDJi/ZGHxugkz54V8PVnMKIMLYCb8JwqgqhDqWzFmuNs/2UwCJtLHqSNyoar3kf1UNOukNSCwGbjF23KZ4/E0/rXPk3bhFzMfg2w1GX9at3Z3si3elh/CFq3QXW5spjbGNsZJy+9E9WDG4XoFje/uI8xJreZCr/d3Nzo4yNc6L8xbwzZ7bO5LeZspmKzVRs5obN3LCZGZuZsd9oy2Zu2X3u2Mwdm7lnM/dsZs5m5mzm3c29v+RydckXG4zBcscxRX91VXwA);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"100\" height=\"10\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 100,
+    "h": 10,
+    "title": "km Ruler",
+    "tags": "km ruler scale chainage kilometraż kilometraz linijka"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"5 ‰\" style=\"shape=stencil(fVJbEsIgDDwNv06F0dHv+jiAJ0jbaJlaYCitentTw9iHU7/ILsluEhAqbUpwKGRioEahDkLKs4dCowlEZhZ8QWfriKez5Ay5ZfiIMGEIjcM8MNeB15DdkW+a4G2FD12EqKBNiV6H/lYdhUpzawzVamuaL0FFoD9tPLkoWW1Y7sV4zciRUo0Bfcxidpjn8iFOrEvBj1cGeXXztjUFYwd9m31U2w4H/3UysY9biMJ3bZZT97MWBgcCc/ur9TjGvLxv+XiX9ATDTuXYZGkGOd2g+jPCbpK6WRxh1h8F8wmI4m+mjm8=);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;verticalLabelPosition=top;verticalAlign=bottom;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"20\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 20,
+    "h": 26,
+    "title": "Gradient Board Up",
+    "tags": "gradient board up incline pochylenie wzniesienie wskaźnik"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"5 ‰\" style=\"shape=stencil(fVJbcoMwDDyNfzPEnnTSb5L2AD2BwErwJMiMcaG5fUXk4ZUhX2hX0q4ko0zeVtCg0hlBjcqclNbfAaxDikwWHoLlr/U9cYajSmr0h8A+wUwgtA2WUbgOgoPijpJpY/A37J2NScFRhcHFIWvOyuSlJ+Je56kdCW4C9xzkT5qy3UHkHoL3ghpWqjFiSFXCThv9PIkv0eXgxauA8nYN/pes4AaGMYeo9h1O/vtsYZ+ukITvjrZLP1cjTA4M1vYXH3CO5Xhj+/yW/ATTTfXcZGsHvZjr8GaD4/LWZnOF1XwcrDdgSn40c/4H);whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;verticalLabelPosition=top;verticalAlign=bottom;labelBackgroundColor=none;fontSize=8;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"20\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 20,
+    "h": 26,
+    "title": "Gradient Board Down",
+    "tags": "gradient board down decline pochylenie spadek wskaźnik"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"80\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=8;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Speed Board",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy speed board limit prędkość predkosc"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" parent=\"1\" connectable=\"0\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"21\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"1\" y=\"14\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;\" edge=\"1\" parent=\"2\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"1\" y=\"7\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"5\" y=\"7\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"5\" value=\"80\" style=\"shape=card;size=5;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=8;fontStyle=1;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry x=\"5\" y=\"1\" width=\"16\" height=\"12\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 21,
+    "h": 14,
+    "title": "Speed Warning Board",
+    "tags": "board tablica tarcza wskaźnik wskaznik right nominal prawy speed warning announcement board zapowiedź prędkość"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=9;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"0\" y=\"0\" width=\"20\" height=\"14\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 20,
+    "h": 14,
+    "title": "Track Number",
+    "tags": "track number label numer toru"
+  }
+]</mxlibrary>

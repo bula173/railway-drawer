@@ -4,7 +4,8 @@
  * button keyboard pattern.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
-import { TOOLBAR_ICONS, createToolbarIcon, decorateToolbarButtons, installToolbar } from '../../ui/toolbar';
+import { TOOLBAR_ICONS, applyInlineIcons, createToolbarIcon, decorateToolbarButtons, installToolbar, setInlineIcon } from '../../ui/toolbar';
+import indexHtml from '../../../index.html?raw';
 import { shortcutForAction } from '../../ui/shortcut-keys';
 
 describe('toolbar icons', () => {
@@ -68,5 +69,29 @@ describe('Align / distribute dropdown', () => {
     document.querySelector('[data-action="railwayRoute:toggleKmRuler"]')!.setAttribute('aria-checked', 'true');
     await Promise.resolve();
     expect(button.getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('chrome without emoji', () => {
+  it('index.html has no emoji (logo, Share, Properties text alignment use inline SVG icons)', () => {
+    expect(indexHtml).not.toMatch(/\p{Extended_Pictographic}|[\u2B05-\u2B07]|\uFE0F/u);
+    for (const name of ['train', 'share', 'textLeft', 'textCenter', 'textRight', 'valignTop', 'valignMiddle', 'valignBottom']) {
+      expect(indexHtml, name).toContain(`data-rd-icon="${name}"`);
+    }
+  });
+
+  it('applyInlineIcons prepends one icon, names icon-only buttons by their title; setInlineIcon swaps it', () => {
+    document.body.innerHTML = '<div id="r"><button data-rd-icon="share" title="Share it">Share</button><button data-rd-icon="eye" title="Hide layer"></button></div>';
+    const root = document.getElementById('r')!;
+    applyInlineIcons(root);
+    applyInlineIcons(root);
+    const [share, eye] = Array.from(root.querySelectorAll('button'));
+    expect(share.querySelectorAll('svg.rd-icon')).toHaveLength(1);
+    expect(share.getAttribute('aria-label')).toBeNull();
+    expect(share.title).toBe('Share it');
+    expect(eye.getAttribute('aria-label')).toBe('Hide layer');
+    setInlineIcon(eye, 'eyeOff');
+    expect(eye.querySelectorAll('svg.rd-icon')).toHaveLength(1);
+    expect(eye.dataset.rdIcon).toBe('eyeOff');
   });
 });
