@@ -7,10 +7,17 @@
  *    while one track / track section is selected: on that track, at the visible point of its line
  *    nearest the view centre. The insert's snap (snap.ts, same undoable edit) then puts it on the
  *    line (signals beside it) and sets its track reference and km.
- * 2. One unlocked vertex selected (and a vertex entry): next to it, `DEFAULT_EDGE_LENGTH` to the
- *    east and vertically centred (draw.io dropAndConnect, DIRECTION_EAST), moved down while the
- *    spot is taken, and connected to it by an edge (graph default style). draw.io does this on
- *    Alt+Click; here a plain click does it and Alt+Click skips it (view centre instead).
+ * 2. One unlocked vertex selected (and a vertex entry): next to it, `DEFAULT_EDGE_LENGTH` away and
+ *    centred on that side (draw.io dropAndConnect), moved along the side while the spot is taken
+ *    (down for east / west, right for south / north), and connected to it by an edge (graph default
+ *    style). Directions use draw.io's itemClicked modifiers without its Alt (draw.io only connects on
+ *    Alt+Click; here a plain click connects and Alt+Click skips it, view centre instead):
+ *      - plain click: east, or south (below) when the east side already has a neighbour (a shape
+ *        in the band `DEFAULT_EDGE_LENGTH` + the new width to the right of the selected shape);
+ *      - Shift+click: east (draw.io Alt+Shift);
+ *      - Ctrl/Cmd+click: north (draw.io Alt+Ctrl/Cmd);
+ *      - Ctrl/Cmd+Shift+click: west (draw.io Alt+Ctrl/Cmd+Shift).
+ *    The same applies to Enter / Space on a palette tile.
  * 3. Otherwise the view centre; when the shape would overlap an existing one there, the next free
  *    spot of a cascade (right, then the next row), so successive clicks do not stack shapes.
  *
@@ -18,7 +25,7 @@
  * the new cell.
  */
 import type { Cell, Graph } from '@maxgraph/core';
-import type { PaletteEntry } from './drawio-palette';
+import type { PaletteClickModifiers, PaletteEntry } from './drawio-palette';
 import { getViewCenter } from './drawio-palette/entry-cells';
 import { kindForPaletteEntry } from '../railway/catalogue';
 import type { Box, Pt } from '../railway/geometry';
@@ -94,6 +101,46 @@ export function nearestVisiblePoint(p: Pt, line: Pt[], rect: Box): Pt {
   return best ?? nearest;
 }
 
+export type InsertDirection = 'east' | 'south' | 'north' | 'west';
+
+/** draw.io's itemClicked direction for the modifiers (without Alt); null = automatic (east, else south). */
+export function clickDirection(mods: Partial<PaletteClickModifiers>): InsertDirection | null {
+  if (mods.mod) return mods.shift ? 'west' : 'north';
+  return mods.shift ? 'east' : null;
+}
+
+/** True when a shape lies in the band east of `b` where an insert of `w` x `h` would go. */
+export function hasEastNeighbour(b: Box, w: number, h: number, taken: Box[]): boolean {
+  const height = Math.max(b.height, h);
+  const band = { x: b.x + b.width, y: b.y + b.height / 2 - height / 2, width: DEFAULT_EDGE_LENGTH + w, height };
+  return taken.some((t) => intersects(t, band));
+}
+
+/** First free spot from `start`, stepping by (`dx`, `dy`). */
+function freeSpotAlong(start: Pt, w: number, h: number, taken: Box[], dx: number, dy: number, max = 10): Pt {
+  for (let i = 0; i < max; i++) {
+    const c = { x: start.x + dx * i, y: start.y + dy * i };
+    if (!taken.some((t) => intersects(t, boxAt(c, w, h)))) return c;
+  }
+  return start;
+}
+
+/** Centre of a `w` x `h` shape placed `DEFAULT_EDGE_LENGTH` from `b` in `direction`, free of `taken`. */
+export function placeBeside(b: Box, direction: InsertDirection, w: number, h: number, taken: Box[]): Pt {
+  const cx = b.x + b.width / 2;
+  const cy = b.y + b.height / 2;
+  switch (direction) {
+    case 'east':
+      return freeSpotAlong({ x: b.x + b.width + DEFAULT_EDGE_LENGTH + w / 2, y: cy }, w, h, taken, 0, h + CASCADE_GAP);
+    case 'west':
+      return freeSpotAlong({ x: b.x - DEFAULT_EDGE_LENGTH - w / 2, y: cy }, w, h, taken, 0, h + CASCADE_GAP);
+    case 'south':
+      return freeSpotAlong({ x: cx, y: b.y + b.height + DEFAULT_EDGE_LENGTH + h / 2 }, w, h, taken, w + CASCADE_GAP, 0);
+    case 'north':
+      return freeSpotAlong({ x: cx, y: b.y - DEFAULT_EDGE_LENGTH - h / 2 }, w, h, taken, w + CASCADE_GAP, 0);
+  }
+}
+
 /** First cascade spot from `start` whose box is free (right in steps, then the next row). */
 export function freeSpot(start: Pt, w: number, h: number, taken: Box[], perRow = 4, maxRows = 6): Pt {
   for (let i = 0; i < perRow * maxRows; i++) {
@@ -107,13 +154,21 @@ export function freeSpot(start: Pt, w: number, h: number, taken: Box[], perRow =
   return start;
 }
 
-/** The placement of a palette click (see the file comment); `alt` = Alt held (no connect). */
-export function clickInsertPlacement(graph: Graph, entry: PaletteEntry, alt = false): ClickPlacement {
+/**
+ * The placement of a palette click (see the file comment). `modifiers`: Alt = no connect (view
+ * centre), Shift / Ctrl/Cmd pick the side (`clickDirection`); a boolean is the old `alt` flag.
+ */
+export function clickInsertPlacement(
+  graph: Graph,
+  entry: PaletteEntry,
+  modifiers: Partial<PaletteClickModifiers> | boolean = {}
+): ClickPlacement {
+  const mods = typeof modifiers === 'boolean' ? { alt: modifiers } : modifiers;
   const centre = getViewCenter(graph);
   const w = entry.width || 40;
   const h = entry.height || 40;
   const selection = graph.getSelectionCells();
-  if (!alt && selection.length === 1) {
+  if (!mods.alt && selection.length === 1) {
     const selected = selection[0];
     const kind = kindForPaletteEntry(entry)?.kind;
     if (kind && SNAP_KINDS.has(kind)) {
@@ -126,9 +181,9 @@ export function clickInsertPlacement(graph: Graph, entry: PaletteEntry, alt = fa
     if (selected.isVertex() && entry.kind !== 'edge' && !graph.isCellLocked(selected)) {
       const b = absoluteBounds(selected);
       if (b) {
-        const start = { x: b.x + b.width + DEFAULT_EDGE_LENGTH + w / 2, y: b.y + b.height / 2 };
         const taken = occupiedBoxes(graph);
-        return { at: freeSpot(start, w, h, taken, 1, 10), connectFrom: selected };
+        const direction = clickDirection(mods) ?? (hasEastNeighbour(b, w, h, taken) ? 'south' : 'east');
+        return { at: placeBeside(b, direction, w, h, taken), connectFrom: selected };
       }
     }
   }

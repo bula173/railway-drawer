@@ -217,4 +217,52 @@ test.describe('UI backlog', () => {
     await expect.poll(gridState).toEqual({ on: false, size: 20, bg: false });
     await expect(button).toHaveAttribute('aria-pressed', 'false');
   });
+  test('palette click next to a selection: below when east is taken, Shift east, Ctrl/Cmd north, Ctrl/Cmd+Shift west', async ({ page }) => {
+    await fresh(page);
+    const general = page.locator(`${PALETTE} section[data-palette-id="general"]`);
+    await general.locator('.rd-dp-item[title="Ellipse"]').waitFor();
+    const [src, east] = await addRects(page, [[200, 200, 80, 40], [360, 200, 80, 40]]);
+    const src0 = await geo(page, src);
+    const centreOf = (g: { x: number; y: number; width: number; height: number }) => ({ x: g.x + g.width / 2, y: g.y + g.height / 2 });
+    const selectSource = async (): Promise<void> => {
+      const p = await cellCenter(page, src);
+      await page.mouse.click(p.x, p.y);
+      await expect.poll(() => inGraph<string>(page, 'return graph.getSelectionCell()?.id;')).toBe(src);
+    };
+    const count = (): Promise<number> => inGraph<number>(page, 'return graph.getDefaultParent().children.length;');
+    const insert = async (modifiers: Array<'Shift' | 'ControlOrMeta'>): Promise<{ x: number; y: number }> => {
+      await selectSource();
+      const before = await count();
+      await general.locator('.rd-dp-item[title="Ellipse"]').click({ modifiers });
+      await expect.poll(count).toBe(before + 2);
+      const id = await inGraph<string>(page, 'return graph.getSelectionCell().id;');
+      expect(await inGraph<number>(page, 'return graph.getDefaultParent().children.filter((c) => c.isEdge() && c.source?.id === arg[0] && c.target?.id === arg[1]).length;', [src, id])).toBe(1);
+      const c = centreOf(await geo(page, id));
+      // one undo step removes the shape and its edge
+      await page.locator('#graph-container').click({ position: { x: 5, y: 5 } });
+      await page.keyboard.press('ControlOrMeta+z');
+      await expect.poll(count).toBe(before);
+      return c;
+    };
+    const s = centreOf(src0);
+    // plain click: the east side has a neighbour -> below
+    const below = await insert([]);
+    expect(Math.abs(below.x - s.x)).toBeLessThan(1);
+    expect(below.y).toBeGreaterThan(src0.y + src0.height);
+    // Shift: east anyway (past the neighbour)
+    const right = await insert(['Shift']);
+    expect(right.x).toBeGreaterThan(src0.x + src0.width);
+    // Ctrl/Cmd: north, Ctrl/Cmd+Shift: west
+    const above = await insert(['ControlOrMeta']);
+    expect(Math.abs(above.x - s.x)).toBeLessThan(1);
+    expect(above.y).toBeLessThan(src0.y);
+    const left = await insert(['ControlOrMeta', 'Shift']);
+    expect(left.x).toBeLessThan(src0.x);
+    expect(Math.abs(left.y - s.y)).toBeLessThan(1);
+    // without the east neighbour a plain click goes east again
+    await inGraph(page, 'graph.getDataModel().remove(graph.getDataModel().getCell(arg));', east);
+    const plain = await insert([]);
+    expect(plain.x).toBeGreaterThan(src0.x + src0.width);
+    expect(Math.abs(plain.y - s.y)).toBeLessThan(1);
+  });
 });

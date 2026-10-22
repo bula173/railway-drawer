@@ -461,9 +461,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
   unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
   of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry
-  -> 80 px east, vertically centred, moved down while taken, connected by an edge (draw.io dropAndConnect EAST; draw.io
-  needs Alt+Click, here Alt+Click skips it); else the view centre, cascading right/down to a free spot. One model update
-  (one undo), new cell selected, no container drop.
+  -> 80 px beside it, centred on that side, moved along the side while taken (down for east/west, right for
+  south/north), connected by an edge (draw.io dropAndConnect). Side = draw.io itemClicked's modifiers without its Alt
+  (draw.io connects only on Alt+Click; here Alt+Click skips it): plain click east, or south when a shape already lies
+  in the band east of the selection (`hasEastNeighbour`), Shift east, Ctrl/Cmd north, Ctrl/Cmd+Shift west (also Enter /
+  Space on a tile; `clickDirection`, `placeBeside`). Else the view centre, cascading right/down to a free spot. One
+  model update (one undo), new cell selected, no container drop. Not ported: draw.io's Shift+Click shape replace.
 - Start card (`src/ui/start-card.ts`, main-editor.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
   Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
   Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
