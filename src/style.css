@@ -45,14 +45,15 @@ body {
 }
 
 .logo {
-  font-size: 24px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--rd-hover);
+  color: var(--rd-text);
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .document-title {
@@ -226,6 +227,9 @@ body {
 }
 
 .share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 16px;
   background: var(--rd-accent);
   color: var(--rd-accent-text);
@@ -239,6 +243,12 @@ body {
 
 .share-btn:hover {
   background: var(--rd-accent-hover);
+}
+
+/* Inline chrome icons (toolbar.ts applyInlineIcons / setInlineIcon): currentColor, never emoji */
+.rd-icon {
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 /* Toolbar */

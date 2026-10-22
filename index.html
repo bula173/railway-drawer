@@ -25,7 +25,7 @@
       <div class="top-bar">
         <!-- Logo & Title -->
         <div class="top-bar-left">
-          <div class="logo">🚂</div>
+          <div class="logo" role="img" aria-label="Railway Drawer" data-rd-icon="train" data-rd-icon-size="24"></div>
           <h1 class="document-title">Untitled Diagram</h1>
         </div>
 
@@ -228,7 +228,7 @@
         <!-- Save Status & Share -->
         <div class="top-bar-right">
           <div class="save-status">Unsaved changes. Click here to save.</div>
-          <button type="button" class="share-btn" id="share-btn" aria-haspopup="dialog" title="Share: link with the diagram, downloads, cloud storage">👤 Share</button>
+          <button type="button" class="share-btn" id="share-btn" aria-haspopup="dialog" title="Share: link with the diagram, downloads, cloud storage" data-rd-icon="share">Share</button>
         </div>
       </div>
 
@@ -402,7 +402,7 @@
                 <div class="prop-tab-content" data-tab="text" style="display: none;">
                   <!-- Text Editing Hint -->
                   <div class="rd-tip">
-                    <p class="rd-tip-title">📝 Double-click shape to edit text</p>
+                    <p class="rd-tip-title">Double-click shape to edit text</p>
                     <p style="margin: 4px 0 0 0; font-size: 11px; color: var(--rd-text-muted);">Edit text directly on the canvas</p>
                   </div>
 
@@ -497,12 +497,12 @@
 
                     <!-- Alignment Buttons -->
                     <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
-                      <button class="align-left rd-btn" style="padding: 6px;">⬅</button>
-                      <button class="align-center rd-btn" style="padding: 6px;">⬅➡</button>
-                      <button class="align-right rd-btn" style="padding: 6px;">➡</button>
-                      <button class="valign-top rd-btn" style="padding: 6px;">⬆</button>
-                      <button class="valign-middle rd-btn" style="padding: 6px;">⬆⬇</button>
-                      <button class="valign-bottom rd-btn" style="padding: 6px;">⬇</button>
+                      <button type="button" class="align-left rd-btn" style="padding: 6px;" title="Align text left" data-rd-icon="textLeft"></button>
+                      <button type="button" class="align-center rd-btn" style="padding: 6px;" title="Center text" data-rd-icon="textCenter"></button>
+                      <button type="button" class="align-right rd-btn" style="padding: 6px;" title="Align text right" data-rd-icon="textRight"></button>
+                      <button type="button" class="valign-top rd-btn" style="padding: 6px;" title="Text at top" data-rd-icon="valignTop"></button>
+                      <button type="button" class="valign-middle rd-btn" style="padding: 6px;" title="Text in the middle" data-rd-icon="valignMiddle"></button>
+                      <button type="button" class="valign-bottom rd-btn" style="padding: 6px;" title="Text at bottom" data-rd-icon="valignBottom"></button>
                     </div>
 
                     <!-- Position & Direction -->

@@ -14,6 +14,7 @@ import { Cell } from '@maxgraph/core';
 import type { Graph } from '@maxgraph/core';
 import { hasLockedStyle, setCellsLocked } from './cell-lock';
 import { confirmDialog } from './app-dialogs';
+import { setInlineIcon } from './toolbar';
 import { globalNotificationManager } from './notification';
 
 /** Questions and notes of the Layers panel (themed dialog / notification; replaceable in tests). */
@@ -228,8 +229,11 @@ export class LayersController {
       // Visibility toggle
       const visibilityBtn = document.createElement('button');
       visibilityBtn.className = 'layer-visibility';
-      visibilityBtn.textContent = layer.visible ? '👁' : '🚫';
+      visibilityBtn.type = 'button';
       visibilityBtn.title = layer.visible ? 'Hide layer' : 'Show layer';
+      visibilityBtn.setAttribute('aria-label', visibilityBtn.title);
+      setInlineIcon(visibilityBtn, layer.visible ? 'eye' : 'eyeOff');
+      visibilityBtn.style.color = 'inherit';
       visibilityBtn.style.background = 'none';
       visibilityBtn.style.border = 'none';
       visibilityBtn.style.cursor = 'pointer';
@@ -244,8 +248,11 @@ export class LayersController {
       // Lock toggle (locked=1 on the layer cell)
       const lockBtn = document.createElement('button');
       lockBtn.className = 'layer-lock';
-      lockBtn.textContent = layer.locked ? '🔒' : '🔓';
+      lockBtn.type = 'button';
       lockBtn.title = layer.locked ? 'Unlock layer' : 'Lock layer';
+      lockBtn.setAttribute('aria-label', lockBtn.title);
+      setInlineIcon(lockBtn, layer.locked ? 'lock' : 'unlock');
+      lockBtn.style.color = 'inherit';
       lockBtn.setAttribute('aria-pressed', String(layer.locked));
       lockBtn.style.background = 'none';
       lockBtn.style.border = 'none';
