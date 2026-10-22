@@ -6,7 +6,7 @@
  *        Runs on any port.
  */
 import { test, expect } from '@playwright/test';
-import type { Page } from '@playwright/test';
+import type { Download, Page } from '@playwright/test';
 import { clickMenuItem } from './menu-helpers';
 
 const PALETTE = '#drawio-palette-container';
@@ -25,6 +25,11 @@ async function fresh(page: Page, viewport?: { width: number; height: number }): 
   await page.evaluate(() => localStorage.clear());
   await page.reload();
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 60_000 });
+}
+
+async function downloadText(download: Download): Promise<string> {
+  const chunks = await (await download.createReadStream()).toArray();
+  return Buffer.concat(chunks).toString('utf8');
 }
 
 /** Inserts rectangles (one model update, then a cleared history) and returns their ids. */
@@ -159,5 +164,57 @@ test.describe('UI backlog', () => {
     await page.reload();
     await expect(page.locator('body')).toHaveClass(/rd-narrow/);
     await expect(left).toBeHidden();
+  });
+  test('draw.io page grid (grid="0", gridSize) applies per tab, View > Grid / toolbar follow, saved back', async ({ page }) => {
+    await fresh(page);
+    const file = '<mxfile host="app.diagrams.net"><diagram id="g1" name="Grid off"><mxGraphModel dx="800" dy="600" grid="0" gridSize="20" guides="1" page="0">' +
+      '<root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="v" value="A" style="rounded=0;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="80" height="40" as="geometry"/></mxCell></root>' +
+      '</mxGraphModel></diagram></mxfile>';
+    const chooser = page.waitForEvent('filechooser');
+    await clickMenuItem(page, 'file', 'open');
+    await (await chooser).setFiles({ name: 'grid-off.drawio', mimeType: 'application/xml', buffer: Buffer.from(file) });
+    const gridState = (): Promise<{ on: boolean; size: number; bg: boolean }> =>
+      inGraph(page, "return { on: graph.gridEnabled, size: graph.gridSize, bg: graph.container.classList.contains('rd-grid-on') };");
+    await expect.poll(gridState).toEqual({ on: false, size: 20, bg: false });
+    const viewGrid = page.locator('.menu-dropdown [data-action="showGrid"]');
+    const button = page.locator('#btn-grid');
+    await expect(viewGrid).toHaveAttribute('aria-checked', 'false');
+    await expect(button).toHaveAttribute('aria-pressed', 'false');
+
+    // another tab keeps its own grid (on), switching back shows this tab's again
+    await clickMenuItem(page, 'file', 'new');
+    await expect(page.locator('#tabs-container .tab-button')).toHaveCount(2);
+    await expect.poll(gridState).toEqual({ on: true, size: 10, bg: true });
+    await expect(button).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#tabs-container .tab-button').first().click();
+    await expect.poll(gridState).toEqual({ on: false, size: 20, bg: false });
+    await expect(button).toHaveAttribute('aria-pressed', 'false');
+    await expect(viewGrid).toHaveAttribute('aria-checked', 'false');
+
+    const exported = async (): Promise<{ grid: string | null; gridSize: string | null }> => {
+      const [download] = await Promise.all([page.waitForEvent('download'), clickMenuItem(page, 'file', 'export')]);
+      const text = await downloadText(download);
+      return page.evaluate((xml) => {
+        const model = new DOMParser().parseFromString(xml, 'text/xml').querySelector('mxGraphModel')!;
+        return { grid: model.getAttribute('grid'), gridSize: model.getAttribute('gridSize') };
+      }, text);
+    };
+    expect(await exported()).toEqual({ grid: '0', gridSize: '20' });
+    // the toolbar toggle turns it on for this tab and the file says so
+    await button.click();
+    await expect.poll(gridState).toEqual({ on: true, size: 20, bg: true });
+    await expect(viewGrid).toHaveAttribute('aria-checked', 'true');
+    expect(await exported()).toEqual({ grid: '1', gridSize: '20' });
+    // off again, kept over a reload (cache) for this tab only
+    await button.click();
+    await expect.poll(gridState).toEqual({ on: false, size: 20, bg: false });
+    await page.evaluate(async () => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      registry.ServiceRegistry.getTabManager().flushCache();
+    });
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 60_000 });
+    await expect.poll(gridState).toEqual({ on: false, size: 20, bg: false });
+    await expect(button).toHaveAttribute('aria-pressed', 'false');
   });
 });

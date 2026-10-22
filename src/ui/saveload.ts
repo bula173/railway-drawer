@@ -3,6 +3,7 @@ import type { Cell } from '@maxgraph/core';
 import {
   emptyDrawioModelXml,
   exportModelToDrawioXml,
+  DEFAULT_PAGE_SETTINGS,
   importModelXml,
   sanitizeXmlText,
   type PageSettings,
@@ -16,6 +17,7 @@ import type { RailwayScriptStore } from '../railway-script/script-store';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
 import { resetCanvasScroll } from './canvas-scroll';
+import { applyGridSettings, GRID_SETTINGS_EVENT } from './grid-toggle';
 
 /** One cell of exportAsJson(), read from the draw.io XML the tab saves. */
 export interface JsonExportCell {
@@ -317,7 +319,7 @@ export class SaveLoadController {
 
     this.graph.clearSelection();
     this.graph.getDataModel().setRoot(loadedRoot);
-    this.applyPageSettings(pageSettings ?? {});
+    this.applyPageSettings(pageSettings ?? {}, pageSettings !== null);
 
     // Restore PlantUML metadata
     this.restorePlantUmlMetadata(xml);
@@ -355,7 +357,8 @@ export class SaveLoadController {
    * Used for file save, File > Export and the browser cache.
    */
   serializeToXml(): string {
-    const page: PageSettings = { ...this.pageSettings, gridSize: this.graph.gridSize };
+    // the tab's grid as draw.io reads it (View > Grid / toolbar / Properties > Canvas change it)
+    const page: PageSettings = { ...this.pageSettings, grid: this.graph.gridEnabled, gridSize: this.graph.gridSize };
     try {
       console.log('[SaveLoad] Serializing graph...');
       // Image data URLs stay in the output: custom shapes and uploaded images have no other
@@ -377,11 +380,19 @@ export class SaveLoadController {
     }
   }
 
-  /** Keeps the page settings of a loaded draw.io model and applies the grid size. */
-  private applyPageSettings(settings: PageSettings): void {
+  /**
+   * Keeps the page settings of a loaded draw.io model and applies its grid (on/off, size; draw.io's
+   * defaults grid=1 gridSize=10 when the attributes are missing) to this tab. Legacy models
+   * (`drawio` false) have no page settings: the tab's grid stays.
+   */
+  private applyPageSettings(settings: PageSettings, drawio = true): void {
     this.pageSettings = { ...settings };
-    if (settings.gridSize && settings.gridSize > 0) {
-      this.graph.gridSize = settings.gridSize;
+    if (drawio) {
+      applyGridSettings(this.graph, {
+        grid: settings.grid ?? DEFAULT_PAGE_SETTINGS.grid,
+        gridSize: settings.gridSize ?? DEFAULT_PAGE_SETTINGS.gridSize,
+      });
+      window.dispatchEvent(new CustomEvent(GRID_SETTINGS_EVENT, { detail: { graph: this.graph } }));
     }
     if (settings.pageWidth && settings.pageHeight) {
       this.graph.pageFormat = new Rectangle(0, 0, settings.pageWidth, settings.pageHeight);

@@ -7,6 +7,7 @@ import { DeleteController } from './delete';
 import { UndoRedoController } from './undoredo';
 import { PanController } from './pan';
 import { GridController } from './grid';
+import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
 import { SaveLoadController } from './saveload';
 import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
@@ -129,7 +130,14 @@ export class TabManager {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
     this.graphContainer = document.getElementById(graphContainerId)!;
     this.startAutoSave();
+    window.addEventListener(GRID_SETTINGS_EVENT, this.onGridSettings);
   }
+
+  /** A load applied a file's grid to a tab: the shared controls follow when it is the active one. */
+  private readonly onGridSettings = (e: Event): void => {
+    const graph = (e as CustomEvent<{ graph?: Graph }>).detail?.graph;
+    if (graph && graph === this.getActiveTab()?.graph) syncGridUi(graph);
+  };
 
   /** Unique tab id; crypto.randomUUID is unavailable outside secure contexts (plain-http deploys). */
   private generateTabId(): string {
@@ -667,6 +675,8 @@ export class TabManager {
     tab.layersController.refresh();
     tab.propertiesPanel.update();
     tab.statusBarController.syncZoom();
+    // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
+    syncGridUi(tab.graph);
   }
 
   closeTab(tabId: string): void {
@@ -713,6 +723,7 @@ export class TabManager {
   }
 
   destroy(): void {
+    window.removeEventListener(GRID_SETTINGS_EVENT, this.onGridSettings);
     // Clear auto-save interval
     if (this.autoSaveInterval) {
       clearInterval(this.autoSaveInterval);
