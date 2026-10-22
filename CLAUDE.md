@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -148,6 +148,14 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   layer: none; Alt hides; View > Connection Arrows off (persisted over a reload), Alt+Shift+A on; ERTMS Signal Right 3
   clone keeps kind/direction and gets `S2` (no duplicate-id check); a signal clone on a track snaps in the same undo
   step (`rdTrackId`, `rdKm`); no arrows on the track edge or with the Route tool; arrow fill >= 3:1 on the light and dark canvas.
+- `tests/e2e/move-connect.spec.ts` (any port, real `page.mouse` input, 1600x1100 viewport): drags of a rectangle, an ERTMS
+  signal (group), a balise, a track (edge) and a template text cell land where released (±1 px) with the grid off and on the
+  grid with it on, at zoom 100 % and 150 %; Alt held while dragging ignores grid and track snap; a signal 60 px from a track
+  stays, 8 px snaps beside it with the track highlighted during the drag (`.rd-track-snap-highlight`,
+  `data-rd-track-snap` on the graph div); ArrowDown moves a snapped signal 1 px; a balise dropped on a track does not split
+  it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
+  rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
+  rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
@@ -357,14 +365,28 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Properties Arrange X/Y/W/H, constrain, rotation, Rotate 90°, flips are disabled while the shown cell is locked
   (`graph.isCellLocked`: also via its group/layer; refreshed on model changes) and their handlers skip locked cells.
   Arrow keys = `GraphCommandService.nudge` (1 px, Shift = grid size; `getMovableCells` of the topmost selected cells,
-  one undo step; only when the focus is on the canvas/body).
+  one undo step; only when the focus is on the canvas/body; snap to track only refreshes km/track, never moves: `withSnapDataOnly`).
 - Canvas interaction like draw.io (`src/ui/connections.ts` `installDrawioConnectionStart`, `src/ui/canvas-interaction.ts`):
   maxGraph's ConnectionHandler started an edge from a vertex's central hotspot (and the old fallback had a centre
   connection point), so a middle drag drew an edge and a click on a group child selected the child. Now
-  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), the
-  fallback points are the 4 side midpoints, and a source press in the central 50 % of a vertex never hits a point.
-  `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex with children,
-  `getCellAt`) gets the group's state, so it is selected/moved (Alt+drag still forces the rubber band). Context menu
+  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), and a
+  source press in the central 50 % of a vertex never hits a point. Connection points like draw.io: shapes without own
+  points (`points` style, stencil, JS-shape constraints) get draw.io's per-shape defaults (`defaultConnectionConstraints`:
+  rectangle/group/image 16 = corners, quarters, midpoints; ellipse 8; rhombus; triangle), drawn with draw.io's blue 'x'
+  (`CONNECTION_POINT_IMAGE`, data: SVG; maxGraph's `images/point.gif` is not shipped, so points were invisible); valid
+  targets outlined `#00a8ff` (`installDrawioEdgeEnds`). An edge end dropped on a body (not on a point) connects floating:
+  maxGraph 0.10.3's EdgeHandler passed `outline = true` to updatePreviewState, which stored the drop position as a fixed
+  entry point; `outline` is set to `outlineConnect` (false) per edge handler. ERTMS symbols connect as a whole
+  (`installSymbolGroupConnect`, a `Cell.prototype.isConnectable` patch): a group vertex with `rdKind` is connectable
+  (the library's `connectable="0"` stays in the file), its descendants are not, so maxGraph's connectable-parent
+  fallback hits the group. `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex
+  with children, `getCellAt`) gets the group's state, so it is selected/moved; MOUSE_MOVE/MOUSE_UP too when the group is
+  connectable (its points show, an edge end dropped in a gap connects). `installRailwaySplitRules`: no edge split when a
+  railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
+  edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
+  grid (gridSize 10, `gridEnabled` = View > Grid; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
+  more), Alt held during the drag = no grid and no track snap (Alt pressed before the press = rubber band, like
+  draw.io), no guides, drag start tolerance 4 px. Context menu
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
   selectable ancestor is selected; edges get the cell menu; maxGraph's PopupMenuHandler selection is off
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
@@ -659,13 +681,18 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   of another kind; the generic missing-reference skips such IDs), `route-path` (no path in the signal direction, or
   sections not a continuous path), `route-points` (syntax, unknown/contradictory points, missing or wrong required
   position; warning: listed points not on the path). Conflicts are not issues (interlocking table).
-- **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved within `SNAP_DISTANCE` 40 of a
-  track/section line are put on it (balise/axle counter centred; signal on the right-hand side of its travel direction:
+- **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved so that the gap between the
+  shape and a track/section line (centre distance minus the half extent across the line) is at most `SNAP_RADIUS_PX`
+  15 screen px (`snapGapAtScale`: 15 / zoom graph units) and the nearest line point is not beyond a track end (the snap
+  only moves perpendicular to the track) are put on it (balise/axle counter centred; signal on the right-hand side of its travel direction:
   nominal = below a left-to-right track, reverse above; LEU nominal side; gap `SNAP_GAP` 4), get `rdTrackId` (track
   preferred over a section drawn on it) and, when the track has km start/end, `rdKm`. Runs in the model's
   `BEFORE_UNDO` (like maxGraph's LayoutManager), so it is part of the same undo step; ignores edits with a RootChange
-  (loads, snapshots). Railway > Snap to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab
-  graph (`installRailwayRoutes` sweeps on start/`tab-changed`).
+  (loads, snapshots). Off while Alt is held (window capture listeners track `altKey`), data-only for arrow-key nudges
+  (`withSnapDataOnly`). While dragging (SelectionHandler), the track a drop would snap onto is outlined (`CellHighlight`
+  `#00a8ff`, class `rd-track-snap-highlight`, graph div `data-rd-track-snap=<track id>`; `previewSnap`). Railway > Snap
+  to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab graph (`installRailwayRoutes`
+  sweeps on start/`tab-changed`). `SNAP_DISTANCE` 40 is only the "belongs to the track" distance (Railway Script sync).
 - **km** (`km.ts`): linear from km start (first point of the centre line) to km end; Railway > Recalculate km sets `rdKm`
   of objects naming a track with km start/end (within 60, rounded to metres, one undo step). Railway > km Ruler (toolbar `#btn-km-ruler`)
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so

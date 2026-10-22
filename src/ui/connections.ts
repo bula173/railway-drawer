@@ -1,6 +1,9 @@
-import { Graph, ConnectionConstraint, Point, type CellState } from '@maxgraph/core';
-import type { Cell, ConnectionHandler as MaxConnectionHandler, ImageShape, InternalMouseEvent, Rectangle } from '@maxgraph/core';
+import { Cell, Graph, ConnectionConstraint, ImageBox, type CellState } from '@maxgraph/core';
+import type { ConnectionHandler as MaxConnectionHandler, EdgeHandler, ImageShape, InternalMouseEvent, Rectangle } from '@maxgraph/core';
 import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core';
+import { ELLIPSE_CONSTRAINTS, RECTANGLE_CONSTRAINTS, cc } from '../drawio-shapes/js/shapes-core/util';
+import { getRawKind } from '../railway/object-data';
+import { isLayer } from './cell-lock';
 
 /**
  * Part of a vertex (as a fraction of its width/height, on each side) around its centre in which a
@@ -8,12 +11,90 @@ import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core'
  */
 export const SOURCE_CENTRE_MARGIN = 0.25;
 
+/**
+ * draw.io's connection point image (Graph.js mxConstraintHandler.prototype.pointImage): a small
+ * blue 'x' with a white halo. maxGraph's default `images/point.gif` is not shipped with the app,
+ * so the points were invisible.
+ */
+export const CONNECTION_POINT_IMAGE = new ImageBox(
+  'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5">' +
+    '<path d="m 0 0 L 5 5 M 0 5 L 5 0" stroke-width="2" style="stroke-opacity:0.4" stroke="#ffffff"/>' +
+    '<path d="m 0 0 L 5 5 M 0 5 L 5 0" stroke="#29b6f2"/></svg>'),
+  5, 5,
+);
+
+/** draw.io's valid connect target colour (mxConstants.DEFAULT_VALID_COLOR in Graph.js). */
+export const CONNECT_TARGET_COLOR = '#00a8ff';
+
+/** draw.io mxRhombus.prototype.constraints (corners + edge midpoints). */
+const RHOMBUS_CONSTRAINTS = [
+  cc(0.5, 0), cc(1, 0.5), cc(0.5, 1), cc(0, 0.5),
+  cc(0.25, 0.25), cc(0.75, 0.25), cc(0.25, 0.75), cc(0.75, 0.75),
+];
+
+/** Points of an east-pointing triangle (base, apex and its two slanted sides); rotated by `direction`. */
+const TRIANGLE_CONSTRAINTS = [
+  cc(0, 0), cc(0, 0.25), cc(0, 0.5), cc(0, 0.75), cc(0, 1),
+  cc(0.25, 0.125), cc(0.5, 0.25), cc(0.75, 0.375), cc(1, 0.5),
+  cc(0.75, 0.625), cc(0.5, 0.75), cc(0.25, 0.875),
+];
+
+/**
+ * Connection points of a vertex without draw.io points of its own (no `points` style, stencil or
+ * shape constraints), like draw.io's per-shape defaults: rectangles (and groups, images, labels)
+ * get mxRectangleShape's 16 points (corners, quarters, midpoints), ellipses mxEllipse's 8,
+ * rhombus and triangle their outline points. No centre point: a press in the middle moves.
+ */
+export function defaultConnectionConstraints(state: CellState): ConnectionConstraint[] {
+  const shape = String((state.style as Record<string, unknown> | undefined)?.shape ?? '');
+  if (shape === 'ellipse' || shape === 'doubleEllipse') return ELLIPSE_CONSTRAINTS;
+  if (shape === 'rhombus') return RHOMBUS_CONSTRAINTS;
+  if (shape === 'triangle') return TRIANGLE_CONSTRAINTS;
+  return RECTANGLE_CONSTRAINTS;
+}
+
 /** Whether graph point (x, y) lies in the central part of `state` (see SOURCE_CENTRE_MARGIN). */
 export function isInVertexCentre(state: CellState, x: number, y: number): boolean {
   if (!state.cell?.isVertex()) return false;
   const mx = state.width * SOURCE_CENTRE_MARGIN;
   const my = state.height * SOURCE_CENTRE_MARGIN;
   return x > state.x + mx && x < state.x + state.width - mx && y > state.y + my && y < state.y + state.height - my;
+}
+
+/**
+ * A railway symbol drawn as a group (ERTMS signals, trains: a `group` vertex holding stencil parts)
+ * that carries railway data (`rdKind`). It connects as a whole, like one shape.
+ */
+export function isSymbolGroup(cell: Cell | null | undefined): boolean {
+  if (!cell || !cell.isVertex() || !cell.parent || !getRawKind(cell)) return false;
+  if ((cell.children ?? []).length === 0) return false;
+  // layers are root children, never railway objects; checked cheaply without a graph
+  return !!cell.parent.parent;
+}
+
+let symbolConnectInstalled = false;
+
+/**
+ * ERTMS symbols (groups) connect as a whole: the library stores their group with
+ * `connectable="0"` (draw.io then connects to one of the stencil parts, and a press on a part
+ * started nothing). The group is connectable and its parts are not, so maxGraph's "connectable
+ * parent" fallback (ConstraintHandler/ConnectionHandler/EdgeHandler markers) hits the group.
+ * The cell's own `connectable` flag (saved to the file) is untouched.
+ */
+export function installSymbolGroupConnect(): void {
+  if (symbolConnectInstalled) return;
+  symbolConnectInstalled = true;
+  const proto = Cell.prototype as unknown as { isConnectable(this: Cell): boolean };
+  const orig = proto.isConnectable;
+  proto.isConnectable = function isConnectable(this: Cell): boolean {
+    if (this.isVertex()) {
+      if (isSymbolGroup(this)) return true;
+      for (let p = this.parent; p && p.parent; p = p.parent) {
+        if (isSymbolGroup(p)) return false;
+      }
+    }
+    return orig.call(this);
+  };
 }
 
 /**
@@ -46,35 +127,51 @@ export function installDrawioConnectionStart(graph: Graph): void {
   };
 }
 
+/**
+ * Edge ends like draw.io: visible connection points ('x'), a valid target outlined in blue, and
+ * an edge end dropped on a shape's body (not on a point) connects floating. maxGraph 0.10.3's
+ * EdgeHandler always passes `outline = true` to updatePreviewState (mxGraph passed the result of
+ * isOutlineConnectEvent), which turned every body drop into a fixed point at the drop position.
+ */
+export function installDrawioEdgeEnds(graph: Graph): void {
+  const handler = graph.getPlugin('ConnectionHandler') as MaxConnectionHandler | undefined;
+  if (handler) {
+    handler.constraintHandler.pointImage = CONNECTION_POINT_IMAGE;
+    if (handler.marker) handler.marker.validColor = CONNECT_TARGET_COLOR;
+  }
+  const baseCreate = graph.createEdgeHandler.bind(graph);
+  graph.createEdgeHandler = ((state: CellState, edgeStyle: unknown) => {
+    const h = baseCreate(state, edgeStyle as never) as EdgeHandler & { outline?: boolean };
+    h.outline = h.outlineConnect;
+    h.constraintHandler.pointImage = CONNECTION_POINT_IMAGE;
+    if (h.marker) h.marker.validColor = CONNECT_TARGET_COLOR;
+    return h;
+  }) as Graph['createEdgeHandler'];
+}
+
 export class ConnectionHandler {
   constructor(graph: Graph) {
+    installSymbolGroupConnect();
     this.configureConnectionConstraints(graph);
     installDrawioConnectionStart(graph);
+    installDrawioEdgeEnds(graph);
   }
 
   private configureConnectionConstraints(graph: Graph): void {
-    // Override getAllConnectionConstraints to define connection points on all shapes
     const originalGetAllConstraints = graph.getAllConnectionConstraints.bind(graph);
 
     graph.getAllConnectionConstraints = function (terminal: CellState | null, source: boolean) {
-      // Get original constraints if they exist
       const constraints = originalGetAllConstraints(terminal, source);
 
-      if (terminal && terminal.cell && terminal.cell.isVertex && terminal.cell.isVertex()) {
+      if (terminal && terminal.cell && terminal.cell.isVertex() && !isLayer(graph, terminal.cell)) {
         // draw.io shapes: their own fixed points (`points` style, getConstraints, stencil, constraints)
         const drawio = getDrawioConnectionConstraints(terminal);
         if (drawio && drawio.length > 0) return drawio;
-        // Otherwise the side midpoints (top, right, bottom, left). No centre point: like draw.io,
-        // a press in the middle of a shape moves it (a centre point started a connection there).
-        return [
-          new ConnectionConstraint(new Point(0.5, 0), false), // Top center
-          new ConnectionConstraint(new Point(1, 0.5), false), // Right center
-          new ConnectionConstraint(new Point(0.5, 1), false), // Bottom center
-          new ConnectionConstraint(new Point(0, 0.5), false), // Left center
-        ];
+        return defaultConnectionConstraints(terminal);
       }
 
       return constraints || [];
     };
   }
 }
+

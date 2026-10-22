@@ -12,7 +12,7 @@ import type { RailObject, RuleId } from '../validation';
 import { buildTopology, passage } from '../topology';
 import { buildConflictTable, buildRouteTable, detectConflicts, findRoutePaths, formatPointsList, parsePointsList, routeRecords } from '../routes';
 import { ROUTES_LAYER_ID, addRoute, getRoutesLayer, setRoutesVisible, simplifyLine, updateRoutePaths } from '../route-store';
-import { SNAP_GAP, computeSnap, installSnapToTrack, snapTargets } from '../snap';
+import { SNAP_GAP, SNAP_RADIUS_PX, computeSnap, installSnapToTrack, setSnapAltDownForTest, snapGapAtScale, snapTargets } from '../snap';
 import { formatChainage, kmAtPoint, kmScaleOf, recalculateKm, rulerTicks } from '../km';
 import { RouteTool } from '../route-tool';
 import { exportModelToDrawioXml, importDrawioXmlIntoModel } from '../../services/drawio-xml';
@@ -327,17 +327,37 @@ describe('snap to track', () => {
     const l = smallLayout();
     const targets = snapTargets(l.objects());
     expect(targets.map((t) => t.o.id)).toEqual(['T1', 'T2']);
-    expect(computeSnap(box(110, 130), 'balise', '', targets)).toMatchObject({ x: 100, y: 90, target: { id: 'T1' } });
+    // gap 10 between the 20x20 shape and the line (centre 20 below it)
+    expect(computeSnap(box(110, 120), 'balise', '', targets)).toMatchObject({ x: 100, y: 90, target: { id: 'T1' } });
     // nominal (left to right): right-hand side = below the track
-    expect(computeSnap(box(110, 130), 'signal', 'nominal', targets)).toMatchObject({ x: 100, y: 100 + SNAP_GAP, point: { x: 110, y: 100 } });
-    expect(computeSnap(box(110, 130), 'signal', 'reverse', targets)).toMatchObject({ x: 100, y: 100 - 20 - SNAP_GAP });
-    // too far, or a kind that does not snap
+    expect(computeSnap(box(110, 120), 'signal', 'nominal', targets)).toMatchObject({ x: 100, y: 100 + SNAP_GAP, point: { x: 110, y: 100 } });
+    expect(computeSnap(box(110, 120), 'signal', 'reverse', targets)).toMatchObject({ x: 100, y: 100 - 20 - SNAP_GAP });
+    // too far (gap 20 > SNAP_RADIUS_PX), or a kind that does not snap
+    expect(SNAP_RADIUS_PX).toBe(15);
+    expect(computeSnap(box(110, 130), 'signal', 'nominal', targets)).toBeNull();
     expect(computeSnap(box(110, 150), 'signal', 'nominal', targets)).toBeNull();
     expect(computeSnap(box(110, 110), 'train', '', targets)).toBeNull();
+    // the radius is in screen pixels: at zoom 2 it is 7.5 graph units
+    expect(snapGapAtScale(2)).toBe(7.5);
+    expect(computeSnap(box(110, 120), 'balise', '', targets, snapGapAtScale(2))).toBeNull();
+    expect(computeSnap(box(110, 116), 'balise', '', targets, snapGapAtScale(2))).toMatchObject({ y: 90 });
     // vertical track: nominal = downwards, right-hand side = left (x smaller)
     const v = new Layout();
     v.line('track', { id: 'TV' }, [[100, 0], [100, 400]]);
     expect(computeSnap(box(110, 200), 'signal', 'nominal', snapTargets(v.objects()))).toMatchObject({ x: 100 - 20 - SNAP_GAP, y: 190 });
+  });
+
+  it('only snaps perpendicular to the track: never along it beyond an end', () => {
+    const v = new Layout();
+    v.line('track', { id: 'TE' }, [[100, 100], [400, 100]]);
+    const targets = snapTargets(v.objects());
+    // left of the start, right of the end (close to the end point, more than half the shape past
+    // it): no snap; overlapping the end: snapped at the end
+    expect(computeSnap(box(85, 100), 'balise', '', targets)).toBeNull();
+    expect(computeSnap(box(420, 104), 'balise', '', targets)).toBeNull();
+    expect(computeSnap(box(406, 104), 'balise', '', targets)).toMatchObject({ x: 390, y: 90 });
+    // inside the track: moved straight down onto it (x unchanged)
+    expect(computeSnap(box(102, 112), 'balise', '', targets)).toMatchObject({ x: 92, y: 90 });
   });
 
   it('snaps moved objects in the same undoable edit and sets track and km', () => {
@@ -350,16 +370,38 @@ describe('snap to track', () => {
       l.line('track', { id: 'T1', kmStart: '10', kmEnd: '10.6' }, [[0, 100], [600, 100]]);
       const s = l.obj('signal', { id: 'S1', direction: 'nominal' }, 100, 300);
       expect(s.getGeometry()!.y).toBe(300);
-      graph.moveCells([s], 0, -180); // centre (110, 130)
+      graph.moveCells([s], 0, -190); // centre (110, 120): gap 10
       expect([s.getGeometry()!.x, s.getGeometry()!.y]).toEqual([100, 104]);
       expect(readAttr(s, 'rdTrackId')).toBe('T1');
       expect(readAttr(s, 'rdKm')).toBe('10.11');
       commands.undo();
       expect([s.getGeometry()!.x, s.getGeometry()!.y]).toEqual([100, 300]);
       expect(readAttr(s, 'rdTrackId')).toBe('');
+      // placed clearly away from the track: stays where it was put
+      graph.moveCells([s], 0, -150); // centre (110, 160): gap 50
+      expect(s.getGeometry()!.y).toBe(150);
+      expect(readAttr(s, 'rdTrackId')).toBe('');
+      commands.undo();
+      // Alt held: no snap
+      setSnapAltDownForTest(true);
+      graph.moveCells([s], 0, -190);
+      expect(s.getGeometry()!.y).toBe(110);
+      setSnapAltDownForTest(false);
+      commands.undo();
+      graph.moveCells([s], 0, -190);
+      expect(s.getGeometry()!.y).toBe(104);
+      // arrow-key nudges move exactly, also away from the line; km follows along the line
+      graph.setSelectionCell(s);
+      commands.nudge(0, 1);
+      expect(s.getGeometry()!.y).toBe(105);
+      commands.nudge(0, -1);
+      commands.nudge(10, 0);
+      expect([s.getGeometry()!.x, s.getGeometry()!.y]).toEqual([110, 104]);
+      expect(readAttr(s, 'rdKm')).toBe('10.12');
       uninstall();
-      graph.moveCells([s], 0, -180);
-      expect(s.getGeometry()!.y).toBe(120);
+      commands.undo();
+      graph.moveCells([s], 0, 6);
+      expect(s.getGeometry()!.y).toBe(110);
     } finally {
       cleanupTestGraph(graph);
     }

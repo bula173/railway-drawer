@@ -1,5 +1,6 @@
 import { EventObject, EventSource, Graph, InternalEvent, UndoManager, styleUtils } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
+import { withSnapDataOnly } from '../railway/snap';
 import type { Cell, CellStyle } from '@maxgraph/core';
 
 /**
@@ -164,7 +165,8 @@ export class GraphCommandService {
     });
     const cells = this.graph.getMovableCells(topmost);
     if (cells.length === 0 || (dx === 0 && dy === 0)) return false;
-    this.graph.moveCells(cells, dx, dy);
+    // draw.io nudge: exactly (dx, dy); snap to track never pulls the cells back onto a line
+    withSnapDataOnly(() => this.graph.moveCells(cells, dx, dy));
     return true;
   }
 
