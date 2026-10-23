@@ -47,8 +47,7 @@ async function scenarios(page: Page): Promise<Array<{ name: string; steps: Array
   return page.evaluate(async () => {
     const registry = await import('/src/services/service-registry.ts' as string);
     const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
-    return tab.saveLoadController
-      .getScenarios()
+    return tab.document.scenarios
       .list()
       .map((s: { name: string; steps: Array<{ name: string; xml: string }> }) => ({
         name: s.name,
