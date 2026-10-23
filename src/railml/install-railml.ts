@@ -9,10 +9,11 @@
  * with `{ action }`. File > Open and files dropped on the canvas whose root is `<railML>` (also
  * `.railml`/`.xml`) are imported into a new tab the same way (`{ action: 'open', text, name }`).
  */
+import { emit, on } from '../core/event-bus';
 import type { TabManager } from '../ui/tabs';
 import { looksLikeRailml } from './xml';
 
-export const RAILML_REQUEST_EVENT = 'railml-request';
+export const RAILML_REQUEST_EVENT = 'railml-request' as const;
 
 export type RailmlRequest = { action: 'export' } | { action: 'import' } | { action: 'open'; text: string; name: string };
 
@@ -35,12 +36,11 @@ export async function isRailmlFile(file: File): Promise<string | null> {
 
 /** Opens railML text in a new tab (dispatches the request handled by installRailml). */
 export function requestRailmlOpen(text: string, name: string): void {
-  window.dispatchEvent(new CustomEvent<RailmlRequest>(RAILML_REQUEST_EVENT, { detail: { action: 'open', text, name } }));
+  emit(RAILML_REQUEST_EVENT, { action: 'open', text, name });
 }
 
 export function installRailml(tabManager: TabManager, notify: RailmlNotifier): () => void {
-  const onRequest = (evt: Event): void => {
-    const req = (evt as CustomEvent<RailmlRequest>).detail;
+  const onRequest = (req: RailmlRequest): void => {
     import('./railml-ui')
       .then(async (ui): Promise<void> => {
         if (req.action === 'export') ui.exportActiveTab(tabManager, notify);
@@ -52,6 +52,5 @@ export function installRailml(tabManager: TabManager, notify: RailmlNotifier): (
         notify.error(`railML: ${error instanceof Error ? error.message : String(error)}`);
       });
   };
-  window.addEventListener(RAILML_REQUEST_EVENT, onRequest);
-  return () => window.removeEventListener(RAILML_REQUEST_EVENT, onRequest);
+  return on(RAILML_REQUEST_EVENT, onRequest);
 }

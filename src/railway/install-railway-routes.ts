@@ -39,7 +39,7 @@ export type RouteCommand =
   | 'toggleRoutes'
   | 'toggleKmRuler';
 
-export const ROUTE_REQUEST_EVENT = 'railway-route-request';
+export const ROUTE_REQUEST_EVENT = 'railway-route-request' as const;
 export const KM_RULER_KEY = STORAGE_KEYS.railwayKmRuler;
 
 export interface RailwayRoutesHandle {
@@ -234,8 +234,8 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     syncMenu();
   };
 
-  const onRequest = (evt: Event): void => {
-    const cmd = (evt as CustomEvent<string>).detail as RouteCommand;
+  const onRequest = (detail: string): void => {
+    const cmd = detail as RouteCommand;
     run(cmd);
   };
   const onTab = (): void => {
@@ -248,7 +248,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     e.preventDefault();
     run('tool');
   };
-  window.addEventListener(ROUTE_REQUEST_EVENT, onRequest);
+  on(ROUTE_REQUEST_EVENT, onRequest);
   on('tab-changed', onTab);
   on('tab-closed', onTab);
   button?.addEventListener('click', onButton);
@@ -265,7 +265,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
       tool.deactivate();
       unbindRuler();
       snapFeature.dispose();
-      window.removeEventListener(ROUTE_REQUEST_EVENT, onRequest);
+      off(ROUTE_REQUEST_EVENT, onRequest);
       off('tab-changed', onTab);
       off('tab-closed', onTab);
       button?.removeEventListener('click', onButton);

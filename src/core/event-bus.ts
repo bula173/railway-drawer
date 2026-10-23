@@ -33,8 +33,8 @@ export interface AppEventMap {
   'railway-export-request': string;
   /** A RouteCommand of install-railway-routes.ts. */
   'railway-route-request': string;
-  /** A state command of railway/state-menu.ts. */
-  'railway-state-request': string;
+  /** A state command of railway/state-menu.ts (context menu items without one send none). */
+  'railway-state-request': string | undefined;
   'railway-script-request': { action: 'import' | 'export' };
   'railml-request': { action: 'export' } | { action: 'import' } | { action: 'open'; text: string; name: string };
 

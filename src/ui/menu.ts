@@ -1,3 +1,4 @@
+import { emit } from '../core/event-bus';
 import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
@@ -332,17 +333,17 @@ export class MenuController {
   private executeMenuAction(action: string): void {
     // File > Export Railway Data > ...: main-editor.ts (src/railway) writes the list
     if (action.startsWith('exportRailway:')) {
-      window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
+      emit('railway-export-request', action.slice('exportRailway:'.length));
       return;
     }
     // Railway menu route tools and toggles: src/railway/install-railway-routes.ts
     if (action.startsWith('railwayRoute:')) {
-      window.dispatchEvent(new CustomEvent('railway-route-request', { detail: action.slice('railwayRoute:'.length) }));
+      emit('railway-route-request', action.slice('railwayRoute:'.length));
       return;
     }
     // Railway > Object State: src/railway/install-railway-states.ts (also the context menu)
     if (action.startsWith('railwayState:')) {
-      window.dispatchEvent(new CustomEvent('railway-state-request', { detail: action.slice('railwayState:'.length) }));
+      emit('railway-state-request', action.slice('railwayState:'.length));
       return;
     }
 
@@ -395,13 +396,13 @@ export class MenuController {
       case 'importRailml':
       case 'exportRailml':
         // src/railml/install-railml.ts (lazy railml-ui chunk): new tab from railML / railML 3.2 download
-        window.dispatchEvent(new CustomEvent('railml-request', { detail: { action: action === 'importRailml' ? 'import' : 'export' } }));
+        emit('railml-request', { action: action === 'importRailml' ? 'import' : 'export' });
         break;
 
       case 'importRailwayScript':
       case 'exportRailwayScript':
         // src/railway-script/install-railway-script.ts (lazy script-ui chunk): new tab from a script / .rdl.yaml|.rdl.json download
-        window.dispatchEvent(new CustomEvent('railway-script-request', { detail: { action: action === 'importRailwayScript' ? 'import' : 'export' } }));
+        emit('railway-script-request', { action: action === 'importRailwayScript' ? 'import' : 'export' });
         break;
 
       case 'saveAsTemplate':
@@ -554,11 +555,11 @@ export class MenuController {
 
       case 'editData':
         // main-editor.ts (src/railway) shows the Data panel for the selection
-        window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
+        emit('railway-edit-data-request');
         break;
 
       case 'railwayChecks':
-        window.dispatchEvent(new CustomEvent('railway-checks-request'));
+        emit('railway-checks-request');
         break;
 
       case 'shortcuts':

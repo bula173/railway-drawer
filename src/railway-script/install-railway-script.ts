@@ -12,7 +12,7 @@ import { on } from '../core/event-bus';
 import type { LeftPanelTabs } from '../ui/left-panel-tabs';
 import type { TabData, TabManager } from '../ui/tabs';
 
-export const RAILWAY_SCRIPT_REQUEST_EVENT = 'railway-script-request';
+export const RAILWAY_SCRIPT_REQUEST_EVENT = 'railway-script-request' as const;
 export const RAILWAY_SCRIPT_TAB = 'railwayScript';
 
 export interface RailwayScriptRequest {
@@ -72,8 +72,8 @@ export function installRailwayScript(tabManager: TabManager, notify: RailwayScri
   });
   if (leftPanelTabs.getActiveTab() === RAILWAY_SCRIPT_TAB) showPanel();
 
-  window.addEventListener(RAILWAY_SCRIPT_REQUEST_EVENT, (evt) => {
-    const req = (evt as CustomEvent<RailwayScriptRequest>).detail;
+  on(RAILWAY_SCRIPT_REQUEST_EVENT, (detail) => {
+    const req: RailwayScriptRequest | undefined = detail;
     loadUi()
       .then((ui) => {
         if (req?.action === 'import') {

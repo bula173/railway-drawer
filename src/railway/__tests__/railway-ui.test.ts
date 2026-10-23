@@ -3,6 +3,7 @@
  * editing, undo through the tab's command service, live checks with the badge, click-to-select,
  * reports through the menu events, Edit Data… without a selection.
  */
+import { emit } from '../../core/event-bus';
 import { readCountryId, readCountryIdRaw } from '../project-settings';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Cell } from '@maxgraph/core';
@@ -212,7 +213,7 @@ describe('railway Data and Checks panels', () => {
     vi.advanceTimersByTime(60);
     expect(badge().textContent).toBe('2');
 
-    window.dispatchEvent(new CustomEvent('railway-checks-request'));
+    emit('railway-checks-request');
     expect(checksPanel().hidden).toBe(false);
     const rows = checksPanel().querySelectorAll<HTMLElement>('.rd-rw-issue');
     expect(rows).toHaveLength(2);
@@ -271,7 +272,7 @@ describe('railway Data and Checks panels', () => {
     expect(downloads[1].name).toBe('Stacja Łódź-points.csv');
     expect(notify.warning).toHaveBeenCalledWith(expect.stringContaining('only has the header row'));
 
-    window.dispatchEvent(new CustomEvent('railway-export-request', { detail: 'xlsx' }));
+    emit('railway-export-request', 'xlsx');
     // the XLSX writer is loaded on first use (dynamic import)
     await vi.waitFor(() => expect(downloads).toHaveLength(3));
     expect(downloads[2].name).toBe('Stacja Łódź-railway-data.xlsx');

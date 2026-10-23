@@ -14,7 +14,7 @@ import { cellSchemeId, hasRuntimeState, readStates } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { DIMENSION_LABEL, STATE_DIMENSIONS, STATE_SCHEME, effectiveValue } from './states';
 
-export const STATE_REQUEST_EVENT = 'railway-state-request';
+export const STATE_REQUEST_EVENT = 'railway-state-request' as const;
 
 export interface StateMenuOption {
   value: string;

@@ -12,6 +12,7 @@
  * Menu items are shown/hidden based on context (canvas vs. cell).
  */
 
+import { emit } from '../core/event-bus';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
@@ -173,7 +174,7 @@ export class ContextMenuController {
       const item = target.closest<HTMLElement>('[data-state-cmd]');
       e.stopPropagation();
       if (item) {
-        window.dispatchEvent(new CustomEvent(STATE_REQUEST_EVENT, { detail: item.dataset.stateCmd }));
+        emit(STATE_REQUEST_EVENT, item.dataset.stateCmd);
         this.hideContextMenu();
         return;
       }
@@ -600,7 +601,7 @@ export class ContextMenuController {
       case 'editData':
         // The Data panel edits the selection (src/railway, wired in main-editor.ts)
         if (this.selectedCells.length > 0) this.graph.setSelectionCells(this.selectedCells);
-        window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
+        emit('railway-edit-data-request');
         break;
 
       case 'group':

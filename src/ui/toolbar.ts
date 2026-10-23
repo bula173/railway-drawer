@@ -8,6 +8,7 @@
  *        `#btn-distribute-*`), and toggle buttons mirroring a menu item's aria-checked
  *        (`data-mirror-action`, e.g. km Ruler) as aria-pressed.
  */
+import { emit } from '../core/event-bus';
 import { createInstallScope, installOnce } from '../core/install-once';
 import { shortcutForAction } from './shortcut-keys';
 
@@ -213,8 +214,8 @@ export function installToolbar(): void {
   mirrorMenuToggles();
   installAlignMenu();
   // Railway group (the route tool button is src/railway/install-railway-routes.ts)
-  document.getElementById('btn-railway-checks')?.addEventListener('click', () => window.dispatchEvent(new CustomEvent('railway-checks-request')));
+  document.getElementById('btn-railway-checks')?.addEventListener('click', () => emit('railway-checks-request'));
   document.getElementById('btn-km-ruler')?.addEventListener('click', () =>
-    window.dispatchEvent(new CustomEvent('railway-route-request', { detail: 'toggleKmRuler' }))
+    emit('railway-route-request', 'toggleKmRuler')
   );
 }

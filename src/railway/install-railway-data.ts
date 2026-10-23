@@ -283,16 +283,15 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     options.showPanel('checks');
     runChecks();
   };
-  const onExport = (evt: Event): void => {
-    const id = (evt as CustomEvent<string>).detail;
+  const onExport = (id: string): void => {
     if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
   };
   window.addEventListener(RIGHT_PANEL_EVENT, onView);
   on('tab-changed', onTabChanged);
   on('tab-closed', onTabChanged);
-  window.addEventListener('railway-edit-data-request', onEditData);
-  window.addEventListener('railway-checks-request', onChecks);
-  window.addEventListener('railway-export-request', onExport);
+  on('railway-edit-data-request', onEditData);
+  on('railway-checks-request', onChecks);
+  on('railway-export-request', onExport);
 
   return {
     dataPanel,
@@ -308,9 +307,9 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
       window.removeEventListener(RIGHT_PANEL_EVENT, onView);
       off('tab-changed', onTabChanged);
       off('tab-closed', onTabChanged);
-      window.removeEventListener('railway-edit-data-request', onEditData);
-      window.removeEventListener('railway-checks-request', onChecks);
-      window.removeEventListener('railway-export-request', onExport);
+      off('railway-edit-data-request', onEditData);
+      off('railway-checks-request', onChecks);
+      off('railway-export-request', onExport);
       dataPanel.destroy();
       checksPanel.destroy();
     },

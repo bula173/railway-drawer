@@ -230,8 +230,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     setStateOnCells(graph, targets, dim, m[2]);
   };
 
-  const onRequest = (evt: Event): void => {
-    const detail = (evt as CustomEvent<string>).detail;
+  const onRequest = (detail: string | undefined): void => {
     if (typeof detail === 'string') run(detail);
   };
   // points in reverse: the straight continuation faded (view overlay per tab graph, points-fade.ts)
@@ -252,7 +251,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     if (!e.repeat) run(command);
   };
 
-  window.addEventListener(STATE_REQUEST_EVENT, onRequest);
+  on(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
   document.addEventListener('keydown', onKey);
   on('tab-changed', syncFades);
@@ -264,7 +263,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     run,
     isLegendShown: () => legendOn,
     destroy() {
-      window.removeEventListener(STATE_REQUEST_EVENT, onRequest);
+      off(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
       document.removeEventListener('keydown', onKey);
       off('tab-changed', syncFades);
