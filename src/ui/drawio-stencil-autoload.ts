@@ -7,10 +7,10 @@
  * to the stencil engine's ensureStencilsForXml, and the graph is refreshed once a set was loaded
  * (named stencils such as mxgraph.basic.flash render as rectangles until then).
  */
+import { reportLoadFailure } from '../core/load-failure';
 import { onModelChange } from '../core/graph-events';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import { ensureStencilsForXml } from '../drawio-shapes/engine';
-import { logger } from '../drawio/logger';
 
 function styleText(cell: Cell): string | null {
   const style = cell.getStyle() as unknown;
@@ -47,7 +47,7 @@ async function ensureAndRefresh(graph: Graph, styles: string[]): Promise<void> {
     const loaded = await ensureStencilsForXml(styles);
     if (loaded.length > 0 && graph.container) graph.refresh();
   } catch (error) {
-    logger.warn('stencil-autoload', 'Could not load stencils', error);
+    reportLoadFailure('warn', 'stencil-autoload', 'Could not load stencils', error);
   }
 }
 

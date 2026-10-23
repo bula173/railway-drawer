@@ -178,7 +178,7 @@ describe('scenarios in share links', () => {
         name: 'Tab 1',
         modelXml: MODEL('one'),
         pageAttributes: scenarioIndexAttributes(scenarios),
-        scenarioPages: buildScenarioPages(scenarios, new Set()),
+        sectionPages: buildScenarioPages(scenarios, new Set()),
         extraPages: [`<diagram id="k" name="Kept">${MODEL('kept')}</diagram>`],
       },
       { name: 'Tab 2', modelXml: MODEL('two') },
@@ -197,7 +197,7 @@ describe('scenarios in share links', () => {
     const service = new ProjectService();
     const scenarios = filled(service, [{ scenario: 'S', steps: Array.from({ length: 70 }, (_, i) => [`s${i}`] as [string]) }]);
     const xml = buildShareMxfile([
-      { name: 'T', modelXml: MODEL('t'), pageAttributes: scenarioIndexAttributes(scenarios), scenarioPages: buildScenarioPages(scenarios, new Set()) },
+      { name: 'T', modelXml: MODEL('t'), pageAttributes: scenarioIndexAttributes(scenarios), sectionPages: buildScenarioPages(scenarios, new Set()) },
     ]);
     expect(splitSharedFile(xml)).toHaveLength(1);
   });

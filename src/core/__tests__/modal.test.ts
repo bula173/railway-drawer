@@ -3,7 +3,7 @@
  * backdrop, focus return, keys kept from the page, custom keys first.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { openModal, openModalCount, isTopModal, type ModalOptions } from '../modal';
+import { openFloatingPanel, openFloatingPanelCount, openModal, openModalCount, isTopModal, type ModalOptions } from '../modal';
 
 function parts(): { overlay: HTMLElement; dialog: HTMLElement; title: HTMLElement; first: HTMLButtonElement; input: HTMLInputElement; last: HTMLButtonElement } {
   const overlay = document.createElement('div');
@@ -123,5 +123,78 @@ describe('openModal', () => {
     expect(openModalCount()).toBe(base + 1);
     expect(isTopModal(fresh.handle)).toBe(true);
     fresh.handle.close();
+  });
+});
+
+describe('openFloatingPanel (non-modal variant)', () => {
+  const esc = (target: EventTarget = document.body): KeyboardEvent => {
+    const evt = new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true });
+    target.dispatchEvent(evt);
+    return evt;
+  };
+  afterEach(() => {
+    document.body.replaceChildren();
+  });
+
+  it('is a labelled dialog without aria-modal; Esc anywhere closes it and removes it', () => {
+    const panel = document.createElement('div');
+    panel.className = 'my-panel';
+    const title = document.createElement('h2');
+    panel.appendChild(title);
+    const handle = openFloatingPanel({ element: panel, labelledBy: title, testId: 'p' });
+    expect(panel.isConnected).toBe(true);
+    expect(panel.getAttribute('role')).toBe('dialog');
+    expect(panel.hasAttribute('aria-modal')).toBe(false);
+    expect(panel.getAttribute('aria-labelledby')).toBe(title.id);
+    expect(panel.className).toBe('my-panel');
+    expect(openFloatingPanelCount()).toBe(1);
+    const closed = vi.fn();
+    handle.onClose(closed);
+    expect(esc().defaultPrevented).toBe(true);
+    expect(handle.closed).toBe(true);
+    expect(panel.isConnected).toBe(false);
+    expect(closed).toHaveBeenCalledOnce();
+    expect(openFloatingPanelCount()).toBe(0);
+    expect(esc().defaultPrevented).toBe(false);
+  });
+
+  it('a modal over it gets Escape first; the most recent panel only; onEscape replaces close', () => {
+    const a = document.createElement('div');
+    const b = document.createElement('div');
+    const onA = vi.fn();
+    const ha = openFloatingPanel({ element: a, label: 'A', onEscape: onA });
+    const hb = openFloatingPanel({ element: b, label: 'B', container: null, removeOnClose: false });
+    document.body.appendChild(b);
+    const overlay = document.createElement('div');
+    const dialog = document.createElement('div');
+    overlay.appendChild(dialog);
+    const modal = openModal({ overlay, dialog, label: 'M' });
+    esc(dialog);
+    expect(modal.closed).toBe(true);
+    expect(hb.closed).toBe(false);
+    esc();
+    expect(hb.closed).toBe(true);
+    expect(b.isConnected).toBe(true); // removeOnClose: false
+    expect(onA).not.toHaveBeenCalled();
+    esc();
+    expect(onA).toHaveBeenCalledOnce();
+    expect(ha.closed).toBe(false);
+    ha.close();
+  });
+
+  it('gives the focus back when it was inside at close; escapeWhenFocusedOnly', () => {
+    const opener = document.createElement('button');
+    document.body.appendChild(opener);
+    opener.focus();
+    const panel = document.createElement('div');
+    const inner = document.createElement('button');
+    panel.appendChild(inner);
+    const handle = openFloatingPanel({ element: panel, label: 'P', escapeWhenFocusedOnly: true });
+    esc();
+    expect(handle.closed).toBe(false);
+    inner.focus();
+    esc(inner);
+    expect(handle.closed).toBe(true);
+    expect(document.activeElement).toBe(opener);
   });
 });

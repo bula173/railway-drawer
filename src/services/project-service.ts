@@ -77,6 +77,18 @@ export class ProjectService {
    * comments such as the PlantUML metadata) into a native draw.io `<mxfile>`. The scenario step
    * pages follow it, then the preserved pages of the opened file (`extraPages`), unchanged.
    */
+  /**
+   * What the registered sections write into a file: the main page's `<diagram>` attributes and the
+   * pages after it (serialised `<diagram>` elements; `usedIds` are taken page ids). Also used by the
+   * share link, which writes every tab as one page with its sections.
+   */
+  sectionContent(usedIds: Set<string> = new Set()): { attributes: Record<string, string>; pages: string[] } {
+    const sections = projectSections();
+    const pages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
+    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+    return { attributes, pages };
+  }
+
   generateProjectXml(graphXml: string): string {
     // The shown page's id must not collide with the ids of the preserved pages
     const usedIds = new Set<string>();
@@ -90,9 +102,7 @@ export class ProjectService {
       } while (usedIds.has(this.pageId));
     }
     usedIds.add(this.pageId);
-    const sections = projectSections();
-    const sectionPages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
-    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+    const { attributes, pages: sectionPages } = this.sectionContent(usedIds);
 
     let model: Element | null = null;
     const comments: string[] = [];

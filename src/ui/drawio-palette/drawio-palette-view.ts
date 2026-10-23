@@ -4,6 +4,9 @@
  *        order, search over titles and tags, "More shapes…" visibility menu, real-rendered
  *        thumbnails, hover preview, click/drag insertion and user library import.
  */
+import { reportLoadFailure } from '../../core/load-failure';
+import { openModal } from '../../core/modal';
+import type { ModalHandle } from '../../core/modal';
 import type { Cell, Graph } from '@maxgraph/core';
 import './drawio-palette.css';
 import { logger } from '../../drawio/logger';
@@ -309,13 +312,15 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   moreBtn.hidden = options.showMoreMenu === false;
   importBtn.hidden = !userLibraries;
   footer.hidden = moreBtn.hidden && importBtn.hidden;
+  // "More shapes…": a modal (core/modal.ts) on its own backdrop, placed in the palette root while open
+  const menuBackdrop = el('div', 'rd-dp-menu-backdrop');
   const menu = el('div', 'rd-dp-menu');
   menu.hidden = true;
-  menu.setAttribute('role', 'dialog');
-  menu.setAttribute('aria-label', 'More shapes');
+  menu.tabIndex = -1;
+  menuBackdrop.appendChild(menu);
   const preview = el('div', 'rd-dp-preview');
   preview.hidden = true;
-  root.append(toolbar, status, list, footer, menu);
+  root.append(toolbar, status, list, footer);
   document.body.appendChild(preview);
   options.container.appendChild(root);
 
@@ -556,9 +561,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       .catch((err: unknown) => {
         cat.loading = null;
         cat.body.replaceChildren(el('div', 'rd-dp-empty', 'Could not load this palette'));
-        logger.error('drawio-palette', `Palette ${cat.id} failed to load`, {
-          error: err instanceof Error ? err.message : String(err),
-        });
+        reportLoadFailure('error', 'drawio-palette', `Palette ${cat.id} failed to load`, err);
       });
     return cat.loading;
   }
@@ -702,7 +705,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         globalSearchTimer = null;
         Promise.all([import('./global-search'), ensureCatalogue()])
           .then(([m]) => (token === globalSearchToken && !destroyed ? m.renderGlobalSearch(searchResults, query, internals(), () => token === globalSearchToken) : undefined))
-          .catch((err: unknown) => logger.warn('drawio-palette', 'Library search failed', { error: err instanceof Error ? err.message : String(err) }))
+          .catch((err: unknown) => reportLoadFailure('warn', 'drawio-palette', 'Library search failed', err))
           .finally(resolve);
       }, 150);
     });
@@ -728,7 +731,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     close.type = 'button';
     close.title = 'Close';
     close.setAttribute('aria-label', 'Close');
-    close.addEventListener('click', () => { menu.hidden = true; });
+    close.addEventListener('click', () => closeMoreShapes());
     head.appendChild(close);
     menu.appendChild(head);
     menu.appendChild(el('div', 'rd-dp-menu-section', 'In the Shapes tab'));
@@ -770,31 +773,33 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     }
   }
 
+  // The modal primitive gives it role=dialog + aria-modal, the focus trap, Esc (before the shortcut
+  // dispatcher, so the canvas selection stays), a press on the backdrop = close, and the focus
+  // back to where it was (the More shapes button)
+  let menuModal: ModalHandle | null = null;
   function openMoreShapes(): void {
     syncMenu();
+    if (menuModal && !menuModal.closed) return;
     menu.hidden = false;
+    const modal = openModal({ overlay: menuBackdrop, dialog: menu, label: 'More shapes', testId: 'more-shapes-dialog', container: root });
+    menuModal = modal;
+    modal.onClose(() => {
+      menu.hidden = true;
+      if (menuModal === modal) menuModal = null;
+      if (document.activeElement === document.body && moreBtn.isConnected) moreBtn.focus();
+    });
+    menu.focus({ preventScroll: true });
+  }
+
+  function closeMoreShapes(): void {
+    menuModal?.close();
   }
 
   moreBtn.addEventListener('click', (evt) => {
     evt.stopPropagation();
-    syncMenu();
-    menu.hidden = !menu.hidden;
+    if (menuModal && !menuModal.closed) closeMoreShapes();
+    else openMoreShapes();
   });
-  const closeMenu = (evt: MouseEvent): void => {
-    if (!menu.hidden && !menu.contains(evt.target as Node) && evt.target !== moreBtn) menu.hidden = true;
-  };
-  document.addEventListener('mousedown', closeMenu);
-  // Esc closes the More shapes dialog like every other dialog (capture: before the shortcut dispatcher clears the
-  // selection); focus goes back to its button when it was inside
-  const escMenu = (evt: KeyboardEvent): void => {
-    if (evt.key !== 'Escape' || menu.hidden || evt.defaultPrevented) return;
-    evt.preventDefault();
-    evt.stopPropagation();
-    const hadFocus = menu.contains(document.activeElement);
-    menu.hidden = true;
-    if (hadFocus || document.activeElement === document.body) moreBtn.focus();
-  };
-  window.addEventListener('keydown', escMenu, true);
 
   // ------------------------------------------------------------------ user libraries
 
@@ -1058,9 +1063,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         .then(addCataloguePalettes)
         .catch((err: unknown) => {
           cataloguePromise = null;
-          logger.warn('drawio-palette', 'draw.io library catalogue failed to load', {
-            error: err instanceof Error ? err.message : String(err),
-          });
+          reportLoadFailure('warn', 'drawio-palette', 'draw.io library catalogue failed to load', err);
         });
     }
     return cataloguePromise;
@@ -1142,8 +1145,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     renderedThumbs.clear();
     hidePreview();
     observer?.disconnect();
-    document.removeEventListener('mousedown', closeMenu);
-    window.removeEventListener('keydown', escMenu, true);
+    closeMoreShapes();
     if (options.dropTarget) {
       options.dropTarget.removeEventListener('dragover', onDragOver);
       options.dropTarget.removeEventListener('drop', onDrop, true);

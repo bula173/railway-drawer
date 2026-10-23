@@ -237,6 +237,11 @@ export class DiagramDocument {
     return this.project.section<T>(key);
   }
 
+  /** The sections' main-page attributes and pages, as the saved file has them (the share link writes them per tab). */
+  sectionContent(): { attributes: Record<string, string>; pages: string[] } {
+    return this.project.sectionContent();
+  }
+
   getProjectName(): string {
     return this.project.getProjectName();
   }

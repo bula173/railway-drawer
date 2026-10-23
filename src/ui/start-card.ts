@@ -14,6 +14,8 @@
  * `rd.startCard.force` is '1': the e2e suites click the canvas centre, where the card sits.
  */
 import { onModelChange } from '../core/graph-events';
+import { openFloatingPanel } from '../core/modal';
+import type { FloatingPanelHandle } from '../core/modal';
 import type { Graph } from '@maxgraph/core';
 import './start-card.css';
 import { readItem, writeItem } from '../core/safe-storage';
@@ -82,9 +84,9 @@ export function createStartCard(options: StartCardOptions): StartCard {
 
   const card = document.createElement('section');
   card.className = 'rd-start-card';
-  card.setAttribute('role', 'dialog');
-  card.setAttribute('aria-labelledby', 'rd-start-card-title');
   card.hidden = true;
+  /** The non-modal panel (core/modal.ts openFloatingPanel) while the card is shown: role, Esc, focus return. */
+  let floating: FloatingPanelHandle | null = null;
 
   const head = document.createElement('div');
   head.className = 'rd-start-head';
@@ -159,6 +161,8 @@ export function createStartCard(options: StartCardOptions): StartCard {
 
   function hide(): void {
     card.hidden = true;
+    floating?.close();
+    floating = null;
     unwatch();
   }
 
@@ -180,6 +184,7 @@ export function createStartCard(options: StartCardOptions): StartCard {
       watched = { graph: active.graph, dispose: onModelChange(active.graph, listener) };
     }
     card.hidden = false;
+    floating ??= openFloatingPanel({ element: card, labelledBy: title, container: null, removeOnClose: false, onEscape: dismiss });
     card.classList.toggle('rd-start-dragging', dragging);
     place();
   }
@@ -190,9 +195,6 @@ export function createStartCard(options: StartCardOptions): StartCard {
     hide();
   }
 
-  const onKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Escape' && !card.hidden) dismiss();
-  };
   const onDragStart = (): void => {
     dragging = true;
     card.classList.add('rd-start-dragging');
@@ -205,7 +207,6 @@ export function createStartCard(options: StartCardOptions): StartCard {
     if (!e.relatedTarget) onDragEnd();
   };
   close.addEventListener('click', dismiss);
-  document.addEventListener('keydown', onKey, true);
   document.addEventListener('dragstart', onDragStart, true);
   document.addEventListener('dragenter', onDragStart, true);
   document.addEventListener('dragend', onDragEnd, true);
@@ -222,7 +223,6 @@ export function createStartCard(options: StartCardOptions): StartCard {
     dismiss,
     destroy() {
       hide();
-      document.removeEventListener('keydown', onKey, true);
       document.removeEventListener('dragstart', onDragStart, true);
       document.removeEventListener('dragenter', onDragStart, true);
       document.removeEventListener('dragend', onDragEnd, true);

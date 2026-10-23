@@ -11,6 +11,7 @@
 import './templates/templates.css';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from '../config/build-id';
 import { openModal } from '../core/modal';
+import { setConfirmProvider, type ConfirmOptions } from '../core/confirm';
 
 
 function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
@@ -131,15 +132,7 @@ export function promptSaveAs(currentName: string): Promise<string | null> {
   });
 }
 
-export interface ConfirmOptions {
-  title: string;
-  message?: string;
-  confirmLabel?: string;
-  cancelLabel?: string;
-  /** Red confirm button (deleting, discarding). */
-  danger?: boolean;
-  testId?: string;
-}
+export type { ConfirmOptions };
 
 /** Yes/no question in the themed modal; resolves true on confirm (Enter), false on cancel (Escape). */
 export function confirmDialog(opts: ConfirmOptions): Promise<boolean> {
@@ -158,6 +151,9 @@ export function confirmDialog(opts: ConfirmOptions): Promise<boolean> {
     ok.focus();
   });
 }
+
+// the lower layers ask through core/confirm.ts askConfirm
+setConfirmProvider(confirmDialog);
 
 /** Documentation links of Help > About. */
 export const ABOUT_LINKS: ReadonlyArray<{ label: string; href: string }> = [

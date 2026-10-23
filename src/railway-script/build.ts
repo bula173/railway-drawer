@@ -2,7 +2,7 @@
  * @file build.ts
  * @brief Railway Script model -> a scratch draw.io model with the generated drawing: tracks,
  *        points legs and section lines as edges, objects with the ERTMS library symbols (or the
- *        same fallback shapes as the railML import, src/railml/schematic.ts), balise group boxes,
+ *        same fallback shapes as the railML import, src/railway/schematic.ts), balise group boxes,
  *        and the routes on the Routes layer (paths found with routes.ts through the drawn
  *        topology). Every generated top cell carries `rdScript="<kind>:<id>"` and
  *        `rdScriptShape` (which symbol/style it was made with) next to its rd* data.
@@ -18,7 +18,7 @@ import { findRoutePaths, formatPointsList } from '../railway/routes';
 import { buildTopology } from '../railway/topology';
 import { collectObjects, indexObjects } from '../railway/validation';
 import type { LibraryEntry } from '../drawio-shapes/engine';
-import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from '../railml/schematic';
+import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from '../railway/schematic';
 import { importDrawioXmlIntoModel, registerDrawioCodecs } from '../services/drawio-xml';
 import type { Layout, LayoutIssue } from './layout';
 import { centreOnTrack, layoutScript } from './layout';

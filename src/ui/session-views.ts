@@ -43,9 +43,9 @@ export function createSessionViews(): SessionViews {
   const menuState = new MenuStateView();
   const contextMenu = new ContextMenuController();
   const plantumlEditor = new PlantUmlEditorController();
-  // Properties > Arrange buttons that run commands (Group / Ungroup)
+  // Properties > Arrange buttons run their commands (z-order, rotate / flip, group, snap, copy size, lock)
   const commandButtons = new AbortController();
-  bindCommandButtons(document.getElementById('property-content') ?? document.createElement('div'), commandButtons.signal);
+  bindCommandButtons(document.getElementById('property-content') ?? document.createElement('div'), commandButtons.signal, 'panel');
   return {
     properties,
     layers,

@@ -4,7 +4,8 @@
  * button keyboard pattern.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
-import { TOOLBAR_ICONS, applyInlineIcons, createToolbarIcon, decorateToolbarButtons, installToolbar, setInlineIcon } from '../../ui/toolbar';
+import { applyInlineIcons, decorateToolbarButtons, installToolbar, setInlineIcon } from '../../ui/toolbar';
+import { TOOLBAR_ICONS, createToolbarIcon } from '../../core/icons';
 import indexHtml from '../../../index.html?raw';
 import { shortcutForAction } from '../../ui/shortcut-keys';
 import { registerAppCommands } from '../../ui/commands';
