@@ -479,6 +479,19 @@ const undoTool: Executor = async (target, input) => {
   return ok(`Undid ${done} step(s)`, { undone: done });
 };
 
+const setTitleBlock: Executor = async (target, input) => {
+  if (!target.setTitleBlock) fail('print sheets are not available here');
+  const result = await target.setTitleBlock!(input);
+  return ok('Title block set', result as Record<string, unknown>);
+};
+
+const exportSheetsTool: Executor = async (target, input) => {
+  if (!target.exportSheets) fail('print sheets are not available here');
+  const pages = Array.isArray(input.pages) ? (input.pages as number[]) : [];
+  const out = await target.exportSheets!(pages);
+  return ok(`Exported ${out.sheets} sheet(s) as ${out.fileName}`, out);
+};
+
 const EXECUTORS: Record<AiToolName, Executor> = {
   get_drawing: getDrawing,
   apply_railway_script: applyRailwayScript,
@@ -503,6 +516,8 @@ const EXECUTORS: Record<AiToolName, Executor> = {
   build_scenario: buildScenario,
   view_scenario: viewScenario,
   export_scenario: exportScenario,
+  set_title_block: setTitleBlock,
+  export_sheets: exportSheetsTool,
 };
 
 /**

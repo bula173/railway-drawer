@@ -45,3 +45,4 @@
   analysis/ranking PL/EN, id mapping), system prompt, chat loop against a fake SSE Messages API incl. the template-first
   flow, protocol/relay, MCP endpoint over HTTP (tool list), local bridge + headless file incl. scenarios),
   `tests/e2e/ai.spec.ts`, `tests/e2e/ai-scenarios.spec.ts`; the AI panel is in theme-contrast.
+- Print sheets: `set_title_block` / `export_sheets` run on `AiTarget.setTitleBlock` / `exportSheets` (app-target.ts -> lazy `src/print/ui/ai-sheets.ts`); see [print-sheets.md](print-sheets.md).

@@ -105,6 +105,8 @@ export function tabTarget(tab: TabData, tabManager: TabManager): AiTarget {
       if (!handle) throw new Error('the scenario view is not available');
       if (!handle.viewer.open(tab.id, scenarioId, index)) throw new Error('the scenario could not be shown');
     },
+    setTitleBlock: async (input) => (await import('../print/ui/ai-sheets')).aiSetTitleBlock(tab, input),
+    exportSheets: async (pages) => (await import('../print/ui/ai-sheets')).aiExportSheets(tab, pages),
     exportScenario: async (scenarioId, format, options) => {
       const handle = installedScenarios();
       if (!handle) throw new Error('scenario export is not available');
