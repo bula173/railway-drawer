@@ -82,6 +82,13 @@ function btn(label: string, className: string, testId: string, onClick: () => vo
   return b;
 }
 
+/** Example prompts of the empty chat ("Try:" chips): EN and PL like the users' requests. */
+export const AI_EXAMPLE_PROMPTS: readonly string[] = [
+  'A single-track station with two points and main signals at both ends',
+  'A double-track line from km 0 to 5 with ETCS L2 marker boards every kilometre',
+  'Przygotuj scenariusz wjazdu pociągu na tor 2',
+];
+
 let idCounter = 0;
 const uid = (p: string): string => `${p}-${++idCounter}`;
 
@@ -174,8 +181,17 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
       keySave.click();
     }
   });
-  const keyNote = el('p', 'rd-ai-note');
+  const keyNote = el('p', 'rd-ai-note rd-ai-key-note');
   keyNote.id = `${keyId}-note`;
+  keyNote.dataset.testid = 'ai-key-note';
+  keyNote.hidden = true;
+  // the privacy note is collapsed behind an "About your key" disclosure (a button, so the settings' one <summary> stays)
+  const aboutKey = btn('About your key', 'rd-ai-disclosure', 'ai-about-key', () => {
+    keyNote.hidden = !keyNote.hidden;
+    aboutKey.setAttribute('aria-expanded', String(!keyNote.hidden));
+  });
+  aboutKey.setAttribute('aria-expanded', 'false');
+  aboutKey.setAttribute('aria-controls', keyNote.id);
   keyNote.textContent =
     'Your key is stored only in this browser (localStorage) and sent only to api.anthropic.com with your requests — never to a Railway Drawer server, file or share link. The browser calls the API directly (header anthropic-dangerous-direct-browser-access): any script running on this page or anyone using this browser profile could read the key, so use a key with a spending limit, avoid shared computers and remove it when done. Your prompts and the diagram data the assistant reads go to Anthropic.';
   const renderKeyStatus = (): void => {
@@ -255,7 +271,7 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
   keyRow.append(keyInput, keyToggle);
   const keyButtons = el('div', 'rd-ai-row');
   keyButtons.append(keySave, keyRemove);
-  settingsBox.append(settingsSummary, keyLabel, keyRow, keyButtons, keyStatus, keyNote, modelLabel, modelSelect, modelCustom, effortLabel, effortSelect, confirmLabel, confirmRemoteLabel);
+  settingsBox.append(settingsSummary, keyLabel, keyRow, keyButtons, keyStatus, aboutKey, keyNote, modelLabel, modelSelect, modelCustom, effortLabel, effortSelect, confirmLabel, confirmRemoteLabel);
 
   // ------------------------------------------------------------------ log
   const log = el('div', 'rd-ai-log');
@@ -264,7 +280,23 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
   log.setAttribute('aria-label', 'AI conversation');
   log.tabIndex = 0;
   log.dataset.testid = 'ai-log';
-  const empty = el('p', 'rd-ai-empty', 'Describe what to draw, e.g. "A double-track line from km 0 to 5 with a station of two points in the middle, main signals at both ends and ETCS L2 marker boards every kilometre."');
+  // Empty state: what to do + example prompts as chips (a click puts the prompt into the composer); not styled like
+  // the input, so the example is never mistaken for typed text
+  const empty = el('div', 'rd-ai-empty');
+  empty.append(el('p', 'rd-ai-empty-text', 'Describe what to draw or change in the diagram.'));
+  const tryRow = el('div', 'rd-ai-try');
+  tryRow.setAttribute('role', 'group');
+  tryRow.setAttribute('aria-label', 'Example prompts');
+  tryRow.append(el('span', 'rd-ai-try-label', 'Try:'));
+  for (const example of AI_EXAMPLE_PROMPTS) {
+    const chip = btn(example, 'rd-ai-chip', 'ai-example', () => {
+      input.value = example;
+      input.focus();
+      input.setSelectionRange(example.length, example.length);
+    }, 'Put this example into the message box');
+    tryRow.append(chip);
+  }
+  empty.append(tryRow);
   log.append(empty);
   const scroll = (): void => {
     log.scrollTop = log.scrollHeight;
@@ -645,7 +677,8 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
   updateComposer();
 
   return {
-    focus: () => (settings.apiKey ? input : keyInput).focus(),
+    // the message box, never the API key field (the key hint / Settings say what is missing)
+    focus: () => input.focus(),
     destroy: () => {
       stop();
       remote?.client.close();
