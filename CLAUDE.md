@@ -4,7 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. No framework, no React.
 
-**Decision: one editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` 0.10) is the product: all
+**Decision: one editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` pinned exactly to 0.10.3: the app
+patches internals; `src/__tests__/maxgraph-patch-canary.test.ts` lists them and must pass after any bump) is the product: all
 railway features (data, routes, checks, scenarios, sharing) live there. UI text says "Railway Drawer editor"
 (never "legacy"/"maxGraph editor").
 
