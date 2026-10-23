@@ -9,7 +9,7 @@
   against a recording Sidebar stub. The 7 old palette files are byte-identical. Writes `palettes/data/<id>.json` (file =
   id, or `p-<slug>` for ids with spaces), `catalogue.json` (draw.io's More shapes categories, 69 libraries =
   `Sidebar.configuration`, palettes with counts/JS shapes/stencils, vendor `attribution`/`notice`/`vendorIcons` from
-  `libraries.ts`), `search-index.json` (`title\ttags` per entry), `third_party/drawio-libraries/*.md` (one notice per
+  `libraries.ts`), `search/search-index-NN.json` (`title\ttags` per entry, ~200 kB shards so no chunk exceeds the size warning; all loaded on the first search and concatenated, `loadPaletteSearchIndex`), `third_party/drawio-libraries/*.md` (one notice per
   vendor), copies all 2094 `img/**` images to `public/img/` (styles keep `image=img/lib/...`, resolved against the app
   base). `decode-stencils-bundle.ts` writes all 204 stencil sets. Never edit generated files by hand.
 - **JS shape libraries** (`vendor-shapes.ts` -> `src/drawio-shapes/vendor/*.js`, 46 modules / 703 shapes): upstream
@@ -40,7 +40,7 @@
   (`input[data-library-id]`, toggles all its palettes, flags in `rd.drawioPalettes.visible`, first palette expands),
   preview pane (count, attribution, 24 thumbnails). Defaults unchanged (ERTMS, railway libraries, General, Misc, Advanced,
   Arrows, Flowchart on; every draw.io library off). Search: the inline filter as before, plus `global-search.ts` (lazy,
-  150 ms debounce): `search-index.json` over palettes that are not shown, grouped by library (sorted by hits, 6 groups
+  150 ms debounce): the search index over palettes that are not shown, grouped by library (sorted by hits, 6 groups
   with up to 24 tiles, others "Show N results", "Show library"), deduped against the visible results. Thumbnails:
   shared renderer cache + IntersectionObserver as before; dark mode: draw.io libraries use the adaptive rendering,
   vendor icons (images, fixed-colour stencils; `vendorIcons`) are not recoloured.
