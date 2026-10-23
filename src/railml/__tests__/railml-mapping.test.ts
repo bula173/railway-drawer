@@ -1,6 +1,7 @@
 /**
  * railML mapping table: every catalogue kind is mapped (or listed as unmapped), the table in
- * docs/RAILML.md and the CLAUDE.md section list every kind, enumerations convert both ways.
+ * docs/RAILML.md and the architecture notes (docs/architecture/railml.md, formerly a CLAUDE.md section) list
+ * every kind, enumerations convert both ways.
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -22,14 +23,14 @@ describe('railML mapping', () => {
     expect(new Set(KIND_MAPPINGS.map((m) => m.prefix)).size).toBe(KIND_MAPPINGS.length);
   });
 
-  it('documents every kind in docs/RAILML.md and CLAUDE.md', () => {
+  it('documents every kind in docs/RAILML.md and docs/architecture/railml.md', () => {
     const md = doc('docs/RAILML.md');
-    const claude = doc('CLAUDE.md');
+    const notes = doc('docs/architecture/railml.md');
     for (const k of KINDS) {
       expect(md).toMatch(new RegExp(`^\\| ${k.id} \\|`, 'm'));
-      expect(claude).toContain(k.id);
+      expect(notes).toContain(k.id);
     }
-    expect(claude).toContain('railml.spec.ts');
+    expect(doc('docs/architecture/e2e.md')).toContain('railml.spec.ts');
   });
 
   it('converts level crossing protection and section detection both ways', () => {
