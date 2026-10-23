@@ -7,8 +7,9 @@
  *        bounding box. A press on any selected cell still moves them all (selected cells count as handled, so
  *        SelectionHandler delays the selection like with handlers); smaller selections keep their handles. View only (overlay pane), nothing saved or undoable.
  */
-import { InternalEvent, Rectangle } from '@maxgraph/core';
-import type { Cell, EventSource, Graph } from '@maxgraph/core';
+import { Rectangle } from '@maxgraph/core';
+import type { Cell, Graph } from '@maxgraph/core';
+import { onModelChange, onSelectionChange, onViewTransform } from '../core/graph-events';
 import { GraphOverlay, svgEl } from '../railway/graph-overlay';
 import { selectionColor } from '../drawio-shapes/engine/handle-colors';
 
@@ -72,17 +73,9 @@ export function installMultiSelectionBox(graph: Graph): () => void {
       }),
     ]);
   };
-  const selection = graph.getSelectionModel() as unknown as EventSource;
-  const model = graph.getDataModel() as unknown as EventSource;
-  const view = graph.view as unknown as EventSource;
-  selection.addListener(InternalEvent.CHANGE, redraw);
-  model.addListener(InternalEvent.CHANGE, redraw);
-  view.addListener(InternalEvent.SCALE, redraw);
-  view.addListener(InternalEvent.SCALE_AND_TRANSLATE, redraw);
+  const disposers = [onSelectionChange(graph, redraw), onModelChange(graph, redraw), onViewTransform(graph, redraw)];
   return () => {
-    selection.removeListener(redraw);
-    model.removeListener(redraw);
-    view.removeListener(redraw);
+    for (const dispose of disposers) dispose();
     handler.getHandledSelectionCells = base;
     handler.isHandled = baseHandled;
     overlay?.destroy();

@@ -3,6 +3,7 @@ import { cellAtBackgroundPoint } from './canvas-interaction';
 import type { Cell, EventObject } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
 import { logger } from '../drawio/logger';
+import { emit } from '../core/event-bus';
 import { railwayObjectOf, renameObjectId } from '../railway/rename-id';
 import { readObjectId } from '../railway/object-data';
 import { getKind } from '../railway/catalogue';
@@ -40,7 +41,7 @@ export class TextEditorController {
       if (object) {
         evt.consume();
         this.graph.setSelectionCell(object);
-        if (mouse?.shiftKey) window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
+        if (mouse?.shiftKey) emit('railway-edit-data-request');
         else this.startIdEditing(object);
         return;
       }
