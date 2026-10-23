@@ -10,6 +10,7 @@ import type { Graph } from '@maxgraph/core';
 import type { PaletteEntry } from '../drawio-shapes/palettes';
 import type { RailwayScriptStore } from '../railway-script/script-store';
 import type { ApplyOutcome, SessionStatus } from '../railway-script/session';
+import type { ScenarioSet } from '../scenarios/scenario-model';
 import type { DiagramTemplate } from '../ui/templates/template-types';
 
 /** The part of ScriptSession the tools use. */
@@ -64,4 +65,14 @@ export interface AiTarget {
   renderSvg?(modelXml: string): Promise<string>;
   /** Saves a file in the user's browser. */
   download?(name: string, content: string | Blob, mime: string): void;
+  /** The tab's scenarios (the Scenarios panel's store); missing = scenarios not available. */
+  scenarios?(): ScenarioSet;
+  /** Called after a tool changed the scenarios (the app writes the tab cache at once). */
+  scenariosChanged?(): void;
+  /** Opens the read-only scenario view at step `index` (0-based) for the user. */
+  showScenario?(scenarioId: string, index: number): void;
+  /** Builds a scenario document and saves it in the user's browser; resolves the file name. */
+  exportScenario?(scenarioId: string, format: ScenarioExportFormat, options: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean }): Promise<string>;
 }
+
+export type ScenarioExportFormat = 'html' | 'pdf' | 'slides';

@@ -13,10 +13,8 @@ import type { KindId } from '../railway/catalogue';
 import { applyPresetToNewCells, getCellKind } from '../railway/object-data';
 import { ROUTES_LAYER_ID, addRoute } from '../railway/route-store';
 import { describePath, detectConflicts, findRoutePaths, routeRecords } from '../railway/routes';
-import { applyObjectStates, cellSchemeId, resetAllStates, resetObjectStates, runRouteCommand } from '../railway/state-apply';
-import type { StateItem } from '../railway/state-apply';
-import { schemeDimensions, stateOption } from '../railway/states';
-import type { StateDimension } from '../railway/states';
+import { applyObjectStates, resetAllStates, resetObjectStates, runRouteCommand } from '../railway/state-apply';
+import { resolveStateItems } from './step-actions';
 import { buildTopology } from '../railway/topology';
 import { collectObjects, validateModel } from '../railway/validation';
 import type { RailObject } from '../railway/validation';
@@ -25,45 +23,32 @@ import { parseScript } from '../railway-script/parse';
 import type { Diagnostic } from '../railway-script/parse';
 import { exportRailml } from '../railml/export';
 import { parseDrawioStyle } from '../services/drawio-xml';
-import { cloneWithTerminals, createCellsForEntry, getViewCenter } from '../ui/drawio-palette/entry-cells';
-import { insertTemplate } from '../ui/templates/template-actions';
-import { templateMatches } from '../ui/templates/template-types';
+import { cloneWithTerminals, createCellsForEntry } from '../ui/drawio-palette/entry-cells';
 import { checkInput, describeProblems } from './schema-check';
+import {
+  addScenarioStep,
+  buildScenario,
+  createScenario,
+  deleteScenarioStep,
+  exportScenario,
+  listScenarios,
+  reorderScenarioSteps,
+  updateScenario,
+  updateScenarioStep,
+  viewScenario,
+} from './scenario-tools';
 import { resolveShape, searchShapes } from './shape-search';
+import { describeTemplate, insertTemplateTool, listTemplates } from './template-tools';
 import type { AiTarget } from './target';
+import { ToolError, fail, findObject, ok, validIdsText } from './tool-kit';
+import type { Executor, Input, ToolOutcome } from './tool-kit';
 import { getToolDef } from './tool-defs';
 import type { AiToolName } from './tool-defs';
 
 /** Most characters of text a tool returns (exports, scripts). */
 export const MAX_RESULT_TEXT = 100_000;
 
-export interface ToolImage {
-  mediaType: 'image/png';
-  /** base64 without the data: prefix */
-  data: string;
-}
-
-export interface ToolOutcome {
-  ok: boolean;
-  /** JSON-able result for the model. */
-  result: Record<string, unknown>;
-  /** One line for the visible log ("Applied Railway Script: 3 tracks, 5 signals"). */
-  summary: string;
-  image?: ToolImage;
-  /** Undoable edits the call made, in order (0 or 1 for every tool except undo). */
-  edits: object[];
-}
-
-class ToolError extends Error {}
-
-const fail = (message: string): never => {
-  throw new ToolError(message);
-};
-
-type Input = Record<string, unknown>;
-type Executor = (target: AiTarget, input: Input) => Promise<Omit<ToolOutcome, 'edits'>>;
-
-const ok = (summary: string, result: Record<string, unknown>, image?: ToolImage): Omit<ToolOutcome, 'edits'> => ({ ok: true, summary, result, image });
+export type { ToolImage, ToolOutcome } from './tool-kit';
 
 function cut(text: string, max = MAX_RESULT_TEXT): { text: string; truncated?: boolean; length: number } {
   return text.length > max ? { text: text.slice(0, max), truncated: true, length: text.length } : { text, length: text.length };
@@ -109,11 +94,6 @@ function objectCounts(objects: RailObject[]): Partial<Record<KindId, number>> {
   const out: Partial<Record<KindId, number>> = {};
   for (const o of objects) out[o.kind.id] = (out[o.kind.id] ?? 0) + 1;
   return out;
-}
-
-function findObject(objects: RailObject[], id: string, kind?: string): RailObject[] {
-  const key = id.trim().toUpperCase();
-  return objects.filter((o) => o.id.toUpperCase() === key && (!kind || o.kind.id === kind));
 }
 
 function diagnosticsOut(list: Diagnostic[], severity: 'error' | 'warning', max = 15): Array<{ line: number; col: number; message: string }> {
@@ -346,8 +326,6 @@ const deleteCells: Executor = async (target, input) => {
   return ok(`Deleted ${cells.size} cell(s)${missing.length ? `; not found: ${missing.join(', ')}` : ''}`, { deleted: cells.size, notFound: missing });
 };
 
-const DIMENSIONS: StateDimension[] = ['state', 'aspect', 'position'];
-
 const setStates: Executor = async (target, input) => {
   const graph = target.graph;
   const model = graph.getDataModel();
@@ -358,40 +336,7 @@ const setStates: Executor = async (target, input) => {
   const items = (input.items as Input[] | undefined) ?? [];
   if (items.length === 0) fail('give items or resetAll=true');
   const objects = collectObjects(model);
-  const stateItems: StateItem[] = [];
-  const resetCells: Cell[] = [];
-  const problems: string[] = [];
-  for (const item of items) {
-    const found = findObject(objects, String(item.id), item.kind as string | undefined);
-    if (found.length === 0) {
-      problems.push(`${String(item.id)}: not found`);
-      continue;
-    }
-    for (const o of found) {
-      if (item.reset === true) {
-        resetCells.push(o.cell);
-        continue;
-      }
-      const scheme = cellSchemeId(o.cell);
-      if (!scheme) {
-        problems.push(`${o.id}: ${o.kind.label.toLowerCase()} has no states`);
-        continue;
-      }
-      const change: StateItem['change'] = {};
-      for (const d of DIMENSIONS) {
-        const v = item[d];
-        if (typeof v !== 'string') continue;
-        if (!schemeDimensions(scheme).some((x) => x.dimension === d)) {
-          problems.push(`${o.id}: no ${d}`);
-          continue;
-        }
-        if (v.trim() === '') change[d] = null;
-        else if (stateOption(scheme, d, v.trim())) change[d] = v.trim();
-        else problems.push(`${o.id}: ${d} "${v}" is not one of ${schemeDimensions(scheme).find((x) => x.dimension === d)!.options.map((x) => x.value).join('|')}`);
-      }
-      if (Object.keys(change).length > 0) stateItems.push({ cell: o.cell, change });
-    }
-  }
+  const { stateItems, resetCells, problems, unknown } = resolveStateItems(objects, items);
   let changed = 0;
   model.beginUpdate();
   try {
@@ -404,7 +349,7 @@ const setStates: Executor = async (target, input) => {
   return {
     ok: okAll || changed > 0,
     summary: `Set states on ${stateItems.length + resetCells.length} object(s)${problems.length ? ` (${problems.length} problem(s))` : ''}`,
-    result: { changedCells: changed, problems },
+    result: { changedCells: changed, problems, ...(unknown.length > 0 ? { validIds: validIdsText(objects) } : {}) },
   };
 };
 
@@ -449,29 +394,6 @@ const routesTool: Executor = async (target, input) => {
   const route = findObject(objects, routeId, 'route')[0] ?? fail(`route ${routeId} not found`);
   const res = runRouteCommand(graph, route.cell, action as 'set' | 'occupy' | 'release');
   return ok(`Route ${route.id}: ${action}`, { id: route.id, changedCells: res.changed.length, missing: res.missing });
-};
-
-const listTemplates: Executor = async (target, input) => {
-  if (!target.templates) fail('templates are not available here');
-  const query = typeof input.query === 'string' ? input.query : '';
-  const all = (await target.templates!()).filter((t) => templateMatches(t, query));
-  return ok(`Listed ${all.length} template(s)`, {
-    templates: all.slice(0, 50).map((t) => ({ id: t.id, name: t.name, ...(t.description ? { description: t.description.slice(0, 120) } : {}), builtIn: t.builtIn })),
-  });
-};
-
-const insertTemplateTool: Executor = async (target, input) => {
-  if (!target.templates) fail('templates are not available here');
-  const id = String(input.id);
-  const template = (await target.templates!()).find((t) => t.id === id) ?? fail(`template ${id} not found (use list_templates)`);
-  if (input.newTab === true) {
-    if (!target.openTemplateInNewTab) fail('new tabs are not available here');
-    const name = target.openTemplateInNewTab!(template);
-    return ok(`Opened template "${template.name}" as a new tab`, { tab: name, note: 'The new tab is now the active tab; later tool calls act on it.' });
-  }
-  const at = typeof input.x === 'number' && typeof input.y === 'number' ? { x: input.x, y: input.y } : getViewCenter(target.graph);
-  const cells = insertTemplate(target.graph, template, at);
-  return ok(`Inserted template "${template.name}" (${cells.length} cells)`, { inserted: cells.length });
 };
 
 const checkDrawing: Executor = async (target) => {
@@ -565,10 +487,21 @@ const EXECUTORS: Record<AiToolName, Executor> = {
   set_states: setStates,
   routes: routesTool,
   list_templates: listTemplates,
+  describe_template: describeTemplate,
   insert_template: insertTemplateTool,
   check_drawing: checkDrawing,
   export_drawing: exportDrawing,
   undo: undoTool,
+  list_scenarios: listScenarios,
+  create_scenario: createScenario,
+  update_scenario: updateScenario,
+  add_scenario_step: addScenarioStep,
+  update_scenario_step: updateScenarioStep,
+  delete_scenario_step: deleteScenarioStep,
+  reorder_scenario_steps: reorderScenarioSteps,
+  build_scenario: buildScenario,
+  view_scenario: viewScenario,
+  export_scenario: exportScenario,
 };
 
 /**

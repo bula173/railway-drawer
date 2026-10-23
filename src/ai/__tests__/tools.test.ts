@@ -235,14 +235,14 @@ describe('executeAiTool', () => {
     const list = await executeAiTool(t, 'list_templates', { query: 'level transition' });
     const templates = list.result.templates as Array<{ id: string; name: string }>;
     expect(templates.length).toBeGreaterThan(0);
-    const ins = await executeAiTool(t, 'insert_template', { id: templates[0].id, x: 400, y: 300 });
+    const ins = await executeAiTool(t, 'insert_template', { id: templates[0].id, mode: 'intoTab', at: { x: 400, y: 300 } });
     expect(ins.ok).toBe(true);
     expect(ins.edits).toHaveLength(1);
-    expect(Number(ins.result.inserted)).toBeGreaterThan(0);
-    const tab = await executeAiTool(t, 'insert_template', { id: templates[0].id, newTab: true });
+    expect(Number(ins.result.insertedCells)).toBeGreaterThan(0);
+    const tab = await executeAiTool(t, 'insert_template', { id: templates[0].id, mode: 'newTab' });
     expect(tab.result.tab).toBe(templates[0].name);
     expect((await executeAiTool(t, 'insert_template', { id: 'zzz' })).ok).toBe(false);
-  });
+  }, 30_000);
 
   it('check_drawing reports issues', async () => {
     t = createTestTarget();

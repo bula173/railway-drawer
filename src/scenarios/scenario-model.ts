@@ -126,6 +126,12 @@ export function sanitizeScenarios(raw: unknown): ScenarioData[] {
 
 export type ScenarioListener = () => void;
 
+/** See `ScenarioSet.captureState`. */
+export interface ScenarioSetState {
+  order: string[];
+  touched: Record<string, ScenarioData | null>;
+}
+
 export class ScenarioSet {
   private scenarios: ScenarioData[] = [];
   private listeners = new Set<ScenarioListener>();
@@ -310,6 +316,33 @@ export class ScenarioSet {
     scenario.steps.splice(index + 1, 0, copy);
     this.changed();
     return copyStep(copy);
+  }
+
+  /**
+   * Undo record for the scenarios `ids`: the current order of all scenarios plus copies of the
+   * listed ones (null = does not exist). `restoreState` puts exactly those back and leaves other
+   * scenarios (e.g. ones the user changed in the panel meanwhile) as they are.
+   */
+  captureState(ids: string[]): ScenarioSetState {
+    const touched: Record<string, ScenarioData | null> = {};
+    for (const id of ids) touched[id] = this.get(id);
+    return { order: this.scenarios.map((s) => s.id), touched };
+  }
+
+  restoreState(state: ScenarioSetState): void {
+    const current = new Map(this.scenarios.map((s) => [s.id, s]));
+    const next: ScenarioData[] = [];
+    const placed = new Set<string>();
+    const put = (id: string): void => {
+      if (placed.has(id)) return;
+      const data = id in state.touched ? state.touched[id] : current.get(id) ?? null;
+      placed.add(id);
+      if (data) next.push(id in state.touched ? copyScenario(data) : data);
+    };
+    state.order.forEach(put);
+    for (const s of this.scenarios) if (!(s.id in state.touched)) put(s.id);
+    this.scenarios = next;
+    this.changed();
   }
 
   /** Moves a step to `toIndex` within its scenario (clamped). */

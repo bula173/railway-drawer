@@ -27,10 +27,21 @@ export type AiToolName =
   | 'set_states'
   | 'routes'
   | 'list_templates'
+  | 'describe_template'
   | 'insert_template'
   | 'check_drawing'
   | 'export_drawing'
-  | 'undo';
+  | 'undo'
+  | 'list_scenarios'
+  | 'create_scenario'
+  | 'update_scenario'
+  | 'add_scenario_step'
+  | 'update_scenario_step'
+  | 'delete_scenario_step'
+  | 'reorder_scenario_steps'
+  | 'build_scenario'
+  | 'view_scenario'
+  | 'export_scenario';
 
 /** Railway object kinds of the catalogue (src/railway/catalogue.ts; a test keeps them equal). */
 export const AI_KIND_IDS = ['signal', 'balise', 'baliseGroup', 'track', 'trackSection', 'points', 'levelCrossing', 'bufferStop', 'rbc', 'leu', 'axleCounter', 'insulatedJoint', 'train', 'route'] as const;
@@ -49,6 +60,35 @@ const obj = (properties: Record<string, ToolSchema>, required: string[] = []): T
 });
 
 const str = (description: string, maxLength = 200): ToolSchema => ({ type: 'string', description, maxLength });
+/** Most steps per build_scenario call. */
+export const MAX_SCENARIO_STEPS = 30;
+
+/** Runtime states of a scenario step (same values as set_states). */
+const STEP_STATES: ToolSchema = {
+  type: 'array',
+  maxItems: 300,
+  description: 'Object states of the step: [{id, state|aspect|position}] ("" = back to the default free/stop/normal).',
+  items: obj(
+    {
+      id: str('Railway object id, e.g. TC3, S2, W1.', 80),
+      kind: { type: 'string', enum: [...AI_KIND_IDS], description: 'Kind when the id is ambiguous.' },
+      state: str('State value or "".', 40),
+      aspect: str('Signal aspect or "".', 40),
+      position: str('Points position or "".', 40),
+    },
+    ['id']
+  ),
+};
+const STEP_ROUTES: ToolSchema = {
+  type: 'array',
+  maxItems: 30,
+  description: 'Route actions run before `states`: set (sections reserved, points positioned, entry signal proceed), occupy, release.',
+  items: obj({ id: str('Route id, e.g. R1.', 80), action: { type: 'string', enum: ['set', 'occupy', 'release'] } }, ['id', 'action']),
+};
+const SCENARIO_REF = str('Scenario id or exact name.', 120);
+const STEP_REF: ToolSchema = { type: ['integer', 'string'], description: 'Step number (1 = first), step id or step name.', minimum: 1, maxLength: 120 };
+const STEP_UML = str('PlantUML source shown beside the drawing (usually a sequence diagram: @startuml … @enduml). Optional.', 20_000);
+const STEP_TEXT = str('Markdown text of the step (explanation for the reader). Optional.', 20_000);
 const num = (description: string): ToolSchema => ({ type: 'number', description, minimum: -1_000_000, maximum: 1_000_000 });
 
 export const AI_TOOLS: readonly AiToolDef[] = [
@@ -174,16 +214,33 @@ export const AI_TOOLS: readonly AiToolDef[] = [
   },
   {
     name: 'list_templates',
-    title: 'List templates',
-    description: 'Lists diagram templates (built-in ERTMS scenario diagrams such as level transitions, and the user\'s own templates), optionally filtered by words.',
-    input_schema: obj({ query: str('Filter words (optional).', 120) }),
+    title: 'Search templates',
+    description:
+      'Searches the diagram templates (built-in ERTMS/ETCS scenario layouts such as level transitions, station entry/exit routes, end of authority, temporary speed restrictions, section timers…, and the user\'s own templates) and ranks them for `query` (English or Polish words, e.g. "level transition L2", "wjazd na stację", "ograniczenie prędkości"). Each result: id, display name, original name, summary (topic, ETCS level, object counts with signal ids), size. Use this FIRST when asked to prepare or draw a layout or scenario.',
+    input_schema: obj({ query: str('Search words (EN/PL); empty = all templates.', 200), limit: { type: 'integer', minimum: 1, maximum: 60, description: 'Most results (default 20).' } }),
+    mutating: false,
+  },
+  {
+    name: 'describe_template',
+    title: 'Describe template',
+    description:
+      'Describes one template before or after inserting it: its railway objects as a Railway Script generated from the template drawing (ids, kinds, tracks, km), the object ids by kind and its other labels, so you can plan what to move, rename, add, remove or set.',
+    input_schema: obj({ id: str('Template id (from list_templates) or exact name.', 120) }, ['id']),
     mutating: false,
   },
   {
     name: 'insert_template',
     title: 'Insert template',
-    description: 'Inserts a template (id from list_templates) into the active tab centred on x/y (default: the view centre) in ONE undo step, or opens it as a new tab with newTab=true.',
-    input_schema: obj({ id: str('Template id.', 80), x: num('Centre x.'), y: num('Centre y.'), newTab: { type: 'boolean' } }, ['id']),
+    description:
+      'Inserts a template. mode newTab (default where tabs exist): opens it as a NEW diagram tab, which becomes the active tab for all later tool calls; object ids stay as in the template. mode intoTab: inserts it into the active tab in ONE undo step, centred on `at` (default: the view centre); ids already used in the drawing are renumbered and returned in `renamed` (template id -> new id). Returns the object ids by kind.',
+    input_schema: obj(
+      {
+        id: str('Template id (from list_templates) or exact name.', 120),
+        mode: { type: 'string', enum: ['newTab', 'intoTab'] },
+        at: obj({ x: num('Centre x.'), y: num('Centre y.') }, ['x', 'y']),
+      },
+      ['id']
+    ),
     mutating: true,
   },
   {
@@ -207,6 +264,148 @@ export const AI_TOOLS: readonly AiToolDef[] = [
     description: 'Undoes the last `steps` edits of the active tab (default 1; each tool call that changed the drawing is one step).',
     input_schema: obj({ steps: { type: 'integer', minimum: 1, maximum: 20 } }),
     mutating: true,
+  },
+  {
+    name: 'list_scenarios',
+    title: 'List scenarios',
+    description: 'Lists the scenarios of the active tab (right panel › Scenarios): ids, names, descriptions and steps (number, id, name, whether it has UML / text).',
+    input_schema: obj({ scenario: SCENARIO_REF }),
+    mutating: false,
+  },
+  {
+    name: 'create_scenario',
+    title: 'Create scenario',
+    description: 'Creates an empty scenario in the active tab (then add steps with add_scenario_step). To create a scenario with all its steps at once use build_scenario.',
+    input_schema: obj({ name: str('Scenario name.', 80), description: str('Short description (optional).', 200) }, ['name']),
+    mutating: true,
+  },
+  {
+    name: 'update_scenario',
+    title: 'Update scenario',
+    description: 'Renames a scenario, changes its description, or deletes it (delete=true) in ONE undo step.',
+    input_schema: obj({ scenario: SCENARIO_REF, name: str('New name.', 80), description: str('New description.', 200), delete: { type: 'boolean' } }, ['scenario']),
+    mutating: true,
+  },
+  {
+    name: 'add_scenario_step',
+    title: 'Add scenario step',
+    description:
+      'Adds a step to a scenario in ONE undo step: first resets all states if resetStates=true, runs the route actions and sets the object states on the drawing, then captures the whole drawing as the step snapshot (exactly like the panel\'s "+ Add step"). States are INCREMENTAL: the drawing keeps the states of earlier steps; list only what changes. Unknown ids change nothing and the error lists the valid ids. captureDrawing=false makes a text/UML-only step that reuses the previous step\'s drawing.',
+    input_schema: obj(
+      {
+        scenario: SCENARIO_REF,
+        name: str('Step name, e.g. "Train enters TC3".', 80),
+        description: str('Short description (optional).', 200),
+        uml: STEP_UML,
+        text: STEP_TEXT,
+        states: STEP_STATES,
+        routes: STEP_ROUTES,
+        resetStates: { type: 'boolean', description: 'Reset every object to free/stop/normal before this step\'s routes and states (makes the step absolute).' },
+        captureDrawing: { type: 'boolean', description: 'Capture the drawing (default true).' },
+        position: { type: 'integer', minimum: 1, maximum: 1000, description: 'Insert at this step number (default: at the end).' },
+      },
+      ['scenario', 'name']
+    ),
+    mutating: true,
+  },
+  {
+    name: 'update_scenario_step',
+    title: 'Update scenario step',
+    description:
+      'Changes a step in ONE undo step: name, description, uml, text; with states/routes/resetStates they are applied to the CURRENT drawing and the step\'s snapshot is replaced by it (recapture=true recaptures without changes). Note the current drawing may show another step\'s states.',
+    input_schema: obj(
+      {
+        scenario: SCENARIO_REF,
+        step: STEP_REF,
+        name: str('New name.', 80),
+        description: str('New description.', 200),
+        uml: STEP_UML,
+        text: STEP_TEXT,
+        states: STEP_STATES,
+        routes: STEP_ROUTES,
+        resetStates: { type: 'boolean' },
+        recapture: { type: 'boolean', description: 'Replace the step drawing with the current drawing.' },
+      },
+      ['scenario', 'step']
+    ),
+    mutating: true,
+  },
+  {
+    name: 'delete_scenario_step',
+    title: 'Delete scenario step',
+    description: 'Deletes one step of a scenario in ONE undo step.',
+    input_schema: obj({ scenario: SCENARIO_REF, step: STEP_REF }, ['scenario', 'step']),
+    mutating: true,
+  },
+  {
+    name: 'reorder_scenario_steps',
+    title: 'Reorder scenario steps',
+    description: 'Moves step `step` to position `to`, or puts all steps in `order` (every step number once, e.g. [2, 1, 3]), in ONE undo step.',
+    input_schema: obj(
+      {
+        scenario: SCENARIO_REF,
+        step: STEP_REF,
+        to: { type: 'integer', minimum: 1, maximum: 1000 },
+        order: { type: 'array', maxItems: 1000, items: { type: 'integer', minimum: 1, maximum: 1000 } },
+      },
+      ['scenario']
+    ),
+    mutating: true,
+  },
+  {
+    name: 'build_scenario',
+    title: 'Build scenario',
+    description:
+      'Creates a scenario with all its steps in ONE call and ONE undo step. For each step in order: optional reset, route actions, object states, then the drawing is captured as that step. Semantics: steps are INCREMENTAL (cumulative) — each step starts from the previous step\'s drawing and changes only what it lists ("" = back to default); resetStates (top level, default true) resets every object to free/stop/normal before step 1, so the scenario starts from the drawing as drawn; resetStates on a step resets before that step (an absolute step). restoreDrawing=true puts the object states back afterwards (default: the drawing shows the last step). All ids are checked first: an unknown id changes nothing and the error lists the valid ids.',
+    input_schema: obj(
+      {
+        name: str('Scenario name.', 80),
+        description: str('Short description.', 200),
+        resetStates: { type: 'boolean', description: 'Reset all states before step 1 (default true).' },
+        restoreDrawing: { type: 'boolean', description: 'Put the object states back after capturing (default false).' },
+        steps: {
+          type: 'array',
+          minItems: 1,
+          maxItems: MAX_SCENARIO_STEPS,
+          items: obj(
+            {
+              name: str('Step name.', 80),
+              description: str('Short description (optional).', 200),
+              uml: STEP_UML,
+              text: STEP_TEXT,
+              states: STEP_STATES,
+              routes: STEP_ROUTES,
+              resetStates: { type: 'boolean', description: 'Reset every object before this step.' },
+            },
+            ['name']
+          ),
+        },
+      },
+      ['name', 'steps']
+    ),
+    mutating: true,
+  },
+  {
+    name: 'view_scenario',
+    title: 'Show scenario',
+    description: 'Opens the read-only scenario view for the user at a step (default 1): drawing, UML and text of the step with Prev/Next. Does not change anything.',
+    input_schema: obj({ scenario: SCENARIO_REF, step: STEP_REF }, ['scenario']),
+    mutating: false,
+  },
+  {
+    name: 'export_scenario',
+    title: 'Export scenario',
+    description: 'Exports a scenario as a document and saves it in the user\'s browser: pdf (A4, one page per step), slides (HTML slideshow) or html (one page). showChanges highlights the changes between steps.',
+    input_schema: obj(
+      {
+        scenario: SCENARIO_REF,
+        format: { type: 'string', enum: ['pdf', 'slides', 'html'] },
+        orientation: { type: 'string', enum: ['portrait', 'landscape'] },
+        showChanges: { type: 'boolean' },
+      },
+      ['format']
+    ),
+    mutating: false,
   },
 ];
 

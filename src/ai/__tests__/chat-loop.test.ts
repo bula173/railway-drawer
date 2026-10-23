@@ -184,6 +184,57 @@ describe('ChatSession (mocked Messages API)', () => {
     expect(s.running).toBe(false);
   });
 
+  it('template-first flow: list -> insert -> set states -> build_scenario', async () => {
+    t = createTestTarget();
+    const target = t;
+    const api = fakeMessagesApi([
+      { blocks: [{ type: 'tool_use', id: 'toolu_a', name: 'list_templates', input: { query: 'przejście poziomu L1 L2', limit: 3 } }] },
+      { blocks: [{ type: 'text', text: 'Using "Level transition L1 → L2".' }, { type: 'tool_use', id: 'toolu_b', name: 'insert_template', input: { id: 'ertms-tpl-22', mode: 'intoTab' } }] },
+      { blocks: [{ type: 'tool_use', id: 'toolu_c', name: 'set_states', input: { items: [{ id: 'TC4', state: 'disturbed' }] } }] },
+      {
+        blocks: [
+          {
+            type: 'tool_use',
+            id: 'toolu_d',
+            name: 'build_scenario',
+            input: {
+              name: 'Wjazd pociągu',
+              description: 'Train passes the L1/L2 border',
+              steps: [
+                { name: 'Initial', text: 'All free' },
+                { name: 'Route set', states: [{ id: 'TC2', state: 'reserved' }, { id: 'TC3', state: 'reserved' }, { id: 'S2', aspect: 'proceed' }] },
+                { name: 'Train enters TC2', states: [{ id: 'TC2', state: 'occupied' }, { id: 'S2', aspect: 'stop' }], uml: '@startuml\nTrain -> RBC: position report\n@enduml' },
+              ],
+            },
+          },
+        ],
+      },
+      { blocks: [{ type: 'text', text: 'Built the scenario from the template.' }] },
+    ]);
+    const s = session(api.fetch);
+    const log: string[] = [];
+    const run: ToolRunner = (call) => executeAiTool(target, call.name, call.input);
+    const result = await s.send('Przygotuj scenariusz wjazdu pociągu przez granicę L1/L2', run, { onToolEnd: (call, outcome) => log.push(`${call.name}: ${outcome.summary}`) });
+    expect(result).toEqual({ end: 'end_turn' });
+    expect(log).toEqual([
+      expect.stringMatching(/^list_templates: Found \d+ template\(s\) for "przejście poziomu L1 L2": best "Level transition L1 → L2"$/),
+      'insert_template: Inserted template "Level transition L1 → L2" into "Test diagram"',
+      'set_states: Set states on 1 object(s)',
+      'build_scenario: Built scenario "Wjazd pociągu" with 3 steps',
+    ]);
+    const scenario = target.scenarioSet.list()[0];
+    expect(scenario.name).toBe('Wjazd pociągu');
+    expect(scenario.steps.map((x) => x.name)).toEqual(['Initial', 'Route set', 'Train enters TC2']);
+    expect(scenario.steps[0].xml).not.toContain('rdState="disturbed"');
+    expect(scenario.steps[2].uml).toContain('position report');
+    const objects = collectObjects(target.graph.getDataModel());
+    expect(objects.find((o) => o.id === 'TC2')!.values).toBeDefined();
+    expect(target.modelXml()).toContain('rdState="occupied"');
+    // the tool results went back to the model (list result names the template)
+    const second = JSON.stringify(api.requests[1].body);
+    expect(second).toContain('ertms-tpl-22');
+  }, 30_000);
+
   it('apiTools mirrors the tool definitions', () => {
     expect(apiTools().map((x) => x.name)).toEqual(AI_TOOLS.map((x) => x.name));
   });

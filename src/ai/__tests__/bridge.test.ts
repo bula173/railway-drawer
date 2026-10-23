@@ -165,6 +165,7 @@ describe('remote MCP endpoint (Streamable HTTP)', () => {
     const list = await rpc({ jsonrpc: '2.0', id: 2, method: 'tools/list', params: {} }, vi.fn(), 'query');
     const tools = (list.json.result as { tools: Array<{ name: string; inputSchema: Record<string, unknown> }> }).tools;
     expect(tools.map((t) => t.name)).toEqual(AI_TOOLS.map((t) => t.name));
+    expect(tools.map((t) => t.name)).toEqual(expect.arrayContaining(['list_templates', 'describe_template', 'insert_template', 'list_scenarios', 'add_scenario_step', 'build_scenario', 'view_scenario', 'export_scenario']));
     expect(tools.find((t) => t.name === 'apply_railway_script')!.inputSchema).toMatchObject({ type: 'object', required: ['script'] });
   });
 

@@ -10,11 +10,15 @@ import { exportModelToDrawioXml } from '../../services/drawio-xml';
 import { ertmsElementsPaletteDef } from '../../ui/drawio-palette/ertms-source';
 import { splitErtmsLibrary } from '../../ui/templates/ertms-templates';
 import type { PaletteEntry } from '../../drawio-shapes/palettes';
+import { ScenarioSet } from '../../scenarios/scenario-model';
 import type { AiTarget, CatalogShape } from '../target';
 
 export interface TestTarget extends AiTarget {
   fx: Fixture;
   downloads: Array<{ name: string; mime: string }>;
+  scenarioSet: ScenarioSet;
+  shown: Array<{ scenarioId: string; index: number }>;
+  exported: Array<{ scenarioId: string; format: string }>;
   destroy(): void;
 }
 
@@ -34,9 +38,23 @@ export function catalogShapes(): CatalogShape[] {
 export function createTestTarget(text = ''): TestTarget {
   const fx = scriptFixture(text);
   const downloads: TestTarget['downloads'] = [];
+  const scenarioSet = new ScenarioSet();
+  const shown: TestTarget['shown'] = [];
+  const exported: TestTarget['exported'] = [];
   const target: TestTarget = {
     fx,
     downloads,
+    scenarioSet,
+    shown,
+    exported,
+    scenarios: () => scenarioSet,
+    showScenario: (scenarioId, index) => {
+      shown.push({ scenarioId, index });
+    },
+    exportScenario: async (scenarioId, format) => {
+      exported.push({ scenarioId, format });
+      return `Test diagram - ${scenarioSet.get(scenarioId)?.name ?? '?'}.${format === 'pdf' ? 'pdf' : 'html'}`;
+    },
     graph: fx.graph,
     tabName: () => 'Test diagram',
     scriptStore: fx.store,

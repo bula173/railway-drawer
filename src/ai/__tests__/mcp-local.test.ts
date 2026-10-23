@@ -102,4 +102,25 @@ describe('headless .drawio mode', () => {
     expect(png.ok).toBe(false);
     again.destroy();
   });
+
+  it('builds scenarios on a file: step pages written, read back on reopen', async () => {
+    dir = mkdtempSync(join(tmpdir(), 'rd-mcp-'));
+    const path = join(dir, 'scn.drawio');
+    const s = openDrawioFile(path, PUBLIC);
+    expect((await s.execute('insert_template', { id: 'ertms-tpl-22', mode: 'newTab' })).result).toMatchObject({ error: expect.stringMatching(/new tabs are not available here/) });
+    expect((await s.execute('insert_template', { id: 'ertms-tpl-22', mode: 'intoTab' })).ok).toBe(true);
+    const built = await s.execute('build_scenario', { name: 'Entry', steps: [{ name: 'Initial' }, { name: 'Occupied', states: [{ id: 'TC2', state: 'occupied' }], text: 'TC2 **occupied**' }] });
+    expect(built).toMatchObject({ ok: true, summary: 'Built scenario "Entry" with 2 steps' });
+    expect((await s.execute('view_scenario', { scenario: 'Entry' })).result).toMatchObject({ error: 'the scenario view is not available here' });
+    s.destroy();
+    const saved = readFileSync(path, 'utf8');
+    expect(saved).toContain('rdScenarios=');
+    expect(saved.match(/rdStepId=/g)).toHaveLength(2);
+    const again = openDrawioFile(path, PUBLIC);
+    const list = await again.execute('list_scenarios', {});
+    expect((list.result as { scenarios: unknown }).scenarios).toEqual([expect.objectContaining({ name: 'Entry', steps: [expect.objectContaining({ name: 'Initial' }), expect.objectContaining({ name: 'Occupied', text: true })] })]);
+    await again.execute('delete_scenario_step', { scenario: 'Entry', step: 1 });
+    expect(readFileSync(path, 'utf8').match(/rdStepId=/g)).toHaveLength(1);
+    again.destroy();
+  });
 });

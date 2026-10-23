@@ -7,6 +7,7 @@
  */
 import { PALETTES, loadPalette } from '../drawio-shapes/palettes';
 import { downloadBlob } from '../railway/install-railway-data';
+import { installedScenarios } from '../scenarios/install-scenarios';
 import { renderXmlToPngBlob, renderXmlToSvgDocument } from '../ui/diagram-image-export';
 import { ertmsElementsPaletteDef, loadErtmsLibraryEntries, loadErtmsTemplates } from '../ui/drawio-palette/ertms-source';
 import { getDrawioPaletteEngine } from '../ui/drawio-palette/drawio-palette-view';
@@ -94,6 +95,21 @@ export function tabTarget(tab: TabData, tabManager: TabManager): AiTarget {
     renderPng: async (xml) => blobToBase64(await renderXmlToPngBlob(xml, { scale: MAX_PNG_SCALE, border: 10 })),
     renderSvg: (xml) => renderXmlToSvgDocument(xml, { border: 10 }),
     download: (name, content, mime) => downloadBlob(typeof content === 'string' ? new Blob([content], { type: mime }) : content, name),
+    scenarios: () => slc.getScenarios(),
+    // steps hold whole drawings: write the tab cache at once (like the Scenarios panel)
+    scenariosChanged: () => {
+      tabManager.flushCache();
+    },
+    showScenario: (scenarioId, index) => {
+      const handle = installedScenarios();
+      if (!handle) throw new Error('the scenario view is not available');
+      if (!handle.viewer.open(tab.id, scenarioId, index)) throw new Error('the scenario could not be shown');
+    },
+    exportScenario: async (scenarioId, format, options) => {
+      const handle = installedScenarios();
+      if (!handle) throw new Error('scenario export is not available');
+      return handle.exportScenarioFile(tab.id, scenarioId, format, options);
+    },
   };
 }
 

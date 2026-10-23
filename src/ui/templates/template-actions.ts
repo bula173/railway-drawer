@@ -4,6 +4,7 @@
  *        and the "Save as template…" flow.
  */
 import type { Cell, Graph } from '@maxgraph/core';
+import type { KindId } from '../../railway/catalogue';
 import { renumberInsertedObjects } from '../../railway/insert-ids';
 import { withSnapSuspended } from '../../railway/snap';
 import { getDrawioPaletteEngine } from '../drawio-palette/drawio-palette-view';
@@ -25,12 +26,21 @@ export interface TemplateNotifier {
  * Inserts the template's cells centred on `at` (graph coordinates; default the view centre) as
  * one undoable edit, with their draw.io styles verbatim; selects and returns them. Railway IDs
  * that are taken in the diagram are renumbered (references follow), and snap to track does not
- * move the template's symbols (they are drawn exactly).
+ * move the template's symbols (they are drawn exactly). `onRenamed` receives the renamed IDs per kind
+ * (old upper-case ID -> new ID).
  */
-export function insertTemplate(graph: Graph, template: DiagramTemplate, at?: { x: number; y: number }): Cell[] {
+export function insertTemplate(
+  graph: Graph,
+  template: DiagramTemplate,
+  at?: { x: number; y: number },
+  onRenamed?: (renamed: Map<KindId, Map<string, string>>) => void
+): Cell[] {
   const entry = templateToPaletteEntry(template);
   const inserted = withSnapSuspended(() =>
-    insertEntry(graph, entry, at, (cells) => renumberInsertedObjects(graph.getDataModel(), cells)));
+    insertEntry(graph, entry, at, (cells) => {
+      const renamed = renumberInsertedObjects(graph.getDataModel(), cells);
+      onRenamed?.(renamed);
+    }));
   if (inserted.length > 0) {
     // Named stencils not loaded yet (the autoload also does this for tab graphs)
     getDrawioPaletteEngine()

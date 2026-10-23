@@ -346,6 +346,8 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
       const card = addEntry(el('div', 'rd-ai-confirm'));
       card.dataset.testid = 'ai-confirm-card';
       card.append(el('div', 'rd-ai-confirm-title', outcome.summary), el('div', 'rd-ai-confirm-diff', `Changes on the canvas: ${diffCountsText(diff.counts) || 'none visible'}`));
+      // scenario tools change the Scenarios panel too; Discard undoes both (one undo step)
+      if (name.includes('scenario')) card.append(el('div', 'rd-ai-confirm-diff', 'Scenarios: changed (Discard removes this change too)'));
       const keep = await decide(card, signal);
       if (!keep) {
         undoOwnEdits(target, outcome.edits);

@@ -47,6 +47,16 @@ export interface ScenariosHandle {
    * scenario when there is a choice). Resolves the file name (null: nothing exported).
    */
   exportScenarioDoc(format: ScenarioDocFormat, scenarioId?: string): Promise<string | null>;
+  /**
+   * Exports scenario `scenarioId` of tab `tabId` without a dialog (AI tool export_scenario) and
+   * saves the file; resolves the file name, rejects on errors.
+   */
+  exportScenarioFile(
+    tabId: string,
+    scenarioId: string,
+    format: ScenarioDocFormat | 'html',
+    options?: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean }
+  ): Promise<string>;
   /** Removes the view, the panel and the window listeners (tests). */
   destroy(): void;
 }
@@ -240,6 +250,39 @@ export function installScenarios(
       return null;
     }
   };
+  /** Builds a PDF / slides / HTML document of a scenario (no dialog). */
+  const buildDoc = async (
+    scenario: ScenarioData,
+    diagramName: string,
+    format: ScenarioDocFormat | 'html',
+    options: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean }
+  ): Promise<{ blob: Blob; fileName: string }> => {
+    const renderDrawingSvg = installOptions.renderDrawingSvg ?? ((xml: string) => renderXmlToSvgDocument(xml));
+    if (format === 'html') {
+      const html = await buildScenarioHtml(scenario, diagramName, { renderDrawingSvg, renderUml: installOptions.renderUml });
+      return { blob: new Blob([html], { type: 'text/html;charset=utf-8' }), fileName: scenarioExportFileName(diagramName, scenario.name) };
+    }
+    if (format === 'pdf') {
+      const pdf = await import('./scenario-pdf');
+      const renderDrawingPng =
+        installOptions.renderDrawingPng ?? (async (xml: string) => pdf.rasterizeSvgMarkup(await renderDrawingSvg(xml), 2));
+      const bytes = await pdf.buildScenarioPdf(
+        scenario,
+        diagramName,
+        { renderDrawingPng, renderUml: installOptions.renderUml, ...installOptions.pdfDeps },
+        { orientation: options.orientation ?? 'portrait', showChanges: options.showChanges ?? false }
+      );
+      return { blob: new Blob([bytes], { type: 'application/pdf' }), fileName: pdf.scenarioPdfFileName(diagramName, scenario.name) };
+    }
+    const slides = await import('./scenario-slides');
+    const html = await slides.buildScenarioSlidesHtml(
+      scenario,
+      diagramName,
+      { renderDrawingSvg, renderUml: installOptions.renderUml },
+      { showChanges: options.showChanges ?? false }
+    );
+    return { blob: new Blob([html], { type: 'text/html;charset=utf-8' }), fileName: slides.scenarioSlidesFileName(diagramName, scenario.name) };
+  };
   const exportScenarioDoc = async (format: ScenarioDocFormat, scenarioId?: string): Promise<string | null> => {
     const tab = tabManager.getActiveTab();
     if (!tab) return null;
@@ -265,34 +308,9 @@ export function installScenarios(
       notify.warning(`"${scenario?.name ?? 'The scenario'}" has no steps to export.`);
       return null;
     }
-    const renderDrawingSvg = installOptions.renderDrawingSvg ?? ((xml: string) => renderXmlToSvgDocument(xml));
     try {
-      let blob: Blob;
-      let fileName: string;
-      if (format === 'pdf') {
-        notify.success(`Creating the PDF of "${scenario.name}"…`);
-        const pdf = await import('./scenario-pdf');
-        const renderDrawingPng =
-          installOptions.renderDrawingPng ?? (async (xml: string) => pdf.rasterizeSvgMarkup(await renderDrawingSvg(xml), 2));
-        const bytes = await pdf.buildScenarioPdf(
-          scenario,
-          tab.name,
-          { renderDrawingPng, renderUml: installOptions.renderUml, ...installOptions.pdfDeps },
-          { orientation: choice.orientation, showChanges: choice.showChanges }
-        );
-        blob = new Blob([bytes], { type: 'application/pdf' });
-        fileName = pdf.scenarioPdfFileName(tab.name, scenario.name);
-      } else {
-        const slides = await import('./scenario-slides');
-        const html = await slides.buildScenarioSlidesHtml(
-          scenario,
-          tab.name,
-          { renderDrawingSvg, renderUml: installOptions.renderUml },
-          { showChanges: choice.showChanges }
-        );
-        blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-        fileName = slides.scenarioSlidesFileName(tab.name, scenario.name);
-      }
+      if (format === 'pdf') notify.success(`Creating the PDF of "${scenario.name}"…`);
+      const { blob, fileName } = await buildDoc(scenario, tab.name, format, choice);
       (installOptions.saveFile ?? downloadFile)(blob, fileName);
       notify.success(`Scenario "${scenario.name}" exported as ${fileName}`);
       return fileName;
@@ -349,7 +367,33 @@ export function installScenarios(
     window.removeEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
     viewer.destroy();
     panel.destroy();
+    if (installed === handle) installed = null;
   };
 
-  return { viewer, panel, handleKeydown, showPanel, exportScenario, exportScenarioDoc, destroy };
+  const exportScenarioFile = async (
+    tabId: string,
+    scenarioId: string,
+    format: ScenarioDocFormat | 'html',
+    options: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean } = {}
+  ): Promise<string> => {
+    const tab = tabById(tabId);
+    const scenario = tab?.saveLoadController.getScenarios().get(scenarioId);
+    if (!tab || !scenario) throw new Error('scenario not found');
+    if (scenario.steps.length === 0) throw new Error(`"${scenario.name}" has no steps to export`);
+    const { blob, fileName } = await buildDoc(scenario, tab.name, format, options);
+    (installOptions.saveFile ?? downloadFile)(blob, fileName);
+    notify.success(`Scenario "${scenario.name}" exported as ${fileName}`);
+    return fileName;
+  };
+
+  const handle: ScenariosHandle = { viewer, panel, handleKeydown, showPanel, exportScenario, exportScenarioDoc, exportScenarioFile, destroy };
+  installed = handle;
+  return handle;
+}
+
+let installed: ScenariosHandle | null = null;
+
+/** The installed scenarios wiring (the AI tools open the view and export through it); null in tests without it. */
+export function installedScenarios(): ScenariosHandle | null {
+  return installed;
 }
