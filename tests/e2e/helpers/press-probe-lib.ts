@@ -194,10 +194,10 @@ async function pressPoints(page: Page, s: Sample, fr: number[], off: number[]):
       const small = c.width < 32 || c.height < 32 || kind;
       if (x > c.x + mx && x < c.x + c.width - mx && y > c.y + my && y < c.y + c.height - my) return false;
       const d = [];
-      if (Math.abs(p.x - c.x) <= 1.5) d.push(x - p.x);
-      if (Math.abs(p.x - c.x - c.width) <= 1.5) d.push(p.x - x);
-      if (Math.abs(p.y - c.y) <= 1.5) d.push(y - p.y);
-      if (Math.abs(p.y - c.y - c.height) <= 1.5) d.push(p.y - y);
+      if (Math.abs(p.x - c.x) <= 1.5) d.push(x - c.x);
+      if (Math.abs(p.x - c.x - c.width) <= 1.5) d.push(c.x + c.width - x);
+      if (Math.abs(p.y - c.y) <= 1.5) d.push(y - c.y);
+      if (Math.abs(p.y - c.y - c.height) <= 1.5) d.push(c.y + c.height - y);
       if (d.length) return Math.max(...d) <= (small ? 0.5 : 1);
       if (small) return false;
       const vx = p.x - c.getCenterX(), vy = p.y - c.getCenterY(); const len = Math.hypot(vx, vy);

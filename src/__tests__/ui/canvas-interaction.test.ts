@@ -259,7 +259,7 @@ describe('connection start tolerance', () => {
     // 4 px off, or 2 px inside the shape: the shape moves (maxGraph's default reached ~6.5 px)
     expect(ch.intersects(icon as never, mouse(cx + 4, cy), true, false)).toBe(false);
     expect(ch.intersects(icon as never, mouse(cx, cy + 2), true, false)).toBe(false);
-    expect(ch.intersects(icon as never, mouse(cx + 1, cy + 1), true, false)).toBe(true);
+    expect(ch.intersects(icon as never, mouse(cx + 1, state.y + 1), true, false)).toBe(true);
     // as a target (connection running / edge end) the default stays
     expect(ch.intersects(icon as never, mouse(cx + 4, cy + 4), false, false)).toBe(true);
     expect(isOnSourcePoint(icon.bounds, cx, cy, null)).toBe(true);

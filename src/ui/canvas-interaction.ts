@@ -123,6 +123,14 @@ export function isNearGraphBounds(graph: Graph, x: number, y: number): boolean {
   return x >= b.x - m && x <= b.x + b.width + m && y >= b.y - m && y <= b.y + b.height + m;
 }
 
+/** Whether a DOM event target is the canvas background (no shape, handle or overlay). */
+export function isBackgroundSource(graph: Graph, source: Node | null): boolean {
+  const canvas = graph.view.getCanvas() as SVGElement | null;
+  const background = graph.view.getBackgroundPane() as SVGElement | null;
+  return !!source && (source === graph.container || source === canvas ||
+    source === canvas?.ownerSVGElement || (!!background && background.contains(source)));
+}
+
 export function installGroupBackgroundHit(graph: Graph): void {
   if (INSTALLED.has(graph)) return;
   INSTALLED.add(graph);
@@ -140,12 +148,7 @@ export function installGroupBackgroundHit(graph: Graph): void {
     // too, so their connection points show and an edge end dropped there connects to them
     if (evtName !== InternalEvent.MOUSE_DOWN && evtName !== InternalEvent.MOUSE_MOVE && evtName !== InternalEvent.MOUSE_UP) return result;
     // Only presses on the canvas background itself (handles and overlays carry their own state)
-    const source = result.getSource() as Node | null;
-    const canvas = graph.view.getCanvas() as SVGElement | null;
-    const background = graph.view.getBackgroundPane() as SVGElement | null;
-    const onBackground = !!source && (source === graph.container || source === canvas ||
-      source === canvas?.ownerSVGElement || (!!background && background.contains(source)));
-    if (!onBackground) return result;
+    if (!isBackgroundSource(graph, result.getSource() as Node | null)) return result;
     // cheap pre-check: outside the drawing's bounds there is nothing to hit
     if (!isNearGraphBounds(graph, result.getGraphX(), result.getGraphY())) return result;
     if (evtName === InternalEvent.MOUSE_DOWN) {
@@ -384,7 +387,7 @@ export function installPressToMove(graph: Graph): void {
   graph.addMouseListener({
     mouseDown: () => container.classList.remove('rd-cursor-move'),
     mouseMove: (_sender: unknown, me: InternalMouseEvent) => {
-      last = { x: me.getGraphX(), y: me.getGraphY(), bg: !me.getState() };
+      last = { x: me.getGraphX(), y: me.getGraphY(), bg: isBackgroundSource(graph, me.getSource() as Node | null) };
       if (!frame) frame = requestAnimationFrame(refresh);
     },
     mouseUp: () => undefined,

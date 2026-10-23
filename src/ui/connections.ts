@@ -160,9 +160,15 @@ export function installDrawioConnectionStart(graph: Graph): void {
     } finally {
       pointer = null;
     }
-    // honest cursor: crosshair exactly where a press starts a connection (the point is highlighted)
+    // honest cursor: crosshair exactly where a press starts a connection (the point is highlighted);
+    // elsewhere on an 'x' (its image redirects the press to the shape, which then moves) `move`
     graph.container.classList.toggle('rd-cursor-connect',
       source && !existingEdge && handler.first === null && !graph.isMouseDown && !!constraints.currentConstraint);
+    const focus = constraints.currentFocus;
+    if (focus && source && constraints.focusIcons.length > 0) {
+      const cursor = graph.isCellMovable(focus.cell) ? 'move' : '';
+      for (const icon of constraints.focusIcons) if (icon.node && icon.node.style.cursor !== cursor) icon.node.style.cursor = cursor;
+    }
   };
   const origReset = constraints.reset.bind(constraints);
   constraints.reset = (): void => {
@@ -200,7 +206,7 @@ export function isOnSourcePoint(iconBounds: { x: number; y: number; width: numbe
   // and the press on the edge pixel or outside (their body is all "near an edge")
   if (isSmallSource(focus)) {
     if (!isOnBoundsSide(focus, px, py)) return false;
-    // (the 'x' sits at whole pixels: its centre may lie half a pixel off the outline)
+    // the outline pixel or outside
     return inwardDistance(focus, px, py, x, y) <= 0.5;
   }
   return inwardDistance(focus, px, py, x, y) <= SOURCE_POINT_INWARD;
@@ -230,10 +236,11 @@ function isOnBoundsSide(state: CellState, px: number, py: number): boolean {
 function inwardDistance(state: CellState, px: number, py: number, x: number, y: number): number {
   const e = 1.5;
   const depths: number[] = [];
-  if (Math.abs(px - state.x) <= e) depths.push(x - px);
-  if (Math.abs(px - (state.x + state.width)) <= e) depths.push(px - x);
-  if (Math.abs(py - state.y) <= e) depths.push(y - py);
-  if (Math.abs(py - (state.y + state.height)) <= e) depths.push(py - y);
+  // measured from the outline itself (the 'x' is drawn at whole pixels, up to half a pixel off)
+  if (Math.abs(px - state.x) <= e) depths.push(x - state.x);
+  if (Math.abs(px - (state.x + state.width)) <= e) depths.push(state.x + state.width - x);
+  if (Math.abs(py - state.y) <= e) depths.push(y - state.y);
+  if (Math.abs(py - (state.y + state.height)) <= e) depths.push(state.y + state.height - y);
   if (depths.length > 0) return Math.max(...depths);
   const vx = px - state.getCenterX();
   const vy = py - state.getCenterY();
