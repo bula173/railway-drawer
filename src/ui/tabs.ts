@@ -1,4 +1,5 @@
 import { Graph, RubberBandHandler, CellEditorHandler, InternalEvent } from '@maxgraph/core';
+import { installMultiSelectionBox } from './multi-selection-box';
 import { configureDiagramRendering } from './diagram-graph-setup';
 import { PropertiesPanel } from './properties';
 import { StatusBarController } from './statusbar';
@@ -285,6 +286,8 @@ export class TabManager {
     installStencilAutoload(graph);
     // draw.io scrolling canvas: padding around the content, zoom around the focus (canvas-scroll.ts)
     installCanvasScroll(graph);
+    // a large selection (an inserted template) gets one bounding box instead of per-cell handles (draw.io)
+    installMultiSelectionBox(graph);
 
     // Controllers bind to shared DOM and `document`; record those listeners so they are only
     // attached while this tab is active (see captureSharedListeners).

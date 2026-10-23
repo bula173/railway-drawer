@@ -37,6 +37,9 @@ export function insertTemplate(
   onRenamed?: (renamed: Map<KindId, Map<string, string>>) => void
 ): Cell[] {
   const entry = templateToPaletteEntry(template);
+  // a click insert into an empty tab opens the drawing like "Open as new diagram" (zoomed in, railway-zoom.ts)
+  const bounds = graph.getGraphBounds();
+  const intoEmpty = !at && bounds.width <= 0 && bounds.height <= 0;
   const inserted = withSnapSuspended(() =>
     insertEntry(graph, entry, at, (cells) => {
       const renamed = prepareClonedCells(graph.getDataModel(), cells);
@@ -48,6 +51,7 @@ export function insertTemplate(
       .ensureStencilsForXml(template.xml)
       .then(() => graph.refresh())
       .catch(() => undefined);
+    if (intoEmpty) zoomRailwayDrawing(graph);
   }
   return inserted;
 }
