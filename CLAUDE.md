@@ -48,7 +48,7 @@ tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, all-shapes, access-identity). No
+railway-shapes, backlog-ui, ai, all-shapes, access-identity, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -1321,9 +1321,19 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   900 px email hidden, icon-only button. Failure / 404 / HTML / no email: nothing shown, nothing logged. `/cdn-cgi/*`
   is answered by Cloudflare's edge (the Worker only runs first for /mcp and /api/ai-bridge and does not route
   `/cdn-cgi`). Dev-only localStorage `rd.accessProbe` = '1' forces the request (e2e).
+- **Security headers / CSP**: `public/_headers` is the one source (Cloudflare static assets apply it): CSP
+  `script-src 'self'` (no inline scripts: the theme bootstrap is `public/theme-init.js`), `style-src 'unsafe-inline'`
+  (maxGraph), `connect-src 'self' https: wss: ws://127.0.0.1:* …` (GitLab / PlantUML / library URLs are user-configured),
+  nosniff, Referrer-Policy, Permissions-Policy, frame-ancestors none. vite.config.ts `securityHeaders` sends it from
+  the dev server (plus `'unsafe-eval'` for the e2e harness, with the exact policy as Report-Only) and preview, collects
+  violation reports (`/__rd-csp-reports`; `tests/e2e/csp-teardown.ts` fails the e2e run on any), and writes
+  `dist/.htaccess` (LAN variant: `http:` allowed too) for Apache. `RD_NO_CSP=1` disables it in dev. Tests:
+  `src/config/__tests__/security-headers.test.ts`, `tests/e2e/csp.spec.ts`.
 - LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
   `root@192.168.0.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
-  `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`.
+  `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`. The security headers
+  come from `dist/.htaccess`: Apache needs `a2enmod headers` and `AllowOverride FileInfo` (or All) for the directory,
+  otherwise the file is ignored (or a 500 without mod_headers is avoided by its `<IfModule>`).
 
 ## Tests
 

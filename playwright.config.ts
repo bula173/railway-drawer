@@ -7,6 +7,8 @@ const baseURL = port === 80 ? 'http://localhost' : `http://localhost:${port}`;
 export default defineConfig({
   testDir: './tests/e2e',
   testMatch: '*.spec.ts',
+  // the dev server runs under the production CSP (public/_headers); any violation fails the run
+  globalTeardown: './tests/e2e/csp-teardown.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

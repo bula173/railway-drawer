@@ -4,6 +4,9 @@
 # Builds the project and deploys it to root@192.168.0.22:/var/www/html/railway-drawer
 # (served at http://192.168.0.22/railway-drawer/). Production is deployed separately by
 # Cloudflare Workers Builds on push (wrangler.jsonc).
+# Security headers (CSP etc.): the build writes dist/.htaccess from public/_headers. Apache applies it
+# only with mod_headers (`a2enmod headers`) and `AllowOverride FileInfo` (or All) for
+# /var/www/html/railway-drawer; scp -r copies the dotfile.
 
 set -e  # Exit on error
 
