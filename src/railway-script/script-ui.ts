@@ -15,6 +15,12 @@ import { parseScript } from './parse';
 import type { SessionStatus } from './session';
 import { ScriptSession } from './session';
 import { SCRIPT_TEMPLATES } from './templates';
+import { confirmDialog } from '../ui/app-dialogs';
+
+/** Themed confirmation before the editor's text is replaced (not the native confirm()). */
+function confirmReplace(message: string): Promise<boolean> {
+  return confirmDialog({ title: 'Replace the script', message, confirmLabel: 'Replace', testId: 'rs-replace-confirm' });
+}
 
 export interface ScriptNotifier {
   success(message: string): void;
@@ -118,18 +124,18 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
   examples.title = 'Insert an example script';
   examples.append(new Option('Examples…', ''));
   for (const t of SCRIPT_TEMPLATES) examples.append(new Option(t.title, t.id));
-  examples.addEventListener('change', () => {
+  examples.addEventListener('change', async () => {
     const t = SCRIPT_TEMPLATES.find((x) => x.id === examples.value);
     examples.value = '';
     if (!t) return;
-    if (textarea.value.trim() !== '' && !window.confirm('Replace the script with the example?')) return;
+    if (textarea.value.trim() !== '' && !(await confirmReplace(`Replace the script with the example "${t.title}"?`))) return;
     setText(t.text, true);
     void runApply(true);
   });
-  const genBtn = button('From drawing', 'rd-btn rd-rs-generate', 'Generate a script from the railway objects of the drawing', () => {
+  const genBtn = button('From drawing', 'rd-btn rd-rs-generate', 'Generate a script from the railway objects of the drawing', async () => {
     const tab = tabManager.getActiveTab();
     if (!tab) return;
-    if (textarea.value.trim() !== '' && !window.confirm('Replace the script with one generated from the drawing?')) return;
+    if (textarea.value.trim() !== '' && !(await confirmReplace('Replace the script with one generated from the drawing?'))) return;
     const r = generateScript(tab.graph.getDataModel(), tab.saveLoadController.getProjectName());
     setText(r.text, false);
     const total = Object.values(r.counts).reduce((s, n) => s + (n ?? 0), 0);

@@ -92,7 +92,7 @@ export interface RemoteSessionOptions {
   /** A binding was added, changed or removed (persist the cache, rebuild menus). */
   onBindingsChanged?(): void;
   /** Synchronous question before closing a tab with unsaved remote changes (default window.confirm). */
-  confirmClose?(message: string): boolean;
+  confirmClose?(message: string): boolean | Promise<boolean>;
 }
 
 /** Per-binding state besides the file info. */
@@ -146,7 +146,7 @@ export class RemoteSession {
   private readonly tabBar: HTMLElement | null;
   private readonly watchTab: RemoteSessionOptions['watchTab'];
   private readonly onBindingsChanged: () => void;
-  private readonly confirmClose: (message: string) => boolean;
+  private readonly confirmClose: (message: string) => boolean | Promise<boolean>;
   private readonly states = new Map<string, BindingState>();
   /** Unsubscribe functions of the edit/local-open watchers, per bound tab. */
   private readonly watchers = new Map<string, () => void>();
@@ -171,7 +171,8 @@ export class RemoteSession {
     this.tabBar = opts.tabBar ?? null;
     this.watchTab = opts.watchTab;
     this.onBindingsChanged = opts.onBindingsChanged ?? (() => undefined);
-    this.confirmClose = opts.confirmClose ?? ((message) => window.confirm(message));
+    this.confirmClose =
+      opts.confirmClose ?? ((message) => this.ui.confirm({ title: 'Close the tab?', message, confirmLabel: 'Close and discard', danger: true }));
   }
 
   getBinding(tabId: string): RemoteFileInfo | null {
@@ -386,8 +387,11 @@ export class RemoteSession {
     return Array.from(this.states.values()).some((state) => state.dirty);
   }
 
-  /** Before the user closes a tab: true = close it (asks when it has unsaved remote changes). */
-  confirmCloseTab(tabId: string): boolean {
+  /**
+   * Before the user closes a tab: true = close it (asks with a themed dialog when it has unsaved
+   * remote changes; then the answer is a promise).
+   */
+  confirmCloseTab(tabId: string): boolean | Promise<boolean> {
     const binding = this.getBinding(tabId);
     if (!binding || !this.checkDirty(tabId)) return true;
     const tab = this.host.getAllTabs().find((t) => t.id === tabId);

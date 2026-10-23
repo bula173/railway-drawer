@@ -1272,7 +1272,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   changes (`watchTab`) re-check it debounced (300 ms), so undo back to the saved state is clean. `dirty` is persisted;
   a tab restored dirty stays dirty until saved/reloaded. UI: `.rd-remote-dirty-dot` in the tab (TabManager
   `setTabDecorator`), `data-dirty` on the status item; the tab × asks (`setCloseGuard` -> `confirmCloseTab`,
-  `window.confirm`) and `beforeunload` prompts only when a bound tab has unsaved remote changes.
+  themed `askConfirm`; the guard may answer with a promise) and `beforeunload` prompts only when a bound tab has unsaved remote changes.
 - **Test provider** (`src/debug/fake-remote-provider.ts`, "Test storage", id `fake-remote`): registered by
   `installSharing` only when `import.meta.env.DEV` and localStorage `rd.fakeRemote` = `'1'` (production builds drop it:
   no `rd.fakeRemote` in `dist/`). Files in localStorage `rd.fakeRemote.files` (`{path: {xml, version: 'v<n>'}}`), save

@@ -122,7 +122,7 @@ export class TabManager {
   private cachedRemote: Map<string, unknown> = new Map();
   private remoteCacheWriter: ((tabId: string) => unknown) | null = null;
   /** Asked before the user closes a tab with its × button; false keeps the tab. */
-  private closeGuard: ((tabId: string) => boolean) | null = null;
+  private closeGuard: ((tabId: string) => boolean | Promise<boolean>) | null = null;
   /** Decorates each rendered tab element (unsaved-changes dot of remote-bound tabs). */
   private tabDecorator: ((tabId: string, element: HTMLElement) => void) | null = null;
 
@@ -464,7 +464,7 @@ export class TabManager {
     return remote;
   }
 
-  setCloseGuard(guard: ((tabId: string) => boolean) | null): void {
+  setCloseGuard(guard: ((tabId: string) => boolean | Promise<boolean>) | null): void {
     this.closeGuard = guard;
   }
 
@@ -684,6 +684,7 @@ export class TabManager {
     tab.layersController.refresh();
     tab.propertiesPanel.update();
     tab.statusBarController.syncZoom();
+    tab.statusBarController.syncSelection();
     // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
     syncGridUi(tab.graph);
   }
@@ -859,8 +860,10 @@ export class TabManager {
 
         closeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          if (this.closeGuard && !this.closeGuard(tab.id)) return;
-          this.closeTab(tab.id);
+          const allowed = this.closeGuard ? this.closeGuard(tab.id) : true;
+          // a themed confirmation answers later; a plain answer closes at once
+          if (allowed === true) this.closeTab(tab.id);
+          else if (allowed !== false) void allowed.then((ok) => ok && this.tabs.has(tab.id) && this.closeTab(tab.id));
         });
 
         tabButton.appendChild(closeBtn);
