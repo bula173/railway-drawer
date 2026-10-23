@@ -83,3 +83,10 @@ standardwebhooks (MIT), json-schema-to-ts (MIT).
 MCP TypeScript SDK 2.3.1 (@modelcontextprotocol/server, @modelcontextprotocol/core,
 https://github.com/modelcontextprotocol/typescript-sdk), Apache License 2.0; with zod 4 (MIT).
 ws 8.22.0 (local MCP server, https://github.com/websockets/ws), MIT License.
+
+-------------------------------------------------------------------------------
+HTML / SVG sanitizer (src/security/sanitize.ts)
+-------------------------------------------------------------------------------
+DOMPurify 3.4.17 (https://github.com/cure53/DOMPurify), Copyright 2025 Dr.-Ing. Mario Heiderich,
+Cure53, dual licensed under the Apache License 2.0 and the Mozilla Public License 2.0; used here
+under the Apache License 2.0. Sanitizes draw.io HTML labels, Markdown and PlantUML server SVG.

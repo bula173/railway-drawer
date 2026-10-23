@@ -666,7 +666,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (dataTransfer type `application/x-rd-drawio-entry`).
 - maxGraph 0.10.3 gaps fixed for draw.io content (engine/): `stencil-fixes.ts` (StencilShape read
   `large-arc-flag="0"` as true, so stencil arcs were wrong; `<fillcolor color="accentColor" default=..>` style
-  keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag),
+  keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag; the sanitizing
+  getLabel must stay the OUTERMOST wrapper: `configureDiagramRendering` installs it last),
   `view-fixes.ts` (edge styles for edges without a source terminal; `inherit` style values),
   `shape-fixes.ts` (rounded edges use `arcSize / 2` like mxPolyline; `shadow=1` is draw.io's CSS
   `drop-shadow()` filter instead of maxGraph's offset copies, whose fill was the boolean flag), and
@@ -1103,12 +1104,17 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `step-uml.ts` `renderStepUml`: sequence -> local; other diagram types -> PlantUML server only if the user set one
   (`src/services/plantuml-server.ts`, localStorage `rd.plantuml.server`, no default: nothing is ever sent otherwise);
   GET `<server>/svg/<encoded>` (UTF-8 -> deflate-raw via CompressionStream -> PlantUML base64 `0-9A-Za-z-_`),
-  credentials omitted, no referrer, 15 s timeout, answers sanitized (`sanitizeSvgMarkup`: no script/foreignObject/on*,
-  only `#`/data:image hrefs), cached per server+text; errors are shown ("PlantUML server offline — …", HTTP status).
+  credentials omitted, no referrer, 15 s timeout, answers sanitized (`sanitizeSvgMarkup`: no script/foreignObject/on*/
+  animations, only `#`/raster data:image hrefs), cached per server+text; errors are shown ("PlantUML server offline — …", HTTP status).
 - **Markdown** (`markdown.ts`, in-house, no dependency): headings, paragraphs, hard breaks, emphasis/strong/strike, code
   spans/fences, quotes, nested lists, task items, pipe tables (alignment classes), hr, links (http(s)/mailto/#, always
   `target=_blank rel="noopener noreferrer"`), autolinks, images (https or base64 data:image only). Raw HTML is shown as
-  text; output then goes through the allow-list `sanitizeHtml` (DOM, `<template>`) before insertion/export.
+  text; output then goes through the allow-list `sanitizeHtml` before insertion/export.
+- **One sanitizer** (`src/security/sanitize.ts`, DOMPurify pinned exactly, NOTICE): `sanitizeHtmlLabel` (draw.io HTML
+  labels, HTML profile only, safe-CSS `style`, links http(s)/mailto/tel/#/relative, images https/relative/data:image),
+  `sanitizeMarkdownFragment` (markdown.ts `sanitizeHtml`, the renderer's tag set + URL rules), `sanitizeSvgMarkup`
+  (PlantUML server SVG). Never add another hand-written deny-list; fails closed without a DOM. Tests:
+  `src/security/__tests__/sanitize.test.ts` (OWASP/mXSS payloads, every html=1 label of the palettes/libraries unchanged).
 - **Export** (`scenario-export.ts`): File > "Export Scenario (HTML)…" (`data-action="exportScenarioHtml"` -> window event
   `scenario-export-request` -> `install-scenarios.ts`: the scenario shown, else the only one with steps, else a chooser)
   and ⇩ per scenario in the panel. One self-contained HTML file `<diagram> - <scenario>.html`: CSP meta (no scripts),

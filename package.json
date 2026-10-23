@@ -30,6 +30,7 @@
     "@maxgraph/core": "^0.10.0",
     "@modelcontextprotocol/server": "2.3.1",
     "dejavu-fonts-ttf": "2.37.3",
+    "dompurify": "3.4.17",
     "jspdf": "4.2.1",
     "roughjs": "4.6.6",
     "svg2pdf.js": "2.8.1",
