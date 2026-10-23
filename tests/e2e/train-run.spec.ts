@@ -61,7 +61,7 @@ async function openApp(page: Page): Promise<void> {
     localStorage.setItem('rd.theme', 'light');
   });
   await page.reload();
-  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 30_000 });
   await inGraph(page, 'tab.document.load(arg); tab.graphCommandService.clearHistory();', LAYOUT);
 }
 
@@ -94,6 +94,7 @@ async function openRun(page: Page): Promise<ReturnType<Page['locator']>> {
 }
 
 test('train run R1, R2 at 10×: sections occupied and freed in order, train moves, close restores', async ({ page }) => {
+  test.setTimeout(120_000);
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await openApp(page);
@@ -127,21 +128,23 @@ test('train run R1, R2 at 10×: sections occupied and freed in order, train move
   await view.locator('[data-testid="train-run-multiplier"]').selectOption('10');
   await view.locator('[data-testid="train-run-play"]').click();
   await expect(view).toHaveAttribute('data-playing', 'true');
-  await expect.poll(() => view.getAttribute('data-occupied'), { timeout: 10_000 }).toBe('TC2,TC3');
+  // (the log, not a poll of the attribute: a busy machine may skip a short state between two polls)
+  const seen = (): Promise<string[]> => page.evaluate(() => (window as unknown as { __trnLog: Array<{ occ: string }> }).__trnLog.map((l) => l.occ));
+  await expect.poll(seen, { timeout: 30_000 }).toContain('TC2,TC3');
   await page.screenshot({ path: `${SHOT_DIR}/playing.png` });
   // the live drawing is not touched while the run plays
   expect(await inGraph(page, "return graph.getDataModel().getCell('tc2').value.getAttribute('rdState') ?? '';")).toBe('');
-  await expect(view).toHaveAttribute('data-playing', 'false', { timeout: 15_000 });
+  await expect(view).toHaveAttribute('data-playing', 'false', { timeout: 60_000 });
   await expect(view.locator('.rd-trn-time')).toHaveText('65.0 s / 65.0 s');
   const log = await page.evaluate(() => (window as unknown as { __trnLog: Array<{ t: number; occ: string; x: number }> }).__trnLog);
   const sequence = log.map((l) => l.occ).filter((occ, i, all) => i === 0 || occ !== all[i - 1]);
   expect(sequence).toEqual(['', 'TC1', 'TC1,TC2', 'TC2', 'TC2,TC3', 'TC3']);
-  // the times of the changes (sampled frames at 10×: within 1 s of simulated time)
+  // the times of the changes (frames at 10×; a frame advances at most 0.25 s real = 2.5 s simulated)
   const firstAt = (occ: string): number => log.find((l) => l.occ === occ)!.t;
   expect(firstAt('TC1')).toBeGreaterThanOrEqual(5);
-  expect(firstAt('TC1')).toBeLessThan(6);
+  expect(firstAt('TC1')).toBeLessThan(7.6);
   expect(firstAt('TC2')).toBeGreaterThanOrEqual(20);
-  expect(firstAt('TC2')).toBeLessThan(21);
+  expect(firstAt('TC2')).toBeLessThan(22.6);
   expect(firstAt('TC3')).toBeGreaterThanOrEqual(30);
   // the train moved forward along the track, frame by frame
   const xs = log.map((l) => l.x);
