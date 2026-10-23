@@ -1203,7 +1203,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   60 calls/min, 180 s timeout), `bridge/client.ts` (browser WebSocket, sequential calls, backoff), `bridge/pairing.ts`
   (sessionStorage `rd.ai.pairing`, localStorage `rd.ai.local`, client configs), `mcp/mcp-server.ts`
   (`@modelcontextprotocol/server` McpServer, JSON Schemas as Standard Schema), `mcp/http.ts` (stateless `createMcpHandler`,
-  Bearer or `?pair=`, 512 KB cap). Worker: `worker/index.ts` (`/mcp`, `/api/ai-bridge/<session>/ws` same-origin only,
+  Bearer preferred, `?pair=` only for header-less clients — never logged, `redactUrl`, stripped before the handler; 512 KB
+  cap), `mcp/guard.ts` (per-IP + global `/mcp` rate limits via Workers Rate Limiting bindings before any DO, 10 s hello
+  timeout, unpaired sockets capped separately, API security headers). Remote MCP edits ask Keep / Discard by default
+  (`confirmRemoteChanges`, source `mcp-remote`); the chat and the local bridge keep `confirmChanges`. Worker: `worker/index.ts` (`/mcp`, `/api/ai-bridge/<session>/ws` same-origin only,
   else ASSETS), `worker/ai-bridge.ts` Durable Object `AiBridge` (hibernation API, pairing in storage, alarm cleanup).
   Local: `tools/mcp-local/src` (`main.ts` stdio, `bridge-server.ts` ws on 127.0.0.1 with origin allow-list,
   `headless*.ts` jsdom + tool core on a `.drawio` file).

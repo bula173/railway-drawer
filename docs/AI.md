@@ -99,10 +99,14 @@ tool rounds per turn.
 ### Remote (production site)
 
 1. Open the app, right panel **AI** > **Connect to AI assistant (MCP)** > **Create pairing code**.
-   The panel shows the status (Connected / Connecting), the MCP URL, the Claude Code command and the
-   bare pairing code `rdp1.<session>.<secret>`. Keep the tab open (calls run in it, on the active
+   The panel shows the status (Connected / Connecting), the Claude Code command, the bare pairing
+   code `rdp1.<session>.<secret>` (send it as `Authorization: Bearer`) and, last, the MCP URL with the
+   code in it. Keep the tab open (calls run in it, on the active
    tab). The code is valid while you keep it, at most 12 hours; **New code** / **Disconnect** revoke it.
-2. Configure the client:
+2. Configure the client. Prefer the **Bearer header**: `?pair=` puts the code into the URL, which
+   clients, proxies and request logs (Cloudflare's own included) may keep. The URL form is only for
+   clients that cannot send headers; the code expires after at most 12 h and **New code** revokes it.
+   The app never logs URLs with the code (`redactUrl`), and the MCP handler gets the request without it.
    - **claude.ai** (Settings > Connectors > Add custom connector) or **Claude Desktop** (Settings >
      Connectors > Add custom connector): URL =
      `https://railwaydrawer.mksystemdesign.org/mcp?pair=rdp1.<session>.<secret>`, no OAuth.
@@ -114,8 +118,23 @@ tool rounds per turn.
        "headers": { "Authorization": "Bearer rdp1.<session>.<secret>" } } } }
      ```
 3. Ask: "Draw a station with two points and four signals in Railway Drawer". The calls appear in the
-   AI panel log as `MCP · ✓ …`; with **Confirm each change** on, each waits for Keep / Discard (the
-   MCP call waits up to 3 minutes).
+   AI panel log as `MCP · ✓ …`. Changes from REMOTE MCP clients wait for Keep / Discard by default
+   (AI settings > **Confirm changes from remote MCP clients**, on unless turned off; the in-app chat
+   and the local bridge follow **Confirm each change**). The MCP call waits up to 3 minutes; an
+   undecided change is discarded 10 s before that, so the drawing never keeps a change the client was
+   told failed.
+
+Abuse limits (`src/ai/mcp/guard.ts`, applied by the Worker): `/mcp` is rate limited per client IP
+(120/min) and globally (1200/min) with the Workers Rate Limiting binding (`ratelimits` in
+`wrangler.jsonc`; counters are per Cloudflare location, a cheap first gate) BEFORE a Durable Object is
+addressed; the per-pairing relay limit (60 calls/min) stays. Only well-formed session ids reach a
+Durable Object; a DO cannot be looked up without creating it, so a random well-formed id still
+instantiates an empty object that answers "unknown pairing" — the rate limits bound how many (a
+registry of live sessions in KV would need a write per pairing and is not worth it). Browser sockets:
+a socket must send a valid hello within 10 s or is closed; sockets waiting for their hello are capped
+(4) separately from paired ones, so unauthenticated sockets cannot lock the real tab out. The
+Worker's own answers carry `API_SECURITY_HEADERS` (CSP `default-src 'none'`, nosniff, no-referrer,
+no-store).
 
 How it works: `/mcp` is a stateless Streamable HTTP MCP endpoint (official SDK
 `@modelcontextprotocol/server`, `createMcpHandler`, JSON responses). The pairing token comes from

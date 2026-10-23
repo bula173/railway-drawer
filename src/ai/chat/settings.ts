@@ -32,11 +32,13 @@ export interface AiSettings {
   apiKey: string;
   model: string;
   effort: Effort;
-  /** Show each drawing change and wait for Keep / Discard. */
+  /** Show each drawing change and wait for Keep / Discard (in-app chat and the local MCP bridge). */
   confirmChanges: boolean;
+  /** The same for calls from REMOTE MCP clients (pairing code via the Worker); on by default. */
+  confirmRemoteChanges: boolean;
 }
 
-export const DEFAULT_SETTINGS: AiSettings = { apiKey: '', model: DEFAULT_MODEL, effort: 'high', confirmChanges: false };
+export const DEFAULT_SETTINGS: AiSettings = { apiKey: '', model: DEFAULT_MODEL, effort: 'high', confirmChanges: false, confirmRemoteChanges: true };
 
 function storage(): Storage | null {
   try {
@@ -61,6 +63,7 @@ export function readSettings(): AiSettings {
       model: typeof v.model === 'string' && isModelId(v.model) ? v.model : DEFAULT_MODEL,
       effort: EFFORTS.includes(v.effort as Effort) ? (v.effort as Effort) : DEFAULT_SETTINGS.effort,
       confirmChanges: v.confirmChanges === true,
+      confirmRemoteChanges: v.confirmRemoteChanges !== false,
     };
   } catch {
     return { ...DEFAULT_SETTINGS };
