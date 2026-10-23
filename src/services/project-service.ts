@@ -75,12 +75,13 @@ export class ProjectService {
   /**
    * Wraps the model XML of the shown page (a draw.io `<mxGraphModel>`, optionally followed by
    * comments such as the PlantUML metadata) into a native draw.io `<mxfile>`. The scenario step
-   * pages follow it, then the preserved pages of the opened file (`extraPages`), unchanged.
+   * pages follow it, then the preserved pages of the opened file (`extraPages`, or the given ones:
+   * DiagramDocument passes them with the page it shows written in place), unchanged.
    */
-  generateProjectXml(graphXml: string): string {
+  generateProjectXml(graphXml: string, extraPages: readonly string[] = this.extraPages): string {
     // The shown page's id must not collide with the ids of the preserved pages
     const usedIds = new Set<string>();
-    for (const pageXml of this.extraPages) {
+    for (const pageXml of extraPages) {
       const id = new DOMParser().parseFromString(pageXml, 'text/xml').documentElement?.getAttribute('id');
       if (id) usedIds.add(id);
     }
@@ -113,7 +114,7 @@ export class ProjectService {
 
     return buildMxfile(
       [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes }],
-      [...sectionPages, ...this.extraPages],
+      [...sectionPages, ...extraPages],
       {
         host: PROJECT_HOST,
         modified: this.projectMetadata.modifiedAt,
@@ -245,7 +246,7 @@ export class ProjectService {
    * Returns the model XML of one <diagram> page: the uncompressed model element (plus any
    * comments stored next to it, e.g. PlantUML metadata), or the decompressed text content.
    */
-  private async extractDiagramModelXml(diagramEl: Element): Promise<string | null> {
+  async extractDiagramModelXml(diagramEl: Element): Promise<string | null> {
     const graphModel =
       diagramEl.getElementsByTagName('mxGraphModel')[0] ??
       diagramEl.getElementsByTagName('GraphDataModel')[0];

@@ -162,7 +162,8 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
         const scenarios = tab.document.scenarios.list();
         return {
           name: tab.name,
-          modelXml: tab.document.serializeToXml(),
+          // page 1 (also while another drawing page is shown)
+          modelXml: tab.document.getMainPageModelXml(),
           extraPages,
           pageId,
           // Scenarios travel with the link: index on the page, one page per step after it
