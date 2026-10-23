@@ -1,0 +1,112 @@
+/*
+  Interlocking table / conflict matrix tabs of the route tables dialog and the Rule settings
+  dialog (lazy chunks: route-tables-dialog.ts, rule-settings-dialog.ts). Chrome colours:
+  --rd-* theme tokens only (styles/variables.css).
+*/
+
+.rd-il-legend,
+.rd-il-note {
+  margin: 0 0 8px;
+  color: var(--rd-text-muted);
+}
+
+.rd-il-subtitle {
+  margin: 14px 0 6px;
+  font-size: 13px;
+}
+
+.rd-il-matrix {
+  border-collapse: collapse;
+}
+
+.rd-il-matrix th,
+.rd-il-matrix td {
+  min-width: 44px;
+  border: 1px solid var(--rd-border);
+  padding: 4px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rd-il-matrix th {
+  background: var(--rd-surface-3);
+}
+
+.rd-il-matrix td.rd-il-conflict {
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+  font-weight: 600;
+}
+
+.rd-il-matrix td.rd-il-self {
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+}
+
+.rd-il-english,
+.rd-rules-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+/* Rule settings dialog */
+.rd-rules-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rd-rules-table th,
+.rd-rules-table td {
+  border-bottom: 1px solid var(--rd-border);
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rd-rules-table th {
+  background: var(--rd-surface-3);
+}
+
+.rd-rules-label {
+  font-weight: 600;
+}
+
+.rd-rules-pl,
+.rd-rules-help {
+  color: var(--rd-text-muted);
+}
+
+.rd-rules-help {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.rd-rules-param {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.rd-rules-param input,
+.rd-rules-param select,
+.rd-rules-severity {
+  padding: 2px 4px;
+  border: 1px solid var(--rd-input-border);
+  border-radius: 3px;
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
+  font: inherit;
+}
+
+.rd-rules-param input {
+  width: 72px;
+}
+
+.rd-rules-error {
+  color: var(--rd-danger);
+}

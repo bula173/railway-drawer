@@ -27,6 +27,7 @@
   (`applyProjectDefaults` in `validateModel` and the railML export -> `countryID`; the drawing is not changed). Edited
   in the Data panel with nothing selected ("Diagram railway settings", `#rd-rw-country`, one undo step); a balise
   group's empty NID_C field shows it as placeholder. Library templates do not pin NID_C (they follow the diagram).
+  `rdRuleSettings` on the same root cell: the rule checks' settings ([rules.md](rules.md)).
 - **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
   NID_C/NID_BG warning; NID_C only when the diagram has no usable default), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
   (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its

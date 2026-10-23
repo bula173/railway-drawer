@@ -37,12 +37,16 @@
   signal direction" (`.rd-route-none`); Esc cancels the start signal, a second Esc leaves. Floating panel `.rd-route-tool` (status, path radios
   `.rd-route-path`, ID input prefilled `R<n>`, "Create route"), highlight in `graph-overlay.ts` `GraphOverlay` (SVG
   group in the view's overlay pane, transform = scale/translate, not in the model). Esc/✕ leaves; tab switch leaves.
-- **Tables** (`route-tables-dialog.ts`): Railway > Route Table… / Interlocking Table… -> `.rd-route-dialog` with tabs
-  Routes / Interlocking, Export CSV (shown tab, `<diagram>-routes.csv` / `-interlocking.csv`) and XLSX (both sheets).
+- **Tables** (`route-tables-dialog.ts`): Railway > Route Table… / Interlocking Table… / Conflict Matrix… -> `.rd-route-dialog`
+  with tabs Route table / Interlocking table / Conflicts (matrix + pairs), Export CSV (shown tab) and XLSX (PKP sheets
+  "Tablica zależności", "Macierz konfliktów" + routes + pairs; "English headers"). Interlocking model (flank protection,
+  conflict codes S/O/P/F/D): [rules.md](rules.md).
 - **Checks** (`route-checks.ts`, run from `validateObjects`): `route-endpoint` (no entry/exit, same signal, endpoint
   of another kind; the generic missing-reference skips such IDs), `route-path` (no path in the signal direction, or
   sections not a continuous path), `route-points` (syntax, unknown/contradictory points, missing or wrong required
   position; warning: listed points not on the path). Conflicts are not issues (interlocking table).
+  The configurable engineering rules (balise group / detection distances, overlap, signal side and spacing, ...) and
+  Railway > Rule Settings…: [rules.md](rules.md).
 - **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved so that the gap between the
   shape and a track/section line (centre distance minus the half extent across the line) is at most `SNAP_RADIUS_PX`
   15 screen px (`snapGapAtScale`: 15 / zoom graph units) and the nearest line point is not beyond a track end (the snap
@@ -60,7 +64,7 @@
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so
   ticks are >= 40 units apart, every 5th step and the ends labelled.
 - Wiring (`install-railway-routes.ts`, one call in `boot/features.ts`): menu items `data-action="railwayRoute:<cmd>"`
-  (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> the `railwayRoute:` command
+  (tool, routeTable, conflictTable, conflictMatrix, ruleSettings, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> the `railwayRoute:` command
   emits the bus event `railway-route-request` (also the toolbar route tool / km ruler buttons); `aria-checked` kept in sync.
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
   signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +

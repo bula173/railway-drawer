@@ -59,6 +59,7 @@ export const CHILD_ORDER: Record<string, readonly string[]> = {
     'routeActivationSection', 'facingSwitchInPosition', 'trailingSwitchInPosition', 'hasTvdSection', 'routeEntry',
     'intermediateCodePoint', 'hasReleaseGroup', 'switchPositionInDepartureTrack', 'routeExit', 'additionalRelation',
   ],
+  conflictingRoute: ['designator', 'refersToRoute', 'conflictsWithRoute'],
   overlap: ['designator', 'activeForApproachRoute', 'requiresSwitchInPosition', 'hasTvdSection', 'isLimitedBy', 'overlapRelease'],
   radioBlockCentre: [
     'designator', 'hasName', 'hasCommunicationSettings', 'belongsToOperationalPoint', 'belongsToInfrastructureManager',

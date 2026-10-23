@@ -22,6 +22,8 @@ export interface ChecksPanelOptions {
 
 export interface ChecksResult {
   issues: Issue[];
+  /** Info: rules skipped (e.g. no km/length to measure metres), rule-checks.ts. */
+  notes?: string[];
   /** Object count by kind name (singular for 1, plural otherwise), for the summary. */
   objectCounts: Array<[string, number]>;
   /** Time of the run. */
@@ -71,6 +73,8 @@ export function createChecksPanel(options: ChecksPanelOptions): ChecksPanel {
   const objects = el('div', 'rd-rw-muted rd-rw-objects');
   const list = el('ul', 'rd-rw-issues');
   list.setAttribute('aria-label', 'Railway data issues');
+  const notes = el('ul', 'rd-rw-notes');
+  notes.setAttribute('aria-label', 'Rule notes');
 
   const reports = el('div', 'rd-rw-reports');
   reports.append(el('div', 'rd-rw-section-title', 'Reports (sorted by km)'));
@@ -89,11 +93,12 @@ export function createChecksPanel(options: ChecksPanelOptions): ChecksPanel {
   buttons.append(xlsx);
   reports.append(buttons);
 
-  root.append(bar, summary, objects, list, reports);
+  root.append(bar, summary, objects, list, notes, reports);
   options.container.replaceChildren(root);
 
   function show(result: ChecksResult | null): void {
     list.replaceChildren();
+    notes.replaceChildren();
     if (!result) {
       summary.textContent = 'Checks have not run yet.';
       summary.className = 'rd-rw-summary';
@@ -122,7 +127,21 @@ export function createChecksPanel(options: ChecksPanelOptions): ChecksPanel {
       edit.title = 'Select this object and edit its data';
       edit.addEventListener('click', () => options.onSelect(issue, true));
       li.append(main, edit);
+      // the other objects of the issue (e.g. the balise group of a signal)
+      for (const rel of issue.related ?? []) {
+        const link = el('button', 'rd-rw-issue-rel', rel.label);
+        link.type = 'button';
+        link.dataset.cellId = rel.cellId;
+        link.title = `Select ${rel.label}`;
+        link.addEventListener('click', () => options.onSelect({ ...issue, cellId: rel.cellId, field: undefined }, false));
+        li.append(link);
+      }
       list.append(li);
+    }
+    for (const note of result.notes ?? []) {
+      const li = el('li', 'rd-rw-note');
+      li.append(el('span', 'rd-rw-sev', 'Info'), el('span', 'rd-rw-msg', note));
+      notes.append(li);
     }
   }
 

@@ -14,6 +14,7 @@ import type { KindId } from '../railway/catalogue';
 import { applyPresetToNewCells, getCellKind } from '../railway/object-data';
 import { ROUTES_LAYER_ID, addRoute } from '../railway/route-store';
 import { describePath, detectConflicts, findRoutePaths, routeRecords } from '../railway/routes';
+import { buildInterlockingTable, computeInterlocking, conflictMatrix, formatAspect, formatFlank } from '../railway/interlocking';
 import { applyObjectStates, resetAllStates, resetObjectStates, runRouteCommand } from '../railway/state-apply';
 import { resolveStateItems } from './step-actions';
 import { buildTopology } from '../railway/topology';
@@ -411,6 +412,38 @@ function safeFileName(name: string): string {
   return (name || 'diagram').replace(/[\\/:*?"<>|]+/g, '_').trim().slice(0, 80) || 'diagram';
 }
 
+const getInterlockingTable: Executor = async (target, input) => {
+  const lang = input.lang === 'pl' ? 'pl' : 'en';
+  const il = computeInterlocking(collectObjects(target.graph.getDataModel()));
+  const table = buildInterlockingTable(il, lang);
+  return ok(`Interlocking table: ${il.routes.length} route(s), ${il.conflicts.length} conflicting pair(s)`, {
+    columns: table.columns,
+    rows: table.rows.slice(0, 200),
+    routes: il.routes.slice(0, 200).map((r) => ({
+      id: r.id,
+      from: r.entry,
+      to: r.exit,
+      points: r.points.map((p) => ({ id: p.id, position: p.position, role: p.role })),
+      sections: r.sections,
+      overlap: r.overlap,
+      overlapPoints: r.overlapPoints.map((p) => `${p.id}:${p.position}`),
+      overlapMetres: r.overlapMetres === null ? null : Math.round(r.overlapMetres),
+      flank: formatFlank(r, lang),
+      aspect: formatAspect(r.aspect, lang),
+      ...(r.problem ? { problem: r.problem } : {}),
+    })),
+  });
+};
+
+const getRouteConflicts: Executor = async (target) => {
+  const il = computeInterlocking(collectObjects(target.graph.getDataModel()));
+  const m = conflictMatrix(il);
+  return ok(`${il.conflicts.length} conflicting route pair(s) among ${il.routes.length} route(s)`, {
+    conflicts: il.conflicts.slice(0, 300),
+    matrix: { routes: il.routes.map((r) => r.id), cells: il.routes.length <= 60 ? m.map((row) => row.map((c) => (c === null ? null : c.join('')))) : 'too many routes (> 60)' },
+  });
+};
+
 const exportDrawing: Executor = async (target, input) => {
   const format = String(input.format);
   const base = safeFileName(target.tabName());
@@ -491,6 +524,8 @@ const EXECUTORS: Record<AiToolName, Executor> = {
   describe_template: describeTemplate,
   insert_template: insertTemplateTool,
   check_drawing: checkDrawing,
+  get_interlocking_table: getInterlockingTable,
+  get_route_conflicts: getRouteConflicts,
   export_drawing: exportDrawing,
   undo: undoTool,
   list_scenarios: listScenarios,

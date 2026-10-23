@@ -234,3 +234,35 @@ body.rd-scenario-viewing #railway-checks-panel {
   opacity: 0.45;
   user-select: none;
 }
+
+/* Related objects of an issue (rule checks) and the rule notes (info) */
+.rd-rw-issue-rel {
+  flex: 0 0 auto;
+  border: none;
+  border-left: 1px solid var(--rd-border);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.rd-rw-notes {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+.rd-rw-note {
+  border-left: 3px solid var(--rd-info);
+  background: var(--rd-info-bg);
+  margin-bottom: 4px;
+  padding: 5px 6px;
+  overflow-wrap: anywhere;
+}
+
+.rd-rw-note .rd-rw-sev {
+  color: var(--rd-text);
+}

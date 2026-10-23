@@ -30,6 +30,8 @@ export type AiToolName =
   | 'describe_template'
   | 'insert_template'
   | 'check_drawing'
+  | 'get_interlocking_table'
+  | 'get_route_conflicts'
   | 'export_drawing'
   | 'undo'
   | 'list_scenarios'
@@ -247,6 +249,21 @@ export const AI_TOOLS: readonly AiToolDef[] = [
     name: 'check_drawing',
     title: 'Run checks',
     description: 'Runs the railway data checks (duplicate/missing ids and references, balises without group, signals off track, km order, route endpoints/paths/points) and returns the issues.',
+    input_schema: obj({}),
+    mutating: false,
+  },
+  {
+    name: 'get_interlocking_table',
+    title: 'Interlocking table',
+    description:
+      'The interlocking table ("tablica zależności") of the drawn routes: per route entry/exit signal, points with position and facing/trailing role, track sections, overlap (+ its points and length in m), flank protection (points in a position or signals at stop), conflicting routes with codes (S shared section, O overlap, P points, F flank, D opposing direction) and the entry signal aspect. lang pl gives the PKP-style Polish text.',
+    input_schema: obj({ lang: { type: 'string', enum: ['en', 'pl'] } }),
+    mutating: false,
+  },
+  {
+    name: 'get_route_conflicts',
+    title: 'Route conflicts',
+    description: 'Pairs of conflicting routes with the reason codes (S shared section, O overlap, P opposite points positions, F flank protection, D opposing directions) and details, plus the conflict matrix (route ids × route ids).',
     input_schema: obj({}),
     mutating: false,
   },

@@ -18,6 +18,9 @@
  * - `km-order`           warning  km positions of the objects on a track are not monotonic along it
  * - `km-outside-track`   warning  an object's km lies outside its track's km start/end
  * - `route-endpoint`, `route-path`, `route-points`: route rules, see route-checks.ts
+ * - configurable engineering rules (`bg-signal-distance`, `balise-order`, `overlap-length`, ...):
+ *   rule-checks.ts with the diagram's settings (rule-settings.ts `rdRuleSettings`); they also give
+ *   notes (rules skipped for lack of km/length), `validateModelReport`
  */
 import { applyProjectDefaults, readCountryId } from './project-settings';
 import type { Cell, GraphDataModel } from '@maxgraph/core';
@@ -27,6 +30,10 @@ import { allCells, getCellKind, getRawKind, readField, readObjectId } from './ob
 import { centerOf, projectOnPolyline, trackPolyline } from './geometry';
 import type { Pt } from './geometry';
 import { checkRoutes } from './route-checks';
+import type { RuleNote } from './rule-checks';
+import { checkRules } from './rule-checks';
+import type { RuleSetId, RuleSettings } from './rule-settings';
+import { readRuleSettings } from './rule-settings';
 
 export type Severity = 'error' | 'warning';
 
@@ -44,7 +51,8 @@ export type RuleId =
   | 'km-outside-track'
   | 'route-endpoint'
   | 'route-path'
-  | 'route-points';
+  | 'route-points'
+  | RuleSetId;
 
 export interface Issue {
   severity: Severity;
@@ -56,6 +64,8 @@ export interface Issue {
   objectId?: string;
   /** Field the issue is about (Data panel highlights it). */
   field?: string;
+  /** Other objects the issue is about (the Checks panel links them). */
+  related?: Array<{ cellId: string; label: string }>;
 }
 
 /** Max distance (graph units = px at zoom 100 %) between a signal's centre and its track. */
@@ -120,13 +130,28 @@ function capitalize(s: string): string {
 
 export interface ValidateOptions {
   signalTrackDistance?: number;
+  /** Settings of the configurable rules (rule-checks.ts, run by validateModel); default: the diagram's. */
+  ruleSettings?: RuleSettings;
+}
+
+export interface CheckReport {
+  issues: Issue[];
+  /** Rules skipped (e.g. no km/length to measure), shown as info in the Checks panel. */
+  notes: RuleNote[];
 }
 
 /** Runs every rule on the model; issues sorted errors first, then in model order. */
 export function validateModel(model: GraphDataModel, options: ValidateOptions = {}): Issue[] {
+  return validateModelReport(model, options).issues;
+}
+
+/** validateModel plus the notes of the configurable rules (settings from the diagram unless given). */
+export function validateModelReport(model: GraphDataModel, options: ValidateOptions = {}): CheckReport {
   // diagram defaults (project-settings.ts): balise groups without NID_C use the diagram's country
   const objects = applyProjectDefaults(collectObjects(model), readCountryId(model));
   const issues = validateObjects(objects, options);
+  const rules = checkRules(objects, options.ruleSettings ?? readRuleSettings(model));
+  issues.push(...rules.issues);
   // Unknown kinds (e.g. a file from a newer version)
   for (const cell of allCells(model)) {
     const raw = getRawKind(cell);
@@ -134,7 +159,7 @@ export function validateModel(model: GraphDataModel, options: ValidateOptions = 
       issues.push({ severity: 'warning', rule: 'unknown-kind', cellId: String(cell.getId()), message: `Unknown railway object kind "${raw}" (cell ${String(cell.getId())})` });
     }
   }
-  return sortIssues(issues, objects);
+  return { issues: sortIssues(issues, objects), notes: rules.notes };
 }
 
 function sortIssues(issues: Issue[], objects: RailObject[]): Issue[] {

@@ -168,7 +168,7 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
   await menu(page, 'railway', 'railwayRoute:conflictTable');
-  await expect(page.locator('.rd-route-tab[data-tab="conflicts"]')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.rd-route-tab[data-tab="interlocking"]')).toHaveAttribute('aria-selected', 'true');
   await page.locator('.rd-route-dialog-close').click();
 
   // The route is a railway object: edit it in the Data panel; no route issues in Checks

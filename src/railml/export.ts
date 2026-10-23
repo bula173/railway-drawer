@@ -26,6 +26,7 @@ import { centerOf } from '../railway/geometry';
 import { kmAtAlong, kmScaleOf } from '../railway/km';
 import { isElementValue, readAttr } from '../railway/object-data';
 import { findRoutePaths, parsePointsList } from '../railway/routes';
+import { computeInterlocking } from '../railway/interlocking';
 import type { TopoPiece } from '../railway/topology';
 import { buildTopology, forwardIsNominal, isNominalDirection, junctionHand, linkLine, locateObject, passage, projectPoint } from '../railway/topology';
 import type { Issue, RailObject } from '../railway/validation';
@@ -600,6 +601,35 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
       } else ext.rdOverlap = o.values.overlap;
     }
     count('route');
+  }
+  // Conflicting routes (railML 3.2 interlocking conflictingRoutes, derived: interlocking.ts); the
+  // reason codes and the flank protection have no verified railML place: rd extension (rdConflicts,
+  // rdFlank on the route), recomputed on every export, not read back by the import
+  const exportedRoutes = new Map<string, RailObject>();
+  for (const [o] of routeExt) if (o.values.entrySignal && o.values.exitSignal && byKindId('signal', o.values.entrySignal) && byKindId('signal', o.values.exitSignal)) exportedRoutes.set(o.cellId, o);
+  if (exportedRoutes.size > 0) {
+    const il = computeInterlocking(objects, topo);
+    const routeOf = new Map(il.routes.map((r) => [r.id.toUpperCase(), exportedRoutes.get(r.cellId)]));
+    for (const c of il.conflicts) {
+      const a = routeOf.get(c.a.toUpperCase());
+      const b = routeOf.get(c.b.toUpperCase());
+      if (!a || !b) continue;
+      const cr = el(ensureOrdered(assets(), 'conflictingRoutes'), 'conflictingRoute', { id: ids.take(`cr_${idOf(a)}_${idOf(b)}`) });
+      el(cr, 'refersToRoute', { ref: idOf(a) });
+      el(cr, 'conflictsWithRoute', { ref: idOf(b) });
+      count('conflictingRoute');
+    }
+    for (const r of il.routes) {
+      const o = exportedRoutes.get(r.cellId);
+      const ext = o ? routeExt.get(o) : undefined;
+      if (!ext) continue;
+      const conflicts = il.conflicts
+        .filter((c) => c.a === r.id || c.b === r.id)
+        .map((c) => `${c.a === r.id ? c.b : c.a}:${c.codes.join('')}`);
+      if (conflicts.length > 0) ext.rdConflicts = conflicts.join(' ');
+      const flank = r.flank.map((f) => `${f.id}:${f.kind === 'signal' ? 'stop' : f.position}`);
+      if (flank.length > 0) ext.rdFlank = flank.join(' ');
+    }
   }
   for (const o of objects.filter((x) => x.kind.id === 'rbc')) {
     const e = el(ensureOrdered(ensureOrdered(root, 'interlocking'), 'radioBlockCentres'), 'radioBlockCentre', { id: idOf(o) });

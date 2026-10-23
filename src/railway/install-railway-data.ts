@@ -24,7 +24,7 @@ import type { RailwayDataPanel } from './data-panel';
 import { createChecksPanel } from './checks-panel';
 import type { ChecksPanel, ChecksResult } from './checks-panel';
 import type { Issue } from './validation';
-import { collectObjects, countIssues, validateModel } from './validation';
+import { collectObjects, countIssues, validateModelReport } from './validation';
 import type { ReportId } from './report';
 import { REPORTS, buildReportTable, fileBaseName, getReport, tableToCsv } from './report';
 import { readItem, writeItem } from '../core/safe-storage';
@@ -153,7 +153,8 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
         const n = objects.filter((o) => o.kind.id === k.id).length;
         return [n === 1 ? k.label : k.plural, n];
       }).filter(([, n]) => n > 0);
-      lastResult = { issues: validateModel(model), objectCounts: counts, at: new Date() };
+      const report = validateModelReport(model);
+      lastResult = { issues: report.issues, notes: report.notes.map((n) => n.message), objectCounts: counts, at: new Date() };
       lastGraph = graph;
     }
     checksPanel.show(lastResult);

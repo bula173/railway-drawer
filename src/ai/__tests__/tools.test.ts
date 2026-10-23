@@ -216,6 +216,15 @@ describe('executeAiTool', () => {
     expect(readAttr(w1.cell, 'rdPosition')).toBe('reverse');
     const missing = await executeAiTool(t, 'routes', { action: 'add', from: 'S1' });
     expect(String(missing.result.error)).toContain('"to"');
+    // interlocking table / conflicts of the drawn routes
+    const table = await executeAiTool(t, 'get_interlocking_table', { lang: 'pl' });
+    expect(table.ok).toBe(true);
+    expect((table.result.columns as string[])[0]).toBe('Przebieg');
+    const r7 = (table.result.routes as Array<{ id: string; points: Array<{ id: string; position: string; role: string }> }>).find((r) => r.id === 'R7')!;
+    expect(r7.points).toContainEqual({ id: 'W1', position: 'reverse', role: 'facing' });
+    const conflicts = await executeAiTool(t, 'get_route_conflicts', {});
+    expect(conflicts.ok).toBe(true);
+    expect((conflicts.result.matrix as { routes: string[] }).routes).toContain('R7');
   });
 
   it('delete_cells deletes by object id and everything with all', async () => {

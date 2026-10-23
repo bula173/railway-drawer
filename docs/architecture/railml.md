@@ -22,7 +22,9 @@
   countryID/groupID); axleCounter -> `trainDetectionElement` axleCounter; trackSection -> IL `tvdSection`
   (hasDemarcatingTraindetector; no location in 3.2); bufferStop, levelCrossing (`protection`) -> IS; rbc -> IL
   `radioBlockCentre`; route -> IL `route` (routeEntry/Exit refersTo signalIL, facing/trailingSwitchInPosition
-  left/right, hasTvdSection, overlap). **Unmapped**: leu, train (rd extension only). Name + `designator
+  left/right, hasTvdSection, overlap); conflicting route pairs (interlocking.ts) -> IL `conflictingRoutes/conflictingRoute`
+  (refersToRoute, conflictsWithRoute; derived: dropped by the import, recomputed by the export; codes and flank protection
+  as `rdConflicts` / `rdFlank` in the rd extension, [rules.md](rules.md)). **Unmapped**: leu, train (rd extension only). Name + `designator
   register="_RailwayDrawer" entry=<rdId>` on every object.
 - **rd extension** (`rd:railwayDrawer` last root child, ns `https://railwaydrawer.mksystemdesign.org/railml/rd/1`,
   option in the dialog): `rd:object kind ref` with the fields railML does not hold (aspects, remarks, km start/end,

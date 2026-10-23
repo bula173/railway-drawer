@@ -2,8 +2,8 @@
  * @file install-railway-routes.ts
  * @brief Wires the railway engineering tools into the main editor (called once from
  *        main-editor.ts after installRailwayData): the route tool (toolbar `#btn-route-tool`,
- *        Extras > Route Tool), route and interlocking tables, Update Route Paths, Recalculate km,
- *        View > Snap to Track / Show Routes / km Ruler.
+ *        Extras > Route Tool), route and interlocking tables, the conflict matrix, Rule settings…,
+ *        Update Route Paths, Recalculate km, View > Snap to Track / Show Routes / km Ruler.
  *
  * Menu items carry `data-action="railwayRoute:<command>"`; MenuController dispatches the window
  * event `railway-route-request` with the command as detail (see RouteCommand).
@@ -23,7 +23,8 @@ import { fileBaseName } from './report';
 import type { RouteTableTab } from './route-tables-dialog';
 import { RouteTool } from './route-tool';
 import { getRoutesLayer, setRoutesVisible, updateRoutePaths } from './route-store';
-import { buildConflictTable, buildRouteTable, detectConflicts, routeRecords } from './routes';
+import { buildRouteTable, detectConflicts, routeRecords } from './routes';
+import { computeInterlocking } from './interlocking';
 import { installSnapToTrack, readSnapEnabled, writeSnapEnabled } from './snap';
 import { collectObjects } from './validation';
 import { readItem, writeItem } from '../core/safe-storage';
@@ -33,6 +34,8 @@ export type RouteCommand =
   | 'tool'
   | 'routeTable'
   | 'conflictTable'
+  | 'conflictMatrix'
+  | 'ruleSettings'
   | 'updateRoutes'
   | 'recalcKm'
   | 'toggleSnap'
@@ -161,14 +164,16 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
   const showTables = (tab: RouteTableTab): void => {
     const active = tabManager.getActiveTab();
     if (!active) return;
-    const records = routeRecords(collectObjects(active.graph.getDataModel()));
+    const objects = collectObjects(active.graph.getDataModel());
+    const records = routeRecords(objects);
     const conflicts = detectConflicts(records);
+    const interlocking = computeInterlocking(objects);
     // The dialog and its XLSX writer are a separate chunk, loaded on first use
     import('./route-tables-dialog')
       .then(({ openRouteTablesDialog }) =>
         openRouteTablesDialog({
           routes: buildRouteTable(records, conflicts),
-          conflicts: buildConflictTable(conflicts),
+          interlocking,
           tab,
           baseName: fileBaseName(active.name),
           download,
@@ -190,8 +195,21 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
         showTables('routes');
         break;
       case 'conflictTable':
+        showTables('interlocking');
+        break;
+      case 'conflictMatrix':
         showTables('conflicts');
         break;
+      case 'ruleSettings': {
+        if (!graph) break;
+        // the dialog is a separate chunk, loaded on first use
+        import('./rule-settings-dialog')
+          .then(({ openRuleSettingsDialog }) => openRuleSettingsDialog({ model: graph.getDataModel(), notify }))
+          .catch((error: unknown) => {
+            console.error('[Railway] rule settings could not be loaded', error);
+          });
+        break;
+      }
       case 'updateRoutes': {
         if (!graph) break;
         const r = updateRoutePaths(graph.getDataModel());

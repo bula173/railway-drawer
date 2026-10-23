@@ -46,7 +46,9 @@ step** per call, compact JSON result + a one-line summary for the visible log.
 | `list_templates` | ERTMS + user templates ranked for `query` (English or Polish words; PL stems → EN terms, e.g. "wjazd" → entry/entrance/route, "przejście poziomu" → level transition). Per template: id, display + original name, summary (topic, ETCS level, counts of tracks/signals/sections/points/balise groups, signal ids), size, score. No match → all names. |
 | `describe_template` | One template as a Railway Script generated from its drawing (ids, kinds, tracks, km) + ids by kind + its other labels, to plan edits. |
 | `insert_template` | `mode: newTab` (default where tabs exist: opens it as a new, now active, tab; ids unchanged) or `intoTab` (one undo step, at `at` or the view centre; taken ids renumbered, returned as `renamed` template id → new id). Returns the object ids by kind. |
-| `check_drawing` | The railway data checks (Checks panel). |
+| `check_drawing` | The railway data checks (Checks panel), incl. the configurable rule checks of the diagram (Railway > Rule Settings…). |
+| `get_interlocking_table` | The interlocking table of the drawn routes (points + facing/trailing, sections, overlap, flank protection, conflicting routes with codes, entry signal aspect); `lang: pl` = PKP-style Polish text. |
+| `get_route_conflicts` | Conflicting route pairs with reason codes (S/O/P/F/D) and details, plus the conflict matrix. |
 | `export_drawing` | png (returned as an image so the model can look at the drawing), svg, drawio, railML 3.2, Railway Script YAML/JSON; optional download. |
 | `undo` | Undo n steps of the tab. |
 | `list_scenarios` | The tab's scenarios (Scenarios panel): ids, names, descriptions, steps (number, id, name, has UML / text). |

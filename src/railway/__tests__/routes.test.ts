@@ -328,7 +328,8 @@ describe('route objects, conflicts and tables', () => {
       'Route R7: points "W9" does not exist',
     ]);
     expect(issues.filter((i) => i.rule === 'missing-reference' && i.message.includes('B1'))).toEqual([]);
-    expect(issues.some((i) => i.objectId === 'R1')).toBe(false);
+    // (the configurable rules, rule-checks.ts, may warn about R1: no overlap)
+    expect(issues.some((i) => i.objectId === 'R1' && i.rule.startsWith('route-'))).toBe(false);
   });
 });
 

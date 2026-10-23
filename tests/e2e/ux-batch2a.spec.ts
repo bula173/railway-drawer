@@ -48,10 +48,12 @@ test('Railway menu: route tools, data, checks and toggles; mouse and keyboard; g
     'railwayRoute:tool',
     'railwayRoute:routeTable',
     'railwayRoute:conflictTable',
+    'railwayRoute:conflictMatrix',
     'railwayRoute:updateRoutes',
     'railwayRoute:recalcKm',
     'editData',
     'railwayChecks',
+    'railwayRoute:ruleSettings',
     'railwayScriptEditor',
     // Railway > Object State ▸ (nested submenus, src/railway/install-railway-states.ts)
     'railwayState:state:free',
