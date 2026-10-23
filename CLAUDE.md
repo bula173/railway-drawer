@@ -363,7 +363,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   write `graph.getCellStyle(cell)` back into a cell: it is the resolved style (maxGraph's stylesheet deletes `none`
   values, base style names are merged away, light-dark()/default/inherit resolved), which brought back outlines, fills
   and arrow heads on draw.io/template cells. Displays use the resolved style (`effectiveColor`: missing color = none).
-  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated.
+  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated. Copy / Paste Style (format painter,
+  `GraphCommandService.copyStyle/pasteStyle`) = draw.io's Graph.pasteStyle with `PASTE_STYLE_KEYS` (Graph.cellStyles:
+  visual keys only, never shape/stencil/locked/rd*) through `pasteStyleToCells` (locked cells skipped, one undo step).
 - `src/services/graph-command-service.ts` `GraphCommandService` (one per tab): undo/redo via maxGraph
   `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
   undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.
