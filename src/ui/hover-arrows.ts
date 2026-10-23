@@ -38,7 +38,7 @@ import {
   type InternalMouseEvent,
 } from '@maxgraph/core';
 import { isLayer } from './cell-lock';
-import { isGroupVertex } from './canvas-interaction';
+import { isGroupVertex, isNearGraphBounds } from './canvas-interaction';
 import { getCellKind, isElementValue, nextFreeId, usedIds } from '../railway/object-data';
 import { ID_ATTR, type KindId } from '../railway/catalogue';
 
@@ -512,7 +512,10 @@ export class HoverArrowsController {
       return;
     }
     this.current = state;
-    const bounds = state.shape?.boundingBox ? Rectangle.fromRectangle(state.shape.boundingBox) : Rectangle.fromRectangle(state);
+    // never inside the cell's own bounds (a stencil/icon drawn smaller than its cell has a
+    // smaller shape bounding box): a press inside the shape must reach the shape, not an arrow
+    const bounds = Rectangle.fromRectangle(state);
+    if (state.shape?.boundingBox) bounds.add(state.shape.boundingBox);
     bounds.grow(this.graph.tolerance);
     bounds.grow(ARROW_SPACING);
     const cx = state.getCenterX();
@@ -626,7 +629,7 @@ export class HoverArrowsController {
 
   private stateUnder(me: InternalMouseEvent): Cell | null {
     let cell = me.getState()?.cell ?? null;
-    if (!cell) {
+    if (!cell && isNearGraphBounds(this.graph, me.getGraphX(), me.getGraphY())) {
       // a gap inside a transparent group (ERTMS symbols) still counts as the group
       const at = this.graph.getCellAt(me.getGraphX(), me.getGraphY());
       if (at && isGroupVertex(this.graph, at)) cell = at;

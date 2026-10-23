@@ -1,15 +1,26 @@
-import { Cell, Graph, ConnectionConstraint, ImageBox, type CellState } from '@maxgraph/core';
-import type { ConnectionHandler as MaxConnectionHandler, EdgeHandler, ImageShape, InternalMouseEvent, Rectangle } from '@maxgraph/core';
+import { Cell, Graph, ConnectionConstraint, ImageBox, InternalEvent, type CellState } from '@maxgraph/core';
+import type { ConnectionHandler as MaxConnectionHandler, EdgeHandler, ImageShape, InternalMouseEvent, Point, Rectangle } from '@maxgraph/core';
 import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core';
 import { ELLIPSE_CONSTRAINTS, RECTANGLE_CONSTRAINTS, cc } from '../drawio-shapes/js/shapes-core/util';
 import { getRawKind } from '../railway/object-data';
 import { isLayer } from './cell-lock';
+import { installPressToMove, SMALL_SHAPE_PX } from './canvas-interaction';
 
 /**
  * Part of a vertex (as a fraction of its width/height, on each side) around its centre in which a
  * press never starts a connection, not even on a connection point lying there: the body moves.
  */
 export const SOURCE_CENTRE_MARGIN = 0.25;
+
+/**
+ * Half the side (screen px, independent of the zoom) of the square around a connection point in
+ * which a press starts a new connection: the 5 px 'x' plus half a pixel. Anywhere else on the
+ * shape a press moves it.
+ */
+export const SOURCE_POINT_TOLERANCE = 3;
+
+/** How far (screen px) inside the shape from a connection point a press may still connect. */
+export const SOURCE_POINT_INWARD = 1;
 
 /**
  * draw.io's connection point image (Graph.js mxConstraintHandler.prototype.pointImage): a small
@@ -82,6 +93,10 @@ let symbolConnectInstalled = false;
  * The cell's own `connectable` flag (saved to the file) is untouched.
  */
 export function installSymbolGroupConnect(): void {
+  // Installed once per page (not per tab). A prototype patch because maxGraph asks the cell
+  // directly (`cell.isConnectable()` in ConstraintHandler.getCellForEvent, CellMarker, EdgeHandler),
+  // not graph.isCellConnectable; on the read-only scenario/thumbnail graphs it changes nothing
+  // visible (no connection handling there).
   if (symbolConnectInstalled) return;
   symbolConnectInstalled = true;
   const proto = Cell.prototype as unknown as { isConnectable(this: Cell): boolean };
@@ -117,14 +132,114 @@ export function installDrawioConnectionStart(graph: Graph): void {
 
   const constraints = handler.constraintHandler;
   const origIntersects = constraints.intersects.bind(constraints);
+  // the pointer itself: update() also tests a grid-snapped point, which must not start a connection
+  let pointer: { x: number; y: number } | null = null;
   constraints.intersects = (icon: ImageShape, mouse: Rectangle, source: boolean, existingEdge: boolean): boolean => {
-    const focus = constraints.currentFocus;
-    if (source && !existingEdge && handler.first === null && focus &&
-      isInVertexCentre(focus, mouse.getCenterX(), mouse.getCenterY())) {
-      return false;
+    if (source && !existingEdge && handler.first === null) {
+      // a new connection starts only on the point itself (see isOnSourcePoint)
+      const focus = constraints.currentFocus;
+      const x = pointer?.x ?? mouse.getCenterX();
+      const y = pointer?.y ?? mouse.getCenterY();
+      return !!icon.bounds && isOnSourcePoint(icon.bounds, x, y, focus);
     }
     return origIntersects(icon, mouse, source, existingEdge);
   };
+
+  // draw.io Graph.js: no connection points on a selected cell as a source (a press on a selected
+  // shape always moves it; its handles take over), and Alt hides the points (draw.io
+  // mxConstraintHandler.update)
+  constraints.isStateIgnored = (state: CellState, source = false): boolean =>
+    source && graph.isCellSelected(state.cell);
+  const origUpdate = constraints.update.bind(constraints);
+  constraints.update = (me: InternalMouseEvent, source: boolean, existingEdge: boolean, point: Point | null): void => {
+    const evt = me.getEvent() as MouseEvent | undefined;
+    pointer = { x: me.getGraphX(), y: me.getGraphY() };
+    try {
+      if (evt?.altKey && !constraints.isKeepFocusEvent(me)) constraints.reset();
+      else origUpdate(me, source, existingEdge, point as Point);
+    } finally {
+      pointer = null;
+    }
+    // honest cursor: crosshair exactly where a press starts a connection (the point is highlighted)
+    graph.container.classList.toggle('rd-cursor-connect',
+      source && !existingEdge && handler.first === null && !graph.isMouseDown && !!constraints.currentConstraint);
+  };
+  const origReset = constraints.reset.bind(constraints);
+  constraints.reset = (): void => {
+    origReset();
+    graph.container?.classList.remove('rd-cursor-connect');
+  };
+  graph.getSelectionModel().addListener(InternalEvent.CHANGE, () => {
+    const focus = constraints.currentFocus;
+    if (focus && handler.first === null && constraints.isStateIgnored(focus, true)) {
+      constraints.currentFocus = null;
+      constraints.constraints = null as unknown as ConnectionConstraint[];
+      constraints.destroyIcons();
+    }
+    constraints.destroyFocusHighlight();
+  });
+}
+
+/**
+ * Whether a press at screen point (x, y) (graph container coordinates) starts a new connection
+ * from the connection point drawn at `iconBounds`: only within SOURCE_POINT_TOLERANCE screen px
+ * of the point's centre (not scaled with the zoom), and never in the central part of the vertex.
+ * maxGraph's default (mouse box of 2 x graph.tolerance against the 5 px icon, ~6.5 px around
+ * every point) covered most of a small shape, so a press meant to move it drew an edge.
+ */
+export function isOnSourcePoint(iconBounds: { x: number; y: number; width: number; height: number }, x: number, y: number,
+  focus: CellState | null): boolean {
+  if (focus && isInVertexCentre(focus, x, y)) return false;
+  const px = iconBounds.x + iconBounds.width / 2;
+  const py = iconBounds.y + iconBounds.height / 2;
+  if (Math.abs(px - x) > SOURCE_POINT_TOLERANCE || Math.abs(py - y) > SOURCE_POINT_TOLERANCE) return false;
+  if (!focus) return true;
+  // on the point or outside the outline there, not inside the shape: the press must not lie more
+  // than SOURCE_POINT_INWARD px from the point towards the shape's centre (a press 2 px inside the
+  // edge of a rectangle moves it). Small shapes and railway symbols: only points on the bounds,
+  // and the press on the edge pixel or outside (their body is all "near an edge")
+  if (isSmallSource(focus)) {
+    if (!isOnBoundsSide(focus, px, py)) return false;
+    // (the 'x' sits at whole pixels: its centre may lie half a pixel off the outline)
+    return inwardDistance(focus, px, py, x, y) <= 0.5;
+  }
+  return inwardDistance(focus, px, py, x, y) <= SOURCE_POINT_INWARD;
+}
+
+/** A vertex under SMALL_SHAPE_PX on screen, or a railway symbol (rdKind on it or an ancestor). */
+function isSmallSource(state: CellState): boolean {
+  if (state.width < SMALL_SHAPE_PX || state.height < SMALL_SHAPE_PX) return true;
+  for (let c: Cell | null = state.cell; c && c.parent; c = c.parent) {
+    if (getRawKind(c)) return true;
+  }
+  return false;
+}
+
+function isOnBoundsSide(state: CellState, px: number, py: number): boolean {
+  const e = 1.5;
+  return Math.abs(px - state.x) <= e || Math.abs(px - state.x - state.width) <= e ||
+    Math.abs(py - state.y) <= e || Math.abs(py - state.y - state.height) <= e;
+}
+
+/**
+ * How far (screen px) press (x, y) lies inside the shape `state` from its point (px, py): for a
+ * point on a side of the bounds, the depth perpendicular to that side (the deeper of two at a
+ * corner); for a point inside the bounds (ellipse diagonals, triangle slants), along the
+ * direction from the centre to the point.
+ */
+function inwardDistance(state: CellState, px: number, py: number, x: number, y: number): number {
+  const e = 1.5;
+  const depths: number[] = [];
+  if (Math.abs(px - state.x) <= e) depths.push(x - px);
+  if (Math.abs(px - (state.x + state.width)) <= e) depths.push(px - x);
+  if (Math.abs(py - state.y) <= e) depths.push(y - py);
+  if (Math.abs(py - (state.y + state.height)) <= e) depths.push(py - y);
+  if (depths.length > 0) return Math.max(...depths);
+  const vx = px - state.getCenterX();
+  const vy = py - state.getCenterY();
+  const len = Math.hypot(vx, vy);
+  if (len < 1) return Infinity;
+  return ((px - x) * vx + (py - y) * vy) / len;
 }
 
 /**
@@ -139,6 +254,8 @@ export function installDrawioEdgeEnds(graph: Graph): void {
     handler.constraintHandler.pointImage = CONNECTION_POINT_IMAGE;
     if (handler.marker) handler.marker.validColor = CONNECT_TARGET_COLOR;
   }
+  // Composition (tabs.ts order): wraps drawio-shapes/handles/install.ts's createEdgeHandler
+  // (installDrawioHandles runs first), so the draw.io handles are built and then configured here
   const baseCreate = graph.createEdgeHandler.bind(graph);
   graph.createEdgeHandler = ((state: CellState, edgeStyle: unknown) => {
     const h = baseCreate(state, edgeStyle as never) as EdgeHandler & { outline?: boolean };
@@ -155,6 +272,8 @@ export class ConnectionHandler {
     this.configureConnectionConstraints(graph);
     installDrawioConnectionStart(graph);
     installDrawioEdgeEnds(graph);
+    // after installDrawioHandles (tabs.ts): wraps its createVertexHandler (sizers of small shapes)
+    installPressToMove(graph);
   }
 
   private configureConnectionConstraints(graph: Graph): void {
