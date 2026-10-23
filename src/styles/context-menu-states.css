@@ -1,0 +1,44 @@
+/* Context menu: railway object states. (imported in order by styles/index.css) */
+
+/* Context menu: railway object states (src/ui/context-menu.ts, src/railway/state-menu.ts).
+   Submenus are fixed (placed by JS) so the menu's scrolling does not clip them. */
+.rd-ctx-sub {
+  position: relative;
+}
+.rd-ctx-caret {
+  margin-left: auto;
+  padding-left: 16px;
+  color: var(--rd-text-muted);
+}
+.rd-ctx-sub[aria-expanded="true"] {
+  background: var(--rd-hover);
+}
+.rd-ctx-submenu {
+  position: fixed;
+  z-index: 10001;
+  min-width: 190px;
+  padding: 4px 0;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--rd-shadow);
+}
+.rd-ctx-check {
+  display: inline-block;
+  width: 1.2em;
+}
+.rd-ctx-swatch {
+  flex: none;
+  margin-right: 8px;
+}
+.rd-ctx-swatch-drawn,
+.rd-ctx-swatch-outline {
+  stroke: var(--rd-text-muted);
+}
+.rd-ctx-swatch-outline {
+  stroke-width: 1;
+}
+.rd-ctx-radio[aria-checked="true"] {
+  font-weight: 600;
+}

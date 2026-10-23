@@ -5,23 +5,23 @@
   flex-direction: column;
   height: 100%;
   min-height: 0;
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
-  font-size: var(--font-size-sm, 12px);
-  color: var(--text, #333);
-  background: var(--surface, #fff);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--rd-text);
+  background: var(--rd-surface-3);
 }
 
 .rd-tpl-toolbar {
-  padding: var(--space-sm, 6px);
-  border-bottom: 1px solid var(--divider, #e0e0e0);
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--rd-divider);
 }
 
 .rd-tpl-search {
   width: 100%;
   box-sizing: border-box;
   padding: 4px 8px;
-  border: 1px solid var(--border, #ccc);
-  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-sm);
   font: inherit;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .rd-tpl-section {
-  border-bottom: 1px solid var(--divider, #e0e0e0);
+  border-bottom: 1px solid var(--rd-divider);
   padding-bottom: 6px;
 }
 
@@ -42,14 +42,14 @@
   align-items: center;
   gap: 4px;
   padding: 6px 8px;
-  background: var(--surface-light, #f5f5f5);
+  background: var(--rd-surface-2);
 }
 
 .rd-tpl-section-title {
   flex: 1 1 auto;
   margin: 0;
   font-size: inherit;
-  font-weight: var(--font-weight-medium, 500);
+  font-weight: var(--font-weight-medium);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,9 +75,9 @@
   align-items: center;
   gap: 2px;
   padding: 4px;
-  border: 1px solid var(--border, #ddd);
-  border-radius: var(--radius-sm, 4px);
-  background: var(--surface, #fff);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-sm);
+  background: var(--rd-surface-3);
   cursor: pointer;
   min-width: 0;
 }
@@ -85,7 +85,7 @@
 .rd-tpl-tile:hover,
 .rd-tpl-tile:focus-visible,
 .rd-tpl-tile-active {
-  border-color: var(--primary, #0066cc);
+  border-color: var(--rd-primary);
   outline: none;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .rd-tpl-thumb-error {
-  color: var(--text-secondary, #999);
+  color: var(--rd-text-muted);
 }
 
 .rd-tpl-text {
@@ -110,15 +110,15 @@
 }
 
 .rd-tpl-name {
-  font-weight: var(--font-weight-medium, 500);
+  font-weight: var(--font-weight-medium);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .rd-tpl-desc {
-  color: var(--text-secondary, #666);
-  font-size: var(--font-size-xs, 11px);
+  color: var(--rd-text-muted);
+  font-size: var(--font-size-xs);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -138,10 +138,10 @@
   width: 20px;
   height: 20px;
   padding: 0;
-  border: 1px solid var(--border, #ccc);
+  border: 1px solid var(--rd-border);
   border-radius: 3px;
-  background: var(--surface, #fff);
-  color: var(--text-secondary, #555);
+  background: var(--rd-surface-3);
+  color: var(--rd-text-muted);
   font-size: 13px;
   line-height: 1;
   cursor: pointer;
@@ -160,21 +160,21 @@
 .rd-tpl-empty {
   grid-column: 1 / -1;
   padding: 6px 2px;
-  color: var(--text-secondary, #888);
+  color: var(--rd-text-muted);
 }
 
 .rd-tpl-btn {
   padding: 6px 12px;
-  border: 1px solid var(--border, #ccc);
-  border-radius: var(--radius-sm, 4px);
-  background: var(--surface, #fff);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-sm);
+  background: var(--rd-surface-3);
   color: inherit;
   font: inherit;
   cursor: pointer;
 }
 
 .rd-tpl-btn:hover:not(:disabled) {
-  background: var(--surface-light, #f0f0f0);
+  background: var(--rd-surface-2);
 }
 
 .rd-tpl-btn:disabled {
@@ -184,17 +184,17 @@
 
 .rd-tpl-btn-small {
   padding: 2px 6px;
-  font-size: var(--font-size-xs, 11px);
+  font-size: var(--font-size-xs);
 }
 
 .rd-tpl-btn-primary {
-  background: var(--primary, #0066cc);
-  border-color: var(--primary, #0066cc);
+  background: var(--rd-primary);
+  border-color: var(--rd-primary);
   color: var(--rd-accent-text);
 }
 
 .rd-tpl-btn-primary:hover:not(:disabled) {
-  background: var(--primary-dark, #0047a3);
+  background: var(--rd-primary-dark);
 }
 
 .rd-tpl-btn-danger {
@@ -215,13 +215,13 @@
   z-index: 1001;
   min-width: 170px;
   padding: 4px 0;
-  border: 1px solid var(--border, #ccc);
-  border-radius: var(--radius-md, 6px);
-  background: var(--surface, #fff);
-  color: var(--text, #333);
-  box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.15));
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
-  font-size: var(--font-size-sm, 12px);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md);
+  background: var(--rd-surface-3);
+  color: var(--rd-text);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
 }
 
 .rd-tpl-popover-item {
@@ -238,13 +238,13 @@
 
 .rd-tpl-popover-item:hover,
 .rd-tpl-popover-item:focus-visible {
-  background: var(--surface-light, #f0f0f0);
+  background: var(--rd-surface-2);
   outline: none;
 }
 
 .rd-tpl-popover-separator {
   margin: 4px 0;
-  border-top: 1px solid var(--border, #e0e0e0);
+  border-top: 1px solid var(--rd-border);
 }
 
 /* Modal dialogs */
@@ -264,10 +264,10 @@
   box-sizing: border-box;
   padding: 16px 20px;
   border-radius: 8px;
-  background: var(--surface, #fff);
-  color: var(--text, #333);
+  background: var(--rd-surface-3);
+  color: var(--rd-text);
   box-shadow: 0 4px 12px var(--rd-shadow);
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-family: var(--font-family);
   font-size: 13px;
 }
 
@@ -280,7 +280,7 @@
 
 .rd-tpl-modal-hint {
   margin: 0 0 10px;
-  color: var(--text-secondary, #666);
+  color: var(--rd-text-muted);
   font-size: 12px;
 }
 
@@ -296,9 +296,9 @@
   box-sizing: border-box;
   margin-top: 4px;
   padding: 7px 8px;
-  border: 1px solid var(--border, #ccc);
+  border: 1px solid var(--rd-border);
   border-radius: 4px;
-  background: var(--surface, #fff);
+  background: var(--rd-surface-3);
   color: inherit;
   font: inherit;
   font-weight: normal;
@@ -331,7 +331,7 @@
   z-index: 1000;
   padding: 6px;
   border: 1px solid var(--rd-border);
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius-md);
   background: var(--rd-surface);
   box-shadow: 0 4px 16px var(--rd-shadow);
   pointer-events: none;

@@ -96,15 +96,25 @@
   --rd-hover-arrow: #1a9bd7;
   --rd-hover-arrow-outline: #ffffff;
 
-  /* Former names (kept as aliases) */
+  /* Brand blue of the templates / start card accents, dividers, translucent tints and scrims */
+  --rd-primary: #0066cc;
+  --rd-primary-light: #61a8ff;
+  --rd-primary-dark: #0047a3;
+  --rd-divider: #d0d0d0;
+  --rd-focus-ring-soft: rgba(0, 102, 204, 0.1);
+  --rd-drop-highlight: rgba(0, 102, 204, 0.2);
+  --rd-shadow-subtle: rgba(0, 0, 0, 0.1);
+  --rd-scrim: rgba(0, 0, 0, 0.25);
+
+  /* Former names (aliases of the --rd-* tokens; the stylesheets use the --rd-* names) */
   --rd-chrome-bg: var(--rd-surface);
   --rd-chrome-fg: var(--rd-text);
   --rd-chrome-border: var(--rd-border);
 
   /* ========== Color Palette ========== */
-  --primary: #0066cc;
-  --primary-light: #61a8ff;
-  --primary-dark: #0047a3;
+  --primary: var(--rd-primary);
+  --primary-light: var(--rd-primary-light);
+  --primary-dark: var(--rd-primary-dark);
 
   --success: #4caf50;
   --success-light: #81c784;
@@ -130,7 +140,7 @@
   --text-secondary: var(--rd-text-muted);
   --text-light: var(--rd-text-subtle);
   --border: var(--rd-border);
-  --divider: #d0d0d0;
+  --divider: var(--rd-divider);
   --disabled: #cccccc;
 
   /* ========== Spacing ========== */
@@ -256,12 +266,12 @@
   --rd-hover-arrow: #29b6f2;
   --rd-hover-arrow-outline: #121212;
 
-  --primary-light: #61a8ff;
+  --rd-primary-light: #61a8ff;
   --success-light: #81c784;
   --warning-light: #ffb74d;
   --error-light: #ef5350;
   --info-light: #64b5f6;
 
-  --divider: #404040;
+  --rd-divider: #404040;
   --disabled: #555555;
 }

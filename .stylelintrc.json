@@ -1,0 +1,24 @@
+{
+  "reportNeedlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "reportDescriptionlessDisables": true,
+  "rules": {
+    "color-no-invalid-hex": true,
+    "color-no-hex": [true, { "message": "Colour literal: use a --rd-* token of src/styles/variables.css (light and dark value)" }],
+    "color-named": ["never", { "message": "Named colour: use a --rd-* token of src/styles/variables.css" }],
+    "function-disallowed-list": [
+      ["rgb", "rgba", "hsl", "hsla", "hwb", "lab", "lch", "oklab", "oklch", "color"],
+      { "message": "Colour function: use a --rd-* token of src/styles/variables.css" }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/variables.css"],
+      "rules": {
+        "color-no-hex": null,
+        "color-named": null,
+        "function-disallowed-list": null
+      }
+    }
+  ]
+}

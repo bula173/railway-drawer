@@ -7,11 +7,11 @@
   padding: 16px;
   transform: translate(-50%, -50%);
   border: 1px solid var(--rd-border);
-  border-radius: var(--radius-lg, 8px);
+  border-radius: var(--radius-lg);
   background: var(--rd-surface);
   color: var(--rd-text);
   box-shadow: 0 8px 28px var(--rd-shadow);
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-family: var(--font-family);
   font-size: 13px;
 }
 .rd-start-card[hidden] {
@@ -37,7 +37,7 @@
   width: 28px;
   height: 28px;
   border: none;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--rd-text);
   font-size: 18px;
@@ -55,7 +55,7 @@
   min-height: 40px;
   padding: 6px 10px;
   border: 1px solid var(--rd-border);
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius-md);
   background: var(--rd-surface-2);
   color: var(--rd-text);
   font: inherit;
@@ -98,7 +98,7 @@
   min-height: 24px;
   padding: 2px 6px;
   border: none;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--rd-text-muted);
   font: inherit;

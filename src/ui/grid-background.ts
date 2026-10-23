@@ -3,8 +3,8 @@
  * @brief Theme-aware canvas grid of a tab graph container.
  *
  * The grid is a transparent SVG tile drawn over the container's page color (`--rd-canvas-bg`,
- * style.css). Both tiles (light and dark grid color) are set as custom properties on the
- * container and style.css picks one by `<html data-theme>`, so a theme switch needs no
+ * styles/theme-canvas.css). Both tiles (light and dark grid color) are set as custom properties on the
+ * container and styles/theme-canvas.css picks one by `<html data-theme>`, so a theme switch needs no
  * listener (and inactive tabs follow too). Colors as in draw.io: light grid #e0e0e0 (the app's
  * former grid), dark grid #424242 on the #121212 dark page (mxGraphView defaultDarkGridColor).
  *
@@ -91,7 +91,7 @@ function paint(container: HTMLElement, size: number): void {
 /** Shows (or hides) the grid of `container` with cells of `size` graph units in both themes. */
 export function applyGridBackground(container: HTMLElement | null | undefined, size: number, enabled: boolean): void {
   if (!container) return;
-  // No inline background-image: it would override the theme's tile (style.css .rd-grid-on)
+  // No inline background-image: it would override the theme's tile (styles/theme-canvas.css .rd-grid-on)
   container.style.backgroundImage = '';
   container.classList.toggle('rd-grid-on', enabled);
   SETTINGS.set(container, { size, enabled });

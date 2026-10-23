@@ -1,0 +1,166 @@
+/* Left panel tab strip (compact strip, overflow menu, close buttons). (imported in order by styles/index.css) */
+
+/* Left Panel Tabs */
+.left-panel-tabbar {
+  display: flex;
+  /* One row: the tabs that do not fit go into the "»" menu (src/ui/left-panel-tabs.ts) */
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 0;
+  border-bottom: 1px solid var(--rd-border);
+  background: var(--rd-surface-2);
+  flex-shrink: 0;
+}
+
+.left-panel-tab-btn {
+  /* wrapper: the tab's button + (PlantUML, ERTMS) its own close button (left-panel-tabs.ts) */
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  white-space: nowrap;
+  background: var(--rd-surface-3);
+  border: none;
+  border-bottom: 2px solid var(--rd-border);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--rd-text-muted);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.left-panel-tab-btn:hover {
+  background: var(--rd-hover);
+  color: var(--rd-text);
+}
+
+.left-panel-tab-btn.rd-tab-overflow {
+  display: none;
+}
+
+.left-panel-tab-label {
+  flex: 1 0 auto;
+  padding: 7px 6px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Icons only in the compact strip (left-panel-tabs.ts): inactive tabs icon-only, the active one its label */
+.left-panel-tab-icon {
+  display: none;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-icon {
+  display: inline-block;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-label > span {
+  display: none;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-label {
+  padding: 6px 6px 4px;
+}
+
+.left-panel-tab-btn .tab-close-btn {
+  align-self: stretch;
+  min-width: 24px;
+  margin-left: -4px;
+  padding: 0 6px;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.left-panel-tab-btn .tab-close-btn:hover {
+  background: var(--rd-hover);
+}
+
+.left-panel-tab-label:focus-visible,
+.left-panel-tab-btn .tab-close-btn:focus-visible,
+.left-panel-overflow-close:focus-visible,
+.left-panel-tab-more:focus-visible,
+.left-panel-overflow-item:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: -2px;
+}
+
+.left-panel-tab-more {
+  flex: 0 0 auto;
+  min-width: 28px;
+  min-height: 28px;
+  margin-left: auto;
+  padding: 0 8px;
+  background: var(--rd-surface-3);
+  border: none;
+  border-bottom: 2px solid var(--rd-border);
+  color: var(--rd-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.left-panel-tab-more[hidden] {
+  display: none;
+}
+
+.left-panel-tab-more:hover {
+  background: var(--rd-hover);
+}
+
+.left-panel-overflow-menu {
+  position: absolute;
+  right: 4px;
+  z-index: 30;
+  min-width: 160px;
+  padding: 4px 0;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--rd-shadow);
+}
+
+.left-panel-overflow-menu[hidden] {
+  display: none;
+}
+
+.left-panel-overflow-item {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--rd-text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.left-panel-overflow-close {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 12px 4px 24px;
+  border: 0;
+  background: transparent;
+  color: var(--rd-text-muted);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.left-panel-overflow-close:hover,
+.left-panel-overflow-close:focus,
+.left-panel-overflow-item:hover,
+.left-panel-overflow-item:focus {
+  background: var(--rd-surface-3);
+}
+
+.left-panel-tab-btn.active {
+  background: var(--rd-surface);
+  border-bottom: 2px solid var(--rd-link);
+  color: var(--rd-link);
+}

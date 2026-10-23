@@ -7,10 +7,10 @@
 
 .btn {
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--border);
+  border: 1px solid var(--rd-border);
   border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text);
+  background: var(--rd-surface-3);
+  color: var(--rd-text);
   font-size: var(--font-size-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -18,23 +18,23 @@
 }
 
 .btn:hover {
-  background: var(--surface-light);
-  border-color: var(--divider);
+  background: var(--rd-surface-2);
+  border-color: var(--rd-divider);
 }
 
 .btn:active {
-  background: var(--divider);
+  background: var(--rd-divider);
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: var(--rd-primary);
   color: var(--rd-accent-text);
-  border-color: var(--primary);
+  border-color: var(--rd-primary);
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
-  border-color: var(--primary-dark);
+  background: var(--rd-primary-dark);
+  border-color: var(--rd-primary-dark);
 }
 
 .btn-success {
@@ -60,12 +60,12 @@
 .select,
 .textarea {
   padding: var(--space-sm);
-  border: 1px solid var(--border);
+  border: 1px solid var(--rd-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
-  background: var(--background);
-  color: var(--text);
+  background: var(--rd-bg);
+  color: var(--rd-text);
   transition: border-color var(--transition-fast);
   box-sizing: border-box;
   width: 100%;
@@ -75,8 +75,8 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+  border-color: var(--rd-primary);
+  box-shadow: 0 0 0 2px var(--rd-focus-ring-soft);
 }
 
 .textarea {
@@ -91,19 +91,19 @@
   margin-bottom: var(--space-xs);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-sm);
-  color: var(--text);
+  color: var(--rd-text);
 }
 
 .label-sm {
   font-size: var(--font-size-xs);
-  color: var(--text-secondary);
+  color: var(--rd-text-muted);
 }
 
 /* ========== CHECKBOXES ========== */
 
 .checkbox {
   cursor: pointer;
-  accent-color: var(--primary);
+  accent-color: var(--rd-primary);
 }
 
 .checkbox-label {
@@ -119,19 +119,19 @@
 .panel {
   display: flex;
   flex-direction: column;
-  background: var(--background);
-  border: 1px solid var(--border);
+  background: var(--rd-bg);
+  border: 1px solid var(--rd-border);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
 
 .panel-header {
   padding: var(--space-md);
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: var(--rd-surface-3);
+  border-bottom: 1px solid var(--rd-border);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
-  color: var(--text);
+  color: var(--rd-text);
 }
 
 .panel-content {
@@ -145,31 +145,31 @@
 .tabs {
   display: flex;
   gap: 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  border-bottom: 1px solid var(--rd-border);
+  background: var(--rd-surface-3);
 }
 
 .tab {
   flex: 1;
   padding: var(--space-md);
-  background: var(--surface);
+  background: var(--rd-surface-3);
   border: none;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--rd-border);
   cursor: pointer;
   font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  color: var(--rd-text-muted);
   font-weight: var(--font-weight-medium);
   transition: all var(--transition-fast);
 }
 
 .tab:hover {
-  background: var(--surface-light);
-  color: var(--text);
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
 }
 
 .tab.active {
-  background: var(--background);
-  border-bottom-color: var(--primary);
+  background: var(--rd-bg);
+  border-bottom-color: var(--rd-primary);
   color: var(--rd-link);
 }
 
@@ -177,14 +177,14 @@
 
 .divider {
   height: 1px;
-  background: var(--border);
+  background: var(--rd-border);
   margin: var(--space-md) 0;
 }
 
 .divider-vertical {
   width: 1px;
   height: 24px;
-  background: var(--divider);
+  background: var(--rd-divider);
   margin: 0 var(--space-sm);
 }
 
@@ -293,11 +293,11 @@
 }
 
 .text-secondary {
-  color: var(--text-secondary);
+  color: var(--rd-text-muted);
 }
 
 .text-light {
-  color: var(--text-light);
+  color: var(--rd-text-subtle);
 }
 
 .text-primary {

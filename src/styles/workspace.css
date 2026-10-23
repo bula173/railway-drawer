@@ -1,0 +1,118 @@
+/* Workspace layout: left / right panels, resize handles, panel header / content, canvas container. (imported in order by styles/index.css) */
+
+/* Workspace */
+.workspace {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 240px;
+  background: var(--rd-surface);
+  border-right: 1px solid var(--rd-border);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right Panel */
+.right-panel {
+  width: 280px;
+  background: var(--rd-surface);
+  border-left: 1px solid var(--rd-border);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Collapsible / resizable side panels (src/ui/side-panels.ts) */
+.left-panel.rd-panel-collapsed,
+.right-panel.rd-panel-collapsed {
+  display: none;
+}
+
+/* Narrow screens (body.rd-narrow): src/ui/narrow-screen.css */
+
+/* 8 px hit area along the panel's inner edge (not over the canvas and its scrollbars); a 2 px line shows on
+   hover, focus and while dragging */
+.panel-resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  z-index: 20;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.panel-resize-handle-right {
+  right: 0;
+}
+
+.panel-resize-handle-left {
+  left: 0;
+}
+
+.panel-resize-handle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 2px;
+  background: transparent;
+  transition: background-color 0.15s;
+}
+
+.panel-resize-handle:hover::after,
+.panel-resize-handle:focus-visible::after,
+.panel-resize-handle.rd-resizing::after {
+  background: var(--rd-accent);
+}
+
+.panel-resize-handle:focus-visible {
+  outline: none;
+}
+
+body.rd-col-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+/* Panel Header */
+.panel-header {
+  height: 36px;
+  padding: 0 12px;
+  background: var(--rd-surface-2);
+  border-bottom: 1px solid var(--rd-border);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--rd-text);
+  flex-shrink: 0;
+}
+
+/* Panel Content */
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Canvas Container */
+.canvas-container {
+  flex: 1;
+  background: var(--rd-canvas-bg);
+  position: relative;
+  overflow: auto;
+  border: 1px solid var(--rd-border);
+  cursor: crosshair;
+}
+
+.canvas-container.drag-over {
+  background: var(--rd-selected);
+}

@@ -1,0 +1,32 @@
+/*
+ * The app chrome's stylesheet (imported by main-editor.ts). The order is the cascade order of the
+ * former src/style.css: tokens, shared components, then one file per area. Component stylesheets of
+ * the features are imported by their modules (scenarios.css, railway-data.css, ...).
+ * Colours: only src/styles/variables.css defines literals (stylelint: .stylelintrc.json).
+ */
+@import './variables.css';
+@import './components.css';
+@import './base.css';
+@import './top-bar.css';
+@import './menus.css';
+@import './toolbar.css';
+@import './workspace.css';
+@import './status-bar.css';
+@import './scrollbars.css';
+@import './shapes-palette.css';
+@import './left-panel-tabs.css';
+@import './stencil-panels.css';
+@import './tabs-bar.css';
+@import './shape-designer.css';
+@import './shape-toolbars.css';
+@import './notifications.css';
+@import './save-status.css';
+@import './plantuml-editor.css';
+@import './theme-canvas.css';
+@import './context-menu.css';
+@import './properties.css';
+@import './hover-arrows.css';
+@import './panel-states.css';
+@import './dialogs.css';
+@import './context-menu-states.css';
+@import './labels.css';

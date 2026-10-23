@@ -6,8 +6,8 @@
   display: flex;
   flex-shrink: 0;
   height: 36px;
-  background: var(--surface-light, #f9f9f9);
-  border-bottom: 1px solid var(--divider, #e0e0e0);
+  background: var(--rd-surface-2);
+  border-bottom: 1px solid var(--rd-divider);
 }
 .right-panel-switch-btn {
   flex: 1 1 0;
@@ -17,18 +17,18 @@
   font: inherit;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-secondary, #888);
+  color: var(--rd-text-muted);
   cursor: pointer;
 }
 .right-panel-switch-btn:hover {
-  color: var(--text, #333);
+  color: var(--rd-text);
 }
 .right-panel-switch-btn.active {
-  color: var(--text, #333);
-  border-bottom-color: var(--primary, #0066cc);
+  color: var(--rd-text);
+  border-bottom-color: var(--rd-primary);
 }
 .right-panel-switch-btn:focus-visible {
-  outline: 2px solid var(--primary, #0066cc);
+  outline: 2px solid var(--rd-primary);
   outline-offset: -2px;
 }
 #scenarios-panel[hidden],
@@ -44,16 +44,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
-  font-size: var(--font-size-sm, 12px);
-  color: var(--text, #333);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--rd-text);
 }
 .rd-scn-toolbar {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 6px 8px;
-  border-bottom: 1px solid var(--divider, #e0e0e0);
+  border-bottom: 1px solid var(--rd-divider);
 }
 .rd-scn-tabname {
   flex: 1 1 auto;
@@ -61,12 +61,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--text-secondary, #666);
+  color: var(--rd-text-muted);
 }
 .rd-scn-empty,
 .rd-scn-steps-empty {
   margin: 10px 8px;
-  color: var(--text-secondary, #777);
+  color: var(--rd-text-muted);
   line-height: 1.4;
 }
 .rd-scn-list,
@@ -76,7 +76,7 @@
   padding: 0;
 }
 .rd-scn-item {
-  border-bottom: 1px solid var(--divider, #e0e0e0);
+  border-bottom: 1px solid var(--rd-divider);
 }
 .rd-scn-head {
   display: flex;
@@ -91,7 +91,7 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--text-secondary, #666);
+  color: var(--rd-text-muted);
   cursor: pointer;
   font-size: 11px;
   transition: transform 0.12s;
@@ -113,14 +113,14 @@
 }
 .rd-scn-count {
   margin-left: 4px;
-  color: var(--text-secondary, #888);
-  font-size: var(--font-size-xs, 11px);
+  color: var(--rd-text-muted);
+  font-size: var(--font-size-xs);
   white-space: nowrap;
 }
 .rd-scn-desc,
 .rd-scn-step-desc {
-  color: var(--text-secondary, #666);
-  font-size: var(--font-size-xs, 11px);
+  color: var(--rd-text-muted);
+  font-size: var(--font-size-xs);
   overflow-wrap: anywhere;
 }
 .rd-scn-actions,
@@ -133,11 +133,11 @@
   min-height: 24px;
   padding: 2px 8px;
   border: 1px solid var(--rd-border);
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   background: var(--rd-button-bg);
   color: var(--rd-button-text);
   font: inherit;
-  font-size: var(--font-size-xs, 11px);
+  font-size: var(--font-size-xs);
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
@@ -154,7 +154,7 @@
   height: 24px;
   padding: 0;
   border: 1px solid transparent;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--rd-text);
   font-size: 16px;
@@ -180,7 +180,7 @@
   min-width: 150px;
   padding: 4px 0;
   border: 1px solid var(--rd-border);
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius-md);
   background: var(--rd-surface);
   box-shadow: 0 4px 16px var(--rd-shadow);
 }
@@ -218,26 +218,26 @@
   gap: 6px;
   margin-bottom: 4px;
   padding: 4px;
-  border: 1px solid var(--divider, #e0e0e0);
-  border-radius: var(--radius-sm, 4px);
-  background: var(--surface, #fff);
+  border: 1px solid var(--rd-divider);
+  border-radius: var(--radius-sm);
+  background: var(--rd-surface-3);
   cursor: pointer;
 }
 .rd-scn-step:hover {
-  border-color: var(--primary, #0066cc);
+  border-color: var(--rd-primary);
 }
 .rd-scn-step.rd-scn-step-active {
-  border-color: var(--primary, #0066cc);
-  box-shadow: inset 3px 0 0 var(--primary, #0066cc);
+  border-color: var(--rd-primary);
+  box-shadow: inset 3px 0 0 var(--rd-primary);
 }
 .rd-scn-step.rd-scn-dragging {
   opacity: 0.4;
 }
 .rd-scn-step.rd-scn-drop-before {
-  box-shadow: 0 -2px 0 var(--primary, #0066cc);
+  box-shadow: 0 -2px 0 var(--rd-primary);
 }
 .rd-scn-step.rd-scn-drop-after {
-  box-shadow: 0 2px 0 var(--primary, #0066cc);
+  box-shadow: 0 2px 0 var(--rd-primary);
 }
 .rd-scn-thumb {
   flex: 0 0 auto;
@@ -249,7 +249,7 @@
   overflow: hidden;
   border-radius: 2px;
   background: var(--rd-surface);
-  outline: 1px solid var(--divider, #eee);
+  outline: 1px solid var(--rd-divider);
 }
 .rd-scn-thumb svg {
   max-width: 100%;
@@ -260,7 +260,7 @@
   min-width: 0;
 }
 .rd-scn-step-num {
-  color: var(--text-secondary, #888);
+  color: var(--rd-text-muted);
   margin-right: 2px;
 }
 .rd-scn-step-title {
@@ -371,7 +371,7 @@
   background: var(--rd-scenario-bg);
   border-bottom: 2px solid var(--rd-scenario);
   color: var(--rd-scenario-text);
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-family: var(--font-family);
   font-size: 13px;
   cursor: default;
 }
@@ -449,7 +449,7 @@ body.rd-scenario-viewing #property-content {
   outline: none;
 }
 .rd-scn-step:focus-visible {
-  outline: 2px solid var(--primary, #0066cc);
+  outline: 2px solid var(--rd-primary);
   outline-offset: 1px;
 }
 
@@ -469,9 +469,9 @@ body.rd-scenario-viewing #property-content {
   width: min(420px, 40%);
   min-width: 240px;
   border-left: 2px solid var(--rd-scenario);
-  background: var(--surface, #fff);
-  color: var(--text, #333);
-  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  background: var(--rd-surface-3);
+  color: var(--rd-text);
+  font-family: var(--font-family);
   font-size: 13px;
 }
 .rd-scn-side.rd-scn-side-collapsed {
@@ -516,11 +516,11 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-side-section + .rd-scn-side-section {
   margin-top: 12px;
   padding-top: 8px;
-  border-top: 1px solid var(--border, #e0e0e0);
+  border-top: 1px solid var(--rd-border);
 }
 .rd-scn-side-heading {
   margin: 0 0 6px;
-  color: var(--text-secondary, #777);
+  color: var(--rd-text-muted);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -537,7 +537,7 @@ body.rd-scenario-viewing #property-content {
 }
 .rd-scn-muted {
   margin: 0;
-  color: var(--text-secondary, #888);
+  color: var(--rd-text-muted);
   font-style: italic;
 }
 .rd-scn-uml-message {
@@ -607,7 +607,7 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-markdown blockquote {
   padding-left: 8px;
   border-left: 3px solid var(--rd-border-strong);
-  color: var(--text-secondary, #555);
+  color: var(--rd-text-muted);
 }
 .rd-scn-markdown table {
   border-collapse: collapse;
@@ -615,7 +615,7 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-markdown th,
 .rd-scn-markdown td {
   padding: 2px 6px;
-  border: 1px solid var(--border, #ccc);
+  border: 1px solid var(--rd-border);
 }
 .rd-scn-markdown img {
   max-width: 100%;
@@ -673,7 +673,7 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-editor-drawing {
   margin: 0 0 10px;
   padding: 4px 10px 8px;
-  border: 1px solid var(--border, #ddd);
+  border: 1px solid var(--rd-border);
   border-radius: 4px;
 }
 .rd-scn-editor-drawing legend {
@@ -686,7 +686,7 @@ body.rd-scenario-viewing #property-content {
 }
 .rd-scn-editor-note {
   margin: 2px 0;
-  color: var(--text-secondary, #666);
+  color: var(--rd-text-muted);
   font-size: 12px;
 }
 .rd-scn-editor-panes {
@@ -728,9 +728,9 @@ body.rd-scenario-viewing #property-content {
   width: 100%;
   min-height: 160px;
   padding: 6px 8px;
-  border: 1px solid var(--border, #ccc);
+  border: 1px solid var(--rd-border);
   border-radius: 4px;
-  background: var(--surface, #fff);
+  background: var(--rd-surface-3);
   color: inherit;
   font: inherit;
   resize: vertical;
@@ -744,9 +744,9 @@ body.rd-scenario-viewing #property-content {
   max-height: 320px;
   overflow: auto;
   padding: 8px;
-  border: 1px dashed var(--border, #ccc);
+  border: 1px dashed var(--rd-border);
   border-radius: 4px;
-  background: var(--surface, #fff);
+  background: var(--rd-surface-3);
 }
 @media (max-width: 760px) {
   .rd-scn-editor-head,

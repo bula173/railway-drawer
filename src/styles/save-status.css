@@ -1,0 +1,47 @@
+/* Save status indicator. (imported in order by styles/index.css) */
+
+/* ========== SAVE STATUS ANIMATION ========== */
+
+.save-status {
+  font-size: 12px;
+  color: var(--rd-danger);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.save-status:hover {
+  background: var(--rd-danger-bg);
+}
+
+.save-status.saving {
+  color: var(--rd-warning);
+  animation: pulse 1.5s infinite;
+}
+
+.save-status.saved {
+  color: var(--rd-success);
+}
+
+.save-status.saved::after {
+  content: '✓';
+  font-weight: bold;
+}
+
+.save-status.error {
+  color: var(--rd-danger);
+  background: var(--rd-danger-bg);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

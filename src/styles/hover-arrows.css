@@ -1,0 +1,39 @@
+/* Connection arrows (hover-arrows.ts). (imported in order by styles/index.css) */
+
+/* ========== CONNECTION ARROWS (src/ui/hover-arrows.ts, draw.io HoverIcons) ========== */
+.rd-hover-arrow {
+  position: absolute;
+  z-index: 3;
+  cursor: copy;
+  color: var(--rd-hover-arrow);
+  line-height: 0;
+  touch-action: none;
+  user-select: none;
+}
+
+.rd-hover-arrow svg {
+  display: block;
+  overflow: visible;
+}
+
+.rd-hover-arrow path {
+  fill: currentColor;
+  stroke: var(--rd-hover-arrow-outline);
+  stroke-width: 1;
+}
+
+/* where the clone lands (faded) / the cell it will connect to */
+.rd-hover-arrow-preview {
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  pointer-events: none;
+  border: 2px dashed var(--rd-hover-arrow);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.rd-hover-arrow-preview[data-kind="target"] {
+  border-style: solid;
+  opacity: 0.9;
+}

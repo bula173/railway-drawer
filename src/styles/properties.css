@@ -1,0 +1,130 @@
+/* Properties panel and the inputs / buttons styled in index.html and TypeScript. (imported in order by styles/index.css) */
+
+/* Properties panel (index.html #property-content) */
+.property-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--rd-border);
+  background: var(--rd-surface-3);
+}
+
+.prop-tab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--rd-text-subtle);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prop-tab.active {
+  color: var(--rd-text);
+  border-bottom-color: var(--rd-focus);
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rd-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+}
+
+.rd-section {
+  margin-bottom: 16px;
+  border: 1px solid var(--rd-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rd-strong {
+  font-weight: 600;
+  color: var(--rd-text);
+}
+
+.rd-field-label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--rd-text-muted);
+}
+
+.rd-field-caption {
+  margin-top: 2px;
+  font-size: 10px;
+  text-align: center;
+  color: var(--rd-text-subtle);
+}
+
+.rd-tip {
+  margin-bottom: 16px;
+  padding: 8px;
+  background: var(--rd-hint-bg);
+  border-left: 3px solid var(--rd-focus);
+  border-radius: 3px;
+}
+
+.rd-tip-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rd-hint-text);
+}
+
+/* Inputs and buttons styled in index.html / TypeScript */
+.rd-input {
+  border: 1px solid var(--rd-input-border);
+  border-radius: 3px;
+  background-color: var(--rd-input-bg);
+  color: var(--rd-input-text);
+}
+
+.rd-btn {
+  border: 1px solid var(--rd-input-border);
+  border-radius: 3px;
+  background: var(--rd-button-bg);
+  color: var(--rd-button-text);
+  cursor: pointer;
+}
+
+.rd-btn.rd-btn-on {
+  background: var(--rd-active);
+}
+
+.rd-btn.rd-btn-locked {
+  background: var(--rd-locked-bg);
+  color: var(--rd-locked-text);
+}
+
+.rd-btn-solid {
+  border: none;
+  border-radius: 3px;
+  color: var(--rd-accent-text);
+  cursor: pointer;
+}
+
+.rd-btn-solid.rd-btn-primary {
+  background: var(--rd-accent);
+}
+
+.rd-btn-solid.rd-btn-primary:hover {
+  background: var(--rd-accent-hover);
+}
+
+.rd-btn-solid.rd-btn-danger {
+  background: var(--rd-danger-solid);
+}

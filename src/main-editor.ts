@@ -18,7 +18,7 @@
  */
 
 import '@maxgraph/core/css/common.css';
-import './style.css';
+import './styles/index.css';
 import { bootShell } from './boot/shell';
 import { bootTabs } from './boot/tabs';
 import { bootRailwayFeatures, bootSharing } from './boot/features';

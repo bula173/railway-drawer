@@ -405,7 +405,7 @@ export class PropertiesPanel {
     const flipV = style.flipV || false;
     const flipHBtn = document.getElementById('btn-flipHorizontal');
     const flipVBtn = document.getElementById('btn-flipVertical');
-    // Pressed look via the theme tokens (style.css .rd-btn-on), never a hard-coded color
+    // Pressed look via the theme tokens (styles/properties.css .rd-btn-on), never a hard-coded color
     flipHBtn?.classList.toggle('rd-btn-on', !!flipH);
     flipVBtn?.classList.toggle('rd-btn-on', !!flipV);
 
@@ -453,7 +453,7 @@ export class PropertiesPanel {
     const tabs = document.querySelectorAll('.prop-tab') as NodeListOf<HTMLButtonElement>;
     tabs.forEach((tab) => {
       const isActive = tab.getAttribute('data-tab') === tabName;
-      // Colors of .prop-tab / .prop-tab.active come from the theme tokens in style.css
+      // Colors of .prop-tab / .prop-tab.active come from the theme tokens in styles/properties.css
       tab.classList.toggle('active', isActive);
       tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });

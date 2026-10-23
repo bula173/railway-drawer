@@ -1,0 +1,64 @@
+/* Status bar. (imported in order by styles/index.css) */
+
+/* Status Bar */
+.status-bar {
+  height: 28px;
+  background: var(--rd-surface-3);
+  border-top: 1px solid var(--rd-border);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: var(--rd-text-muted);
+  flex-shrink: 0;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.status-message {
+  flex: 1;
+  padding: 4px 8px;
+  color: var(--rd-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.status-message.active {
+  color: var(--rd-link);
+  font-weight: 500;
+}
+
+.status-items {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+  padding-left: 12px;
+  border-left: 1px solid var(--rd-divider);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  padding-right: 12px;
+  border-right: 1px solid var(--rd-divider);
+}
+
+.status-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.status-label {
+  font-weight: 600;
+  color: var(--rd-text);
+}
+
+.status-value {
+  color: var(--rd-link);
+  font-family: 'Monaco', 'Courier New', monospace;
+}

@@ -1,0 +1,90 @@
+/* Themed dialogs (app-dialogs.ts, the .rd-tpl-modal look). (imported in order by styles/index.css) */
+
+/* Themed dialogs (src/ui/app-dialogs.ts, on the .rd-tpl-modal look) */
+.rd-app-dialog-text {
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.rd-app-dialog-file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.rd-app-dialog-file .rd-tpl-modal-input {
+  flex: 1;
+  margin-top: 0;
+}
+
+.rd-app-dialog-ext {
+  color: var(--rd-text-muted);
+  font-weight: normal;
+}
+
+.rd-about-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0 0 12px;
+}
+
+.rd-about-facts dt {
+  color: var(--rd-text-muted);
+}
+
+.rd-about-facts dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.rd-about-links {
+  margin: 0 0 8px;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.rd-app-dialog a {
+  color: var(--rd-link);
+}
+
+.rd-tpl-modal.rd-shortcuts-dialog {
+  width: min(720px, calc(100vw - 32px));
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.rd-shortcuts-section {
+  margin: 14px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--rd-text-muted);
+}
+
+.rd-shortcuts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rd-shortcuts-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--rd-border);
+  vertical-align: top;
+}
+
+.rd-shortcuts-table td:first-child {
+  width: 40%;
+  white-space: nowrap;
+}
+
+.rd-shortcuts-table .rd-kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 3px;
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+}

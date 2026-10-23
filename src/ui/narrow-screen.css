@@ -19,7 +19,7 @@ body.rd-narrow #graph-container {
   gap: 8px;
   padding: 8px 10px;
   border: 1px solid var(--rd-warning);
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius-md);
   background: var(--rd-warning-bg);
   color: var(--rd-text);
   box-shadow: 0 4px 16px var(--rd-shadow);
@@ -36,7 +36,7 @@ body.rd-narrow #graph-container {
   width: 28px;
   height: 28px;
   border: none;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: inherit;
   font-size: 18px;

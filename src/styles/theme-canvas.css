@@ -1,0 +1,110 @@
+/* Theme: native controls, tab graph canvas (grid, scrolling), honest cursors. (imported in order by styles/index.css) */
+
+/* ========== THEME (light / dark) ==========
+   All chrome colors come from the --rd-* tokens of styles/variables.css; the dark values are set
+   on :root[data-theme="dark"] there (index.html before first paint, View > Dark Mode at runtime:
+   src/drawio-shapes/theme/dark-mode.ts). Do not add per-component dark overrides with literal
+   colors here: give the component token colors instead. */
+
+/* Native form controls follow the tokens (zero specificity: any component class wins). */
+:where(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="button"], [type="submit"], [type="reset"], [type="image"]), select, textarea) {
+  background-color: var(--rd-input-bg);
+  color: var(--rd-input-text);
+}
+
+:where(input, select, textarea, button):disabled {
+  opacity: 0.6;
+}
+
+:where(input, select, textarea, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+
+::placeholder {
+  color: var(--rd-text-subtle);
+  opacity: 1;
+}
+
+* {
+  scrollbar-color: var(--rd-scrollbar) transparent;
+}
+
+/* The tab graphs: page color + theme-aware grid (src/ui/grid-background.ts sets --rd-grid-image) */
+#graph-container > div {
+  background-color: var(--rd-canvas-bg);
+}
+
+/* Each tab's graph div is the scroll container (src/ui/canvas-scroll.ts), not #graph-container:
+   maxGraph scrolls its own container (zoom, autoscroll, panning, scrollCellToVisible). The
+   background (page color + grid) scrolls with the content and covers the whole scrollable area. */
+#graph-container {
+  overflow: hidden;
+}
+#graph-container > .rd-graph-canvas {
+  overflow: auto;
+  background-attachment: local;
+  /* auto: Chromium/WebKit then use the ::-webkit-scrollbar rules below (scrollbar-color would
+     replace them with thin overlay bars) */
+  scrollbar-color: auto;
+}
+/* Honest cursors (src/ui/pan.ts, canvas-interaction.ts, connections.ts): the empty background
+   keeps the default cursor (a drag there pans: grabbing while it does; Space = grab), `move` where
+   a press moves a shape the DOM misses (transparent parts, group gaps; shapes set their own),
+   crosshair only where a press starts a connection (on a highlighted point) */
+#graph-container > .rd-graph-canvas {
+  cursor: default;
+}
+#graph-container > .rd-graph-canvas.rd-pan-mode,
+#graph-container > .rd-graph-canvas.rd-pan-mode * {
+  cursor: grab !important;
+}
+#graph-container > .rd-graph-canvas.rd-cursor-move {
+  cursor: move;
+}
+#graph-container > .rd-graph-canvas.rd-cursor-connect,
+#graph-container > .rd-graph-canvas.rd-cursor-connect * {
+  cursor: crosshair !important;
+}
+#graph-container > .rd-graph-canvas.rd-panning,
+#graph-container > .rd-graph-canvas.rd-panning * {
+  cursor: grabbing !important;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-track,
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-corner {
+  background: var(--rd-canvas-scrollbar-track);
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-thumb {
+  background: var(--rd-canvas-scrollbar-thumb);
+  border: 2px solid var(--rd-canvas-scrollbar-track);
+  border-radius: 6px;
+  min-width: 24px;
+  min-height: 24px;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-thumb:hover {
+  background: var(--rd-canvas-scrollbar-thumb-hover);
+}
+@supports not selector(::-webkit-scrollbar) {
+  #graph-container > .rd-graph-canvas {
+    scrollbar-color: var(--rd-canvas-scrollbar-thumb) var(--rd-canvas-scrollbar-track);
+  }
+}
+
+#graph-container > div.rd-grid-on {
+  background-image: var(--rd-grid-image-light);
+}
+
+:root[data-theme="dark"] #graph-container > div.rd-grid-on {
+  background-image: var(--rd-grid-image-dark);
+}
+
+.menu-dropdown-item[aria-checked="true"]::before {
+  content: '\2713';
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -0.2em;
+}

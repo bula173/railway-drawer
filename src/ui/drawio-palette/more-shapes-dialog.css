@@ -2,7 +2,7 @@
 
 .rd-dp-libraries {
   margin-top: 6px;
-  border-top: 1px solid var(--rd-border, #ccc);
+  border-top: 1px solid var(--rd-border);
   padding-top: 6px;
 }
 
@@ -11,10 +11,10 @@
   box-sizing: border-box;
   margin: 4px 0;
   padding: 4px 6px;
-  border: 1px solid var(--rd-input-border, #ccc);
-  border-radius: var(--radius-sm, 4px);
-  background: var(--rd-input-bg, #fff);
-  color: var(--rd-input-text, #333);
+  border: 1px solid var(--rd-input-border);
+  border-radius: var(--radius-sm);
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
   font: inherit;
 }
 
@@ -29,12 +29,12 @@
   align-items: center;
   gap: 6px;
   padding: 1px 2px;
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
 .rd-dp-lib-row:hover {
-  background: var(--rd-hover, #f0f0f0);
+  background: var(--rd-hover);
 }
 
 .rd-dp-lib-title {
@@ -46,8 +46,8 @@
 }
 
 .rd-dp-lib-count {
-  color: var(--rd-text-subtle, #888);
-  font-size: var(--font-size-xs, 11px);
+  color: var(--rd-text-subtle);
+  font-size: var(--font-size-xs);
 }
 
 .rd-dp-lib-preview {
@@ -56,29 +56,29 @@
   align-self: start;
   min-height: 160px;
   padding: 8px;
-  border: 1px solid var(--rd-border, #ccc);
-  border-radius: var(--radius-sm, 4px);
-  background: var(--rd-surface-2, #fafafa);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-sm);
+  background: var(--rd-surface-2);
 }
 
 .rd-dp-lib-hint,
 .rd-dp-lib-preview-meta {
-  color: var(--rd-text-muted, #666);
-  font-size: var(--font-size-xs, 11px);
+  color: var(--rd-text-muted);
+  font-size: var(--font-size-xs);
   margin: 2px 0;
 }
 
 .rd-dp-lib-preview-title {
-  font-weight: var(--font-weight-medium, 600);
+  font-weight: var(--font-weight-medium);
 }
 
 .rd-dp-lib-notice {
   margin: 4px 0;
   padding: 4px 6px;
-  border-radius: var(--radius-sm, 4px);
-  background: var(--rd-info-bg, #e3f2fd);
-  color: var(--rd-text, #333);
-  font-size: var(--font-size-xs, 11px);
+  border-radius: var(--radius-sm);
+  background: var(--rd-info-bg);
+  color: var(--rd-text);
+  font-size: var(--font-size-xs);
 }
 
 .rd-dp-lib-preview-grid {

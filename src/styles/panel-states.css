@@ -1,0 +1,31 @@
+/* Status bar hidden items, Properties panel header and the nothing-selected hint. (imported in order by styles/index.css) */
+
+/* Status bar: a hidden item (e.g. "Stored in:" while the tab is not linked) takes no room */
+.status-item[hidden] {
+  display: none;
+}
+
+/* Properties panel header (src/ui/properties-state.ts) and the nothing-selected hint */
+.rd-prop-header {
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rd-text);
+  border-bottom: 1px solid var(--rd-border);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rd-prop-header[hidden] {
+  display: none;
+}
+
+.rd-prop-placeholder {
+  margin: 0;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--rd-text-muted);
+}

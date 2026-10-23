@@ -2,7 +2,7 @@
  * @file canvas-scroll.ts
  * @brief draw.io-like scrolling canvas of a tab graph.
  *
- * The tab's graph div is the scroll container (style.css `.rd-graph-canvas`: overflow auto), so
+ * The tab's graph div is the scroll container (styles/theme-canvas.css `.rd-graph-canvas`: overflow auto), so
  * maxGraph's own scrolling (scrollCellToVisible, autoscroll while dragging, panning) moves it.
  * Like draw.io's infinite canvas (Graph.getPagePadding / EditorUi sizeDidChange /
  * Graph.scrollTileSize, page view off):

@@ -136,7 +136,7 @@ export function buildStateLegend(onClose: () => void): HTMLElement {
 
 const NOTHING_SELECTED = 'Select a track section, track, points, signal, route or level crossing first.';
 
-/** Height of the canvas' horizontal scrollbar (style.css `.rd-graph-canvas::-webkit-scrollbar`). */
+/** Height of the canvas' horizontal scrollbar (styles/theme-canvas.css `.rd-graph-canvas::-webkit-scrollbar`). */
 const CANVAS_SCROLLBAR_PX = 12;
 
 export function installRailwayStates(tabManager: TabManager, notify: RailwayNotifier): RailwayStatesHandle {
@@ -149,7 +149,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     if (!legend || !host) return;
     const r = host.getBoundingClientRect();
     legend.style.left = `${Math.round(r.left + 8)}px`;
-    // Above the canvas' horizontal scrollbar (12 px, style.css .rd-graph-canvas), which comes and
+    // Above the canvas' horizontal scrollbar (12 px, styles/theme-canvas.css .rd-graph-canvas), which comes and
     // goes with the zoom: the legend stays fixed in the view and never covers it
     legend.style.bottom = `${Math.round(Math.max(8, window.innerHeight - r.bottom + 8) + CANVAS_SCROLLBAR_PX)}px`;
   };

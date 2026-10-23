@@ -22,6 +22,8 @@
   vector-effect: non-scaling-stroke;
 }
 
+/* stylelint-disable color-no-hex, function-disallowed-list -- diagram content: the route highlight is drawn over the
+   canvas in the route tool's orange, the same in both themes (like the diagram itself) */
 .rd-route-overlay .rd-route-hl {
   fill: none;
   stroke: #ff8f00;
@@ -47,6 +49,7 @@
   stroke-width: 2.5;
   vector-effect: non-scaling-stroke;
 }
+/* stylelint-enable color-no-hex, function-disallowed-list */
 
 .rd-route-overlay .rd-route-dim {
   fill: var(--rd-canvas-bg);
@@ -227,6 +230,7 @@
   border-top: 1px solid var(--rd-border);
 }
 
+/* stylelint-disable color-no-hex -- diagram content: the km ruler is drawn over the canvas, the same in both themes */
 .rd-km-ruler-line {
   fill: none;
   stroke: #1565c0;
@@ -252,3 +256,4 @@
   stroke: #ffffff;
   stroke-width: 3px;
 }
+/* stylelint-enable color-no-hex */
