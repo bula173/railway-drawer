@@ -17,7 +17,7 @@ describe('project sections (feature parts of the project file)', () => {
       key: 'testNote',
       order: 15,
       create: () => ({ value: '' }),
-      mainPageAttributes: (s) => (s.value ? { rdTestNote: s.value } : {}),
+      mainPageAttributes: (s): Record<string, string> => (s.value ? { rdTestNote: s.value } : {}),
       pages: (s, usedIds) => {
         if (!s.value) return [];
         usedIds.add('note-page');
@@ -31,7 +31,7 @@ describe('project sections (feature parts of the project file)', () => {
 
     const service = new ProjectService();
     service.section<{ value: string }>('testNote').value = 'hello';
-    service.railwayScript.set('track T1', 'user');
+    service.railwayScript.set('track T1', 'editor');
     const xml = service.generateProjectXml(MODEL);
     expect(xml).toContain('rdTestNote="hello"');
     const parsed = (await new ProjectService().parseProjectXml(xml)) as unknown as Record<string, unknown>;
