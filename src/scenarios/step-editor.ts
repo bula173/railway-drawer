@@ -9,7 +9,6 @@
  * line. While open, a window capture listener keeps keys away from the app's shortcut dispatcher.
  */
 import { openModal } from '../core/modal';
-import '../ui/templates/templates.css';
 import './scenarios.css';
 import { MAX_SCENARIO_DESCRIPTION, MAX_SCENARIO_NAME, MAX_STEP_TEXT, MAX_STEP_UML } from './scenario-model';
 import { renderStepUml, showUmlResult, clearUmlCache } from './step-uml';

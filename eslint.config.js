@@ -73,7 +73,6 @@ export default tsEslint.config(
             'src/scenarios/install-scenarios.ts',
             'src/scenarios/scenario-view.ts',
             'src/scenarios/scenarios-panel.ts',
-            'src/scenarios/step-editor.ts',
             'src/share/install-sharing.ts',
             'src/share/ui/**',
           ],
@@ -109,7 +108,6 @@ export default tsEslint.config(
             { from: [['feature', { family: 'ai' }]], allow: [['feature', { family: 'scenarios' }], ['feature', { family: 'railway-script' }], ['feature', { family: 'railml' }], ['feature', { family: 'share' }]] },
             { from: [['feature', { family: 'share' }]], allow: [['feature', { family: 'scenarios' }], ['feature', { family: 'railway-script' }]] },
             { from: [['feature', { family: 'scenarios' }]], allow: [['feature', { family: 'share' }]] },
-            { from: [['feature', { family: 'railway' }]], allow: [['feature', { family: 'scenarios' }]] },
             { from: [['feature', { family: 'railway-script' }]], allow: [['feature', { family: 'railml' }]] },
             // TODO(layers): features name UI types (TabManager, ...) in their install signatures; use AppContext interfaces
             { from: ['feature'], allow: ['ui'], importKind: 'type' },

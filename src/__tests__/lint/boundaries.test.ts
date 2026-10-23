@@ -23,6 +23,10 @@ describe('module boundaries (core <- document <- features <- ui)', () => {
     expect(await boundaryErrors('src/drawio-shapes/probe.ts', "import { CacheService } from '../services/cache-service';\nexport const x = CacheService;\n")).toBe(1);
     // a feature -> the UI shell (value import)
     expect(await boundaryErrors('src/railway/probe.ts', "import { TabManager } from '../ui/tabs';\nexport const x = TabManager;\n")).toBe(1);
+    // railway (the domain base) -> scenarios: no exception any more
+    expect(await boundaryErrors('src/railway/probe.ts', "import { ScenarioSet } from '../scenarios/scenario-model';\nexport const x = ScenarioSet;\n")).toBe(1);
+    // the step editor is a plain feature module now (no UI shell imports)
+    expect(await boundaryErrors('src/scenarios/step-editor.ts', "import { confirmDialog } from '../ui/app-dialogs';\nexport const x = confirmDialog;\n")).toBe(1);
   }, 60_000);
 
   it('accepts imports along the layers', async () => {
