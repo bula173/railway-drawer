@@ -92,7 +92,7 @@ jobs:
         tests/e2e/drawio-compat.spec.ts tests/e2e/interaction.spec.ts tests/e2e/hover-arrows.spec.ts tests/e2e/railway-script.spec.ts
         tests/e2e/ux-batch.spec.ts tests/e2e/ux-batch2a.spec.ts tests/e2e/ux-batch2b.spec.ts tests/e2e/move-connect.spec.ts tests/e2e/object-states.spec.ts
         tests/e2e/canvas-scroll.spec.ts tests/e2e/railway-shapes.spec.ts tests/e2e/backlog-ui.spec.ts tests/e2e/ai.spec.ts tests/e2e/ai-scenarios.spec.ts tests/e2e/all-shapes.spec.ts
-        tests/e2e/access-identity.spec.ts
+        tests/e2e/access-identity.spec.ts tests/e2e/press-to-move.spec.ts
 
     - name: Upload Playwright report
       if: failure()

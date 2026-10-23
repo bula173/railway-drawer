@@ -9,7 +9,7 @@ function noModifiers(evt: MouseEvent): boolean {
 /**
  * Panning (the tab graph div is the scroll container, canvas-scroll.ts, so maxGraph's
  * PanningHandler pans with the scrollbars, `useScrollbarsForPanning`):
- * - a left-button drag on the EMPTY background pans, like a map (grab / grabbing cursor);
+ * - a left-button drag on the EMPTY background pans, like a map (default cursor, grabbing while panning);
  *   a press on a shape, an edge, a handle or a group's gap (canvas-interaction.ts gives it the
  *   group) still selects / moves it; a click without a move still clears the selection;
  * - Shift+drag (and Alt+drag, maxGraph's forced rubber band) on the background draws the rubber
