@@ -432,6 +432,7 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.locator('#scenarios-panel .rd-scn-toggle').first().click().catch(() => undefined);
   await a.check('right: Scenarios panel (1 scenario, 1 step)', '#rightpanel-container');
   // one-click "+ Add step": inline name editor, then the row's optional details (ux batch 3)
+  if (!(await page.locator('#scenarios-panel .rd-scn-add-step').isVisible())) await page.locator('#scenarios-panel .rd-scn-toggle').first().click();
   await page.locator('#scenarios-panel .rd-scn-add-step').click();
   await expect(page.getByTestId('scenario-step-name-input')).toBeFocused();
   await a.check('scenario step: inline name editor', '#scenarios-panel .rd-scn-steps');

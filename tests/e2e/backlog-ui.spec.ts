@@ -139,9 +139,9 @@ test.describe('UI backlog', () => {
     await expect(closeItem).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.locator('.left-panel-overflow-menu')).toBeHidden();
-    await more.click();
-    await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]')).toHaveCount(0);
-    await page.keyboard.press('Escape');
+    // the remaining tabs fit the compact strip (inactive tabs as icons): no » left, PlantUML in no menu
+    await expect(more).toBeHidden();
+    await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]:visible')).toHaveCount(0);
   });
 
   test('narrow screen: start card "Insert ERTMS symbols" opens the left panel for the session', async ({ page }) => {

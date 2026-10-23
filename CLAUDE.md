@@ -597,7 +597,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `user-select: none`. Selection colour = `--rd-selection` (handle-colors.ts `SELECTION_COLOR` #0f8bd0 / #29b6f2, round
   sizers with a white rim, same hit bounds). More than `MULTI_SELECTION_BOX_MIN` (10) selected cells: no per-cell handlers,
   one dashed box (`src/ui/multi-selection-box.ts`, installed per tab). Railway drawings opened into an empty tab (template
-  Open as new diagram / click insert into an empty tab, railML import, Railway Script applied into an empty tab) zoom to the
+  Open as new diagram, railML import, Railway Script applied into an empty tab) zoom to the
   fit scale clamped to 150–200 % (`src/ui/railway-zoom.ts`; fit < 75 % = plain fit), new tabs stay 100 %; no separate
   "Zoom to fit symbols" item (View > Fit exists). Edit menu: Duplicate (`duplicateCells`, also Ctrl/Cmd+D and the context
   menu), Select Vertices / Edges / None (Ctrl/Cmd+Shift+I / E / A, `src/ui/arrange-commands.ts`); Arrange: Align ▸, Distribute

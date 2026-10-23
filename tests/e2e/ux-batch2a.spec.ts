@@ -343,7 +343,8 @@ test('left tab strip: one row, the tabs that do not fit are in the » menu', asy
   await more.click();
   const items = page.locator('.left-panel-overflow-item');
   const overflow = await items.allTextContents();
-  expect([...shown, ...overflow].map((t) => t.replace('×', ''))).toEqual(['Shapes', 'Templates', 'Layers', 'PlantUML', 'Railway Script']);
+  // every tab is in the row or in the menu (the compact row keeps a later, narrower tab when a wider one does not fit)
+  expect([...shown, ...overflow].map((t) => t.replace('×', '')).sort()).toEqual(['Layers', 'PlantUML', 'Railway Script', 'Shapes', 'Templates']);
   expect(overflow).toContain('PlantUML');
   // keyboard: first item focused, Escape returns to »
   await expect(items.first()).toBeFocused();
@@ -364,7 +365,7 @@ test('left tab strip: one row, the tabs that do not fit are in the » menu', asy
   await expect(plantuml).toBeHidden();
   // the remaining tabs fit (no »), PlantUML is in no menu
   await expect(more).toBeHidden();
-  await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]')).toHaveCount(0);
+  await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]:visible')).toHaveCount(0);
   await clickMenuItem(page, 'extras', 'plantumlEditor');
   await expect(plantuml).toBeVisible();
 
