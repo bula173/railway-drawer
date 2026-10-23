@@ -8,6 +8,7 @@
  * Menu items carry `data-action="railwayRoute:<command>"`; MenuController dispatches the window
  * event `railway-route-request` with the command as detail (see RouteCommand).
  */
+import { reportLoadFailure } from '../core/load-failure';
 import { onModelChange, onSelectionChange } from '../core/graph-events';
 import { off, on } from '../core/event-bus';
 import type { Graph } from '@maxgraph/core';
@@ -180,7 +181,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
         })
       )
       .catch((error: unknown) => {
-        console.error('[Railway] route tables could not be loaded', error);
+        reportLoadFailure('error', 'Railway', 'route tables could not be loaded', error);
       });
   };
 

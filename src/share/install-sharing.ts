@@ -18,8 +18,6 @@ import { RemoteSession } from './remote-session';
 import { openShareDialog } from './share-dialog';
 import type { ShareDialogHandle } from './share-dialog';
 import { buildShareMxfile } from './share-mxfile';
-import { buildScenarioPages, scenarioIndexAttributes } from '../scenarios/scenario-format';
-import { railwayScriptAttributes } from '../railway-script/script-store';
 import { installShareLinkHandler, openDiagramFile } from './share-open';
 import type { ShareOpenHost } from './share-open';
 import { discardRetiredDrawioDocument, readRetiredDrawioDocument } from '../services/retired-drawio-mode';
@@ -159,15 +157,17 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
     buildShareMxfile(
       tabManager.getAllTabs().map((tab) => {
         const { extraPages, pageId } = tab.document.getPreservedPages();
-        const scenarios = tab.document.scenarios.list();
+        // The project sections travel with the link (scenarios: index on the page, one page per step
+        // after it; Railway Script: an attribute), as in the saved file
+        const sections = tab.document.sectionContent();
         return {
           name: tab.name,
-          modelXml: tab.document.serializeToXml(),
+          // page 1 (also while another drawing page is shown)
+          modelXml: tab.document.getMainPageModelXml(),
           extraPages,
           pageId,
-          // Scenarios travel with the link: index on the page, one page per step after it
-          pageAttributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(tab.document.railwayScript.get()) },
-          scenarioPages: buildScenarioPages(scenarios, new Set()),
+          pageAttributes: sections.attributes,
+          sectionPages: sections.pages,
         };
       })
     );

@@ -34,7 +34,7 @@
   capture-phase listener on `#graph-container` swallows pointer events (no selection/moves), hit test `signalAt`
   (bounds + 6, else nearest centre within 25). After the start signal: the signals with a path in its direction are
   outlined (`.rd-route-hl-target`), the others dimmed (`.rd-route-dim`), the status names them or says "no route in the
-  signal direction" (`.rd-route-none`); Esc cancels the start signal, a second Esc leaves. Floating panel `.rd-route-tool` (status, path radios
+  signal direction" (`.rd-route-none`); Esc cancels the start signal, a second Esc leaves. Floating panel `.rd-route-tool` (`openFloatingPanel`, core/modal.ts: role=dialog "Route tool", Esc only while no modal is open, focus return; status, path radios
   `.rd-route-path`, ID input prefilled `R<n>`, "Create route"), highlight in `graph-overlay.ts` `GraphOverlay` (SVG
   group in the view's overlay pane, transform = scale/translate, not in the model). Esc/✕ leaves; tab switch leaves.
 - **Tables** (`route-tables-dialog.ts`): Railway > Route Table… / Interlocking Table… / Conflict Matrix… -> `.rd-route-dialog`

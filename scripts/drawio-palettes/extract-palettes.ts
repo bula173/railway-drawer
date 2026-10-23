@@ -2,7 +2,7 @@
  * Extracts every draw.io sidebar palette of the pinned release (fetch-sources.ts) into
  * src/drawio-shapes/palettes/data/<id>.json (schema: src/drawio-shapes/palettes/types.ts), plus
  * the catalogue (catalogue.json: libraries, palettes, counts, "More shapes" categories) and the
- * global search index (search-index.json).
+ * global search index (search/search-index-NN.json shards, search-shards.ts).
  *
  * Usage (after fetch-sources.ts and decode-stencils-bundle.ts):
  *   node scripts/drawio-palettes/extract-palettes.ts
@@ -32,6 +32,7 @@ import ts from 'typescript';
 import { DRAWIO_TAG, REPO_ROOT, WEBAPP, cachePath, listSources, readSource } from './fetch-sources.ts';
 import { HostFn, Interpreter, hostFn, sobj, toStr, type SObj } from './safe-js.ts';
 import { decodeAllStencils } from './decode-stencils-bundle.ts';
+import { writeSearchShards } from './search-shards.ts';
 import { VENDORS, libraryInfo } from './libraries.ts';
 import { DRAWIO_COMMIT } from './fetch-sources.ts';
 
@@ -764,7 +765,7 @@ for (const p of palettes) {
 
 // remove palette JSON files that are no longer generated
 for (const f of fs.readdirSync(OUT_DIR)) {
-  if (!f.endsWith('.json') || f === 'catalogue.json' || f === 'search-index.json') continue;
+  if (!f.endsWith('.json') || f === 'catalogue.json') continue;
   if (!written.has(f.slice(0, -5))) fs.unlinkSync(path.join(OUT_DIR, f));
 }
 
@@ -803,7 +804,7 @@ const catalogue = {
   palettes: catPalettes.map(({ id, file, title, library, count, jsShapes, stencils }) => ({ id, file, title, library, count, jsShapes, stencils })),
 };
 fs.writeFileSync(path.join(OUT_DIR, 'catalogue.json'), JSON.stringify(catalogue) + '\n');
-fs.writeFileSync(path.join(OUT_DIR, 'search-index.json'), JSON.stringify({ drawioTag: DRAWIO_TAG, palettes: search }) + '\n');
+writeSearchShards(OUT_DIR, DRAWIO_TAG, search);
 
 // ---------- images referenced by entries -> public/img/... ----------
 // every draw.io palette image (img/lib/**, clipart, ...): drawings made in draw.io may reference

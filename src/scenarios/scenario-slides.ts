@@ -16,7 +16,7 @@ import type { UmlRenderResult } from './step-uml';
 import { renderMarkdown, sanitizeHtmlString, escapeHtml } from './markdown';
 import { buildDiffHighlightXml, diffSnapshots, diffCountsText, DIFF_COLORS, DIFF_LABELS } from './scenario-diff';
 import type { CellChangeKind, SnapshotDiff } from './scenario-diff';
-import { sha256 } from '../share/providers/gitlab/pkce';
+import { sha256 } from '../security/sha256';
 
 export interface ScenarioSlidesDeps {
   /** `<mxGraphModel>` -> standalone SVG document text. */

@@ -1,7 +1,7 @@
 /**
  * @file file.ts
  * @brief File menu commands: New, Open, Save (Ctrl/Cmd+S), Save As, Import (draw.io file in a new
- *        tab, image as custom shape), Export (.drawio, PNG, SVG), Save as Template, Print.
+ *        tab, image as custom shape), Export (.drawio, PNG, SVG), Save as Template, Print… (sheets).
  *        railML / Railway Script / Railway Data / Scenario items: railml.ts, script.ts,
  *        railway.ts, scenarios.ts; Share: share.ts.
  */
@@ -13,6 +13,7 @@ import { logger } from '../../drawio/logger';
 import type { TabData } from '../tabs';
 import { isMod, keyOf } from './keymap';
 import type { Command } from './types';
+import { openPrintSheets } from './print';
 
 /** File > Open…: a draw.io / project file into the active tab; railML opens in a new tab (src/railml). */
 function openProject(tab: TabData): void {
@@ -121,5 +122,6 @@ export const fileCommands: readonly Command[] = [
     // main-editor.ts asks for a name and stores the selection (or the whole diagram)
     run: () => emit('save-template-request'),
   },
-  { id: 'print', label: 'Print', run: () => window.print() },
+  // the sheets of the chosen pages, one per paper page (src/print, commands/print.ts)
+  { id: 'print', label: 'Print…', run: (ctx) => ctx.tab && openPrintSheets(ctx.tab) },
 ];

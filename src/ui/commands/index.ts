@@ -14,6 +14,7 @@ import { arrangeCommands } from './arrange';
 import { railwayCommands } from './railway';
 import { railmlCommands, scenarioCommands, scriptCommands, shareCommands } from './features';
 import { helpCommands } from './help';
+import { printCommands } from './print';
 import type { TabData } from '../tabs';
 
 export { commandRegistry, CommandRegistry } from './registry';
@@ -31,6 +32,7 @@ export const APP_COMMANDS = [
   ...scriptCommands,
   ...railmlCommands,
   ...shareCommands,
+  ...printCommands,
   ...helpCommands,
 ];
 

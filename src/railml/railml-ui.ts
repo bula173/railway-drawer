@@ -5,12 +5,12 @@
  *        File > Import railML… / File > Open / drop (new tab, warnings dialog).
  */
 import { openModal } from '../core/modal';
-import { zoomRailwayDrawing } from '../ui/railway-zoom';
+import { emit } from '../core/event-bus';
 import './railml.css';
 import type { TabManager } from '../ui/tabs';
 import { downloadBlob } from '../railway/install-railway-data';
 import { fileBaseName } from '../railway/report';
-import { loadErtmsLibraryEntries } from '../ui/drawio-palette/ertms-source';
+import { loadErtmsLibraryEntries } from '../drawio-shapes/ertms-library';
 import type { LibraryEntry } from '../drawio-shapes/engine';
 import { getKind } from '../railway/catalogue';
 import type { RailmlNotifier } from './install-railml';
@@ -191,7 +191,7 @@ export async function importIntoNewTab(tabManager: TabManager, notify: RailmlNot
     return null;
   }
   tabManager.switchTab(tab.id);
-  zoomRailwayDrawing(tab.graph);
+  emit('railway-zoom-request', { graph: tab.graph });
   tabManager.flushCache();
   const total = Object.values(result.counts).reduce((s, n) => s + (n ?? 0), 0);
   const summary = Object.entries(result.counts)

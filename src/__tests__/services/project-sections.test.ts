@@ -5,8 +5,8 @@ import { projectSections, registerProjectSection } from '../../services/project-
 const MODEL = '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/></root></mxGraphModel>';
 
 describe('project sections (feature parts of the project file)', () => {
-  it('has the scenarios and the Railway Script registered, in order', () => {
-    expect(projectSections().map((s) => s.key)).toEqual(['scenarios', 'railwayScript']);
+  it('has the scenarios, the Railway Script and the print title block registered, in order', () => {
+    expect(projectSections().map((s) => s.key)).toEqual(['scenarios', 'railwayScript', 'titleBlock']);
     const service = new ProjectService();
     expect(service.scenarios.list()).toEqual([]);
     expect(service.railwayScript.get()).toBe('');
@@ -30,7 +30,7 @@ describe('project sections (feature parts of the project file)', () => {
         s.value = value;
       },
     });
-    expect(projectSections().map((s) => s.key)).toEqual(['scenarios', 'testNote', 'railwayScript']);
+    expect(projectSections().map((s) => s.key)).toEqual(['scenarios', 'testNote', 'railwayScript', 'titleBlock']);
 
     const service = new ProjectService();
     service.section<{ value: string }>('testNote').value = 'hello';

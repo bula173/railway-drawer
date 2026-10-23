@@ -42,7 +42,8 @@ async function openApp(page: Page, theme: Theme): Promise<void> {
     localStorage.setItem('rd.theme', t);
   }, theme);
   await page.reload();
-  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+  // the editor chunk loads after the reload; allow for a loaded machine
+  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 15000 });
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await page.locator(`${PALETTE} section[data-palette-id="general"] .rd-dp-item[title="Rectangle"]`).waitFor();
 }
@@ -320,6 +321,8 @@ test.describe('dark theme: shapes are readable', () => {
   });
 
   test('palette and template thumbnails use the dark rendering (and follow a theme switch)', async ({ page }) => {
+    // renders and audits 200+ thumbnails in two themes
+    test.slow();
     await openApp(page, 'dark');
     await mkdir(SHOT_DIR, { recursive: true });
     // general, ERTMS and the railway libraries (src/ui/railway-libraries.ts)

@@ -122,7 +122,7 @@ test('File menu: Import / Export submenus (nested) by mouse and keyboard', async
       .filter((c) => c.matches('.menu-dropdown-item, .menu-submenu'))
       .map((c) => c.getAttribute('data-action') ?? `▸${c.getAttribute('data-submenu')}`)
   );
-  expect(top).toEqual(['new', 'open', 'save', 'saveAs', 'saveAsTemplate', '▸import', '▸export', 'share', 'print']);
+  expect(top).toEqual(['new', 'open', 'save', 'saveAs', 'saveAsTemplate', '▸import', '▸export', 'share', 'pageSetup', 'titleBlock', 'revisions', 'print']);
 
   // mouse: Export > Railway Data > ...
   await file.click();
@@ -159,7 +159,8 @@ test('File menu: Import / Export submenus (nested) by mouse and keyboard', async
   expect(await focused(page)).toEqual({ action: null, text: 'Export' });
   await page.keyboard.press('ArrowRight');
   expect((await focused(page)).action).toBe('export');
-  for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowDown');
+  // Download .drawio, PNG, SVG, Sheets, railML, Railway Script, then Railway Data
+  for (let i = 0; i < 6; i++) await page.keyboard.press('ArrowDown');
   expect(await focused(page)).toEqual({ action: null, text: 'Railway Data' });
   await page.keyboard.press('Enter');
   expect((await focused(page)).action).toBe('exportRailway:signals');

@@ -58,6 +58,8 @@ step** per call, compact JSON result + a one-line summary for the visible log.
 | `build_scenario` | `{name, description?, resetStates = true, restoreDrawing = false, steps: [...]}` (≤ 30 steps): creates the scenario and every step in ONE call / undo step. |
 | `view_scenario` | Opens the read-only scenario view at a step for the user (not in headless mode). |
 | `export_scenario` | `pdf` / `slides` / `html` (+ `orientation`, `showChanges`), saved in the browser without the options dialog (not in headless mode). |
+| `set_title_block` | Title block fields (project, title, drawing number, designed / checked / approved, date, revision, company, status, `lang` pl/en), the revision table, and with `sheet` the shown page's sheet (A0–A4, orientation, `scale` n of 1:n or 0 = fit, sheet title / number). |
+| `export_sheets` | The drawing sheets as one PDF (frame, title block, revisions, legend), saved in the browser; `pages` = 1-based page numbers (default all). |
 
 **Scenario semantics.** Step states are *incremental*: a step starts from the drawing as the previous
 step left it and changes only the listed objects (`""` = back to the default of that dimension).

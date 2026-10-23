@@ -15,7 +15,7 @@
  *   browser -> server: hello {v, auth, ttl}, result {id, ok, summary, result, image?}, ping
  *   server -> browser: welcome {session, expiresAt}, call {id, tool, input}, error {code, message}, pong
  */
-import { sha256 } from '../../share/providers/gitlab/pkce';
+import { sha256 } from '../../security/sha256';
 
 export const BRIDGE_VERSION = 1;
 export const TOKEN_PREFIX = 'rdp1';
