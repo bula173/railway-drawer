@@ -219,7 +219,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/railway-shapes.spec.ts` (any port): the railway library sections follow ERTMS (ERTMS/ETCS extra, Polish
   signalling (PKP PLK), Track layout; captioned, > 30 tiles each); "Semafor 3-komorowy prawy" inserts as signal S1
   (main, nominal, 3 aspects) and Railway > Object State > Proceed / Stop paints its 3 lamps; a second semafor gets S2;
-  search "tarcza" (Polish tarcze) and "marker board" (the 4 ETCS marker boards); "Turnout 1:9 Left (toe left)" inserts T1
+  search "tarcza" (Polish tarcze) and "marker board" (the 4 ETCS marker boards); "Points 1:9 Left (toe left)" inserts T1
   + W1 (hand left) and File > Export railML 3.2… downloads a parseable file with one `switchIS`.
 - `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search in the ERTMS section (zwrotnica, semafor,
   balisa); palette click placement (cascade without overlap, next to the selected shape + edge, balise onto the selected

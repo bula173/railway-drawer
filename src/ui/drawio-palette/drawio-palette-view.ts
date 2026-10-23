@@ -500,7 +500,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     thumb.style.width = `${THUMB_SIZE}px`;
     thumb.style.height = `${THUMB_SIZE}px`;
     item.appendChild(thumb);
-    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.title));
+    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.caption ?? entry.title));
     pendingThumbs.set(thumb, entry);
     if (observer) observer.observe(thumb);
     else renderThumb(thumb);

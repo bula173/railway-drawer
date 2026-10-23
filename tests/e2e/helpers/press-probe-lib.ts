@@ -114,7 +114,7 @@ export async function setupSamples(page: Page, which?: string[]): Promise<Sample
   if (want('balise')) await add('balise', await paletteInsert(page, 'ertms', 'Single Balise Right'), 400, 280);
   if (want('pkp-semafor')) await add('pkp-semafor', await paletteInsert(page, 'rail-pl', 'Semafor 3-komorowy prawy'), 520, 280);
   if (want('turnout')) {
-    const ids = await paletteInsert(page, 'track-layout', 'Turnout 1:9 Left (toe left)');
+    const ids = await paletteInsert(page, 'track-layout', 'Points 1:9 Left (toe left)');
     // the points leg (rdKind=points) is pressed; both edges count as the turnout
     const leg = await inTab<string>(page, `return arg.find((id) => { const v = graph.getDataModel().getCell(id).value; return v && v.getAttribute && v.getAttribute('rdKind') === 'points'; }) || arg[0];`, ids);
     await add('turnout', ids, 640, 260, 'edge', leg);

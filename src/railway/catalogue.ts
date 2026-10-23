@@ -423,7 +423,7 @@ export function kindForLibraryTitle(title: string): KindPreset | null {
   if (t === 'track') return { kind: 'track' };
   // the hand of "Point Left/Right" is NOT the title's word: it is read from the toe, from the
   // entry's geometry (railway/hand.ts; stored as rdHand by the library generator, set again on insert)
-  if (/^point (left|right)$/.test(t)) return { kind: 'points', values: { position: 'normal' } };
+  if (/^points? (left|right)$/.test(t)) return { kind: 'points', values: { position: 'normal' } };
   if (t === 'train' || t === 'train connected') return { kind: 'train' };
   return null;
 }

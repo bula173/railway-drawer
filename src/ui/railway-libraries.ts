@@ -10,6 +10,7 @@
  */
 import { getDrawioPaletteEngine, libraryToPaletteDef } from './drawio-palette';
 import type { LazyPaletteSource } from './drawio-palette';
+import { withShortCaption } from './palette-captions';
 
 export interface RailwayLibraryInfo {
   id: string;
@@ -40,7 +41,9 @@ export function railwayLibrarySources(baseUrl: string = import.meta.env.BASE_URL
       const response = await fetch(url);
       if (!response.ok) throw new Error(`HTTP ${response.status} loading ${url}`);
       const entries = getDrawioPaletteEngine().parseMxLibrary(await response.text());
-      return libraryToPaletteDef(entries, { id: lib.id, title: lib.title, tags: lib.tags, source: lib.file });
+      const def = libraryToPaletteDef(entries, { id: lib.id, title: lib.title, tags: lib.tags, source: lib.file });
+      // tile captions keep the distinguishing part of long titles ("1:9 R toe L")
+      return { ...def, entries: def.entries.map(withShortCaption) };
     },
   }));
 }

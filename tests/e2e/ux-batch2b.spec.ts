@@ -54,7 +54,7 @@ test.describe('UX batch 2b', () => {
     const visibleTitles = () =>
       page.locator(`${PALETTE} section[data-palette-id="ertms"]:not([hidden]) .rd-dp-item:not([hidden])`).evaluateAll((n) => n.map((e) => (e as HTMLElement).title));
     await page.locator(`${PALETTE} .rd-dp-search`).fill('zwrotnica');
-    await expect.poll(visibleTitles).toEqual(['Point Left', 'Point Right']);
+    await expect.poll(visibleTitles).toEqual(['Points Left', 'Points Right']);
     await page.locator(`${PALETTE} .rd-dp-search`).fill('semafor');
     await expect.poll(visibleTitles).toEqual(['Signal Left 3', 'Signal Right 3', 'Signal Right 4']);
     await page.locator(`${PALETTE} .rd-dp-search`).fill('balisa');
