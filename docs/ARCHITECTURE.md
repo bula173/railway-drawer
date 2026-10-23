@@ -1,5 +1,9 @@
 # Railway Drawer - Architecture Guide
 
+> **Historical.** This guide describes an earlier design (contexts, a context-based TabData). The current
+> architecture is in [docs/architecture/](architecture/) — start with
+> [infrastructure.md](architecture/infrastructure.md) — and the rules index in `CLAUDE.md`.
+
 ## Overview
 
 Railway Drawer is a TypeScript-based web application for editing railway diagrams. The architecture emphasizes:
