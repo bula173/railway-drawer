@@ -1939,13 +1939,27 @@ svg.mxGraph .mxHandle {
      replace them with thin overlay bars) */
   scrollbar-color: auto;
 }
-/* The empty background pans on a drag (src/ui/pan.ts): grab cursor; shapes set their own */
-#graph-container > .rd-graph-canvas,
-#graph-container > .rd-graph-canvas.rd-pan-mode {
-  cursor: grab;
+/* Honest cursors (src/ui/pan.ts, canvas-interaction.ts, connections.ts): the empty background
+   keeps the default cursor (a drag there pans: grabbing while it does; Space = grab), `move` where
+   a press moves a shape the DOM misses (transparent parts, group gaps; shapes set their own),
+   crosshair only where a press starts a connection (on a highlighted point) */
+#graph-container > .rd-graph-canvas {
+  cursor: default;
 }
-#graph-container > .rd-graph-canvas.rd-panning {
-  cursor: grabbing;
+#graph-container > .rd-graph-canvas.rd-pan-mode,
+#graph-container > .rd-graph-canvas.rd-pan-mode * {
+  cursor: grab !important;
+}
+#graph-container > .rd-graph-canvas.rd-cursor-move {
+  cursor: move;
+}
+#graph-container > .rd-graph-canvas.rd-cursor-connect,
+#graph-container > .rd-graph-canvas.rd-cursor-connect * {
+  cursor: crosshair !important;
+}
+#graph-container > .rd-graph-canvas.rd-panning,
+#graph-container > .rd-graph-canvas.rd-panning * {
+  cursor: grabbing !important;
 }
 #graph-container > .rd-graph-canvas::-webkit-scrollbar {
   width: 12px;

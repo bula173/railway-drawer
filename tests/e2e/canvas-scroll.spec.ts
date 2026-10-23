@@ -478,7 +478,8 @@ test.describe('scrolling canvas (real input)', () => {
     const geos = await cells();
     await inTab(page, "graph.setSelectionCell(graph.getDataModel().getCell('B'));");
     const v0 = await view(page);
-    expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => getComputedStyle(el).cursor)).toBe('grab');
+    // honest cursor: default on the background, grabbing only while panning
+    expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => getComputedStyle(el).cursor)).toBe('default');
 
     // plain drag on an empty spot (between A and B): the canvas follows the pointer
     const p = toPage(v0, 500, 300);
@@ -486,6 +487,7 @@ test.describe('scrolling canvas (real input)', () => {
     await page.mouse.down();
     await page.mouse.move(p.x - 90, p.y - 40, { steps: 4 });
     expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => el.classList.contains('rd-panning'))).toBe(true);
+    expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => getComputedStyle(el).cursor)).toBe('grabbing');
     await page.mouse.move(p.x - 180, p.y - 70, { steps: 4 });
     await page.mouse.up();
     const v1 = await view(page);

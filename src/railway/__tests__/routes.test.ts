@@ -367,7 +367,7 @@ describe('snap to track', () => {
       const l = new Layout(model, graph.getDefaultParent());
       const commands = new GraphCommandService(graph);
       const uninstall = installSnapToTrack(graph, () => true);
-      l.line('track', { id: 'T1', kmStart: '10', kmEnd: '10.6' }, [[0, 100], [600, 100]]);
+      const track = l.line('track', { id: 'T1', kmStart: '10', kmEnd: '10.6' }, [[0, 100], [600, 100]]);
       const s = l.obj('signal', { id: 'S1', direction: 'nominal' }, 100, 300);
       expect(s.getGeometry()!.y).toBe(300);
       graph.moveCells([s], 0, -190); // centre (110, 120): gap 10
@@ -387,6 +387,12 @@ describe('snap to track', () => {
       graph.moveCells([s], 0, -190);
       expect(s.getGeometry()!.y).toBe(110);
       setSnapAltDownForTest(false);
+      // moved together with its track (a template, a whole selection): the layout is kept, the
+      // signal is not pulled onto the track's snap position
+      graph.moveCells([s, track], 0, 20);
+      expect(s.getGeometry()!.y).toBe(130);
+      commands.undo();
+      expect(s.getGeometry()!.y).toBe(110);
       commands.undo();
       graph.moveCells([s], 0, -190);
       expect(s.getGeometry()!.y).toBe(104);

@@ -49,7 +49,7 @@ tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, all-shapes, access-identity, csp). No
+railway-shapes, backlog-ui, ai, all-shapes, access-identity, press-to-move, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -166,6 +166,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
   rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
   rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
+- `tests/e2e/press-to-move.spec.ts` (any port, real `page.mouse` input, 1600x1100): every kind of object (draw.io
+  rectangle 40x20 / 120x60, ellipse, text, image, AWS icon, mxgraph.basic stencil, ERTMS signal group, balise, PKP semafor
+  group, turnout, track, connector, template group) hovered, pressed over a grid incl. near edges/corners and dragged 30 px:
+  each press moves it unless it is on a visible connection point (helper rule = `isOnSourcePoint`), at 100 % (small ones
+  also 200 %); on a point of an unselected rectangle connects, 2 px inside / selected moves; background pans, Shift+drag
+  rubber band; Shift+click toggles, Alt+click selects behind (cycling); a selected small symbol moves from its body (no
+  resize); a signal in a track's hit halo moves itself; a turnout leg follows its track. Shared helper
+  `tests/e2e/helpers/press-probe-lib.ts`; the full 5x5 grid at 100/200 % is `tests/e2e/helpers/press-probe.spec.ts`
+  (`PRESS_PROBE=1 PRESS_PROBE_OUT=<file.md>`), drag smoothness `tests/e2e/helpers/drag-perf.spec.ts` (`DRAG_PERF=1`);
+  both are skipped otherwise.
 - `tests/e2e/canvas-scroll.spec.ts` (any port, real `page.mouse` / keyboard input, scrollbars shown: the spec drops
   Playwright's `--hide-scrollbars`): zoomed in, the tab graph div scrolls (not `#graph-container`) with 12 px scrollbars;
   wheel scrolls, Shift+wheel horizontally, Ctrl+wheel zooms keeping the point under the pointer (±3 px), zoom buttons /
@@ -464,8 +474,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Canvas interaction like draw.io (`src/ui/connections.ts` `installDrawioConnectionStart`, `src/ui/canvas-interaction.ts`):
   maxGraph's ConnectionHandler started an edge from a vertex's central hotspot (and the old fallback had a centre
   connection point), so a middle drag drew an edge and a click on a group child selected the child. Now
-  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), and a
-  source press in the central 50 % of a vertex never hits a point. Connection points like draw.io: shapes without own
+  `isValidSource` is false until a connection started (only connection points start one; targets unchanged).
+  **Press to move** (user report "clicking an object draws an arrow or it cannot be moved"; regression
+  `tests/e2e/press-to-move.spec.ts`): a new connection starts from a point only when the press is within
+  `SOURCE_POINT_TOLERANCE` (3 screen px, not zoomed; maxGraph's mouse box reached ~6.5 px) of the 'x' AND not more than
+  `SOURCE_POINT_INWARD` (1 px) inside the shape from it (`isOnSourcePoint`); small shapes (< `SMALL_SHAPE_PX` 32 on screen)
+  and railway symbols only from points on their bounds, pressed on the edge pixel or outside; never in the central 50 %;
+  the grid-snapped point maxGraph also tests never starts one. Like draw.io Graph.js: no source points on a SELECTED cell
+  (`isStateIgnored`, reset on selection change; a press on a selected shape always moves it), Alt hides the points.
+  Cursors are honest: default on the empty background (grabbing while panning, grab with Space), `move` over a movable
+  shape (`rd-cursor-move` where the DOM misses it), crosshair only on a highlighted point (`rd-cursor-connect`). Connection points like draw.io: shapes without own
   points (`points` style, stencil, JS-shape constraints) get draw.io's per-shape defaults (`defaultConnectionConstraints`:
   rectangle/group/image 16 = corners, quarters, midpoints; ellipse 8; rhombus; triangle), drawn with draw.io's blue 'x'
   (`CONNECTION_POINT_IMAGE`, data: SVG; maxGraph's `images/point.gif` is not shipped, so points were invisible); valid
@@ -474,9 +492,21 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   entry point; `outline` is set to `outlineConnect` (false) per edge handler. ERTMS symbols connect as a whole
   (`installSymbolGroupConnect`, a `Cell.prototype.isConnectable` patch): a group vertex with `rdKind` is connectable
   (the library's `connectable="0"` stays in the file), its descendants are not, so maxGraph's connectable-parent
-  fallback hits the group. `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex
-  with children, `getCellAt`) gets the group's state, so it is selected/moved; MOUSE_MOVE/MOUSE_UP too when the group is
-  connectable (its points show, an edge end dropped in a gap connects). `installRailwaySplitRules`: no edge split when a
+  fallback hits the group. `installGroupBackgroundHit` (canvas-interaction.ts): a MOUSE_DOWN on the background inside
+  any shape's bounds (transparent ellipse/stencil/icon corners, triangle balises, group gaps; `cellAtBackgroundPoint`:
+  `vertexAt` = the smallest object whose bounds hold the point, so an insulated joint inside a signal's bounds wins; else
+  the nearest edge within `EDGE_HIT_TOLERANCE` 6 + strokeWidth/2; tiny <1 px vertices grown by the tolerance) gets that
+  cell's state, so it is selected/moved (pan only when nothing is there); MOUSE_MOVE/MOUSE_UP over connectable vertices
+  (points show, an edge end dropped in a gap connects); cheap `isNearGraphBounds` pre-check. A press whose DOM target is an
+  unselected edge's line inside a vertex's bounds goes to the vertex when it is a railway symbol or the press is only in the
+  line's hit halo (`vertexOverEdge`: a signal beside a track, a balise on a marker line). Alt+click = the cell behind
+  (draw.io isTransparentClickEvent, cycling; maxGraph 0.10.3's own version never finds one). `installPressToMove`
+  (installed by the tab's ConnectionHandler after the draw.io handles): Shift+click toggles like Ctrl/Cmd (draw.io
+  isToggleEvent); `companionCells` move with the dragged object (balises whose `groupId` is a dragged balise group and lie
+  in its frame; unconnected `points` legs starting on a dragged track: track-layout turnouts); small shapes and railway
+  symbols get only the bottom-right sizer, outside small ones (`manageSizers`), so their body moves instead of resizing.
+  Snap to track ignores tracks moved/added in the same edit (`excludeTargets`: a dragged template keeps its layout);
+  the drag feedback collects the snap targets once per drag (`snapContext`). `installRailwaySplitRules`: no edge split when a
   railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
   edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
   grid (gridSize 10, `gridEnabled` = View > Grid; per tab: a file's `grid` / `gridSize` on `<mxGraphModel>` are applied on
@@ -488,7 +518,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
 - Connection arrows = draw.io HoverIcons (`src/ui/hover-arrows.ts` `HoverArrowsController`, one per tab, built in
   `TabManager.createTab` after `ConnectionHandler`, `tab.hoverArrowsController`): four DOM arrows (draw.io's images,
-  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around the cell a click would
+  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around (never over: outside the union of the cell's bounds and its shape's bounding box) the cell a click would
   select (`hoverArrowCell`: group before its children, unlocked incl. group/layer, connectable or a group, no edges,
   `allowArrows=0` honoured) after a 140 ms rest; never while a button is down, editing, Route tool active
   (`.rd-route-tool-active`) or in the scenario view (`body.rd-scenario-viewing`). Hidden outside the cell+arrows box

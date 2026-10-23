@@ -5,11 +5,11 @@
  * Properties geometry controls are disabled for locked cells.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { Graph, InternalEvent, InternalMouseEvent, Point, UndoManager } from '@maxgraph/core';
-import type { Cell, ConnectionHandler, EventObject, EventSource, Rectangle } from '@maxgraph/core';
+import { Graph, InternalEvent, InternalMouseEvent, Point, Rectangle, UndoManager } from '@maxgraph/core';
+import type { Cell, ConnectionHandler, EventObject, EventSource } from '@maxgraph/core';
 import { installCellLocking, setCellsLocked } from '../../ui/cell-lock';
-import { CONNECT_TARGET_COLOR, CONNECTION_POINT_IMAGE, ConnectionHandler as AppConnectionHandler, isInVertexCentre, isSymbolGroup } from '../../ui/connections';
-import { installGroupBackgroundHit, isGroupVertex } from '../../ui/canvas-interaction';
+import { CONNECT_TARGET_COLOR, CONNECTION_POINT_IMAGE, ConnectionHandler as AppConnectionHandler, isInVertexCentre, isOnSourcePoint, isSymbolGroup, SOURCE_POINT_TOLERANCE } from '../../ui/connections';
+import { cellAtBackgroundPoint, companionCells, EDGE_HIT_TOLERANCE, installGroupBackgroundHit, isGroupVertex, vertexAt } from '../../ui/canvas-interaction';
 import { contextSelectionFor } from '../../ui/context-menu';
 import { GraphCommandService } from '../../services/graph-command-service';
 import { PropertiesPanel } from '../../ui/properties';
@@ -141,8 +141,134 @@ describe('transparent groups', () => {
     expect(graph.updateMouseEvent(new InternalMouseEvent(move), InternalEvent.MOUSE_MOVE).getCell()).toBeNull();
     group.setConnectable(true);
     expect(graph.updateMouseEvent(new InternalMouseEvent(move), InternalEvent.MOUSE_MOVE).getCell()).toBe(group);
+    // far outside the drawing: no cell scan at all
+    const far = new MouseEvent('mousemove', { clientX: 900, clientY: 900 });
+    Object.defineProperty(far, 'target', { value: container });
+    const spy = vi.spyOn(graph, 'getCellAt');
+    expect(graph.updateMouseEvent(new InternalMouseEvent(far), InternalEvent.MOUSE_MOVE).getCell()).toBeNull();
+    expect(spy).not.toHaveBeenCalled();
     const onA = new InternalMouseEvent(new MouseEvent('mousedown', { clientX: 110, clientY: 120 }), graph.view.getState(a));
     expect(graph.updateMouseEvent(onA, InternalEvent.MOUSE_DOWN).getCell()).toBe(a);
+  });
+});
+
+describe('press inside any shape', () => {
+  const down = (x: number, y: number): InternalMouseEvent => {
+    const evt = new MouseEvent('mousedown', { clientX: x, clientY: y });
+    Object.defineProperty(evt, 'target', { value: container });
+    return graph.updateMouseEvent(new InternalMouseEvent(evt), InternalEvent.MOUSE_DOWN);
+  };
+
+  it('the transparent corner of an ellipse, a thin edge within the tolerance and a tiny vertex are hit; the background and layers are not', () => {
+    installGroupBackgroundHit(graph);
+    const e = graph.insertVertex({ parent: parent(), value: '', position: [100, 100], size: [80, 40], style: { shape: 'ellipse' } });
+    expect(down(102, 102).getCell()).toBe(e);
+    const line = graph.insertEdge({ parent: parent(), value: '', source: null, target: null, style: { strokeWidth: 1 } });
+    const g = line.getGeometry()!.clone();
+    g.setTerminalPoint(new Point(300, 200), true);
+    g.setTerminalPoint(new Point(500, 200), false);
+    graph.getDataModel().setGeometry(line, g);
+    expect(cellAtBackgroundPoint(graph, 400, 200 + EDGE_HIT_TOLERANCE)).toBe(line);
+    expect(down(400, 205).getCell()).toBe(line);
+    expect(cellAtBackgroundPoint(graph, 400, 200 + EDGE_HIT_TOLERANCE + 2)).toBeNull();
+    const flat = graph.insertVertex({ parent: parent(), value: '', position: [100, 300], size: [60, 0] });
+    expect(cellAtBackgroundPoint(graph, 130, 302)).toBe(flat);
+    expect(down(700, 700).getCell()).toBeNull();
+    expect(cellAtBackgroundPoint(graph, 50, 50)).toBeNull();
+  });
+});
+
+describe('press to move: selection, members, sizers, hit priority', () => {
+  const railway = (cell: Cell, attrs: Record<string, string>): void => {
+    const obj = document.implementation.createDocument(null, null, null).createElement('object');
+    for (const [k, v] of Object.entries(attrs)) obj.setAttribute(k, v);
+    graph.getDataModel().setValue(cell, obj);
+  };
+
+  it('Shift is a toggle event like Ctrl/Cmd', () => {
+    new AppConnectionHandler(graph);
+    expect(graph.isToggleEvent(new MouseEvent('mousedown', { shiftKey: true }))).toBe(true);
+    expect(graph.isToggleEvent(new MouseEvent('mousedown'))).toBe(false);
+    expect(graph.isTransparentClickEvent(new MouseEvent('mousedown', { altKey: true }))).toBe(true);
+  });
+
+  it('a balise group drags its balises (inside its frame); a track drags its loose points legs', () => {
+    const bg = vertex('', 100, 100, 60, 20);
+    railway(bg, { rdKind: 'baliseGroup', rdId: 'BG1' });
+    const b1 = vertex('', 110, 104, 12, 12);
+    railway(b1, { rdKind: 'balise', rdId: 'B1', rdGroupId: 'BG1' });
+    const far = vertex('', 400, 400, 12, 12);
+    railway(far, { rdKind: 'balise', rdId: 'B2', rdGroupId: 'BG1' });
+    expect(companionCells(graph, [bg])).toEqual([bg, b1]);
+    const track = graph.insertEdge({ parent: parent(), value: '', source: null, target: null });
+    const tg = track.getGeometry()!.clone();
+    tg.setTerminalPoint(new Point(0, 300), true);
+    tg.setTerminalPoint(new Point(200, 300), false);
+    graph.getDataModel().setGeometry(track, tg);
+    railway(track, { rdKind: 'track' });
+    const leg = graph.insertEdge({ parent: parent(), value: '', source: null, target: null });
+    const lg = leg.getGeometry()!.clone();
+    lg.setTerminalPoint(new Point(40, 300), true);
+    lg.setTerminalPoint(new Point(160, 260), false);
+    graph.getDataModel().setGeometry(leg, lg);
+    railway(leg, { rdKind: 'points' });
+    expect(companionCells(graph, [track])).toEqual([track, leg]);
+    expect(companionCells(graph, [leg])).toEqual([leg]);
+  });
+
+  it('small shapes and railway symbols keep only the bottom-right sizer, outside the shape', () => {
+    new AppConnectionHandler(graph);
+    const small = vertex('', 100, 100, 12, 12);
+    const big = vertex('', 300, 100, 120, 60);
+    graph.setSelectionCells([small, big]);
+    const handlers = graph.getPlugin('SelectionCellsHandler') as unknown as { getHandler(c: Cell): { sizers: Array<{ node: HTMLElement; bounds: Rectangle }> } };
+    const hs = handlers.getHandler(small);
+    expect(hs.sizers.filter((z) => z.node.style.display !== 'none')).toHaveLength(1);
+    const st = graph.view.getState(small)!;
+    expect(hs.sizers[7].bounds.x).toBeGreaterThan(st.x + st.width);
+    expect(hs.sizers[7].bounds.y).toBeGreaterThan(st.y + st.height);
+    expect(handlers.getHandler(big).sizers.filter((z) => z.node.style.display !== 'none')).toHaveLength(8);
+  });
+
+  it('the smallest object under the point wins over a bigger one around it', () => {
+    const signal = vertex('', 100, 100, 60, 40);
+    const joint = vertex('', 120, 110, 10, 12);
+    graph.orderCells(false, [signal]);
+    expect(graph.getCellAt(125, 116)).toBe(signal);
+    expect(vertexAt(graph, 125, 116)).toBe(joint);
+    expect(vertexAt(graph, 105, 105)).toBe(signal);
+  });
+});
+
+describe('connection start tolerance', () => {
+  it('a new connection starts only within SOURCE_POINT_TOLERANCE screen px of a point; none on a selected cell', () => {
+    new AppConnectionHandler(graph);
+    const handler = graph.getPlugin('ConnectionHandler') as ConnectionHandler;
+    const a = vertex('A', 100, 100, 120, 60);
+    const state = graph.view.getState(a)!;
+    const icon = { bounds: new Rectangle(state.x + 30 - 2, state.y - 2, 5, 5) };
+    const mouse = (x: number, y: number) => new Rectangle(x - 4, y - 4, 8, 8);
+    const cx = state.x + 30.5;
+    const cy = state.y + 0.5;
+    const ch = handler.constraintHandler;
+    ch.currentFocus = state;
+    expect(ch.intersects(icon as never, mouse(cx, cy), true, false)).toBe(true);
+    // along the edge and outside the shape within the tolerance
+    expect(ch.intersects(icon as never, mouse(cx + SOURCE_POINT_TOLERANCE, cy), true, false)).toBe(true);
+    expect(ch.intersects(icon as never, mouse(cx - 2, cy - SOURCE_POINT_TOLERANCE), true, false)).toBe(true);
+    // 4 px off, or 2 px inside the shape: the shape moves (maxGraph's default reached ~6.5 px)
+    expect(ch.intersects(icon as never, mouse(cx + 4, cy), true, false)).toBe(false);
+    expect(ch.intersects(icon as never, mouse(cx, cy + 2), true, false)).toBe(false);
+    expect(ch.intersects(icon as never, mouse(cx + 1, state.y + 1), true, false)).toBe(true);
+    // as a target (connection running / edge end) the default stays
+    expect(ch.intersects(icon as never, mouse(cx + 4, cy + 4), false, false)).toBe(true);
+    expect(isOnSourcePoint(icon.bounds, cx, cy, null)).toBe(true);
+    ch.currentFocus = null;
+    // draw.io: no source points on a selected cell, targets unaffected
+    expect(ch.isStateIgnored(state, true)).toBe(false);
+    graph.setSelectionCell(a);
+    expect(ch.isStateIgnored(state, true)).toBe(true);
+    expect(ch.isStateIgnored(state, false)).toBe(false);
   });
 });
 
