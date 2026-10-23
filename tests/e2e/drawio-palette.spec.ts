@@ -75,7 +75,10 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(general.locator('.rd-dp-item')).toHaveCount(125);
     const ertms = container.locator('section[data-palette-id="ertms"]');
     await expect(ertms.locator('.rd-dp-item')).toHaveCount(18);
-    await expect(general.locator('.rd-dp-thumb-ready').first()).toBeVisible();
+    // Thumbnails render when they scroll into view; General now sits below ERTMS and the three
+    // railway libraries, so bring it into view first
+    await general.locator('.rd-dp-item').first().scrollIntoViewIfNeeded();
+    await expect(general.locator('.rd-dp-thumb-ready').first()).toBeVisible({ timeout: 15000 });
     await expect(general.locator('.rd-dp-thumb-error')).toHaveCount(0);
 
     // Click inserts at the view centre
