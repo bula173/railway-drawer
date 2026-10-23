@@ -8,7 +8,7 @@
 import { onSelectionChange } from '../core/graph-events';
 import { Graph } from '@maxgraph/core';
 import { ActiveSessionBinding, type GraphSession } from './session';
-import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
+import type { Cell, CellStyle } from '@maxgraph/core';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
 import { syncGridControls } from './grid-toggle';
 import { logger } from '../drawio/logger';
@@ -150,42 +150,8 @@ export class InteractiveUIController {
       this.updateCellStyle('sketch', sketch.checked ? 1 : 0);
     });
 
-    // Misc buttons
-    this.on(document.getElementById('btn-snap-to-grid'), 'click', () => {
-      const cells = this.graph.getSelectionCells();
-      cells.forEach((cell) => {
-        const geo = cell.getGeometry();
-        if (geo) {
-          geo.x = Math.round(geo.x / this.graph.gridSize) * this.graph.gridSize;
-          geo.y = Math.round(geo.y / this.graph.gridSize) * this.graph.gridSize;
-        }
-      });
-      this.graph.refresh();
-    });
-
-    // NOTE: Group/Ungroup are handled by GroupingController to avoid duplicates
-
-    this.on(document.getElementById('btn-copySize'), 'click', () => {
-      const cells = this.graph.getSelectionCells();
-      if (cells.length > 0) {
-        const sourceCell = cells[0];
-        const geo = sourceCell.getGeometry();
-        if (geo && cells.length > 1) {
-          for (let i = 1; i < cells.length; i++) {
-            const targetGeo = cells[i].getGeometry();
-            if (targetGeo) {
-              this.graph.model.setGeometry(cells[i], new (targetGeo.constructor as typeof Geometry)(
-                targetGeo.x,
-                targetGeo.y,
-                geo.width,
-                geo.height
-              ));
-            }
-          }
-          this.graph.refresh();
-        }
-      }
-    });
+    // Snap to Grid, Copy Size, Group / Ungroup and the other Arrange buttons are `data-command`
+    // buttons (ui/commands/arrange.ts, bound by session-views.ts)
   }
 
   private setupTopBar(): void {

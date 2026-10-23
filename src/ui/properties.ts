@@ -36,7 +36,7 @@ import {
 } from './style-edit';
 import type { StyleRecord } from './style-edit';
 
-import { hasLockedStyle, toggleCellsLocked } from './cell-lock';
+import { hasLockedStyle } from './cell-lock';
 
 /** @brief A cell's own style as a record (keys not declared on CellStyle: fontWeight, blendMode, ...) */
 type EditableStyle = StyleRecord;
@@ -160,6 +160,7 @@ export class PropertiesPanel {
     if (cells.length > 0) setPropertiesPanelState('cell', selectionTitle(this.graph, cells));
     this.updateLockButton(hasLockedStyle(this.currentCell));
     this.updateGeometryControls();
+    this.updateTransformControls(this.currentCell);
   };
 
   /**
@@ -739,67 +740,17 @@ export class PropertiesPanel {
 
     // Constrain Proportions: no listener needed - the state is read when width/height change
 
-    // Rotate 90
-    this.on(document.getElementById('btn-rotate90'), 'click', () => {
-      this.applyTransformStyle((style, resolved) => {
-        const current = Number(resolved.rotation) || 0;
-        style.rotation = (current + 90) % 360;
-        const rotInput = document.getElementById('prop-rotation') as HTMLInputElement;
-        if (rotInput) rotInput.value = String(style.rotation);
-      });
-    });
-
-    // Flip Horizontal / Vertical (one toggle per click). maxGraph reads flips from
-    // the style; Geometry has no flipH/flipV, so geometry flags never rendered.
-    this.on(document.getElementById('btn-flipHorizontal'), 'click', () => {
-      this.applyTransformStyle((style, resolved) => {
-        style.flipH = !resolved.flipH;
-      });
-      this.update();
-    });
-
-    this.on(document.getElementById('btn-flipVertical'), 'click', () => {
-      this.applyTransformStyle((style, resolved) => {
-        style.flipV = !resolved.flipV;
-      });
-      this.update();
-    });
-
-    // Z-Order
-    this.bindZOrder('btn-toFront', (parent) => parent.getChildCount() - 1);
-    this.bindZOrder('btn-toBack', () => 0);
-    this.bindZOrder('btn-bringForward', (parent, index) =>
-      Math.min(index + 1, parent.getChildCount() - 1)
-    );
-    this.bindZOrder('btn-sendBackward', (_parent, index) => Math.max(index - 1, 0));
-
-    // Lock/Unlock: draw.io's locked=1 style key (same action as the context menu), one undoable edit
-    this.on(document.getElementById('btn-lock'), 'click', () => {
-      const cells = this.getTargetCells();
-      if (cells.length === 0) return;
-      this.updateLockButton(toggleCellsLocked(this.graph, cells));
-    });
+    // Rotate 90°, Flip, z-order, Snap to Grid, Copy Size and Lock/Unlock are `data-command`
+    // buttons: they run the registry's commands (ui/commands/arrange.ts, source 'panel'; one undo
+    // step each); the model listener refreshes the pressed / locked state and the rotation field.
   }
 
-  /**
-   * @brief Bind a z-order button that moves every selected cell within its parent
-   * @param newIndex Target index for a cell currently at `index` in `parent`
-   */
-  private bindZOrder(id: string, newIndex: (parent: Cell, index: number) => number) {
-    this.on(document.getElementById(id), 'click', () => {
-      const cells = this.getTargetCells();
-      if (cells.length === 0) return;
-      this.graph.batchUpdate(() => {
-        cells.forEach((cell) => {
-          const parent = cell.getParent();
-          if (!parent) return;
-          const index = parent.getIndex(cell);
-          const target = newIndex(parent, index);
-          if (target !== index) {
-            this.graph.model.add(parent, cell, target);
-          }
-        });
-      });
-    });
+  /** @brief Rotation field and flip toggles of the displayed cell, after a command or undo changed them */
+  private updateTransformControls(cell: Cell) {
+    const style = this.graph.getCellStyle(cell) as EditableStyle;
+    document.getElementById('btn-flipHorizontal')?.classList.toggle('rd-btn-on', !!style.flipH);
+    document.getElementById('btn-flipVertical')?.classList.toggle('rd-btn-on', !!style.flipV);
+    const rotation = document.getElementById('prop-rotation') as HTMLInputElement | null;
+    if (rotation && document.activeElement !== rotation) rotation.value = String(Number(style.rotation) || 0);
   }
 }

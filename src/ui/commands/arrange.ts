@@ -2,19 +2,31 @@
  * @file arrange.ts
  * @brief Arrange menu, Align dropdown and context-menu commands: z-order (one undoable edit each),
  *        align / distribute (AlignmentController), Group / Ungroup (Ctrl/Cmd+G, Ctrl/Cmd+Shift+G),
- *        Rotate 90°, Flip, Lock/Unlock, and the transform keys (Ctrl/Cmd+H / J / R, Shift+R).
+ *        Rotate 90°, Flip, Lock/Unlock, Snap to Grid, Copy Size (match size), and the transform keys
+ *        (Ctrl/Cmd+H / J / R, Shift+R). The Properties > Arrange buttons run these too (source
+ *        'panel': nothing happens while the active tab's graph is not shown, e.g. the scenario view).
  */
-import { flipSelection, rotateSelection90, toggleSelectionLocked } from '../arrange-commands';
+import type { Graph } from '@maxgraph/core';
+import { flipSelection, matchSelectionSize, rotateSelection90, snapSelectionToGrid, toggleSelectionLocked } from '../arrange-commands';
 import { groupSelection, ungroupSelection } from '../grouping';
 import { logger } from '../../drawio/logger';
 import type { TabData } from '../tabs';
 import { isMod } from './keymap';
 import type { Command, CommandContext } from './types';
 
+/** Whether the graph is on screen (its container attached and not hidden). */
+function isGraphShown(graph: Graph): boolean {
+  const container = graph.container;
+  return !!container && container.isConnected && container.style.display !== 'none';
+}
+
 const onTab =
   (fn: (tab: TabData, ctx: CommandContext) => void) =>
   (ctx: CommandContext): void => {
-    if (ctx.tab) fn(ctx.tab, ctx);
+    if (!ctx.tab) return;
+    // a Properties panel button edits the graph it shows; a hidden graph (scenario view) is not its target
+    if (ctx.source === 'panel' && !isGraphShown(ctx.tab.graph)) return;
+    fn(ctx.tab, ctx);
   };
 
 /** Ctrl/Cmd + exactly `key` (e.key: Shift makes it upper case), not while typing. */
@@ -63,6 +75,8 @@ export const arrangeCommands: readonly Command[] = [
   { id: 'flipHorizontal', label: 'Flip Horizontal', run: onTab((tab) => flipSelection(tab.graph, 'flipH')) },
   { id: 'flipVertical', label: 'Flip Vertical', run: onTab((tab) => flipSelection(tab.graph, 'flipV')) },
   { id: 'toggleLock', label: 'Lock/Unlock', run: onTab((tab) => toggleSelectionLocked(tab.graph)) },
+  { id: 'snapToGrid', label: 'Snap to Grid', run: onTab((tab) => void snapSelectionToGrid(tab.graph)) },
+  { id: 'matchSize', label: 'Copy Size (match the first selected)', run: onTab((tab) => void matchSelectionSize(tab.graph)) },
   // ---- transform keys (TransformController: geometry flips / rotation of the selection)
   {
     id: 'transform.flipHorizontal',

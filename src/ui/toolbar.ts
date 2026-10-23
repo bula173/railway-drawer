@@ -10,6 +10,7 @@
 import { createInstallScope, installOnce } from '../core/install-once';
 import { shortcutForAction } from './shortcut-keys';
 import { commandRegistry } from './commands/registry';
+import type { CommandSource } from './commands/types';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -210,11 +211,11 @@ function installAlignMenu(): void {
  * Every `[data-command]` button inside `root` runs its command on the active tab when clicked
  * (bound on the button itself, so it runs before the Align dropdown's own close handler).
  */
-export function bindCommandButtons(root: ParentNode = document, signal?: AbortSignal): void {
+export function bindCommandButtons(root: ParentNode = document, signal?: AbortSignal, source: CommandSource = 'toolbar'): void {
   root.querySelectorAll<HTMLElement>('[data-command]').forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = button.dataset.command;
-      if (id) commandRegistry.run(id, commandRegistry.context('toolbar', { event: e }));
+      if (id) commandRegistry.run(id, commandRegistry.context(source, { event: e }));
     }, { signal });
   });
 }

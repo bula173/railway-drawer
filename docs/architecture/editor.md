@@ -38,9 +38,12 @@
 - **Commands** (`src/ui/commands/`): every menu item (`data-action`), context-menu item, toolbar button
   (`data-command`) and keyboard shortcut runs a registered `Command { id, label, run(ctx), isEnabled?, isChecked?,
   shortcut?, keys?, help? }` (families: `railwayRoute:`, `railwayState:`, `exportRailway:`, `drawio:` get the rest of the
-  id as `ctx.arg`) on the active tab (`ctx.tab`); `ctx.source` (menu / contextMenu / toolbar / keyboard) and the context
-  menu's `ctx.target` (right-clicked cells, click position) select the few variants (context Paste at the click point,
-  Ctrl/Cmd+D = offset copy, Ctrl/Cmd+1 = fit 20 px). Contributions: file, edit, view, arrange, railway, features
+  id as `ctx.arg`) on the active tab (`ctx.tab`); `ctx.source` (menu / contextMenu / toolbar / panel / keyboard) and the
+  context menu's `ctx.target` (right-clicked cells, click position) select the few variants (context Paste at the click
+  point, Ctrl/Cmd+D = offset copy, Ctrl/Cmd+1 = fit 20 px; a `panel` arrange command does nothing while the active graph
+  is hidden). The Properties > Arrange buttons are `data-command` buttons (z-order, Rotate 90°, Flip, Group / Ungroup,
+  Snap to Grid `snapToGrid`, Copy Size `matchSize`, Lock `toggleLock`; bound by `session-views.ts` with source `panel`,
+  one undo step each); the panel's model listener refreshes the rotation field, flip and lock state. Contributions: file, edit, view, arrange, railway, features
   (scenarios, Railway Script, railML, share; the AI assistant has none), help. Adding an action = a command (+ the
   `data-action` in index.html); `src/ui/commands/__tests__/registry.test.ts` fails on a data-action without a command,
   a shared shortcut, or a shortcut without a key binding or Help row.
