@@ -61,6 +61,23 @@ export function createFoldingImage(s: number, collapsed: boolean): ImageBox {
       '<path d="M 2 4.5 L 7 4.5 z" stroke="#000"/>', 9, 9);
 }
 
+/**
+ * maxGraph's FoldingMixin defaults point at `<imageBasePath>/collapsed.gif` / `expanded.gif`, which the app does not
+ * ship: every graph without draw.io folding (palette thumbnails, the scenario view) requested them (404 on load).
+ * The mixin's `options` object is shared by all graphs, so its defaults become draw.io's inline SVG icons (CSP allows
+ * data: images); graphs with `installDrawioContainers` still pick their own size via getFoldingImage.
+ */
+export function installDefaultFoldingImages(): void {
+  const options = (Graph.prototype as unknown as { options?: { collapsedImage?: ImageBox; expandedImage?: ImageBox } }).options;
+
+  if (options != null) {
+    options.collapsedImage = createFoldingImage(9, true);
+    options.expandedImage = createFoldingImage(9, false);
+  }
+}
+
+installDefaultFoldingImages();
+
 const foldingImages = new Map<string, ImageBox>();
 
 function getFoldingImageForSize(size: number, collapsed: boolean): ImageBox {

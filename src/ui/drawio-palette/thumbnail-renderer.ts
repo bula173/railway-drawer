@@ -175,6 +175,8 @@ export class ThumbnailRenderer {
     graph.setEnabled(false);
     graph.setTooltips(false);
     graph.gridEnabled = false;
+    // no folding icons on a picture (maxGraph shows them on every group); own copy, the options object is shared
+    graph.options = { ...graph.options, foldingEnabled: false };
     // the same rendering setup as every tab graph (draw.io styles, UserObject labels, light-dark(),
     // sanitized HTML labels as the outermost getLabel wrapper, edge styles, tables)
     configureDiagramRendering(graph);

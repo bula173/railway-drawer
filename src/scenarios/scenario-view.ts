@@ -481,6 +481,8 @@ export class ScenarioViewer {
     graph.setEnabled(false);
     graph.setTooltips(false);
     graph.gridEnabled = false;
+    // no folding icons on a picture (maxGraph shows them on every group); own copy, the options object is shared
+    graph.options = { ...graph.options, foldingEnabled: false };
     configureDiagramRendering(graph);
     installStencilAutoload(graph);
     this.graph = graph;
