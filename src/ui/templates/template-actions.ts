@@ -3,6 +3,7 @@
  * @brief What a template tile does: insert into the current diagram, open as a new diagram tab,
  *        and the "Save as template…" flow.
  */
+import { zoomRailwayDrawing } from '../railway-zoom';
 import type { Cell, Graph } from '@maxgraph/core';
 import type { KindId } from '../../railway/catalogue';
 import { prepareClonedCells } from '../../railway/clone';
@@ -70,6 +71,9 @@ export function openTemplateAsNewDiagram(host: TemplateTabHost, template: Diagra
   // The tab's project is named after the template too: top-bar title, Save/Export file names
   tab.saveLoadController.setProjectName?.(template.name);
   host.switchTab(tab.id);
+  // railway symbols are small: open zoomed in (150-200 %, src/ui/railway-zoom.ts)
+  const graph = (tab as { graph?: Graph }).graph;
+  if (graph) zoomRailwayDrawing(graph);
   return tab.id;
 }
 

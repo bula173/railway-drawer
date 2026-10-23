@@ -12,6 +12,7 @@
  * - Loads (file, cache, scenario snapshot: root changes) just take the drawing as in sync.
  * The `applying` flag keeps an apply's own model events out of the sync (no feedback loop).
  */
+import { zoomRailwayDrawing } from '../ui/railway-zoom';
 import { InternalEvent, RootChange } from '@maxgraph/core';
 import type { EventObject, EventSource, Graph } from '@maxgraph/core';
 import type { KindId } from '../railway/catalogue';
@@ -174,6 +175,8 @@ export class ScriptSession {
     model.addListener(InternalEvent.UNDO, onUndo);
     this.applying = true;
     let counts: ApplyCounts;
+    // a script drawn into an empty tab opens zoomed in (railway symbols are small; src/ui/railway-zoom.ts)
+    const wasEmpty = this.graph.getGraphBounds().width <= 0 && this.graph.getGraphBounds().height <= 0;
     try {
       counts = applyGenerated(this.graph, built.model);
     } finally {
@@ -185,6 +188,7 @@ export class ScriptSession {
     this.snapshot = takeSnapshot(this.graph.getDataModel(), parsed.model);
     this.conflict = false;
     this.lastApply = { counts, objects: built.counts, at: Date.now() };
+    if (wasEmpty) zoomRailwayDrawing(this.graph);
     this.emit();
     return { ok: true, diagnostics: this.diagnostics, counts };
   }

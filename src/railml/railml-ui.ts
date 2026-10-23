@@ -4,6 +4,7 @@
  *        File > Export railML 3.2… (checks + non-blocking summary, then download) and
  *        File > Import railML… / File > Open / drop (new tab, warnings dialog).
  */
+import { zoomRailwayDrawing } from '../ui/railway-zoom';
 import './railml.css';
 import type { TabManager } from '../ui/tabs';
 import { downloadBlob } from '../railway/install-railway-data';
@@ -208,6 +209,7 @@ export async function importIntoNewTab(tabManager: TabManager, notify: RailmlNot
     return null;
   }
   tabManager.switchTab(tab.id);
+  zoomRailwayDrawing(tab.graph);
   tabManager.flushCache();
   const total = Object.values(result.counts).reduce((s, n) => s + (n ?? 0), 0);
   const summary = Object.entries(result.counts)
