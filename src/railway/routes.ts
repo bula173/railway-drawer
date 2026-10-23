@@ -15,7 +15,7 @@ import { formatStoredNumber, parseNumber, splitRefList } from './catalogue';
 import type { Pt } from './geometry';
 import type { Table } from './report';
 import type { PointsPosition, Topology, TopoLocation, TopoPiece } from './topology';
-import { forwardIsNominal, locateObject, passage, pointAlong, subPolyline } from './topology';
+import { forwardIsNominal, locateObject, passage, subPolyline } from './topology';
 import type { RailObject } from './validation';
 
 export interface PathStep {
@@ -382,11 +382,4 @@ export function buildConflictTable(conflicts: RouteConflict[]): Table {
       [c.sharedSections.length > 0 ? 'shared section' : '', c.opposingPoints.length > 0 ? 'opposite points positions' : ''].filter(Boolean).join(' + '),
     ]),
   };
-}
-
-/** Midpoint of a path (label anchor). */
-export function pathMidpoint(path: RoutePath): Pt {
-  let len = 0;
-  for (let i = 1; i < path.line.length; i++) len += Math.hypot(path.line[i].x - path.line[i - 1].x, path.line[i].y - path.line[i - 1].y);
-  return pointAlong(path.line, len / 2);
 }

@@ -4,7 +4,7 @@
  *        validation (validate.ts with schema.ts), the model (model.ts) and diagnostics with
  *        line:column. JSON is YAML too, so `.rdl.json` files go through the same path.
  */
-import { isMap, isPair, isScalar, isSeq, parseDocument } from 'yaml';
+import { isMap, isPair, isScalar, parseDocument } from 'yaml';
 import type { Document } from 'yaml';
 import type { ScriptModel } from './model';
 import { readScriptModel } from './model';
@@ -116,8 +116,4 @@ export function diagnosticsFor(parsed: ParsedScript, issues: Array<{ severity: '
     const pos = linePos(parsed.text, r[0]);
     return { severity: i.severity, message: i.message, line: pos.line, col: pos.col, from: r[0], to: r[1], path: i.path };
   });
-}
-
-export function isSeqPath(doc: Document, path: JsonPath): boolean {
-  return isSeq(doc.getIn(path, true));
 }

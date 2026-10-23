@@ -44,7 +44,7 @@ npx wrangler deploy --dry-run --outdir <tmp>   # validate the Worker bundle (nee
 node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint against the railML 3.2 XSD (not vendored)
 ```
 
-CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, typecheck:worker, lint (src, worker,
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, typecheck:worker, typecheck:e2e, lint (src, worker,
 tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
@@ -54,6 +54,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 
 ### E2E
 
+- CI fails on flaky tests (`failOnFlakyTests` with CI set): the 2 retries only absorb infrastructure failures and a
+  test that passes only on a retry fails the run. Production code has no `console.log`/`info`/`debug` (eslint
+  `no-console` error, warn/error allowed): log through `src/drawio/logger.ts` (debug only in dev builds).
 - All specs run on any port, headless and offline (`E2E_PORT`, default 3000). The chromium project uses
   `devices['Desktop Chrome']`.
 - vitest includes `src/**/*.test.ts`; Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
@@ -424,7 +427,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   shape-designer button (Extras), the single Distribute button.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
   backdrop, focus trap, Esc cancel, Enter submit, focus returned, keys kept from the dispatcher), `promptSaveAs` (File >
-  Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `messageDialog`, `showAboutDialog`
+  Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `showAboutDialog`
   (`APP_VERSION`/`BUILD_ID`/`BUILD_TIME` from `config/build-id.ts`, the status bar's source; `VITE_APP_VERSION` =
   package.json version via vite.config.ts). Use them (or notifications) instead of alert()/confirm() in the chrome.
 - Properties panel states (`src/ui/properties-state.ts` `setPropertiesPanelState`, the only place that toggles
@@ -930,7 +933,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   ticks are >= 40 units apart, every 5th step and the ends labelled.
 - Wiring (`install-railway-routes.ts`, one call in `main-editor.ts`): menu items `data-action="railwayRoute:<cmd>"`
   (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> MenuController
-  dispatches window event `railway-route-request`; `aria-checked` kept in sync. `getRailwayRoutes()` returns the handle.
+  dispatches window event `railway-route-request`; `aria-checked` kept in sync.
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
   signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +
   undoable snap, km interpolation/recalc/ruler), `tests/e2e/ertms-routes.spec.ts`.

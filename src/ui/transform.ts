@@ -10,6 +10,7 @@ interface TransformStyle {
   rotation?: number | string;
 }
 import { shouldIgnoreGraphShortcut } from './delete';
+import { logger } from '../drawio/logger';
 
 export class TransformController {
   private graph: Graph;
@@ -85,7 +86,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Flipped ${selected.length} objects horizontally`);
+    logger.debug('Transform', `Flipped ${selected.length} objects horizontally`);
   }
 
   flipVertical(): void {
@@ -103,7 +104,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Flipped ${selected.length} objects vertically`);
+    logger.debug('Transform', `Flipped ${selected.length} objects vertically`);
   }
 
   rotate90CW(): void {
@@ -129,7 +130,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Rotated ${selected.length} objects 90° clockwise`);
+    logger.debug('Transform', `Rotated ${selected.length} objects 90° clockwise`);
   }
 
   rotate90CCW(): void {
@@ -155,7 +156,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Rotated ${selected.length} objects 90° counter-clockwise`);
+    logger.debug('Transform', `Rotated ${selected.length} objects 90° counter-clockwise`);
   }
 
   matchWidth(): void {
@@ -173,7 +174,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Matched width of ${selected.length} objects`);
+    logger.debug('Transform', `Matched width of ${selected.length} objects`);
   }
 
   matchHeight(): void {
@@ -191,7 +192,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Matched height of ${selected.length} objects`);
+    logger.debug('Transform', `Matched height of ${selected.length} objects`);
   }
 
   matchSize(): void {
@@ -211,7 +212,7 @@ export class TransformController {
       });
     });
 
-    console.log(`[Transform] Matched size of ${selected.length} objects`);
+    logger.debug('Transform', `Matched size of ${selected.length} objects`);
   }
 
   destroy(): void {

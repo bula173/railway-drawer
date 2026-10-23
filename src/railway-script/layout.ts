@@ -46,16 +46,6 @@ export function pointAtKm(g: TrackGeometry, km: number): Pt {
   return { x: g.start.x + (g.end.x - g.start.x) * t, y: g.start.y + (g.end.y - g.start.y) * t };
 }
 
-/** km at the projection of `p` on the track line (not clamped beyond the ends: clamped). */
-export function kmAtPointOf(g: TrackGeometry, p: Pt): { km: number; distance: number } {
-  const dx = g.end.x - g.start.x;
-  const dy = g.end.y - g.start.y;
-  const len2 = dx * dx + dy * dy || 1;
-  const t = Math.max(0, Math.min(1, ((p.x - g.start.x) * dx + (p.y - g.start.y) * dy) / len2));
-  const q = { x: g.start.x + dx * t, y: g.start.y + dy * t };
-  return { km: g.track.kmStart + (g.track.kmEnd - g.track.kmStart) * t, distance: Math.hypot(p.x - q.x, p.y - q.y) };
-}
-
 function unit(a: Pt, b: Pt): Pt {
   const l = Math.hypot(b.x - a.x, b.y - a.y) || 1;
   return { x: (b.x - a.x) / l, y: (b.y - a.y) / l };

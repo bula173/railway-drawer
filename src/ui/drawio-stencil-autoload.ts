@@ -41,13 +41,6 @@ export function stylesOfChanges(changes: readonly unknown[]): string[] {
   return out;
 }
 
-/** Loads the stencils for every cell currently in the graph, then refreshes it if needed. */
-export async function ensureStencilsForGraph(graph: Graph): Promise<void> {
-  const styles: string[] = [];
-  collectStyles(graph.getDataModel().getRoot(), styles);
-  await ensureAndRefresh(graph, styles);
-}
-
 async function ensureAndRefresh(graph: Graph, styles: string[]): Promise<void> {
   if (styles.length === 0) return;
   try {

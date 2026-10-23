@@ -21,9 +21,6 @@ import type { AbstractCanvas2D, Point, Rectangle, Shape } from '@maxgraph/core';
 /** Pinned upstream draw.io release the mx-libs ports were taken from. */
 export const DRAWIO_TAG = 'v32.4.1';
 
-/** Upstream source base for the ported files. */
-export const DRAWIO_SOURCE_BASE = `https://raw.githubusercontent.com/jgraph/drawio/${DRAWIO_TAG}/src/main/webapp/`;
-
 /** Style-like bag (maxGraph CellStateStyle or a plain record). */
 export type StyleBag = object | null | undefined;
 

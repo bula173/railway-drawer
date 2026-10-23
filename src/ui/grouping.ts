@@ -9,6 +9,7 @@
 
 import type { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
+import { logger } from '../drawio/logger';
 
 /** Style of a group container: transparent, dashed blue border. */
 const GROUP_STYLE: CellStyle = {
@@ -85,7 +86,7 @@ export class GroupingController {
   group(): Cell | null {
     const vertices = this.graph.getSelectionCells().filter((cell: Cell) => cell.isVertex());
     if (vertices.length < 2) {
-      console.log('[Grouping] Select at least 2 shapes to group');
+      logger.debug('Grouping', 'Select at least 2 shapes to group');
       return null;
     }
 
@@ -105,7 +106,7 @@ export class GroupingController {
   ungroup(): Cell[] {
     const groups = this.graph.getSelectionCells().filter((cell: Cell) => cell.getChildCount() > 0);
     if (groups.length === 0) {
-      console.log('[Grouping] Select a group to ungroup');
+      logger.debug('Grouping', 'Select a group to ungroup');
       return [];
     }
     const children = this.graph.ungroupCells(groups);

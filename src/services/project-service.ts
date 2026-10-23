@@ -11,6 +11,7 @@ import {
 } from '../scenarios/scenario-format';
 import type { ScenarioStepPage } from '../scenarios/scenario-format';
 import { RailwayScriptStore, railwayScriptAttributes, readRailwayScriptAttribute } from '../railway-script/script-store';
+import { logger } from '../drawio/logger';
 
 export interface ProjectMetadata {
   name: string;
@@ -320,7 +321,7 @@ export class ProjectService {
       link.click();
       document.body.removeChild(link);
       setTimeout(() => URL.revokeObjectURL(url), 100);
-      console.log('[Project] Exported to file:', filename);
+      logger.debug('Project', 'Exported to file:', filename);
     } catch (error) {
       console.error('[Project] Export failed:', error);
       throw error;

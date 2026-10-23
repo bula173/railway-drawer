@@ -13,6 +13,7 @@ import { StateDiagramRenderer } from '../services/state-diagram-renderer';
 import { ActivityDiagramRenderer } from '../services/activity-diagram-renderer';
 import { ComponentDiagramRenderer } from '../services/component-diagram-renderer';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
+import { logger } from '../drawio/logger';
 
 export class PlantUmlEditorController extends UIController {
   private graph: Graph;
@@ -30,12 +31,12 @@ export class PlantUmlEditorController extends UIController {
     super();
     this.graph = graph;
     this.groupManager = new PlantUmlGroupManager(graph);
-    console.log('[PlantUmlEditor] Constructor called');
+    logger.debug('PlantUmlEditor', 'Constructor called');
     this.createEditorPanel();
-    console.log('[PlantUmlEditor] Panel created:', this.editorPanel?.id);
+    logger.debug('PlantUmlEditor', 'Panel created:', this.editorPanel?.id);
     this.setupEventListeners();
     this.setupSelectionListener();
-    console.log('[PlantUmlEditor] Event listeners setup');
+    logger.debug('PlantUmlEditor', 'Event listeners setup');
   }
 
   /**
@@ -95,7 +96,7 @@ Bob --> Alice: Hi
         const cell = selected[0];
         const metadata = this.groupManager.getPlantUmlMetadata(cell as Cell);
         if (metadata) {
-          console.log('[PlantUmlEditor] PlantUML group selected:', cell.getValue());
+          logger.debug('PlantUmlEditor', 'PlantUML group selected:', cell.getValue());
           this.currentEditingGroup = cell as Cell;
           this.groupManager.setCurrentPlantUmlGroup(cell as Cell);
           if (this.textarea) {
@@ -108,7 +109,7 @@ Bob --> Alice: Hi
 
       // If selection is NOT a PlantUML group, clear the editing group
       // This way render will create a new diagram
-      console.log('[PlantUmlEditor] Non-PlantUML selection or no selection');
+      logger.debug('PlantUmlEditor', 'Non-PlantUML selection or no selection');
       this.currentEditingGroup = null;
       this.groupManager.setCurrentPlantUmlGroup(null);
     });
@@ -140,12 +141,12 @@ Bob --> Alice: Hi
    * Show the editor panel
    */
   show(): void {
-    console.log('[PlantUmlEditor] show() called');
-    console.log('[PlantUmlEditor] editorPanel exists:', !!this.editorPanel);
+    logger.debug('PlantUmlEditor', 'show() called');
+    logger.debug('PlantUmlEditor', 'editorPanel exists:', !!this.editorPanel);
     if (this.editorPanel) {
-      console.log('[PlantUmlEditor] Adding visible class');
+      logger.debug('PlantUmlEditor', 'Adding visible class');
       this.editorPanel.classList.add('visible');
-      console.log('[PlantUmlEditor] visible class added, classList:', this.editorPanel.className);
+      logger.debug('PlantUmlEditor', 'visible class added, classList:', this.editorPanel.className);
       if (this.textarea) {
         setTimeout(() => this.textarea?.focus(), 100);
       }
@@ -190,7 +191,7 @@ Bob --> Alice: Hi
       }
 
       const diagramData = PlantUmlParser.parse(text);
-      console.log('[PlantUML] Parsed diagram type:', diagramData.type, diagramData);
+      logger.debug('PlantUML', 'Parsed diagram type:', [diagramData.type, diagramData]);
 
       const parent = this.graph.getDefaultParent();
       let groupToRender: Cell;
@@ -212,14 +213,14 @@ Bob --> Alice: Hi
           this.graph.removeCells(cellsToRemove);
         });
         this.groupManager.updatePlantUmlSource(groupToRender, text);
-        console.log('[PlantUML] Updated existing group source');
+        logger.debug('PlantUML', 'Updated existing group source');
       } else {
         // Create new group for this diagram
         const groupName = `${diagramData.type.toUpperCase()} Diagram`;
         groupToRender = this.groupManager.createPlantUmlGroup(parent!, groupName, text, diagramData.type);
         this.currentEditingGroup = groupToRender;
         this.groupManager.setCurrentPlantUmlGroup(groupToRender);
-        console.log('[PlantUML] Created new group:', groupName);
+        logger.debug('PlantUML', 'Created new group:', groupName);
       }
 
       // Render diagram inside the group using the appropriate renderer
@@ -238,27 +239,27 @@ Bob --> Alice: Hi
   private renderDiagramWithAppropriateRenderer(diagramData: DiagramData, groupToRender: Cell): void {
     switch (diagramData.type) {
       case 'sequence':
-        console.log('[PlantUML] Using sequence diagram renderer');
+        logger.debug('PlantUML', 'Using sequence diagram renderer');
         new SequenceDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
       case 'class':
-        console.log('[PlantUML] Using class diagram renderer');
+        logger.debug('PlantUML', 'Using class diagram renderer');
         new ClassDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
       case 'state':
-        console.log('[PlantUML] Using state diagram renderer');
+        logger.debug('PlantUML', 'Using state diagram renderer');
         new StateDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
       case 'activity':
-        console.log('[PlantUML] Using activity diagram renderer');
+        logger.debug('PlantUML', 'Using activity diagram renderer');
         new ActivityDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
       case 'component':
-        console.log('[PlantUML] Using component diagram renderer');
+        logger.debug('PlantUML', 'Using component diagram renderer');
         new ComponentDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
       default:
-        console.log('[PlantUML] Using generic diagram renderer');
+        logger.debug('PlantUML', 'Using generic diagram renderer');
         this.convertAndAddToGraph(diagramData, groupToRender);
     }
   }

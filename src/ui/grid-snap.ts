@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { logger } from '../drawio/logger';
 
 export class GridSnapController {
   private graph: Graph;
@@ -31,10 +32,10 @@ export class GridSnapController {
 
     if (this.snapEnabled) {
       this.graph.gridSize = this.gridSize;
-      console.log('[GridSnap] Grid snap enabled');
+      logger.debug('GridSnap', 'Grid snap enabled');
     } else {
       this.graph.gridSize = 1; // Set to 1 to effectively disable snapping
-      console.log('[GridSnap] Grid snap disabled');
+      logger.debug('GridSnap', 'Grid snap disabled');
     }
 
     const toggleBtn = document.getElementById('btn-grid-snap');
@@ -62,7 +63,7 @@ export class GridSnapController {
     if (this.snapEnabled) {
       this.graph.gridSize = size;
     }
-    console.log(`[GridSnap] Grid size set to ${size}px`);
+    logger.debug('GridSnap', `Grid size set to ${size}px`);
   }
 
   destroy(): void {

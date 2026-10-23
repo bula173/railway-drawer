@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { logger } from '../drawio/logger';
 
 /**
  * True when keyboard focus is in a native text control or a contentEditable element
@@ -47,6 +48,6 @@ export class DeleteController {
       this.graph.removeCells(this.graph.getDeletableCells(cells));
     });
 
-    console.log('[Delete] Deleted', cells.length, 'cell(s)');
+    logger.debug('Delete', 'Deleted', [cells.length, 'cell(s)']);
   }
 }

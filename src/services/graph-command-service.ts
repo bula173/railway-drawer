@@ -4,6 +4,7 @@ import { withSnapDataOnly } from '../railway/snap';
 import type { Cell } from '@maxgraph/core';
 import { copyPasteStyle, pasteStyleToCells } from '../ui/style-edit';
 import type { StyleRecord } from '../ui/style-edit';
+import { logger } from '../drawio/logger';
 
 /**
  * The z-order of `children` after moving every selected cell one step up (`step` 1) or down (-1).
@@ -96,14 +97,14 @@ export class GraphCommandService {
   undo(): void {
     if (this.undoManager.canUndo()) {
       this.undoManager.undo();
-      console.log('[GraphCommand] Undo executed');
+      logger.debug('GraphCommand', 'Undo executed');
     }
   }
 
   redo(): void {
     if (this.undoManager.canRedo()) {
       this.undoManager.redo();
-      console.log('[GraphCommand] Redo executed');
+      logger.debug('GraphCommand', 'Redo executed');
     }
   }
 
@@ -126,7 +127,7 @@ export class GraphCommandService {
     if (cells.length > 0) {
       this.clipboardService.copy(cells, this.graph);
       this.notifyListeners('clipboardChanged');
-      console.log('[GraphCommand] Copy executed');
+      logger.debug('GraphCommand', 'Copy executed');
     }
   }
 
@@ -135,14 +136,14 @@ export class GraphCommandService {
     if (cells.length > 0) {
       this.clipboardService.cut(cells, this.graph);
       this.notifyListeners('clipboardChanged');
-      console.log('[GraphCommand] Cut executed');
+      logger.debug('GraphCommand', 'Cut executed');
     }
   }
 
   paste(): void {
     this.clipboardService.paste(this.graph);
     this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Paste executed');
+    logger.debug('GraphCommand', 'Paste executed');
   }
 
   canPaste(): boolean {
@@ -155,7 +156,7 @@ export class GraphCommandService {
       // locked cells (locked=1) are not deleted, nor are their edges (draw.io deleteCells)
       this.graph.removeCells(this.graph.getDeletableCells(cells));
       this.notifyListeners('stateChanged');
-      console.log('[GraphCommand] Delete executed');
+      logger.debug('GraphCommand', 'Delete executed');
     }
   }
 
@@ -191,7 +192,7 @@ export class GraphCommandService {
 
   clearSelection(): void {
     this.graph.clearSelection();
-    console.log('[GraphCommand] Clear Selection executed');
+    logger.debug('GraphCommand', 'Clear Selection executed');
   }
 
   addListener(event: string, callback: () => void): void {

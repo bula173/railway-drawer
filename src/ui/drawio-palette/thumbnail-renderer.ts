@@ -5,13 +5,10 @@
  *        clone the SVG, clear the model.
  */
 import { Graph, Rectangle, Shape } from '@maxgraph/core';
-import { installUserObjectLabels, registerDrawioNamedStyles } from '../../services/drawio-xml';
-import { installTableSupport } from '../../drawio-shapes/js/shapes-edges';
-import { installDrawioHtmlLabels } from '../../drawio-shapes/engine/html-labels';
-import { installDanglingEdgeStyles, installInheritStyleValues } from '../../drawio-shapes/engine/view-fixes';
+import { configureDiagramRendering } from '../diagram-graph-setup';
 import { drawioColorModeKey, setGraphColorMode } from '../../drawio-shapes/engine/graph-compat';
 import type { PaletteEngine, PaletteEntry } from './contracts';
-import { applyDrawioDefaultStyles, createCellsForEntry, entryStyles } from './entry-cells';
+import { createCellsForEntry, entryStyles } from './entry-cells';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -178,17 +175,9 @@ export class ThumbnailRenderer {
     graph.setEnabled(false);
     graph.setTooltips(false);
     graph.gridEnabled = false;
-    const stylesheet = graph.getStylesheet();
-    applyDrawioDefaultStyles(stylesheet);
-    registerDrawioNamedStyles(stylesheet);
-    installUserObjectLabels(graph);
-    this.engine.installDrawioCompat(graph);
-    // html=1 labels as (sanitized) HTML, as in draw.io
-    installDrawioHtmlLabels(graph);
-    installDanglingEdgeStyles(graph);
-    installInheritStyleValues(graph);
-    // Tables, lists and cross-functional flowcharts (layout, startSize, collapsed rendering)
-    installTableSupport(graph);
+    // the same rendering setup as every tab graph (draw.io styles, UserObject labels, light-dark(),
+    // sanitized HTML labels as the outermost getLabel wrapper, edge styles, tables)
+    configureDiagramRendering(graph);
     this.host = host;
     this.graph = graph;
     return graph;

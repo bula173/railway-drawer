@@ -89,23 +89,6 @@ export function pathNamed(parent: Element | null | undefined, ...names: string[]
   return cur;
 }
 
-/** Builder for railML elements of one document. */
-export class RailmlWriter {
-  constructor(readonly doc: XMLDocument) {}
-
-  el(parent: Element, name: string, attrs: Record<string, string | number | boolean | null | undefined> = {}): Element {
-    const e = this.doc.createElementNS(RAILML_NS, name);
-    setAttrs(e, attrs);
-    parent.appendChild(e);
-    return e;
-  }
-
-  /** Child of the same name or a new one. */
-  ensure(parent: Element, name: string): Element {
-    return childNamed(parent, name) ?? this.el(parent, name);
-  }
-}
-
 export function setAttrs(e: Element, attrs: Record<string, string | number | boolean | null | undefined>): void {
   for (const [k, v] of Object.entries(attrs)) {
     if (v === null || v === undefined || v === '') continue;

@@ -16,6 +16,7 @@ import { confirmDialog } from './app-dialogs';
 import { globalNotificationManager } from './notification';
 import { applyInlineIcons } from './toolbar';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
+import { logger } from '../drawio/logger';
 
 interface ShapeElement {
   type: 'rect' | 'circle' | 'triangle' | 'line' | 'diamond' | 'star' | 'pentagon' | 'hexagon' | 'ellipse' |
@@ -399,16 +400,16 @@ export class ShapeDesignerController {
    * @brief Redraw canvas with shape elements only
    */
   private redrawCanvas(): void {
-    console.log('[DEBUG] redrawCanvas called, shapes:', this.shapeElements.length, 'selected:', this.selectedElement ? this.selectedElement.type : 'none');
+    logger.debug('ShapeDesigner', 'redrawCanvas called, shapes:', [this.shapeElements.length, 'selected:', this.selectedElement ? this.selectedElement.type : 'none']);
 
     if (!this.previewCanvas) {
-      console.log('[DEBUG] No previewCanvas!');
+      logger.debug('ShapeDesigner', 'No previewCanvas!');
       return;
     }
 
     const ctx = this.previewCanvas.getContext('2d');
     if (!ctx) {
-      console.log('[DEBUG] No canvas context!');
+      logger.debug('ShapeDesigner', 'No canvas context!');
       return;
     }
 
@@ -907,10 +908,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       canvas.style.opacity = '1';
 
       const shapeType = (e as DragEvent).dataTransfer!.getData('shapeType');
-      console.log('[DEBUG] drop event - shapeType:', shapeType);
+      logger.debug('ShapeDesigner', 'drop event - shapeType:', shapeType);
 
       if (!shapeType) {
-        console.log('[DEBUG] No shapeType found!');
+        logger.debug('ShapeDesigner', 'No shapeType found!');
         return;
       }
 
@@ -920,7 +921,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       const x = (e.clientX - rect.left) * scaleX;
       const y = (e.clientY - rect.top) * scaleY;
 
-      console.log('[DEBUG] drop at:', { x, y, displaySize: { width: rect.width, height: rect.height }, logicalSize: { width: canvas.width, height: canvas.height }, scale: { x: scaleX, y: scaleY } });
+      logger.debug('ShapeDesigner', 'drop at:', { x, y, displaySize: { width: rect.width, height: rect.height }, logicalSize: { width: canvas.width, height: canvas.height }, scale: { x: scaleX, y: scaleY } });
 
       this.addShapeElement(shapeType as ShapeElement['type'], x, y);
     });
@@ -936,15 +937,15 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       const padding = 4;
       const handleSize = 6;
 
-      console.log('[DEBUG] mousedown:', { x, y, totalShapes: this.shapeElements.length });
+      logger.debug('ShapeDesigner', 'mousedown:', { x, y, totalShapes: this.shapeElements.length });
 
       // First, check if we clicked on a shape
       let clickedElement = null;
 
-      console.log('[DEBUG] Checking', this.shapeElements.length, 'shapes');
+      logger.debug('ShapeDesigner', 'Checking', [this.shapeElements.length, 'shapes']);
       for (let i = 0; i < this.shapeElements.length; i++) {
         const el = this.shapeElements[i];
-        console.log(`[DEBUG] Shape ${i}:`, {
+        logger.debug('ShapeDesigner', `Shape ${i}:`, {
           type: el.type,
           x: el.x,
           y: el.y,
@@ -955,24 +956,24 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
 
         if (x >= el.x - padding && x <= el.x + el.width + padding &&
             y >= el.y - padding && y <= el.y + el.height + padding) {
-          console.log(`[DEBUG] Shape ${i} HIT!`);
+          logger.debug('ShapeDesigner', `Shape ${i} HIT!`);
           clickedElement = el;
           break;
         }
       }
 
-      console.log('[DEBUG] Clicked element:', clickedElement ? clickedElement.type : 'none');
+      logger.debug('ShapeDesigner', 'Clicked element:', clickedElement ? clickedElement.type : 'none');
 
       // If we clicked on a shape, select it first
       if (clickedElement) {
-        console.log('[DEBUG] Selecting shape');
+        logger.debug('ShapeDesigner', 'Selecting shape');
         this.selectedElement = clickedElement;
         this.redrawCanvas();
         this.displaySelectedElementProperties();
         this.renderVertexPreview();
       } else {
         // Clicking empty area deselects
-        console.log('[DEBUG] Deselecting');
+        logger.debug('ShapeDesigner', 'Deselecting');
         this.selectedElement = null;
         this.redrawCanvas();
         this.displaySelectedElementProperties();
@@ -1127,7 +1128,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
    * @brief Add a shape element to the composition
    */
   private addShapeElement(type: ShapeElement['type'], x: number, y: number): void {
-    console.log('[DEBUG] addShapeElement:', { type, x, y });
+    logger.debug('ShapeDesigner', 'addShapeElement:', { type, x, y });
 
     const element: ShapeElement = {
       type,
@@ -1142,10 +1143,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       id: `shape-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
     };
 
-    console.log('[DEBUG] Shape created:', element);
+    logger.debug('ShapeDesigner', 'Shape created:', element);
 
     this.shapeElements.push(element);
-    console.log('[DEBUG] Total shapes now:', this.shapeElements.length);
+    logger.debug('ShapeDesigner', 'Total shapes now:', this.shapeElements.length);
 
     this.selectedElement = element;
     this.redrawCanvas();
@@ -1157,21 +1158,21 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
    * @brief Render shape elements to canvas
    */
   private renderShapeElements(): void {
-    console.log('[DEBUG] renderShapeElements:', this.shapeElements.length, 'shapes');
+    logger.debug('ShapeDesigner', 'renderShapeElements:', [this.shapeElements.length, 'shapes']);
 
     if (!this.previewCanvas) {
-      console.log('[DEBUG] No previewCanvas in renderShapeElements!');
+      logger.debug('ShapeDesigner', 'No previewCanvas in renderShapeElements!');
       return;
     }
 
     const ctx = this.previewCanvas.getContext('2d');
     if (!ctx) {
-      console.log('[DEBUG] No ctx in renderShapeElements!');
+      logger.debug('ShapeDesigner', 'No ctx in renderShapeElements!');
       return;
     }
 
     this.shapeElements.forEach((el, index) => {
-      console.log(`[DEBUG] Rendering shape ${index}:`, el.type, 'at', el.x, el.y);
+      logger.debug('ShapeDesigner', `Rendering shape ${index}:`, [el.type, 'at', el.x, el.y]);
 
       ctx.save();
       ctx.fillStyle = el.fill;

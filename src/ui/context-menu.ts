@@ -22,6 +22,7 @@ import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
 import { ACTION_SHORTCUTS, applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel } from './shortcut-keys';
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
 import type { StateMenuEntry } from '../railway/state-menu';
+import { logger } from '../drawio/logger';
 
 /** Gap kept between the context menu and the window edges. */
 const VIEWPORT_MARGIN = 4;
@@ -570,7 +571,7 @@ export class ContextMenuController {
         break;
 
       case 'setDefaultStyle':
-        console.log('[ContextMenu] Set as Default Style - Not yet implemented');
+        logger.debug('ContextMenu', 'Set as Default Style - Not yet implemented');
         break;
 
       case 'toFront':
@@ -590,7 +591,7 @@ export class ContextMenuController {
         break;
 
       case 'editStyle': {
-        console.log('[ContextMenu] Edit Style - Selecting Text tab');
+        logger.debug('ContextMenu', 'Edit Style - Selecting Text tab');
         const textTab = document.querySelector('.prop-tab[data-tab="style"]') as HTMLElement;
         if (textTab) textTab.click();
         break;
@@ -603,7 +604,7 @@ export class ContextMenuController {
         break;
 
       case 'group':
-        console.log('[ContextMenu] Group action - selectedCells:', this.selectedCells.length, 'graphSelection:', this.graph.getSelectionCells().length);
+        logger.debug('ContextMenu', 'Group action - selectedCells:', [this.selectedCells.length, 'graphSelection:', this.graph.getSelectionCells().length]);
         if (this.groupingController) {
           // Ensure graph selection matches our selectedCells
           this.graph.setSelectionCells(this.selectedCells);

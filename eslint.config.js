@@ -33,6 +33,9 @@ export default tsEslint.config(
       // Pre-existing violations at adoption time; downgraded so `npm run lint`
       // gates new errors without a mass edit. Raise back to 'error' once fixed.
       '@typescript-eslint/no-explicit-any': 'warn',
+      // Production code logs through src/drawio/logger.ts (debug only in dev builds); warnings and
+      // errors may go to the console directly.
+      'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
 
@@ -43,6 +46,7 @@ export default tsEslint.config(
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      'no-console': 'off',
     },
   }
 );

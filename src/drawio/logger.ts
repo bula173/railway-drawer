@@ -25,6 +25,8 @@ function emit(level: LogLevel, category: string, message: string, data?: unknown
   if (LEVEL_ORDER[level] < LEVEL_ORDER[minLevel]) return;
   const prefix = `[${category}] ${message}`;
   const sink =
+    // the one place that may print info / debug (eslint no-console)
+    // eslint-disable-next-line no-console
     level === 'error' ? console.error : level === 'warn' ? console.warn : level === 'info' ? console.info : console.debug;
   if (data === undefined) sink(prefix);
   else sink(prefix, data);

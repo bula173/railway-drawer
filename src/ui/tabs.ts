@@ -40,6 +40,7 @@ import { GridSnapController } from './grid-snap';
 import { DuplicateOffsetController } from './duplicate-offset';
 import { ExportImageController } from './export-image';
 import { PlantUmlEditorController } from './plantuml-editor';
+import { logger } from '../drawio/logger';
 
 export interface TabData {
   id: string;
@@ -560,7 +561,7 @@ export class TabManager {
     // Diagrams cached by earlier versions (<GraphDataModel>) are rewritten in the draw.io
     // format right away instead of at the next autosave. Tabs that failed keep their XML.
     if (migratedTabs > 0) {
-      console.log('[TabManager] Migrating', migratedTabs, 'cached diagram(s) to the draw.io format');
+      logger.debug('TabManager', 'Migrating', [migratedTabs, 'cached diagram(s) to the draw.io format']);
       this.saveToCache();
     }
     if (layerMigratedTabs > 0) {
@@ -578,7 +579,7 @@ export class TabManager {
       );
     }
 
-    console.log('[TabManager] Restored from cache');
+    logger.debug('TabManager', 'Restored from cache');
     return this.tabs.size > 0;
   }
 
@@ -899,7 +900,7 @@ export class TabManager {
   }
 
   private editTabName(tab: TabData, labelElement: HTMLSpanElement): void {
-    console.log('[TabManager] Editing tab name:', tab.name);
+    logger.debug('TabManager', 'Editing tab name:', tab.name);
 
     // Create input element
     const input = document.createElement('input');
@@ -944,7 +945,7 @@ export class TabManager {
           if (tab.id === this.activeTabId) this.showProjectName(tab);
         }
         tab.name = newName;
-        console.log('[TabManager] Tab name changed to:', newName);
+        logger.debug('TabManager', 'Tab name changed to:', newName);
         // Save the current session (re-saving the stored copy with only the name patched would
         // mark an out-of-date cache as current after a failed autosave)
         this.saveToCache();

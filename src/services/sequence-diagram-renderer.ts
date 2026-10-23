@@ -6,6 +6,7 @@
 
 import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
+import { logger } from '../drawio/logger';
 
 export class SequenceDiagramRenderer {
   private graph: Graph;
@@ -48,13 +49,13 @@ export class SequenceDiagramRenderer {
    * Render sequence diagram into a group
    */
   renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
-    console.log('[SequenceDiagram] Rendering into group');
+    logger.debug('SequenceDiagram', 'Rendering into group');
     const parent = groupCell;
 
     // Separate participants from other elements
     const participants = diagramData.elements.filter((el) => el.type === 'participant');
 
-    console.log('[SequenceDiagram] Found participants:', participants.length);
+    logger.debug('SequenceDiagram', 'Found participants:', participants.length);
     if (participants.length === 0) {
       console.warn('[SequenceDiagram] No participants found!');
       return;
@@ -135,13 +136,13 @@ export class SequenceDiagramRenderer {
    * Render sequence diagram with proper layout
    */
   render(diagramData: DiagramData): void {
-    console.log('[SequenceDiagram] Rendering', diagramData);
+    logger.debug('SequenceDiagram', 'Rendering', diagramData);
     const parent = this.graph.getDefaultParent();
 
     // Separate participants from other elements
     const participants = diagramData.elements.filter((el) => el.type === 'participant');
 
-    console.log('[SequenceDiagram] Found participants:', participants.length);
+    logger.debug('SequenceDiagram', 'Found participants:', participants.length);
     if (participants.length === 0) {
       console.warn('[SequenceDiagram] No participants found!');
       return;

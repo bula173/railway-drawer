@@ -6,6 +6,7 @@
 import { RectangleShape, type AbstractCanvas2D } from '@maxgraph/core';
 import { CellRenderer } from '@maxgraph/core';
 import { asShapeConstructor, shapeRegistry } from '../registry';
+import { logger } from '../../drawio/logger';
 
 /**
  * Signal Light Shape - 3 lights in a column
@@ -195,5 +196,5 @@ export function registerErtmsShapes(): void {
     style: { shape: 'ertms-balise', fillColor: 'none', strokeColor: '#000000' },
   });
 
-  console.log('[ERTMS] Registered 4 shapes in toolbar');
+  logger.debug('ERTMS', 'Registered 4 shapes in toolbar');
 }

@@ -11,7 +11,10 @@ export default defineConfig({
   globalTeardown: './tests/e2e/csp-teardown.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
+  // Retries absorb infrastructure hiccups, but a test that only passes on a retry is flaky: CI fails
+  // on it (failOnFlakyTests) instead of letting it pass silently.
   retries: process.env.CI ? 2 : 0,
+  failOnFlakyTests: !!process.env.CI,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? 'list' : [['list'], ['html', { open: 'never' }]],
   use: {

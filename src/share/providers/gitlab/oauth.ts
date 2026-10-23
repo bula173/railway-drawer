@@ -134,18 +134,6 @@ function safeStorage(get: () => Storage): Storage | null {
   }
 }
 
-export function parseAuthResponse(search: string): GitLabAuthResponse | null {
-  const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
-  const state = params.get('state');
-  if (!state) return null;
-  return {
-    state,
-    code: params.get('code') ?? undefined,
-    error: params.get('error') ?? undefined,
-    errorDescription: params.get('error_description') ?? undefined,
-  };
-}
-
 export class GitLabAuth {
   private readonly config: GitLabConfig;
   private readonly redirectUri: string;

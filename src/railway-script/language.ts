@@ -6,13 +6,10 @@
  *        the drawing -> text sync and "Generate from drawing". No dependencies (main-chunk safe).
  */
 import type { KindId } from '../railway/catalogue';
-import { getKind } from '../railway/catalogue';
 import { ASPECT_ATTR, STATE_ATTR, STATE_SCHEME, schemeIdFor } from '../railway/states';
 
 /** Value of the required `railwayScript` key. */
 export const SCRIPT_VERSION = 1;
-/** Public URL path of the JSON Schema (relative to the app base). */
-export const SCHEMA_FILE = 'schemas/railway-script-1.schema.json';
 export const SCHEMA_ID = 'https://railwaydrawer.mksystemdesign.org/schemas/railway-script-1.schema.json';
 
 /** Top-level lists and the kind of their items. */
@@ -90,9 +87,6 @@ export function stateValuesFor(kind: KindId, key: 'state' | 'aspect', signalType
   return dim ? dim.options.map((o) => o.value) : null;
 }
 
-/** Layout keys (x/y of the object's centre; a track: its first point). */
-export const LAYOUT_KEYS = ['x', 'y'] as const;
-
 /** Catalogue field keys a script never writes directly (computed from the drawing / script). */
 export const COMPUTED_FIELDS: Partial<Record<KindId, string[]>> = {
   signal: ['routes'],
@@ -111,16 +105,6 @@ export function scriptKeyForField(kind: KindId, field: string): string {
 export function scriptKeysForField(kind: KindId, field: string): string[] {
   const keys = [scriptKeyForField(kind, field), field, ...(KEY_ALIASES[kind]?.[field] ?? [])];
   return [...new Set(keys)];
-}
-
-/** Catalogue field for a script key of `kind`, or null (layout/structure key or unknown). */
-export function fieldForScriptKey(kind: KindId, key: string): string | null {
-  const def = getKind(kind);
-  if (!def) return null;
-  if (key in COMMON_SCRIPT_KEYS && def.fields.some((f) => f.key === COMMON_SCRIPT_KEYS[key])) return COMMON_SCRIPT_KEYS[key];
-  for (const [field, aliases] of Object.entries(KEY_ALIASES[kind] ?? {})) if (aliases.includes(key)) return field;
-  if (def.fields.some((f) => f.key === key)) return key;
-  return null;
 }
 
 /** Key of a script object (also the `rdScript` attribute of its generated cell). */

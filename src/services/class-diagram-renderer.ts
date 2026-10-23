@@ -5,6 +5,7 @@
 
 import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData, DiagramElement } from './plantuml-parser';
+import { logger } from '../drawio/logger';
 
 export class ClassDiagramRenderer {
   private graph: Graph;
@@ -20,11 +21,11 @@ export class ClassDiagramRenderer {
   }
 
   renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
-    console.log('[ClassDiagram] Rendering into group');
+    logger.debug('ClassDiagram', 'Rendering into group');
     const parent = groupCell;
 
     const classes = diagramData.elements.filter((el) => el.type === 'class');
-    console.log('[ClassDiagram] Found classes:', classes.length);
+    logger.debug('ClassDiagram', 'Found classes:', classes.length);
 
     if (classes.length === 0) return;
 
@@ -76,11 +77,11 @@ export class ClassDiagramRenderer {
   }
 
   render(diagramData: DiagramData): void {
-    console.log('[ClassDiagram] Rendering');
+    logger.debug('ClassDiagram', 'Rendering');
     const parent = this.graph.getDefaultParent();
 
     const classes = diagramData.elements.filter((el) => el.type === 'class');
-    console.log('[ClassDiagram] Found classes:', classes.length);
+    logger.debug('ClassDiagram', 'Found classes:', classes.length);
 
     if (classes.length === 0) return;
 

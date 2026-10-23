@@ -1,3 +1,5 @@
+import { logger } from '../drawio/logger';
+
 /**
  * @file custom-shape-registry.ts
  * @brief Manages user-created custom shapes
@@ -133,7 +135,7 @@ export class CustomShapeRegistryService {
     try {
       const data = JSON.stringify(this.getAll());
       localStorage.setItem(STORAGE_KEY, data);
-      console.log('[CustomShapeRegistry] Saved', this.shapes.size, 'shapes');
+      logger.debug('CustomShapeRegistry', 'Saved', [this.shapes.size, 'shapes']);
     } catch (error) {
       console.error('[CustomShapeRegistry] Save failed:', error);
     }
@@ -150,7 +152,7 @@ export class CustomShapeRegistryService {
         shapes.forEach((shape) => {
           this.shapes.set(shape.id, shape);
         });
-        console.log('[CustomShapeRegistry] Loaded', this.shapes.size, 'shapes');
+        logger.debug('CustomShapeRegistry', 'Loaded', [this.shapes.size, 'shapes']);
       }
     } catch (error) {
       console.error('[CustomShapeRegistry] Load failed:', error);
@@ -163,7 +165,7 @@ export class CustomShapeRegistryService {
   clearAll(): void {
     this.shapes.clear();
     localStorage.removeItem(STORAGE_KEY);
-    console.log('[CustomShapeRegistry] Cleared all shapes');
+    logger.debug('CustomShapeRegistry', 'Cleared all shapes');
   }
 }
 

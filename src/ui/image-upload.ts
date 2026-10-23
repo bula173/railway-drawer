@@ -2,6 +2,7 @@ import { Graph } from '@maxgraph/core';
 import { confirmDialog } from './app-dialogs';
 import { globalNotificationManager } from './notification';
 import { ImageService } from '../services/image-service';
+import { logger } from '../drawio/logger';
 
 export class ImageUploadController {
   private imageService: ImageService;
@@ -267,7 +268,7 @@ export class ImageUploadController {
         previewContainer.style.display = 'none';
 
         // Show success message
-        console.log(`[ImageUpload] Successfully uploaded: ${customImage.name}`);
+        logger.debug('ImageUpload', `Successfully uploaded: ${customImage.name}`);
       }, 1500);
     } catch (error) {
       console.error('[ImageUpload] Upload failed:', error);

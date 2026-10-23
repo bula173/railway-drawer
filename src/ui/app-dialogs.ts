@@ -214,24 +214,6 @@ export function confirmDialog(opts: ConfirmOptions): Promise<boolean> {
   });
 }
 
-/** A message with an OK button (replaces alert()). */
-export function messageDialog(title: string, message: string): Promise<void> {
-  return new Promise((resolve) => {
-    let done = false;
-    const finish = (): void => {
-      if (done) return;
-      done = true;
-      modal.close();
-      resolve();
-    };
-    const modal = openAppModal({ title, testId: 'message-dialog', onCancel: finish, onSubmit: finish });
-    modal.body.appendChild(el('p', 'rd-app-dialog-text', message));
-    const ok = btn('OK', 'rd-tpl-btn rd-tpl-btn-primary', finish);
-    modal.actions.append(ok);
-    ok.focus();
-  });
-}
-
 /** Documentation links of Help > About. */
 export const ABOUT_LINKS: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'User guide', href: 'https://github.com/bula173/railway-drawer#readme' },
