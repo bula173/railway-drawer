@@ -8,6 +8,7 @@
  *        `#btn-distribute-*`), and toggle buttons mirroring a menu item's aria-checked
  *        (`data-mirror-action`, e.g. km Ruler) as aria-pressed.
  */
+import { createInstallScope, installOnce } from '../core/install-once';
 import { shortcutForAction } from './shortcut-keys';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -199,12 +200,11 @@ function installAlignMenu(): void {
   window.addEventListener('resize', () => close(false));
 }
 
-let installed = false;
+const PAGE = createInstallScope();
 
 /** Main toolbar chrome (once). */
 export function installToolbar(): void {
-  if (installed) return;
-  installed = true;
+  if (!installOnce(PAGE, 'toolbar')) return;
   decorateToolbarButtons(document.getElementById('toolbar-container') ?? document);
   decorateToolbarButtons(document.getElementById('align-menu') ?? document);
   // top bar (logo, Share) and the Properties panel's text alignment buttons

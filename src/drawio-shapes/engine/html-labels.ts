@@ -19,20 +19,22 @@
  */
 import type { Cell, Graph } from '@maxgraph/core';
 import { sanitizeHtmlLabel } from '../../security/sanitize';
+import { installOnce } from '../../core/install-once';
 
 export { sanitizeHtmlLabel };
 
-const INSTALLED = Symbol('rdDrawioHtmlLabels');
+/** The sanitizing getLabel installed on each graph (to tell whether it is still the outermost). */
+const SANITIZERS = new WeakMap<Graph, (cell: Cell) => string | null>();
 
 /**
  * Makes `html=1` cells render their label as (sanitized) HTML, as draw.io does. Other cells keep
  * the graph-wide setting. Idempotent per graph.
  */
 export function installDrawioHtmlLabels(graph: Graph): void {
-  const g = graph as Graph & { [INSTALLED]?: (cell: Cell) => string | null };
   // already the outermost wrapper: nothing to do
-  if (g[INSTALLED] && g.getLabel === g[INSTALLED]) return;
-  if (!g[INSTALLED]) {
+  const current = SANITIZERS.get(graph);
+  if (current && graph.getLabel === current) return;
+  if (installOnce(graph, 'drawio.html-labels')) {
     const baseIsHtmlLabel = graph.isHtmlLabel.bind(graph);
     graph.isHtmlLabel = (cell: Cell): boolean => {
       const html = (graph.getCurrentCellStyle(cell) as Record<string, unknown> | undefined)?.html;
@@ -45,6 +47,6 @@ export function installDrawioHtmlLabels(graph: Graph): void {
     const label = baseGetLabel(cell);
     return typeof label === 'string' && graph.isHtmlLabel(cell) ? sanitizeHtmlLabel(label) : label;
   };
-  g[INSTALLED] = sanitizingGetLabel;
+  SANITIZERS.set(graph, sanitizingGetLabel);
   graph.getLabel = sanitizingGetLabel;
 }

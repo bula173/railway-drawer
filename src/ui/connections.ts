@@ -1,3 +1,4 @@
+import { createInstallScope, installOnce } from '../core/install-once';
 import { Cell, Graph, ConnectionConstraint, ImageBox, InternalEvent, type CellState } from '@maxgraph/core';
 import type { ConnectionHandler as MaxConnectionHandler, EdgeHandler, ImageShape, InternalMouseEvent, Point, Rectangle } from '@maxgraph/core';
 import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core';
@@ -83,7 +84,7 @@ export function isSymbolGroup(cell: Cell | null | undefined): boolean {
   return !!cell.parent.parent;
 }
 
-let symbolConnectInstalled = false;
+const PAGE = createInstallScope();
 
 /**
  * ERTMS symbols (groups) connect as a whole: the library stores their group with
@@ -97,8 +98,7 @@ export function installSymbolGroupConnect(): void {
   // directly (`cell.isConnectable()` in ConstraintHandler.getCellForEvent, CellMarker, EdgeHandler),
   // not graph.isCellConnectable; on the read-only scenario/thumbnail graphs it changes nothing
   // visible (no connection handling there).
-  if (symbolConnectInstalled) return;
-  symbolConnectInstalled = true;
+  if (!installOnce(PAGE, 'symbol-group-connect')) return;
   const proto = Cell.prototype as unknown as { isConnectable(this: Cell): boolean };
   const orig = proto.isConnectable;
   proto.isConnectable = function isConnectable(this: Cell): boolean {

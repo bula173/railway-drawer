@@ -22,6 +22,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { installOnce } from '../../core/install-once.js';
 import { CellRenderer, InternalEvent, StencilShapeRegistry } from '@maxgraph/core';
 import type { CellState, EdgeHandler, Graph, VertexHandler } from '@maxgraph/core';
 import { MX_LIBS_HANDLE_FACTORIES } from '../js/mx-libs/index.js';
@@ -29,8 +30,7 @@ import { isDrawioSwimlane } from '../js/shapes-edges/table-graph.js';
 import { createHandleFn, type DrawioHandle } from './create-handle.js';
 import { SHAPE_HANDLE_FACTORIES, type ShapeHandleFactory } from './shape-handles.js';
 
-const INSTALLED = Symbol.for('rd.drawioHandlesInstalled');
-const AUGMENTED = Symbol.for('rd.drawioHandlesAugmented');
+const AUGMENTED = 'drawio.handles.augmented';
 
 /**
  * draw.io's Graph.handleFactory: Shapes.js entries, then the shape libraries (mxBasic.js,
@@ -113,8 +113,7 @@ function concatHandles(base: unknown, extra: DrawioHandle[] | null): any[] {
 /** Adds draw.io's handles to a vertex handler that was just constructed. */
 export function augmentVertexHandler(handler: VertexHandler): VertexHandler {
   const h = handler as VertexHandler & Record<string | symbol, any>;
-  if (h[AUGMENTED]) return handler;
-  h[AUGMENTED] = true;
+  if (!installOnce(h, AUGMENTED)) return handler;
 
   const baseCreate = h.createCustomHandles.bind(h);
   h.createCustomHandles = (() =>
@@ -156,8 +155,7 @@ export function augmentVertexHandler(handler: VertexHandler): VertexHandler {
 /** Adds draw.io's handles to an edge handler that was just constructed. */
 export function augmentEdgeHandler(handler: EdgeHandler): EdgeHandler {
   const h = handler as EdgeHandler & Record<string | symbol, any>;
-  if (h[AUGMENTED]) return handler;
-  h[AUGMENTED] = true;
+  if (!installOnce(h, AUGMENTED)) return handler;
 
   // EdgeHandler.refresh() already recreates custom handles through createCustomHandles
   const baseCreate = h.createCustomHandles.bind(h);
@@ -180,9 +178,7 @@ export function augmentEdgeHandler(handler: EdgeHandler): EdgeHandler {
  * model transaction, so a single undo step restores them.
  */
 export function installDrawioHandles(graph: Graph): void {
-  const marked = graph as Graph & { [INSTALLED]?: boolean };
-  if (marked[INSTALLED]) return;
-  marked[INSTALLED] = true;
+  if (!installOnce(graph, 'drawio.handles')) return;
 
   const baseVertex = graph.createVertexHandler.bind(graph);
   graph.createVertexHandler = (state: CellState) => augmentVertexHandler(baseVertex(state));

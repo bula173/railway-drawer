@@ -24,6 +24,7 @@
  * hachureGap, hachureAngle, curveFitting, bowing, simplification, disableMultiStroke,
  * disableMultiStrokeFill, dashGap, dashOffset, zigzagOffset; `comic=1` for the legacy jiggle.
  */
+import { createInstallScope, installOnce } from '../../core/install-once';
 import rough from 'roughjs';
 import type { Drawable, OpSet, Options, ResolvedOptions } from 'roughjs/bin/core';
 import type { RoughGenerator } from 'roughjs/bin/generator';
@@ -543,7 +544,7 @@ export function createHandJiggle(shape: Shape, c: AbstractCanvas2D): HandJiggleB
   return null;
 }
 
-let installed = false;
+const PAGE = createInstallScope();
 
 type ShapeProto = {
   beforePaint(this: Shape, c: AbstractCanvas2D): void;
@@ -573,8 +574,7 @@ function paintedBoundingBox(shape: Shape): Rectangle | null {
  * other Shape patches (installBoundingBoxFix replaces updateBoundingBox).
  */
 export function installSketchSupport(): void {
-  if (installed) return;
-  installed = true;
+  if (!installOnce(PAGE, 'sketch')) return;
   const proto = Shape.prototype as unknown as ShapeProto;
 
   const baseBeforePaint = proto.beforePaint;

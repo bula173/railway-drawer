@@ -10,6 +10,7 @@
  * (topmost group first, like a press on one of its children). Alt+drag still forces the rubber band
  * (maxGraph's marquee event).
  */
+import { installOnce } from '../core/install-once';
 import { InternalEvent, type Cell, type CellState, type Graph, type InternalMouseEvent, type SelectionHandler, type VertexHandler } from '@maxgraph/core';
 import { isLayer } from './cell-lock';
 import { getRawKind, readObjectId, readObjectValues } from '../railway/object-data';
@@ -19,8 +20,6 @@ export function isGroupVertex(graph: Graph, cell: Cell | null | undefined): cell
   if (!cell || !cell.isVertex() || isLayer(graph, cell)) return false;
   return (cell.children ?? []).some((child) => child.isVertex() || child.isEdge());
 }
-
-const INSTALLED = new WeakSet<Graph>();
 
 /**
  * Extra hit distance (screen px) around an edge's painted line for a press that reached the
@@ -132,8 +131,7 @@ export function isBackgroundSource(graph: Graph, source: Node | null): boolean {
 }
 
 export function installGroupBackgroundHit(graph: Graph): void {
-  if (INSTALLED.has(graph)) return;
-  INSTALLED.add(graph);
+  if (!installOnce(graph, 'group-background-hit')) return;
   const origUpdate = graph.updateMouseEvent.bind(graph);
   graph.updateMouseEvent = (me: InternalMouseEvent, evtName: string): InternalMouseEvent => {
     const result = origUpdate(me, evtName);
@@ -167,8 +165,6 @@ export function installGroupBackgroundHit(graph: Graph): void {
   };
 }
 
-const SPLIT_INSTALLED = new WeakSet<Graph>();
-
 /**
  * Dropping a shape on an edge splits the edge (maxGraph/draw.io `isSplitTarget`). Like draw.io,
  * Alt or Shift prevent it; railway objects never split and are never split, and a railway
@@ -177,8 +173,7 @@ const SPLIT_INSTALLED = new WeakSet<Graph>();
  * two edges connected to the symbol.
  */
 export function installRailwaySplitRules(graph: Graph): void {
-  if (SPLIT_INSTALLED.has(graph)) return;
-  SPLIT_INSTALLED.add(graph);
+  if (!installOnce(graph, 'railway-split-rules')) return;
   // A railway symbol drawn as a group (ERTMS signal, train) is one object: nothing is dropped into it.
   // Composition (tabs.ts order): this wraps drawio-shapes/behaviour/containers.ts's
   // isValidDropTarget (installed earlier by installDrawioBehaviour), so the symbol veto comes first
@@ -300,8 +295,6 @@ export function companionCells(graph: Graph, cells: Cell[]): Cell[] {
   return extra.length > 0 ? [...cells, ...extra] : cells;
 }
 
-const PRESS_INSTALLED = new WeakSet<Graph>();
-
 /**
  * The rest of "press to move" (installed by the tab's ConnectionHandler, after the draw.io
  * handles):
@@ -314,8 +307,7 @@ const PRESS_INSTALLED = new WeakSet<Graph>();
  *   parts, gaps), set once per animation frame.
  */
 export function installPressToMove(graph: Graph): void {
-  if (PRESS_INSTALLED.has(graph)) return;
-  PRESS_INSTALLED.add(graph);
+  if (!installOnce(graph, 'press-to-move')) return;
   // Alt+click: the cell behind (draw.io isTransparentClickEvent; Alt+press itself starts the
   // rubber band, so the click on release decides). maxGraph's click() then asks getCellAt for
   // neither vertices nor edges, finds nothing and keeps the cell given here.

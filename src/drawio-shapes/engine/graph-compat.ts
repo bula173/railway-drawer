@@ -19,6 +19,7 @@
  * The initial global mode follows `<html data-theme="dark">` when present.
  */
 
+import { installOnce, isInstalled } from '../../core/install-once';
 import { TextShape } from '@maxgraph/core';
 import type { Cell, CellStateStyle, Graph } from '@maxgraph/core';
 import {
@@ -39,7 +40,7 @@ import {
 } from './colors';
 import { installPlaceholders } from './placeholders';
 
-const INSTALLED = Symbol.for('rd.drawioCompatInstalled');
+const INSTALLED = 'drawio.compat';
 const MODE = Symbol.for('rd.drawioColorMode');
 
 interface GraphColorMode {
@@ -49,7 +50,7 @@ interface GraphColorMode {
   adaptive: AdaptiveColors | null;
 }
 
-type ModedGraph = Graph & { [MODE]?: GraphColorMode; [INSTALLED]?: boolean };
+type ModedGraph = Graph & { [MODE]?: GraphColorMode };
 
 function initialDark(): boolean {
   try {
@@ -100,7 +101,7 @@ function applyGraphColorMode(graph: Graph): void {
     (container.style as CSSStyleDeclaration & { colorScheme?: string }).colorScheme = scheme;
     container.setAttribute('data-color-mode', scheme);
   }
-  if ((graph as ModedGraph)[INSTALLED] && graph.getDataModel().getRoot()) graph.refresh();
+  if (isInstalled(graph, INSTALLED) && graph.getDataModel().getRoot()) graph.refresh();
 }
 
 /** The global color mode (all installed graphs without their own setting). */
@@ -297,8 +298,7 @@ export class DrawioTextShape extends TextShape {
  */
 export function installDrawioCompat(graph: Graph): void {
   const marked = graph as ModedGraph;
-  if (marked[INSTALLED]) return;
-  marked[INSTALLED] = true;
+  if (!installOnce(marked, INSTALLED)) return;
   installedGraphs.add(marked);
 
   const baseDestroy = graph.destroy.bind(graph);

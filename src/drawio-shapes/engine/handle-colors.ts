@@ -10,6 +10,7 @@
  * handle fill is lightened to DARK_MIN_GRAPHICS_CONTRAST against the canvas (#0000FF -> a light
  * blue), keeping its hue; colours that already contrast enough and the light theme are unchanged.
  */
+import { createInstallScope, installOnce } from '../../core/install-once';
 import { CellHighlight, EdgeHandler } from '@maxgraph/core';
 import type { Graph, Shape } from '@maxgraph/core';
 import { DARK_MIN_GRAPHICS_CONTRAST, ensureContrast } from './colors';
@@ -25,12 +26,11 @@ export function feedbackColor(graph: Graph | null | undefined, color: string | n
   return ensureContrast(color, darkCanvasColor(options), DARK_MIN_GRAPHICS_CONTRAST);
 }
 
-let installed = false;
+const PAGE = createInstallScope();
 
 /** Patches CellHighlight and EdgeHandler once (idempotent). */
 export function installDarkFeedbackColors(): void {
-  if (installed) return;
-  installed = true;
+  if (!installOnce(PAGE, 'dark-feedback-colors')) return;
 
   type HighlightProto = {
     graph: Graph;

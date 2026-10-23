@@ -11,6 +11,7 @@
  * terminal, so dangling edges (every edge in the draw.io palettes and libraries: elbows, manual
  * lines, isometric edges, the ERTMS movement authority curve) are drawn as straight lines.
  */
+import { installOnce } from '../../core/install-once';
 import type { CellState, Graph, Point } from '@maxgraph/core';
 
 type EdgeStyleFn = (state: CellState, source: CellState | null, target: CellState | null, points: Point[], result: (Point | null)[]) => void;
@@ -21,13 +22,10 @@ interface ViewInternals {
   getTerminalPort(state: CellState, terminal: CellState, source: boolean): CellState;
 }
 
-const INSTALLED = Symbol('rdDanglingEdgeStyles');
-
 /** Runs edge styles for edges without a source terminal on this graph's view. Idempotent. */
 export function installDanglingEdgeStyles(graph: Graph): void {
-  const view = graph.view as unknown as ViewInternals & { [INSTALLED]?: boolean };
-  if (view[INSTALLED]) return;
-  view[INSTALLED] = true;
+  const view = graph.view as unknown as ViewInternals;
+  if (!installOnce(view, 'drawio.dangling-edge-styles')) return;
   const base = view.updatePoints.bind(view);
   view.updatePoints = (edge, points, source, target) => {
     const edgeStyle = source ? null : view.getEdgeStyle(edge, points, source, target);
@@ -51,17 +49,13 @@ export function installDanglingEdgeStyles(graph: Graph): void {
   };
 }
 
-const INHERIT_INSTALLED = Symbol('rdInheritStyles');
-
 /**
  * draw.io's `inherit` style values (e.g. `strokeColor=inherit` in table rows and cells): the
  * value comes from the parent cell's resolved style. maxGraph has no such value and draws the
  * literal (an invalid colour, i.e. black). Idempotent per graph.
  */
 export function installInheritStyleValues(graph: Graph): void {
-  const g = graph as Graph & { [INHERIT_INSTALLED]?: boolean };
-  if (g[INHERIT_INSTALLED]) return;
-  g[INHERIT_INSTALLED] = true;
+  if (!installOnce(graph, 'drawio.inherit-style-values')) return;
   const base = graph.getCellStyle.bind(graph);
   const resolve = (cell: Parameters<Graph['getCellStyle']>[0], depth: number): ReturnType<Graph['getCellStyle']> => {
     const style = base(cell);

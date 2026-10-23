@@ -17,6 +17,7 @@
  * same name.
  */
 
+import { createInstallScope, installOnce, isInstalled } from '../../core/install-once';
 import { CellRenderer, Shape, StencilShape, StencilShapeRegistry } from '@maxgraph/core';
 import type { CellState } from '@maxgraph/core';
 import { logger } from '../../drawio/logger';
@@ -52,7 +53,7 @@ export interface StencilEngineOptions {
 
 const MAX_INLINE_CACHE = 1000;
 
-let installed = false;
+const PAGE = createInstallScope();
 let baseUrl = defaultBaseUrl();
 /** Decoded `stencil(...)` styles; null = failed to decode (logged once). */
 const inlineCache = new Map<string, StencilShape | null>();
@@ -142,8 +143,7 @@ export function getInlineStencil(shape: string): StencilShape | null {
  */
 export function installStencilEngine(options: StencilEngineOptions = {}): void {
   if (options.baseUrl !== undefined) baseUrl = options.baseUrl;
-  if (installed) return;
-  installed = true;
+  if (!installOnce(PAGE, 'stencil-engine')) return;
 
   installStencilArcFix();
   installPolylineArcSizeFix();
@@ -172,7 +172,7 @@ export function installStencilEngine(options: StencilEngineOptions = {}): void {
 
 /** True once installStencilEngine has run. */
 export function isStencilEngineInstalled(): boolean {
-  return installed;
+  return isInstalled(PAGE, 'stencil-engine');
 }
 
 /**

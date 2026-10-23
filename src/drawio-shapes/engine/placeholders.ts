@@ -25,6 +25,7 @@
  * are never replaced. With a `placeholder="attr"` attribute the label is the value of `attr`
  * on the cell or an ancestor (convertValueToString) and is not replaced further.
  */
+import { installOnce } from '../../core/install-once';
 import type { Cell, Graph } from '@maxgraph/core';
 
 /** Graph.prototype.placeholderPattern */
@@ -146,9 +147,8 @@ export interface PlaceholderContext {
 }
 
 const CONTEXT = Symbol.for('rd.drawioPlaceholderContext');
-const INSTALLED = Symbol.for('rd.drawioPlaceholdersInstalled');
 
-type PlaceholderGraph = Graph & { [CONTEXT]?: PlaceholderContext; [INSTALLED]?: boolean };
+type PlaceholderGraph = Graph & { [CONTEXT]?: PlaceholderContext };
 
 /** Sets the page/file information and custom variables for a graph's placeholders. */
 export function setPlaceholderContext(graph: Graph, context: PlaceholderContext): void {
@@ -308,8 +308,7 @@ export function convertElementValueToString(cell: Cell): string {
 export function installPlaceholders(graph: Graph, context?: PlaceholderContext): void {
   const g = graph as PlaceholderGraph;
   if (context) setPlaceholderContext(graph, context);
-  if (g[INSTALLED]) return;
-  g[INSTALLED] = true;
+  if (!installOnce(g, 'drawio.placeholders')) return;
 
   const baseConvert = graph.convertValueToString.bind(graph);
   graph.convertValueToString = (cell: Cell): string =>

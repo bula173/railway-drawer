@@ -15,12 +15,11 @@
  * view), never on maxGraph prototypes, so other graphs are not affected.
  */
 
+import { installOnce } from '../../../core/install-once';
 import { Cell, CellState, Graph, InternalEvent, LayoutManager, Shape, StackLayout, constants } from '@maxgraph/core';
 import { TableLayout, createStackLayout } from './table-layout';
 import { CollapsedTableStyle, getCollapsedTableForCell, isCollapsedTableChildShape } from './table-graph';
 import { installCurvedTextSupport } from './curved-text';
-
-const INSTALLED = Symbol.for('rd.drawio.tableSupport');
 
 type ShapeExt = Shape & { collapsedTableStyle?: CollapsedTableStyle | null; laneFill?: string | null };
 
@@ -235,13 +234,12 @@ function installCollapsedTables(graph: Graph): void {
  * repaint on value changes. Idempotent.
  */
 export function installTableSupport(graph: Graph): void {
-  const g = graph as GraphExt & Record<symbol, unknown>;
+  const g = graph as GraphExt;
 
-  if (g[INSTALLED]) {
+  if (!installOnce(graph, 'drawio.table-support')) {
     return;
   }
 
-  g[INSTALLED] = true;
   installSwimlanes(graph);
   g.drawioLayoutManager = installLayoutManager(graph);
   installCollapsedTables(graph);

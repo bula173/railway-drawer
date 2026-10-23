@@ -8,6 +8,7 @@
  * - Cells on a locked layer cannot be selected either (draw.io Layers dialog lock).
  * Lock/unlock goes through the style-edit helper, so it is one undoable model edit.
  */
+import { installOnce } from '../core/install-once';
 import type { Cell, Graph } from '@maxgraph/core';
 import { setCellStyleValues } from './style-edit';
 
@@ -47,8 +48,6 @@ export function isOnLockedLayer(graph: Graph, cell: Cell | null | undefined): bo
   return !!layer && layer !== cell && hasLockedStyle(layer);
 }
 
-const INSTALLED = new WeakSet<Graph>();
-
 /**
  * Makes `graph` honour `locked=1` like draw.io. maxGraph's isCellMovable/Resizable/Bendable/
  * Editable/Disconnectable, isLabelMovable and the ConstraintHandler all ask `this.isCellLocked`,
@@ -56,8 +55,7 @@ const INSTALLED = new WeakSet<Graph>();
  * added here.
  */
 export function installCellLocking(graph: Graph): void {
-  if (INSTALLED.has(graph)) return;
-  INSTALLED.add(graph);
+  if (!installOnce(graph, 'cell-lock')) return;
   const origLocked = graph.isCellLocked.bind(graph);
   graph.isCellLocked = (cell: Cell): boolean => origLocked(cell) || isLockedByStyle(cell);
   const origDeletable = graph.isCellDeletable.bind(graph);

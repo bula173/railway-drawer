@@ -10,6 +10,7 @@
  * Shapes.js:10383-10477 (preferred size, placeholder repaint, editing repaint).
  */
 
+import { installOnce } from '../../../core/install-once';
 import {
   AbstractCanvas2D,
   CellState,
@@ -331,21 +332,15 @@ function isCurvedText(state: CellState | null | undefined): boolean {
   return state?.style != null && (state.style as Record<string, unknown>).shape === 'curvedText';
 }
 
-const CURVED_TEXT_INSTALLED = Symbol.for('rd.drawio.curvedTextSupport');
-
 /**
  * Graph hooks of Shapes.js:10383-10477 on the given graph instance (never on
  * the prototypes): preferred size from the label, repaint on value changes
  * and while editing starts/stops. Idempotent.
  */
 export function installCurvedTextSupport(graph: Graph): void {
-  const g = graph as unknown as Record<string | symbol, unknown>;
-
-  if (g[CURVED_TEXT_INSTALLED]) {
+  if (!installOnce(graph, 'drawio.curved-text')) {
     return;
   }
-
-  g[CURVED_TEXT_INSTALLED] = true;
 
   // Autosize: straight text width reduced as the arc is longer than its chord
   const origGetPreferredSize = graph.getPreferredSizeForCell.bind(graph);

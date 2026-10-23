@@ -15,6 +15,7 @@
  * Style values may be strings, numbers or booleans (see services/drawio-xml.ts).
  */
 
+import { installOnce } from '../../core/install-once';
 import { Cell, Graph, Rectangle } from '@maxgraph/core';
 import { getNumber, getString, getValue, toFlag } from '../js/shapes-edges/util';
 import { isTable, isTableCell, isTableRow, swimlaneDirection } from '../js/shapes-edges/table-graph';
@@ -157,13 +158,5 @@ export function childVertices(cell: Cell | null): Cell[] {
 
 /** Marks a graph as having the named behaviour installed; returns false if it was already. */
 export function markInstalled(graph: Graph, key: string): boolean {
-  const g = graph as unknown as Record<symbol, unknown>;
-  const sym = Symbol.for(`rd.drawio.behaviour.${key}`);
-
-  if (g[sym]) {
-    return false;
-  }
-
-  g[sym] = true;
-  return true;
+  return installOnce(graph, `drawio.behaviour.${key}`);
 }

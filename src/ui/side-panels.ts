@@ -1,3 +1,4 @@
+import { createInstallScope, installOnce } from '../core/install-once';
 /**
  * @file side-panels.ts
  * @brief Left (Shapes) and right (Format) side panels: collapse/expand (toolbar buttons
@@ -177,12 +178,11 @@ function attachResizeHandle(side: SidePanel, panel: HTMLElement): void {
   panel.appendChild(handle);
 }
 
-let installed = false;
+const PAGE = createInstallScope();
 
 /** Restores widths / collapsed state, adds the resize handles and binds the toggle buttons (once). */
 export function installSidePanels(): void {
-  if (installed) return;
-  installed = true;
+  if (!installOnce(PAGE, 'side-panels')) return;
   const stored = readPanelState();
   for (const side of ['left', 'right'] as const) {
     const panel = panelOf(side);
