@@ -9,6 +9,9 @@
  *   `DEFAULT_COUNTRY_ID` 510 (Poland); an invalid stored value means "no default" (the checks then
  *   warn about every balise group without NID_C).
  *
+ * - `rdRuleSettings`: the rule checks' settings (rule-settings.ts), JSON of the values that differ
+ *   from the defaults.
+ *
  * Edited in the Data panel with nothing selected ("Diagram"). One undoable model edit per change.
  */
 import type { GraphDataModel } from '@maxgraph/core';
@@ -47,13 +50,28 @@ export function readCountryId(model: GraphDataModel): string {
  * removed). One undoable edit; returns false when nothing changed. Throws on an invalid value.
  */
 export function setCountryId(model: GraphDataModel, value: string | null): boolean {
-  const root = model.getRoot();
-  if (!root) return false;
   const text = (value ?? '').trim();
   const next = text === '' ? null : normalizeCountryId(text);
   if (text !== '' && next === null) throw new Error(`NID_C must be an integer 0–${NID_C_MAX}`);
+  return setRootAttribute(model, COUNTRY_ATTR, next);
+}
+
+/** A data attribute of the root cell (null when it is not set). */
+export function readRootAttribute(model: GraphDataModel, name: string): string | null {
+  const value = model.getRoot()?.getValue() as unknown;
+  if (!isElementValue(value) || !value.hasAttribute(name)) return null;
+  return value.getAttribute(name) ?? '';
+}
+
+/**
+ * Sets (null: removes) a data attribute of the root cell: one undoable edit; returns false when
+ * nothing changed. Diagram settings (`rdCountryId`, `rdRuleSettings`, ...) use it.
+ */
+export function setRootAttribute(model: GraphDataModel, name: string, next: string | null): boolean {
+  const root = model.getRoot();
+  if (!root) return false;
   const current = root.getValue() as unknown;
-  if ((isElementValue(current) ? current.getAttribute(COUNTRY_ATTR) : null) === next) return false;
+  if ((isElementValue(current) ? current.getAttribute(name) : null) === next) return false;
   let element: Element;
   if (isElementValue(current)) {
     element = current.cloneNode(true) as Element;
@@ -62,8 +80,8 @@ export function setCountryId(model: GraphDataModel, value: string | null): boole
     element = document.implementation.createDocument(null, null, null).createElement('object');
     element.setAttribute('label', typeof current === 'string' ? current : '');
   }
-  if (next === null) element.removeAttribute(COUNTRY_ATTR);
-  else element.setAttribute(COUNTRY_ATTR, next);
+  if (next === null) element.removeAttribute(name);
+  else element.setAttribute(name, next);
   model.beginUpdate();
   try {
     model.setValue(root, element);
