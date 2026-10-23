@@ -14,7 +14,7 @@
  * runtime. Screenshots of both themes go to test-results/theme-contrast/.
  *
  * A second test per theme covers the railway / scenario-document / remote-file features: the
- * Route tool floating panel and the Route Table / Interlocking dialog (a small layout loaded into
+ * Route tool floating panel, the Route Table / Interlocking dialog (all tabs) and Rule settings (a small layout loaded into
  * the tab), the scenario view with "Show changes" (legend, Changes list) and autoplay running,
  * the scenario PDF export options dialog, and the remote status menu + Reload confirm dialog
  * (the dev-only fake provider, localStorage `rd.fakeRemote`, like remote-persist.spec.ts).
@@ -700,8 +700,22 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await routes.locator('.rd-route-tab[data-tab="conflicts"]').click();
   await expect(routes.locator('.rd-route-tab[data-tab="conflicts"]')).toHaveAttribute('aria-selected', 'true');
   await a.check('Interlocking (conflicts) dialog', '.rd-route-dialog-overlay');
+  await expect(routes.locator('.rd-il-matrix td[data-row]')).not.toHaveCount(0);
+  await routes.locator('.rd-route-tab[data-tab="interlocking"]').click();
+  await expect(routes.locator('.rd-il-table tbody tr')).toHaveCount(1);
+  await a.check('Interlocking table dialog', '.rd-route-dialog-overlay');
+  await a.shot('interlocking-table');
   await page.keyboard.press('Escape');
   await expect(routes).toHaveCount(0);
+  // Railway > Rule Settings… dialog
+  await openMenu(page, 'railway');
+  await page.locator('.menu-dropdown[data-menu="railway"] [data-action="railwayRoute:ruleSettings"]').click();
+  const rules = page.locator('[data-testid="rule-settings-dialog"]');
+  await expect(rules.locator('tr[data-rule]')).toHaveCount(10);
+  await a.check('Rule settings dialog', '.rd-route-dialog-overlay');
+  await a.shot('rule-settings');
+  await page.keyboard.press('Escape');
+  await expect(rules).toHaveCount(0);
 
   // Scenario with two steps (S1 moved in step 2), viewed with "Show changes" and autoplay
   await page.locator('[data-right-panel="scenarios"]').click();

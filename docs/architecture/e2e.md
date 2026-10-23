@@ -51,7 +51,8 @@
   (with error), image upload,
   shape designer, all 4 notification types, status/tab bars; a second test per theme: context menu with the railway Position ▸ submenu open, Railway > Object State submenu,
   states legend, Route tool panel + Route
-  Table/Interlocking dialog on a loaded layout, scenario view with "Show changes" legend/Changes list and autoplay
+  Table/Interlocking dialog on a loaded layout (route table, conflicts matrix, interlocking table tabs; Rule settings
+  dialog), scenario view with "Show changes" legend/Changes list and autoplay
   running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
   per theme: Railway Script tab with an example made invalid (error + warning: problem list, gutter, inline marks), conflict
   banner and toolbar; the editor's text-transparent highlight mirror carries `data-contrast-skip` (its text is skipped only
@@ -112,6 +113,12 @@
   it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
   rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
   rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
+- `tests/e2e/interlocking.spec.ts` (any port): a crossover layout (T1/T2 with km, W1/W2, S1-S4) with three routes on
+  `rd-routes` loaded with `tab.document.load`; Railway > Conflict Matrix… (matrix cells `td[data-row][data-col]`,
+  symmetric, S P F / free / ×, pairs), matrix CSV, Interlocking table tab (roles, flank protection, aspects), the XLSX
+  download unzipped in node (stored ZIP) and its sheets parsed (Polish PKP headers, then "English headers"),
+  Railway > Rule Settings… (min overlap 150 m -> 3 live `overlap-length` findings with a related link, stored as
+  `rdRuleSettings`; min > max refused; Reset to defaults -> findings and attribute gone), rule notes. In CI.
 - `tests/e2e/press-to-move.spec.ts` (any port, real `page.mouse` input, 1600x1100): every kind of object (draw.io
   rectangle 40x20 / 120x60, ellipse, text, image, AWS icon, mxgraph.basic stencil, ERTMS signal group, balise, PKP semafor
   group, turnout, track, connector, template group) hovered, pressed over a grid incl. near edges/corners and dragged 30 px:
