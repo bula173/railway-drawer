@@ -1222,7 +1222,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `<mxfile>` (`buildShareMxfile`, unique page ids) -> `#R` + base64url(deflateRaw(encodeURIComponent(xml)))
   (CompressionStream). The app.diagrams.net link uses draw.io's exact format (`'#R' + encodeURIComponent(Graph.compress(xml))`,
   standard base64; EditorUi.js:9545 / App.js:6669). The reader accepts both alphabets and raw-XML `#R` links,
-  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
+  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Every inflate has an
+  output cap (deflate bombs): async = `services/deflate-stream.ts` (`inflateRawBytes`, default `MAX_INFLATED_BYTES`
+  50 MB; links, compressed pages, PlantUML encoding), sync = `engine/inflate.ts` via `codec.ts` `decompress`
+  (`MAX_DECOMPRESSED_BYTES` 50 MB; stencils, library entries). One `<mxfile>` writer: `drawio-xml.ts` `buildMxfile`
+  (model pages and raw `<diagram>` pages in order, optional `pageId` for unique ids; `buildShareMxfile` uses it). Links over 32k chars get a warning.
 - Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
   **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). The same
   `openDiagramFile` opens the removed draw.io view's leftover autosave once.

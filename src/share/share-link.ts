@@ -17,6 +17,8 @@
  * the result is plain XML that goes through the normal file loader (never evaluated).
  */
 
+import { InflateLimitError, NoCompressionStreamError, deflateRawBytes, inflateRawBytes } from '../services/deflate-stream';
+
 /** Prefix of a diagram link hash. */
 export const SHARE_HASH_PREFIX = '#R';
 
@@ -69,72 +71,24 @@ export function fromBase64Url(text: string): string {
 }
 
 // ------------------------------------------------------------------------------------------
-// Deflate / inflate (CompressionStream 'deflate-raw', same bitstream as pako.deflateRaw)
+// Deflate / inflate (services/deflate-stream.ts: 'deflate-raw', same bitstream as pako.deflateRaw)
 // ------------------------------------------------------------------------------------------
 
-async function readAll(
-  readable: ReadableStream<Uint8Array>,
-  limit: number,
-  onLimit: () => Error
-): Promise<Uint8Array> {
-  const reader = readable.getReader();
-  const chunks: Uint8Array[] = [];
-  let total = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    total += value.length;
-    if (total > limit) {
-      await reader.cancel().catch(() => undefined);
-      throw onLimit();
-    }
-    chunks.push(value);
-  }
-  const out = new Uint8Array(total);
-  let offset = 0;
-  for (const chunk of chunks) {
-    out.set(chunk, offset);
-    offset += chunk.length;
-  }
-  return out;
-}
-
-async function pipeThrough(
-  input: Uint8Array,
-  stream: { writable: WritableStream<BufferSource>; readable: ReadableStream<Uint8Array> },
-  limit: number,
-  onLimit: () => Error
-): Promise<Uint8Array> {
-  const writer = stream.writable.getWriter();
-  const write = (async () => {
-    await writer.write(input as Uint8Array<ArrayBuffer>);
-    await writer.close();
-  })();
-  // A failed write (corrupt input) also errors the readable side; read() reports it
-  write.catch(() => undefined);
-  const [, out] = await Promise.all([write, readAll(stream.readable, limit, onLimit)]);
-  return out;
-}
-
 export async function deflateRaw(bytes: Uint8Array): Promise<Uint8Array> {
-  if (typeof CompressionStream === 'undefined') {
-    throw new ShareLinkError('This browser cannot compress data (no CompressionStream)');
+  try {
+    return await deflateRawBytes(bytes);
+  } catch (error) {
+    if (error instanceof NoCompressionStreamError) throw new ShareLinkError('This browser cannot compress data (no CompressionStream)');
+    throw error;
   }
-  return pipeThrough(bytes, new CompressionStream('deflate-raw'), Number.MAX_SAFE_INTEGER, () => new Error());
 }
 
 export async function inflateRaw(bytes: Uint8Array, limit: number): Promise<Uint8Array> {
-  if (typeof DecompressionStream === 'undefined') {
-    throw new ShareLinkError('This browser cannot open diagram links (no DecompressionStream)');
-  }
-  let tooLarge = false;
   try {
-    return await pipeThrough(bytes, new DecompressionStream('deflate-raw'), limit, () => {
-      tooLarge = true;
-      return new ShareLinkError('too large');
-    });
-  } catch {
-    if (tooLarge) throw tooLargeError();
+    return await inflateRawBytes(bytes, limit);
+  } catch (error) {
+    if (error instanceof NoCompressionStreamError) throw new ShareLinkError('This browser cannot open diagram links (no DecompressionStream)');
+    if (error instanceof InflateLimitError) throw tooLargeError();
     throw new ShareLinkError('The diagram data in the link is corrupt or incomplete');
   }
 }

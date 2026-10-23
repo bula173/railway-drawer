@@ -1,5 +1,6 @@
 import { xmlUtils } from '@maxgraph/core';
 import { buildMxfile, emptyDrawioModelXml, generatePageId, sanitizeXmlText } from './drawio-xml';
+import { InflateLimitError, MAX_INFLATED_BYTES, NoCompressionStreamError, inflateRawBytes } from './deflate-stream';
 import { ScenarioSet } from '../scenarios/scenario-model';
 import type { ScenarioData } from '../scenarios/scenario-model';
 import {
@@ -268,7 +269,7 @@ export class ProjectService {
    * Largest inflated size (bytes) of one compressed page. Real pages, even with embedded
    * images, stay far below it; a crafted "deflate bomb" would otherwise exhaust memory.
    */
-  static maxInflatedBytes = 100 * 1024 * 1024;
+  static maxInflatedBytes = MAX_INFLATED_BYTES;
 
   /**
    * Decodes draw.io's compressed page format: base64 -> raw deflate -> URI-encoded XML.
@@ -281,51 +282,18 @@ export class ProjectService {
       throw new Error('The diagram data is neither XML nor compressed draw.io data');
     }
 
-    if (typeof DecompressionStream === 'undefined') {
-      throw new Error(
-        'This browser cannot open compressed draw.io files. In draw.io, turn off File > Properties > Compressed and save again.'
-      );
-    }
-
     const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
-    const stream = new DecompressionStream('deflate-raw');
-    const writer = stream.writable.getWriter();
-    const reader = stream.readable.getReader();
-
-    const write = (async () => {
-      await writer.write(bytes);
-      await writer.close();
-    })();
     const limit = ProjectService.maxInflatedBytes;
-    let tooLarge = false;
-    const read = (async () => {
-      const chunks: Uint8Array[] = [];
-      let total = 0;
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-        total += value.length;
-        if (total > limit) {
-          tooLarge = true;
-          await reader.cancel();
-          throw new Error('too large');
-        }
-      }
-      const out = new Uint8Array(total);
-      let offset = 0;
-      for (const chunk of chunks) {
-        out.set(chunk, offset);
-        offset += chunk.length;
-      }
-      return new TextDecoder().decode(out);
-    })();
-
     let inflated: string;
     try {
-      [, inflated] = await Promise.all([write, read]);
-    } catch {
-      if (tooLarge) {
+      inflated = new TextDecoder().decode(await inflateRawBytes(bytes, limit));
+    } catch (error) {
+      if (error instanceof NoCompressionStreamError) {
+        throw new Error(
+          'This browser cannot open compressed draw.io files. In draw.io, turn off File > Properties > Compressed and save again.'
+        );
+      }
+      if (error instanceof InflateLimitError) {
         throw new Error(
           `The compressed page is too large to open (over ${Math.round(limit / (1024 * 1024))} MB uncompressed)`
         );

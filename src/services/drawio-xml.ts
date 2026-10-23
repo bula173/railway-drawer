@@ -914,11 +914,27 @@ export function generatePageId(): string {
   return Array.from(bytes, (b) => chars[b % chars.length]).join('');
 }
 
+/** A page given as a serialized `<diagram>` element (kept as it is, except its id with `pageId`). */
+export interface MxfileRawPage {
+  xml: string;
+}
+
+export interface MxfileOptions {
+  /** Final id of each page in file order (e.g. made unique); gets the page's own id ('' if none). */
+  pageId?: (wanted: string) => string;
+}
+
+function isRawPage(page: MxfilePage | MxfileRawPage): page is MxfileRawPage {
+  return typeof (page as MxfileRawPage).xml === 'string';
+}
+
 /**
- * Builds an `<mxfile>`: `pages` first (each `<diagram>` holding its model and comments), then
- * `extraPages` (serialized `<diagram>` elements, kept as they are; invalid ones are skipped).
+ * Builds an `<mxfile>` (the one builder: File > Save, the cache's multi-page files and share links):
+ * `pages` in order (models -> `<diagram>` with the model and comments; raw pages = serialized
+ * `<diagram>` elements, anything else skipped), then `extraPages` (serialized `<diagram>` elements,
+ * kept as they are; invalid ones are skipped).
  */
-export function buildMxfile(pages: MxfilePage[], extraPages: string[], meta: MxfileMeta): string {
+export function buildMxfile(pages: Array<MxfilePage | MxfileRawPage>, extraPages: string[], meta: MxfileMeta, opts: MxfileOptions = {}): string {
   const doc = createXmlDocument();
   const mxfile = doc.createElement('mxfile');
   mxfile.setAttribute('host', meta.host);
@@ -927,23 +943,34 @@ export function buildMxfile(pages: MxfilePage[], extraPages: string[], meta: Mxf
   mxfile.setAttribute('version', meta.version);
   doc.appendChild(mxfile);
 
+  const appendRaw = (pageXml: string, diagramsOnly: boolean): void => {
+    const pageDoc = new DOMParser().parseFromString(pageXml, 'text/xml');
+    const root = pageDoc.documentElement;
+    if (pageDoc.getElementsByTagName('parsererror').length > 0 || !root) {
+      console.error('[drawio-xml] Skipping a preserved page that is not valid XML');
+      return;
+    }
+    if (diagramsOnly && root.nodeName !== 'diagram') return;
+    const imported = doc.importNode(root, true) as Element;
+    if (opts.pageId) imported.setAttribute('id', opts.pageId(imported.getAttribute('id') ?? ''));
+    mxfile.appendChild(imported);
+  };
+
   for (const page of pages) {
+    if (isRawPage(page)) {
+      appendRaw(page.xml, true);
+      continue;
+    }
     const diagram = doc.createElement('diagram');
-    diagram.setAttribute('id', page.id);
+    diagram.setAttribute('id', opts.pageId ? opts.pageId(page.id) : page.id);
     diagram.setAttribute('name', page.name);
     for (const [key, value] of Object.entries(page.attributes ?? {})) diagram.setAttribute(key, value);
     diagram.appendChild(doc.importNode(page.model, true));
     for (const comment of page.comments ?? []) diagram.appendChild(doc.createComment(comment));
     mxfile.appendChild(diagram);
   }
-  for (const pageXml of extraPages) {
-    const pageDoc = new DOMParser().parseFromString(pageXml, 'text/xml');
-    if (pageDoc.getElementsByTagName('parsererror').length > 0 || !pageDoc.documentElement) {
-      console.error('[drawio-xml] Skipping a preserved page that is not valid XML');
-      continue;
-    }
-    mxfile.appendChild(doc.importNode(pageDoc.documentElement, true));
-  }
+  for (const pageXml of extraPages) appendRaw(pageXml, false);
+  // getXml: newlines in attribute values (multi-line labels) must stay escaped
   return sanitizeXmlText(xmlUtils.getXml(mxfile));
 }
 

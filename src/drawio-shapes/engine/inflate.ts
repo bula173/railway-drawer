@@ -55,6 +55,14 @@ export class InflateError extends Error {
   }
 }
 
+/** The output would exceed the caller's cap (deflate bomb). */
+export class InflateLimitError extends InflateError {
+  constructor(readonly limit: number) {
+    super(`inflated data exceeds ${limit} bytes`);
+    this.name = 'InflateLimitError';
+  }
+}
+
 /** Internal signal: the input ran out. Never escapes inflateRaw. */
 class EndOfInput extends Error {}
 
@@ -74,15 +82,20 @@ class Data {
   readonly ltree = new Tree();
   readonly dtree = new Tree();
 
-  constructor(readonly source: Uint8Array) {
-    this.dest = new Uint8Array(Math.max(1024, source.length * 4));
+  constructor(
+    readonly source: Uint8Array,
+    readonly maxOutput: number
+  ) {
+    this.dest = new Uint8Array(Math.min(Math.max(1024, source.length * 4), Math.max(1, maxOutput)));
   }
 
   ensure(extra: number): void {
     const need = this.destLen + extra;
     if (need <= this.dest.length) return;
+    if (need > this.maxOutput) throw new InflateLimitError(this.maxOutput);
     let size = this.dest.length * 2;
     while (size < need) size *= 2;
+    size = Math.min(size, this.maxOutput);
     const grown = new Uint8Array(size);
     grown.set(this.dest.subarray(0, this.destLen));
     this.dest = grown;
@@ -265,8 +278,8 @@ function inflateUncompressedBlock(d: Data): void {
  * Lenient: when the input ends before a block with BFINAL set, the bytes decoded so far are
  * returned. Malformed data (invalid codes, bad stored-block lengths) throws InflateError.
  */
-export function inflateRaw(source: Uint8Array): Uint8Array {
-  const d = new Data(source);
+export function inflateRaw(source: Uint8Array, maxOutput = Number.POSITIVE_INFINITY): Uint8Array {
+  const d = new Data(source, maxOutput);
   try {
     let bfinal: number;
     do {
@@ -297,7 +310,7 @@ export function inflateRaw(source: Uint8Array): Uint8Array {
  * Inflates a zlib-wrapped stream (RFC 1950): skips the 2-byte header (and a preset
  * dictionary id) and ignores the Adler-32 trailer. Equivalent of pako.inflate.
  */
-export function inflateZlib(source: Uint8Array): Uint8Array {
+export function inflateZlib(source: Uint8Array, maxOutput = Number.POSITIVE_INFINITY): Uint8Array {
   if (source.length < 2) return new Uint8Array(0);
   const cmf = source[0];
   const flg = source[1];
@@ -305,7 +318,7 @@ export function inflateZlib(source: Uint8Array): Uint8Array {
     throw new InflateError('invalid zlib header');
   }
   const start = flg & 0x20 ? 6 : 2;
-  return inflateRaw(source.subarray(start));
+  return inflateRaw(source.subarray(start), maxOutput);
 }
 
 const MAX_STORED = 0xffff;

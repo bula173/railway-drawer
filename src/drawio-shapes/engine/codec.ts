@@ -75,7 +75,15 @@ function safeDecodeUri(text: string): string {
   }
 }
 
+/**
+ * Default cap of decompress's inflated bytes (deflate bombs; the same as the async page/link
+ * inflater, services/deflate-stream.ts MAX_INFLATED_BYTES). Stencils and library entries are tiny.
+ */
+export const MAX_DECOMPRESSED_BYTES = 50 * 1024 * 1024;
+
 export interface DecompressOptions {
+  /** Largest inflated size in bytes (default MAX_DECOMPRESSED_BYTES); beyond it InflateLimitError. */
+  maxBytes?: number;
   /** true: zlib-wrapped stream (pako.inflate) instead of raw deflate. */
   inflate?: boolean;
   /** true: skip zapGremlins (Graph.decompress `checked`). */
@@ -84,13 +92,15 @@ export interface DecompressOptions {
 
 /**
  * Graph.decompress: base64 -> (lenient) inflateRaw -> text -> decodeURIComponent ->
- * zapGremlins. Empty input is returned unchanged. Throws on invalid base64 or malformed
- * deflate data; truncated streams return what was decoded.
+ * zapGremlins. Empty input is returned unchanged. Throws on invalid base64, malformed
+ * deflate data or output beyond `maxBytes` (InflateLimitError); truncated streams return what
+ * was decoded.
  */
 export function decompress(data: string, opts: DecompressOptions = {}): string {
   if (data == null || data.length === 0) return data;
   const bytes = base64ToBytes(data);
-  const inflated = bytesToText(opts.inflate ? inflateZlib(bytes) : inflateRaw(bytes));
+  const max = opts.maxBytes ?? MAX_DECOMPRESSED_BYTES;
+  const inflated = bytesToText(opts.inflate ? inflateZlib(bytes, max) : inflateRaw(bytes, max));
   const decoded = safeDecodeUri(inflated);
   return opts.checked ? decoded : zapGremlins(decoded);
 }

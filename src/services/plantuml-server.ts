@@ -15,6 +15,7 @@
  */
 
 import { InvalidSvgError, sanitizeSvgMarkup as sanitizeSvg } from '../security/sanitize';
+import { NoCompressionStreamError, deflateRawBytes } from './deflate-stream';
 
 export const PLANTUML_SERVER_KEY = 'rd.plantuml.server';
 export const PLANTUML_SERVER_CHANGED_EVENT = 'rd-plantuml-server-changed';
@@ -56,30 +57,12 @@ export function decodePlantUmlBase64(text: string): Uint8Array {
 }
 
 async function deflateRaw(data: Uint8Array): Promise<Uint8Array> {
-  if (typeof CompressionStream !== 'function') throw new Error('This browser cannot compress data (CompressionStream missing)');
-  const stream = new CompressionStream('deflate-raw');
-  const writer = stream.writable.getWriter();
-  const write = (async () => {
-    await writer.write(data as Uint8Array<ArrayBuffer>);
-    await writer.close();
-  })();
-  const reader = stream.readable.getReader();
-  const chunks: Uint8Array[] = [];
-  let total = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    chunks.push(value);
-    total += value.length;
+  try {
+    return await deflateRawBytes(data);
+  } catch (error) {
+    if (error instanceof NoCompressionStreamError) throw new Error('This browser cannot compress data (CompressionStream missing)');
+    throw error;
   }
-  await write;
-  const out = new Uint8Array(total);
-  let offset = 0;
-  for (const chunk of chunks) {
-    out.set(chunk, offset);
-    offset += chunk.length;
-  }
-  return out;
 }
 
 /** PlantUML text -> the URL-safe string of `<server>/svg/<encoded>`. */
