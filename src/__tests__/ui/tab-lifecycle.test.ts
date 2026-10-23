@@ -6,6 +6,7 @@
  * - per-tab subscriptions (clipboard) and editors (label textarea) go with the tab
  * - tab rename by double-click works, also when the double-click starts on an inactive tab
  */
+import { isAutosaveKey, storedAutosave, storedAutosaveText } from './autosave-store';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import { CacheService } from '../../services/cache-service';
@@ -16,8 +17,6 @@ import { loadAppDom, clearAppDom } from './app-dom';
 import { EdgePropertiesController } from '../../ui/edge-properties';
 import { StatusBarController } from '../../ui/statusbar';
 import { InteractiveUIController } from '../../ui/interactive-ui';
-
-const CACHE_KEY = 'railway-drawer-cache';
 
 describe('TabManager tab lifecycle', () => {
   let tabManager: TabManager | null = null;
@@ -51,9 +50,7 @@ describe('TabManager tab lifecycle', () => {
   });
 
   const autosave = (tm: TabManager) => (tm as unknown as { saveToCache(): void }).saveToCache();
-  const storedTabs = () =>
-    (JSON.parse(localStorage.getItem(CACHE_KEY)!) as { data: { tabs: { name: string; graphXml: string }[] } }).data
-      .tabs;
+  const storedTabs = () => storedAutosave()!.data.tabs as Array<{ name: string; graphXml: string }>;
 
   it('closing a tab disposes the graph listeners of its controllers', () => {
     const edge = vi.spyOn(EdgePropertiesController.prototype, 'destroy');
@@ -101,7 +98,7 @@ describe('TabManager tab lifecycle', () => {
     tabManager = new TabManager('tabs-container', 'graph-container');
     const tab = tabManager.createTab('One');
     autosave(tabManager);
-    const before = localStorage.getItem(CACHE_KEY);
+    const before = storedAutosaveText();
     expect(CacheService.getStaleSince()).toBeNull();
 
     const nativeSetItem = Storage.prototype.setItem;
@@ -110,14 +107,14 @@ describe('TabManager tab lifecycle', () => {
       key: string,
       value: string
     ) {
-      if (key === CACHE_KEY) throw new DOMException('full', 'QuotaExceededError');
+      if (isAutosaveKey(key)) throw new DOMException('full', 'QuotaExceededError');
       nativeSetItem.call(this, key, value);
     });
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'Lost', 0, 0, 40, 40);
     autosave(tabManager);
     autosave(tabManager);
 
-    expect(localStorage.getItem(CACHE_KEY)).toBe(before);
+    expect(storedAutosaveText()).toBe(before);
     expect(CacheService.getStaleSince()).not.toBeNull();
     expect(setError).toHaveBeenCalledTimes(1);
     expect(setError.mock.calls[0][0]).toMatch(/storage is full/i);

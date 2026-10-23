@@ -8,19 +8,11 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosavedXml } from './autosave-cache';
 import { openLeftTab } from './menu-helpers';
 
 function cachedXml(page: Page): Promise<string> {
-  return page.evaluate(() => {
-    try {
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as {
-        data?: { tabs?: Array<{ graphXml?: string }> };
-      } | null;
-      return (cache?.data?.tabs ?? []).map((t) => t.graphXml ?? '').join('\n');
-    } catch {
-      return '';
-    }
-  });
+  return autosavedXml(page);
 }
 
 async function freshApp(page: Page): Promise<void> {

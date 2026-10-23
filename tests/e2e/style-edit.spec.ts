@@ -14,6 +14,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosaveText } from './autosave-cache';
 import { openLeftTab } from './menu-helpers';
 
 /** Runs `body` (function body text) with `graph` = the active tab's graph and `arg`. */
@@ -230,7 +231,7 @@ test.describe('style edits on inserted templates and palette shapes', () => {
     expect(noLinePainted.every((p) => p.stroke === null || p.stroke === 'none' || p.stroke === 'transparent'), JSON.stringify(noLinePainted)).toBe(true);
 
     // the autosave writes the explicit colors
-    await expect.poll(async () => page.evaluate(() => localStorage.getItem('railway-drawer-cache') ?? ''), { timeout: 15_000 })
+    await expect.poll(async () => autosaveText(page), { timeout: 15_000 })
       .toContain('#123456');
 
     expect(pageErrors).toEqual([]);

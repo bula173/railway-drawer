@@ -6,11 +6,12 @@
  *        writes one draw.io page per step, and opening that file restores the scenarios.
  *
  * Runs on any port (no draw.io server involved). The live drawing is checked through the 5 s
- * autosave into localStorage `railway-drawer-cache`.
+ * autosave into localStorage (tests/e2e/autosave-cache.ts).
  */
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosavedTabs } from './autosave-cache';
 
 const HEXAGON = '#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]';
 
@@ -20,15 +21,8 @@ interface CachedTab {
   scenarios?: Array<{ name: string; steps: Array<{ name: string; xml: string }> }>;
 }
 
-function cachedTabs(page: Page): Promise<CachedTab[]> {
-  return page.evaluate(() => {
-    try {
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as { data?: { tabs?: CachedTab[] } } | null;
-      return cache?.data?.tabs ?? [];
-    } catch {
-      return [];
-    }
-  });
+async function cachedTabs(page: Page): Promise<CachedTab[]> {
+  return (await autosavedTabs(page)) as CachedTab[];
 }
 
 function count(text: string, needle: string): number {

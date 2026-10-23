@@ -10,6 +10,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosaveText } from './autosave-cache';
 import { revealMenuItem } from './menu-helpers';
 
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
@@ -148,7 +149,7 @@ test('ERTMS objects: kinds on insert, data editing, checks, CSV, reload, saved f
 
   // Reload: the autosave keeps the data
   await expect
-    .poll(async () => page.evaluate(() => localStorage.getItem('railway-drawer-cache') ?? ''), { timeout: 15_000 })
+    .poll(async () => autosaveText(page), { timeout: 15_000 })
     .toContain('rdId=\\"S3\\"'); // inside the cache's JSON
   await page.reload();
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);

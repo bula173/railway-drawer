@@ -5,12 +5,13 @@
  *        search covers all libraries (grouped by library), and user libraries can be imported,
  *        extended with the selection, persisted and exported as draw.io libraries.
  *
- * Uses the 5 s autosave into localStorage `railway-drawer-cache` as the save path (same
+ * Uses the 5 s autosave into localStorage (tests/e2e/autosave-cache.ts) as the save path (same
  * serializer as File > Save).
  */
 import { readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';
 import type { Locator, Page } from '@playwright/test';
+import { autosavedXml } from './autosave-cache';
 
 interface Entry { id: string; title: string; style?: string }
 function paletteEntry(file: string, id: string): Entry {
@@ -21,16 +22,7 @@ function paletteEntry(file: string, id: string): Entry {
 }
 
 function cachedXml(page: Page): Promise<string> {
-  return page.evaluate(() => {
-    try {
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as {
-        data?: { tabs?: Array<{ graphXml?: string }> };
-      } | null;
-      return (cache?.data?.tabs ?? []).map((t) => t.graphXml ?? '').join('\n');
-    } catch {
-      return '';
-    }
-  });
+  return autosavedXml(page);
 }
 
 function escapeXmlAttr(v: string): string {

@@ -9,7 +9,7 @@
  */
 export const STORAGE_KEYS = {
   // ---- railway-drawer-* (legacy scheme)
-  /** Autosave of all tabs (CacheService; JSON `{ version, data: CacheData }`). */
+  /** Autosave of all tabs of earlier versions (JSON `{ version: '1', data: CacheData }`); read once and migrated (CacheService). */
   cache: 'railway-drawer-cache',
   /** Time of the first failed autosave after the last good one (CacheService). */
   cacheStale: 'railway-drawer-cache-stale',
@@ -31,6 +31,10 @@ export const STORAGE_KEYS = {
   shapeToolbarGroupOrder: 'shapeToolbarGroupOrder',
 
   // ---- rd.* (current scheme)
+  /** Autosave index `{ version: '2', projectName, activeTabId, timestamp, tabIds }` (CacheService). */
+  cacheIndex: 'rd.cache.index',
+  /** Prefix of the per-tab autosave entries: `rd.cache.tab.<tab id>` (CacheService). */
+  cacheTabPrefix: 'rd.cache.tab.',
   /** Dev/e2e: '1' forces the Cloudflare Access identity probe (access-identity.ts). */
   accessProbe: 'rd.accessProbe',
   /** Local MCP bridge settings `{ port, token }` (ai/bridge/pairing.ts). */

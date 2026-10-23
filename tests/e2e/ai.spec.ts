@@ -11,6 +11,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page, Request } from '@playwright/test';
+import { autosaveText } from './autosave-cache';
 import { hashSecret, parsePairingToken } from '../../src/ai/bridge/protocol';
 import { sseBody } from '../../src/ai/__tests__/sse';
 import type { FakeReply } from '../../src/ai/__tests__/sse';
@@ -115,7 +116,7 @@ test.describe('AI assistant', () => {
     await showAi(page);
     await expect(page.getByTestId('ai-key-status')).toHaveText('Key saved in this browser: sk-ant-…cdef');
     // the diagram cache and a .drawio download never contain the key
-    const cache = await page.evaluate(() => localStorage.getItem('railway-drawer-cache') ?? '');
+    const cache = await autosaveText(page);
     expect(cache).not.toContain(KEY);
     await page.getByTestId('ai-settings').locator('summary').click();
     await page.getByTestId('ai-key-remove').click();

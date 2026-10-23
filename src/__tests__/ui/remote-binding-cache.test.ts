@@ -3,6 +3,7 @@
  * main-editor.ts: restoreFromCache, then installSharing), using the dev-only test provider
  * (src/debug/fake-remote-provider.ts; vitest runs with import.meta.env.DEV = true).
  */
+import { storedAutosave } from './autosave-store';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import { CacheService } from '../../services/cache-service';
@@ -11,8 +12,6 @@ import type { SharingHandle } from '../../share/install-sharing';
 import { FAKE_REMOTE_ID } from '../../debug/fake-remote-provider';
 import type { RemoteFileInfo } from '../../share/providers/types';
 import { loadAppDom, clearAppDom } from './app-dom';
-
-const CACHE_KEY = 'railway-drawer-cache';
 const notify = { success: vi.fn(), error: vi.fn(), info: vi.fn(), warning: vi.fn() };
 
 function startApp(): { tabManager: TabManager; sharing: SharingHandle } {
@@ -35,7 +34,7 @@ function remoteFile(version: string): RemoteFileInfo {
 }
 
 function cachedTabs(): Array<Record<string, unknown>> {
-  return (JSON.parse(localStorage.getItem(CACHE_KEY)!) as { data: { tabs: Array<Record<string, unknown>> } }).data.tabs;
+  return storedAutosave()!.data.tabs;
 }
 
 describe('remote bindings in the tab cache', () => {

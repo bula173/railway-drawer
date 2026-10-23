@@ -383,6 +383,22 @@ export class SaveLoadController {
   }
 
   /**
+   * The inputs of serializeToXml besides the model (page settings, grid, HTML labels, PlantUML
+   * metadata): the autosave reuses a tab's serialised XML while these and the model are unchanged.
+   */
+  getSerializationFingerprint(): string {
+    let plantuml: string;
+    try {
+      plantuml = JSON.stringify(
+        this.plantumlGroupManager.getAllPlantUmlGroups().map((group) => [group.getId(), this.plantumlGroupManager.getPlantUmlMetadata(group)])
+      );
+    } catch {
+      plantuml = `unknown:${Date.now()}`; // never equal: serialise again
+    }
+    return JSON.stringify([this.pageSettings, this.graph.gridEnabled, this.graph.gridSize, this.graph.isHtmlLabels(), plantuml]);
+  }
+
+  /**
    * Keeps the page settings of a loaded draw.io model and applies its grid (on/off, size; draw.io's
    * defaults grid=1 gridSize=10 when the attributes are missing) to this tab. Legacy models
    * (`drawio` false) have no page settings: the tab's grid stays.

@@ -122,3 +122,19 @@ export function writeItemOrThrow(key: string, value: string, area: StorageArea =
   const result = writeItemResult(key, value, area);
   if (!result.ok) throw result.error;
 }
+
+/** The keys of `area` that start with `prefix` ([] when storage is unavailable). */
+export function listKeys(prefix: string, area: StorageArea = 'local'): string[] {
+  try {
+    const store = getStorage(area);
+    if (!store) return [];
+    const keys: string[] = [];
+    for (let i = 0; i < store.length; i++) {
+      const key = store.key(i);
+      if (key !== null && key.startsWith(prefix)) keys.push(key);
+    }
+    return keys;
+  } catch {
+    return [];
+  }
+}

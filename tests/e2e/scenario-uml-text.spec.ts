@@ -11,6 +11,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosavedTabs } from './autosave-cache';
 import { revealMenuItem } from './menu-helpers';
 
 const HEXAGON = '#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]';
@@ -44,15 +45,8 @@ interface CachedTab {
   scenarios?: Array<{ name: string; steps: Array<{ name: string; uml?: string; text?: string }> }>;
 }
 
-function cachedTabs(page: Page): Promise<CachedTab[]> {
-  return page.evaluate(() => {
-    try {
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as { data?: { tabs?: CachedTab[] } } | null;
-      return cache?.data?.tabs ?? [];
-    } catch {
-      return [];
-    }
-  });
+async function cachedTabs(page: Page): Promise<CachedTab[]> {
+  return (await autosavedTabs(page)) as CachedTab[];
 }
 
 async function freshApp(page: Page): Promise<void> {

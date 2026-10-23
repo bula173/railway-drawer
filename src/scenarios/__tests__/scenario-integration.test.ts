@@ -3,6 +3,7 @@
  * drawing or its undo history), "Replace drawing with this step" (undoable), the keyboard while
  * viewing, and the right-panel UI.
  */
+import { isAutosaveKey, storedAutosave, writeStoredAutosaveTab } from '../../__tests__/ui/autosave-store';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import type { TabData } from '../../ui/tabs';
@@ -12,8 +13,6 @@ import { installScenarios } from '../install-scenarios';
 import type { ScenariosHandle } from '../install-scenarios';
 import { captureDrawing, replaceDrawingWithSnapshot } from '../scenario-actions';
 import { scenarioKeyAction } from '../scenario-keys';
-
-const CACHE_KEY = 'railway-drawer-cache';
 
 const notify = { success: vi.fn(), warning: vi.fn(), error: vi.fn() };
 
@@ -108,7 +107,7 @@ describe('scenarios with tabs', () => {
     const s = set.create('Wjazd "IC" <1>', 'opis ąę');
     set.addStep(s.id, { name: 'Krok 1', description: 'd', xml: captureDrawing(tab.saveLoadController) });
     expect(tm.flushCache()).toBe(true);
-    const cached = JSON.parse(localStorage.getItem(CACHE_KEY)!);
+    const cached = storedAutosave()!;
     expect(cached.data.tabs[0].scenarios).toHaveLength(1);
     const expected = set.list();
 
@@ -128,11 +127,11 @@ describe('scenarios with tabs', () => {
   it('writes no scenarios key for tabs without scenarios, and sanitizes a damaged cache entry', () => {
     const { tm } = start();
     tm.flushCache();
-    expect(JSON.parse(localStorage.getItem(CACHE_KEY)!).data.tabs[0].scenarios).toBeUndefined();
+    expect(storedAutosave()!.data.tabs[0].scenarios).toBeUndefined();
 
-    const raw = JSON.parse(localStorage.getItem(CACHE_KEY)!);
+    const raw = storedAutosave()!;
     raw.data.tabs[0].scenarios = [{ id: 'x', name: 'Ok', steps: [{ name: 'no xml' }, { id: 'st', name: 'good', xml: '<mxGraphModel/>' }] }, 7];
-    localStorage.setItem(CACHE_KEY, JSON.stringify(raw));
+    writeStoredAutosaveTab(raw.data.tabs[0]);
     handle!.destroy();
     handle = null;
     tm.destroy();
@@ -266,7 +265,7 @@ describe('scenarios with tabs', () => {
     (panel.querySelector('.rd-scn-new') as HTMLButtonElement).click();
     await answerDialog('S');
     const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation((k: string) => {
-      if (k === CACHE_KEY) throw new DOMException('full', 'QuotaExceededError');
+      if (isAutosaveKey(k)) throw new DOMException('full', 'QuotaExceededError');
     });
     (panel.querySelector('.rd-scn-add-step') as HTMLButtonElement).click();
     await answerDialog('big');

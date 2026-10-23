@@ -3,6 +3,7 @@
  * had already chosen the restore branch, leaving the app with zero tabs (no canvas, no "+").
  * The startup logic in main-editor.ts is mirrored in startApp().
  */
+import { storedAutosaveText } from './autosave-store';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import { CacheService } from '../../services/cache-service';
@@ -104,7 +105,7 @@ describe('TabManager cache restore', () => {
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'Flushed', 0, 0, 40, 40);
 
     expect(tabManager.flushCache()).toBe(true);
-    expect(localStorage.getItem(CACHE_KEY)).toContain('Flushed');
+    expect(storedAutosaveText()).toContain('Flushed');
 
     vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new DOMException('full', 'QuotaExceededError');

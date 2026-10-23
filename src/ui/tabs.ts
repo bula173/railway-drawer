@@ -15,7 +15,9 @@ import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
 
-import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
+import { CacheService, CacheSaveResult, type CachedTabJson } from '../services/cache-service';
+import { Disposers, onModelChange } from '../core/graph-events';
+import { runWhenIdle } from '../core/idle';
 import { sanitizeScenarios } from '../scenarios/scenario-model';
 import { sanitizeCachedScript } from '../railway-script/script-store';
 import { globalSaveStatusIndicator } from './save-status';
@@ -87,6 +89,28 @@ type ReleasableTabData = Omit<TabData, 'graph' | 'graphCommandService'> & {
 /** A tab controller that may expose an optional destroy() hook. */
 type MaybeDestroyable = { destroy?: unknown } | null | undefined;
 
+/**
+ * Autosave state of a tab. The tab's model is serialised again only when it changed (model CHANGE
+ * events: edits, undo/redo, loads) or the other inputs of serializeToXml changed (page settings,
+ * grid, PlantUML metadata: SaveLoadController.getSerializationFingerprint); the scenarios' JSON
+ * only after a scenario change. Safety net for changes that bypass the model's events: the ACTIVE
+ * tab is serialised again at least every RESERIALIZE_ACTIVE_MS.
+ */
+interface TabCacheState {
+  modelDirty: boolean;
+  /** JSON string of the serialised graph XML, and what it was made from. */
+  xmlJson: string | null;
+  xmlFingerprint: string;
+  xmlAt: number;
+  /** JSON of the scenarios (null: changed since, or not computed yet) and their count. */
+  scenariosJson: string | null;
+  scenarioCount: number;
+  disposers: Disposers;
+}
+
+/** The active tab's XML is rebuilt at least this often, even without model events. */
+const RESERIALIZE_ACTIVE_MS = 30_000;
+
 interface TabScopedListener {
   target: EventTarget;
   type: string;
@@ -125,6 +149,10 @@ export class TabManager {
   private closeGuard: ((tabId: string) => boolean | Promise<boolean>) | null = null;
   /** Decorates each rendered tab element (unsaved-changes dot of remote-bound tabs). */
   private tabDecorator: ((tabId: string, element: HTMLElement) => void) | null = null;
+  /** Autosave state per tab (see TabCacheState). */
+  private tabCache: Map<string, TabCacheState> = new Map();
+  /** Cancels the autosave scheduled for the next idle period. */
+  private cancelIdleSave: (() => void) | null = null;
 
   constructor(tabBarContainerId: string, graphContainerId: string) {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
@@ -336,6 +364,7 @@ export class TabManager {
 
     this.tabs.set(tabId, tabData);
     this.saveLoadControllers.set(tabId, saveLoadController);
+    this.trackTabCache(tabData);
 
     if (!this.activeTabId) {
       this.activeTabId = tabId;
@@ -353,9 +382,83 @@ export class TabManager {
   }
 
   private startAutoSave(): void {
-    this.autoSaveInterval = setInterval(() => {
+    // Every 5 seconds, in the next idle period (only the tabs that changed are serialised)
+    this.autoSaveInterval = setInterval(() => this.scheduleIdleSave(), 5000);
+  }
+
+  private scheduleIdleSave(): void {
+    if (this.cancelIdleSave) return;
+    this.cancelIdleSave = runWhenIdle(() => {
+      this.cancelIdleSave = null;
       this.saveToCache();
-    }, 5000); // Auto-save every 5 seconds
+    });
+  }
+
+  /** Starts the autosave bookkeeping of a new tab (dirty flags fed by its model and scenarios). */
+  private trackTabCache(tab: TabData): void {
+    const state: TabCacheState = {
+      modelDirty: true,
+      xmlJson: null,
+      xmlFingerprint: '',
+      xmlAt: 0,
+      scenariosJson: null,
+      scenarioCount: 0,
+      disposers: new Disposers(),
+    };
+    state.disposers.add(onModelChange(tab.graph, () => {
+      state.modelDirty = true;
+    }));
+    state.disposers.add(tab.saveLoadController.getScenarios().subscribe(() => {
+      state.scenariosJson = null;
+    }));
+    this.tabCache.set(tab.id, state);
+  }
+
+  /** JSON string of the tab's graph XML: the cached one unless the tab changed (TabCacheState). */
+  private tabXmlJson(tab: TabData, state: TabCacheState, now: number): string {
+    const unrestored = this.unrestoredTabXml.get(tab.id);
+    if (unrestored !== undefined) return JSON.stringify(unrestored);
+    const fingerprint = tab.saveLoadController.getSerializationFingerprint();
+    const due = tab.id === this.activeTabId && now - state.xmlAt >= RESERIALIZE_ACTIVE_MS;
+    if (state.xmlJson === null || state.modelDirty || fingerprint !== state.xmlFingerprint || due) {
+      // cleared first: a change while serialising marks the tab again
+      state.modelDirty = false;
+      state.xmlJson = JSON.stringify(tab.saveLoadController.serializeToXml());
+      state.xmlFingerprint = fingerprint;
+      state.xmlAt = now;
+    }
+    return state.xmlJson;
+  }
+
+  /** The tab's cache entry (CacheData['tabs'][number]) as JSON. */
+  private tabCacheJson(tab: TabData, now: number): string {
+    let state = this.tabCache.get(tab.id);
+    if (!state) {
+      this.trackTabCache(tab);
+      state = this.tabCache.get(tab.id)!;
+    }
+    const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
+    if (state.scenariosJson === null) {
+      const scenarios = tab.saveLoadController.getScenarios().toJSON();
+      state.scenariosJson = JSON.stringify(scenarios);
+      state.scenarioCount = scenarios.length;
+    }
+    const railwayScript = tab.saveLoadController.getRailwayScript().get();
+    const head = JSON.stringify({ id: tab.id, name: tab.name, projectName: tab.saveLoadController.getProjectName() });
+    // Only written when there is something to keep, so single-page caches stay as they were
+    const tail = JSON.stringify({
+      ...(extraPages.length > 0 ? { extraPages } : {}),
+      ...(pageId ? { pageId } : {}),
+    });
+    const after = JSON.stringify({
+      ...(railwayScript.trim() ? { railwayScript } : {}),
+      ...this.remoteCacheEntry(tab.id),
+    });
+    const parts = [head.slice(1, -1), `"graphXml":${this.tabXmlJson(tab, state, now)}`];
+    if (tail !== '{}') parts.push(tail.slice(1, -1));
+    if (state.scenarioCount > 0) parts.push(`"scenarios":${state.scenariosJson}`);
+    if (after !== '{}') parts.push(after.slice(1, -1));
+    return `{${parts.join(',')}}`;
   }
 
   /**
@@ -368,32 +471,13 @@ export class TabManager {
   }
 
   private saveToCache(): boolean {
+    this.cancelIdleSave?.();
+    this.cancelIdleSave = null;
     if (this.tabs.size === 0 || !this.activeTabId) return true;
 
-    const cacheData: CacheData = {
-      projectName: this.getProjectName(),
-      tabs: Array.from(this.tabs.values()).map((tab) => {
-        const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
-        const scenarios = tab.saveLoadController.getScenarios().toJSON();
-        const railwayScript = tab.saveLoadController.getRailwayScript().get();
-        return {
-          id: tab.id,
-          name: tab.name,
-          projectName: tab.saveLoadController.getProjectName(),
-          graphXml: this.unrestoredTabXml.get(tab.id) ?? tab.saveLoadController.serializeToXml(),
-          // Only written when there is something to keep, so single-page caches stay as they were
-          ...(extraPages.length > 0 ? { extraPages } : {}),
-          ...(pageId ? { pageId } : {}),
-          ...(scenarios.length > 0 ? { scenarios } : {}),
-          ...(railwayScript.trim() ? { railwayScript } : {}),
-          ...this.remoteCacheEntry(tab.id),
-        };
-      }),
-      activeTabId: this.activeTabId,
-      timestamp: Date.now(),
-    };
-
-    const result = CacheService.save(cacheData);
+    const now = Date.now();
+    const tabs: CachedTabJson[] = Array.from(this.tabs.values()).map((tab) => ({ id: tab.id, json: this.tabCacheJson(tab, now) }));
+    const result = CacheService.saveSession({ projectName: this.getProjectName(), activeTabId: this.activeTabId, timestamp: now }, tabs);
     this.reportCacheSaveResult(result);
     return result === 'saved';
   }
@@ -655,6 +739,8 @@ export class TabManager {
     this.destroyTab(tabId);
     this.tabs.delete(tabId);
     this.saveLoadControllers.delete(tabId);
+    this.tabCache.get(tabId)?.disposers.dispose();
+    this.tabCache.delete(tabId);
     emit('tab-closed', { tabId });
 
     // Switch to another tab if the closed tab was active
@@ -697,6 +783,10 @@ export class TabManager {
       clearInterval(this.autoSaveInterval);
       this.autoSaveInterval = null;
     }
+    this.cancelIdleSave?.();
+    this.cancelIdleSave = null;
+    this.tabCache.forEach((state) => state.disposers.dispose());
+    this.tabCache.clear();
 
     // Clean up all tabs
     Array.from(this.tabs.keys()).forEach((tabId) => {

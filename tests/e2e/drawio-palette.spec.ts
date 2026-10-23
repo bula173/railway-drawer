@@ -4,10 +4,11 @@
  *        their exact draw.io style, and the saved diagram keeps the draw.io shape names.
  *
  * Runs on any port (no draw.io server is involved). Uses the 5 s autosave into localStorage
- * `railway-drawer-cache` as the save path (same serializer as File > Save).
+ * (autosave-cache.ts) as the save path (same serializer as File > Save).
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosavedXml, clearAutosave } from './autosave-cache';
 import { leftTabLabels } from './menu-helpers';
 
 /** The railway libraries after ERTMS (src/ui/railway-libraries.ts, railway-shapes.spec.ts). */
@@ -17,17 +18,7 @@ const HEXAGON = 'shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=
 const FLASH = 'verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.flash';
 
 function cachedXml(page: Page): Promise<string> {
-  return page.evaluate(() => {
-    try {
-      // CacheService: { version, data: { tabs: [{ graphXml }] } }
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as {
-        data?: { tabs?: Array<{ graphXml?: string }> };
-      } | null;
-      return (cache?.data?.tabs ?? []).map((t) => t.graphXml ?? '').join('\n');
-    } catch {
-      return '';
-    }
-  });
+  return autosavedXml(page);
 }
 
 /** Style attribute of the first cell whose style contains `needle`. */
@@ -101,7 +92,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     // Reload: the diagram restored from that XML is written again (autosave) with the same styles
     await page.reload();
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
-    await page.evaluate(() => localStorage.removeItem('railway-drawer-cache'));
+    await clearAutosave(page);
     const again = await waitForCached(page, 'mxgraph.basic.flash');
     expect(styleWith(again, 'shape=hexagon')?.replace(/rdLayerId=[^;]*;$/, '')).toBe(HEXAGON);
     expect(styleWith(again, 'mxgraph.basic.flash')?.replace(/;?rdLayerId=[^;]*;$/, '')).toBe(FLASH);

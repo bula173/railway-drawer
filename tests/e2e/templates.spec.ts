@@ -5,25 +5,17 @@
  *        ("Save as Template…"), survive a reload, insert, rename and delete.
  *
  * Runs on any port (no draw.io server is involved). The diagram is checked through the 5 s
- * autosave into localStorage `railway-drawer-cache`.
+ * autosave into localStorage (tests/e2e/autosave-cache.ts).
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { autosavedXml, clearAutosave } from './autosave-cache';
 import { leftTabLabels, openLeftTab } from './menu-helpers';
 
 const TEMPLATES_KEY = 'railway-drawer-templates';
 
 function cachedXml(page: Page): Promise<string> {
-  return page.evaluate(() => {
-    try {
-      const cache = JSON.parse(localStorage.getItem('railway-drawer-cache') ?? 'null') as {
-        data?: { tabs?: Array<{ graphXml?: string }> };
-      } | null;
-      return (cache?.data?.tabs ?? []).map((t) => t.graphXml ?? '').join('\n');
-    } catch {
-      return '';
-    }
-  });
+  return autosavedXml(page);
 }
 
 function count(text: string, needle: string): number {
@@ -160,7 +152,7 @@ test.describe('templates', () => {
     await expect(user.locator('.rd-tpl-desc')).toHaveText('one shape');
 
     // insert it
-    await page.evaluate(() => localStorage.removeItem('railway-drawer-cache'));
+    await clearAutosave(page);
     await user.click();
     await page.locator('.rd-tpl-popover [data-action="insert"]').click();
     await waitForCachedCount(page, 'shape=hexagon', 3);
