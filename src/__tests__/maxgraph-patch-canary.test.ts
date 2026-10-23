@@ -27,6 +27,7 @@ import {
   SelectionHandler,
   Shape,
   StencilShape,
+  VertexHandler,
 } from '@maxgraph/core';
 
 const ROOT = resolve(__dirname, '../..');
@@ -56,7 +57,8 @@ describe('@maxgraph/core patch canary', () => {
       ['CellRenderer', proto(CellRenderer), ['createShape']],
       // drawio-shapes/engine/handle-colors.ts
       ['CellHighlight', proto(CellHighlight), ['createShape', 'setHighlightColor']],
-      ['EdgeHandler', proto(EdgeHandler), ['getHandleFillColor', 'updatePreviewState', 'mouseMove']],
+      ['EdgeHandler', proto(EdgeHandler), ['getHandleFillColor', 'updatePreviewState', 'mouseMove', 'getSelectionColor', 'createHandleShape']],
+      ['VertexHandler', proto(VertexHandler), ['getSelectionColor', 'createSizerShape']],
       // ui/connections.ts (Cell.prototype.isConnectable), shapes/index.ts (registerDefaults)
       ['Cell', proto(Cell), ['isConnectable']],
       ['Graph', proto(Graph), ['registerDefaults', 'createEdgeHandler', 'createVertexHandler', 'getLabel', 'isHtmlLabel', 'postProcessCellStyle', 'convertValueToString']],

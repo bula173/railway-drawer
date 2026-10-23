@@ -37,6 +37,7 @@
   --rd-link: #0066cc;            /* accent-colored text on surfaces (active tab, values) */
   --rd-focus: #2196f3;           /* focus rings, active tab underline */
   --rd-selected: #e3f2fd;        /* selected rows */
+  --rd-selection: #0f8bd0;       /* canvas selection border / handles (draw.io blue, >= 3:1 on the canvas; handle-colors.ts SELECTION_COLOR) */
   --rd-input-bg: #ffffff;
   --rd-input-text: #333333;
   --rd-input-border: #cccccc;
@@ -201,6 +202,7 @@
   --rd-link: #61a8ff;
   --rd-focus: #61a8ff;
   --rd-selected: #1d3a5c;
+  --rd-selection: #29b6f2;
   --rd-input-bg: #2a2a2d;
   --rd-input-text: #e0e0e0;
   --rd-input-border: #555555;
