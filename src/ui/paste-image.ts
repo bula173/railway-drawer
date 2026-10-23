@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { logger } from '../drawio/logger';
 
 export class PasteImageController {
   private graph: Graph;
@@ -94,9 +95,7 @@ export class PasteImageController {
         this.graph.setSelectionCells([cell]);
       });
 
-      console.log(
-        `[PasteImage] Image pasted successfully: ${blob.type} (${(blob.size / 1024).toFixed(1)} KB)`
-      );
+      logger.debug('PasteImage', `Image pasted successfully: ${blob.type} (${(blob.size / 1024).toFixed(1)} KB)`);
     };
 
     img.src = dataUrl;

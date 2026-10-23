@@ -16,23 +16,22 @@ export class StatusBarController {
     this.graph.view.addListener(InternalEvent.SCALE_AND_TRANSLATE, onScale);
     this.syncZoom();
 
-    // Update selection status
-    this.graph.getSelectionModel().addListener('change', () => {
-      const cells = this.graph.getSelectionCells();
-      const statusSelected = document.getElementById('status-selected');
-      const newValue = cells.length.toString();
+    // Selection count (only while this tab is shown: a background tab's selection change, e.g. a
+    // load or a script applied to it, must not overwrite the shown tab's count)
+    this.graph.getSelectionModel().addListener(InternalEvent.CHANGE, () => this.syncSelection());
+  }
 
-      console.log('[StatusBar] Selection changed:', cells.length);
-      console.log('[StatusBar] Element found:', !!statusSelected);
-      console.log('[StatusBar] Current value:', statusSelected?.textContent);
-      console.log('[StatusBar] New value:', newValue);
+  /** True while this tab's graph is the shown one (the status bar DOM is shared by all tabs). */
+  private isShown(): boolean {
+    const container = this.graph.container;
+    return !!container && container.isConnected && container.style.display !== 'none';
+  }
 
-      if (statusSelected) {
-        statusSelected.textContent = newValue;
-        console.log('[StatusBar] After update:', statusSelected.textContent);
-        console.log('[StatusBar] HTML:', statusSelected.outerHTML);
-      }
-    });
+  /** Shows this tab's selection count in the status bar (only while this tab is shown). */
+  syncSelection(): void {
+    if (!this.isShown()) return;
+    const statusSelected = document.getElementById('status-selected');
+    if (statusSelected) statusSelected.textContent = String(this.graph.getSelectionCount());
   }
 
   /**
@@ -40,8 +39,7 @@ export class StatusBarController {
    * the shown one: the DOM is shared). A zoom that is not one of the presets gets its own option.
    */
   syncZoom(): void {
-    const container = this.graph.container;
-    if (!container || !container.isConnected || container.style.display === 'none') return;
+    if (!this.isShown()) return;
     const zoom = Math.round(this.graph.view.scale * 100);
     const statusZoom = document.getElementById('status-zoom');
     if (statusZoom) statusZoom.textContent = `${zoom}%`;

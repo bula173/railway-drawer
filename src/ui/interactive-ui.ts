@@ -4,6 +4,7 @@ import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
 import { setGridShown, syncGridControls } from './grid-toggle';
+import { logger } from '../drawio/logger';
 
 export class InteractiveUIController {
   private graph: Graph;
@@ -124,7 +125,7 @@ export class InteractiveUIController {
     const canvasSizeSelect = document.getElementById('canvas-size') as HTMLSelectElement;
     canvasSizeSelect?.addEventListener('change', () => {
       const size = canvasSizeSelect.value;
-      console.log(`[UI] Canvas size set to ${size}`);
+      logger.debug('UI', `Canvas size set to ${size}`);
     });
   }
 

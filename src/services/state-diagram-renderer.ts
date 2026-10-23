@@ -5,6 +5,7 @@
 
 import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
+import { logger } from '../drawio/logger';
 
 export class StateDiagramRenderer {
   private graph: Graph;
@@ -20,11 +21,11 @@ export class StateDiagramRenderer {
   }
 
   renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
-    console.log('[StateDiagram] Rendering into group');
+    logger.debug('StateDiagram', 'Rendering into group');
     const parent = groupCell;
 
     const states = diagramData.elements.filter((el) => el.type === 'state');
-    console.log('[StateDiagram] Found states:', states.length);
+    logger.debug('StateDiagram', 'Found states:', states.length);
 
     if (states.length === 0) return;
 
@@ -114,11 +115,11 @@ export class StateDiagramRenderer {
   }
 
   render(diagramData: DiagramData): void {
-    console.log('[StateDiagram] Rendering');
+    logger.debug('StateDiagram', 'Rendering');
     const parent = this.graph.getDefaultParent();
 
     const states = diagramData.elements.filter((el) => el.type === 'state');
-    console.log('[StateDiagram] Found states:', states.length);
+    logger.debug('StateDiagram', 'Found states:', states.length);
 
     if (states.length === 0) return;
 

@@ -128,12 +128,8 @@ export class ErrorHandler {
    */
   private logError(appError: AppError): void {
     const prefix = `[${appError.category.toUpperCase()}]`;
-    const level = appError.recoverable ? 'warn' : 'error';
-
-    console[level as 'warn' | 'error'](
-      `${prefix} ${appError.message}`,
-      appError.originalError || ''
-    );
+    if (appError.recoverable) console.warn(`${prefix} ${appError.message}`, appError.originalError || '');
+    else console.error(`${prefix} ${appError.message}`, appError.originalError || '');
   }
 
   /**

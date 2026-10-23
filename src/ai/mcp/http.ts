@@ -5,17 +5,25 @@
  *        or `?pair=` for clients that only take a URL such as claude.ai custom connectors), caps the
  *        body size, and serves the MCP request with a fresh server whose tools relay to the paired
  *        browser through `relay` (the Worker passes its Durable Object).
+ *
+ *        Prefer the Bearer header: `?pair=` puts the pairing code into the URL, which clients,
+ *        proxies and request logs may keep (Cloudflare's own request logs included). It stays for
+ *        clients that cannot send headers (claude.ai custom connectors); the app shows the header
+ *        variant first, the code expires after at most 12 hours and "New code" revokes it. The
+ *        endpoint never logs URLs; anything that does must use `redactUrl` (guard.ts), and the
+ *        request handed to the MCP handler no longer carries the code.
  */
 import { createMcpHandler } from '@modelcontextprotocol/server';
 import { MAX_MCP_BODY_BYTES, hashSecret, parsePairingToken } from '../bridge/protocol';
 import type { RelayCallResult } from '../bridge/relay';
 import { createRailwayMcpServer } from './mcp-server';
+import { API_SECURITY_HEADERS, withApiHeaders } from './guard';
 
 /** Relays a validated tool call to the pairing's browser (throws RelayError-like errors). */
 export type RemoteRelay = (session: string, auth: string, tool: string, input: Record<string, unknown>) => Promise<RelayCallResult>;
 
 function json(status: number, body: unknown, extra: Record<string, string> = {}): Response {
-  return new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store', ...extra } });
+  return new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', ...API_SECURITY_HEADERS, ...extra } });
 }
 
 /** The pairing token of a request: Bearer header first, then the `pair` query parameter. */
@@ -48,10 +56,15 @@ export async function handleMcpRequest(request: Request, relay: RemoteRelay, ver
     // no mid-call notifications: one JSON answer per request (the handler is closed right after)
     responseMode: 'json',
   });
-  // the body was read for the size check: hand the handler a fresh request
-  const forwarded = new Request(request.url, { method: request.method, headers: request.headers, ...(body !== undefined ? { body } : {}) });
+  // the body was read for the size check: hand the handler a fresh request, without the pairing
+  // code in its URL or headers (nothing downstream needs it; nothing downstream can log it)
+  const url = new URL(request.url);
+  url.searchParams.delete('pair');
+  const headers = new Headers(request.headers);
+  headers.delete('authorization');
+  const forwarded = new Request(url, { method: request.method, headers, ...(body !== undefined ? { body } : {}) });
   try {
-    return await handler.fetch(forwarded);
+    return withApiHeaders(await handler.fetch(forwarded));
   } finally {
     void handler.close();
   }

@@ -5,7 +5,8 @@
  *        each opened in its own tab by the normal loader.
  */
 import { xmlUtils } from '@maxgraph/core';
-import { generatePageId, sanitizeXmlText } from '../services/drawio-xml';
+import { buildMxfile, generatePageId, sanitizeXmlText } from '../services/drawio-xml';
+import type { MxfilePage, MxfileRawPage } from '../services/drawio-xml';
 import { isScenarioStepPage } from '../scenarios/scenario-format';
 
 /** One tab of the sender. */
@@ -38,49 +39,31 @@ function parse(xml: string): Document | null {
 
 /** Builds one `<mxfile>` with a page per tab (and the tabs' preserved pages after each). */
 export function buildShareMxfile(sources: SharePageSource[], modified: string = new Date().toISOString()): string {
-  const doc = document.implementation.createDocument(null, null, null);
-  const mxfile = doc.createElement('mxfile');
-  mxfile.setAttribute('host', SHARE_HOST);
-  mxfile.setAttribute('modified', modified);
-  mxfile.setAttribute('agent', SHARE_AGENT);
-  mxfile.setAttribute('version', '1.0');
-  doc.appendChild(mxfile);
-
   const usedIds = new Set<string>();
-  const uniqueId = (wanted: string | null | undefined): string => {
+  const uniqueId = (wanted: string): string => {
     let id = wanted && !usedIds.has(wanted) ? wanted : generatePageId();
     while (usedIds.has(id)) id = generatePageId();
     usedIds.add(id);
     return id;
   };
 
+  const pages: Array<MxfilePage | MxfileRawPage> = [];
   for (const source of sources) {
     const modelDoc = parse(source.modelXml);
     const model = modelDoc?.documentElement;
     if (!modelDoc || !model || model.nodeName !== 'mxGraphModel') {
       console.error('[Share] Skipping a tab whose diagram is not a draw.io model:', source.name);
     } else {
-      const diagram = doc.createElement('diagram');
-      diagram.setAttribute('id', uniqueId(source.pageId));
-      diagram.setAttribute('name', source.name || 'Page');
-      for (const [key, value] of Object.entries(source.pageAttributes ?? {})) diagram.setAttribute(key, value);
-      diagram.appendChild(doc.importNode(model, true));
+      const comments: string[] = [];
       modelDoc.childNodes.forEach((node) => {
-        if (node.nodeType === Node.COMMENT_NODE) diagram.appendChild(doc.createComment(node.nodeValue ?? ''));
+        if (node.nodeType === Node.COMMENT_NODE) comments.push(node.nodeValue ?? '');
       });
-      mxfile.appendChild(diagram);
+      pages.push({ id: source.pageId ?? '', name: source.name || 'Page', model, comments, attributes: source.pageAttributes });
     }
     // Step pages right after their tab's page: splitSharedFile keeps them with it
-    for (const pageXml of [...(source.scenarioPages ?? []), ...(source.extraPages ?? [])]) {
-      const page = parse(pageXml)?.documentElement;
-      if (!page || page.nodeName !== 'diagram') continue;
-      const imported = doc.importNode(page, true) as Element;
-      imported.setAttribute('id', uniqueId(imported.getAttribute('id')));
-      mxfile.appendChild(imported);
-    }
+    for (const xml of [...(source.scenarioPages ?? []), ...(source.extraPages ?? [])]) pages.push({ xml });
   }
-  // getXml: newlines in attribute values (multi-line labels) must stay escaped
-  return sanitizeXmlText(xmlUtils.getXml(mxfile));
+  return buildMxfile(pages, [], { host: SHARE_HOST, modified, agent: SHARE_AGENT, version: '1.0' }, { pageId: uniqueId });
 }
 
 /**

@@ -947,7 +947,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     const onRelease = (): void => {
       const graph = options.getGraph();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const handler = graph ? (graph.getPlugin('GraphHandler') as any) : null;
+      const handler = graph ? (graph.getPlugin('SelectionHandler') as any) : null;
       if (!graph || !handler || handler.first == null || graph.getSelectionCount() === 0) return;
       // cancel the move on the canvas: the cells are copied into the library instead
       handler.reset();

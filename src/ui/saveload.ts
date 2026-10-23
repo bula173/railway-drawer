@@ -18,6 +18,7 @@ import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
 import { resetCanvasScroll } from './canvas-scroll';
 import { applyGridSettings, GRID_SETTINGS_EVENT } from './grid-toggle';
+import { logger } from '../drawio/logger';
 
 /** One cell of exportAsJson(), read from the draw.io XML the tab saves. */
 export interface JsonExportCell {
@@ -189,17 +190,17 @@ export class SaveLoadController {
   /** Downloads the tab as a file, whatever saveProject() is bound to. */
   saveProjectToDisk(): void {
     try {
-      console.log('[SaveLoad] Starting save...');
+      logger.debug('SaveLoad', 'Starting save...');
       const graphXml = this.serializeToXml();
-      console.log('[SaveLoad] Graph serialized, length:', graphXml.length);
+      logger.debug('SaveLoad', 'Graph serialized, length:', graphXml.length);
       const projectXml = this.projectService.generateProjectXml(graphXml);
-      console.log('[SaveLoad] Project XML generated, length:', projectXml.length);
+      logger.debug('SaveLoad', 'Project XML generated, length:', projectXml.length);
       // A draw.io file (<mxfile>): .drawio, like Export As… and the Share dialog's download
       const filename = `${this.projectService.getProjectName() || 'diagram'}.drawio`;
-      console.log('[SaveLoad] Filename:', filename);
+      logger.debug('SaveLoad', 'Filename:', filename);
       this.projectService.exportToFile(projectXml, filename);
       this.markAsSavedToDisk(filename);
-      console.log('[SaveLoad] Project saved as', filename);
+      logger.debug('SaveLoad', 'Project saved as', filename);
     } catch (error) {
       console.error('[SaveLoad] Save failed:', error);
     }
@@ -236,15 +237,15 @@ export class SaveLoadController {
   async loadProjectXml(xml: string, sourceName: string, opts: { quiet?: boolean } = {}): Promise<void> {
     const file = { name: sourceName };
     try {
-      console.log('[SaveLoad] Starting file import:', file.name);
+      logger.debug('SaveLoad', 'Starting file import:', file.name);
       const result = await this.projectService.parseProjectXml(xml);
-      console.log('[SaveLoad] File imported, metadata:', result.metadata);
-      console.log('[SaveLoad] Deserializing graph...');
+      logger.debug('SaveLoad', 'File imported, metadata:', result.metadata);
+      logger.debug('SaveLoad', 'Deserializing graph...');
 
       // Use the same load method that works for cache
       this.load(result.graphXml);
 
-      console.log('[SaveLoad] Graph deserialized');
+      logger.debug('SaveLoad', 'Graph deserialized');
       this.projectService.setProjectMetadata(result.metadata);
       // Pages 2..n are not shown, but are kept so a save writes them back unchanged
       this.projectService.setExtraPages(result.extraPages);
@@ -267,7 +268,7 @@ export class SaveLoadController {
       } else if (!opts.quiet) {
         globalNotificationManager.success(`Opened ${file.name}`);
       }
-      console.log('[SaveLoad] Project loaded:', result.metadata.name);
+      logger.debug('SaveLoad', 'Project loaded:', result.metadata.name);
     } catch (error) {
       console.error('[SaveLoad] Failed to load project:', error);
       const reason = error instanceof Error ? error.message : String(error);
@@ -284,7 +285,7 @@ export class SaveLoadController {
     const xml = this.projectService.generateProjectXml(this.serializeToXml());
     const name = this.projectService.getProjectName() || 'diagram';
     this.projectService.exportToFile(xml, `${name}.drawio`);
-    console.log('[SaveLoad] Diagram exported');
+    logger.debug('SaveLoad', 'Diagram exported');
     return xml;
   }
 
@@ -300,7 +301,7 @@ export class SaveLoadController {
       return;
     }
 
-    console.log('[SaveLoad] Loading XML, length:', xml.length);
+    logger.debug('SaveLoad', 'Loading XML, length:', xml.length);
 
     // Caches written before control characters were filtered on save are otherwise unreadable
     xml = sanitizeXmlText(xml);
@@ -330,7 +331,7 @@ export class SaveLoadController {
     resetCanvasScroll(this.graph);
     this.commandService?.clearHistory();
     this.loadMigration = migration;
-    console.log('[SaveLoad] Diagram loaded');
+    logger.debug('SaveLoad', 'Diagram loaded');
   }
 
   /**
@@ -360,7 +361,7 @@ export class SaveLoadController {
     // the tab's grid as draw.io reads it (View > Grid / toolbar / Properties > Canvas change it)
     const page: PageSettings = { ...this.pageSettings, grid: this.graph.gridEnabled, gridSize: this.graph.gridSize };
     try {
-      console.log('[SaveLoad] Serializing graph...');
+      logger.debug('SaveLoad', 'Serializing graph...');
       // Image data URLs stay in the output: custom shapes and uploaded images have no other
       // source to be rebuilt from, so stripping them would lose content on reload.
       let xml = exportModelToDrawioXml(this.graph.getDataModel(), {
@@ -372,7 +373,7 @@ export class SaveLoadController {
       // Embed PlantUML metadata
       xml = this.embedPlantUmlMetadata(xml);
 
-      console.log('[SaveLoad] Serialized, length:', xml.length);
+      logger.debug('SaveLoad', 'Serialized, length:', xml.length);
       return xml;
     } catch (e) {
       console.error('[SaveLoad] Serialization error:', e);
@@ -480,7 +481,7 @@ export class SaveLoadController {
       const plantumlGroups = this.plantumlGroupManager.getAllPlantUmlGroups();
       if (plantumlGroups.length === 0) return xml;
 
-      console.log('[SaveLoad] Embedding PlantUML metadata for', plantumlGroups.length, 'groups');
+      logger.debug('SaveLoad', 'Embedding PlantUML metadata for', [plantumlGroups.length, 'groups']);
 
       // Create a root element to hold PlantUML data
       const plantumlData = plantumlGroups.map((group) => {
@@ -518,12 +519,12 @@ export class SaveLoadController {
       } else if (legacyMatch?.[1]) {
         json = atob(legacyMatch[1]);
       } else {
-        console.log('[SaveLoad] No PlantUML metadata found in XML');
+        logger.debug('SaveLoad', 'No PlantUML metadata found in XML');
         return;
       }
 
       const plantumlData: PlantUmlMetadataEntry[] = JSON.parse(json);
-      console.log('[SaveLoad] Restoring PlantUML metadata for', plantumlData.length, 'groups');
+      logger.debug('SaveLoad', 'Restoring PlantUML metadata for', [plantumlData.length, 'groups']);
 
       const model = this.graph.model;
       const cells: Record<string, Cell> = model.cells || {};
@@ -538,7 +539,7 @@ export class SaveLoadController {
             createdAt: data.createdAt,
             lastModified: data.lastModified,
           });
-          console.log('[SaveLoad] Restored PlantUML metadata for:', data.cellLabel);
+          logger.debug('SaveLoad', 'Restored PlantUML metadata for:', data.cellLabel);
         }
       });
     } catch (e) {

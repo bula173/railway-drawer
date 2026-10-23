@@ -8,6 +8,7 @@
  */
 
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
+import { confirmDialog } from './app-dialogs';
 
 export class CustomShapeToolbar {
   private shapesContainer: HTMLElement | null = null;
@@ -162,10 +163,16 @@ export class CustomShapeToolbar {
 
       deleteBtn?.addEventListener('click', () => {
         document.body.removeChild(menu);
-        if (confirm(`Delete shape "${shape.name}"?`)) {
+        void confirmDialog({
+          title: 'Delete custom shape',
+          message: `Delete shape "${shape.name}"? It is removed from this browser's custom shapes.`,
+          confirmLabel: 'Delete',
+          danger: true,
+        }).then((ok) => {
+          if (!ok) return;
           customShapeRegistry.delete(shape.id);
           this.render();
-        }
+        });
       });
 
       // Close menu on click elsewhere

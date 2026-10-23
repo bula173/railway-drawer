@@ -7,17 +7,27 @@
  *        to the browser and the result back. Uses the WebSocket Hibernation API: the pairing (secret
  *        hash + expiry) is kept in storage and restored on wake-up; an alarm at the expiry closes
  *        the sockets and deletes it. Nothing about the drawing is stored here.
+ *
+ *        Socket limits (src/ai/mcp/guard.ts): every socket carries `{ paired, acceptedAt }` as its
+ *        attachment; a socket that has not sent a valid hello within HELLO_TIMEOUT_MS is closed, and
+ *        such unpaired sockets are capped separately (they never count toward the paired cap, so
+ *        unauthenticated sockets cannot lock the real browser out).
  */
 import { DurableObject } from 'cloudflare:workers';
-import { CLOSE_EXPIRED, MAX_FRAME_BYTES, isSessionId } from '../src/ai/bridge/protocol';
+import { CLOSE_AUTH, CLOSE_EXPIRED, MAX_FRAME_BYTES, isSessionId } from '../src/ai/bridge/protocol';
+import { HELLO_TIMEOUT_MS, admitBridgeSocket, pairedOverflow, staleUnpairedSockets } from '../src/ai/mcp/guard';
+import type { BridgeSocketInfo } from '../src/ai/mcp/guard';
 import { BridgeRelay } from '../src/ai/bridge/relay';
 import type { PairingState, RelayCallResult } from '../src/ai/bridge/relay';
 import type { Env } from './env';
 
 const PAIRING_KEY = 'pairing';
 const SESSION_KEY = 'session';
-/** Browser windows that may hold a socket to one pairing at the same time (abuse cap). */
-const MAX_SOCKETS = 4;
+
+function socketInfo(ws: WebSocket): BridgeSocketInfo {
+  const a = ws.deserializeAttachment() as Partial<BridgeSocketInfo> | null;
+  return { paired: a?.paired === true, acceptedAt: typeof a?.acceptedAt === 'number' ? a.acceptedAt : 0 };
+}
 
 export class AiBridge extends DurableObject<Env> {
   private relay: BridgeRelay | null = null;
@@ -31,7 +41,7 @@ export class AiBridge extends DurableObject<Env> {
       if (this.session && pairing) {
         const relay = this.ensureRelay(this.session);
         // the paired browser socket (tagged by onPairing) survives hibernation
-        const paired = ctx.getWebSockets('browser').filter((ws) => (ws.deserializeAttachment() as { paired?: boolean } | null)?.paired);
+        const paired = ctx.getWebSockets('browser').filter((ws) => socketInfo(ws).paired);
         relay.restore(paired[paired.length - 1] ?? null, pairing);
       }
     });
@@ -47,7 +57,9 @@ export class AiBridge extends DurableObject<Env> {
           void this.ctx.storage.put({ [PAIRING_KEY]: state, [SESSION_KEY]: session });
           void this.ctx.storage.setAlarm(state.expiresAt);
           // tags this socket as the paired browser (survives hibernation)
-          (socket as WebSocket).serializeAttachment?.({ paired: true });
+          const ws = socket as WebSocket;
+          ws.serializeAttachment?.({ ...socketInfo(ws), paired: true });
+          this.closeOverflow();
         },
       });
     }
@@ -59,12 +71,43 @@ export class AiBridge extends DurableObject<Env> {
     const session = new URL(request.url).pathname.split('/')[3] ?? '';
     if (!isSessionId(session)) return new Response('Bad session', { status: 400 });
     if (request.headers.get('upgrade')?.toLowerCase() !== 'websocket') return new Response('Expected a WebSocket', { status: 426 });
-    if (this.ctx.getWebSockets().length >= MAX_SOCKETS) return new Response('Too many connections', { status: 429 });
+    const now = Date.now();
+    this.closeStale(now);
+    const infos = this.ctx.getWebSockets().map(socketInfo);
+    if (!admitBridgeSocket(infos, now)) return new Response('Too many connections', { status: 429 });
     this.ensureRelay(session);
     const pair = new WebSocketPair();
     const [client, server] = Object.values(pair);
     this.ctx.acceptWebSocket(server, ['browser']);
+    server.serializeAttachment({ paired: false, acceptedAt: now } satisfies BridgeSocketInfo);
+    // keeps the object awake until the deadline (no hibernation with a pending timer), then closes
+    // the socket unless it said hello; wake-ups and new connections sweep as well
+    setTimeout(() => this.closeStale(Date.now()), HELLO_TIMEOUT_MS + 100);
     return new Response(null, { status: 101, webSocket: client });
+  }
+
+  /** Closes sockets that did not send a valid hello in time. */
+  private closeStale(now: number): void {
+    const sockets = this.ctx.getWebSockets();
+    for (const i of staleUnpairedSockets(sockets.map(socketInfo), now)) {
+      try {
+        sockets[i].close(CLOSE_AUTH, 'no hello');
+      } catch {
+        // already closed
+      }
+    }
+  }
+
+  /** More paired sockets than allowed (reconnect races): the oldest go. */
+  private closeOverflow(): void {
+    const sockets = this.ctx.getWebSockets();
+    for (const i of pairedOverflow(sockets.map(socketInfo))) {
+      try {
+        sockets[i].close(CLOSE_AUTH, 'too many connections');
+      } catch {
+        // already closed
+      }
+    }
   }
 
   override async webSocketMessage(ws: WebSocket, message: string | ArrayBuffer): Promise<void> {

@@ -40,6 +40,7 @@ import { GridSnapController } from './grid-snap';
 import { DuplicateOffsetController } from './duplicate-offset';
 import { ExportImageController } from './export-image';
 import { PlantUmlEditorController } from './plantuml-editor';
+import { logger } from '../drawio/logger';
 
 export interface TabData {
   id: string;
@@ -122,7 +123,7 @@ export class TabManager {
   private cachedRemote: Map<string, unknown> = new Map();
   private remoteCacheWriter: ((tabId: string) => unknown) | null = null;
   /** Asked before the user closes a tab with its × button; false keeps the tab. */
-  private closeGuard: ((tabId: string) => boolean) | null = null;
+  private closeGuard: ((tabId: string) => boolean | Promise<boolean>) | null = null;
   /** Decorates each rendered tab element (unsaved-changes dot of remote-bound tabs). */
   private tabDecorator: ((tabId: string, element: HTMLElement) => void) | null = null;
 
@@ -464,7 +465,7 @@ export class TabManager {
     return remote;
   }
 
-  setCloseGuard(guard: ((tabId: string) => boolean) | null): void {
+  setCloseGuard(guard: ((tabId: string) => boolean | Promise<boolean>) | null): void {
     this.closeGuard = guard;
   }
 
@@ -560,7 +561,7 @@ export class TabManager {
     // Diagrams cached by earlier versions (<GraphDataModel>) are rewritten in the draw.io
     // format right away instead of at the next autosave. Tabs that failed keep their XML.
     if (migratedTabs > 0) {
-      console.log('[TabManager] Migrating', migratedTabs, 'cached diagram(s) to the draw.io format');
+      logger.debug('TabManager', 'Migrating', [migratedTabs, 'cached diagram(s) to the draw.io format']);
       this.saveToCache();
     }
     if (layerMigratedTabs > 0) {
@@ -578,7 +579,7 @@ export class TabManager {
       );
     }
 
-    console.log('[TabManager] Restored from cache');
+    logger.debug('TabManager', 'Restored from cache');
     return this.tabs.size > 0;
   }
 
@@ -684,6 +685,7 @@ export class TabManager {
     tab.layersController.refresh();
     tab.propertiesPanel.update();
     tab.statusBarController.syncZoom();
+    tab.statusBarController.syncSelection();
     // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
     syncGridUi(tab.graph);
   }
@@ -859,8 +861,10 @@ export class TabManager {
 
         closeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          if (this.closeGuard && !this.closeGuard(tab.id)) return;
-          this.closeTab(tab.id);
+          const allowed = this.closeGuard ? this.closeGuard(tab.id) : true;
+          // a themed confirmation answers later; a plain answer closes at once
+          if (allowed === true) this.closeTab(tab.id);
+          else if (allowed !== false) void allowed.then((ok) => ok && this.tabs.has(tab.id) && this.closeTab(tab.id));
         });
 
         tabButton.appendChild(closeBtn);
@@ -896,7 +900,7 @@ export class TabManager {
   }
 
   private editTabName(tab: TabData, labelElement: HTMLSpanElement): void {
-    console.log('[TabManager] Editing tab name:', tab.name);
+    logger.debug('TabManager', 'Editing tab name:', tab.name);
 
     // Create input element
     const input = document.createElement('input');
@@ -941,7 +945,7 @@ export class TabManager {
           if (tab.id === this.activeTabId) this.showProjectName(tab);
         }
         tab.name = newName;
-        console.log('[TabManager] Tab name changed to:', newName);
+        logger.debug('TabManager', 'Tab name changed to:', newName);
         // Save the current session (re-saving the stored copy with only the name patched would
         // mark an out-of-date cache as current after a failed autosave)
         this.saveToCache();

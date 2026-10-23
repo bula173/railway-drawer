@@ -27,12 +27,6 @@ export interface RailwayStatesHandle {
   destroy(): void;
 }
 
-let current: RailwayStatesHandle | null = null;
-
-/** The installed handle (tests, e2e through the dev server's module graph). */
-export function getRailwayStates(): RailwayStatesHandle | null {
-  return current;
-}
 
 function readLegendFlag(): boolean {
   try {
@@ -283,9 +277,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
       fades.clear();
       legend?.remove();
       legend = null;
-      if (current === handle) current = null;
     },
   };
-  current = handle;
   return handle;
 }

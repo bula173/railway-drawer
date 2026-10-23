@@ -9,4 +9,8 @@ export interface Env {
   ASSETS: Fetcher;
   /** One Durable Object per AI pairing session. */
   AI_BRIDGE: DurableObjectNamespace<AiBridge>;
+  /** Workers Rate Limiting: `/mcp` requests per client IP (wrangler.jsonc `ratelimits`). */
+  MCP_RATE_LIMIT_IP?: RateLimit;
+  /** Workers Rate Limiting: `/mcp` requests of all clients together. */
+  MCP_RATE_LIMIT_GLOBAL?: RateLimit;
 }

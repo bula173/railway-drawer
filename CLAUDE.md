@@ -4,7 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. No framework, no React.
 
-**Decision: one editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` 0.10) is the product: all
+**Decision: one editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` pinned exactly to 0.10.3: the app
+patches internals; `src/__tests__/maxgraph-patch-canary.test.ts` lists them and must pass after any bump) is the product: all
 railway features (data, routes, checks, scenarios, sharing) live there. UI text says "Railway Drawer editor"
 (never "legacy"/"maxGraph editor").
 
@@ -43,16 +44,19 @@ npx wrangler deploy --dry-run --outdir <tmp>   # validate the Worker bundle (nee
 node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint against the railML 3.2 XSD (not vendored)
 ```
 
-CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, typecheck:worker, lint (src, worker,
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, typecheck:worker, typecheck:e2e, lint (src, worker,
 tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move). No
+railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
 
+- CI fails on flaky tests (`failOnFlakyTests` with CI set): the 2 retries only absorb infrastructure failures and a
+  test that passes only on a retry fails the run. Production code has no `console.log`/`info`/`debug` (eslint
+  `no-console` error, warn/error allowed): log through `src/drawio/logger.ts` (debug only in dev builds).
 - All specs run on any port, headless and offline (`E2E_PORT`, default 3000). The chromium project uses
   `devices['Desktop Chrome']`.
 - vitest includes `src/**/*.test.ts`; Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
@@ -376,7 +380,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   write `graph.getCellStyle(cell)` back into a cell: it is the resolved style (maxGraph's stylesheet deletes `none`
   values, base style names are merged away, light-dark()/default/inherit resolved), which brought back outlines, fills
   and arrow heads on draw.io/template cells. Displays use the resolved style (`effectiveColor`: missing color = none).
-  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated.
+  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated. Copy / Paste Style (format painter,
+  `GraphCommandService.copyStyle/pasteStyle`) = draw.io's Graph.pasteStyle with `PASTE_STYLE_KEYS` (Graph.cellStyles:
+  visual keys only, never shape/stencil/locked/rd*) through `pasteStyleToCells` (locked cells skipped, one undo step).
 - `src/services/graph-command-service.ts` `GraphCommandService` (one per tab): undo/redo via maxGraph
   `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
   undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.
@@ -435,7 +441,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   shape-designer button (Extras), the single Distribute button.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
   backdrop, focus trap, Esc cancel, Enter submit, focus returned, keys kept from the dispatcher), `promptSaveAs` (File >
-  Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `messageDialog`, `showAboutDialog`
+  Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `showAboutDialog`
   (`APP_VERSION`/`BUILD_ID`/`BUILD_TIME` from `config/build-id.ts`, the status bar's source; `VITE_APP_VERSION` =
   package.json version via vite.config.ts). Use them (or notifications) instead of alert()/confirm() in the chrome.
 - Properties panel states (`src/ui/properties-state.ts` `setPropertiesPanelState`, the only place that toggles
@@ -525,7 +531,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   checkCollisions). Click = `connectVertex` (draw.io Graph.connectVertex, one batchUpdate so one undo step and the ERTMS
   snap joins it): an unlocked cell within 40 px of the point 80 (`defaultEdgeLength`) beyond the side is connected,
   else a clone (`graph.cloneCells`, `prepareClonedCells`: next free railway ID per kind, `rdRoutes`/`rdRailml*Id`/
-  `rdRailmlNetElements` dropped) is added 80 away in the source's parent and connected; Ctrl/Cmd = always clone,
+  `rdRailmlNetElements` dropped; one shared module `src/railway/clone.ts`, also used by copy/paste, Ctrl+D duplicate,
+  palette and template inserts: free IDs kept, colliding ones renumbered, references among the clones follow) is added 80 away in the source's parent and connected; Ctrl/Cmd = always clone,
   Shift = no clone (dangling edge), Ctrl+Shift = clone without edge; the new cell (else the edge) is selected. Edges get
   the connection handler's style (graph default). Drag = `ConnectionHandler.start` from the cell (draw.io
   HoverIcons.drag); while it runs `isCreateTarget` is true, so a drop on blank canvas inserts a prepared clone at the
@@ -700,7 +707,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (dataTransfer type `application/x-rd-drawio-entry`).
 - maxGraph 0.10.3 gaps fixed for draw.io content (engine/): `stencil-fixes.ts` (StencilShape read
   `large-arc-flag="0"` as true, so stencil arcs were wrong; `<fillcolor color="accentColor" default=..>` style
-  keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag),
+  keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag; the sanitizing
+  getLabel must stay the OUTERMOST wrapper: `configureDiagramRendering` installs it last),
   `view-fixes.ts` (edge styles for edges without a source terminal; `inherit` style values),
   `shape-fixes.ts` (rounded edges use `arcSize / 2` like mxPolyline; `shadow=1` is draw.io's CSS
   `drop-shadow()` filter instead of maxGraph's offset copies, whose fill was the boolean flag), and
@@ -959,7 +967,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   ticks are >= 40 units apart, every 5th step and the ends labelled.
 - Wiring (`install-railway-routes.ts`, one call in `main-editor.ts`): menu items `data-action="railwayRoute:<cmd>"`
   (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> MenuController
-  dispatches window event `railway-route-request`; `aria-checked` kept in sync. `getRailwayRoutes()` returns the handle.
+  dispatches window event `railway-route-request`; `aria-checked` kept in sync.
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
   signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +
   undoable snap, km interpolation/recalc/ruler), `tests/e2e/ertms-routes.spec.ts`.
@@ -1137,12 +1145,17 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `step-uml.ts` `renderStepUml`: sequence -> local; other diagram types -> PlantUML server only if the user set one
   (`src/services/plantuml-server.ts`, localStorage `rd.plantuml.server`, no default: nothing is ever sent otherwise);
   GET `<server>/svg/<encoded>` (UTF-8 -> deflate-raw via CompressionStream -> PlantUML base64 `0-9A-Za-z-_`),
-  credentials omitted, no referrer, 15 s timeout, answers sanitized (`sanitizeSvgMarkup`: no script/foreignObject/on*,
-  only `#`/data:image hrefs), cached per server+text; errors are shown ("PlantUML server offline — …", HTTP status).
+  credentials omitted, no referrer, 15 s timeout, answers sanitized (`sanitizeSvgMarkup`: no script/foreignObject/on*/
+  animations, only `#`/raster data:image hrefs), cached per server+text; errors are shown ("PlantUML server offline — …", HTTP status).
 - **Markdown** (`markdown.ts`, in-house, no dependency): headings, paragraphs, hard breaks, emphasis/strong/strike, code
   spans/fences, quotes, nested lists, task items, pipe tables (alignment classes), hr, links (http(s)/mailto/#, always
   `target=_blank rel="noopener noreferrer"`), autolinks, images (https or base64 data:image only). Raw HTML is shown as
-  text; output then goes through the allow-list `sanitizeHtml` (DOM, `<template>`) before insertion/export.
+  text; output then goes through the allow-list `sanitizeHtml` before insertion/export.
+- **One sanitizer** (`src/security/sanitize.ts`, DOMPurify pinned exactly, NOTICE): `sanitizeHtmlLabel` (draw.io HTML
+  labels, HTML profile only, safe-CSS `style`, links http(s)/mailto/tel/#/relative, images https/relative/data:image),
+  `sanitizeMarkdownFragment` (markdown.ts `sanitizeHtml`, the renderer's tag set + URL rules), `sanitizeSvgMarkup`
+  (PlantUML server SVG). Never add another hand-written deny-list; fails closed without a DOM. Tests:
+  `src/security/__tests__/sanitize.test.ts` (OWASP/mXSS payloads, every html=1 label of the palettes/libraries unchanged).
 - **Export** (`scenario-export.ts`): File > "Export Scenario (HTML)…" (`data-action="exportScenarioHtml"` -> window event
   `scenario-export-request` -> `install-scenarios.ts`: the scenario shown, else the only one with steps, else a chooser)
   and ⇩ per scenario in the panel. One self-contained HTML file `<diagram> - <scenario>.html`: CSP meta (no scripts),
@@ -1243,7 +1256,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   60 calls/min, 180 s timeout), `bridge/client.ts` (browser WebSocket, sequential calls, backoff), `bridge/pairing.ts`
   (sessionStorage `rd.ai.pairing`, localStorage `rd.ai.local`, client configs), `mcp/mcp-server.ts`
   (`@modelcontextprotocol/server` McpServer, JSON Schemas as Standard Schema), `mcp/http.ts` (stateless `createMcpHandler`,
-  Bearer or `?pair=`, 512 KB cap). Worker: `worker/index.ts` (`/mcp`, `/api/ai-bridge/<session>/ws` same-origin only,
+  Bearer preferred, `?pair=` only for header-less clients — never logged, `redactUrl`, stripped before the handler; 512 KB
+  cap), `mcp/guard.ts` (per-IP + global `/mcp` rate limits via Workers Rate Limiting bindings before any DO, 10 s hello
+  timeout, unpaired sockets capped separately, API security headers). Remote MCP edits ask Keep / Discard by default
+  (`confirmRemoteChanges`, source `mcp-remote`); the chat and the local bridge keep `confirmChanges`. Worker: `worker/index.ts` (`/mcp`, `/api/ai-bridge/<session>/ws` same-origin only,
   else ASSETS), `worker/ai-bridge.ts` Durable Object `AiBridge` (hibernation API, pairing in storage, alarm cleanup).
   Local: `tools/mcp-local/src` (`main.ts` stdio, `bridge-server.ts` ws on 127.0.0.1 with origin allow-list,
   `headless*.ts` jsdom + tool core on a `.drawio` file).
@@ -1261,7 +1277,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `<mxfile>` (`buildShareMxfile`, unique page ids) -> `#R` + base64url(deflateRaw(encodeURIComponent(xml)))
   (CompressionStream). The app.diagrams.net link uses draw.io's exact format (`'#R' + encodeURIComponent(Graph.compress(xml))`,
   standard base64; EditorUi.js:9545 / App.js:6669). The reader accepts both alphabets and raw-XML `#R` links,
-  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
+  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Every inflate has an
+  output cap (deflate bombs): async = `services/deflate-stream.ts` (`inflateRawBytes`, default `MAX_INFLATED_BYTES`
+  50 MB; links, compressed pages, PlantUML encoding), sync = `engine/inflate.ts` via `codec.ts` `decompress`
+  (`MAX_DECOMPRESSED_BYTES` 50 MB; stencils, library entries). One `<mxfile>` writer: `drawio-xml.ts` `buildMxfile`
+  (model pages and raw `<diagram>` pages in order, optional `pageId` for unique ids; `buildShareMxfile` uses it). Links over 32k chars get a warning.
 - Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
   **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). The same
   `openDiagramFile` opens the removed draw.io view's leftover autosave once.
@@ -1303,7 +1323,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   changes (`watchTab`) re-check it debounced (300 ms), so undo back to the saved state is clean. `dirty` is persisted;
   a tab restored dirty stays dirty until saved/reloaded. UI: `.rd-remote-dirty-dot` in the tab (TabManager
   `setTabDecorator`), `data-dirty` on the status item; the tab × asks (`setCloseGuard` -> `confirmCloseTab`,
-  `window.confirm`) and `beforeunload` prompts only when a bound tab has unsaved remote changes.
+  themed `askConfirm`; the guard may answer with a promise) and `beforeunload` prompts only when a bound tab has unsaved remote changes.
 - **Test provider** (`src/debug/fake-remote-provider.ts`, "Test storage", id `fake-remote`): registered by
   `installSharing` only when `import.meta.env.DEV` and localStorage `rd.fakeRemote` = `'1'` (production builds drop it:
   no `rd.fakeRemote` in `dist/`). Files in localStorage `rd.fakeRemote.files` (`{path: {xml, version: 'v<n>'}}`), save
@@ -1363,9 +1383,22 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   900 px email hidden, icon-only button. Failure / 404 / HTML / no email: nothing shown, nothing logged. `/cdn-cgi/*`
   is answered by Cloudflare's edge (the Worker only runs first for /mcp and /api/ai-bridge and does not route
   `/cdn-cgi`). Dev-only localStorage `rd.accessProbe` = '1' forces the request (e2e).
+- **Security headers / CSP**: `public/_headers` is the one source (Cloudflare static assets apply it): CSP
+  `script-src 'self'` (no inline scripts: the theme bootstrap is `public/theme-init.js`), `style-src 'unsafe-inline'`
+  (maxGraph), `connect-src 'self' https: wss: ws://127.0.0.1:* …` (GitLab / PlantUML / library URLs are user-configured),
+  nosniff, Referrer-Policy, Permissions-Policy, frame-ancestors none. vite.config.ts `securityHeaders` sends it from
+  the dev server (plus `'unsafe-eval'` for the e2e harness, with the exact policy as Report-Only) and preview, collects
+  violation reports (`/__rd-csp-reports`; `tests/e2e/csp-teardown.ts` fails the e2e run on any), and writes
+  `dist/.htaccess` (LAN variant: `http:` allowed too) for Apache. `RD_NO_CSP=1` disables it in dev. Tests:
+  `src/config/__tests__/security-headers.test.ts`, `tests/e2e/csp.spec.ts`; `npm run test:e2e:preview` (after `npm run
+  build`) runs the specs without dev-module imports against `vite preview` under the exact production policy.
+  maxGraph's eval paths (`StylesheetCodec` / `ObjectCodec` / `StencilShape.allowEval`) are switched off in
+  `registerDrawioCodecs` (files are untrusted).
 - LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
   `root@192.168.0.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
-  `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`.
+  `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`. The security headers
+  come from `dist/.htaccess`: Apache needs `a2enmod headers` and `AllowOverride FileInfo` (or All) for the directory,
+  otherwise the file is ignored (or a 500 without mod_headers is avoided by its `<IfModule>`).
 
 ## Tests
 

@@ -1,7 +1,10 @@
 import { EventObject, EventSource, Graph, InternalEvent, UndoManager, styleUtils } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
 import { withSnapDataOnly } from '../railway/snap';
-import type { Cell, CellStyle } from '@maxgraph/core';
+import type { Cell } from '@maxgraph/core';
+import { copyPasteStyle, pasteStyleToCells } from '../ui/style-edit';
+import type { StyleRecord } from '../ui/style-edit';
+import { logger } from '../drawio/logger';
 
 /**
  * The z-order of `children` after moving every selected cell one step up (`step` 1) or down (-1).
@@ -94,14 +97,14 @@ export class GraphCommandService {
   undo(): void {
     if (this.undoManager.canUndo()) {
       this.undoManager.undo();
-      console.log('[GraphCommand] Undo executed');
+      logger.debug('GraphCommand', 'Undo executed');
     }
   }
 
   redo(): void {
     if (this.undoManager.canRedo()) {
       this.undoManager.redo();
-      console.log('[GraphCommand] Redo executed');
+      logger.debug('GraphCommand', 'Redo executed');
     }
   }
 
@@ -124,7 +127,7 @@ export class GraphCommandService {
     if (cells.length > 0) {
       this.clipboardService.copy(cells, this.graph);
       this.notifyListeners('clipboardChanged');
-      console.log('[GraphCommand] Copy executed');
+      logger.debug('GraphCommand', 'Copy executed');
     }
   }
 
@@ -133,14 +136,14 @@ export class GraphCommandService {
     if (cells.length > 0) {
       this.clipboardService.cut(cells, this.graph);
       this.notifyListeners('clipboardChanged');
-      console.log('[GraphCommand] Cut executed');
+      logger.debug('GraphCommand', 'Cut executed');
     }
   }
 
   paste(): void {
     this.clipboardService.paste(this.graph);
     this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Paste executed');
+    logger.debug('GraphCommand', 'Paste executed');
   }
 
   canPaste(): boolean {
@@ -153,7 +156,7 @@ export class GraphCommandService {
       // locked cells (locked=1) are not deleted, nor are their edges (draw.io deleteCells)
       this.graph.removeCells(this.graph.getDeletableCells(cells));
       this.notifyListeners('stateChanged');
-      console.log('[GraphCommand] Delete executed');
+      logger.debug('GraphCommand', 'Delete executed');
     }
   }
 
@@ -189,7 +192,7 @@ export class GraphCommandService {
 
   clearSelection(): void {
     this.graph.clearSelection();
-    console.log('[GraphCommand] Clear Selection executed');
+    logger.debug('GraphCommand', 'Clear Selection executed');
   }
 
   addListener(event: string, callback: () => void): void {
@@ -267,46 +270,26 @@ export class GraphCommandService {
   /**
    * Copy style from selected cells for format painter
    */
-  private copiedStyle: CellStyle | null = null;
+  private copiedStyle: StyleRecord | null = null;
 
+  /** Edit > Copy Style / format painter: the visual keys of the first selected cell (draw.io). */
   copyStyle(): void {
-    const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) {
-      console.warn('[GraphCommand] No cells selected for copy style');
-      return;
-    }
-
-    this.copiedStyle = cells[0].getClonedStyle();
+    const cell = this.graph.getSelectionCells().find((c) => c.isVertex() || c.isEdge());
+    if (!cell) return;
+    this.copiedStyle = copyPasteStyle(this.graph, cell);
     this.notifyListeners('styleChanged');
-    console.log('[GraphCommand] Style copied');
   }
 
   /**
-   * Paste style to selected cells
+   * Paste Style: only the copied visual keys change on the selected cells (draw.io pasteStyle;
+   * shape, stencil, lock and railway data stay), locked cells are skipped, one undo step.
    */
   pasteStyle(): void {
-    if (!this.copiedStyle) {
-      console.warn('[GraphCommand] No style copied');
-      return;
-    }
-
+    if (!this.copiedStyle) return;
     const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) {
-      console.warn('[GraphCommand] No cells selected for paste style');
-      return;
-    }
-
-    const model = this.graph.getDataModel();
-    model.batchUpdate(() => {
-      cells.forEach((cell) => {
-        if (!cell.isEdge()) {
-          model.setStyle(cell, { ...(this.copiedStyle as CellStyle) });
-        }
-      });
-    });
-
-    this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Style pasted');
+    if (cells.length === 0) return;
+    const changed = pasteStyleToCells(this.graph, cells, this.copiedStyle);
+    if (changed.length) this.notifyListeners('stateChanged');
   }
 
   /**

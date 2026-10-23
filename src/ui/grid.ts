@@ -1,5 +1,6 @@
 import { Graph } from '@maxgraph/core';
 import { applyGridBackground } from './grid-background';
+import { logger } from '../drawio/logger';
 
 export class GridController {
   private graph: Graph;
@@ -15,7 +16,7 @@ export class GridController {
   private setupGrid() {
     this.graph.gridSize = this.gridSize;
     this.updateGridDisplay();
-    console.log('[Grid] Grid enabled with size:', this.gridSize);
+    logger.debug('Grid', 'Grid enabled with size:', this.gridSize);
   }
 
   private updateGridDisplay() {
@@ -26,23 +27,23 @@ export class GridController {
   toggleGrid(enabled: boolean) {
     this.isGridVisible = enabled;
     this.updateGridDisplay();
-    console.log('[Grid] Grid', enabled ? 'enabled' : 'disabled');
+    logger.debug('Grid', 'Grid', enabled ? 'enabled' : 'disabled');
   }
 
   enableSnapToGrid() {
     this.graph.gridSize = this.gridSize;
-    console.log('[Grid] Snap to grid enabled');
+    logger.debug('Grid', 'Snap to grid enabled');
   }
 
   disableSnapToGrid() {
     this.graph.gridSize = 1;
-    console.log('[Grid] Snap to grid disabled');
+    logger.debug('Grid', 'Snap to grid disabled');
   }
 
   setGridSize(size: number) {
     this.gridSize = size;
     this.graph.gridSize = size;
     this.updateGridDisplay();
-    console.log('[Grid] Grid size changed to:', size);
+    logger.debug('Grid', 'Grid size changed to:', size);
   }
 }

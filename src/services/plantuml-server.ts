@@ -14,6 +14,9 @@
  * removed) before it is shown or exported.
  */
 
+import { InvalidSvgError, sanitizeSvgMarkup as sanitizeSvg } from '../security/sanitize';
+import { NoCompressionStreamError, deflateRawBytes } from './deflate-stream';
+
 export const PLANTUML_SERVER_KEY = 'rd.plantuml.server';
 export const PLANTUML_SERVER_CHANGED_EVENT = 'rd-plantuml-server-changed';
 const ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
@@ -54,30 +57,12 @@ export function decodePlantUmlBase64(text: string): Uint8Array {
 }
 
 async function deflateRaw(data: Uint8Array): Promise<Uint8Array> {
-  if (typeof CompressionStream !== 'function') throw new Error('This browser cannot compress data (CompressionStream missing)');
-  const stream = new CompressionStream('deflate-raw');
-  const writer = stream.writable.getWriter();
-  const write = (async () => {
-    await writer.write(data as Uint8Array<ArrayBuffer>);
-    await writer.close();
-  })();
-  const reader = stream.readable.getReader();
-  const chunks: Uint8Array[] = [];
-  let total = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    chunks.push(value);
-    total += value.length;
+  try {
+    return await deflateRawBytes(data);
+  } catch (error) {
+    if (error instanceof NoCompressionStreamError) throw new Error('This browser cannot compress data (CompressionStream missing)');
+    throw error;
   }
-  await write;
-  const out = new Uint8Array(total);
-  let offset = 0;
-  for (const chunk of chunks) {
-    out.set(chunk, offset);
-    offset += chunk.length;
-  }
-  return out;
 }
 
 /** PlantUML text -> the URL-safe string of `<server>/svg/<encoded>`. */
@@ -122,44 +107,13 @@ export function setPlantUmlServer(value: string): string {
   return url;
 }
 
-const SVG_NS = 'http://www.w3.org/2000/svg';
-const DROP_ELEMENTS = new Set(['script', 'foreignobject', 'iframe', 'object', 'embed', 'audio', 'video', 'canvas', 'handler', 'listener']);
-
-/** Sanitizes SVG markup from a server: returns the serialized, cleaned `<svg>` or throws. */
+/** Sanitizes SVG markup from a server (DOMPurify SVG profile): the cleaned `<svg>` or throws. */
 export function sanitizeSvgMarkup(markup: string): string {
-  const doc = new DOMParser().parseFromString(markup, 'image/svg+xml');
-  const root = doc.documentElement;
-  if (!root || root.localName !== 'svg' || root.namespaceURI !== SVG_NS || doc.getElementsByTagName('parsererror').length > 0) {
-    throw new PlantUmlServerError('The PlantUML server did not return an SVG image', 'invalid');
-  }
-  const walk = (node: Element): void => {
-    for (const child of Array.from(node.children)) {
-      const name = child.localName.toLowerCase();
-      if (DROP_ELEMENTS.has(name) || child.namespaceURI !== SVG_NS) {
-        child.remove();
-        continue;
-      }
-      if (name === 'style' && /@import|url\(\s*['"]?(?!#)|expression\(|javascript:/i.test(child.textContent ?? '')) {
-        child.remove();
-        continue;
-      }
-      cleanAttributes(child);
-      walk(child);
-    }
-  };
-  cleanAttributes(root);
-  walk(root);
-  return new XMLSerializer().serializeToString(root);
-}
-
-function cleanAttributes(el: Element): void {
-  for (const attr of Array.from(el.attributes)) {
-    const name = attr.name.toLowerCase();
-    const value = attr.value.trim();
-    if (name.startsWith('on')) el.removeAttributeNode(attr);
-    else if ((name === 'href' || name.endsWith(':href')) && !value.startsWith('#') && !/^data:image\/(png|jpe?g|gif|webp);/i.test(value)) {
-      el.removeAttributeNode(attr);
-    } else if (/url\(\s*['"]?(?!#)|javascript:|expression\(/i.test(value)) el.removeAttributeNode(attr);
+  try {
+    return sanitizeSvg(markup);
+  } catch (error) {
+    if (error instanceof InvalidSvgError) throw new PlantUmlServerError('The PlantUML server did not return an SVG image', 'invalid');
+    throw error;
   }
 }
 

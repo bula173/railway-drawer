@@ -28,7 +28,7 @@ import {
   writeLocalBridge,
 } from './bridge/pairing';
 import type { RemotePairing } from './bridge/pairing';
-import { formatPairingToken, hashSecret, newPairingToken } from './bridge/protocol';
+import { CALL_TIMEOUT_MS, formatPairingToken, hashSecret, newPairingToken } from './bridge/protocol';
 import { ChatSession, createBrowserClient, describeApiError } from './chat/chat-loop';
 import type { ToolCall } from './chat/chat-loop';
 import { AI_MODELS, EFFORTS, isModelId, maskKey, readSettings, writeSettings } from './chat/settings';
@@ -58,7 +58,8 @@ export interface AiPanel {
   destroy(): void;
 }
 
-type Source = 'chat' | 'mcp';
+/** chat = in-app chat, mcp = local MCP bridge (127.0.0.1), mcp-remote = paired remote MCP client. */
+type Source = 'chat' | 'mcp' | 'mcp-remote';
 
 interface TurnEdits {
   target: AiTarget;
@@ -239,12 +240,22 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
     saveSettings();
   });
   confirmLabel.append(confirmBox, document.createTextNode(' Confirm each change (Keep / Discard)'));
+  const confirmRemoteLabel = el('label', 'rd-ai-check');
+  const confirmRemoteBox = el('input');
+  confirmRemoteBox.type = 'checkbox';
+  confirmRemoteBox.dataset.testid = 'ai-confirm-remote';
+  confirmRemoteBox.checked = settings.confirmRemoteChanges;
+  confirmRemoteBox.addEventListener('change', () => {
+    settings = { ...settings, confirmRemoteChanges: confirmRemoteBox.checked };
+    saveSettings();
+  });
+  confirmRemoteLabel.append(confirmRemoteBox, document.createTextNode(' Confirm changes from remote MCP clients (Keep / Discard)'));
 
   const keyRow = el('div', 'rd-ai-row');
   keyRow.append(keyInput, keyToggle);
   const keyButtons = el('div', 'rd-ai-row');
   keyButtons.append(keySave, keyRemove);
-  settingsBox.append(settingsSummary, keyLabel, keyRow, keyButtons, keyStatus, keyNote, modelLabel, modelSelect, modelCustom, effortLabel, effortSelect, confirmLabel);
+  settingsBox.append(settingsSummary, keyLabel, keyRow, keyButtons, keyStatus, keyNote, modelLabel, modelSelect, modelCustom, effortLabel, effortSelect, confirmLabel, confirmRemoteLabel);
 
   // ------------------------------------------------------------------ log
   const log = el('div', 'rd-ai-log');
@@ -331,20 +342,24 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
     line.dataset.tool = name;
     line.dataset.status = 'pending';
     line.dataset.source = source;
-    line.textContent = `${source === 'mcp' ? 'MCP · ' : ''}${def?.title ?? name}…`;
+    const prefix = source === 'chat' ? '' : 'MCP · ';
+    line.textContent = `${prefix}${def?.title ?? name}…`;
     const target = activeTabTarget(tabManager);
     if (!target) {
       line.dataset.status = 'error';
       line.textContent = 'No diagram tab is open.';
       return { ok: false, summary: 'No tab', result: { error: 'No diagram tab is open in Railway Drawer.' }, edits: [] };
     }
-    const preview = settings.confirmChanges && def?.mutating === true && name !== 'undo';
+    // remote MCP clients act on the user's drawing from outside: confirmed by default
+    const confirm = source === 'mcp-remote' ? settings.confirmRemoteChanges : settings.confirmChanges;
+    const preview = confirm && def?.mutating === true && name !== 'undo';
     const before = preview ? target.modelXml() : null;
     let outcome = await executeAiTool(target, name, toolInput);
     if (before !== null && outcome.ok && outcome.edits.length > 0) {
       const diff = diffSnapshots(before, target.modelXml());
       const card = addEntry(el('div', 'rd-ai-confirm'));
       card.dataset.testid = 'ai-confirm-card';
+      card.dataset.source = source;
       card.append(el('div', 'rd-ai-confirm-title', outcome.summary), el('div', 'rd-ai-confirm-diff', `Changes on the canvas: ${diffCountsText(diff.counts) || 'none visible'}`));
       // scenario tools change the Scenarios panel too; Discard undoes both (one undo step)
       if (name.includes('scenario')) card.append(el('div', 'rd-ai-confirm-diff', 'Scenarios: changed (Discard removes this change too)'));
@@ -356,7 +371,7 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
     }
     if (source === 'chat' && outcome.edits.length > 0) turnEdits.push({ target, edits: outcome.edits });
     line.dataset.status = outcome.ok ? 'ok' : 'error';
-    line.textContent = `${source === 'mcp' ? 'MCP · ' : ''}${outcome.ok ? '✓' : '✗'} ${outcome.summary}`;
+    line.textContent = `${prefix}${outcome.ok ? '✓' : '✗'} ${outcome.summary}`;
     if (!outcome.ok && typeof outcome.result.error === 'string' && !outcome.summary.includes(outcome.result.error)) {
       line.append(el('span', 'rd-ai-tool-detail', ` — ${outcome.result.error.slice(0, 300)}`));
     }
@@ -498,6 +513,12 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
     const out = await runTool('mcp', tool, toolInput);
     return { ok: out.ok, summary: out.summary, result: out.result, image: out.image };
   };
+  // a remote call waits at most CALL_TIMEOUT_MS on the relay: an undecided change is discarded
+  // shortly before, so the drawing never keeps a change the client was told failed
+  const remoteBridgeRun = async (tool: string, toolInput: unknown) => {
+    const out = await runTool('mcp-remote', tool, toolInput, AbortSignal.timeout(CALL_TIMEOUT_MS - 10_000));
+    return { ok: out.ok, summary: out.summary, result: out.result, image: out.image };
+  };
   const startRemote = (pairing: RemotePairing): void => {
     remote?.client.close();
     let everConnected = false;
@@ -505,7 +526,7 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
       url: remoteBridgeUrl(origin, pairing.token),
       auth: hashSecret(pairing.token.secret),
       ttlSeconds: Math.max(60, Math.round((pairing.expiresAt - Date.now()) / 1000)),
-      run: bridgeRun,
+      run: remoteBridgeRun,
       onStatus: (s, detail, expiresAt) => {
         if (s === 'connected') everConnected = true;
         remoteStatus.dataset.status = s;
@@ -517,9 +538,9 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
     });
     remote = { pairing, client };
     remoteDetails.replaceChildren(
-      readonlyField('MCP server URL (claude.ai / Claude Desktop custom connector)', remoteMcpUrl(origin, pairing.token), 'ai-pair-url'),
       readonlyField('Claude Code', claudeCodeCommand(origin, pairing.token), 'ai-pair-cmd'),
-      readonlyField('Pairing code (Bearer token)', formatPairingToken(pairing.token), 'ai-pair-token')
+      readonlyField('Pairing code (Bearer token)', formatPairingToken(pairing.token), 'ai-pair-token'),
+      readonlyField('MCP server URL with the code (only for clients that cannot send an Authorization header, e.g. claude.ai custom connectors: URLs can end up in logs)', remoteMcpUrl(origin, pairing.token), 'ai-pair-url')
     );
     client.connect();
     updateConnect();

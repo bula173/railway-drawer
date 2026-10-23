@@ -249,17 +249,3 @@ function readShape(cell: Cell): string {
   const v = cell.getValue();
   return isElementValue(v) ? v.getAttribute(SCRIPT_SHAPE_ATTR) ?? '' : '';
 }
-
-/** Removes every generated cell (one undoable edit). */
-export function removeGenerated(model: GraphDataModel): number {
-  const { byKey, extra } = generatedCells(model);
-  const cells = [...byKey.values(), ...extra];
-  if (cells.length === 0) return 0;
-  model.beginUpdate();
-  try {
-    for (const c of cells) model.remove(c);
-  } finally {
-    model.endUpdate();
-  }
-  return cells.length;
-}

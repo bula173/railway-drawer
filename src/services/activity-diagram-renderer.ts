@@ -5,6 +5,7 @@
 
 import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
+import { logger } from '../drawio/logger';
 
 export class ActivityDiagramRenderer {
   private graph: Graph;
@@ -19,11 +20,11 @@ export class ActivityDiagramRenderer {
   }
 
   renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
-    console.log('[ActivityDiagram] Rendering into group');
+    logger.debug('ActivityDiagram', 'Rendering into group');
     const parent = groupCell;
 
     const activities = diagramData.elements.filter((el) => el.type === 'activity');
-    console.log('[ActivityDiagram] Found activities:', activities.length);
+    logger.debug('ActivityDiagram', 'Found activities:', activities.length);
 
     if (activities.length === 0) return;
 
@@ -64,11 +65,11 @@ export class ActivityDiagramRenderer {
   }
 
   render(diagramData: DiagramData): void {
-    console.log('[ActivityDiagram] Rendering');
+    logger.debug('ActivityDiagram', 'Rendering');
     const parent = this.graph.getDefaultParent();
 
     const activities = diagramData.elements.filter((el) => el.type === 'activity');
-    console.log('[ActivityDiagram] Found activities:', activities.length);
+    logger.debug('ActivityDiagram', 'Found activities:', activities.length);
 
     if (activities.length === 0) return;
 

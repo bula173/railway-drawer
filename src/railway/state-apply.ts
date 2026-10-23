@@ -19,7 +19,7 @@ import { absoluteBounds, projectOnPolyline, trackPolyline } from './geometry';
 import type { Pt } from './geometry';
 import { allCells, getCellKind, isElementValue, readAttr, readObjectId, setRailwayData } from './object-data';
 import { parsePointsList } from './routes';
-import type { BaseStyles, DimensionScheme, SchemeId, StateDimension, TargetRole } from './states';
+import type { BaseStyles, SchemeId, StateDimension, TargetRole } from './states';
 import {
   BASE_STYLE_ATTR,
   DIMENSION_ATTR,
@@ -55,12 +55,6 @@ export interface StateItem {
 export function cellSchemeId(cell: Cell | null | undefined): SchemeId | null {
   const kind = getCellKind(cell);
   return schemeIdFor(kind, kind === 'signal' ? readAttr(cell, 'rdSignalType') : '');
-}
-
-/** The dimensions a cell's scheme has (empty for cells without runtime states). */
-export function cellDimensions(cell: Cell): DimensionScheme[] {
-  const id = cellSchemeId(cell);
-  return id ? schemeDimensions(id) : [];
 }
 
 /** The stored state values of a cell ('' = missing). */

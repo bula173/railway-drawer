@@ -1,3 +1,5 @@
+import { logger } from '../drawio/logger';
+
 /**
  * @file plantuml-parser.ts
  * @brief PlantUML text syntax parser for converting to maxGraph shapes
@@ -41,11 +43,11 @@ export class PlantUmlParser {
    */
   static parse(text: string): DiagramData {
     try {
-      console.log('[PlantUmlParser] Parsing PlantUML text');
+      logger.debug('PlantUmlParser', 'Parsing PlantUML text');
       const lines = text.split('\n').filter((line) => line.trim() && !line.trim().startsWith("'"));
 
       const diagramType = this.detectDiagramType(lines);
-      console.log('[PlantUmlParser] Detected type:', diagramType);
+      logger.debug('PlantUmlParser', 'Detected type:', diagramType);
 
       const data: DiagramData = {
         type: diagramType,
@@ -111,12 +113,12 @@ export class PlantUmlParser {
     const messageRegex = /^(\w+)\s*(->|-->|<--|<-)\s*(\w+)\s*:\s*(.+)$/;
     const noteRegex = /^note\s+(left|right|over)\s+(\w+)\s*:\s*(.+)$/i;
 
-    console.log('[parseSequenceDiagram] Starting parse, lines:', lines.length);
+    logger.debug('parseSequenceDiagram', 'Starting parse, lines:', lines.length);
 
     const seenParticipants = new Set<string>();
 
     for (const line of lines) {
-      console.log('[parseSequenceDiagram] Processing line:', line);
+      logger.debug('parseSequenceDiagram', 'Processing line:', line);
       // Parse participants
       const participantMatch = line.match(participantRegex);
       if (participantMatch) {

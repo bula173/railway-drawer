@@ -39,8 +39,7 @@ import {
 } from '@maxgraph/core';
 import { isLayer } from './cell-lock';
 import { isGroupVertex, isNearGraphBounds } from './canvas-interaction';
-import { getCellKind, isElementValue, nextFreeId, usedIds } from '../railway/object-data';
-import { ID_ATTR, type KindId } from '../railway/catalogue';
+import { prepareClonedCells } from '../railway/clone';
 
 export type ArrowDirection = 'north' | 'east' | 'south' | 'west';
 export const ARROW_DIRECTIONS: readonly ArrowDirection[] = ['north', 'east', 'south', 'west'];
@@ -57,9 +56,6 @@ export const ACTIVATION_DELAY = 140;
 export const UPDATE_DELAY = 500;
 /** Opacity of an arrow the pointer is not on (draw.io: 15 %; higher here so it reads on both canvases). */
 export const INACTIVE_OPACITY = 0.5;
-
-/** Attributes a clone must not inherit: routes start at the original, railML ids are the original's. */
-export const CLONE_DROPPED_ATTRS = ['rdRoutes', 'rdRailmlId', 'rdRailmlIlId', 'rdRailmlNetElements'];
 
 // --------------------------------------------------------------------------------------------
 // Setting
@@ -143,37 +139,8 @@ export function connectMode(mods: { ctrl: boolean; shift: boolean }): { clone: b
 // Clone data
 // --------------------------------------------------------------------------------------------
 
-function subtree(cell: Cell, out: Cell[] = []): Cell[] {
-  out.push(cell);
-  for (const child of cell.children ?? []) subtree(child, out);
-  return out;
-}
-
-/**
- * Railway data of fresh clones (not in the model yet): every railway object in them gets the next
- * free generated ID of its kind (`S1`, `S2`, ...) and loses the route list and imported railML ids
- * (CLONE_DROPPED_ATTRS). Other data (kind, direction, aspects, km, track) is kept; the snap to track
- * updates track/km when the clone lands on a track.
- */
-export function prepareClonedCells(model: ReturnType<Graph['getDataModel']>, cells: Cell[]): void {
-  const taken = new Map<KindId, Set<string>>();
-  for (const cell of cells.flatMap((c) => subtree(c))) {
-    const kind = getCellKind(cell);
-    const value = cell.getValue();
-    if (!kind || !isElementValue(value)) continue;
-    let set = taken.get(kind);
-    if (!set) {
-      set = usedIds(model, kind);
-      taken.set(kind, set);
-    }
-    const id = nextFreeId(kind, set);
-    set.add(id.toUpperCase());
-    const next = value.cloneNode(true) as Element;
-    next.setAttribute(ID_ATTR, id);
-    for (const attr of CLONE_DROPPED_ATTRS) next.removeAttribute(attr);
-    cell.setValue(next);
-  }
-}
+// The one clone preparation (copy/paste, duplicate, inserts and these arrows): src/railway/clone.ts
+export { CLONE_DROPPED_ATTRS, prepareClonedCells } from '../railway/clone';
 
 // --------------------------------------------------------------------------------------------
 // Which cell gets the arrows
@@ -830,14 +797,3 @@ export function isCloneEvent(evt: MouseEvent | KeyboardEvent | null | undefined)
   return !!evt && (evt.ctrlKey || evt.metaKey);
 }
 
-const INSTALLED = new WeakMap<Graph, HoverArrowsController>();
-
-/** Installs the hover arrows on a tab graph (once). */
-export function installHoverArrows(graph: Graph, options?: HoverArrowsOptions): HoverArrowsController {
-  let controller = INSTALLED.get(graph);
-  if (!controller) {
-    controller = new HoverArrowsController(graph, options);
-    INSTALLED.set(graph, controller);
-  }
-  return controller;
-}

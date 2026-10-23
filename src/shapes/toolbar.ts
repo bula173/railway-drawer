@@ -1,6 +1,7 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry.js';
 import { generateShapeIcon } from './svg-icon-generator.js';
+import { logger } from '../drawio/logger';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -13,7 +14,7 @@ export class ShapeToolbar {
   constructor(toolbarContainer: HTMLElement, registry: ShapeRegistry) {
     this.container = toolbarContainer;
     this.registry = registry;
-    console.log('[Toolbar] Constructor called, groups:', registry.getGroups());
+    logger.debug('Toolbar', 'Constructor called, groups:', registry.getGroups());
 
     // Load custom group order from localStorage or use default
     this.loadGroupOrder();
@@ -54,7 +55,7 @@ export class ShapeToolbar {
 
     // Use custom group order
     const groups = this.getOrderedGroups();
-    console.log('[Toolbar] buildToolbar: groups =', groups);
+    logger.debug('Toolbar', 'buildToolbar: groups =', groups);
     let isFirstGroup = true;
 
     groups.forEach((group: string) => {
@@ -105,7 +106,7 @@ export class ShapeToolbar {
 
       if (!isCollapsed) {
         const shapes = this.registry.getShapesByGroup(group);
-        console.log(`[Toolbar] Group "${group}": ${shapes.length} shapes`);
+        logger.debug('Toolbar', `Group "${group}": ${shapes.length} shapes`);
         const shapeGroup = document.createElement('div');
         shapeGroup.className = 'shapes-group-icons';
 
@@ -218,7 +219,7 @@ export class ShapeToolbar {
     // Generate SVG icon from Shape class if available
     if (shape.iconGeneratorClass) {
       const svgElement = generateShapeIcon(shape.iconGeneratorClass, 32, 30);
-      console.log(`Icon for ${shape.id}:`, svgElement ? 'generated' : 'failed');
+      logger.debug('toolbar', `Icon for ${shape.id}:`, svgElement ? 'generated' : 'failed');
       if (svgElement) {
         iconDiv.appendChild(svgElement);
       } else {

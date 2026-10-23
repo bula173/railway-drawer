@@ -60,7 +60,7 @@ function makeTab(id: string, name: string, edits: Map<string, () => void>): Test
   return tab;
 }
 
-function setup(provider: Partial<StorageProvider> = {}, opts: { account?: boolean } = {}) {
+function setup(provider: Partial<StorageProvider> = {}, opts: { account?: boolean; defaultConfirmClose?: boolean } = {}) {
   const edits = new Map<string, () => void>();
   const tabs: TestTab[] = [makeTab('t1', 'Plan', edits)];
   let active = 't1';
@@ -137,7 +137,7 @@ function setup(provider: Partial<StorageProvider> = {}, opts: { account?: boolea
       return () => edits.delete(tab.id);
     },
     onBindingsChanged,
-    confirmClose,
+    confirmClose: opts.defaultConfirmClose ? undefined : confirmClose,
   });
   return {
     session,
@@ -431,5 +431,19 @@ describe('RemoteSession dirty state', () => {
     s.session.onTabClosed('t1');
     expect(s.session.hasUnsavedRemoteChanges()).toBe(false);
     expect(s.edits.has('t1')).toBe(false);
+  });
+
+  it('by default the close question is the themed confirm dialog (no native confirm())', async () => {
+    const s = setup({}, { defaultConfirmClose: true });
+    const nativeConfirm = vi.spyOn(window, 'confirm');
+    s.session.bind(s.tabs[0], file('e1'));
+    s.tabs[0].xml = '<mxfile>changed</mxfile>';
+    s.ui.confirm.mockResolvedValueOnce(false);
+    await expect(s.session.confirmCloseTab('t1')).resolves.toBe(false);
+    expect(s.ui.confirm).toHaveBeenCalledWith(expect.objectContaining({ danger: true, message: expect.stringMatching(/not saved to Fake/) }));
+    s.ui.confirm.mockResolvedValueOnce(true);
+    await expect(s.session.confirmCloseTab('t1')).resolves.toBe(true);
+    expect(nativeConfirm).not.toHaveBeenCalled();
+    nativeConfirm.mockRestore();
   });
 });

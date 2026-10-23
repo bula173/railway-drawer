@@ -46,12 +46,6 @@ export interface RailwayRoutesHandle {
   destroy(): void;
 }
 
-let current: RailwayRoutesHandle | null = null;
-
-/** The installed handle (tests, e2e through the dev server's module graph). */
-export function getRailwayRoutes(): RailwayRoutesHandle | null {
-  return current;
-}
 
 function readFlag(key: string, fallback: boolean): boolean {
   try {
@@ -275,9 +269,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
       window.removeEventListener('tab-changed', onTab);
       window.removeEventListener('tab-closed', onTab);
       button?.removeEventListener('click', onButton);
-      if (current === handle) current = null;
     },
   };
-  current = handle;
   return handle;
 }

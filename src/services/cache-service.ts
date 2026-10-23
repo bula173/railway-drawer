@@ -1,5 +1,6 @@
 import { isLegacyModelXml } from './drawio-xml';
 import type { ScenarioData } from '../scenarios/scenario-model';
+import { logger } from '../drawio/logger';
 
 export interface CacheData {
   /** The active tab's project name (older versions kept only this one, for every tab). */
@@ -72,7 +73,7 @@ export class CacheService {
       };
       localStorage.setItem(this.CACHE_KEY, JSON.stringify(cacheObject));
       localStorage.removeItem(this.STALE_KEY);
-      console.log('[Cache] Saved to localStorage');
+      logger.debug('Cache', 'Saved to localStorage');
       return 'saved';
     } catch (error) {
       console.error('[Cache] Failed to save:', error);
@@ -129,7 +130,7 @@ export class CacheService {
         return null;
       }
 
-      console.log('[Cache] Loaded from localStorage');
+      logger.debug('Cache', 'Loaded from localStorage');
       return cacheObject.data;
     } catch (error) {
       console.error('[Cache] Failed to load:', error);
@@ -142,7 +143,7 @@ export class CacheService {
     try {
       localStorage.removeItem(this.CACHE_KEY);
       localStorage.removeItem(this.STALE_KEY);
-      console.log('[Cache] Cleared');
+      logger.debug('Cache', 'Cleared');
     } catch (error) {
       console.error('[Cache] Failed to clear:', error);
     }

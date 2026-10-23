@@ -45,9 +45,6 @@ export function mappingOf(kind: KindId): KindMapping {
 /** Kinds without a railML 3.2 element (kept in the rd extension). */
 export const UNMAPPED_KINDS: readonly KindId[] = KIND_MAPPINGS.filter((m) => m.element === null).map((m) => m.kind);
 
-/** Kinds with a spotLocation on a netElement. */
-export const SPOT_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'insulatedJoint', 'bufferStop', 'levelCrossing', 'points', 'leu']);
-
 // ---------------------------------------------------------------------------------------------
 // Enumerations
 // ---------------------------------------------------------------------------------------------

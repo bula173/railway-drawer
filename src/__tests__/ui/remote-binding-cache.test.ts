@@ -153,7 +153,7 @@ describe('remote bindings in the tab cache', () => {
     expect(cachedTabs()[0].remote).toMatchObject({ version: 'v4', dirty: false });
   });
 
-  it('closing a tab with unsaved remote changes asks first (the tab stays when declined)', () => {
+  it('closing a tab with unsaved remote changes asks first (the tab stays when declined)', async () => {
     const app = startApp();
     apps.push(app.tabManager);
     const bound = app.tabManager.getActiveTab()!;
@@ -161,10 +161,14 @@ describe('remote bindings in the tab cache', () => {
     app.sharing.remoteSession.bind(bound, remoteFile('v1'));
     bound.graph.insertVertex(bound.graph.getDefaultParent(), null, 'X', 0, 0, 20, 20);
 
-    const confirmSpy = vi.spyOn(window, 'confirm').mockReturnValue(false);
+    // the themed confirmation (no native confirm())
+    const nativeConfirm = vi.spyOn(window, 'confirm');
     const closeBtn = document.querySelector<HTMLElement>(`.tab-button[data-tab-id="${bound.id}"] .tab-close-btn`)!;
     closeBtn.click();
-    expect(confirmSpy).toHaveBeenCalledWith(expect.stringMatching(/not saved to Test storage/));
+    const dialog = document.querySelector<HTMLElement>('[data-testid="remote-confirm-dialog"]')!;
+    expect(dialog.textContent).toMatch(/not saved to Test storage/);
+    Array.from(dialog.querySelectorAll('button')).find((b) => b.textContent === 'Cancel')!.click();
+    await new Promise((r) => setTimeout(r, 0));
     expect(app.tabManager.getAllTabs()).toHaveLength(2);
 
     // beforeunload asks too
@@ -172,9 +176,12 @@ describe('remote bindings in the tab cache', () => {
     window.dispatchEvent(evt);
     expect(evt.defaultPrevented).toBe(true);
 
-    confirmSpy.mockReturnValue(true);
     document.querySelector<HTMLElement>(`.tab-button[data-tab-id="${bound.id}"] .tab-close-btn`)!.click();
+    document.querySelector<HTMLElement>('[data-testid="remote-confirm-ok"]')!.click();
+    await new Promise((r) => setTimeout(r, 0));
     expect(app.tabManager.getAllTabs()).toHaveLength(1);
+    expect(nativeConfirm).not.toHaveBeenCalled();
+    nativeConfirm.mockRestore();
     const after = new Event('beforeunload', { cancelable: true });
     window.dispatchEvent(after);
     expect(after.defaultPrevented).toBe(false);

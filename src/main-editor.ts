@@ -67,6 +67,7 @@ import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
 import { installNarrowScreen } from './ui/narrow-screen';
 import { scrollSelectionIntoView } from './ui/canvas-scroll';
+import { logger } from './drawio/logger';
 
 /**
  * @brief Register all built-in shape definitions
@@ -756,4 +757,4 @@ if (activeTabForShapes) {
  * @details All major components have been initialized and are ready for user interaction.
  * The application is now fully functional.
  */
-console.log('✓ Railway Drawer with tabs, stencils, and custom shapes initialized');
+logger.debug('main-editor', '✓ Railway Drawer with tabs, stencils, and custom shapes initialized');

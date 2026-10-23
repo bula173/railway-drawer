@@ -5,6 +5,7 @@
  */
 
 import { Graph, Cell, CellStyle } from '@maxgraph/core';
+import { logger } from '../drawio/logger';
 
 export interface PlantUmlGroupMetadata {
   plantumlSource: string;
@@ -36,7 +37,7 @@ export class PlantUmlGroupManager {
     plantumlSource: string,
     diagramType: string
   ): Cell {
-    console.log('[PlantUmlGroup] Creating group:', diagramName);
+    logger.debug('PlantUmlGroup', 'Creating group:', diagramName);
 
     // Create group with no background, just border, label in top-left
     const groupStyle = 'group=1;fillColor=none;strokeColor=#999;strokeWidth=2;html=1;verticalAlign=top;align=left;spacing=2;';
@@ -109,7 +110,7 @@ export class PlantUmlGroupManager {
       metadata.plantumlSource = newSource;
       metadata.lastModified = Date.now();
       this.setPlantUmlMetadata(cell, metadata);
-      console.log('[PlantUmlGroup] Updated source for:', cell.getValue());
+      logger.debug('PlantUmlGroup', 'Updated source for:', cell.getValue());
     }
   }
 

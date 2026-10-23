@@ -1,0 +1,19 @@
+# Security headers of the static app (Cloudflare Workers static assets apply this file; the Worker
+# sets its own on /mcp and /api/ai-bridge). The same headers are used by the Vite dev / preview
+# servers and written to dist/.htaccess for the LAN Apache copy (src/config/security-headers.ts).
+#
+# CSP notes:
+# - script-src 'self': no inline scripts (the theme bootstrap is public/theme-init.js); exported
+#   slides carry their own hashed CSP.
+# - style-src 'unsafe-inline': maxGraph and the chrome set inline styles.
+# - connect-src https: / wss: — the GitLab URL (self-hosted allowed), the PlantUML server and
+#   library-by-URL imports are user-configured at runtime, so no fixed host list is possible
+#   (api.anthropic.com, graph.microsoft.com, login.microsoftonline.com, gitlab.com are among them);
+#   ws://127.0.0.1 / localhost = the local MCP bridge (tools/mcp-local); data: / blob: = image export.
+# - frame-src: MSAL's silent token renewal iframe (SharePoint).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss: ws://127.0.0.1:* ws://localhost:* data: blob:; frame-src 'self' https://login.microsoftonline.com; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), hid=(), midi=(), display-capture=(), fullscreen=(self)

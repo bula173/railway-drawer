@@ -14,7 +14,7 @@ import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { PaletteEntry } from '../ui/drawio-palette/contracts';
 import { KINDS, isErtmsLibraryEntry, kindForPaletteEntry, kindForStyle } from './catalogue';
 import { handOfLegCell } from './hand';
-import { renumberInsertedObjects } from './insert-ids';
+import { prepareClonedCells } from './clone';
 import { applyPresetToNewCells, setRailwayData } from './object-data';
 import { createRailwayDataPanel } from './data-panel';
 import type { RailwayDataPanel } from './data-panel';
@@ -89,7 +89,7 @@ export function downloadBlob(blob: Blob, fileName: string): void {
  */
 export function prepareRailwayInsert(graph: Graph, cells: Cell[], entry: PaletteEntry): void {
   if (!isErtmsLibraryEntry(entry)) {
-    renumberInsertedObjects(graph.getDataModel(), cells);
+    prepareClonedCells(graph.getDataModel(), cells);
     return;
   }
   const preset = kindForPaletteEntry(entry);

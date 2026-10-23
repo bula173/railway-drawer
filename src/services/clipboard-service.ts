@@ -1,4 +1,5 @@
 import type { Cell, Graph } from '@maxgraph/core';
+import { prepareClonedCells } from '../railway/clone';
 
 export class ClipboardService {
   private static instance: ClipboardService;
@@ -18,7 +19,6 @@ export class ClipboardService {
     if (cells.length === 0) return false;
     this.clipboard = graph.cloneCells(cells);
     this.notifyListeners();
-    console.log('[Clipboard] Copied', cells.length, 'cell(s)');
     return true;
   }
 
@@ -29,7 +29,6 @@ export class ClipboardService {
       graph.removeCells(graph.getDeletableCells(cells));
     });
     this.notifyListeners();
-    console.log('[Clipboard] Cut', cells.length, 'cell(s)');
     return true;
   }
 
@@ -39,12 +38,13 @@ export class ClipboardService {
     const imported: Cell[] = [];
     graph.batchUpdate(() => {
       const cloned = graph.cloneCells(this.clipboard);
+      // railway IDs unique in this graph (paste twice: S2, S3), copies lose route / railML ids
+      prepareClonedCells(graph.getDataModel(), cloned);
       const result = graph.importCells(cloned, offsetX, offsetY);
       graph.setSelectionCells(result);
       imported.push(...result);
     });
 
-    console.log('[Clipboard] Pasted', imported.length, 'cell(s)');
     return imported;
   }
 

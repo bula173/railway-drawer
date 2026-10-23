@@ -5,7 +5,7 @@
  */
 import type { Cell, Graph } from '@maxgraph/core';
 import type { KindId } from '../../railway/catalogue';
-import { renumberInsertedObjects } from '../../railway/insert-ids';
+import { prepareClonedCells } from '../../railway/clone';
 import { withSnapSuspended } from '../../railway/snap';
 import { getDrawioPaletteEngine } from '../drawio-palette/drawio-palette-view';
 import { insertEntry, wrapModelXml } from '../drawio-palette/entry-cells';
@@ -38,7 +38,7 @@ export function insertTemplate(
   const entry = templateToPaletteEntry(template);
   const inserted = withSnapSuspended(() =>
     insertEntry(graph, entry, at, (cells) => {
-      const renamed = renumberInsertedObjects(graph.getDataModel(), cells);
+      const renamed = prepareClonedCells(graph.getDataModel(), cells);
       onRenamed?.(renamed);
     }));
   if (inserted.length > 0) {

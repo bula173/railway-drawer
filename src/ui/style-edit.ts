@@ -91,6 +91,64 @@ export function setCellStyleValues(graph: Graph, cells: Cell[], values: StyleRec
 }
 
 // ---------------------------------------------------------------------------------------------
+// Copy / Paste Style (format painter), the draw.io way
+// ---------------------------------------------------------------------------------------------
+
+/**
+ * draw.io's Graph.cellStyles (jgraph/drawio v32.4.1 Graph.js:2007, with Graph.textStyles :1968,
+ * Graph.edgeStyles :1988 and Graph.cellStyleGroups :1997): the keys Edit > Paste Style copies
+ * (Graph.prototype.pasteStyle :10358). Visual keys only: never `shape`, stencils, `locked`, `html`,
+ * the app's `rd*` data keys or geometry-like keys.
+ */
+export const PASTE_STYLE_KEYS: readonly string[] = [
+  'rounded', 'shadow', 'glass', 'dashed', 'dashPattern', 'comic', 'sketch', 'fillWeight',
+  'hachureGap', 'hachureAngle', 'jiggle', 'disableMultiStroke', 'disableMultiStrokeFill',
+  'fillStyle', 'curveFitting', 'simplification', 'sketchStyle', 'pointerEvents', 'opacity',
+  'strokeColor', 'strokeWidth', 'align', 'verticalAlign', 'spacingLeft', 'spacingRight',
+  'spacingTop', 'spacingBottom', 'spacing', 'arcSize', 'absoluteArcSize', 'comicStyle',
+  'swimlaneFillColor', 'shadowOffsetX', 'shadowOffsetY', 'shadowBlur', 'shadowColor', 'shadowOpacity',
+  // Graph.textStyles
+  'fontFamily', 'fontSource', 'fontSize', 'fontColor', 'fontStyle', 'textOpacity', 'labelBorderColor',
+  'labelBackgroundColor', 'defaultLabelBackgroundColor', 'autosize', 'resizable', 'horizontal', 'textDirection',
+  'autosizeText',
+  // Graph.edgeStyles
+  'edgeStyle', 'elbow', 'jumpStyle', 'jumpSize', 'startArrow', 'startFill', 'startSize', 'endArrow', 'endFill',
+  'endSize', 'flowAnimation', 'flowAnimationDirection', 'flowAnimationTimingFunction', 'flowAnimationDuration',
+  'sourcePerimeterSpacing', 'targetPerimeterSpacing', 'fixedPointSpacing', 'curved', 'curveGeometry', 'linecap',
+  'linejoin', 'libavoidRouting', 'followTerminals',
+  // Graph.cellStyleGroups
+  'fillColor', 'gradientColor', 'gradientDirection', 'roundedPerimeter',
+];
+
+/**
+ * The style Copy Style takes from `cell` (draw.io Graph.copyStyle = the cell's effective style),
+ * limited to PASTE_STYLE_KEYS. The cell's own values win over the resolved ones, so `none` colours
+ * (deleted from maxGraph's resolved style) and light-dark() values are copied as stored.
+ */
+export function copyPasteStyle(graph: Graph, cell: Cell): StyleRecord {
+  const merged: StyleRecord = { ...resolvedStyle(graph, cell), ...ownStyleCopy(cell) };
+  const out: StyleRecord = {};
+  for (const key of PASTE_STYLE_KEYS) if (merged[key] !== undefined && merged[key] !== null) out[key] = merged[key];
+  return out;
+}
+
+/**
+ * draw.io Graph.pasteStyle + updateCellStyles: sets each copied key whose effective value differs on
+ * every vertex / edge in `cells`, skipping locked cells (also via a locked group / layer); one
+ * undoable edit. @returns the cells whose style changed
+ */
+export function pasteStyleToCells(graph: Graph, cells: Cell[], style: StyleRecord): Cell[] {
+  const targets = cells.filter((cell) => (cell.isVertex() || cell.isEdge()) && !graph.isCellLocked(cell));
+  return applyStyleToCells(graph, targets, (next, resolved) => {
+    for (const key of PASTE_STYLE_KEYS) {
+      if (!(key in style)) continue;
+      const value = style[key];
+      if (!sameValue(next[key] ?? resolved[key], value)) next[key] = value;
+    }
+  });
+}
+
+// ---------------------------------------------------------------------------------------------
 // Displaying effective values
 // ---------------------------------------------------------------------------------------------
 

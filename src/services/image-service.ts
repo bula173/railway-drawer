@@ -1,3 +1,5 @@
+import { logger } from '../drawio/logger';
+
 /**
  * Service for managing custom image-based shapes
  */
@@ -132,7 +134,7 @@ export class ImageService {
         images.forEach((img) => {
           this.images.set(img.id, img);
         });
-        console.log(`[ImageService] Loaded ${images.length} custom images from storage`);
+        logger.debug('ImageService', `Loaded ${images.length} custom images from storage`);
       }
     } catch (error) {
       console.error('[ImageService] Failed to load from storage:', error);

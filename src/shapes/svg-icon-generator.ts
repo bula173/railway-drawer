@@ -1,4 +1,5 @@
 import type { AbstractCanvas2D, Shape } from '@maxgraph/core';
+import { logger } from '../drawio/logger';
 
 interface PaintStyle {
   fillStyle: string;
@@ -123,7 +124,7 @@ export function generateShapeIcon(ShapeClass: typeof Shape, width: number = 32, 
     // The mock implements only the calls the shapes use, so it is not a full AbstractCanvas2D
     shape.paintVertexShape(mockCtx as unknown as AbstractCanvas2D, 0, 0, width, height);
 
-    console.log(`Shape icon: ${ShapeClass.name} generated ${commands.length} commands`);
+    logger.debug('svg-icon-generator', `Shape icon: ${ShapeClass.name} generated ${commands.length} commands`);
 
     // Convert commands to SVG path
     let pathData = '';

@@ -19,9 +19,6 @@ import { Point } from '@maxgraph/core';
 /** draw.io tag the ports in this folder were taken from. */
 export const DRAWIO_TAG = 'v32.4.1';
 
-/** Upstream URL prefix of the ported sources. */
-export const DRAWIO_SOURCE_BASE = `https://raw.githubusercontent.com/jgraph/drawio/${DRAWIO_TAG}/src/main/webapp/`;
-
 export const NONE = 'none';
 
 export type StyleLike = Record<string, unknown> | null | undefined;

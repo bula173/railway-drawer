@@ -83,8 +83,3 @@ export class ServiceRegistry {
     ServiceRegistry.register('saveStatusIndicator', indicator);
   }
 }
-
-/**
- * Alias for convenience
- */
-export const ServiceLocator = ServiceRegistry;

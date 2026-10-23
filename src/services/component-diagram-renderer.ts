@@ -5,6 +5,7 @@
 
 import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
+import { logger } from '../drawio/logger';
 
 export class ComponentDiagramRenderer {
   private graph: Graph;
@@ -20,11 +21,11 @@ export class ComponentDiagramRenderer {
   }
 
   renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
-    console.log('[ComponentDiagram] Rendering into group');
+    logger.debug('ComponentDiagram', 'Rendering into group');
     const parent = groupCell;
 
     const components = diagramData.elements.filter((el) => el.type === 'component');
-    console.log('[ComponentDiagram] Found components:', components.length);
+    logger.debug('ComponentDiagram', 'Found components:', components.length);
 
     if (components.length === 0) return;
 
@@ -74,11 +75,11 @@ export class ComponentDiagramRenderer {
   }
 
   render(diagramData: DiagramData): void {
-    console.log('[ComponentDiagram] Rendering');
+    logger.debug('ComponentDiagram', 'Rendering');
     const parent = this.graph.getDefaultParent();
 
     const components = diagramData.elements.filter((el) => el.type === 'component');
-    console.log('[ComponentDiagram] Found components:', components.length);
+    logger.debug('ComponentDiagram', 'Found components:', components.length);
 
     if (components.length === 0) return;
 

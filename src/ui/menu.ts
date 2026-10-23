@@ -11,6 +11,7 @@ import type { LeftPanelTabs } from './left-panel-tabs';
 import { promptSaveAs, showAboutDialog } from './app-dialogs';
 import { applyShortcutHints } from './shortcut-keys';
 import { ServiceRegistry } from '../services/service-registry';
+import { logger } from '../drawio/logger';
 
 /** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
 type WindowWithLeftPanelTabs = Window & { __leftPanelTabs?: LeftPanelTabs };
@@ -284,16 +285,16 @@ export class MenuController {
   }
 
   private openProject(): void {
-    console.log('[Menu] Opening file dialog...');
+    logger.debug('Menu', 'Opening file dialog...');
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.railwaydrawer,.drawio,.xml,.railml';
     input.onchange = async (e: Event) => {
       const target = e.target as HTMLInputElement;
-      console.log('[Menu] File selected:', target.files);
+      logger.debug('Menu', 'File selected:', target.files);
       const file = target.files?.[0];
       if (file) {
-        console.log('[Menu] Loading file:', file.name);
+        logger.debug('Menu', 'Loading file:', file.name);
         // railML (root <railML>): imported into a new tab by src/railml
         const railml = await isRailmlFile(file);
         if (railml !== null) {
@@ -302,13 +303,13 @@ export class MenuController {
         }
         try {
           await this.saveLoadController.loadProjectFromFile(file);
-          console.log('[Menu] File loaded successfully');
+          logger.debug('Menu', 'File loaded successfully');
         } catch (error) {
           // SaveLoadController already showed the error to the user and kept the current diagram
           console.error('[Menu] Error loading file:', error);
         }
       } else {
-        console.log('[Menu] No file selected');
+        logger.debug('Menu', 'No file selected');
       }
     };
     input.click();
@@ -515,15 +516,15 @@ export class MenuController {
         break;
 
       case 'plantumlEditor': {
-        console.log('[Menu] PlantUML editor clicked');
+        logger.debug('Menu', 'PlantUML editor clicked');
         const leftPanelTabs = (window as WindowWithLeftPanelTabs).__leftPanelTabs;
         if (leftPanelTabs) {
           // If tab is hidden, show it; otherwise switch to it
           if (leftPanelTabs.isTabHidden('plantuml')) {
-            console.log('[Menu] Showing hidden plantuml tab');
+            logger.debug('Menu', 'Showing hidden plantuml tab');
             leftPanelTabs.showTab('plantuml');
           } else {
-            console.log('[Menu] Switching to plantuml tab');
+            logger.debug('Menu', 'Switching to plantuml tab');
             leftPanelTabs.switchTab('plantuml');
           }
         } else {

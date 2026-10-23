@@ -1,6 +1,7 @@
 import { Graph, InternalEvent } from '@maxgraph/core';
 import type { Cell, EventObject } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
+import { logger } from '../drawio/logger';
 
 /** Inline editor textarea carrying its document mousedown handler for later removal. */
 type EditingTextArea = HTMLTextAreaElement & { __clickOutsideHandler?: (evt: MouseEvent) => void };
@@ -20,7 +21,7 @@ export class TextEditorController {
     this.graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: unknown, evt: EventObject) => {
       const cell: Cell | undefined = evt.getProperty('cell');
       if (cell && cell.isVertex && cell.isVertex()) {
-        console.log('[TextEditor] Double-click detected on vertex:', cell.value);
+        logger.debug('TextEditor', 'Double-click detected on vertex:', cell.value);
         evt.consume(); // Prevent default behavior
         this.startInlineEditing(cell);
       }
@@ -36,7 +37,7 @@ export class TextEditorController {
       if (evt.key === 'Enter' || evt.key === ' ') {
         const cells = this.graph.getSelectionCells();
         if (cells.length === 1 && cells[0].isVertex && cells[0].isVertex()) {
-          console.log('[TextEditor] Enter/Space pressed, starting edit for:', cells[0].value);
+          logger.debug('TextEditor', 'Enter/Space pressed, starting edit for:', cells[0].value);
           evt.preventDefault();
           this.startInlineEditing(cells[0]);
         }
@@ -45,7 +46,7 @@ export class TextEditorController {
   }
 
   private startInlineEditing(cell: Cell): void {
-    console.log('[TextEditor] Starting inline editing for cell:', cell.value);
+    logger.debug('TextEditor', 'Starting inline editing for cell:', cell.value);
 
     // Stop any existing editing
     this.stopEditing();
@@ -69,7 +70,7 @@ export class TextEditorController {
       height: state.height || 60,
     };
 
-    console.log('[TextEditor] Cell bounds:', bounds);
+    logger.debug('TextEditor', 'Cell bounds:', bounds);
 
     // Create textarea element (supports multi-line text)
     this.editingInput = document.createElement('textarea') as EditingTextArea;
@@ -135,7 +136,7 @@ export class TextEditorController {
     // Store handler so we can remove it later
     this.editingInput.__clickOutsideHandler = handleClickOutside;
 
-    console.log('[TextEditor] Inline text input created and focused at', { left, top, width, height });
+    logger.debug('TextEditor', 'Inline text input created and focused at', { left, top, width, height });
   }
 
   private stopEditing(): void {
@@ -146,7 +147,7 @@ export class TextEditorController {
     const input = this.editingInput;
     const cell = this.currentEditingCell;
     const newText = input.value;
-    console.log('[TextEditor] Saving text:', newText);
+    logger.debug('TextEditor', 'Saving text:', newText);
 
     // Remove click outside handler
     const handler = input.__clickOutsideHandler;
@@ -192,6 +193,6 @@ export class TextEditorController {
       this.editingInput = null;
     }
     this.currentEditingCell = null;
-    console.log('[TextEditor] Editing cancelled');
+    logger.debug('TextEditor', 'Editing cancelled');
   }
 }

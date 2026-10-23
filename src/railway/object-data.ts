@@ -164,11 +164,6 @@ export function allCells(model: GraphDataModel): Cell[] {
   return out;
 }
 
-/** Cells with railway data (a known kind). */
-export function railwayCells(model: GraphDataModel): Cell[] {
-  return allCells(model).filter((c) => getCellKind(c) !== null);
-}
-
 /** IDs in use by objects of `kind` (upper case). */
 export function usedIds(model: GraphDataModel, kind: KindId): Set<string> {
   const ids = new Set<string>();

@@ -41,12 +41,13 @@ export function configureDiagramRendering(graph: Graph): void {
   installUserObjectLabels(graph);
   // light-dark()/default colours (after installUserObjectLabels: it wraps getLabel)
   installDrawioCompat(graph);
-  // html=1 labels render as (sanitized) HTML, as in draw.io
-  installDrawioHtmlLabels(graph);
   // edge styles (elbow, orthogonal, isometric) also for edges without a source, as in draw.io
   installDanglingEdgeStyles(graph);
   // strokeColor=inherit (tables, lists) takes the parent's value
   installInheritStyleValues(graph);
   // draw.io tables, lists, stack layouts, collapsed tables
   installTableSupport(graph);
+  // html=1 labels render as (sanitized) HTML, as in draw.io. LAST: the sanitizing getLabel must be
+  // the outermost wrapper, so nothing installed above can put unsanitized HTML back into a label.
+  installDrawioHtmlLabels(graph);
 }

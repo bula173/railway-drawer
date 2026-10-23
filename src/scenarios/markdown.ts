@@ -10,9 +10,11 @@
  *
  * Safety: the renderer writes only escaped text and a fixed set of tags; links are only http(s) and
  * mailto (opened with target=_blank rel="noopener noreferrer"), images only https: and base64
- * data:image/(png|jpeg|gif|webp|svg+xml). `sanitizeHtml` (a tag/attribute allow-list over the DOM)
+ * data:image/(png|jpeg|gif|webp|svg+xml). `sanitizeHtml` (DOMPurify tag/attribute allow-list, src/security)
  * runs again before anything is inserted into the page or exported, as defence in depth.
  */
+
+import { sanitizeMarkdownFragment, setMarkdownUrlRules } from '../security/sanitize';
 
 const ESCAPES: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 
@@ -438,71 +440,12 @@ export function renderMarkdown(source: string): string {
 
 // ----------------------------------------------------------------------------------- DOM sanitizer
 
-const ALLOWED: Record<string, string[]> = {
-  h1: [], h2: [], h3: [], h4: [], h5: [], h6: [],
-  p: [], br: [], hr: [], strong: [], em: [], del: [], code: ['class'], pre: [], blockquote: [],
-  ul: [], ol: ['start'], li: ['class'], table: [], thead: [], tbody: [], tr: [], th: ['class'], td: ['class'],
-  a: ['href', 'title', 'target', 'rel'], img: ['src', 'alt', 'title', 'loading'], span: ['class', 'title'],
-  input: ['type', 'disabled', 'checked'],
-};
-const DROP_WITH_CONTENT = new Set(['script', 'style', 'iframe', 'object', 'embed', 'template', 'noscript', 'svg', 'math', 'textarea', 'select', 'form']);
-
-function cleanTree(parent: ParentNode): void {
-  for (const node of Array.from(parent.childNodes)) {
-    if (node.nodeType === Node.TEXT_NODE) continue;
-    if (node.nodeType !== Node.ELEMENT_NODE) {
-      node.parentNode?.removeChild(node);
-      continue;
-    }
-    const el = node as Element;
-    const tag = el.localName.toLowerCase();
-    if (DROP_WITH_CONTENT.has(tag)) {
-      el.remove();
-      continue;
-    }
-    const allowed = ALLOWED[tag];
-    if (!allowed) {
-      // unknown element: keep its (cleaned) content
-      cleanTree(el);
-      el.replaceWith(...Array.from(el.childNodes));
-      continue;
-    }
-    for (const attr of Array.from(el.attributes)) {
-      const name = attr.name.toLowerCase();
-      if (!allowed.includes(name)) {
-        el.removeAttribute(attr.name);
-        continue;
-      }
-      if (name === 'href' && !safeLinkUrl(attr.value)) el.removeAttribute(attr.name);
-      else if (name === 'src' && !safeImageUrl(attr.value)) el.removeAttribute(attr.name);
-      else if (name === 'class' && !/^(rd-md-[\w-]+|language-[\w+-]+)$/.test(attr.value)) el.removeAttribute(attr.name);
-      else if (name === 'start' && !/^\d{1,9}$/.test(attr.value)) el.removeAttribute(attr.name);
-    }
-    if (tag === 'a') {
-      el.setAttribute('target', '_blank');
-      el.setAttribute('rel', 'noopener noreferrer');
-    }
-    if (tag === 'input') {
-      if (el.getAttribute('type') !== 'checkbox') {
-        el.remove();
-        continue;
-      }
-      el.setAttribute('disabled', '');
-    }
-    if (tag === 'img' && !el.hasAttribute('src')) {
-      el.replaceWith(document.createTextNode(el.getAttribute('alt') ?? ''));
-      continue;
-    }
-    cleanTree(el);
-  }
-}
+// One sanitizer for the whole app (DOMPurify, src/security/sanitize.ts) with this renderer's URL rules
+setMarkdownUrlRules({ link: safeLinkUrl, image: safeImageUrl });
 
 /** Allow-list sanitizer: HTML string -> cleaned fragment (parsed inertly in a `<template>`). */
 export function sanitizeHtml(html: string): DocumentFragment {
-  const template = document.createElement('template');
-  template.innerHTML = html;
-  cleanTree(template.content);
-  return template.content;
+  return sanitizeMarkdownFragment(html);
 }
 
 /** Sanitized HTML as a string (HTML export). */
