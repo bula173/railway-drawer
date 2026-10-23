@@ -23,6 +23,7 @@ import {
   writeGitLabSettings,
 } from './config';
 import type { GitLabConfig, GitLabEnv, GitLabLinkTarget } from './config';
+import { getStorage } from '../../../core/safe-storage';
 
 export {
   buildGitLabAppLink,
@@ -50,7 +51,7 @@ export interface GitLabDescriptorOptions {
 
 function session(): Storage | null {
   try {
-    return window.sessionStorage;
+    return getStorage('session');
   } catch {
     return null;
   }

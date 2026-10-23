@@ -16,9 +16,11 @@
 import { InternalEvent } from '@maxgraph/core';
 import type { EventSource, Graph } from '@maxgraph/core';
 import './start-card.css';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
-export const START_CARD_HIDDEN_KEY = 'rd.startCard.hidden';
-export const START_CARD_FORCE_KEY = 'rd.startCard.force';
+export const START_CARD_HIDDEN_KEY = STORAGE_KEYS.startCardHidden;
+export const START_CARD_FORCE_KEY = STORAGE_KEYS.startCardForce;
 
 export type StartAction = 'ertms' | 'template' | 'open' | 'railml' | 'script' | 'shortcuts';
 
@@ -41,8 +43,8 @@ export interface StartCard {
 
 function readHidden(): boolean {
   try {
-    if (localStorage.getItem(START_CARD_HIDDEN_KEY) === '1') return true;
-    return typeof navigator !== 'undefined' && navigator.webdriver === true && localStorage.getItem(START_CARD_FORCE_KEY) !== '1';
+    if (readItem(START_CARD_HIDDEN_KEY) === '1') return true;
+    return typeof navigator !== 'undefined' && navigator.webdriver === true && readItem(START_CARD_FORCE_KEY) !== '1';
   } catch {
     return false;
   }
@@ -50,7 +52,7 @@ function readHidden(): boolean {
 
 function writeHidden(): void {
   try {
-    localStorage.setItem(START_CARD_HIDDEN_KEY, '1');
+    writeItem(START_CARD_HIDDEN_KEY, '1');
   } catch {
     // storage blocked: hidden for this session only
   }

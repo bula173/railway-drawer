@@ -25,24 +25,26 @@ import { buildDiffHighlightXml, diffSnapshots, diffCountsText, DIFF_COLORS, DIFF
 import type { CellChangeKind, SnapshotDiff } from './scenario-diff';
 import './scenarios.css';
 import './scenario-doc.css';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 /** localStorage key of the side panel state ('collapsed' | 'open'). */
-export const SIDE_PANEL_KEY = 'rd.scenario.sidePanel';
+export const SIDE_PANEL_KEY = STORAGE_KEYS.scenarioSidePanel;
 
 function readCollapsed(): boolean {
   try {
-    return localStorage.getItem(SIDE_PANEL_KEY) === 'collapsed';
+    return readItem(SIDE_PANEL_KEY) === 'collapsed';
   } catch {
     return false;
   }
 }
 
 /** localStorage key of the "Show changes" toggle ('1' | '0'). */
-export const SHOW_CHANGES_KEY = 'rd.scenario.showChanges';
+export const SHOW_CHANGES_KEY = STORAGE_KEYS.scenarioShowChanges;
 
 function readShowChanges(): boolean {
   try {
-    return localStorage.getItem(SHOW_CHANGES_KEY) === '1';
+    return readItem(SHOW_CHANGES_KEY) === '1';
   } catch {
     return false;
   }
@@ -50,7 +52,7 @@ function readShowChanges(): boolean {
 
 function writeShowChanges(on: boolean): void {
   try {
-    localStorage.setItem(SHOW_CHANGES_KEY, on ? '1' : '0');
+    writeItem(SHOW_CHANGES_KEY, on ? '1' : '0');
   } catch {
     // storage blocked
   }
@@ -58,7 +60,7 @@ function writeShowChanges(on: boolean): void {
 
 function writeCollapsed(collapsed: boolean): void {
   try {
-    localStorage.setItem(SIDE_PANEL_KEY, collapsed ? 'collapsed' : 'open');
+    writeItem(SIDE_PANEL_KEY, collapsed ? 'collapsed' : 'open');
   } catch {
     // storage blocked: remembered for this page only
   }

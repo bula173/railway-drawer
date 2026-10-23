@@ -16,8 +16,10 @@
 
 import { InvalidSvgError, sanitizeSvgMarkup as sanitizeSvg } from '../security/sanitize';
 import { NoCompressionStreamError, deflateRawBytes } from './deflate-stream';
+import { readItem, removeItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
-export const PLANTUML_SERVER_KEY = 'rd.plantuml.server';
+export const PLANTUML_SERVER_KEY = STORAGE_KEYS.plantumlServer;
 export const PLANTUML_SERVER_CHANGED_EVENT = 'rd-plantuml-server-changed';
 const ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
 
@@ -87,7 +89,7 @@ export function normalizeServerUrl(value: string): string | null {
 /** The configured PlantUML server ('' = none, the default). */
 export function getPlantUmlServer(): string {
   try {
-    return normalizeServerUrl(localStorage.getItem(PLANTUML_SERVER_KEY) ?? '') ?? '';
+    return normalizeServerUrl(readItem(PLANTUML_SERVER_KEY) ?? '') ?? '';
   } catch {
     return '';
   }
@@ -98,8 +100,8 @@ export function setPlantUmlServer(value: string): string {
   const url = normalizeServerUrl(value);
   if (url === null) throw new Error('Enter an http(s) URL, e.g. https://www.plantuml.com/plantuml');
   try {
-    if (url) localStorage.setItem(PLANTUML_SERVER_KEY, url);
-    else localStorage.removeItem(PLANTUML_SERVER_KEY);
+    if (url) writeItem(PLANTUML_SERVER_KEY, url);
+    else removeItem(PLANTUML_SERVER_KEY);
   } catch {
     // storage blocked: the setting lasts until the page is reloaded
   }

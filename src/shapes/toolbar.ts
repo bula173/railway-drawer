@@ -2,6 +2,8 @@ import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry.js';
 import { generateShapeIcon } from './svg-icon-generator.js';
 import { logger } from '../drawio/logger';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -179,7 +181,7 @@ export class ShapeToolbar {
   }
 
   private loadGroupOrder(): void {
-    const stored = localStorage.getItem('shapeToolbarGroupOrder');
+    const stored = readItem(STORAGE_KEYS.shapeToolbarGroupOrder);
     if (stored) {
       try {
         this.groupOrder = JSON.parse(stored);
@@ -190,7 +192,7 @@ export class ShapeToolbar {
   }
 
   private saveGroupOrder(): void {
-    localStorage.setItem('shapeToolbarGroupOrder', JSON.stringify(this.groupOrder));
+    writeItem(STORAGE_KEYS.shapeToolbarGroupOrder, JSON.stringify(this.groupOrder));
   }
 
   private setDefaultGroupOrder(): void {

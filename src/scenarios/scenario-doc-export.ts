@@ -6,6 +6,8 @@
 import type { ScenarioData } from './scenario-model';
 import type { PdfOrientation } from './scenario-pdf';
 import './scenario-doc.css';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export type ScenarioDocFormat = 'pdf' | 'slides';
 
@@ -26,11 +28,11 @@ export interface ScenarioDocDialogOptions {
 }
 
 /** localStorage key of the last PDF orientation. */
-export const PDF_ORIENTATION_KEY = 'rd.scenario.pdfOrientation';
+export const PDF_ORIENTATION_KEY = STORAGE_KEYS.scenarioPdfOrientation;
 
 function readOrientation(): PdfOrientation {
   try {
-    return localStorage.getItem(PDF_ORIENTATION_KEY) === 'landscape' ? 'landscape' : 'portrait';
+    return readItem(PDF_ORIENTATION_KEY) === 'landscape' ? 'landscape' : 'portrait';
   } catch {
     return 'portrait';
   }
@@ -38,7 +40,7 @@ function readOrientation(): PdfOrientation {
 
 function writeOrientation(value: PdfOrientation): void {
   try {
-    localStorage.setItem(PDF_ORIENTATION_KEY, value);
+    writeItem(PDF_ORIENTATION_KEY, value);
   } catch {
     // storage blocked
   }

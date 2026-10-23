@@ -16,10 +16,12 @@
 
 import { setInlineIcon } from './toolbar';
 import './access-identity.css';
+import { readItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export const ACCESS_IDENTITY_URL = '/cdn-cgi/access/get-identity';
 export const ACCESS_LOGOUT_URL = '/cdn-cgi/access/logout';
-const PROBE_FLAG = 'rd.accessProbe';
+const PROBE_FLAG = STORAGE_KEYS.accessProbe;
 
 export interface AccessIdentity {
   email: string;
@@ -148,7 +150,7 @@ export interface InstallAccessIdentityOptions extends AccessUserOptions {
 function probeForced(): boolean {
   if (!import.meta.env.DEV) return false;
   try {
-    return localStorage.getItem(PROBE_FLAG) === '1';
+    return readItem(PROBE_FLAG) === '1';
   } catch {
     return false;
   }

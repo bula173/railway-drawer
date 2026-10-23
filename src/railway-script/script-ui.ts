@@ -16,6 +16,8 @@ import type { SessionStatus } from './session';
 import { ScriptSession } from './session';
 import { SCRIPT_TEMPLATES } from './templates';
 import { confirmDialog } from '../ui/app-dialogs';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 /** Themed confirmation before the editor's text is replaced (not the native confirm()). */
 function confirmReplace(message: string): Promise<boolean> {
@@ -28,7 +30,7 @@ export interface ScriptNotifier {
   error(message: string): void;
 }
 
-export const AUTO_APPLY_KEY = 'rd.railwayScript.autoApply';
+export const AUTO_APPLY_KEY = STORAGE_KEYS.railwayScriptAutoApply;
 
 // ---------------------------------------------------------------------------------------------
 // Sessions (one per tab with a script)
@@ -57,7 +59,7 @@ export function getSession(tabId: string): ScriptSession | null {
 
 function readAutoApply(): boolean {
   try {
-    return localStorage.getItem(AUTO_APPLY_KEY) !== '0';
+    return readItem(AUTO_APPLY_KEY) !== '0';
   } catch {
     return true;
   }
@@ -65,7 +67,7 @@ function readAutoApply(): boolean {
 
 function writeAutoApply(on: boolean): void {
   try {
-    localStorage.setItem(AUTO_APPLY_KEY, on ? '1' : '0');
+    writeItem(AUTO_APPLY_KEY, on ? '1' : '0');
   } catch {
     // session only
   }

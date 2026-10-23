@@ -17,12 +17,14 @@
  */
 
 import { setDrawioDarkMode } from '../engine/graph-compat';
+import { STORAGE_KEYS } from '../../core/storage-keys';
+import { getStorage } from '../../core/safe-storage';
 
 export type ThemePreference = 'light' | 'dark' | 'auto';
 export type Theme = 'light' | 'dark';
 
 /** localStorage key of the persisted preference (index.html reads the same key). */
-export const THEME_STORAGE_KEY = 'rd.theme';
+export const THEME_STORAGE_KEY = STORAGE_KEYS.theme;
 
 /** Fired on `window` after the theme changed; detail: the resolved Theme. */
 export const THEME_CHANGE_EVENT = 'rd-theme-change';
@@ -31,7 +33,7 @@ const DARK_QUERY = '(prefers-color-scheme: dark)';
 
 function storage(): Storage | null {
   try {
-    return typeof localStorage !== 'undefined' ? localStorage : null;
+    return getStorage('local');
   } catch {
     return null;
   }

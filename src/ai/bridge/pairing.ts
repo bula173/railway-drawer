@@ -8,9 +8,11 @@
  */
 import { MAX_PAIRING_TTL_S, formatPairingToken, newPairingToken, parsePairingToken } from './protocol';
 import type { PairingToken } from './protocol';
+import { STORAGE_KEYS } from '../../core/storage-keys';
+import { getStorage } from '../../core/safe-storage';
 
-export const REMOTE_PAIRING_KEY = 'rd.ai.pairing';
-export const LOCAL_BRIDGE_KEY = 'rd.ai.local';
+export const REMOTE_PAIRING_KEY = STORAGE_KEYS.aiRemotePairing;
+export const LOCAL_BRIDGE_KEY = STORAGE_KEYS.aiLocalBridge;
 export const DEFAULT_LOCAL_PORT = 7391;
 
 export interface RemotePairing {
@@ -26,7 +28,7 @@ export interface LocalBridgeSettings {
 
 function store(kind: 'session' | 'local'): Storage | null {
   try {
-    return kind === 'session' ? window.sessionStorage : window.localStorage;
+    return getStorage(kind);
   } catch {
     return null;
   }

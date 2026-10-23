@@ -9,6 +9,7 @@ import type { StorageProvider, StorageProviderDescriptor } from '../types';
 import { readSharePointConfig, sharePointAvailability } from './config';
 import type { SharePointEnv } from './config';
 import { PENDING_SIGNIN_KEY_NAME } from './pending';
+import { readItem } from '../../../core/safe-storage';
 
 export { isAuthResponseUrl, readSharePointConfig, sharePointAvailability } from './config';
 
@@ -45,7 +46,7 @@ export function createSharePointDescriptor(opts: SharePointDescriptorOptions = {
     resumePendingSignIn: async () => {
       let pending = false;
       try {
-        pending = sessionStorage.getItem(PENDING_SIGNIN_KEY_NAME) === 'sharepoint';
+        pending = readItem(PENDING_SIGNIN_KEY_NAME, 'session') === 'sharepoint';
       } catch {
         pending = false;
       }

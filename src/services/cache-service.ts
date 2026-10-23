@@ -1,6 +1,8 @@
 import { isLegacyModelXml } from './drawio-xml';
 import type { ScenarioData } from '../scenarios/scenario-model';
 import { logger } from '../drawio/logger';
+import { readItem, removeItem, writeItemOrThrow } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export interface CacheData {
   /** The active tab's project name (older versions kept only this one, for every tab). */
@@ -41,13 +43,13 @@ export interface CacheData {
 export type CacheSaveResult = 'saved' | 'quota-exceeded' | 'failed';
 
 export class CacheService {
-  private static readonly CACHE_KEY = 'railway-drawer-cache';
+  private static readonly CACHE_KEY = STORAGE_KEYS.cache;
   /**
    * Set when a save fails, holding the time of the first failed save. The previous cache entry
    * stays in place (it is still the best copy there is), but it no longer matches the session,
    * so a later restore can tell the user that it is out of date.
    */
-  private static readonly STALE_KEY = 'railway-drawer-cache-stale';
+  private static readonly STALE_KEY = STORAGE_KEYS.cacheStale;
   /**
    * Not bumped for the switch to the draw.io format: a version mismatch drops the whole cache.
    * Tabs cached as <GraphDataModel> still load and are rewritten after a successful restore
@@ -71,8 +73,8 @@ export class CacheService {
         version: this.VERSION,
         data,
       };
-      localStorage.setItem(this.CACHE_KEY, JSON.stringify(cacheObject));
-      localStorage.removeItem(this.STALE_KEY);
+      writeItemOrThrow(this.CACHE_KEY, JSON.stringify(cacheObject));
+      removeItem(this.STALE_KEY);
       logger.debug('Cache', 'Saved to localStorage');
       return 'saved';
     } catch (error) {
@@ -88,7 +90,7 @@ export class CacheService {
    */
   static getStaleSince(): number | null {
     try {
-      const value = localStorage.getItem(this.STALE_KEY);
+      const value = readItem(this.STALE_KEY);
       if (value === null) return null;
       const timestamp = Number(value);
       return Number.isFinite(timestamp) ? timestamp : Date.now();
@@ -100,8 +102,8 @@ export class CacheService {
   /** Records the first failed save; the tiny marker usually fits even when the quota is full. */
   private static markStale(timestamp: number): void {
     try {
-      if (localStorage.getItem(this.STALE_KEY) === null) {
-        localStorage.setItem(this.STALE_KEY, String(timestamp));
+      if (readItem(this.STALE_KEY) === null) {
+        writeItemOrThrow(this.STALE_KEY, String(timestamp));
       }
     } catch (error) {
       console.error('[Cache] Failed to mark cache as out of date:', error);
@@ -114,7 +116,7 @@ export class CacheService {
    */
   static load(): CacheData | null {
     try {
-      const item = localStorage.getItem(this.CACHE_KEY);
+      const item = readItem(this.CACHE_KEY);
       if (!item) return null;
 
       const cacheObject: unknown = JSON.parse(item);
@@ -141,8 +143,8 @@ export class CacheService {
 
   static clear(): void {
     try {
-      localStorage.removeItem(this.CACHE_KEY);
-      localStorage.removeItem(this.STALE_KEY);
+      removeItem(this.CACHE_KEY);
+      removeItem(this.STALE_KEY);
       logger.debug('Cache', 'Cleared');
     } catch (error) {
       console.error('[Cache] Failed to clear:', error);
@@ -151,7 +153,7 @@ export class CacheService {
 
   static exists(): boolean {
     try {
-      return localStorage.getItem(this.CACHE_KEY) !== null;
+      return readItem(this.CACHE_KEY) !== null;
     } catch {
       return false;
     }

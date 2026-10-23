@@ -1,4 +1,6 @@
 import { logger } from '../drawio/logger';
+import { readItem, writeItemOrThrow } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 /**
  * Service for managing custom image-based shapes
@@ -13,7 +15,7 @@ export interface CustomImage {
 }
 
 export class ImageService {
-  private static readonly STORAGE_KEY = 'railway-drawer-custom-images';
+  private static readonly STORAGE_KEY = STORAGE_KEYS.customImages;
   private static instance: ImageService;
   private images: Map<string, CustomImage> = new Map();
 
@@ -120,7 +122,7 @@ export class ImageService {
   private saveToStorage(): void {
     try {
       const data = Array.from(this.images.values());
-      localStorage.setItem(ImageService.STORAGE_KEY, JSON.stringify(data));
+      writeItemOrThrow(ImageService.STORAGE_KEY, JSON.stringify(data));
     } catch (error) {
       console.error('[ImageService] Failed to save to storage:', error);
     }
@@ -128,7 +130,7 @@ export class ImageService {
 
   private loadFromStorage(): void {
     try {
-      const data = localStorage.getItem(ImageService.STORAGE_KEY);
+      const data = readItem(ImageService.STORAGE_KEY);
       if (data) {
         const images = JSON.parse(data) as CustomImage[];
         images.forEach((img) => {

@@ -24,6 +24,8 @@ import type { Issue } from './validation';
 import { collectObjects, countIssues, validateModel } from './validation';
 import type { ReportId } from './report';
 import { REPORTS, buildReportTable, fileBaseName, getReport, tableToCsv } from './report';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export interface RailwayNotifier {
   success(message: string): void;
@@ -50,11 +52,11 @@ export interface InstallRailwayDataOptions {
   download?: (blob: Blob, fileName: string) => void;
 }
 
-export const LIVE_CHECKS_KEY = 'rd.railway.liveChecks';
+export const LIVE_CHECKS_KEY = STORAGE_KEYS.railwayLiveChecks;
 
 function readLive(): boolean {
   try {
-    return localStorage.getItem(LIVE_CHECKS_KEY) !== '0';
+    return readItem(LIVE_CHECKS_KEY) !== '0';
   } catch {
     return true;
   }
@@ -62,7 +64,7 @@ function readLive(): boolean {
 
 function writeLive(live: boolean): void {
   try {
-    localStorage.setItem(LIVE_CHECKS_KEY, live ? '1' : '0');
+    writeItem(LIVE_CHECKS_KEY, live ? '1' : '0');
   } catch {
     // storage blocked: applies for this session
   }

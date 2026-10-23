@@ -69,6 +69,8 @@ import { createStartCard } from './ui/start-card';
 import { installNarrowScreen } from './ui/narrow-screen';
 import { scrollSelectionIntoView } from './ui/canvas-scroll';
 import { logger } from './drawio/logger';
+import { readItem, writeItem } from './core/safe-storage';
+import { STORAGE_KEYS } from './core/storage-keys';
 
 /**
  * @brief Register all built-in shape definitions
@@ -500,7 +502,7 @@ applyAppGroupVisibility();
 
 function readStringArray(key: string): string[] {
   try {
-    const parsed: unknown = JSON.parse(localStorage.getItem(key) ?? '[]');
+    const parsed: unknown = JSON.parse(readItem(key) ?? '[]');
     return Array.isArray(parsed) ? parsed.filter((x): x is string => typeof x === 'string') : [];
   } catch {
     return [];
@@ -541,7 +543,7 @@ const shapesPaletteView = createDrawioPaletteView({
       if (checked) hiddenAppGroups.delete(group);
       else hiddenAppGroups.add(group);
       try {
-        localStorage.setItem(APP_GROUPS_HIDDEN_KEY, JSON.stringify([...hiddenAppGroups]));
+        writeItem(APP_GROUPS_HIDDEN_KEY, JSON.stringify([...hiddenAppGroups]));
       } catch {
         // storage blocked or full: the choice still applies for this session
       }
@@ -557,7 +559,7 @@ const shapesPaletteView = createDrawioPaletteView({
  * are handled by the Shapes tab palette view (same palette/entry ids). Shown/hidden state is
  * persisted in localStorage.
  */
-const ERTMS_TAB_KEY = 'railway-drawer-ertms-tab';
+const ERTMS_TAB_KEY = STORAGE_KEYS.ertmsTab;
 let ertmsTabCreated = false;
 const ensureErtmsTabView = (): void => {
   if (ertmsTabCreated) return;
@@ -589,14 +591,14 @@ leftPanelTabs.onTabVisibilityChange((tabId, visible) => {
   if (visible) ensureErtmsTabView();
   syncErtmsMenuItem(visible);
   try {
-    localStorage.setItem(ERTMS_TAB_KEY, visible ? '1' : '0');
+    writeItem(ERTMS_TAB_KEY, visible ? '1' : '0');
   } catch {
     // storage blocked: the choice applies for this session only
   }
 });
 let ertmsTabWanted = false;
 try {
-  ertmsTabWanted = localStorage.getItem(ERTMS_TAB_KEY) === '1';
+  ertmsTabWanted = readItem(ERTMS_TAB_KEY) === '1';
 } catch {
   ertmsTabWanted = false;
 }

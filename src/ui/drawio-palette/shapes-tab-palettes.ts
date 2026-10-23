@@ -19,6 +19,7 @@ import { EXPANDED_STORAGE_KEY, VISIBLE_STORAGE_KEY } from './drawio-palette-view
 import { entrySignature } from './entry-cells';
 import type { LazyPaletteSource } from './drawio-palette-view';
 import { safeStorage } from './library-adapter';
+import { STORAGE_KEYS } from '../../core/storage-keys';
 
 export { entrySignature };
 
@@ -30,7 +31,7 @@ export const MERGED_DRAWIO_PALETTES: readonly DrawioPaletteId[] = ['basic'];
 /** App shape groups (shapeRegistry) shown inside the merged section instead of their own group. */
 export const MERGED_APP_GROUPS: readonly string[] = ['Basic'];
 /** localStorage key of the hidden app shape groups (array of group names). */
-export const APP_GROUPS_HIDDEN_KEY = 'railway-drawer-hidden-shape-groups';
+export const APP_GROUPS_HIDDEN_KEY = STORAGE_KEYS.hiddenShapeGroups;
 
 /**
  * How an app Basic shape (by ShapeConfig id) relates to the draw.io palettes, compared by the

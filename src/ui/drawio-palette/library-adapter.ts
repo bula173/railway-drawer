@@ -4,8 +4,10 @@
  *        user-imported libraries in localStorage (`rd.drawioLibraries`).
  */
 import type { LibraryEntry, PaletteDef, PaletteEntry } from './contracts';
+import { STORAGE_KEYS } from '../../core/storage-keys';
+import { getStorage } from '../../core/safe-storage';
 
-export const LIBRARIES_STORAGE_KEY = 'rd.drawioLibraries';
+export const LIBRARIES_STORAGE_KEY = STORAGE_KEYS.drawioLibraries;
 
 export interface LibraryMeta {
   id: string;
@@ -118,7 +120,7 @@ export function writeStoredLibraries(libs: StoredLibrary[], storage: Storage | n
 
 export function safeStorage(): Storage | null {
   try {
-    return typeof localStorage === 'undefined' ? null : localStorage;
+    return getStorage('local');
   } catch {
     return null;
   }

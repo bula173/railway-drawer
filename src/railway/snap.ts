@@ -29,6 +29,8 @@ import { setRailwayData } from './object-data';
 import { isNominalDirection, linkLine, projectPoint } from './topology';
 import type { RailObject } from './validation';
 import { collectObjects } from './validation';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export const SNAP_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'axleCounter', 'leu']);
 /**
@@ -40,7 +42,7 @@ export const SNAP_DISTANCE = 40;
 export const SNAP_RADIUS_PX = 15;
 /** Gap between the track line and a signal/LEU beside it. */
 export const SNAP_GAP = 4;
-export const SNAP_KEY = 'rd.railway.snapToTrack';
+export const SNAP_KEY = STORAGE_KEYS.railwaySnapToTrack;
 
 /** Max gap in graph units at `scale` (SNAP_RADIUS_PX screen pixels). */
 export function snapGapAtScale(scale: number): number {
@@ -160,7 +162,7 @@ export function previewSnap(model: GraphDataModel, moved: Array<{ cell: Cell; bo
 
 export function readSnapEnabled(): boolean {
   try {
-    return localStorage.getItem(SNAP_KEY) !== '0';
+    return readItem(SNAP_KEY) !== '0';
   } catch {
     return true;
   }
@@ -168,7 +170,7 @@ export function readSnapEnabled(): boolean {
 
 export function writeSnapEnabled(on: boolean): void {
   try {
-    localStorage.setItem(SNAP_KEY, on ? '1' : '0');
+    writeItem(SNAP_KEY, on ? '1' : '0');
   } catch {
     // session only
   }

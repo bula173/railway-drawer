@@ -22,6 +22,7 @@ import {
 import type { AccountInfo, AuthenticationResult, IPublicClientApplication } from '@azure/msal-browser';
 import type { SharePointConfig } from './config';
 import { PENDING_SIGNIN_KEY_NAME as PENDING_SIGNIN_KEY } from './pending';
+import { removeItem, writeItem } from '../../../core/safe-storage';
 
 /** Scopes of the plain sign-in; Graph scopes are added by the calls that need them. */
 export const SIGN_IN_SCOPES = ['User.Read'];
@@ -57,7 +58,7 @@ export class MsalAuth {
       console.warn('[SharePoint] Redirect sign-in failed:', err);
     }
     try {
-      sessionStorage.removeItem(PENDING_SIGNIN_KEY);
+      removeItem(PENDING_SIGNIN_KEY, 'session');
     } catch {
       // storage blocked
     }
@@ -118,7 +119,7 @@ export class MsalAuth {
       if (!blocked) throw err;
       // Popup blocked: sign in with a full-page redirect (the page reloads afterwards)
       try {
-        sessionStorage.setItem(PENDING_SIGNIN_KEY, 'sharepoint');
+        writeItem(PENDING_SIGNIN_KEY, 'sharepoint', 'session');
       } catch {
         // storage blocked: the sign-in still completes, without the confirmation message
       }

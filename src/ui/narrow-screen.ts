@@ -5,14 +5,16 @@
  *        screen" banner (dismissal stored in localStorage `rd.narrowBanner.dismissed`).
  */
 import './narrow-screen.css';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export const NARROW_MAX_WIDTH = 899;
-export const NARROW_BANNER_KEY = 'rd.narrowBanner.dismissed';
+export const NARROW_BANNER_KEY = STORAGE_KEYS.narrowBannerDismissed;
 export const NARROW_CLASS = 'rd-narrow';
 
 function bannerDismissed(): boolean {
   try {
-    return localStorage.getItem(NARROW_BANNER_KEY) === '1';
+    return readItem(NARROW_BANNER_KEY) === '1';
   } catch {
     return false;
   }
@@ -44,7 +46,7 @@ export function installNarrowScreen(win: Window = window): () => void {
   };
   close.addEventListener('click', () => {
     try {
-      localStorage.setItem(NARROW_BANNER_KEY, '1');
+      writeItem(NARROW_BANNER_KEY, '1');
     } catch {
       // session only
     }

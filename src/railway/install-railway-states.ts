@@ -19,8 +19,10 @@ import { shouldIgnoreGraphShortcut } from '../ui/delete';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { STATE_SCHEME, scaledStrokeWidth } from './states';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
-export const STATE_LEGEND_KEY = 'rd.railway.stateLegend';
+export const STATE_LEGEND_KEY = STORAGE_KEYS.railwayStateLegend;
 
 export interface RailwayStatesHandle {
   run(command: string): void;
@@ -31,7 +33,7 @@ export interface RailwayStatesHandle {
 
 function readLegendFlag(): boolean {
   try {
-    return localStorage.getItem(STATE_LEGEND_KEY) === '1';
+    return readItem(STATE_LEGEND_KEY) === '1';
   } catch {
     return false;
   }
@@ -39,7 +41,7 @@ function readLegendFlag(): boolean {
 
 function writeLegendFlag(on: boolean): void {
   try {
-    localStorage.setItem(STATE_LEGEND_KEY, on ? '1' : '0');
+    writeItem(STATE_LEGEND_KEY, on ? '1' : '0');
   } catch {
     // session only
   }

@@ -29,6 +29,7 @@ import {
 } from './config';
 import type { GitLabConfig } from './config';
 import { codeChallengeS256, randomToken, randomVerifier } from './pkce';
+import { getStorage } from '../../../core/safe-storage';
 
 /**
  * `api` is the smallest GitLab scope that allows commits through the REST API (repository files)
@@ -126,14 +127,6 @@ export interface GitLabAuthOptions {
   pollMs?: number;
 }
 
-function safeStorage(get: () => Storage): Storage | null {
-  try {
-    return get();
-  } catch {
-    return null;
-  }
-}
-
 export class GitLabAuth {
   private readonly config: GitLabConfig;
   private readonly redirectUri: string;
@@ -151,8 +144,8 @@ export class GitLabAuth {
     this.redirectUri = opts.redirectUri;
     this.fetchImpl = opts.fetch ?? ((input, init) => fetch(input, init));
     this.now = opts.now ?? (() => Date.now());
-    this.local = opts.local !== undefined ? opts.local : safeStorage(() => window.localStorage);
-    this.session = opts.session !== undefined ? opts.session : safeStorage(() => window.sessionStorage);
+    this.local = opts.local !== undefined ? opts.local : getStorage('local');
+    this.session = opts.session !== undefined ? opts.session : getStorage('session');
   }
 
   // ---- token store --------------------------------------------------------------------------

@@ -23,12 +23,14 @@ import type {
   StorageProvider,
   StorageProviderDescriptor,
 } from '../share/providers/types';
+import { readItem, removeItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export const FAKE_REMOTE_ID = 'fake-remote';
-const ENABLE_KEY = 'rd.fakeRemote';
-const FILES_KEY = 'rd.fakeRemote.files';
-const ACCOUNT_KEY = 'rd.fakeRemote.account';
-const LOG_KEY = 'rd.fakeRemote.log';
+const ENABLE_KEY = STORAGE_KEYS.fakeRemote;
+const FILES_KEY = STORAGE_KEYS.fakeRemoteFiles;
+const ACCOUNT_KEY = STORAGE_KEYS.fakeRemoteAccount;
+const LOG_KEY = STORAGE_KEYS.fakeRemoteLog;
 
 interface FakeFile {
   xml: string;
@@ -41,7 +43,7 @@ interface FakeRef {
 
 function readFiles(): Record<string, FakeFile> {
   try {
-    const raw = JSON.parse(localStorage.getItem(FILES_KEY) ?? '{}') as unknown;
+    const raw = JSON.parse(readItem(FILES_KEY) ?? '{}') as unknown;
     return raw && typeof raw === 'object' ? (raw as Record<string, FakeFile>) : {};
   } catch {
     return {};
@@ -49,14 +51,14 @@ function readFiles(): Record<string, FakeFile> {
 }
 
 function writeFiles(files: Record<string, FakeFile>): void {
-  localStorage.setItem(FILES_KEY, JSON.stringify(files));
+  writeItem(FILES_KEY, JSON.stringify(files));
 }
 
 function log(entry: Record<string, unknown>): void {
   try {
-    const list = JSON.parse(localStorage.getItem(LOG_KEY) ?? '[]') as unknown[];
+    const list = JSON.parse(readItem(LOG_KEY) ?? '[]') as unknown[];
     list.push({ ...entry, at: Date.now() });
-    localStorage.setItem(LOG_KEY, JSON.stringify(list));
+    writeItem(LOG_KEY, JSON.stringify(list));
   } catch {
     // ignore
   }
@@ -76,20 +78,20 @@ class FakeRemoteProvider implements StorageProvider {
 
   getAccount(): RemoteAccount | null {
     try {
-      return sessionStorage.getItem(ACCOUNT_KEY) ? { name: 'Test user' } : null;
+      return readItem(ACCOUNT_KEY, 'session') ? { name: 'Test user' } : null;
     } catch {
       return null;
     }
   }
 
   async signIn(): Promise<RemoteAccount> {
-    sessionStorage.setItem(ACCOUNT_KEY, '1');
+    writeItem(ACCOUNT_KEY, '1', 'session');
     log({ op: 'signIn' });
     return { name: 'Test user' };
   }
 
   async signOut(): Promise<void> {
-    sessionStorage.removeItem(ACCOUNT_KEY);
+    removeItem(ACCOUNT_KEY, 'session');
   }
 
   private requireAccount(): void {
@@ -174,7 +176,7 @@ export interface FakeRemoteHandle {
 /** The test provider when enabled (dev server + localStorage `rd.fakeRemote` = '1'), else null. */
 export function createFakeRemoteDescriptor(): StorageProviderDescriptor | null {
   try {
-    if (localStorage.getItem(ENABLE_KEY) !== '1') return null;
+    if (readItem(ENABLE_KEY) !== '1') return null;
   } catch {
     return null;
   }
@@ -189,7 +191,7 @@ export function createFakeRemoteDescriptor(): StorageProviderDescriptor | null {
       writeFiles(files);
       return version;
     },
-    log: () => JSON.parse(localStorage.getItem(LOG_KEY) ?? '[]') as unknown[],
+    log: () => JSON.parse(readItem(LOG_KEY) ?? '[]') as unknown[],
   };
   (window as unknown as { __rdFakeRemote?: FakeRemoteHandle }).__rdFakeRemote = handle;
   console.warn('[FakeRemote] Test storage provider enabled (dev only)');

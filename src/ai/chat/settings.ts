@@ -1,3 +1,5 @@
+import { STORAGE_KEYS } from '../../core/storage-keys';
+import { getStorage } from '../../core/safe-storage';
 /**
  * @file settings.ts
  * @brief AI chat settings in THIS browser only (localStorage `rd.ai.settings`): the user's own
@@ -6,7 +8,7 @@
  *        api.anthropic.com with the user's requests. Never logged.
  */
 
-export const AI_SETTINGS_KEY = 'rd.ai.settings';
+export const AI_SETTINGS_KEY = STORAGE_KEYS.aiSettings;
 
 export type Effort = 'low' | 'medium' | 'high' | 'xhigh' | 'max';
 
@@ -42,7 +44,7 @@ export const DEFAULT_SETTINGS: AiSettings = { apiKey: '', model: DEFAULT_MODEL, 
 
 function storage(): Storage | null {
   try {
-    return window.localStorage;
+    return getStorage('local');
   } catch {
     return null;
   }

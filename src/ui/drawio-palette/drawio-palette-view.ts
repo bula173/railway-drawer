@@ -23,9 +23,10 @@ import { THUMB_SIZE, ThumbnailRenderer } from './thumbnail-renderer';
 import { loadPalette, loadPaletteCatalogue } from '../../drawio-shapes/palettes';
 import type { PaletteCatalogue } from '../../drawio-shapes/palettes';
 import type { PaletteViewInternals } from './view-internals';
+import { STORAGE_KEYS } from '../../core/storage-keys';
 
-export const VISIBLE_STORAGE_KEY = 'rd.drawioPalettes.visible';
-export const EXPANDED_STORAGE_KEY = 'rd.drawioPalettes.expanded';
+export const VISIBLE_STORAGE_KEY = STORAGE_KEYS.drawioPalettesVisible;
+export const EXPANDED_STORAGE_KEY = STORAGE_KEYS.drawioPalettesExpanded;
 /** dataTransfer type of a palette drag: `<paletteId>\n<entryId>`. */
 export const PALETTE_DRAG_TYPE = 'application/x-rd-drawio-entry';
 

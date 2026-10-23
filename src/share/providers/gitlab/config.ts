@@ -14,22 +14,24 @@
  * This module is in the main bundle and must stay small. See docs/GITLAB.md.
  */
 import type { ProviderAvailability } from '../types';
+import { STORAGE_KEYS } from '../../../core/storage-keys';
+import { getStorage } from '../../../core/safe-storage';
 
 export const GITLAB_PROVIDER_ID = 'gitlab';
 export const GITLAB_DOCS_URL = 'https://github.com/bula173/railway-drawer/blob/main/docs/GITLAB.md';
 
 /** localStorage: runtime overrides `{ url, clientId, defaultProject, staySignedIn }`. */
-export const GITLAB_SETTINGS_KEY = 'rd.gitlab.settings';
+export const GITLAB_SETTINGS_KEY = STORAGE_KEYS.gitlabSettings;
 /** Tokens (sessionStorage, or localStorage with "stay signed in"). */
-export const GITLAB_AUTH_KEY = 'rd.gitlab.auth';
+export const GITLAB_AUTH_KEY = STORAGE_KEYS.gitlabAuth;
 /** sessionStorage: a `?gitlab=` link still to be opened (survives a redirect sign-in). */
-export const GITLAB_PENDING_OPEN_KEY = 'rd.gitlab.pendingOpen';
+export const GITLAB_PENDING_OPEN_KEY = STORAGE_KEYS.gitlabPendingOpen;
 /** OAuth `state` values of this app start with this, so `main.ts` can route the response. */
 export const GITLAB_STATE_PREFIX = 'rdgl-';
 /** sessionStorage: the redirect sign-in in progress `{ state, verifier, returnUrl, mode }`. */
-export const GITLAB_FLOW_KEY = 'rd.gitlab.oauth.flow';
+export const GITLAB_FLOW_KEY = STORAGE_KEYS.gitlabOauthFlow;
 /** sessionStorage: GitLab's answer to a redirect sign-in, kept for the reloaded app. */
-export const GITLAB_RESPONSE_KEY = 'rd.gitlab.oauth.response';
+export const GITLAB_RESPONSE_KEY = STORAGE_KEYS.gitlabOauthResponse;
 /** BroadcastChannel on which the sign-in popup hands GitLab's answer to the app window. */
 export const GITLAB_AUTH_CHANNEL = 'rd-gitlab-auth';
 /** URL query parameter of app links to a GitLab file. */
@@ -91,7 +93,7 @@ export function isValidProjectRef(value: string): boolean {
 
 function storage(kind: 'local' | 'session'): Storage | null {
   try {
-    return kind === 'local' ? window.localStorage : window.sessionStorage;
+    return getStorage(kind);
   } catch {
     return null;
   }

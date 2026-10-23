@@ -16,8 +16,9 @@
 import type { LibraryEntry } from '../drawio-palette/contracts';
 import { safeStorage } from '../drawio-palette/library-adapter';
 import type { DiagramTemplate } from './template-types';
+import { STORAGE_KEYS } from '../../core/storage-keys';
 
-export const TEMPLATES_STORAGE_KEY = 'railway-drawer-templates';
+export const TEMPLATES_STORAGE_KEY = STORAGE_KEYS.templates;
 export const TEMPLATES_STORAGE_VERSION = 1;
 export const MAX_TEMPLATE_NAME = 80;
 export const MAX_TEMPLATE_DESCRIPTION = 200;

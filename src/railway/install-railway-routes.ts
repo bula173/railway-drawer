@@ -25,6 +25,8 @@ import { getRoutesLayer, setRoutesVisible, updateRoutePaths } from './route-stor
 import { buildConflictTable, buildRouteTable, detectConflicts, routeRecords } from './routes';
 import { installSnapToTrack, readSnapEnabled, writeSnapEnabled } from './snap';
 import { collectObjects } from './validation';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export type RouteCommand =
   | 'tool'
@@ -37,7 +39,7 @@ export type RouteCommand =
   | 'toggleKmRuler';
 
 export const ROUTE_REQUEST_EVENT = 'railway-route-request';
-export const KM_RULER_KEY = 'rd.railway.kmRuler';
+export const KM_RULER_KEY = STORAGE_KEYS.railwayKmRuler;
 
 export interface RailwayRoutesHandle {
   tool: RouteTool;
@@ -50,7 +52,7 @@ export interface RailwayRoutesHandle {
 
 function readFlag(key: string, fallback: boolean): boolean {
   try {
-    const v = localStorage.getItem(key);
+    const v = readItem(key);
     return v === null ? fallback : v === '1';
   } catch {
     return fallback;
@@ -59,7 +61,7 @@ function readFlag(key: string, fallback: boolean): boolean {
 
 function writeFlag(key: string, on: boolean): void {
   try {
-    localStorage.setItem(key, on ? '1' : '0');
+    writeItem(key, on ? '1' : '0');
   } catch {
     // session only
   }

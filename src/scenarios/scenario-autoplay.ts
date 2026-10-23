@@ -1,3 +1,5 @@
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 /**
  * @file scenario-autoplay.ts
  * @brief Timer of the scenario view's autoplay: advances one step per interval, stops at the last
@@ -5,7 +7,7 @@
  *        localStorage `rd.scenario.autoplay`.
  */
 
-export const AUTOPLAY_KEY = 'rd.scenario.autoplay';
+export const AUTOPLAY_KEY = STORAGE_KEYS.scenarioAutoplay;
 export const AUTOPLAY_INTERVALS = [1, 2, 3, 5, 10, 20] as const;
 export const DEFAULT_AUTOPLAY_SECONDS = 3;
 
@@ -16,7 +18,7 @@ export interface AutoplaySettings {
 
 export function readAutoplaySettings(): AutoplaySettings {
   try {
-    const raw = JSON.parse(localStorage.getItem(AUTOPLAY_KEY) ?? 'null') as Partial<AutoplaySettings> | null;
+    const raw = JSON.parse(readItem(AUTOPLAY_KEY) ?? 'null') as Partial<AutoplaySettings> | null;
     const seconds = Number(raw?.seconds);
     return {
       seconds: Number.isFinite(seconds) && seconds >= 0.2 && seconds <= 600 ? seconds : DEFAULT_AUTOPLAY_SECONDS,
@@ -29,7 +31,7 @@ export function readAutoplaySettings(): AutoplaySettings {
 
 export function writeAutoplaySettings(settings: AutoplaySettings): void {
   try {
-    localStorage.setItem(AUTOPLAY_KEY, JSON.stringify(settings));
+    writeItem(AUTOPLAY_KEY, JSON.stringify(settings));
   } catch {
     // storage blocked: kept for this page only
   }

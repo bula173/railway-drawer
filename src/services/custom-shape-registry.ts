@@ -1,4 +1,6 @@
 import { logger } from '../drawio/logger';
+import { readItem, removeItem, writeItemOrThrow } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 /**
  * @file custom-shape-registry.ts
@@ -23,7 +25,7 @@ export interface CustomShape {
   icon?: string; // Base64 thumbnail
 }
 
-const STORAGE_KEY = 'railway-drawer-custom-shapes';
+const STORAGE_KEY = STORAGE_KEYS.customShapes;
 
 export class CustomShapeRegistryService {
   private shapes: Map<string, CustomShape> = new Map();
@@ -134,7 +136,7 @@ export class CustomShapeRegistryService {
   private saveToStorage(): void {
     try {
       const data = JSON.stringify(this.getAll());
-      localStorage.setItem(STORAGE_KEY, data);
+      writeItemOrThrow(STORAGE_KEY, data);
       logger.debug('CustomShapeRegistry', 'Saved', [this.shapes.size, 'shapes']);
     } catch (error) {
       console.error('[CustomShapeRegistry] Save failed:', error);
@@ -146,7 +148,7 @@ export class CustomShapeRegistryService {
    */
   private loadFromStorage(): void {
     try {
-      const data = localStorage.getItem(STORAGE_KEY);
+      const data = readItem(STORAGE_KEY);
       if (data) {
         const shapes = JSON.parse(data) as CustomShape[];
         shapes.forEach((shape) => {
@@ -164,7 +166,7 @@ export class CustomShapeRegistryService {
    */
   clearAll(): void {
     this.shapes.clear();
-    localStorage.removeItem(STORAGE_KEY);
+    removeItem(STORAGE_KEY);
     logger.debug('CustomShapeRegistry', 'Cleared all shapes');
   }
 }

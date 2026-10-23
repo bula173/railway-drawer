@@ -1,4 +1,6 @@
 import { createInstallScope, installOnce } from '../core/install-once';
+import { STORAGE_KEYS } from '../core/storage-keys';
+import { getStorage } from '../core/safe-storage';
 /**
  * @file side-panels.ts
  * @brief Left (Shapes) and right (Format) side panels: collapse/expand (toolbar buttons
@@ -14,7 +16,7 @@ import { createInstallScope, installOnce } from '../core/install-once';
 
 export type SidePanel = 'left' | 'right';
 
-export const SIDE_PANELS_KEY = 'rd.sidePanels';
+export const SIDE_PANELS_KEY = STORAGE_KEYS.sidePanels;
 export const PANEL_MIN_WIDTH = 180;
 export const PANEL_MAX_WIDTH = 520;
 
@@ -59,7 +61,7 @@ export function readPanelState(storage: Pick<Storage, 'getItem'> | null = safeSt
 
 function safeStorage(): Storage | null {
   try {
-    return globalThis.localStorage ?? null;
+    return getStorage('local');
   } catch {
     return null;
   }

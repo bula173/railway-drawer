@@ -1,3 +1,5 @@
+import { STORAGE_KEYS } from '../core/storage-keys';
+import { getStorage } from '../core/safe-storage';
 /**
  * @file retired-drawio-mode.ts
  * @brief Browser storage left behind by the removed embedded draw.io mode.
@@ -12,8 +14,8 @@
  * Storage access never throws (private mode, blocked site data).
  */
 
-export const RETIRED_EDITOR_MODE_KEY = 'railway-drawer-editor-mode';
-export const RETIRED_DRAWIO_DOC_KEY = 'railway-drawer-drawio-doc';
+export const RETIRED_EDITOR_MODE_KEY = STORAGE_KEYS.retiredEditorMode;
+export const RETIRED_DRAWIO_DOC_KEY = STORAGE_KEYS.retiredDrawioDoc;
 
 export interface RetiredDrawioDocument {
   xml: string;
@@ -22,7 +24,7 @@ export interface RetiredDrawioDocument {
 
 function storage(): Storage | null {
   try {
-    return window.localStorage;
+    return getStorage('local');
   } catch {
     return null;
   }

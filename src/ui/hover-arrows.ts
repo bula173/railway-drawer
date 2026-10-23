@@ -41,6 +41,8 @@ import { isLayer } from './cell-lock';
 import { isGroupVertex, isNearGraphBounds } from './canvas-interaction';
 import { prepareClonedCells } from '../railway/clone';
 import { installOnce } from '../core/install-once';
+import { readItem, writeItem } from '../core/safe-storage';
+import { STORAGE_KEYS } from '../core/storage-keys';
 
 export type ArrowDirection = 'north' | 'east' | 'south' | 'west';
 export const ARROW_DIRECTIONS: readonly ArrowDirection[] = ['north', 'east', 'south', 'west'];
@@ -62,14 +64,14 @@ export const INACTIVE_OPACITY = 0.5;
 // Setting
 // --------------------------------------------------------------------------------------------
 
-export const CONNECTION_ARROWS_KEY = 'rd.connectionArrows';
+export const CONNECTION_ARROWS_KEY = STORAGE_KEYS.connectionArrows;
 let enabledCache: boolean | null = null;
 const enabledListeners = new Set<(on: boolean) => void>();
 
 export function isConnectionArrowsEnabled(): boolean {
   if (enabledCache === null) {
     try {
-      enabledCache = localStorage.getItem(CONNECTION_ARROWS_KEY) !== '0';
+      enabledCache = readItem(CONNECTION_ARROWS_KEY) !== '0';
     } catch {
       enabledCache = true;
     }
@@ -80,7 +82,7 @@ export function isConnectionArrowsEnabled(): boolean {
 export function setConnectionArrowsEnabled(on: boolean): void {
   enabledCache = on;
   try {
-    localStorage.setItem(CONNECTION_ARROWS_KEY, on ? '1' : '0');
+    writeItem(CONNECTION_ARROWS_KEY, on ? '1' : '0');
   } catch {
     // storage blocked: the choice applies for this session only
   }
