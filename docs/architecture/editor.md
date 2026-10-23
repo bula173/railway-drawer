@@ -199,7 +199,7 @@
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
 - Connection arrows = draw.io HoverIcons (`src/ui/hover-arrows.ts` `HoverArrowsController`, one per tab, built in
   `TabManager.createTab` after the graph setup (ConnectionHandler patches), `tab.hoverArrowsController`): four DOM arrows (draw.io's images,
-  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around (never over: outside the union of the cell's bounds and its shape's bounding box) the cell a click would
+  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around (never over: outside the union of the cell's bounds, its shape's bounding box and its label's bounding box, `hoverArrowAnchorBounds`: a press on a label outside the vertex, e.g. a km post's, moves the cell) the cell a click would
   select (`hoverArrowCell`: group before its children, unlocked incl. group/layer, connectable or a group, no edges,
   `allowArrows=0` honoured) after a 140 ms rest; never while a button is down, editing, Route tool active
   (`.rd-route-tool-active`) or in the scenario view (`body.rd-scenario-viewing`). Hidden outside the cell+arrows box

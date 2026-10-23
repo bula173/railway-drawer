@@ -15,7 +15,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import { freshApp, inTab, probe, setupSamples, table } from './helpers/press-probe-lib';
+import { freshApp, inTab, paletteInsert, placeAt, probe, setupSamples, table } from './helpers/press-probe-lib';
 
 test.use({ viewport: { width: 1600, height: 1100 } });
 
@@ -194,4 +194,39 @@ test('railway objects: a selected small symbol moves (no resize) from its body; 
   await drag(page, await pagePt(page, tr.x, tr.y), 20, 40);
   const leg1 = await geoOf(page, turnout.probeId);
   expect(leg1[1] - leg0[1], 'leg followed the track').toBeGreaterThan(20);
+});
+
+test('km post: a press on its label below the vertex moves the cell (no hover arrow over the label)', async ({ page }) => {
+  await freshApp(page);
+  const [id] = await paletteInsert(page, 'track-layout', 'km Post');
+  await placeAt(page, [id], 300, 200);
+  await inTab(page, 'graph.clearSelection();');
+  const box = await inTab<{ x: number; y: number; w: number; h: number; cx: number; cy: number; bottom: number }>(page, `
+    const s = graph.view.getState(graph.getDataModel().getCell(arg)); const b = s.text.boundingBox;
+    return { x: b.x, y: b.y, w: b.width, h: b.height, cx: s.getCenterX(), cy: s.getCenterY(), bottom: s.y + s.height };`, id);
+  // the label hangs below the 8 x 16 vertex
+  expect(box.y + box.h).toBeGreaterThan(box.bottom + 4);
+  const onLabel = await pagePt(page, box.x + box.w / 2, Math.max(box.bottom + 3, box.y + box.h / 2));
+  // hover the post (its arrows appear), then move onto the label: no arrow there
+  const centre = await pagePt(page, box.cx, box.cy);
+  await page.mouse.move(centre.x, centre.y, { steps: 3 });
+  await expect(page.locator('.rd-hover-arrow').first()).toBeVisible();
+  await page.mouse.move(onLabel.x, onLabel.y, { steps: 3 });
+  await page.waitForTimeout(180);
+  const hit = await page.evaluate(({ x, y }) => (document.elementFromPoint(x, y)?.closest('.rd-hover-arrow') ? 'arrow' : 'other'), onLabel);
+  expect(hit, 'no hover arrow over the label').toBe('other');
+  const arrows = await page.locator('.rd-hover-arrow').evaluateAll((els) => els.map((e) => e.getBoundingClientRect()).map((r) => ({ top: r.top, bottom: r.bottom, left: r.left, right: r.right })));
+  const labelPage = await pagePt(page, box.x, box.y);
+  const labelRect = { left: labelPage.x, top: labelPage.y, right: labelPage.x + box.w, bottom: labelPage.y + box.h };
+  for (const r of arrows) {
+    const overlaps = r.left < labelRect.right && r.right > labelRect.left && r.top < labelRect.bottom && r.bottom > labelRect.top;
+    expect(overlaps, 'arrow overlaps the label').toBe(false);
+  }
+  // a press-drag on the label moves the post
+  const g0 = await geoOf(page, id);
+  await drag(page, onLabel, 40, 30);
+  const g1 = await geoOf(page, id);
+  expect(g1.slice(2), 'size kept').toEqual(g0.slice(2));
+  expect(g1[0] - g0[0], 'moved right').toBeGreaterThan(20);
+  expect(g1[1] - g0[1], 'moved down').toBeGreaterThan(10);
 });
