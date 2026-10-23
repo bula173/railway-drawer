@@ -14,12 +14,14 @@ import { ClipboardService } from '../../services/clipboard-service';
 import { globalNotificationManager } from '../../ui/notification';
 import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
+import { installShellForTest } from './shell-harness';
 import { EdgePropertiesController } from '../../ui/edge-properties';
 import { StatusBarController } from '../../ui/statusbar';
 import { InteractiveUIController } from '../../ui/interactive-ui';
 
 describe('TabManager tab lifecycle', () => {
   let tabManager: TabManager | null = null;
+  let uninstallShell: (() => void) | null = null;
 
   beforeEach(() => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -38,9 +40,13 @@ describe('TabManager tab lifecycle', () => {
     );
     loadAppDom();
     localStorage.clear();
+    // toolbar buttons and keys run the commands on the active tab (main-editor.ts wiring)
+    uninstallShell = installShellForTest(() => tabManager?.getActiveTab() ?? null);
   });
 
   afterEach(() => {
+    uninstallShell?.();
+    uninstallShell = null;
     tabManager?.destroy();
     tabManager = null;
     localStorage.clear();

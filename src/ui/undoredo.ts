@@ -21,16 +21,9 @@ export class UndoRedoController {
   }
 
   private setupToolbarButtons(): void {
+    // their clicks run the undo / redo commands (toolbar.ts data-command); this controller keeps their state
     this.undoBtn = document.getElementById('btn-undo') as HTMLButtonElement | null;
     this.redoBtn = document.getElementById('btn-redo') as HTMLButtonElement | null;
-
-    if (this.undoBtn) {
-      this.undoBtn.addEventListener('click', () => this.commandService.undo());
-    }
-
-    if (this.redoBtn) {
-      this.redoBtn.addEventListener('click', () => this.commandService.redo());
-    }
   }
 
   /**

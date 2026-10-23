@@ -1,8 +1,9 @@
 /**
  * Regression: per-tab controllers bound `document` keydown handlers without the editing guard, so
  * Space (pan, start label edit) and Ctrl+D/H/G typed in a text field were swallowed or acted on
- * the diagram. Also: the "Duplicate Multiple Times" dialog left a `document` keydown listener
- * behind for good every time it was opened.
+ * the diagram. The keys are now command bindings of the one keymap (ui/commands); these tests run
+ * them through it on a tab made of the controllers. Also: the "Duplicate Multiple Times" dialog
+ * left a `document` keydown listener behind for good every time it was opened.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { Graph } from '@maxgraph/core';
@@ -12,10 +13,14 @@ import { TransformController } from '../../ui/transform';
 import { GroupingController } from '../../ui/grouping';
 import { DuplicateOffsetController } from '../../ui/duplicate-offset';
 import { createTestGraph, cleanupTestGraph } from '../setup';
+import { installCommands } from '../../ui/commands';
+import type { TabData } from '../../ui/tabs';
 
 describe('document keyboard handlers respect text editing', () => {
   let graph: Graph;
   let input: HTMLInputElement;
+  let tab: Partial<TabData>;
+  let uninstall: (() => void) | null = null;
 
   beforeEach(() => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -23,9 +28,14 @@ describe('document keyboard handlers respect text editing', () => {
     document.body.appendChild(graph.container);
     input = document.createElement('input');
     document.body.appendChild(input);
+    // the active tab of the keymap: the controllers each test creates
+    tab = { graph };
+    uninstall = installCommands(() => tab as TabData);
   });
 
   afterEach(() => {
+    uninstall?.();
+    uninstall = null;
     input.remove();
     graph.container.remove();
     document.body.innerHTML = '';
@@ -42,7 +52,8 @@ describe('document keyboard handlers respect text editing', () => {
   it('Space typed in an input is not swallowed by pan mode or label editing', () => {
     const pan = new PanController(graph);
     const enablePan = vi.spyOn(pan, 'enablePan');
-    new TextEditorController(graph);
+    tab.panController = pan;
+    tab.textEditorController = new TextEditorController(graph);
     const cell = graph.insertVertex(graph.getDefaultParent(), null, 'A', 10, 10, 80, 40);
     graph.setSelectionCell(cell);
 
@@ -57,6 +68,7 @@ describe('document keyboard handlers respect text editing', () => {
   it('Space on the canvas still enables pan mode', () => {
     const pan = new PanController(graph);
     const enablePan = vi.spyOn(pan, 'enablePan');
+    tab.panController = pan;
 
     input.blur();
     const event = keydown(graph.container, ' ');
@@ -69,6 +81,7 @@ describe('document keyboard handlers respect text editing', () => {
     const transform = new TransformController(graph);
     const grouping = new GroupingController(graph);
     const duplicate = new DuplicateOffsetController(graph);
+    Object.assign(tab, { transformController: transform, groupingController: grouping, duplicateOffsetController: duplicate });
     const flip = vi.spyOn(transform, 'flipHorizontal');
     const group = vi.spyOn(grouping, 'group');
     const dup = vi.spyOn(duplicate, 'duplicateOnce');
@@ -84,6 +97,13 @@ describe('document keyboard handlers respect text editing', () => {
     expect(flip).not.toHaveBeenCalled();
     expect(group).not.toHaveBeenCalled();
     expect(graph.getChildVertices(graph.getDefaultParent())).toHaveLength(2);
+
+    // on the canvas they run (Ctrl+D the offset copy, Ctrl+H the flip)
+    input.blur();
+    keydown(document.body, 'd', { ctrlKey: true });
+    keydown(document.body, 'h', { ctrlKey: true });
+    expect(dup).toHaveBeenCalledTimes(1);
+    expect(flip).toHaveBeenCalledTimes(1);
   });
 
   it('the duplicate dialog removes its document Escape listener when it closes', () => {

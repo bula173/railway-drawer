@@ -1,5 +1,4 @@
 import { Graph, InternalEvent, PanningHandler, type InternalMouseEvent } from '@maxgraph/core';
-import { shouldIgnoreGraphShortcut } from './delete';
 import { installOnce } from '../core/install-once';
 
 /** Whether `evt` has no modifier key held. */
@@ -76,26 +75,17 @@ export class PanController {
     this.setupKeyboardToggle();
   }
 
+  /** Space held = pan mode: the `view.panStart` / `view.panEnd` commands (ui/commands/view.ts). */
   private setupKeyboardToggle() {
-    document.addEventListener('keydown', (e) => {
-      // Space typed into a text field or label editor is text, not the pan modifier
-      if (shouldIgnoreGraphShortcut(e, this.graph)) return;
-      if (e.key === ' ' && !this.isPanMode) {
-        e.preventDefault();
-        this.enablePan();
-      }
-    });
-
-    // Not guarded: releasing Space must always leave pan mode, even if focus moved meanwhile
-    document.addEventListener('keyup', (e) => {
-      if (e.key === ' ' && this.isPanMode) {
-        this.disablePan();
-      }
-    });
     // Space released outside the window
     window.addEventListener('blur', () => {
       if (this.isPanMode) this.disablePan();
     });
+  }
+
+  /** Whether Space pan mode is on. */
+  isPanning(): boolean {
+    return this.isPanMode;
   }
 
   enablePan() {

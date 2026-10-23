@@ -41,7 +41,7 @@ export class SaveLoadController {
     this.document = document;
     // The top-bar title follows the shown tab's project name (renames and opened files)
     this.stopNameListener = document.onProjectNameChange((name) => this.updateProjectNameUI(name));
-    // Ctrl/Cmd+S is dispatched once, to the active tab, by the global shortcut handler in main-editor.ts.
+    // Ctrl/Cmd+S is dispatched once, to the active tab, by the `save` command (ui/commands keymap).
     // A per-controller `document` listener here downloaded one file per open tab.
     // The .save-status element is owned by globalSaveStatusIndicator; writing it directly
     // from here overwrote autosave error messages.

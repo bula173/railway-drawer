@@ -42,7 +42,8 @@ export interface AppEventMap {
   /** Scenario export; no detail = the HTML document. */
   'scenario-export-request': { format?: string } | undefined;
   'share-request': undefined;
-  'shortcuts-help-request': undefined;
+  /** Help > Keyboard Shortcuts; `keyboard`: F1 (not over another dialog). */
+  'shortcuts-help-request': { keyboard?: boolean } | undefined;
   'save-template-request': undefined;
   'open-shape-designer': undefined;
   'edit-custom-shape': { shapeId: string };

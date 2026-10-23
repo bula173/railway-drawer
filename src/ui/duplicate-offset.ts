@@ -1,5 +1,4 @@
 import { Graph, type Cell } from '@maxgraph/core';
-import { shouldIgnoreGraphShortcut } from './delete';
 import { prepareClonedCells } from '../railway/clone';
 
 export class DuplicateOffsetController {
@@ -11,7 +10,6 @@ export class DuplicateOffsetController {
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupButtons();
-    this.setupKeyboardShortcuts();
   }
 
   private setupButtons(): void {
@@ -24,20 +22,6 @@ export class DuplicateOffsetController {
     if (duplicateMultiBtn) {
       duplicateMultiBtn.addEventListener('click', () => this.showDuplicateDialog());
     }
-  }
-
-  private setupKeyboardShortcuts(): void {
-    document.addEventListener('keydown', (e) => {
-      if (shouldIgnoreGraphShortcut(e, this.graph)) {
-        return;
-      }
-
-      // Ctrl/Cmd + D for duplicate with offset
-      if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
-        e.preventDefault();
-        this.duplicateOnce();
-      }
-    });
   }
 
   duplicateOnce(): void {

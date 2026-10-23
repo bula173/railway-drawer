@@ -1,21 +1,17 @@
 import { onSelectionChange } from '../core/graph-events';
 import { Graph } from '@maxgraph/core';
-import { globalNotificationManager } from './notification';
 import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
-import { GraphCommandService } from '../services/graph-command-service';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
-import { setGridShown, syncGridControls } from './grid-toggle';
+import { syncGridControls } from './grid-toggle';
 import { logger } from '../drawio/logger';
 
 export class InteractiveUIController {
   private graph: Graph;
   private offSelection: (() => void) | null = null;
-  private commandService: GraphCommandService;
   private selectedCells: Cell[] = [];
 
-  constructor(graph: Graph, commandService: GraphCommandService) {
+  constructor(graph: Graph) {
     this.graph = graph;
-    this.commandService = commandService;
     this.setupToolbarButtons();
     this.setupCanvasProperties();
     this.setupPropertyPanelInputs();
@@ -31,65 +27,8 @@ export class InteractiveUIController {
       this.graph.zoomTo(zoomLevel / 100, true);
     });
 
-    // Delete button
-    document.getElementById('btn-delete')?.addEventListener('click', () => {
-      this.commandService.delete();
-    });
-
-    // Grid toggle (= View > Grid): grid shown + snapping
-    document.getElementById('btn-grid')?.addEventListener('click', () => setGridShown(this.graph, !this.graph.gridEnabled));
-
-    // Format painter
-    document.getElementById('btn-format-painter')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      if (cells.length > 0) {
-        // If already has copied style, paste it; otherwise copy from selection
-        if (this.commandService.hasCopiedStyle()) {
-          this.commandService.pasteStyle();
-        } else {
-          this.commandService.copyStyle();
-        }
-      }
-    });
-
-    // Quick shape insertion buttons
-    document.getElementById('btn-draw-rect')?.addEventListener('click', () => {
-      this.insertQuickShape('rectangle', 100, 60, '#e1d5e7', '#9673a6');
-    });
-
-    document.getElementById('btn-draw-ellipse')?.addEventListener('click', () => {
-      this.insertQuickShape('ellipse', 80, 80, '#d4e6f1', '#3498db', 'ellipse');
-    });
-
-    document.getElementById('btn-draw-diamond')?.addEventListener('click', () => {
-      this.insertQuickShape('diamond', 80, 80, '#f9e79f', '#f39c12', 'diamond');
-    });
-
-    document.getElementById('btn-draw-line')?.addEventListener('click', () => {
-      this.insertQuickShape('line', 100, 10, 'none', '#2c3e50', undefined, 2);
-    });
-
-    document.getElementById('btn-draw-connector')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      if (cells.length >= 2) {
-        this.graph.insertEdge(this.graph.getDefaultParent(), null, '', cells[0], cells[1]);
-        this.graph.refresh();
-      } else {
-        globalNotificationManager.info('Select two shapes to connect them.');
-      }
-    });
-
-    // #btn-align opens the Align / distribute dropdown (toolbar.ts); AlignmentController binds its items
-
-    document.getElementById('btn-fullscreen')?.addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        document.getElementById('app-container')?.requestFullscreen().catch((err) => {
-          console.error('[UI] Fullscreen request failed:', err);
-        });
-      } else {
-        document.exitFullscreen();
-      }
-    });
+    // The toolbar buttons (delete, grid, format painter, insert, connect, fullscreen) run their
+    // commands (toolbar.ts data-command, ui/commands)
   }
 
   private setupCanvasProperties(): void {
@@ -247,7 +186,8 @@ export class InteractiveUIController {
     }
   }
 
-  private insertQuickShape(
+  /** A shape at the centre of the visible canvas, selected (toolbar Insert group). */
+  insertQuickShape(
     shapeType: string,
     width: number,
     height: number,

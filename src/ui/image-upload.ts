@@ -6,16 +6,10 @@ import { logger } from '../drawio/logger';
 
 export class ImageUploadController {
   private imageService: ImageService;
-  private uploadButton: HTMLElement | null;
   private modal: HTMLDivElement | null = null;
 
   constructor(_graph: Graph) {
     this.imageService = ImageService.getInstance();
-    this.uploadButton = document.getElementById('btn-upload-image');
-
-    if (this.uploadButton) {
-      this.uploadButton.addEventListener('click', () => this.openUploadDialog());
-    }
   }
 
   // Esc closes the dialog; bound only while it is shown (listener capture rule: bound after construction)
@@ -26,7 +20,8 @@ export class ImageUploadController {
     this.hideModal();
   };
 
-  private openUploadDialog(): void {
+  /** File > Import > Image as Custom Shape… and the toolbar's image button (`importImage` command). */
+  openUploadDialog(): void {
     if (!this.modal) this.createUploadModal();
     if (this.modal) {
       (this.modal as HTMLElement).style.display = 'flex';

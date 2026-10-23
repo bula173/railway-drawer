@@ -8,7 +8,8 @@ import type { Cell } from '@maxgraph/core';
 import { TabManager } from '../../ui/tabs';
 import type { TabData } from '../../ui/tabs';
 import { loadAppDom, clearAppDom } from '../../__tests__/ui/app-dom';
-import { ACTION_SHORTCUTS, formatShortcut } from '../../ui/shortcut-keys';
+import { formatShortcut, shortcutSpecFor } from '../../ui/shortcut-keys';
+import { commandRegistry, installCommands, registerAppCommands } from '../../ui/commands';
 import { shortcutSections } from '../../ui/shortcuts-help';
 import { buildDataValue, readAttr } from '../object-data';
 import { installRailwayStates } from '../install-railway-states';
@@ -36,11 +37,12 @@ describe('state shortcut table', () => {
 
   it('no clash with the other bindings; menu hints and Help list them', () => {
     const key = (s: { mod?: boolean; shift?: boolean; alt?: boolean; key: string }): string => `${!!s.mod}|${!!s.shift}|${!!s.alt}|${s.key.toUpperCase()}`;
-    const others = Object.entries(ACTION_SHORTCUTS).filter(([a]) => !a.startsWith('railwayState:'));
-    const used = new Set(others.map(([, s]) => key(s)));
+    registerAppCommands();
+    const others = commandRegistry.list().flatMap((c) => (c.shortcut ? [c.shortcut] : []));
+    const used = new Set(others.map((s) => key(s)));
     for (const s of STATE_SHORTCUTS) expect(used.has(key({ alt: true, key: s.key })), s.key).toBe(false);
-    expect(formatShortcut(ACTION_SHORTCUTS['railwayState:state:occupied'], false)).toBe('Alt+O');
-    expect(formatShortcut(ACTION_SHORTCUTS['railwayState:position:reverse'], true)).toBe('⌥V');
+    expect(formatShortcut(shortcutSpecFor('railwayState:state:occupied')!, false)).toBe('Alt+O');
+    expect(formatShortcut(shortcutSpecFor('railwayState:position:reverse')!, true)).toBe('⌥V');
     const help = shortcutSections(false).find((s) => s.section.startsWith('Object states'))!;
     expect(help.items.map((i) => i.keys)).toEqual(['Alt+F', 'Alt+O', 'Alt+R', 'Alt+N', 'Alt+V', 'Alt+1', 'Alt+2', 'Alt+3', 'Alt+4']);
   });
@@ -49,6 +51,7 @@ describe('state shortcut table', () => {
 describe('state shortcuts dispatch', () => {
   let tabManager: TabManager | null = null;
   let states: RailwayStatesHandle | null = null;
+  let uninstallKeys: (() => void) | null = null;
 
   beforeEach(() => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -60,6 +63,8 @@ describe('state shortcuts dispatch', () => {
   });
 
   afterEach(() => {
+    uninstallKeys?.();
+    uninstallKeys = null;
     states?.destroy();
     tabManager?.destroy();
     states = null;
@@ -73,6 +78,9 @@ describe('state shortcuts dispatch', () => {
     tabManager = new TabManager('tabs-container', 'graph-container');
     const tab = tabManager.createTab('States');
     states = installRailwayStates(tabManager, notify);
+    // the Alt keys are the railwayState: command's bindings (ui/commands/keymap.ts)
+    const manager = tabManager;
+    uninstallKeys = installCommands(() => manager.getActiveTab());
     return tab;
   }
 

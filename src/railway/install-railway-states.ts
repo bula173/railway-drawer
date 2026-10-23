@@ -15,8 +15,6 @@ import type { RailwayNotifier } from './install-railway-data';
 import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
 import { installPointsFade } from './points-fade';
-import { stateShortcutCommand } from './state-shortcuts';
-import { shouldIgnoreGraphShortcut } from '../core/keyboard-guard';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { STATE_SCHEME, scaledStrokeWidth } from './states';
@@ -237,23 +235,9 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
   const fades = createGraphFeature('points-fade', installPointsFade);
   const syncFades = (): void => fades.sync(tabManager.getAllTabs().map((t) => t.graph));
 
-  // Alt+F/O/R/N/V/1-4 on the selection (state-shortcuts.ts; event.code: Alt types characters on
-  // macOS). Bubble phase after main-editor's dispatcher; the scenario view swallows Alt keys before.
-  const onKey = (e: KeyboardEvent): void => {
-    const command = stateShortcutCommand(e);
-    const graph = getGraph();
-    if (!command || !graph || e.defaultPrevented || shouldIgnoreGraphShortcut(e, graph)) return;
-    if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu, [role="dialog"]')) return;
-    // only for the canvas (panels use their own keys)
-    const focus = document.activeElement;
-    if (focus && focus !== document.body && !graph.container.contains(focus)) return;
-    e.preventDefault();
-    if (!e.repeat) run(command);
-  };
-
+  // Alt+F/O/R/N/V/1-4 on the selection: the `railwayState:` command keys (ui/commands/railway.ts)
   on(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
-  document.addEventListener('keydown', onKey);
   on('tab-changed', syncFades);
   on('tab-closed', syncFades);
   syncLegend();
@@ -265,7 +249,6 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     destroy() {
       off(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
-      document.removeEventListener('keydown', onKey);
       off('tab-changed', syncFades);
       off('tab-closed', syncFades);
       fades.dispose();

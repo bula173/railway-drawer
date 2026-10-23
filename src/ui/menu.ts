@@ -1,642 +1,236 @@
-import { emit } from '../core/event-bus';
-import { Graph } from '@maxgraph/core';
-import { GraphCommandService } from '../services/graph-command-service';
-import { SaveLoadController } from './saveload';
-import { isRailmlFile, requestRailmlOpen } from '../railml/install-railml';
-import { toggleConnectionArrows } from './hover-arrows';
-import { setGridShown } from './grid-toggle';
-import { togglePanel } from './side-panels';
-import type { AlignmentController } from './alignment';
-import type { ExportImageController } from './export-image';
-import { appContext } from './app-context';
-import { promptSaveAs, showAboutDialog } from './app-dialogs';
+/**
+ * @file menu.ts
+ * @brief The menu bar (installed once by main-editor.ts): WAI-ARIA menubar keyboard pattern,
+ *        submenus, shortcut hints; an item runs its `data-action` command from the registry
+ *        (ui/commands) on the active tab. Escape closing the menus is the `menus.close` command.
+ */
+import { installOnce } from '../core/install-once';
 import { applyShortcutHints } from './shortcut-keys';
-import { ServiceRegistry } from '../services/service-registry';
-import { logger } from '../drawio/logger';
-import { flipSelection, rotateSelection90, selectEdges, selectNone, selectVertices, toggleSelectionLocked } from './arrange-commands';
-import { groupSelection, ungroupSelection } from './grouping';
-import { duplicateCells } from './duplicate-offset';
+import { commandRegistry } from './commands/registry';
 
-/** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
+/** Families that run without the graph refresh that follows the other menu actions (as before). */
+const NO_REFRESH_PREFIXES = ['exportRailway:', 'railwayRoute:', 'railwayState:'];
 
-export class MenuController {
-  private graph: Graph;
-  private commandService: GraphCommandService;
-  private saveLoadController: SaveLoadController;
-  private alignmentController: AlignmentController | null = null;
-  private exportImageController: ExportImageController | null = null;
+/** Runs a menu item's action on the active tab, then refreshes its graph (except the families above). */
+export function runMenuAction(action: string): void {
+  const ctx = commandRegistry.context('menu');
+  commandRegistry.run(action, ctx);
+  if (NO_REFRESH_PREFIXES.some((prefix) => action.startsWith(prefix))) return;
+  ctx.tab?.graph.refresh();
+}
 
-  constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
-    this.graph = graph;
-    this.commandService = commandService;
-    this.saveLoadController = saveLoadController;
-    this.setupMenus();
-  }
+/** Binds the menu bar (once per `#menu-bar` element). */
+export function installMenuBar(): void {
+  const bar = document.getElementById('menu-bar');
+  if (!bar || !installOnce(bar, 'menu-bar')) return;
+  // WAI-ARIA menubar roles
+  setupMenubarAria();
 
-  setAlignmentController(controller: AlignmentController): void {
-    this.alignmentController = controller;
-  }
-
-  setExportImageController(controller: ExportImageController): void {
-    this.exportImageController = controller;
-  }
-
-  private setupMenus() {
-    // WAI-ARIA menubar roles (idempotent: every tab's controller runs this on the shared DOM)
-    setupMenubarAria();
-
-    // Setup menu item clicks to toggle dropdowns
-    const menuItems = document.querySelectorAll<HTMLElement>('.menu-item');
-    menuItems.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const menu = item.getAttribute('data-menu');
-        this.toggleMenu(menu!);
-      });
-      item.addEventListener('keydown', (e) => this.onMenubarKeydown(e, item));
+  // Setup menu item clicks to toggle dropdowns
+  const menuItems = document.querySelectorAll<HTMLElement>('.menu-item');
+  menuItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const menu = item.getAttribute('data-menu');
+      toggleMenu(menu!);
     });
+    item.addEventListener('keydown', (e) => onMenubarKeydown(e, item));
+  });
 
-    // Setup menu dropdown item clicks (also the generated remote-provider items: delegated)
-    document.querySelectorAll<HTMLElement>('.menu-dropdown').forEach((dropdown) => {
-      dropdown.addEventListener('click', (e) => {
-        const item = (e.target as Element | null)?.closest<HTMLElement>('.menu-dropdown-item');
-        if (!item || !dropdown.contains(item)) return;
-        e.stopPropagation();
-        if (item.getAttribute('aria-disabled') === 'true') return;
-        // Items that bring their own handler (File > Open from <provider>…) only close the menu
-        if (item.closest('#file-menu-remote-items')) {
-          this.closeAllMenus();
-          return;
-        }
-        const action = item.getAttribute('data-action');
-        // Close (and give the focus back to the page) before the action opens a dialog
-        this.closeAllMenus();
-        if (action) {
-          this.executeMenuAction(action);
-        }
-      });
-      dropdown.addEventListener('keydown', (e) => this.onMenuKeydown(e, dropdown));
-      // Submenu titles: aria-expanded while their list shows (CSS :hover / :focus-within)
-      const syncExpanded = (): void => syncSubmenusExpanded(dropdown);
-      for (const type of ['focusin', 'focusout', 'mouseover', 'mouseleave']) dropdown.addEventListener(type, () => requestAnimationFrame(syncExpanded));
-    });
-
-    // Close menus when clicking elsewhere
-    document.addEventListener('click', () => {
-      this.closeAllMenus();
-    });
-
-    // Close menus on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.closeAllMenus();
-      }
-    });
-  }
-
-  private toggleMenu(menu: string, focus: 'first' | 'last' | null = null) {
-    const dropdown = document.querySelector(`.menu-dropdown[data-menu="${menu}"]`) as HTMLElement;
-    if (dropdown) {
-      const wasOpen = dropdown.style.display !== 'none';
-      // Close all other menus
-      this.closeAllMenus();
-      if (!wasOpen || focus) this.openMenu(menu, focus);
-    }
-  }
-
-  /** Opens one dropdown (the others closed) and optionally focuses its first/last item. */
-  private openMenu(menu: string, focus: 'first' | 'last' | null): void {
-    const dropdown = document.querySelector<HTMLElement>(`.menu-dropdown[data-menu="${menu}"]`);
-    const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
-    if (!dropdown || !button) return;
-    this.closeAllMenus();
-    setupMenuItemsAria(dropdown);
-    dropdown.style.display = 'block';
-    button.setAttribute('aria-expanded', 'true');
-    setRovingButton(button);
-    if (focus) {
-      const items = visibleMenuItems(dropdown);
-      (focus === 'first' ? items[0] : items[items.length - 1])?.focus();
-    }
-  }
-
-  private closeAllMenus(): void {
-    const dropdowns = document.querySelectorAll('.menu-dropdown');
-    dropdowns.forEach((dropdown) => {
-      (dropdown as HTMLElement).style.display = 'none';
-    });
-    document.querySelectorAll('.menu-item[aria-expanded="true"]').forEach((button) => button.setAttribute('aria-expanded', 'false'));
-  }
-
-  /** The open dropdown's menu name, or null. */
-  private openMenuName(): string | null {
-    const open = Array.from(document.querySelectorAll<HTMLElement>('.menu-dropdown')).find((d) => d.style.display !== 'none');
-    return open?.getAttribute('data-menu') ?? null;
-  }
-
-  /** Keys on a menubar button (File, Edit, ...): WAI-ARIA menubar pattern. */
-  private onMenubarKeydown(e: KeyboardEvent, button: HTMLElement): void {
-    const buttons = menubarButtons();
-    const index = buttons.indexOf(button);
-    const menu = button.getAttribute('data-menu')!;
-    const moveTo = (target: HTMLElement | undefined): void => {
-      if (!target) return;
-      const wasOpen = this.openMenuName() !== null;
-      setRovingButton(target);
-      target.focus();
-      if (wasOpen) this.openMenu(target.getAttribute('data-menu')!, 'first');
-    };
-    switch (e.key) {
-      case 'ArrowDown':
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        e.stopPropagation();
-        this.openMenu(menu, 'first');
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        e.stopPropagation();
-        this.openMenu(menu, 'last');
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        moveTo(buttons[(index + 1) % buttons.length]);
-        break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        moveTo(buttons[(index - 1 + buttons.length) % buttons.length]);
-        break;
-      case 'Home':
-        e.preventDefault();
-        moveTo(buttons[0]);
-        break;
-      case 'End':
-        e.preventDefault();
-        moveTo(buttons[buttons.length - 1]);
-        break;
-      case 'Escape':
-        this.closeAllMenus();
-        break;
-    }
-  }
-
-  /** Keys inside an open dropdown (and its submenu). */
-  private onMenuKeydown(e: KeyboardEvent, dropdown: HTMLElement): void {
-    const target = e.target as HTMLElement;
-    const menu = dropdown.getAttribute('data-menu')!;
-    const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
-    const submenu = target.closest<HTMLElement>('.menu-submenu-list');
-    const list = submenu ?? dropdown;
-    const items = submenu ? visibleMenuItems(submenu, submenu) : visibleMenuItems(dropdown);
-    const index = items.indexOf(target);
-    const buttons = menubarButtons();
-    const buttonIndex = button ? buttons.indexOf(button) : -1;
-    const focusItem = (item: HTMLElement | undefined): void => item?.focus();
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        focusItem(items[(index + 1) % items.length]);
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        focusItem(items[(index - 1 + items.length) % items.length]);
-        break;
-      case 'Home':
-        e.preventDefault();
-        focusItem(items[0]);
-        break;
-      case 'End':
-        e.preventDefault();
-        focusItem(items[items.length - 1]);
-        break;
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        e.stopPropagation();
-        if (target.classList.contains('menu-submenu-title')) {
-          const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
-          if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
-        } else {
-          // Focus back on the menubar first: a dialog opened by the item takes it from there and
-          // returns it there when it closes
-          button?.focus();
-          target.click();
-        }
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        if (target.classList.contains('menu-submenu-title')) {
-          const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
-          if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
-        } else if (buttonIndex >= 0) {
-          const next = buttons[(buttonIndex + 1) % buttons.length];
-          setRovingButton(next);
-          this.openMenu(next.getAttribute('data-menu')!, 'first');
-        }
-        break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        if (submenu && list !== dropdown) {
-          focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
-        } else if (buttonIndex >= 0) {
-          const prev = buttons[(buttonIndex - 1 + buttons.length) % buttons.length];
-          setRovingButton(prev);
-          this.openMenu(prev.getAttribute('data-menu')!, 'first');
-        }
-        break;
-      case 'Escape':
-        e.preventDefault();
-        if (submenu) {
-          focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
-          e.stopPropagation();
-        } else {
-          this.closeAllMenus();
-          button?.focus();
-        }
-        break;
-      case 'Tab':
-        this.closeAllMenus();
-        break;
-    }
-  }
-
-  /** File > Import > draw.io File (New Tab)…: like Open, into a new tab (the current diagram stays). */
-  private importDrawioFile(): void {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.drawio,.xml,.railwaydrawer';
-    input.onchange = async () => {
-      const file = input.files?.[0];
-      if (!file) return;
-      const railml = await isRailmlFile(file);
-      if (railml !== null) {
-        requestRailmlOpen(railml, file.name);
+  // Setup menu dropdown item clicks (also the generated remote-provider items: delegated)
+  document.querySelectorAll<HTMLElement>('.menu-dropdown').forEach((dropdown) => {
+    dropdown.addEventListener('click', (e) => {
+      const item = (e.target as Element | null)?.closest<HTMLElement>('.menu-dropdown-item');
+      if (!item || !dropdown.contains(item)) return;
+      e.stopPropagation();
+      if (item.getAttribute('aria-disabled') === 'true') return;
+      // Items that bring their own handler (File > Open from <provider>…) only close the menu
+      if (item.closest('#file-menu-remote-items')) {
+        closeAllMenus();
         return;
       }
-      const tabManager = ServiceRegistry.getTabManager();
-      if (!tabManager) return;
-      const tab = tabManager.openNewTab();
-      try {
-        await tab.saveLoadController.loadProjectFromFile(file);
-      } catch (error) {
-        // SaveLoadController showed the error; the new tab stays empty
-        console.error('[Menu] Import failed:', error);
-      }
-    };
-    input.click();
-  }
+      const action = item.getAttribute('data-action');
+      // Close (and give the focus back to the page) before the action opens a dialog
+      closeAllMenus();
+      if (action) runMenuAction(action);
+    });
+    dropdown.addEventListener('keydown', (e) => onMenuKeydown(e, dropdown));
+    // Submenu titles: aria-expanded while their list shows (CSS :hover / :focus-within)
+    const syncExpanded = (): void => syncSubmenusExpanded(dropdown);
+    for (const type of ['focusin', 'focusout', 'mouseover', 'mouseleave']) dropdown.addEventListener(type, () => requestAnimationFrame(syncExpanded));
+  });
 
-  private openProject(): void {
-    logger.debug('Menu', 'Opening file dialog...');
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.railwaydrawer,.drawio,.xml,.railml';
-    input.onchange = async (e: Event) => {
-      const target = e.target as HTMLInputElement;
-      logger.debug('Menu', 'File selected:', target.files);
-      const file = target.files?.[0];
-      if (file) {
-        logger.debug('Menu', 'Loading file:', file.name);
-        // railML (root <railML>): imported into a new tab by src/railml
-        const railml = await isRailmlFile(file);
-        if (railml !== null) {
-          requestRailmlOpen(railml, file.name);
-          return;
-        }
-        try {
-          await this.saveLoadController.loadProjectFromFile(file);
-          logger.debug('Menu', 'File loaded successfully');
-        } catch (error) {
-          // SaveLoadController already showed the error to the user and kept the current diagram
-          console.error('[Menu] Error loading file:', error);
-        }
+  // Close menus when clicking elsewhere
+  document.addEventListener('click', () => {
+    closeAllMenus();
+  });
+}
+
+function toggleMenu(menu: string, focus: 'first' | 'last' | null = null) {
+  const dropdown = document.querySelector(`.menu-dropdown[data-menu="${menu}"]`) as HTMLElement;
+  if (dropdown) {
+    const wasOpen = dropdown.style.display !== 'none';
+    // Close all other menus
+    closeAllMenus();
+    if (!wasOpen || focus) openMenu(menu, focus);
+  }
+}
+
+/** Opens one dropdown (the others closed) and optionally focuses its first/last item. */
+function openMenu(menu: string, focus: 'first' | 'last' | null): void {
+  const dropdown = document.querySelector<HTMLElement>(`.menu-dropdown[data-menu="${menu}"]`);
+  const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
+  if (!dropdown || !button) return;
+  closeAllMenus();
+  setupMenuItemsAria(dropdown);
+  dropdown.style.display = 'block';
+  button.setAttribute('aria-expanded', 'true');
+  setRovingButton(button);
+  if (focus) {
+    const items = visibleMenuItems(dropdown);
+    (focus === 'first' ? items[0] : items[items.length - 1])?.focus();
+  }
+}
+
+/** Closes every dropdown of the menu bar. */
+export function closeAllMenus(): void {
+  const dropdowns = document.querySelectorAll('.menu-dropdown');
+  dropdowns.forEach((dropdown) => {
+    (dropdown as HTMLElement).style.display = 'none';
+  });
+  document.querySelectorAll('.menu-item[aria-expanded="true"]').forEach((button) => button.setAttribute('aria-expanded', 'false'));
+}
+
+/** The open dropdown's menu name, or null. */
+function openMenuName(): string | null {
+  const open = Array.from(document.querySelectorAll<HTMLElement>('.menu-dropdown')).find((d) => d.style.display !== 'none');
+  return open?.getAttribute('data-menu') ?? null;
+}
+
+/** Keys on a menubar button (File, Edit, ...): WAI-ARIA menubar pattern. */
+function onMenubarKeydown(e: KeyboardEvent, button: HTMLElement): void {
+  const buttons = menubarButtons();
+  const index = buttons.indexOf(button);
+  const menu = button.getAttribute('data-menu')!;
+  const moveTo = (target: HTMLElement | undefined): void => {
+    if (!target) return;
+    const wasOpen = openMenuName() !== null;
+    setRovingButton(target);
+    target.focus();
+    if (wasOpen) openMenu(target.getAttribute('data-menu')!, 'first');
+  };
+  switch (e.key) {
+    case 'ArrowDown':
+    case 'Enter':
+    case ' ':
+      e.preventDefault();
+      e.stopPropagation();
+      openMenu(menu, 'first');
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      e.stopPropagation();
+      openMenu(menu, 'last');
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      moveTo(buttons[(index + 1) % buttons.length]);
+      break;
+    case 'ArrowLeft':
+      e.preventDefault();
+      moveTo(buttons[(index - 1 + buttons.length) % buttons.length]);
+      break;
+    case 'Home':
+      e.preventDefault();
+      moveTo(buttons[0]);
+      break;
+    case 'End':
+      e.preventDefault();
+      moveTo(buttons[buttons.length - 1]);
+      break;
+    case 'Escape':
+      closeAllMenus();
+      break;
+  }
+}
+
+/** Keys inside an open dropdown (and its submenu). */
+function onMenuKeydown(e: KeyboardEvent, dropdown: HTMLElement): void {
+  const target = e.target as HTMLElement;
+  const menu = dropdown.getAttribute('data-menu')!;
+  const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
+  const submenu = target.closest<HTMLElement>('.menu-submenu-list');
+  const list = submenu ?? dropdown;
+  const items = submenu ? visibleMenuItems(submenu, submenu) : visibleMenuItems(dropdown);
+  const index = items.indexOf(target);
+  const buttons = menubarButtons();
+  const buttonIndex = button ? buttons.indexOf(button) : -1;
+  const focusItem = (item: HTMLElement | undefined): void => item?.focus();
+  switch (e.key) {
+    case 'ArrowDown':
+      e.preventDefault();
+      focusItem(items[(index + 1) % items.length]);
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      focusItem(items[(index - 1 + items.length) % items.length]);
+      break;
+    case 'Home':
+      e.preventDefault();
+      focusItem(items[0]);
+      break;
+    case 'End':
+      e.preventDefault();
+      focusItem(items[items.length - 1]);
+      break;
+    case 'Enter':
+    case ' ':
+      e.preventDefault();
+      e.stopPropagation();
+      if (target.classList.contains('menu-submenu-title')) {
+        const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
+        if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
       } else {
-        logger.debug('Menu', 'No file selected');
+        // Focus back on the menubar first: a dialog opened by the item takes it from there and
+        // returns it there when it closes
+        button?.focus();
+        target.click();
       }
-    };
-    input.click();
-  }
-
-  /**
-   * File > Save As…: asks for the file name in the themed dialog, renames the active tab's project
-   * (top-bar title, tab label when it was the project name) and downloads the .drawio file. It always
-   * downloads, also for a tab bound to a remote file.
-   */
-  private async saveProjectAs(): Promise<void> {
-    const name = await promptSaveAs(this.saveLoadController.document.getProjectName() || 'Untitled Diagram');
-    if (name === null) return;
-    const tabManager = ServiceRegistry.getTabManager();
-    if (tabManager) tabManager.renameActiveProject(name);
-    else this.saveLoadController.document.setProjectName(name);
-    this.saveLoadController.saveProjectToDisk();
-  }
-
-  private executeMenuAction(action: string): void {
-    // File > Export Railway Data > ...: main-editor.ts (src/railway) writes the list
-    if (action.startsWith('exportRailway:')) {
-      emit('railway-export-request', action.slice('exportRailway:'.length));
-      return;
-    }
-    // Railway menu route tools and toggles: src/railway/install-railway-routes.ts
-    if (action.startsWith('railwayRoute:')) {
-      emit('railway-route-request', action.slice('railwayRoute:'.length));
-      return;
-    }
-    // Railway > Object State: src/railway/install-railway-states.ts (also the context menu)
-    if (action.startsWith('railwayState:')) {
-      emit('railway-state-request', action.slice('railwayState:'.length));
-      return;
-    }
-
-    switch (action) {
-      case 'new':
-        // Like draw.io: a new, empty diagram in its own tab (the current one stays as it is)
-        ServiceRegistry.getTabManager()?.openNewTab();
-        break;
-
-      case 'open':
-        this.openProject();
-        break;
-
-      case 'save':
-        this.saveLoadController.saveProject();
-        break;
-
-      case 'saveAs':
-        void this.saveProjectAs();
-        break;
-
-      case 'export':
-        this.saveLoadController.save();
-        break;
-
-      case 'exportPng':
-        void this.exportImageController?.exportToPNG();
-        break;
-
-      case 'exportSvg':
-        void this.exportImageController?.exportToSVG();
-        break;
-
-      case 'share':
-        // main-editor.ts opens the Share dialog (link with diagram, downloads, cloud providers)
-        emit('share-request');
-        break;
-
-      case 'exportScenarioHtml':
-        // src/scenarios/install-scenarios.ts exports the scenario shown / the only one / the one picked
-        emit('scenario-export-request');
-        break;
-
-      case 'exportScenarioPdf':
-      case 'exportScenarioSlides':
-        // src/scenarios/install-scenarios.ts: options dialog, then PDF / HTML slideshow
-        emit('scenario-export-request', { format: action === 'exportScenarioPdf' ? 'pdf' : 'slides' });
-        break;
-
-      case 'importRailml':
-      case 'exportRailml':
-        // src/railml/install-railml.ts (lazy railml-ui chunk): new tab from railML / railML 3.2 download
-        emit('railml-request', { action: action === 'importRailml' ? 'import' : 'export' });
-        break;
-
-      case 'importRailwayScript':
-      case 'exportRailwayScript':
-        // src/railway-script/install-railway-script.ts (lazy script-ui chunk): new tab from a script / .rdl.yaml|.rdl.json download
-        emit('railway-script-request', { action: action === 'importRailwayScript' ? 'import' : 'export' });
-        break;
-
-      case 'saveAsTemplate':
-        // main-editor.ts asks for a name and stores the selection (or the whole diagram)
-        emit('save-template-request');
-        break;
-
-      case 'print':
-        window.print();
-        break;
-
-      case 'undo':
-        this.commandService.undo();
-        break;
-
-      case 'redo':
-        this.commandService.redo();
-        break;
-
-      case 'cut':
-        this.commandService.cut();
-        break;
-
-      case 'copy':
-        this.commandService.copy();
-        break;
-
-      case 'paste':
-        this.commandService.paste();
-        break;
-
-      case 'delete':
-        this.commandService.delete();
-        break;
-
-      case 'selectAll':
-        this.commandService.selectAll();
-        break;
-
-      // draw.io Edit menu additions (src/ui/arrange-commands.ts; Duplicate = Ctrl/Cmd+D, one undo step)
-      case 'duplicate':
-        duplicateCells(this.graph, this.graph.getSelectionCells());
-        break;
-
-      case 'selectVertices':
-        selectVertices(this.graph);
-        break;
-
-      case 'selectEdges':
-        selectEdges(this.graph);
-        break;
-
-      case 'selectNone':
-        selectNone(this.graph);
-        break;
-
-      case 'zoomIn':
-        this.graph.zoomIn();
-        break;
-
-      case 'zoomOut':
-        this.graph.zoomOut();
-        break;
-
-      case 'zoomActual':
-        this.graph.zoomActual();
-        break;
-
-      case 'fitWindow':
-        this.graph.fit(10);
-        break;
-
-      case 'showGrid':
-        // Same as the toolbar grid button and Properties > Canvas > Grid: grid shown + snapping
-        setGridShown(this.graph, !this.graph.gridEnabled);
-        break;
-
-      case 'toggleLeftPanel':
-      case 'toggleRightPanel':
-        togglePanel(action === 'toggleLeftPanel' ? 'left' : 'right');
-        break;
-
-      case 'importDrawio':
-        this.importDrawioFile();
-        break;
-
-      case 'importImage':
-        // src/ui/image-upload.ts: Upload Custom Shape Image dialog
-        document.getElementById('btn-upload-image')?.click();
-        break;
-
-      case 'railwayScriptEditor':
-        appContext()?.leftPanelTabs.switchTab('railwayScript');
-        break;
-
-      // Same commands as the canvas context menu (GraphCommandService): one undoable edit each
-      case 'toFront':
-        this.commandService.toFront();
-        break;
-
-      case 'toBack':
-        this.commandService.toBack();
-        break;
-
-      case 'bringForward':
-        this.commandService.bringForward();
-        break;
-
-      case 'sendBackward':
-        this.commandService.sendBackward();
-        break;
-
-      case 'alignLeft':
-        if (this.alignmentController) {
-          this.alignmentController.alignLeft();
-        }
-        break;
-
-      case 'alignCenter':
-        if (this.alignmentController) {
-          this.alignmentController.alignCenter();
-        }
-        break;
-
-      case 'alignRight':
-        if (this.alignmentController) {
-          this.alignmentController.alignRight();
-        }
-        break;
-
-      case 'alignTop':
-        this.alignmentController?.alignTop();
-        break;
-
-      case 'alignMiddle':
-        this.alignmentController?.alignMiddle();
-        break;
-
-      case 'alignBottom':
-        this.alignmentController?.alignBottom();
-        break;
-
-      case 'distributeHorizontally':
-        this.alignmentController?.distributeHorizontally();
-        break;
-
-      case 'distributeVertically':
-        this.alignmentController?.distributeVertically();
-        break;
-
-      // Arrange menu like draw.io: one undoable edit each, locked cells skipped
-      case 'group':
-        groupSelection(this.graph);
-        break;
-
-      case 'ungroup':
-        ungroupSelection(this.graph);
-        break;
-
-      case 'rotate90':
-        rotateSelection90(this.graph);
-        break;
-
-      case 'flipHorizontal':
-        flipSelection(this.graph, 'flipH');
-        break;
-
-      case 'flipVertical':
-        flipSelection(this.graph, 'flipV');
-        break;
-
-      case 'toggleLock':
-        toggleSelectionLocked(this.graph);
-        break;
-
-      case 'plantumlEditor': {
-        logger.debug('Menu', 'PlantUML editor clicked');
-        const leftPanelTabs = appContext()?.leftPanelTabs;
-        if (leftPanelTabs) {
-          // If tab is hidden, show it; otherwise switch to it
-          if (leftPanelTabs.isTabHidden('plantuml')) {
-            logger.debug('Menu', 'Showing hidden plantuml tab');
-            leftPanelTabs.showTab('plantuml');
-          } else {
-            logger.debug('Menu', 'Switching to plantuml tab');
-            leftPanelTabs.switchTab('plantuml');
-          }
-        } else {
-          console.error('[Menu] leftPanelTabs not found!');
-        }
-        break;
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      if (target.classList.contains('menu-submenu-title')) {
+        const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
+        if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
+      } else if (buttonIndex >= 0) {
+        const next = buttons[(buttonIndex + 1) % buttons.length];
+        setRovingButton(next);
+        openMenu(next.getAttribute('data-menu')!, 'first');
       }
-
-      case 'toggleErtmsTab': {
-        // Optional left-panel tab with only the ERTMS library; visibility is persisted by main-editor.ts
-        const leftPanelTabs = appContext()?.leftPanelTabs;
-        if (leftPanelTabs) {
-          if (leftPanelTabs.isTabHidden('ertms')) leftPanelTabs.showTab('ertms');
-          else leftPanelTabs.closeTab('ertms');
-        }
-        break;
+      break;
+    case 'ArrowLeft':
+      e.preventDefault();
+      if (submenu && list !== dropdown) {
+        focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
+      } else if (buttonIndex >= 0) {
+        const prev = buttons[(buttonIndex - 1 + buttons.length) % buttons.length];
+        setRovingButton(prev);
+        openMenu(prev.getAttribute('data-menu')!, 'first');
       }
-
-      case 'toggleConnectionArrows':
-        // draw.io View > Connection Arrows (hover-arrows.ts; persisted, all tabs)
-        toggleConnectionArrows();
-        break;
-
-      case 'designShapes':
-        emit('open-shape-designer');
-        break;
-
-      case 'editData':
-        // main-editor.ts (src/railway) shows the Data panel for the selection
-        emit('railway-edit-data-request');
-        break;
-
-      case 'railwayChecks':
-        emit('railway-checks-request');
-        break;
-
-      case 'shortcuts':
-        // ShortcutsHelpController (main-editor.ts), also on F1
-        emit('shortcuts-help-request');
-        break;
-
-      case 'about':
-        showAboutDialog();
-        break;
-    }
-
-    this.graph.refresh();
+      break;
+    case 'Escape':
+      e.preventDefault();
+      if (submenu) {
+        focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
+        e.stopPropagation();
+      } else {
+        closeAllMenus();
+        button?.focus();
+      }
+      break;
+    case 'Tab':
+      closeAllMenus();
+      break;
   }
 }
 

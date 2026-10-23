@@ -1,15 +1,13 @@
 /**
  * @file shortcut-keys.ts
- * @brief The app's real keyboard bindings, formatted for menus (right-aligned `<kbd>` hints),
- *        the context menu and Help > Keyboard Shortcuts.
+ * @brief Formatting of the keyboard shortcuts for menus (right-aligned `<kbd>` hints), the context
+ *        menu, toolbar tooltips and Help > Keyboard Shortcuts.
  *
- * The bindings themselves live in the handlers: the capture-phase dispatcher in main-editor.ts
- * (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete, Escape, Alt+Shift+A), ZoomController (Ctrl/Cmd +/-/0/1),
- * GroupingController (Ctrl/Cmd+G, Ctrl/Cmd+Shift+G), DuplicateOffsetController (Ctrl/Cmd+D) and
- * ShortcutsHelpController (F1), install-railway-states.ts (Alt+F/O/R/N/V/1-4: object states, table in
- * src/railway/state-shortcuts.ts). Keep this table in step with them: it only describes them.
+ * The shortcuts themselves are the commands' (ui/commands: `Command.shortcut`, the Object State
+ * items' `memberShortcuts`), and so are the key bindings that run them (`Command.keys`, dispatched
+ * by ui/commands/keymap.ts): a menu hint can no longer drift from the binding.
  */
-import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
+import { commandRegistry } from './commands/registry';
 
 export interface ShortcutSpec {
   /** Ctrl (Windows/Linux) or Cmd (macOS); the handlers accept either. */
@@ -20,33 +18,10 @@ export interface ShortcutSpec {
   key: string;
 }
 
-/** Menu / context-menu `data-action` -> its keyboard shortcut. */
-export const ACTION_SHORTCUTS: Readonly<Record<string, ShortcutSpec>> = {
-  save: { mod: true, key: 'S' },
-  undo: { mod: true, key: 'Z' },
-  redo: { mod: true, key: 'Y' },
-  cut: { mod: true, key: 'X' },
-  copy: { mod: true, key: 'C' },
-  paste: { mod: true, key: 'V' },
-  delete: { key: 'Delete' },
-  selectAll: { mod: true, key: 'A' },
-  selectVertices: { mod: true, shift: true, key: 'I' },
-  selectEdges: { mod: true, shift: true, key: 'E' },
-  selectNone: { mod: true, shift: true, key: 'A' },
-  duplicate: { mod: true, key: 'D' },
-  group: { mod: true, key: 'G' },
-  ungroup: { mod: true, shift: true, key: 'G' },
-  zoomIn: { mod: true, key: '+' },
-  zoomOut: { mod: true, key: '-' },
-  zoomActual: { mod: true, key: '0' },
-  fitWindow: { mod: true, key: '1' },
-  toggleConnectionArrows: { alt: true, shift: true, key: 'A' },
-  toggleLeftPanel: { mod: true, shift: true, key: 'K' },
-  toggleRightPanel: { mod: true, shift: true, key: 'P' },
-  shortcuts: { key: 'F1' },
-  // Railway > Object State ▸ items (`railwayState:<command>`)
-  ...Object.fromEntries(STATE_SHORTCUTS.map((s): [string, ShortcutSpec] => [`railwayState:${s.command}`, { alt: true, key: s.key }])),
-};
+/** The shortcut of a menu / context-menu / toolbar action (its command), or null. */
+export function shortcutSpecFor(action: string): ShortcutSpec | null {
+  return commandRegistry.shortcutFor(action);
+}
 
 /** True on Apple platforms (Cmd instead of Ctrl, symbol modifiers). */
 export function isMacPlatform(nav: Pick<Navigator, 'platform' | 'userAgent'> | undefined = globalThis.navigator): boolean {
@@ -79,7 +54,7 @@ export function ariaKeyShortcut(spec: ShortcutSpec, mac: boolean = isMacPlatform
 
 /** The shortcut text of a menu action, or null when it has none. */
 export function shortcutForAction(action: string, mac: boolean = isMacPlatform()): string | null {
-  const spec = ACTION_SHORTCUTS[action];
+  const spec = shortcutSpecFor(action);
   return spec ? formatShortcut(spec, mac) : null;
 }
 
@@ -91,7 +66,7 @@ export function shortcutForAction(action: string, mac: boolean = isMacPlatform()
 export function applyShortcutHints(items: ArrayLike<HTMLElement>, mac: boolean = isMacPlatform()): void {
   for (const item of Array.from(items)) {
     const action = item.getAttribute('data-action') ?? '';
-    const spec = ACTION_SHORTCUTS[action];
+    const spec = shortcutSpecFor(action);
     if (!spec || item.querySelector(':scope > kbd.rd-kbd')) continue;
     ensureMenuLabel(item);
     const kbd = document.createElement('kbd');

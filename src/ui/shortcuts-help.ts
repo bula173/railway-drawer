@@ -1,126 +1,33 @@
 /**
  * @file shortcuts-help.ts
  * @brief Help > Keyboard Shortcuts (and F1): the app's real bindings, grouped by menu, in the
- *        themed modal (app-dialogs.ts). Opened by F1 and by the window event
- *        `shortcuts-help-request` (MenuController, data-action="shortcuts").
+ *        themed modal (app-dialogs.ts). The rows are generated from the command registry
+ *        (ui/commands/help.ts helpSections: each command's shortcut and help entry, plus the mouse /
+ *        menu gestures). Opened by the bus event `shortcuts-help-request` (the `shortcuts`
+ *        command: Help menu item and F1).
  */
-import { off, on } from '../core/event-bus';
+import { off, on, type AppEventMap } from '../core/event-bus';
 import { openAppModal, otherDialogOpen, type AppModal } from './app-dialogs';
-import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
-import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
+import { isMacPlatform } from './shortcut-keys';
+import { commandRegistry } from './commands/registry';
+import { helpSections, type ShortcutSection } from './commands/help';
 
-export interface ShortcutRow {
-  keys: string;
-  description: string;
-}
+export type { ShortcutRow, ShortcutSection } from './commands/help';
 
-export interface ShortcutSection {
-  section: string;
-  items: ShortcutRow[];
-}
-
-/** The shortcut sections (exported for tests); keys formatted for this platform. */
+/** The shortcut sections of the app's commands (exported for tests); keys formatted for this platform. */
 export function shortcutSections(mac: boolean = isMacPlatform()): ShortcutSection[] {
-  const k = (action: string): string => formatShortcut(ACTION_SHORTCUTS[action], mac);
-  const f = (spec: ShortcutSpec): string => formatShortcut(spec, mac);
-  const click = mac ? '⌘+Click' : 'Ctrl+Click';
-  return [
-    {
-      section: 'File',
-      items: [{ keys: k('save'), description: 'Save (download the .drawio file, or save back to GitLab/SharePoint)' }],
-    },
-    {
-      section: 'Edit',
-      items: [
-        { keys: k('undo'), description: 'Undo' },
-        { keys: `${k('redo')} / ${f({ mod: true, shift: true, key: 'Z' })}`, description: 'Redo' },
-        { keys: k('cut'), description: 'Cut' },
-        { keys: k('copy'), description: 'Copy' },
-        { keys: k('paste'), description: 'Paste' },
-        { keys: k('duplicate'), description: 'Duplicate' },
-        { keys: 'Delete / Backspace', description: 'Delete the selection' },
-        { keys: k('selectAll'), description: 'Select all' },
-        { keys: k('selectVertices'), description: 'Select vertices (shapes)' },
-        { keys: k('selectEdges'), description: 'Select edges (connectors)' },
-        { keys: k('selectNone'), description: 'Select none' },
-        { keys: 'Esc', description: 'Clear the selection' },
-        { keys: 'Arrow keys', description: 'Move the selection by 1 px' },
-        { keys: 'Shift+Arrow keys', description: 'Move the selection by the grid size' },
-      ],
-    },
-    {
-      section: 'View',
-      items: [
-        { keys: k('zoomIn'), description: 'Zoom in' },
-        { keys: k('zoomOut'), description: 'Zoom out' },
-        { keys: k('zoomActual'), description: 'Reset zoom (100%)' },
-        { keys: k('fitWindow'), description: 'Fit to window' },
-        { keys: mac ? '⌘+Scroll' : 'Ctrl+Scroll', description: 'Zoom around the pointer (also pinch)' },
-        { keys: 'Scroll / Shift+Scroll', description: 'Scroll the canvas vertically / horizontally' },
-        { keys: 'Drag on empty canvas', description: 'Pan the canvas' },
-        { keys: 'Space (hold) + drag / middle-drag', description: 'Pan the canvas (also over shapes)' },
-        { keys: 'Shift+drag on empty canvas', description: 'Select with a rectangle (rubber band)' },
-        { keys: k('toggleConnectionArrows'), description: 'Connection Arrows on/off' },
-        { keys: k('toggleLeftPanel'), description: 'Shapes panel on/off' },
-        { keys: k('toggleRightPanel'), description: 'Format panel on/off' },
-      ],
-    },
-    {
-      section: 'Arrange',
-      items: [
-        { keys: k('group'), description: 'Group' },
-        { keys: k('ungroup'), description: 'Ungroup' },
-        { keys: f({ mod: true, key: 'H' }), description: 'Flip horizontally' },
-        { keys: f({ mod: true, key: 'J' }), description: 'Flip vertically' },
-        { keys: f({ mod: true, key: 'R' }), description: 'Rotate 90° clockwise' },
-        { keys: f({ mod: true, shift: true, key: 'R' }), description: 'Rotate 90° counter-clockwise' },
-      ],
-    },
-    {
-      section: 'Connection arrows (hover a shape)',
-      items: [
-        { keys: 'Click arrow', description: 'Connect to the shape in that direction, or add a connected copy' },
-        { keys: `${click} arrow`, description: 'Always add a connected copy' },
-        { keys: 'Shift+Click arrow', description: 'Connect without copying (dangling edge if nothing is there)' },
-        { keys: `${mac ? '⇧⌘' : 'Ctrl+Shift'}+Click arrow`, description: 'Add a copy without an edge' },
-        { keys: 'Drag arrow', description: 'Connect to the shape you drop on, or add a connected copy on blank canvas' },
-        { keys: `${mac ? '⌥' : 'Alt'} (hold)`, description: 'Hide the arrows' },
-      ],
-    },
-    {
-      section: 'Object states (selected railway objects)',
-      items: STATE_SHORTCUTS.map((s) => ({ keys: f({ alt: true, key: s.key }), description: s.description })),
-    },
-    {
-      section: 'Menus',
-      items: [
-        { keys: 'Arrow keys', description: 'Move between menus and items' },
-        { keys: 'Home / End', description: 'First / last item' },
-        { keys: 'Enter / Space', description: 'Run the item' },
-        { keys: 'Esc', description: 'Close the menu' },
-      ],
-    },
-    {
-      section: 'Help',
-      items: [{ keys: k('shortcuts'), description: 'Keyboard shortcuts (this dialog)' }],
-    },
-  ];
+  return helpSections(commandRegistry, mac);
 }
 
 export class ShortcutsHelpController {
   private modal: AppModal | null = null;
-  private readonly onKeyDown = (e: KeyboardEvent): void => {
-    if (e.key === 'F1') {
-      e.preventDefault();
-      // never on top of another open dialog (its focus trap owns the keyboard)
-      if (otherDialogOpen(this.modal?.overlay ?? null)) return;
-      this.show();
-    }
+  private readonly onRequest = (detail: AppEventMap['shortcuts-help-request']): void => {
+    // F1 never opens it on top of another open dialog (its focus trap owns the keyboard)
+    if (detail?.keyboard && otherDialogOpen(this.modal?.overlay ?? null)) return;
+    this.show();
   };
-  private readonly onRequest = (): void => this.show();
 
   constructor() {
-    document.addEventListener('keydown', this.onKeyDown);
     on('shortcuts-help-request', this.onRequest);
   }
 
@@ -162,7 +69,6 @@ export class ShortcutsHelpController {
   }
 
   destroy(): void {
-    document.removeEventListener('keydown', this.onKeyDown);
     off('shortcuts-help-request', this.onRequest);
     this.modal?.close();
     this.modal = null;

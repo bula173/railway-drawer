@@ -5,7 +5,8 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
-import { ACTION_SHORTCUTS, applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel } from '../../ui/shortcut-keys';
+import { applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel, shortcutSpecFor } from '../../ui/shortcut-keys';
+import { registerAppCommands } from '../../ui/commands';
 import { placeContextMenu } from '../../ui/context-menu';
 import { selectionTitle, setPropertiesPanelState } from '../../ui/properties-state';
 import { ertmsDisplayEntry, ertmsDisplayTitle, POINTS_SEARCH_TAGS } from '../../ui/ertms-display';
@@ -16,19 +17,21 @@ import type { RailmlExportResult } from '../../railml/export';
 import type { PaletteEntry } from '../../ui/drawio-palette';
 import { APP_VERSION } from '../../config/build-id';
 
+registerAppCommands();
+
 afterEach(() => {
   document.body.innerHTML = '';
 });
 
 describe('shortcut hints', () => {
   it('formats Ctrl on Windows/Linux and Cmd symbols on macOS', () => {
-    expect(formatShortcut(ACTION_SHORTCUTS.undo, false)).toBe('Ctrl+Z');
-    expect(formatShortcut(ACTION_SHORTCUTS.ungroup, false)).toBe('Ctrl+Shift+G');
-    expect(formatShortcut(ACTION_SHORTCUTS.ungroup, true)).toBe('⇧⌘G');
-    expect(formatShortcut(ACTION_SHORTCUTS.toggleConnectionArrows, true)).toBe('⌥⇧A');
-    expect(formatShortcut(ACTION_SHORTCUTS.delete, false)).toBe('Delete');
-    expect(ariaKeyShortcut(ACTION_SHORTCUTS.zoomIn, false)).toBe('Control+Plus');
-    expect(ariaKeyShortcut(ACTION_SHORTCUTS.copy, true)).toBe('Meta+C');
+    expect(formatShortcut(shortcutSpecFor('undo')!, false)).toBe('Ctrl+Z');
+    expect(formatShortcut(shortcutSpecFor('ungroup')!, false)).toBe('Ctrl+Shift+G');
+    expect(formatShortcut(shortcutSpecFor('ungroup')!, true)).toBe('⇧⌘G');
+    expect(formatShortcut(shortcutSpecFor('toggleConnectionArrows')!, true)).toBe('⌥⇧A');
+    expect(formatShortcut(shortcutSpecFor('delete')!, false)).toBe('Delete');
+    expect(ariaKeyShortcut(shortcutSpecFor('zoomIn')!, false)).toBe('Control+Plus');
+    expect(ariaKeyShortcut(shortcutSpecFor('copy')!, true)).toBe('Meta+C');
   });
 
   it('adds one right-aligned <kbd> per item with a shortcut and keeps it when the label changes', () => {

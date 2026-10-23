@@ -193,7 +193,7 @@ export function installSidePanels(): void {
     if (state?.width) panel.style.width = `${state.width}px`;
     if (state?.collapsed) panel.classList.add('rd-panel-collapsed');
     attachResizeHandle(side, panel);
-    document.getElementById(BUTTON_IDS[side])?.addEventListener('click', () => togglePanel(side));
+    // the toolbar buttons run toggleLeftPanel / toggleRightPanel (ui/commands, toolbar.ts data-command)
     syncControls(side);
   }
   // The narrow layout (body class) changes what is shown: keep the buttons/menu in step

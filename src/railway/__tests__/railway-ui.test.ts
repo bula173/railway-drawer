@@ -10,6 +10,7 @@ import type { Cell } from '@maxgraph/core';
 import { TabManager } from '../../ui/tabs';
 import type { TabData } from '../../ui/tabs';
 import { loadAppDom, clearAppDom } from '../../__tests__/ui/app-dom';
+import { installShellForTest } from '../../__tests__/ui/shell-harness';
 import { installScenarios } from '../../scenarios/install-scenarios';
 import type { ScenariosHandle } from '../../scenarios/install-scenarios';
 import { installRailwayData } from '../install-railway-data';
@@ -25,6 +26,7 @@ describe('railway Data and Checks panels', () => {
   let scenarios: ScenariosHandle | null = null;
   let railway: RailwayDataHandle | null = null;
   let downloads: Array<{ name: string; blob: Blob }> = [];
+  let uninstallShell: (() => void) | null = null;
 
   beforeEach(() => {
     vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
@@ -42,6 +44,8 @@ describe('railway Data and Checks panels', () => {
   });
 
   afterEach(() => {
+    uninstallShell?.();
+    uninstallShell = null;
     railway?.destroy();
     scenarios?.destroy();
     tabManager?.destroy();
@@ -64,6 +68,9 @@ describe('railway Data and Checks panels', () => {
       liveDelay: 50,
       download: (blob, name) => downloads.push({ blob, name }),
     });
+    // menu items run their commands on the active tab (main-editor.ts wiring)
+    const manager = tabManager;
+    uninstallShell = installShellForTest(() => manager.getActiveTab());
     return tab;
   }
 

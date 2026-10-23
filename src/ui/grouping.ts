@@ -8,7 +8,6 @@
  */
 
 import type { Cell, CellStyle, Graph } from '@maxgraph/core';
-import { shouldIgnoreGraphShortcut } from './delete';
 import { logger } from '../drawio/logger';
 
 /** Style of a group container: transparent, dashed blue border. */
@@ -35,7 +34,6 @@ export class GroupingController {
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupGroupingButtons();
-    this.setupKeyboardShortcuts();
   }
 
   /**
@@ -51,32 +49,6 @@ export class GroupingController {
     if (ungroupBtn) {
       ungroupBtn.addEventListener('click', () => this.ungroup());
     }
-  }
-
-  /**
-   * @brief Register keyboard shortcuts for grouping
-   * @details
-   * - Ctrl/Cmd+G: Group selected shapes
-   * - Ctrl/Cmd+Shift+G: Ungroup selected groups
-   */
-  private setupKeyboardShortcuts(): void {
-    document.addEventListener('keydown', (e) => {
-      if (shouldIgnoreGraphShortcut(e, this.graph)) {
-        return;
-      }
-
-      // Ctrl/Cmd + G for group
-      if ((e.ctrlKey || e.metaKey) && e.key === 'g') {
-        e.preventDefault();
-        this.group();
-      }
-
-      // Ctrl/Cmd + Shift + G for ungroup
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'G') {
-        e.preventDefault();
-        this.ungroup();
-      }
-    });
   }
 
   /**

@@ -4,9 +4,9 @@
  *        dependencies, main-chunk safe). Matched by `KeyboardEvent.code`, because Alt types
  *        characters on macOS (Alt+O = "ø"), so `event.key` would not match. Free of clashes with
  *        the app's bindings (shortcut-keys.ts: only Alt+Shift+A uses Alt) and draw.io's Alt+Shift
- *        ones (Shift is not allowed here). Dispatched by install-railway-states.ts; shown in the
- *        Railway > Object State menu (shortcut-keys.ts ACTION_SHORTCUTS `railwayState:<command>`),
- *        the context menu's state submenus and Help > Keyboard Shortcuts.
+ *        ones (Shift is not allowed here). Bound by the `railwayState:` command (ui/commands/
+ *        railway.ts, dispatched by the keymap to install-railway-states.ts); shown in the
+ *        Railway > Object State menu, the context menu's state submenus and Help > Keyboard Shortcuts.
  */
 
 export interface StateShortcut {

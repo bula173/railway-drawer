@@ -16,15 +16,12 @@ import { emit } from '../core/event-bus';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
-import type { GraphCommandService } from '../services/graph-command-service';
-import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
-import type { GroupingController } from './grouping';
-import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
-import { ACTION_SHORTCUTS, applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel } from './shortcut-keys';
+import { DRAWIO_MENU_PREFIX, ensureDrawioMenuItems, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
+import { commandRegistry } from './commands/registry';
+import { hasLockedStyle, isLayer } from './cell-lock';
+import { applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel, shortcutSpecFor } from './shortcut-keys';
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
 import type { StateMenuEntry } from '../railway/state-menu';
-import { logger } from '../drawio/logger';
-import { duplicateCells } from './duplicate-offset';
 
 /** Gap kept between the context menu and the window edges. */
 const VIEWPORT_MARGIN = 4;
@@ -83,7 +80,7 @@ export function contextSelectionFor(graph: Graph, hit: Cell | null): Cell[] | nu
  * - Group/ungroup visibility based on selection type
  * - Z-order operations for single and multiple cells
  *
- * @note GroupingController must be set via setGroupingController() for group/ungroup to work
+ * Items run their `data-action` command (ui/commands) with this menu's target cells.
  */
 export class ContextMenuController {
   /** @brief Reference to the maxGraph instance */
@@ -100,10 +97,6 @@ export class ContextMenuController {
   private lastContextX = 0;
   /** @brief Last context menu Y coordinate */
   private lastContextY = 0;
-  /** @brief Reference to grouping controller for group/ungroup operations */
-  private groupingController: GroupingController | undefined;
-  /** @brief Reference to graph command service for z-order operations */
-  private commandService: GraphCommandService | null = null;
   /** @brief Removes this controller's subscription to the shared ClipboardService */
   private unsubscribeClipboard: (() => void) | null = null;
   /** @brief Runtime state items of railway objects (State ▸ / Aspect ▸ / Position ▸, route commands) */
@@ -176,7 +169,7 @@ export class ContextMenuController {
       e.stopPropagation();
       if (item) {
         emit(STATE_REQUEST_EVENT, item.dataset.stateCmd);
-        this.hideContextMenu();
+        this.hide();
         return;
       }
       const sub = target.closest<HTMLElement>('.rd-ctx-sub');
@@ -309,7 +302,7 @@ export class ContextMenuController {
         text.textContent = o.label;
         item.append(check, this.stateSwatch(o.visual, entry.dimension === 'aspect'), text);
         // Alt+key of the common states (src/railway/state-shortcuts.ts)
-        const spec = ACTION_SHORTCUTS[`railwayState:${o.command}`];
+        const spec = shortcutSpecFor(`railwayState:${o.command}`);
         if (spec) {
           const kbd = document.createElement('kbd');
           kbd.className = 'rd-kbd';
@@ -358,14 +351,6 @@ export class ContextMenuController {
       svg.append(l);
     }
     return svg;
-  }
-
-  setGroupingController(controller: GroupingController): void {
-    this.groupingController = controller;
-  }
-
-  setCommandService(service: GraphCommandService): void {
-    this.commandService = service;
   }
 
   private setupClipboardListener(): void {
@@ -428,15 +413,10 @@ export class ContextMenuController {
 
     // Hide context menu on click elsewhere
     document.addEventListener('click', () => {
-      this.hideContextMenu();
+      this.hide();
     });
 
-    // Hide context menu on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.hideContextMenu();
-      }
-    });
+    // Escape hides it: the `menus.close` command (ui/commands/view.ts)
 
     // Setup menu item clicks
     const menuItems = document.querySelectorAll('.context-menu-item');
@@ -447,7 +427,7 @@ export class ContextMenuController {
         if (action) {
           this.executeAction(action);
         }
-        this.hideContextMenu();
+        this.hide();
       });
     });
   }
@@ -517,109 +497,24 @@ export class ContextMenuController {
     menu.style.top = `${top}px`;
   }
 
-  private hideContextMenu() {
+  /** Hides the menu (and its state submenus). */
+  hide(): void {
     this.closeStateSubmenus();
     if (this.contextMenu) {
       this.contextMenu.style.display = 'none';
     }
   }
 
+  /**
+   * Runs an item's `data-action` command (ui/commands) on the cells this menu acts on (the
+   * right-clicked selection; Paste at the click position), then refreshes the graph (the draw.io
+   * table / lane / fold items excepted, as before).
+   */
   private executeAction(action: string): void {
-    // currentCell may be null here; passed through unchanged as before
-    const cellsToOperate = (this.selectedCells.length > 0 ? this.selectedCells : [this.currentCell]) as Cell[];
-
-    if (executeDrawioMenuAction(this.graph, action, this.currentCell)) {
-      return;
-    }
-
-    switch (action) {
-      case 'delete':
-        this.graph.removeCells(this.graph.getDeletableCells(cellsToOperate.filter((cell): cell is Cell => !!cell)));
-        break;
-
-      case 'cut':
-        this.clipboardService.cut(cellsToOperate, this.graph);
-        break;
-
-      case 'copy':
-        this.clipboardService.copy(cellsToOperate, this.graph);
-        break;
-
-      case 'paste':
-        {
-          const rect = document.getElementById('graph-container')?.getBoundingClientRect();
-          const offsetX = rect ? this.lastContextX - rect.left : 20;
-          const offsetY = rect ? this.lastContextY - rect.top : 20;
-          this.clipboardService.paste(this.graph, offsetX, offsetY);
-        }
-        break;
-
-      case 'duplicate':
-        // same as Ctrl/Cmd+D and Edit > Duplicate: railway IDs renumbered (src/railway/clone.ts), one undo step
-        duplicateCells(this.graph, cellsToOperate.filter((cell): cell is Cell => !!cell));
-        break;
-
-      case 'saveAsTemplate':
-        // main-editor.ts: the selection (on a shape) or the whole diagram (on the empty canvas)
-        emit('save-template-request');
-        break;
-
-      case 'lock':
-        // draw.io lockUnlock: locked=1 style key, one undoable edit
-        toggleCellsLocked(this.graph, cellsToOperate.filter((cell): cell is Cell => !!cell));
-        break;
-
-      case 'setDefaultStyle':
-        logger.debug('ContextMenu', 'Set as Default Style - Not yet implemented');
-        break;
-
-      case 'toFront':
-        if (this.commandService) this.commandService.toFront();
-        break;
-
-      case 'toBack':
-        if (this.commandService) this.commandService.toBack();
-        break;
-
-      case 'bringForward':
-        if (this.commandService) this.commandService.bringForward();
-        break;
-
-      case 'sendBackward':
-        if (this.commandService) this.commandService.sendBackward();
-        break;
-
-      case 'editStyle': {
-        logger.debug('ContextMenu', 'Edit Style - Selecting Text tab');
-        const textTab = document.querySelector('.prop-tab[data-tab="style"]') as HTMLElement;
-        if (textTab) textTab.click();
-        break;
-      }
-
-      case 'editData':
-        // The Data panel edits the selection (src/railway, wired in main-editor.ts)
-        if (this.selectedCells.length > 0) this.graph.setSelectionCells(this.selectedCells);
-        emit('railway-edit-data-request');
-        break;
-
-      case 'group':
-        logger.debug('ContextMenu', 'Group action - selectedCells:', [this.selectedCells.length, 'graphSelection:', this.graph.getSelectionCells().length]);
-        if (this.groupingController) {
-          // Ensure graph selection matches our selectedCells
-          this.graph.setSelectionCells(this.selectedCells);
-          this.groupingController.group();
-        } else {
-          console.warn('[ContextMenu] groupingController not set!');
-        }
-        break;
-
-      case 'ungroup':
-        if (this.groupingController) {
-          this.groupingController.ungroup();
-        }
-        break;
-    }
-
-    this.graph.refresh();
+    const ctx = commandRegistry.context('contextMenu', {
+      target: { cell: this.currentCell, cells: this.selectedCells, clientX: this.lastContextX, clientY: this.lastContextY },
+    });
+    commandRegistry.run(action, ctx);
+    if (!action.startsWith(DRAWIO_MENU_PREFIX)) this.graph.refresh();
   }
 }

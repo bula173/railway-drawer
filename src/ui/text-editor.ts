@@ -1,7 +1,6 @@
 import { Graph, InternalEvent, styleUtils } from '@maxgraph/core';
 import { cellAtBackgroundPoint } from './canvas-interaction';
 import type { Cell, EventObject } from '@maxgraph/core';
-import { shouldIgnoreGraphShortcut } from './delete';
 import { logger } from '../drawio/logger';
 import { emit } from '../core/event-bus';
 import { railwayObjectOf, renameObjectId } from '../railway/rename-id';
@@ -52,25 +51,11 @@ export class TextEditorController {
       }
     });
 
-    // Listen for Enter/Space key on selected shapes
-    document.addEventListener('keydown', (evt: KeyboardEvent) => {
-      // Ignore text editing (inputs, selects, contentEditable, active cell editor)
-      if (shouldIgnoreGraphShortcut(evt, this.graph)) {
-        return;
-      }
-
-      if (evt.key === 'Enter' || evt.key === ' ') {
-        const cells = this.graph.getSelectionCells();
-        if (cells.length === 1 && cells[0].isVertex && cells[0].isVertex()) {
-          logger.debug('TextEditor', 'Enter/Space pressed, starting edit for:', cells[0].value);
-          evt.preventDefault();
-          this.startInlineEditing(cells[0]);
-        }
-      }
-    });
+    // Enter / Space on one selected shape: the `edit.startEditing` command (ui/commands/edit.ts)
   }
 
-  private startInlineEditing(cell: Cell): void {
+  /** The label editor of `cell` (double-click, Enter / Space). */
+  startInlineEditing(cell: Cell): void {
     logger.debug('TextEditor', 'Starting inline editing for cell:', cell.value);
 
     // Stop any existing editing

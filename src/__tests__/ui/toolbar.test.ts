@@ -7,6 +7,10 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { TOOLBAR_ICONS, applyInlineIcons, createToolbarIcon, decorateToolbarButtons, installToolbar, setInlineIcon } from '../../ui/toolbar';
 import indexHtml from '../../../index.html?raw';
 import { shortcutForAction } from '../../ui/shortcut-keys';
+import { registerAppCommands } from '../../ui/commands';
+
+// tooltips show the commands' shortcuts
+registerAppCommands();
 
 describe('toolbar icons', () => {
   it('every icon parses to SVG elements only (no text, no emoji)', () => {

@@ -1,4 +1,6 @@
 import { afterEach, beforeAll, describe, expect, it } from 'vitest';
+import { registerAppCommands } from '../../../ui/commands';
+import { installMenuBar } from '../../../ui/menu';
 import { Graph } from '@maxgraph/core';
 import type { Cell, CellStyle } from '@maxgraph/core';
 import { getInverseColor, resolveColorValue, resolveHtmlLabelColors } from '../../engine/colors';
@@ -174,11 +176,14 @@ describe('theme preference and View > Dark Mode toggle (dark-mode.ts)', () => {
     expect(localStorage.getItem(THEME_STORAGE_KEY)).toBeNull();
   });
 
-  it('the menu item toggles dark mode and reflects the state', () => {
-    const item = document.createElement('div');
-    item.className = 'menu-dropdown-item';
-    item.setAttribute('data-action', 'toggleDarkMode');
-    document.body.appendChild(item);
+  it('the menu item toggles dark mode (its command, ui/commands) and reflects the state', () => {
+    const bar = document.createElement('div');
+    bar.id = 'menu-bar';
+    bar.innerHTML = '<div class="menu-dropdown" data-menu="view"><div class="menu-dropdown-item" data-action="toggleDarkMode"></div></div>';
+    document.body.appendChild(bar);
+    const item = bar.querySelector<HTMLElement>('[data-action="toggleDarkMode"]')!;
+    registerAppCommands();
+    installMenuBar();
     const dispose = installDarkModeToggle();
     try {
       expect(isDarkMode()).toBe(false);
@@ -191,7 +196,7 @@ describe('theme preference and View > Dark Mode toggle (dark-mode.ts)', () => {
       expect(isDarkMode()).toBe(false);
     } finally {
       dispose();
-      item.remove();
+      bar.remove();
     }
   });
 });

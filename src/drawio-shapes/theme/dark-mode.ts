@@ -13,7 +13,8 @@
  *   --rd-* color tokens in src/styles/variables.css switch on `:root[data-theme="dark"]`) and to
  *   the diagram renderer via
  *   setDrawioDarkMode (light-dark(), default colors and adaptive colors, see graph-compat.ts).
- * - View > "Dark Mode" (`[data-action="toggleDarkMode"]`) toggles between light and dark.
+ * - View > "Dark Mode" (`[data-action="toggleDarkMode"]`, the `toggleDarkMode` command of
+ *   ui/commands/view.ts) toggles between light and dark (toggleDarkMode).
  */
 
 import { emit } from '../../core/event-bus';
@@ -110,17 +111,11 @@ export function toggleDarkMode(doc: Document = document): Theme {
 }
 
 /**
- * Applies the stored/system theme and binds the View menu item and the system preference
- * listener. Call once per page (global, not per tab). Returns a dispose function.
+ * Applies the stored/system theme, keeps the View menu item's check mark and follows the system
+ * preference. Call once per page (global, not per tab). Returns a dispose function.
  */
 export function installDarkModeToggle(doc: Document = document): () => void {
   applyTheme(resolveTheme(), doc);
-
-  const onClick = (e: Event): void => {
-    const target = e.target as Element | null;
-    if (target?.closest?.('[data-action="toggleDarkMode"]')) toggleDarkMode(doc);
-  };
-  doc.addEventListener('click', onClick, true);
 
   let media: MediaQueryList | null = null;
   const onSystemChange = (): void => {
@@ -136,7 +131,6 @@ export function installDarkModeToggle(doc: Document = document): () => void {
   }
 
   return () => {
-    doc.removeEventListener('click', onClick, true);
     media?.removeEventListener?.('change', onSystemChange);
   };
 }

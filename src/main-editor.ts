@@ -17,7 +17,6 @@
  * @version 0.6.0
  */
 
-import { selectEdges, selectNone, selectVertices } from './ui/arrange-commands';
 import '@maxgraph/core/css/common.css';
 import './style.css';
 import type { CellStyle } from '@maxgraph/core';
@@ -30,7 +29,7 @@ import { emit, on } from './core/event-bus';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
-import { ensurePanelShown, installSidePanels, togglePanel } from './ui/side-panels';
+import { ensurePanelShown, installSidePanels } from './ui/side-panels';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from './config/build-id';
 import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
@@ -38,7 +37,6 @@ import { globalNotificationManager } from './ui/notification';
 import { globalSaveStatusIndicator } from './ui/save-status';
 import { ServiceRegistry } from './services/service-registry';
 import { globalErrorHandler } from './services/error-handler';
-import { shouldIgnoreGraphShortcut } from './ui/delete';
 import { registerDrawioCodecs } from './services/drawio-xml';
 import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseMxLibrary } from './drawio-shapes/engine';
 import {
@@ -63,14 +61,15 @@ import { installRailwayStates } from './railway/install-railway-states';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { installAi } from './ai/install-ai';
-import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
+import { syncConnectionArrowsMenu } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
 import { RAILWAY_LIBRARIES, railwayLibrarySources } from './ui/railway-libraries';
 import { installToolbar } from './ui/toolbar';
+import { installMenuBar, runMenuAction } from './ui/menu';
+import { appKeymap, commandRegistry, registerAppCommands } from './ui/commands';
 import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
 import { installNarrowScreen } from './ui/narrow-screen';
-import { scrollSelectionIntoView } from './ui/canvas-scroll';
 import { logger } from './drawio/logger';
 import { readItem, writeItem } from './core/safe-storage';
 import { STORAGE_KEYS } from './core/storage-keys';
@@ -96,6 +95,10 @@ try {
   globalNotificationManager.error('Failed to load shapes - some shapes may be unavailable');
 }
 
+// The app's commands (ui/commands): menus, context menu, toolbar and keyboard run them; the menu
+// hints, toolbar tooltips and Help > Keyboard Shortcuts read their shortcuts
+registerAppCommands();
+
 /**
  * @brief Initialize keyboard shortcuts help dialog
  * @details Provides a modal dialog showing all available keyboard shortcuts
@@ -108,8 +111,10 @@ new ShortcutsHelpController();
 // Collapsible, resizable left/right panels; widths and collapsed state remembered (src/ui/side-panels.ts)
 installSidePanels();
 
-// Toolbar chrome: SVG icons, names + shortcut tooltips, Align / distribute dropdown (src/ui/toolbar.ts)
+// Toolbar chrome: SVG icons, names + shortcut tooltips, Align / distribute dropdown, buttons run commands (src/ui/toolbar.ts)
 installToolbar();
+// Menu bar: WAI-ARIA menubar, shortcut hints; items run their commands on the active tab (src/ui/menu.ts)
+installMenuBar();
 
 // ============= TAB MANAGER =============
 
@@ -208,133 +213,18 @@ installRailwayStates(tabManager, globalNotificationManager);
 // railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
 installRailml(tabManager, globalNotificationManager);
 
-// ============= GLOBAL KEYBOARD SHORTCUTS =============
+// ============= KEYBOARD SHORTCUTS =============
 
 /**
- * @brief Global keyboard shortcut handler
- * @details Manages application-wide keyboard shortcuts:
- * - Ctrl/Cmd+Z: Undo
- * - Ctrl/Cmd+Y or Ctrl/Cmd+Shift+Z: Redo
- * - Ctrl/Cmd+C: Copy
- * - Ctrl/Cmd+X: Cut
- * - Ctrl/Cmd+V: Paste
- * - Ctrl/Cmd+A: Select all
- * - Ctrl/Cmd+S: Save project to disk
- * - Delete/Backspace: Delete selected items
- * - Escape: Clear selection (and hide the connection arrows)
- * - Alt+Shift+A: View > Connection Arrows on/off (draw.io)
- * - Arrow keys: Move the selection by 1 px (Shift: by the grid size); locked cells stay
- *
- * This is the single dispatcher for these shortcuts: each runs once, on the active tab
- * (the per-tab clipboard, delete and save controllers no longer listen on `document`).
- * Graph shortcuts are ignored while the user edits text (inputs, contentEditable, cell editor).
+ * @brief The one keyboard dispatcher (ui/commands/keymap.ts)
+ * @details Every shortcut is a key binding of a registered command (ui/commands/*.ts) and runs once,
+ * on the active tab: Ctrl/Cmd+S also while typing; the graph shortcuts not while the user types
+ * (shouldIgnoreGraphShortcut), nor on the menus. The scenario view takes ←/→/Home/End/Esc first and
+ * blocks the editing shortcuts (the drawing is hidden).
  */
-/** Arrow key -> unit move (draw.io nudge). */
-const ARROW_NUDGE: Record<string, [number, number]> = {
-  ArrowLeft: [-1, 0],
-  ArrowRight: [1, 0],
-  ArrowUp: [0, -1],
-  ArrowDown: [0, 1],
-};
-
-document.addEventListener('keydown', (e) => {
-  const activeTab = tabManager.getActiveTab();
-  if (!activeTab) return;
-
-  const mod = e.ctrlKey || e.metaKey;
-  // Shift turns e.key into upper case ('Z'), so compare case-insensitively
-  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-
-  // Save works from anywhere, including while typing in a field
-  if (mod && key === 's') {
-    e.preventDefault();
-    activeTab.saveLoadController.saveProject();
-    return;
-  }
-
-  // Scenario view: ←/→/Home/End/Esc navigate, editing shortcuts are blocked (the drawing is hidden)
-  if (scenarios.handleKeydown(e)) {
-    return;
-  }
-
-  if (shouldIgnoreGraphShortcut(e, activeTab.graph)) {
-    return;
-  }
-  // Keys on the menu bar / context menu / toolbar dropdowns navigate the menu (menu.ts, context-menu.ts,
-  // toolbar.ts, left-panel-tabs.ts), not the diagram (Escape there must not clear the selection)
-  if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu')) {
-    return;
-  }
-  // Delete / Backspace on a left-panel tab closes that tab (left-panel-tabs.ts), never the diagram selection
-  if ((e.key === 'Delete' || e.key === 'Backspace') && e.target instanceof Element && e.target.closest('.left-panel-tabbar')) {
-    return;
-  }
-
-  // Side panels like draw.io: Ctrl/Cmd+Shift+K = Shapes, Ctrl/Cmd+Shift+P = Format (src/ui/side-panels.ts)
-  if (mod && e.shiftKey && !e.altKey && (key === 'k' || key === 'p')) {
-    e.preventDefault();
-    togglePanel(key === 'k' ? 'left' : 'right');
-    return;
-  }
-  if (mod && key === 'z' && !e.shiftKey) {
-    e.preventDefault();
-    activeTab.graphCommandService.undo();
-  }
-  if (mod && (key === 'y' || (e.shiftKey && key === 'z'))) {
-    e.preventDefault();
-    activeTab.graphCommandService.redo();
-  }
-  if (mod && key === 'c') {
-    e.preventDefault();
-    activeTab.graphCommandService.copy();
-  }
-  if (mod && key === 'x') {
-    e.preventDefault();
-    activeTab.graphCommandService.cut();
-  }
-  if (mod && key === 'v') {
-    e.preventDefault();
-    activeTab.graphCommandService.paste();
-  }
-  if (mod && key === 'a' && !e.shiftKey) {
-    e.preventDefault();
-    // Same command as Edit > Select All (draw.io: the layer's cells and their descendants)
-    activeTab.graphCommandService.selectAll();
-  }
-  // draw.io: Ctrl/Cmd+Shift+A = Select None, +I = Select Vertices, +E = Select Edges (Edit menu, arrange-commands.ts)
-  if (mod && e.shiftKey && !e.altKey && (key === 'a' || key === 'i' || key === 'e')) {
-    e.preventDefault();
-    if (key === 'a') selectNone(activeTab.graph);
-    else if (key === 'i') selectVertices(activeTab.graph);
-    else selectEdges(activeTab.graph);
-  }
-  if ((e.key === 'Delete' || e.key === 'Backspace') && activeTab.graph.getSelectionCount() > 0) {
-    e.preventDefault();
-    activeTab.graphCommandService.delete();
-  }
-  if (e.key === 'Escape') {
-    e.preventDefault();
-    // hides the connection arrows and cancels a connection dragged from one (hover-arrows.ts)
-    activeTab.hoverArrowsController.escape();
-    activeTab.graph.clearSelection();
-  }
-  // draw.io's View > Connection Arrows shortcut (e.code: Alt changes e.key on macOS)
-  if (e.altKey && e.shiftKey && !mod && e.code === 'KeyA') {
-    e.preventDefault();
-    toggleConnectionArrows();
-  }
-  // Arrow keys nudge the selection like draw.io: 1 px, Shift: one grid step; locked cells stay
-  // (not while the focus is on a panel control that uses the arrows itself: lists, buttons, ...)
-  const nudge = ARROW_NUDGE[e.key];
-  const focus = document.activeElement;
-  const focusOnCanvas = !focus || focus === document.body || activeTab.graph.container.contains(focus);
-  if (nudge && focusOnCanvas && !mod && !e.altKey && activeTab.graph.getSelectionCount() > 0) {
-    e.preventDefault();
-    const step = e.shiftKey ? activeTab.graph.getGridSize() || 10 : 1;
-    // Like draw.io, the nudged selection stays in view (scrolls at the canvas edge)
-    if (activeTab.graphCommandService.nudge(nudge[0] * step, nudge[1] * step)) scrollSelectionIntoView(activeTab.graph);
-  }
-}, true);
+commandRegistry.setActiveTabProvider(() => tabManager.getActiveTab());
+appKeymap.addInterceptor((e) => scenarios.handleKeydown(e));
+appKeymap.install();
 
 /**
  * @brief Application cleanup handler
@@ -641,9 +531,6 @@ const focusErtmsPalette = (): void => {
   const section = document.querySelector<HTMLElement>('#drawio-palette-container section[data-palette-id="ertms"]');
   section?.scrollIntoView({ block: 'start' });
   void shapesPaletteView.ready.then(() => section?.querySelector<HTMLElement>('.rd-dp-item')?.focus());
-};
-const runMenuAction = (action: string): void => {
-  document.querySelector<HTMLElement>(`.menu-dropdown-item[data-action="${action}"]`)?.click();
 };
 const startCard = createStartCard({
   container: graphContainer,

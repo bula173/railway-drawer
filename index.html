@@ -252,11 +252,11 @@
         </div>
       </div>
 
-      <!-- Toolbar (src/ui/toolbar.ts: data-icon SVGs, data-label = aria-label, data-shortcut tooltip; actions bound by id) -->
+      <!-- Toolbar (src/ui/toolbar.ts: data-icon SVGs, data-label = aria-label, data-shortcut tooltip; data-command = the command it runs) -->
       <div id="toolbar-container" class="toolbar" role="toolbar" aria-label="Editor tools">
         <div class="toolbar-section">
           <div class="zoom-control toolbar-group" role="group" aria-label="Zoom">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-zoom-out" data-icon="zoomOut" data-label="Zoom out" data-shortcut="zoomOut"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-zoom-out" data-command="zoomOut" data-icon="zoomOut" data-label="Zoom out" data-shortcut="zoomOut"></button>
             <select class="zoom-select" id="zoom-level" aria-label="Zoom" title="Zoom">
               <option value="50">50%</option>
               <option value="75">75%</option>
@@ -264,59 +264,59 @@
               <option value="150">150%</option>
               <option value="200">200%</option>
             </select>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-zoom-in" data-icon="zoomIn" data-label="Zoom in" data-shortcut="zoomIn"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-zoom-in" data-command="zoomIn" data-icon="zoomIn" data-label="Zoom in" data-shortcut="zoomIn"></button>
           </div>
         </div>
 
         <div class="toolbar-section">
           <div class="toolbar-group" role="group" aria-label="Edit">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-undo" data-icon="undo" data-label="Undo" data-shortcut="undo" disabled></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-redo" data-icon="redo" data-label="Redo" data-shortcut="redo" disabled></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-delete" data-icon="trash" data-label="Delete"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-undo" data-command="undo" data-icon="undo" data-label="Undo" data-shortcut="undo" disabled></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-redo" data-command="redo" data-icon="redo" data-label="Redo" data-shortcut="redo" disabled></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-delete" data-command="delete" data-icon="trash" data-label="Delete"></button>
           </div>
           <div class="toolbar-separator" role="separator"></div>
           <div class="toolbar-group" role="group" aria-label="Insert">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-rect" data-icon="rect" data-label="Insert rectangle"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-ellipse" data-icon="ellipse" data-label="Insert ellipse"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-diamond" data-icon="diamond" data-label="Insert diamond"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-line" data-icon="line" data-label="Insert line"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-connector" data-icon="connect" data-label="Connect the two selected shapes"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-upload-image" data-icon="image" data-label="Image as custom shape"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-rect" data-command="insertRectangle" data-icon="rect" data-label="Insert rectangle"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-ellipse" data-command="insertEllipse" data-icon="ellipse" data-label="Insert ellipse"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-diamond" data-command="insertDiamond" data-icon="diamond" data-label="Insert diamond"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-line" data-command="insertLine" data-icon="line" data-label="Insert line"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-draw-connector" data-command="connectSelection" data-icon="connect" data-label="Connect the two selected shapes"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-upload-image" data-command="importImage" data-icon="image" data-label="Image as custom shape"></button>
           </div>
           <div class="toolbar-separator" role="separator"></div>
           <div class="toolbar-group" role="group" aria-label="Arrange">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-grid" data-icon="grid" data-label="Grid (show and snap)" aria-pressed="true"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-format-painter" data-icon="painter" data-label="Copy style, then paste it on the selection"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-grid" data-command="showGrid" data-icon="grid" data-label="Grid (show and snap)" aria-pressed="true"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-format-painter" data-command="formatPainter" data-icon="painter" data-label="Copy style, then paste it on the selection"></button>
             <button type="button" class="toolbar-btn rd-icon-btn rd-has-caret" id="btn-align" data-icon="align" data-label="Align and distribute" aria-haspopup="menu" aria-expanded="false" aria-controls="align-menu"></button>
           </div>
           <div class="toolbar-separator" role="separator"></div>
           <div class="toolbar-group" role="group" aria-label="Railway">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-route-tool" data-icon="route" data-label="Route tool: click a start signal, then an end signal" aria-pressed="false"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-railway-checks" data-icon="checks" data-label="Run checks"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-km-ruler" data-icon="ruler" data-label="km ruler" data-mirror-action="railwayRoute:toggleKmRuler" aria-pressed="false"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-route-tool" data-command="railwayRoute:tool" data-icon="route" data-label="Route tool: click a start signal, then an end signal" aria-pressed="false"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-railway-checks" data-command="railwayChecks" data-icon="checks" data-label="Run checks"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-km-ruler" data-command="railwayRoute:toggleKmRuler" data-icon="ruler" data-label="km ruler" data-mirror-action="railwayRoute:toggleKmRuler" aria-pressed="false"></button>
           </div>
         </div>
 
         <div class="toolbar-section">
           <div class="toolbar-group" role="group" aria-label="View">
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-left-panel" data-icon="panelLeft" data-label="Shapes panel" data-shortcut="toggleLeftPanel" aria-pressed="true" aria-controls="leftpanel-container"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-right-panel" data-icon="panelRight" data-label="Format panel" data-shortcut="toggleRightPanel" aria-pressed="true" aria-controls="rightpanel-container"></button>
-            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-fullscreen" data-icon="fullscreen" data-label="Fullscreen"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-left-panel" data-command="toggleLeftPanel" data-icon="panelLeft" data-label="Shapes panel" data-shortcut="toggleLeftPanel" aria-pressed="true" aria-controls="leftpanel-container"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-right-panel" data-command="toggleRightPanel" data-icon="panelRight" data-label="Format panel" data-shortcut="toggleRightPanel" aria-pressed="true" aria-controls="rightpanel-container"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-fullscreen" data-command="fullscreen" data-icon="fullscreen" data-label="Fullscreen"></button>
           </div>
         </div>
       </div>
-      <!-- Align / distribute dropdown of #btn-align (items bound by AlignmentController) -->
+      <!-- Align / distribute dropdown of #btn-align (items run their data-command) -->
       <div id="align-menu" class="rd-toolbar-menu" role="menu" aria-label="Align and distribute" hidden>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-top" data-icon="alignTop" data-label="Align top">Align top</button>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-middle" data-icon="alignMiddle" data-label="Align middle">Align middle</button>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-bottom" data-icon="alignBottom" data-label="Align bottom">Align bottom</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-top" data-command="alignTop" data-icon="alignTop" data-label="Align top">Align top</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-middle" data-command="alignMiddle" data-icon="alignMiddle" data-label="Align middle">Align middle</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-bottom" data-command="alignBottom" data-icon="alignBottom" data-label="Align bottom">Align bottom</button>
         <div class="rd-sep" role="separator"></div>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-left" data-icon="alignLeft" data-label="Align left">Align left</button>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-center" data-icon="alignCenter" data-label="Align center">Align center</button>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-right" data-icon="alignRight" data-label="Align right">Align right</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-left" data-command="alignLeft" data-icon="alignLeft" data-label="Align left">Align left</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-center" data-command="alignCenter" data-icon="alignCenter" data-label="Align center">Align center</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-align-right" data-command="alignRight" data-icon="alignRight" data-label="Align right">Align right</button>
         <div class="rd-sep" role="separator"></div>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-distribute-h" data-icon="distributeH" data-label="Distribute horizontally">Distribute horizontally</button>
-        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-distribute-v" data-icon="distributeV" data-label="Distribute vertically">Distribute vertically</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-distribute-h" data-command="distributeHorizontally" data-icon="distributeH" data-label="Distribute horizontally">Distribute horizontally</button>
+        <button type="button" class="rd-toolbar-menu-item" role="menuitem" tabindex="-1" id="btn-distribute-v" data-command="distributeVertically" data-icon="distributeV" data-label="Distribute vertically">Distribute vertically</button>
       </div>
 
       <!-- Main Workspace -->

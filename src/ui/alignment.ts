@@ -6,7 +6,8 @@ type VertexCell = Cell & { geometry: Geometry };
 type Axis = 'x' | 'y';
 
 /**
- * Align / distribute (toolbar Align dropdown, `#btn-align-*` / `#btn-distribute-*`).
+ * Align / distribute (Arrange menu, toolbar Align dropdown `#btn-align-*` / `#btn-distribute-*`: the
+ * align / distribute commands of ui/commands/arrange.ts run these on the active tab).
  * Like draw.io's alignCells/distributeCells: every command is ONE model update (one undo step) that
  * writes cloned geometries through `model.setGeometry`; locked cells (`locked=1` on the cell, its group or
  * its layer, i.e. not movable) are skipped and do not count as a reference either.
@@ -16,23 +17,6 @@ export class AlignmentController {
 
   constructor(graph: Graph) {
     this.graph = graph;
-    this.setupAlignmentButtons();
-  }
-
-  private setupAlignmentButtons(): void {
-    const bindings: Array<[string, () => void]> = [
-      ['btn-align-left', () => this.alignLeft()],
-      ['btn-align-center', () => this.alignCenter()],
-      ['btn-align-right', () => this.alignRight()],
-      ['btn-align-top', () => this.alignTop()],
-      ['btn-align-middle', () => this.alignMiddle()],
-      ['btn-align-bottom', () => this.alignBottom()],
-      ['btn-distribute-h', () => this.distributeHorizontally()],
-      ['btn-distribute-v', () => this.distributeVertically()],
-    ];
-    for (const [id, run] of bindings) {
-      document.getElementById(id)?.addEventListener('click', run);
-    }
   }
 
   /** Selected, unlocked (movable) vertices with an absolute geometry */

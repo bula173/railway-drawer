@@ -1,16 +1,15 @@
 /**
  * @file toolbar.ts
- * @brief The main toolbar's chrome (installed once by main-editor.ts; the per-tab controllers bind
- *        the buttons' actions by id): one inline-SVG icon set (`data-icon`, no emoji), the
- *        accessible name (`data-label` -> aria-label) and a tooltip with the shortcut
- *        (`data-shortcut` = an `ACTION_SHORTCUTS` key), the Align/Distribute dropdown
- *        (`#btn-align` -> `#align-menu`, its items are AlignmentController's `#btn-align-*` /
- *        `#btn-distribute-*`), and toggle buttons mirroring a menu item's aria-checked
- *        (`data-mirror-action`, e.g. km Ruler) as aria-pressed.
+ * @brief The main toolbar (installed once by main-editor.ts): each button runs its `data-command`
+ *        from the command registry (ui/commands) on the active tab; one inline-SVG icon set
+ *        (`data-icon`, no emoji), the accessible name (`data-label` -> aria-label) and a tooltip with
+ *        the shortcut (`data-shortcut` = a command id), the Align/Distribute dropdown (`#btn-align`
+ *        -> `#align-menu`, items `#btn-align-*` / `#btn-distribute-*`), and toggle buttons mirroring
+ *        a menu item's aria-checked (`data-mirror-action`, e.g. km Ruler) as aria-pressed.
  */
-import { emit } from '../core/event-bus';
 import { createInstallScope, installOnce } from '../core/install-once';
 import { shortcutForAction } from './shortcut-keys';
+import { commandRegistry } from './commands/registry';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -197,7 +196,7 @@ function installAlignMenu(): void {
       (document.activeElement as HTMLElement | null)?.click();
     }
   });
-  // The items' actions are AlignmentController's (per tab); the menu just closes after them
+  // The items run their align / distribute commands (bindCommandButtons); the menu just closes after them
   menu.addEventListener('click', (e) => {
     if ((e.target as Element).closest('[role="menuitem"]')) close(true);
   });
@@ -205,6 +204,19 @@ function installAlignMenu(): void {
     if (!menu.contains(e.target as Node) && e.target !== button) close(false);
   });
   window.addEventListener('resize', () => close(false));
+}
+
+/**
+ * Every `[data-command]` button inside `root` runs its command on the active tab when clicked
+ * (bound on the button itself, so it runs before the Align dropdown's own close handler).
+ */
+export function bindCommandButtons(root: ParentNode = document): void {
+  root.querySelectorAll<HTMLElement>('[data-command]').forEach((button) => {
+    button.addEventListener('click', (e) => {
+      const id = button.dataset.command;
+      if (id) commandRegistry.run(id, commandRegistry.context('toolbar', { event: e }));
+    });
+  });
 }
 
 const PAGE = createInstallScope();
@@ -219,9 +231,6 @@ export function installToolbar(): void {
   applyInlineIcons(document.getElementById('property-content') ?? document);
   mirrorMenuToggles();
   installAlignMenu();
-  // Railway group (the route tool button is src/railway/install-railway-routes.ts)
-  document.getElementById('btn-railway-checks')?.addEventListener('click', () => emit('railway-checks-request'));
-  document.getElementById('btn-km-ruler')?.addEventListener('click', () =>
-    emit('railway-route-request', 'toggleKmRuler')
-  );
+  bindCommandButtons(document.getElementById('toolbar-container') ?? document);
+  bindCommandButtons(document.getElementById('align-menu') ?? document);
 }

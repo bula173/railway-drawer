@@ -13,7 +13,6 @@ import { emit, off, on } from '../core/event-bus';
 import { createTabDocument, SaveLoadController } from './saveload';
 import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
-import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
 
 import { CacheService, CacheSaveResult, type CachedTabJson } from '../services/cache-service';
@@ -29,7 +28,6 @@ import { LayersController } from './layers';
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
-import { ZoomController } from './zoom';
 import { AlignmentController } from './alignment';
 import { GroupingController } from './grouping';
 import { TransformController } from './transform';
@@ -56,12 +54,10 @@ export interface TabData {
   saveLoadController: SaveLoadController;
   canvasProperties: CanvasProperties;
   contextMenuController: ContextMenuController;
-  menuController: MenuController;
   interactiveUIController: InteractiveUIController;
   layersController: LayersController;
   imageUploadController: ImageUploadController;
   pasteImageController: PasteImageController;
-  zoomController: ZoomController;
   alignmentController: AlignmentController;
   groupingController: GroupingController;
   transformController: TransformController;
@@ -265,18 +261,13 @@ export class TabManager {
       const saveLoadController = new SaveLoadController(diagramDocument);
       const canvasProperties = new CanvasProperties(graph);
       const contextMenuController = new ContextMenuController(graph);
-      const menuController = new MenuController(graph, graphCommandService, saveLoadController);
-      const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
+      const interactiveUIController = new InteractiveUIController(graph);
       const layersController = new LayersController(graph);
       const imageUploadController = new ImageUploadController(graph);
       const pasteImageController = new PasteImageController(graph);
-      const zoomController = new ZoomController(graph);
       const alignmentController = new AlignmentController(graph);
       const groupingController = new GroupingController(graph);
       const plantumlEditorController = new PlantUmlEditorController(graph);
-      contextMenuController.setGroupingController(groupingController);
-      contextMenuController.setCommandService(graphCommandService);
-      menuController.setAlignmentController(alignmentController);
       const transformController = new TransformController(graph);
       const gridSnapController = new GridSnapController(graph);
       const duplicateOffsetController = new DuplicateOffsetController(graph);
@@ -285,7 +276,6 @@ export class TabManager {
         getModelXml: () => diagramDocument.serializeToXml(),
         getName: () => this.tabs.get(tabId)?.name ?? name,
       });
-      menuController.setExportImageController(exportImageController);
 
       return {
         propertiesPanel,
@@ -298,12 +288,10 @@ export class TabManager {
         saveLoadController,
         canvasProperties,
         contextMenuController,
-        menuController,
         interactiveUIController,
         layersController,
         imageUploadController,
         pasteImageController,
-        zoomController,
         alignmentController,
         groupingController,
         transformController,
@@ -687,12 +675,10 @@ export class TabManager {
         tab.saveLoadController,
         tab.canvasProperties,
         tab.contextMenuController,
-        tab.menuController,
         tab.interactiveUIController,
         tab.layersController,
         tab.imageUploadController,
         tab.pasteImageController,
-        tab.zoomController,
         tab.alignmentController,
         tab.groupingController,
         tab.transformController,

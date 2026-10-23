@@ -4,6 +4,8 @@
  * are keyboard operable.
  */
 import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
+import { registerAppCommands } from '../../ui/commands';
+import { bindCommandButtons } from '../../ui/toolbar';
 import {
   PANEL_MAX_WIDTH,
   PANEL_MIN_WIDTH,
@@ -40,10 +42,13 @@ describe('collapse / expand', () => {
       body.rd-narrow .left-panel:not(.rd-panel-open-narrow), body.rd-narrow .right-panel:not(.rd-panel-open-narrow) { display: none; }
     </style>`;
     document.body.innerHTML = `
-      <button id="btn-toggle-left-panel"></button><button id="btn-toggle-right-panel"></button>
+      <button id="btn-toggle-left-panel" data-command="toggleLeftPanel"></button><button id="btn-toggle-right-panel" data-command="toggleRightPanel"></button>
       <div class="menu-dropdown"><div data-action="toggleLeftPanel"></div><div data-action="toggleRightPanel"></div></div>
       <div id="leftpanel-container" class="left-panel"></div><div id="rightpanel-container" class="right-panel"></div>`;
     installSidePanels();
+    // the buttons run the toggleLeftPanel / toggleRightPanel commands (toolbar.ts)
+    registerAppCommands();
+    bindCommandButtons(document);
   });
   beforeEach(() => document.body.classList.remove('rd-narrow'));
 

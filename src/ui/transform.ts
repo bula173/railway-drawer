@@ -9,7 +9,6 @@ interface TransformStyle {
   flipV?: boolean | string;
   rotation?: number | string;
 }
-import { shouldIgnoreGraphShortcut } from './delete';
 import { logger } from '../drawio/logger';
 
 export class TransformController {
@@ -18,7 +17,6 @@ export class TransformController {
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupTransformButtons();
-    this.setupKeyboardShortcuts();
   }
 
   private setupTransformButtons(): void {
@@ -37,38 +35,6 @@ export class TransformController {
     if (matchWidthBtn) matchWidthBtn.addEventListener('click', () => this.matchWidth());
     if (matchHeightBtn) matchHeightBtn.addEventListener('click', () => this.matchHeight());
     if (matchSizeBtn) matchSizeBtn.addEventListener('click', () => this.matchSize());
-  }
-
-  private setupKeyboardShortcuts(): void {
-    document.addEventListener('keydown', (e) => {
-      if (shouldIgnoreGraphShortcut(e, this.graph)) {
-        return;
-      }
-
-      // Ctrl/Cmd + H for flip horizontal
-      if ((e.ctrlKey || e.metaKey) && e.key === 'h') {
-        e.preventDefault();
-        this.flipHorizontal();
-      }
-
-      // Ctrl/Cmd + V for flip vertical (might conflict with paste, but worth trying)
-      if ((e.ctrlKey || e.metaKey) && e.key === 'j') {
-        e.preventDefault();
-        this.flipVertical();
-      }
-
-      // Ctrl/Cmd + R for rotate 90 CW
-      if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
-        e.preventDefault();
-        this.rotate90CW();
-      }
-
-      // Ctrl/Cmd + Shift + R for rotate 90 CCW
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'R') {
-        e.preventDefault();
-        this.rotate90CCW();
-      }
-    });
   }
 
   flipHorizontal(): void {

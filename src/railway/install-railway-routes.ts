@@ -244,14 +244,10 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     bindRuler();
     syncMenu();
   };
-  const onButton = (e: Event): void => {
-    e.preventDefault();
-    run('tool');
-  };
   on(ROUTE_REQUEST_EVENT, onRequest);
   on('tab-changed', onTab);
   on('tab-closed', onTab);
-  button?.addEventListener('click', onButton);
+  // the toolbar button runs `railwayRoute:tool` (ui/commands, toolbar.ts data-command)
   ensureSnap();
   bindRuler();
   syncMenu();
@@ -268,7 +264,6 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
       off(ROUTE_REQUEST_EVENT, onRequest);
       off('tab-changed', onTab);
       off('tab-closed', onTab);
-      button?.removeEventListener('click', onButton);
     },
   };
   return handle;
