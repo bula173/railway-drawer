@@ -327,6 +327,16 @@ test('left tab strip: one row, the tabs that do not fit are in the » menu', asy
   const tops = await tabs.evaluateAll((list) => [...new Set(list.map((b) => Math.round(b.getBoundingClientRect().top)))]);
   expect(tops).toHaveLength(1);
   const more = page.locator('.left-panel-tab-more');
+  // the default panel fits every common tab: inactive tabs as icons (tooltip + aria-label), no »
+  await expect(more).toBeHidden();
+  await expect(bar).toHaveClass(/rd-tabs-compact/);
+  await expect(page.locator('.left-panel-tab-btn[data-tab="railwayScript"]')).toBeVisible();
+  await expect(page.locator('.left-panel-tab-btn[data-tab="railwayScript"] .left-panel-tab-icon')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Railway Script', exact: true })).toBeVisible();
+  // a narrow panel puts the rest behind »
+  await page.evaluate(() => localStorage.setItem('rd.sidePanels', JSON.stringify({ left: { width: 180 } })));
+  await page.reload();
+  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(more).toBeVisible();
   await expect(tabs.first()).toHaveText('Shapes');
   const shown = await tabs.allTextContents();
@@ -334,7 +344,7 @@ test('left tab strip: one row, the tabs that do not fit are in the » menu', asy
   const items = page.locator('.left-panel-overflow-item');
   const overflow = await items.allTextContents();
   expect([...shown, ...overflow].map((t) => t.replace('×', ''))).toEqual(['Shapes', 'Templates', 'Layers', 'PlantUML', 'Railway Script']);
-  expect(overflow).toContain('Railway Script');
+  expect(overflow).toContain('PlantUML');
   // keyboard: first item focused, Escape returns to »
   await expect(items.first()).toBeFocused();
   await page.keyboard.press('Escape');
@@ -342,19 +352,19 @@ test('left tab strip: one row, the tabs that do not fit are in the » menu', asy
   await expect(more).toBeFocused();
   // choosing a tab puts it into the row (active)
   await more.click();
-  await page.locator('.left-panel-overflow-item[data-tab="railwayScript"]').click();
-  await expect(page.locator('.left-panel-tab-btn[data-tab="railwayScript"]')).toBeVisible();
-  await expect(page.locator('.left-panel-tab-btn[data-tab="railwayScript"]')).toHaveClass(/active/);
-  await expect(page.locator('[data-testid="railway-script-text"]')).toBeVisible();
+  await page.locator('.left-panel-overflow-item[data-tab="plantuml"]').click();
+  await expect(page.locator('.left-panel-tab-btn[data-tab="plantuml"]')).toBeVisible();
+  await expect(page.locator('.left-panel-tab-btn[data-tab="plantuml"]')).toHaveClass(/active/);
+  await expect(page.locator('#plantuml-panel')).toBeVisible();
   // PlantUML is closeable and comes back from Extras > PlantUML Editor
   await clickMenuItem(page, 'extras', 'plantumlEditor');
   const plantuml = page.locator('.left-panel-tab-btn[data-tab="plantuml"]');
   await expect(plantuml).toBeVisible();
   await plantuml.locator('.tab-close-btn').click();
   await expect(plantuml).toBeHidden();
-  await more.click();
+  // the remaining tabs fit (no »), PlantUML is in no menu
+  await expect(more).toBeHidden();
   await expect(page.locator('.left-panel-overflow-item[data-tab="plantuml"]')).toHaveCount(0);
-  await page.keyboard.press('Escape');
   await clickMenuItem(page, 'extras', 'plantumlEditor');
   await expect(plantuml).toBeVisible();
 

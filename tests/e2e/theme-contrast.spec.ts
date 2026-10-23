@@ -372,12 +372,20 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.check('left: Templates tab', '#leftpanel-container');
   await openLeftTab(page, 'layers');
   await a.check('left: Layers tab', '#leftpanel-container');
-  // The tab strip's » overflow menu and the toolbar's Align / distribute dropdown
+  // The compact tab strip (inactive tabs as icons) fits the default panel; a narrow panel (keyboard resize) puts
+  // the rest behind the » overflow menu. Then the toolbar's Align / distribute dropdown
+  await expect(page.locator('.left-panel-tabbar.rd-tabs-compact')).toBeVisible();
+  await a.check('left: compact tab strip', '.left-panel-tabbar');
+  const leftHandle = page.locator('#leftpanel-container > .panel-resize-handle');
+  await leftHandle.focus();
+  await page.keyboard.press('Shift+ArrowLeft');
   await page.locator('.left-panel-tab-more').click();
   await expect(page.locator('.left-panel-overflow-menu')).toBeVisible();
   await a.check('left: tab overflow (») menu', '#leftpanel-container');
   await a.shot('tab-overflow');
   await page.keyboard.press('Escape');
+  await leftHandle.focus();
+  await page.keyboard.press('Shift+ArrowRight');
   await page.locator('#btn-align').click();
   await expect(page.locator('#align-menu')).toBeVisible();
   await page.locator('#btn-align-middle').hover();

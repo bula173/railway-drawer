@@ -1,4 +1,16 @@
+import { createToolbarIcon } from './toolbar';
+
 export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml' | 'railwayScript';
+
+/** Icon of each tab (TOOLBAR_ICONS), shown instead of the label of inactive tabs in the compact strip. */
+const TAB_ICONS: Record<LeftPanelTab, string> = {
+  shapes: 'shapes',
+  ertms: 'train',
+  templates: 'templates',
+  layers: 'layers',
+  plantuml: 'uml',
+  railwayScript: 'script',
+};
 export type CloseableTab = 'plantuml' | 'ertms';
 
 const CLOSEABLE: readonly CloseableTab[] = ['plantuml', 'ertms'];
@@ -15,6 +27,9 @@ function isCloseable(tabId: LeftPanelTab): tabId is CloseableTab {
  * `button.tab-close-btn` ("Close <tab> tab", focusable; Delete on the tab closes it too) and in the »
  * menu a `.left-panel-overflow-close[data-tab]` item. Reopened from Extras > PlantUML Editor / View >
  * ERTMS Tab.
+ * Compact strip: when the labels do not fit, inactive tabs show only their icon (`.rd-tabs-compact` on the bar,
+ * tooltip + aria-label = the label), so the common tabs fit a 240 px panel (1440 px window); only what still
+ * does not fit goes into "»".
  */
 export class LeftPanelTabs {
   private container: HTMLElement;
@@ -108,10 +123,17 @@ export class LeftPanelTabs {
     btn.type = 'button';
     btn.className = 'left-panel-tab-label';
     btn.dataset.tab = tabId;
+    const icon = createToolbarIcon(TAB_ICONS[tabId], 16);
+    if (icon) {
+      icon.classList.add('left-panel-tab-icon');
+      btn.appendChild(icon);
+    }
     const labelSpan = document.createElement('span');
     labelSpan.textContent = label;
     btn.appendChild(labelSpan);
+    btn.setAttribute('aria-label', label);
     tab.appendChild(btn);
+    if (!tab.title) tab.title = label;
     this.tabLabels.set(tabId, label);
 
     if (isCloseable(tabId)) {
@@ -160,11 +182,18 @@ export class LeftPanelTabs {
     const shown = Array.from(this.tabButtons.entries()).filter(([id]) => !this.hiddenTabs.has(id as CloseableTab));
     for (const [, btn] of shown) btn.classList.remove('rd-tab-overflow');
     this.moreButton.hidden = true;
+    this.tabBar.classList.remove('rd-tabs-compact');
     const available = this.tabBar.clientWidth;
-    const widths = shown.map(([, btn]) => btn.getBoundingClientRect().width);
-    const total = widths.reduce((s, w) => s + w, 0);
+    const measure = (): number[] => shown.map(([, btn]) => btn.getBoundingClientRect().width);
+    let widths = measure();
+    const sum = (list: number[]): number => list.reduce((s, w) => s + w, 0);
     this.overflowTabs = [];
-    if (available <= 0 || total <= available + 0.5) {
+    if (available > 0 && sum(widths) > available + 0.5) {
+      // labels do not fit: inactive tabs as icons
+      this.tabBar.classList.add('rd-tabs-compact');
+      widths = measure();
+    }
+    if (available <= 0 || sum(widths) <= available + 0.5) {
       this.closeOverflowMenu(false);
       return;
     }
