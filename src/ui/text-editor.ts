@@ -1,7 +1,13 @@
-import { Graph, InternalEvent } from '@maxgraph/core';
+import { Graph, InternalEvent, styleUtils } from '@maxgraph/core';
+import { cellAtBackgroundPoint } from './canvas-interaction';
 import type { Cell, EventObject } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
 import { logger } from '../drawio/logger';
+import { railwayObjectOf, renameObjectId } from '../railway/rename-id';
+import { readObjectId } from '../railway/object-data';
+import { getKind } from '../railway/catalogue';
+import { getCellKind } from '../railway/object-data';
+import { globalNotificationManager } from './notification';
 
 /** Inline editor textarea carrying its document mousedown handler for later removal. */
 type EditingTextArea = HTMLTextAreaElement & { __clickOutsideHandler?: (evt: MouseEvent) => void };
@@ -20,6 +26,24 @@ export class TextEditorController {
     // Listen for double-click to start inline text editing
     this.graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: unknown, evt: EventObject) => {
       const cell: Cell | undefined = evt.getProperty('cell');
+      // Railway objects (rdKind: signal, track, section, points, balise, ...): the double-click edits the ID in
+      // place (references follow, rename-id.ts); Shift+double-click opens the Data panel
+      const mouse = evt.getProperty('event') as MouseEvent | undefined;
+      // a double-click in a gap of a transparent symbol group (the signal's centre) has no cell: the object
+      // whose bounds hold the point, like a press there (canvas-interaction.ts)
+      let hit = cell ?? null;
+      if (!hit && mouse) {
+        const pt = styleUtils.convertPoint(this.graph.container, mouse.clientX, mouse.clientY);
+        hit = cellAtBackgroundPoint(this.graph, pt.x, pt.y);
+      }
+      const object = railwayObjectOf(hit);
+      if (object) {
+        evt.consume();
+        this.graph.setSelectionCell(object);
+        if (mouse?.shiftKey) window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
+        else this.startIdEditing(object);
+        return;
+      }
       if (cell && cell.isVertex && cell.isVertex()) {
         logger.debug('TextEditor', 'Double-click detected on vertex:', cell.value);
         evt.consume(); // Prevent default behavior
@@ -139,6 +163,73 @@ export class TextEditorController {
     logger.debug('TextEditor', 'Inline text input created and focused at', { left, top, width, height });
   }
 
+  /**
+   * In-place editor of a railway object's ID: a one-line field over the object, prefilled with its rdId;
+   * Enter / a click outside commits (unique per kind, references renumbered, one undo step), Esc cancels. A
+   * refused ID keeps the field open with the reason (aria-invalid, title, notification).
+   */
+  startIdEditing(object: Cell): void {
+    this.stopEditing();
+    this.cancelIdEditing();
+    const state = this.graph.view.getState(object);
+    if (!state) return;
+    const container = this.graph.getContainer();
+    const rect = container.getBoundingClientRect();
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'rd-input rd-id-editor';
+    input.dataset.testid = 'rd-id-editor';
+    input.spellcheck = false;
+    input.value = readObjectId(object);
+    const kind = getKind(getCellKind(object));
+    input.setAttribute('aria-label', `${kind?.label ?? 'Object'} ID`);
+    input.placeholder = kind ? `${kind.idPrefix}1` : 'ID';
+    const width = Math.max(90, Math.min(state.width, 200));
+    const cx = rect.left + container.clientLeft + state.x + state.width / 2 - container.scrollLeft;
+    const cy = rect.top + container.clientTop + state.y + state.height / 2 - container.scrollTop;
+    input.style.cssText = `position: fixed; z-index: 10000; left: ${Math.round(cx - width / 2)}px; top: ${Math.round(cy - 14)}px; width: ${width}px; height: 28px; box-sizing: border-box; border: 2px solid var(--rd-focus); border-radius: 3px; padding: 2px 6px; font: 13px Arial, sans-serif; background: var(--rd-input-bg); color: var(--rd-input-text);`;
+    const commit = (): boolean => {
+      const result = renameObjectId(this.graph.getDataModel(), object, input.value);
+      if (!result.ok) {
+        input.setAttribute('aria-invalid', 'true');
+        input.title = result.error;
+        globalNotificationManager.error(result.error);
+        input.focus();
+        return false;
+      }
+      this.cancelIdEditing();
+      return true;
+    };
+    input.addEventListener('keydown', (e) => {
+      e.stopPropagation();
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        commit();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        this.cancelIdEditing();
+      }
+    });
+    input.addEventListener('input', () => input.removeAttribute('aria-invalid'));
+    const outside = (e: MouseEvent): void => {
+      if (e.target !== input && !commit()) e.preventDefault();
+    };
+    document.addEventListener('mousedown', outside, true);
+    this.idEditor = { input, outside };
+    document.body.appendChild(input);
+    input.focus();
+    input.select();
+  }
+
+  private idEditor: { input: HTMLInputElement; outside: (e: MouseEvent) => void } | null = null;
+
+  private cancelIdEditing(): void {
+    if (!this.idEditor) return;
+    document.removeEventListener('mousedown', this.idEditor.outside, true);
+    this.idEditor.input.remove();
+    this.idEditor = null;
+  }
+
   private stopEditing(): void {
     if (!this.currentEditingCell || !this.editingInput) {
       return;
@@ -174,6 +265,7 @@ export class TextEditorController {
    */
   destroy(): void {
     this.cancelEditing();
+    this.cancelIdEditing();
   }
 
   private cancelEditing(): void {

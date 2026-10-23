@@ -2389,3 +2389,16 @@ svg.mxGraph .mxHandle {
 .rd-ctx-radio[aria-checked="true"] {
   font-weight: 600;
 }
+
+/* Diagram labels are not text-selectable (a double-click edits the label / railway ID instead of selecting the
+   HTML label's words); the in-place editors are outside the SVG */
+.rd-graph-canvas svg,
+.rd-graph-canvas svg * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* In-place railway ID editor (text-editor.ts startIdEditing) */
+.rd-id-editor[aria-invalid='true'] {
+  border-color: var(--rd-danger-solid) !important;
+}
