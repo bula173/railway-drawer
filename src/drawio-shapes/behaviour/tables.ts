@@ -59,7 +59,7 @@ import {
 } from '../js/shapes-edges/table-graph';
 import { setTableColumnWidth, setTableRowHeight } from '../js/shapes-edges/table-layout';
 import { getDrawioLayoutManager } from '../js/shapes-edges/table-support';
-import { parseStyleString } from '../../services/drawio-xml';
+import { parseStyleString } from '../../format/drawio-xml';
 import { childVertices, isPart, markInstalled } from './common';
 import { installDrawioLayouts } from './layouts';
 
