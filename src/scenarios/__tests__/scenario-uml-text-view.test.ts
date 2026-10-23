@@ -3,6 +3,7 @@
  * UML & text side panel (Prev/Next switch all three, collapse remembered) and the HTML export, with
  * real tabs.
  */
+import { emit } from '../../core/event-bus';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import type { TabData } from '../../ui/tabs';
@@ -236,7 +237,7 @@ describe('scenario steps with UML and text', () => {
     });
     set.addStep(id, { name: 'Krok 2', xml: tab.saveLoadController.serializeToXml() });
     // File > Export Scenario (HTML)… (window event from MenuController); only one scenario: no chooser
-    window.dispatchEvent(new CustomEvent('scenario-export-request'));
+    emit('scenario-export-request');
     await wait(20);
     expect(saved).toHaveLength(1);
     expect(saved[0].name).toBe(scenarioExportFileName('Węzeł', 'Wjazd "A" <1>'));

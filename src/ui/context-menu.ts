@@ -563,7 +563,7 @@ export class ContextMenuController {
 
       case 'saveAsTemplate':
         // main-editor.ts: the selection (on a shape) or the whole diagram (on the empty canvas)
-        window.dispatchEvent(new CustomEvent('save-template-request'));
+        emit('save-template-request');
         break;
 
       case 'lock':

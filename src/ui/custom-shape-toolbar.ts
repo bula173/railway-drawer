@@ -7,6 +7,7 @@
  * be dragged onto the canvas just like built-in shapes.
  */
 
+import { emit, on } from '../core/event-bus';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
 import { confirmDialog } from './app-dialogs';
 
@@ -45,7 +46,7 @@ export class CustomShapeToolbar {
       // Wire up the + button
       customGroup.querySelector('.shape-group-action')?.addEventListener('click', (e) => {
         e.stopPropagation();
-        window.dispatchEvent(new CustomEvent('open-shape-designer'));
+        emit('open-shape-designer');
       });
     }
 
@@ -156,9 +157,7 @@ export class CustomShapeToolbar {
 
       editBtn?.addEventListener('click', () => {
         document.body.removeChild(menu);
-        window.dispatchEvent(
-          new CustomEvent('edit-custom-shape', { detail: { shapeId: shape.id } })
-        );
+        emit('edit-custom-shape', { shapeId: shape.id });
       });
 
       deleteBtn?.addEventListener('click', () => {
@@ -192,7 +191,7 @@ export class CustomShapeToolbar {
    * @brief Setup auto-refresh when custom shapes change
    */
   private setupAutoRefresh(): void {
-    window.addEventListener('custom-shapes-updated', () => {
+    on('custom-shapes-updated', () => {
       this.render();
     });
   }

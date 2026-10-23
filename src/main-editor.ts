@@ -24,7 +24,7 @@ import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
 import { installGlobalGraphPatches } from './ui/setup-graph';
-import { on } from './core/event-bus';
+import { emit, on } from './core/event-bus';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
@@ -654,7 +654,7 @@ const startCard = createStartCard({
       ensurePanelShown('left');
       leftPanelTabs.switchTab('railwayScript');
     }
-    else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
+    else if (action === 'shortcuts') emit('shortcuts-help-request');
   },
 });
 on('tab-changed', () => startCard.update());
@@ -681,7 +681,7 @@ const requestSaveAsTemplate = (): void => {
     onShow: () => leftPanelTabs.switchTab('templates'),
   });
 };
-window.addEventListener('save-template-request', requestSaveAsTemplate);
+on('save-template-request', requestSaveAsTemplate);
 createTemplatesPanel({
   container: document.getElementById('templates-panel')!,
   store: templateStore,
@@ -744,9 +744,9 @@ if (activeTabForShapes) {
   const customShapeToolbar = new CustomShapeToolbar('custom-shapes-container');
 
   // Wire up event listeners for opening shape designer
-  window.addEventListener('open-shape-designer', () => openShapeDesigner());
-  window.addEventListener('edit-custom-shape', (e) => {
-    openShapeDesigner((e as CustomEvent<{ shapeId?: string } | undefined>).detail?.shapeId);
+  on('open-shape-designer', () => openShapeDesigner());
+  on('edit-custom-shape', (detail) => {
+    openShapeDesigner(detail?.shapeId);
   });
 
   // Refresh custom shapes when tab changes

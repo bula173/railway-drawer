@@ -26,7 +26,7 @@ import type { ScenarioDocChoice, ScenarioDocDialogOptions, ScenarioDocFormat } f
 import type { PdfImage, ScenarioPdfDeps } from './scenario-pdf';
 
 /** `window` event of File > Export Scenario (HTML)… (MenuController). */
-export const SCENARIO_EXPORT_EVENT = 'scenario-export-request';
+export const SCENARIO_EXPORT_EVENT = 'scenario-export-request' as const;
 
 export interface ScenariosHandle {
   viewer: ScenarioViewer;
@@ -321,12 +321,12 @@ export function installScenarios(
       return null;
     }
   };
-  const onExportRequest = (evt: Event): void => {
-    const format = (evt as CustomEvent<{ format?: string } | null>).detail?.format;
+  const onExportRequest = (detail: { format?: string } | undefined): void => {
+    const format = detail?.format;
     if (format === 'pdf' || format === 'slides') void exportScenarioDoc(format);
     else void exportScenario();
   };
-  window.addEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
+  on(SCENARIO_EXPORT_EVENT, onExportRequest);
 
   const showPanel = installRightPanelSwitch((view) => {
     if (view === 'scenarios') panel.refresh();
@@ -364,7 +364,7 @@ export function installScenarios(
   const destroy = (): void => {
     off('tab-changed', onTabChanged);
     off('tab-closed', onTabClosed);
-    window.removeEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
+    off(SCENARIO_EXPORT_EVENT, onExportRequest);
     viewer.destroy();
     panel.destroy();
     if (installed === handle) installed = null;

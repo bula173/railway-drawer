@@ -379,18 +379,18 @@ export class MenuController {
 
       case 'share':
         // main-editor.ts opens the Share dialog (link with diagram, downloads, cloud providers)
-        window.dispatchEvent(new CustomEvent('share-request'));
+        emit('share-request');
         break;
 
       case 'exportScenarioHtml':
         // src/scenarios/install-scenarios.ts exports the scenario shown / the only one / the one picked
-        window.dispatchEvent(new CustomEvent('scenario-export-request'));
+        emit('scenario-export-request');
         break;
 
       case 'exportScenarioPdf':
       case 'exportScenarioSlides':
         // src/scenarios/install-scenarios.ts: options dialog, then PDF / HTML slideshow
-        window.dispatchEvent(new CustomEvent('scenario-export-request', { detail: { format: action === 'exportScenarioPdf' ? 'pdf' : 'slides' } }));
+        emit('scenario-export-request', { format: action === 'exportScenarioPdf' ? 'pdf' : 'slides' });
         break;
 
       case 'importRailml':
@@ -407,7 +407,7 @@ export class MenuController {
 
       case 'saveAsTemplate':
         // main-editor.ts asks for a name and stores the selection (or the whole diagram)
-        window.dispatchEvent(new CustomEvent('save-template-request'));
+        emit('save-template-request');
         break;
 
       case 'print':
@@ -550,7 +550,7 @@ export class MenuController {
         break;
 
       case 'designShapes':
-        window.dispatchEvent(new CustomEvent('open-shape-designer'));
+        emit('open-shape-designer');
         break;
 
       case 'editData':
@@ -564,7 +564,7 @@ export class MenuController {
 
       case 'shortcuts':
         // ShortcutsHelpController (main-editor.ts), also on F1
-        window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
+        emit('shortcuts-help-request');
         break;
 
       case 'about':

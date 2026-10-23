@@ -4,6 +4,7 @@
  *        themed modal (app-dialogs.ts). Opened by F1 and by the window event
  *        `shortcuts-help-request` (MenuController, data-action="shortcuts").
  */
+import { off, on } from '../core/event-bus';
 import { openAppModal, type AppModal } from './app-dialogs';
 import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
 import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
@@ -115,7 +116,7 @@ export class ShortcutsHelpController {
 
   constructor() {
     document.addEventListener('keydown', this.onKeyDown);
-    window.addEventListener('shortcuts-help-request', this.onRequest);
+    on('shortcuts-help-request', this.onRequest);
   }
 
   /** Opens the dialog (or focuses the open one). */
@@ -157,7 +158,7 @@ export class ShortcutsHelpController {
 
   destroy(): void {
     document.removeEventListener('keydown', this.onKeyDown);
-    window.removeEventListener('shortcuts-help-request', this.onRequest);
+    off('shortcuts-help-request', this.onRequest);
     this.modal?.close();
     this.modal = null;
   }

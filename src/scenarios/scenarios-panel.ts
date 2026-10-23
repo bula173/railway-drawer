@@ -9,6 +9,7 @@
  * current drawing (confirmed), duplicate, delete (confirmed), reorder (drag, or ↑/↓). Clicking a
  * step shows it read-only on the canvas (ScenarioViewer). Other dialogs are the template dialogs.
  */
+import { emit } from '../core/event-bus';
 import { promptTemplateDetails, confirmTemplateDialog } from '../ui/templates/template-dialogs';
 import type { TemplateDetails, TemplateDetailsOptions } from '../ui/templates/template-dialogs';
 import type { PaletteEntry } from '../ui/drawio-palette/contracts';
@@ -660,8 +661,8 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 /** Views of the right panel (one switch button each, `data-right-panel`). */
 export type RightPanelView = 'properties' | 'data' | 'checks' | 'scenarios' | 'ai';
 
-/** `window` event fired whenever the right panel shows a view (`detail: { view }`). */
-export const RIGHT_PANEL_EVENT = 'right-panel-view';
+/** Bus event (core/event-bus.ts) whenever the right panel shows a view (`{ view }`). */
+export const RIGHT_PANEL_EVENT = 'right-panel-view' as const;
 
 /**
  * The "Properties | Data | Checks | Scenarios" switch at the top of the right panel. Each button's
@@ -686,7 +687,7 @@ export function installRightPanelSwitch(onShow?: (view: RightPanelView) => void)
       if (panel) panel.hidden = !active;
     }
     onShow?.(view);
-    window.dispatchEvent(new CustomEvent(RIGHT_PANEL_EVENT, { detail: { view } }));
+    emit(RIGHT_PANEL_EVENT, { view });
   };
   buttons.forEach((btn, i) => {
     btn.addEventListener('click', () => select(viewOf(btn)));

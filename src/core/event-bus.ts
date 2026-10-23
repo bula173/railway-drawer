@@ -46,6 +46,8 @@ export interface AppEventMap {
   'save-template-request': undefined;
   'open-shape-designer': undefined;
   'edit-custom-shape': { shapeId: string };
+  /** Custom shapes changed elsewhere: the custom shape toolbar re-renders (nothing emits it at present). */
+  'custom-shapes-updated': undefined;
 
   // ---- state notifications
   /** The right panel shows another view (scenarios-panel.ts installRightPanelSwitch). */
@@ -82,7 +84,8 @@ export function on<K extends AppEventName>(type: K, listener: Listener<K>): () =
   let byListener = wrappers.get(type);
   if (!byListener) wrappers.set(type, (byListener = new Map()));
   if (!byListener.has(listener)) {
-    const wrapped = (evt: Event): void => listener((evt as CustomEvent<AppEventMap[K]>).detail);
+    // CustomEvent turns a missing detail into null: listeners get undefined, as typed
+    const wrapped = (evt: Event): void => listener(((evt as CustomEvent<AppEventMap[K]>).detail ?? undefined) as AppEventMap[K]);
     byListener.set(listener, wrapped);
     target.addEventListener(type, wrapped);
   }

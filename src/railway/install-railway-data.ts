@@ -262,9 +262,9 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
   bind();
   if (live) runChecks();
 
-  const onView = (evt: Event): void => {
+  const onView = (detail: { view: RightPanelView } | undefined): void => {
     bind();
-    currentView = (evt as CustomEvent<{ view: RightPanelView }>).detail?.view ?? 'properties';
+    currentView = detail?.view ?? 'properties';
     if (currentView === 'data') dataPanel.refresh();
     if (currentView === 'checks' && (!lastResult || lastGraph !== getGraph())) runChecks();
   };
@@ -286,7 +286,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
   const onExport = (id: string): void => {
     if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
   };
-  window.addEventListener(RIGHT_PANEL_EVENT, onView);
+  on(RIGHT_PANEL_EVENT, onView);
   on('tab-changed', onTabChanged);
   on('tab-closed', onTabChanged);
   on('railway-edit-data-request', onEditData);
@@ -304,7 +304,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
         bound.selection.removeListener(onSelectionChange);
         bound.model.removeListener(onModelChange);
       }
-      window.removeEventListener(RIGHT_PANEL_EVENT, onView);
+      off(RIGHT_PANEL_EVENT, onView);
       off('tab-changed', onTabChanged);
       off('tab-closed', onTabChanged);
       off('railway-edit-data-request', onEditData);

@@ -14,13 +14,14 @@
  * removed) before it is shown or exported.
  */
 
+import { emit } from '../core/event-bus';
 import { InvalidSvgError, sanitizeSvgMarkup as sanitizeSvg } from '../security/sanitize';
 import { NoCompressionStreamError, deflateRawBytes } from './deflate-stream';
 import { readItem, removeItem, writeItem } from '../core/safe-storage';
 import { STORAGE_KEYS } from '../core/storage-keys';
 
 export const PLANTUML_SERVER_KEY = STORAGE_KEYS.plantumlServer;
-export const PLANTUML_SERVER_CHANGED_EVENT = 'rd-plantuml-server-changed';
+export const PLANTUML_SERVER_CHANGED_EVENT = 'rd-plantuml-server-changed' as const;
 const ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
 
 export class PlantUmlServerError extends Error {
@@ -105,7 +106,7 @@ export function setPlantUmlServer(value: string): string {
   } catch {
     // storage blocked: the setting lasts until the page is reloaded
   }
-  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(PLANTUML_SERVER_CHANGED_EVENT, { detail: { url } }));
+  emit(PLANTUML_SERVER_CHANGED_EVENT, { url });
   return url;
 }
 

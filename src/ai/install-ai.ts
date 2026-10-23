@@ -5,6 +5,7 @@
  *        Anthropic SDK, the tool core and the bridge) the first time it is shown. Nothing AI-related
  *        is downloaded or sent before that.
  */
+import { on } from '../core/event-bus';
 import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { TabManager } from '../ui/tabs';
 import type { AiNotifier, AiPanel } from './ai-panel';
@@ -23,8 +24,8 @@ export function installAi(tabManager: TabManager, notify: AiNotifier): void {
       notify.error(`AI assistant: ${error instanceof Error ? error.message : String(error)}`);
     });
   };
-  window.addEventListener(RIGHT_PANEL_EVENT, (evt) => {
-    if ((evt as CustomEvent<{ view?: string }>).detail?.view === 'ai') show();
+  on(RIGHT_PANEL_EVENT, (detail) => {
+    if (detail?.view === 'ai') show();
   });
   if (!document.getElementById(AI_PANEL_ID)?.hidden) show();
 }

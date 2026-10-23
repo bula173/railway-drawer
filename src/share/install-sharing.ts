@@ -215,7 +215,7 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   document.getElementById('share-btn')?.addEventListener('click', () => {
     showShareDialog();
   });
-  window.addEventListener('share-request', () => {
+  on('share-request', () => {
     showShareDialog();
   });
 

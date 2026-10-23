@@ -4,6 +4,7 @@
  * the scenario key handler, pause on close), and the PDF / slides exports through installScenarios
  * (options dialog, panel buttons, menu event).
  */
+import { emit } from '../../core/event-bus';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import type { Cell } from '@maxgraph/core';
 import { TabManager } from '../../ui/tabs';
@@ -236,7 +237,7 @@ describe('scenario view: show changes, autoplay, PDF/slides export', () => {
     const { h, scenarioId, tab } = start();
     h.viewer.open(tab.id, scenarioId, 1);
     h.viewer.setShowChanges(true);
-    window.dispatchEvent(new CustomEvent('scenario-export-request', { detail: { format: 'pdf' } }));
+    emit('scenario-export-request', { format: 'pdf' });
     await vi.waitFor(() => expect(saved).toHaveLength(1), { timeout: 10_000 });
     expect(dialogCalls[0]).toMatchObject({ format: 'pdf', initialScenarioId: scenarioId, showChanges: true });
     expect(saved[0].name).toBe('Węzeł - Run.pdf');

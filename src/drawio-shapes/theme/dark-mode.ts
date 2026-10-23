@@ -16,6 +16,7 @@
  * - View > "Dark Mode" (`[data-action="toggleDarkMode"]`) toggles between light and dark.
  */
 
+import { emit } from '../../core/event-bus';
 import { setDrawioDarkMode } from '../engine/graph-compat';
 import { STORAGE_KEYS } from '../../core/storage-keys';
 import { getStorage } from '../../core/safe-storage';
@@ -27,7 +28,7 @@ export type Theme = 'light' | 'dark';
 export const THEME_STORAGE_KEY = STORAGE_KEYS.theme;
 
 /** Fired on `window` after the theme changed; detail: the resolved Theme. */
-export const THEME_CHANGE_EVENT = 'rd-theme-change';
+export const THEME_CHANGE_EVENT = 'rd-theme-change' as const;
 
 const DARK_QUERY = '(prefers-color-scheme: dark)';
 
@@ -85,7 +86,7 @@ export function applyTheme(theme: Theme, doc: Document = document): void {
   setDrawioDarkMode(theme === 'dark');
 
   if (changed && typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent<Theme>(THEME_CHANGE_EVENT, { detail: theme }));
+    emit(THEME_CHANGE_EVENT, theme);
   }
 }
 
