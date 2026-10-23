@@ -5,19 +5,24 @@
  *        listeners, a background tab never updates them.
  */
 import { PropertiesPanel } from './properties';
+import { LayersController } from './layers';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
+  readonly layers: LayersController;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
 
 export function createSessionViews(): SessionViews {
   const properties = new PropertiesPanel();
+  const layers = new LayersController();
   return {
     properties,
+    layers,
     destroy() {
       properties.destroy();
+      layers.destroy();
     },
   };
 }

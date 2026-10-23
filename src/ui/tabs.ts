@@ -24,7 +24,6 @@ import { GraphCommandService } from '../services/graph-command-service';
 
 import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
-import { LayersController } from './layers';
 
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
@@ -55,7 +54,6 @@ export interface TabData extends DiagramSession {
   canvasProperties: CanvasProperties;
   contextMenuController: ContextMenuController;
   interactiveUIController: InteractiveUIController;
-  layersController: LayersController;
   imageUploadController: ImageUploadController;
   pasteImageController: PasteImageController;
   alignmentController: AlignmentController;
@@ -264,7 +262,6 @@ export class TabManager {
       const canvasProperties = new CanvasProperties(graph);
       const contextMenuController = new ContextMenuController(graph);
       const interactiveUIController = new InteractiveUIController(graph);
-      const layersController = new LayersController(graph);
       const imageUploadController = new ImageUploadController(graph);
       const pasteImageController = new PasteImageController(graph);
       const alignmentController = new AlignmentController(graph);
@@ -290,7 +287,6 @@ export class TabManager {
         canvasProperties,
         contextMenuController,
         interactiveUIController,
-        layersController,
         imageUploadController,
         pasteImageController,
         alignmentController,
@@ -592,7 +588,6 @@ export class TabManager {
    */
   private refreshSharedPanels(tab: TabData): void {
     this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
-    tab.layersController.refresh();
     tab.statusBarController.syncZoom();
     tab.statusBarController.syncSelection();
     // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
@@ -684,7 +679,6 @@ export class TabManager {
         tab.canvasProperties,
         tab.contextMenuController,
         tab.interactiveUIController,
-        tab.layersController,
         tab.imageUploadController,
         tab.pasteImageController,
         tab.alignmentController,

@@ -73,6 +73,7 @@ import { installGroupBackgroundHit, installPressToMove, installRailwaySplitRules
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { installCanvasScroll, uninstallCanvasScroll } from './canvas-scroll';
 import { installMultiSelectionBox } from './multi-selection-box';
+import { installLayerDefaultParent } from './layers';
 import {
   installConnectionConstraints,
   installDrawioConnectionStart,
@@ -210,6 +211,8 @@ export const GRAPH_INSTALLERS: readonly GraphInstaller[] = [
   // ---- plugin patches (formerly in the PanController / HoverArrowsController constructors)
   { name: 'panning', profiles: EDITOR, install: installPanning },
   { name: 'hover-arrow-connection-hooks', profiles: EDITOR, install: installHoverArrowConnectionHooks },
+  // ---- per-graph state kept while the tab is in the background (formerly in its panel controllers)
+  { name: 'layer-default-parent', profiles: EDITOR, install: installLayerDefaultParent },
 ];
 
 /** The installer names of a profile, in order (tests, diagnostics). */

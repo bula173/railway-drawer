@@ -9,6 +9,11 @@
  *   (model.setVisible, undoable, saved as visible="0"), the padlock sets/removes `locked=1` on
  *   the layer cell's style (cell-lock.ts: cells on a locked layer cannot be selected or edited).
  * - Listed top-most first, like draw.io; an unnamed layer shows as "Background".
+ *
+ * One panel for the app (TabManager's session views): it lists the active session's layers
+ * (session.ts), re-rendered on its model changes and on a tab switch. The default-parent fallback
+ * (a deleted / unloaded current layer) is per graph, also for background tabs: installed by
+ * setupGraph ('layer-default-parent').
  */
 import { Cell } from '@maxgraph/core';
 import type { Graph } from '@maxgraph/core';
@@ -16,6 +21,8 @@ import { hasLockedStyle, setCellsLocked } from './cell-lock';
 import { confirmDialog } from './app-dialogs';
 import { setInlineIcon } from './toolbar';
 import { globalNotificationManager } from './notification';
+import { onModelChange } from '../core/graph-events';
+import { ActiveSessionBinding, type GraphSession } from './session';
 
 /** Questions and notes of the Layers panel (themed dialog / notification; replaceable in tests). */
 export interface LayersDialogs {
@@ -41,41 +48,61 @@ export interface Layer {
 
 const COLORS = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
 
+/** A default parent that left the model (layer deleted, file loaded) falls back to the first layer. */
+export function ensureDefaultParentInModel(graph: Graph): void {
+  const current = graph.defaultParent;
+  if (current && !(graph.getDataModel().getRoot()?.children ?? []).includes(current)) graph.setDefaultParent(null);
+}
+
+/** Keeps `graph`'s current layer in its model after every change (setupGraph 'layer-default-parent'). */
+export function installLayerDefaultParent(graph: Graph): () => void {
+  return onModelChange(graph, () => ensureDefaultParentInModel(graph));
+}
+
 export class LayersController {
-  private graph: Graph;
+  /** The bound session's graph (the active tab's). */
+  private graph!: Graph;
+  private bound = false;
   private layerListContainer: HTMLElement | null;
   private readonly modelListener = () => this.onModelChange();
   private readonly dialogs: LayersDialogs;
+  private readonly listenerAbort = new AbortController();
+  private readonly binding: ActiveSessionBinding<GraphSession>;
 
-  constructor(graph: Graph, dialogs: LayersDialogs = DEFAULT_DIALOGS) {
-    this.graph = graph;
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph, dialogs: LayersDialogs = DEFAULT_DIALOGS) {
     this.dialogs = dialogs;
     this.layerListContainer = document.getElementById('layers-list');
 
     this.setupLayerControls();
-    this.render();
-
-    this.graph.getDataModel().addListener('change', this.modelListener);
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        this.bound = true;
+        disposers.add(onModelChange(session.graph, this.modelListener));
+        // the shown tab's layers (also after a tab switch)
+        this.render();
+      },
+      () => {
+        this.bound = false;
+      },
+      graph ? { graph } : null
+    );
   }
 
   private setupLayerControls(): void {
-    const addLayerBtn = document.getElementById('btn-add-layer');
-    if (addLayerBtn) {
-      addLayerBtn.addEventListener('click', () => {
-        if (this.isActive()) this.addLayer();
-      });
-    }
-
-    const deleteLayerBtn = document.getElementById('btn-delete-layer');
-    if (deleteLayerBtn) {
-      deleteLayerBtn.addEventListener('click', () => {
-        if (this.isActive()) this.deleteCurrentLayer();
-      });
-    }
+    const signal = this.listenerAbort.signal;
+    document.getElementById('btn-add-layer')?.addEventListener('click', () => {
+      if (this.isActive()) this.addLayer();
+    }, { signal });
+    document.getElementById('btn-delete-layer')?.addEventListener('click', () => {
+      if (this.isActive()) this.deleteCurrentLayer();
+    }, { signal });
   }
 
-  /** Whether this controller's graph is the one shown (#layers-list is shared by all tabs). */
+  /** Whether the bound graph is the one shown (the scenario view hides it). */
   private isActive(): boolean {
+    if (!this.bound) return false;
     const container = this.graph.container;
     return !!container && container.isConnected && container.style.display !== 'none';
   }
@@ -104,10 +131,9 @@ export class LayersController {
     };
   }
 
-  /** A default parent that left the model (layer deleted, file loaded) falls back to the first layer. */
+  /** Re-renders after the shown graph's model changed (its current layer kept in the model first). */
   private onModelChange(): void {
-    const current = this.graph.defaultParent;
-    if (current && !this.layerCells().includes(current)) this.graph.setDefaultParent(null);
+    ensureDefaultParentInModel(this.graph);
     if (this.isActive()) this.render();
   }
 
@@ -205,7 +231,7 @@ export class LayersController {
   }
 
   private render(): void {
-    if (!this.layerListContainer) return;
+    if (!this.layerListContainer || !this.bound) return;
 
     this.layerListContainer.innerHTML = '';
     const layers = this.getLayers();
@@ -303,15 +329,6 @@ export class LayersController {
     });
   }
 
-  /**
-   * Re-renders the shared layers list for this controller's graph.
-   * #layers-list is shared by all tabs, so the TabManager calls this when the tab is shown;
-   * the rebuilt items act on this graph only.
-   */
-  refresh(): void {
-    this.render();
-  }
-
   /** The current layer (the graph's default parent). */
   getCurrentLayer(): Layer | null {
     const parent = this.graph.getDefaultParent();
@@ -325,9 +342,9 @@ export class LayersController {
     return this.layerCells().map((cell) => this.toLayer(cell));
   }
 
+  /** Unbinds the panel (TabManager's views are destroyed). */
   destroy(): void {
-    // #layers-list is shared with the other tabs: it is left alone here and re-rendered by the
-    // tab that is shown next, so closing a background tab does not empty the active tab's list.
-    this.graph.getDataModel().removeListener(this.modelListener);
+    this.listenerAbort.abort();
+    this.binding.dispose();
   }
 }
