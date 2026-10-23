@@ -1,3 +1,4 @@
+import { onSelectionChange } from '../core/graph-events';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import {
@@ -31,14 +32,20 @@ export class EdgePropertiesController {
   private graph: Graph;
   private currentEdge: Cell | null = null;
   private propertiesPanel: HTMLElement | null;
+  private readonly offSelection: () => void;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.propertiesPanel = document.getElementById('property-content');
 
-    this.graph.getSelectionModel().addListener('change', () => {
+    this.offSelection = onSelectionChange(this.graph, () => {
       this.update();
     });
+  }
+
+  /** Removes the graph listener (TabManager.destroyTab). */
+  destroy(): void {
+    this.offSelection();
   }
 
   private update(): void {

@@ -4,8 +4,8 @@
  *        zoom and scroll). Not part of the model: nothing is saved or undoable. Used for the
  *        route tool's path highlight and the km ruler.
  */
-import { InternalEvent } from '@maxgraph/core';
-import type { EventSource, Graph } from '@maxgraph/core';
+import { onViewTransform } from '../core/graph-events';
+import type { Graph } from '@maxgraph/core';
 import type { Pt } from './geometry';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -23,6 +23,7 @@ export function pointsAttr(line: Pt[]): string {
 export class GraphOverlay {
   readonly group: SVGGElement;
   private readonly onView = (): void => this.updateTransform();
+  private readonly offView: () => void;
 
   constructor(
     readonly graph: Graph,
@@ -31,10 +32,7 @@ export class GraphOverlay {
     this.group = svgEl('g', { class: className, 'pointer-events': 'none' });
     const pane = graph.view.getOverlayPane();
     pane?.appendChild(this.group);
-    const view = graph.view as unknown as EventSource;
-    view.addListener(InternalEvent.SCALE, this.onView);
-    view.addListener(InternalEvent.TRANSLATE, this.onView);
-    view.addListener(InternalEvent.SCALE_AND_TRANSLATE, this.onView);
+    this.offView = onViewTransform(graph, this.onView);
     this.updateTransform();
   }
 
@@ -55,8 +53,7 @@ export class GraphOverlay {
   }
 
   destroy(): void {
-    const view = this.graph.view as unknown as EventSource;
-    view.removeListener(this.onView);
+    this.offView();
     this.group.remove();
   }
 }

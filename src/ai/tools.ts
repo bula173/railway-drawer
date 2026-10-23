@@ -5,6 +5,7 @@
  *        made are reported, so the chat can undo a whole AI turn), a compact JSON result for the
  *        model and a one-line summary for the visible log. Nothing here talks to the network.
  */
+import { onModelEvent } from '../core/graph-events';
 import { InternalEvent } from '@maxgraph/core';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import type { PaletteEntry } from '../drawio-shapes/palettes';
@@ -516,13 +517,12 @@ export async function executeAiTool(target: AiTarget, name: string, input: unkno
   if (problems.length > 0) {
     return { ok: false, summary: `${def.title}: invalid input`, result: { error: `invalid input: ${describeProblems(problems)}` }, edits: [] };
   }
-  const model = target.graph.getDataModel() as unknown as EventSource;
   const edits: object[] = [];
   const onUndo = (_s: EventSource, evt: EventObject): void => {
     const edit = evt.getProperty('edit') as object | undefined;
     if (edit) edits.push(edit);
   };
-  if (name !== 'undo') model.addListener(InternalEvent.UNDO, onUndo);
+  const offUndo = name !== 'undo' ? onModelEvent(target.graph, InternalEvent.UNDO, onUndo) : () => undefined;
   try {
     const out = await EXECUTORS[def.name](target, value as Input);
     return { ...out, edits };
@@ -531,6 +531,6 @@ export async function executeAiTool(target: AiTarget, name: string, input: unkno
     if (!(error instanceof ToolError)) console.error('[AI] tool failed', name, error);
     return { ok: false, summary: `${def.title} failed: ${message}`, result: { error: message }, edits };
   } finally {
-    model.removeListener(onUndo);
+    offUndo();
   }
 }

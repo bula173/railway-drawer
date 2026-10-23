@@ -18,6 +18,7 @@
  * at the drop) disables it, like draw.io's Alt disables grid and guides. Arrow-key nudges never
  * move an object back onto the line (they only refresh km/track of an object already on it).
  */
+import { onModelChange, onModelEvent } from '../core/graph-events';
 import { CellHighlight, ChildChange, GeometryChange, InternalEvent, RootChange } from '@maxgraph/core';
 import type { Cell, EventObject, EventSource, Graph, GraphDataModel, InternalMouseEvent, SelectionHandler } from '@maxgraph/core';
 import type { KindId } from './catalogue';
@@ -320,10 +321,10 @@ export function installSnapToTrack(graph: Graph, enabled: () => boolean): () => 
       busy = false;
     }
   };
-  (model as unknown as EventSource).addListener(InternalEvent.BEFORE_UNDO, onBeforeUndo);
+  const offBeforeUndo = onModelEvent(graph, InternalEvent.BEFORE_UNDO, onBeforeUndo);
   const uninstallFeedback = installSnapFeedback(graph, enabled);
   return () => {
-    (model as unknown as EventSource).removeListener(onBeforeUndo);
+    offBeforeUndo();
     uninstallFeedback();
   };
 }
@@ -383,12 +384,10 @@ function installSnapFeedback(graph: Graph, enabled: () => boolean): () => void {
     mouseUp: (): void => { context = null; hide(); },
   };
   graph.addMouseListener(listener);
-  const model = graph.getDataModel() as unknown as EventSource;
-  const dropContext = (): void => { context = null; };
-  model.addListener(InternalEvent.CHANGE, dropContext);
+  const offModel = onModelChange(graph, (): void => { context = null; });
   return () => {
     graph.removeMouseListener(listener);
-    model.removeListener(dropContext);
+    offModel();
     hide();
     highlight?.destroy();
     highlight = null;

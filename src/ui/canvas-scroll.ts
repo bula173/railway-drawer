@@ -19,8 +19,9 @@
  * The grid (grid-background.ts) follows the zoom and the translate.
  * Nothing here runs when the container does not scroll (unit tests without the stylesheet).
  */
-import { Client, InternalEvent, Rectangle } from '@maxgraph/core';
-import type { EventSource, Graph } from '@maxgraph/core';
+import { onViewTransform } from '../core/graph-events';
+import { Client, Rectangle } from '@maxgraph/core';
+import type { Graph } from '@maxgraph/core';
 import { setGridView } from './grid-background';
 
 /** draw.io Graph.scrollTileSize (page view off): the extent grows in steps of this many graph units. */
@@ -343,18 +344,14 @@ export function installCanvasScroll(graph: Graph): void {
     state.cleanups.push(() => observer.disconnect());
   }
 
-  const viewSource = view as unknown as EventSource;
-  const onView = (): void => syncGrid(graph);
-  viewSource.addListener(InternalEvent.SCALE, onView);
-  viewSource.addListener(InternalEvent.TRANSLATE, onView);
-  viewSource.addListener(InternalEvent.SCALE_AND_TRANSLATE, onView);
+  const offView = onViewTransform(graph, () => syncGrid(graph));
   syncGrid(graph);
 
   state.cleanups.push(() => {
     c.removeEventListener('wheel', onWheel);
     for (const type of ['gesturestart', 'gesturechange', 'gestureend']) c.removeEventListener(type, onGesture);
     c.removeEventListener('scroll', onScroll);
-    viewSource.removeListener(onView);
+    offView();
     if (state.frame && typeof cancelAnimationFrame === 'function') cancelAnimationFrame(state.frame);
   });
 

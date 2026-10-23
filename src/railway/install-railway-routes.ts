@@ -8,9 +8,9 @@
  * Menu items carry `data-action="railwayRoute:<command>"`; MenuController dispatches the window
  * event `railway-route-request` with the command as detail (see RouteCommand).
  */
+import { onModelChange, onSelectionChange } from '../core/graph-events';
 import { off, on } from '../core/event-bus';
-import { InternalEvent } from '@maxgraph/core';
-import type { EventSource, Graph } from '@maxgraph/core';
+import type { Graph } from '@maxgraph/core';
 import './railway-routes.css';
 import type { TabManager } from '../ui/tabs';
 import { createGraphFeature } from '../core/graph-feature';
@@ -107,7 +107,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
   // ---- km ruler of the selected track
   let rulerGraph: Graph | null = null;
   let rulerOverlay: GraphOverlay | null = null;
-  let rulerBound: { selection: EventSource; model: EventSource } | null = null;
+  let rulerBound: (() => void) | null = null;
   const drawRuler = (): void => {
     if (!rulerOverlay || !rulerGraph) return;
     const selected = rulerGraph.getSelectionCells().filter((c) => getCellKind(c) === 'track' || getCellKind(c) === 'trackSection');
@@ -133,8 +133,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     rulerOverlay.set(children);
   };
   const unbindRuler = (): void => {
-    rulerBound?.selection.removeListener(drawRuler);
-    rulerBound?.model.removeListener(drawRuler);
+    rulerBound?.();
     rulerBound = null;
     rulerOverlay?.destroy();
     rulerOverlay = null;
@@ -150,11 +149,12 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     if (!graph) return;
     rulerGraph = graph;
     rulerOverlay = new GraphOverlay(graph, 'rd-km-ruler-overlay');
-    const selection = graph.getSelectionModel() as unknown as EventSource;
-    const model = graph.getDataModel() as unknown as EventSource;
-    selection.addListener(InternalEvent.CHANGE, drawRuler);
-    model.addListener(InternalEvent.CHANGE, drawRuler);
-    rulerBound = { selection, model };
+    const offSelection = onSelectionChange(graph, drawRuler);
+    const offModel = onModelChange(graph, drawRuler);
+    rulerBound = () => {
+      offSelection();
+      offModel();
+    };
     drawRuler();
   };
 

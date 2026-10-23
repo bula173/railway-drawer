@@ -13,8 +13,8 @@
  * Automated browsers (`navigator.webdriver`, e.g. Playwright) do not get it unless localStorage
  * `rd.startCard.force` is '1': the e2e suites click the canvas centre, where the card sits.
  */
-import { InternalEvent } from '@maxgraph/core';
-import type { EventSource, Graph } from '@maxgraph/core';
+import { onModelChange } from '../core/graph-events';
+import type { Graph } from '@maxgraph/core';
 import './start-card.css';
 import { readItem, writeItem } from '../core/safe-storage';
 import { STORAGE_KEYS } from '../core/storage-keys';
@@ -78,7 +78,7 @@ export function createStartCard(options: StartCardOptions): StartCard {
   /** Tabs the user closed the card on (it comes back for other new empty tabs). */
   const dismissedTabs = new Set<string>();
   let dragging = false;
-  let watched: { graph: Graph; listener: () => void } | null = null;
+  let watched: { graph: Graph; dispose: () => void } | null = null;
 
   const card = document.createElement('section');
   card.className = 'rd-start-card';
@@ -153,7 +153,7 @@ export function createStartCard(options: StartCardOptions): StartCard {
 
   function unwatch(): void {
     if (!watched) return;
-    (watched.graph.getDataModel() as unknown as EventSource).removeListener(watched.listener);
+    watched.dispose();
     watched = null;
   }
 
@@ -177,8 +177,7 @@ export function createStartCard(options: StartCardOptions): StartCard {
           hide();
         }
       };
-      (active.graph.getDataModel() as unknown as EventSource).addListener(InternalEvent.CHANGE, listener);
-      watched = { graph: active.graph, listener };
+      watched = { graph: active.graph, dispose: onModelChange(active.graph, listener) };
     }
     card.hidden = false;
     card.classList.toggle('rd-start-dragging', dragging);

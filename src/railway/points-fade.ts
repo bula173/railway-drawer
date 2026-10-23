@@ -12,8 +12,8 @@
  * diverging leg. Nothing is saved or undoable; it follows the model (rdPosition, moves, states)
  * and the zoom. Topology (topology.ts `PointsJunction`): toe / normal / reverse pieces of the node.
  */
-import { InternalEvent } from '@maxgraph/core';
-import type { Cell, EventSource, Graph, GraphDataModel } from '@maxgraph/core';
+import { onModelChange } from '../core/graph-events';
+import type { Cell, Graph, GraphDataModel } from '@maxgraph/core';
 import type { Pt } from './geometry';
 import { GraphOverlay, pointsAttr, svgEl } from './graph-overlay';
 import { allCells, getCellKind, readAttr } from './object-data';
@@ -125,11 +125,10 @@ export function installPointsFade(graph: Graph): () => void {
   const schedule = (): void => {
     timer ??= setTimeout(draw, 0);
   };
-  const model = graph.getDataModel() as unknown as EventSource;
-  model.addListener(InternalEvent.CHANGE, schedule);
+  const offModel = onModelChange(graph, schedule);
   draw();
   return () => {
-    model.removeListener(schedule);
+    offModel();
     if (timer) clearTimeout(timer);
     timer = null;
     overlay?.destroy();

@@ -68,6 +68,8 @@ export interface TabData {
   exportImageController: ExportImageController;
   plantumlEditorController: PlantUmlEditorController;
   textEditorController: TextEditorController;
+  /** Edge style fields of the properties panel (kept so destroyTab removes its graph listener). */
+  edgePropertiesController: EdgePropertiesController;
   /** draw.io connection arrows around the hovered shape (hover-arrows.ts) */
   hoverArrowsController: HoverArrowsController;
 }
@@ -252,7 +254,7 @@ export class TabManager {
       const textEditorController = new TextEditorController(graph);
 
       // Configure edge/connector properties
-      new EdgePropertiesController(graph);
+      const edgePropertiesController = new EdgePropertiesController(graph);
 
       // Initialize centralized command service
       const graphCommandService = new GraphCommandService(graph);
@@ -316,6 +318,7 @@ export class TabManager {
         exportImageController,
         plantumlEditorController,
         textEditorController,
+        edgePropertiesController,
       };
     });
     const { saveLoadController } = controllers;
@@ -743,6 +746,7 @@ export class TabManager {
         tab.exportImageController,
         tab.plantumlEditorController,
         tab.textEditorController,
+        tab.edgePropertiesController,
         tab.hoverArrowsController,
       ];
 

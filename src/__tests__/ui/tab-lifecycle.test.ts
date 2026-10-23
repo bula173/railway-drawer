@@ -13,6 +13,9 @@ import { ClipboardService } from '../../services/clipboard-service';
 import { globalNotificationManager } from '../../ui/notification';
 import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
+import { EdgePropertiesController } from '../../ui/edge-properties';
+import { StatusBarController } from '../../ui/statusbar';
+import { InteractiveUIController } from '../../ui/interactive-ui';
 
 const CACHE_KEY = 'railway-drawer-cache';
 
@@ -51,6 +54,23 @@ describe('TabManager tab lifecycle', () => {
   const storedTabs = () =>
     (JSON.parse(localStorage.getItem(CACHE_KEY)!) as { data: { tabs: { name: string; graphXml: string }[] } }).data
       .tabs;
+
+  it('closing a tab disposes the graph listeners of its controllers', () => {
+    const edge = vi.spyOn(EdgePropertiesController.prototype, 'destroy');
+    const status = vi.spyOn(StatusBarController.prototype, 'destroy');
+    const ui = vi.spyOn(InteractiveUIController.prototype, 'destroy');
+    tabManager = new TabManager('tabs-container', 'graph-container');
+    tabManager.createTab('One');
+    const second = tabManager.createTab('Two');
+    const selection = second.graph.getSelectionModel() as unknown as { eventListeners: unknown[] };
+    const before = selection.eventListeners.length;
+    tabManager.closeTab(second.id);
+    expect(edge).toHaveBeenCalledTimes(1);
+    expect(status).toHaveBeenCalledTimes(1);
+    expect(ui).toHaveBeenCalledTimes(1);
+    // EdgeProperties, StatusBar and InteractiveUI each listened to the selection model
+    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 3 * 2);
+  });
 
   it('keeps the cached XML of a tab that failed to restore and tells the user', () => {
     const warning = vi.spyOn(globalNotificationManager, 'warning');

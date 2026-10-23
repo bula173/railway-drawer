@@ -5,8 +5,8 @@
  *        with a count badge, Edit Data… (Extras menu, context menu), Railway Checks, and the
  *        CSV/xlsx reports (File > Export Railway Data, Checks panel).
  */
+import { onModelChange as onGraphModelChange, onSelectionChange as onGraphSelectionChange } from '../core/graph-events';
 import { off, on } from '../core/event-bus';
-import { InternalEvent } from '@maxgraph/core';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import './railway-data.css';
 import type { TabManager } from '../ui/tabs';
@@ -225,7 +225,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
   });
 
   // ---- active graph listeners
-  let bound: { graph: Graph; selection: EventSource; model: EventSource } | null = null;
+  let bound: { graph: Graph; dispose: () => void } | null = null;
   const onSelectionChange = (): void => {
     if (currentView === 'data') dataPanel.refresh();
   };
@@ -237,16 +237,19 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     const graph = getGraph();
     if (bound?.graph === graph) return;
     if (bound) {
-      bound.selection.removeListener(onSelectionChange);
-      bound.model.removeListener(onModelChange);
+      bound.dispose();
       bound = null;
     }
     if (graph) {
-      const selection = graph.getSelectionModel() as unknown as EventSource;
-      const model = graph.getDataModel() as unknown as EventSource;
-      selection.addListener(InternalEvent.CHANGE, onSelectionChange);
-      model.addListener(InternalEvent.CHANGE, onModelChange);
-      bound = { graph, selection, model };
+      const offSelection = onGraphSelectionChange(graph, onSelectionChange);
+      const offModel = onGraphModelChange(graph, onModelChange);
+      bound = {
+        graph,
+        dispose: () => {
+          offSelection();
+          offModel();
+        },
+      };
     }
   }
   const onTabChanged = (): void => {
@@ -300,10 +303,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     getIssues: () => lastResult?.issues ?? [],
     destroy() {
       if (timer) clearTimeout(timer);
-      if (bound) {
-        bound.selection.removeListener(onSelectionChange);
-        bound.model.removeListener(onModelChange);
-      }
+      bound?.dispose();
       off(RIGHT_PANEL_EVENT, onView);
       off('tab-changed', onTabChanged);
       off('tab-closed', onTabChanged);

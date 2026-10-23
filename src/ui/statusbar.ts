@@ -1,7 +1,9 @@
+import { Disposers, onGraphEvent, onSelectionChange } from '../core/graph-events';
 import { Graph, InternalEvent } from '@maxgraph/core';
 
 export class StatusBarController {
   private graph: Graph;
+  private readonly disposers = new Disposers();
 
   constructor(graph: Graph) {
     this.graph = graph;
@@ -12,13 +14,17 @@ export class StatusBarController {
     // Zoom in the status bar and the toolbar select, on every scale change: buttons, menu, keys,
     // wheel/pinch (zoomIn/zoomOut/setScale fire SCALE), fit and zoomTo (SCALE_AND_TRANSLATE)
     const onScale = () => this.syncZoom();
-    this.graph.view.addListener(InternalEvent.SCALE, onScale);
-    this.graph.view.addListener(InternalEvent.SCALE_AND_TRANSLATE, onScale);
+    this.disposers.add(onGraphEvent(this.graph.view, [InternalEvent.SCALE, InternalEvent.SCALE_AND_TRANSLATE], onScale));
     this.syncZoom();
 
     // Selection count (only while this tab is shown: a background tab's selection change, e.g. a
     // load or a script applied to it, must not overwrite the shown tab's count)
-    this.graph.getSelectionModel().addListener(InternalEvent.CHANGE, () => this.syncSelection());
+    this.disposers.add(onSelectionChange(this.graph, () => this.syncSelection()));
+  }
+
+  /** Removes the graph listeners (TabManager.destroyTab). */
+  destroy(): void {
+    this.disposers.dispose();
   }
 
   /** True while this tab's graph is the shown one (the status bar DOM is shared by all tabs). */

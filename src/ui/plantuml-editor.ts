@@ -4,6 +4,7 @@
  * @details Provides text input and rendering controls for PlantUML diagrams
  */
 
+import { onSelectionChange } from '../core/graph-events';
 import { Graph, Cell, CellStyle } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
 import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
@@ -17,6 +18,7 @@ import { logger } from '../drawio/logger';
 
 export class PlantUmlEditorController extends UIController {
   private graph: Graph;
+  private offSelection: (() => void) | null = null;
   private groupManager: PlantUmlGroupManager;
   private editorPanel: HTMLElement | null = null;
   private textarea: HTMLTextAreaElement | null = null;
@@ -89,7 +91,7 @@ Bob --> Alice: Hi
    * Setup selection listener to detect PlantUML group selection
    */
   private setupSelectionListener(): void {
-    this.graph.getSelectionModel().addListener('change', () => {
+    this.offSelection = onSelectionChange(this.graph, () => {
       const selected = this.graph.getSelectionCells();
 
       if (selected.length === 1) {
@@ -498,5 +500,6 @@ api --> db
   destroy(): void {
     // Only this tab's listeners go; #plantuml-panel is shared and stays for the other tabs
     this.removeTrackedListeners();
+    this.offSelection?.();
   }
 }

@@ -7,7 +7,7 @@
  * to the stencil engine's ensureStencilsForXml, and the graph is refreshed once a set was loaded
  * (named stencils such as mxgraph.basic.flash render as rectangles until then).
  */
-import { InternalEvent } from '@maxgraph/core';
+import { onModelChange } from '../core/graph-events';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import { ensureStencilsForXml } from '../drawio-shapes/engine';
 import { logger } from '../drawio/logger';
@@ -53,12 +53,10 @@ async function ensureAndRefresh(graph: Graph, styles: string[]): Promise<void> {
 
 /** Watches the graph's model and loads missing stencil sets. Returns an uninstall function. */
 export function installStencilAutoload(graph: Graph): () => void {
-  const model = graph.getDataModel() as unknown as EventSource;
   const listener = (_sender: EventSource, evt: EventObject): void => {
     const edit = evt.getProperty('edit') as { changes?: unknown[] } | undefined;
     const styles = stylesOfChanges(edit?.changes ?? []);
     if (styles.length > 0) void ensureAndRefresh(graph, styles);
   };
-  model.addListener(InternalEvent.CHANGE, listener);
-  return () => model.removeListener(listener);
+  return onModelChange(graph, listener);
 }

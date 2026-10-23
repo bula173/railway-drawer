@@ -1,3 +1,4 @@
+import { onSelectionChange } from '../core/graph-events';
 import { Graph } from '@maxgraph/core';
 import { globalNotificationManager } from './notification';
 import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
@@ -8,6 +9,7 @@ import { logger } from '../drawio/logger';
 
 export class InteractiveUIController {
   private graph: Graph;
+  private offSelection: (() => void) | null = null;
   private commandService: GraphCommandService;
   private selectedCells: Cell[] = [];
 
@@ -219,10 +221,15 @@ export class InteractiveUIController {
   }
 
   private setupGraphListeners(): void {
-    this.graph.getSelectionModel().addListener('change', () => {
+    this.offSelection = onSelectionChange(this.graph, () => {
       this.selectedCells = this.graph.getSelectionCells();
       this.updatePropertyPanel();
     });
+  }
+
+  /** Removes the graph listener (TabManager.destroyTab). */
+  destroy(): void {
+    this.offSelection?.();
   }
 
   private updateCellStyle(key: string, value: unknown): void {

@@ -12,6 +12,7 @@
  * - Loads (file, cache, scenario snapshot: root changes) just take the drawing as in sync.
  * The `applying` flag keeps an apply's own model events out of the sync (no feedback loop).
  */
+import { onModelChange, onModelEvent } from '../core/graph-events';
 import { InternalEvent, RootChange } from '@maxgraph/core';
 import type { EventObject, EventSource, Graph } from '@maxgraph/core';
 import type { KindId } from '../railway/catalogue';
@@ -88,10 +89,7 @@ export class ScriptSession {
     readonly store: RailwayScriptStore,
     private readonly options: { syncDelay?: number } = {}
   ) {
-    const model = this.graph.getDataModel() as unknown as EventSource;
-    const onChange = (_s: EventSource, evt: EventObject): void => this.onModelChange(evt);
-    model.addListener(InternalEvent.CHANGE, onChange);
-    this.unsubscribe.push(() => model.removeListener(onChange));
+    this.unsubscribe.push(onModelChange(this.graph, (_s: EventSource, evt: EventObject): void => this.onModelChange(evt)));
     this.unsubscribe.push(
       this.store.subscribe((_text, source: ScriptChangeSource) => {
         if (source === 'load') this.takeDrawingAsSynced();
@@ -166,19 +164,17 @@ export class ScriptSession {
       this.emit();
       return { ok: false, diagnostics: this.diagnostics };
     }
-    const model = this.graph.getDataModel() as unknown as EventSource;
     let edit: object | null = null;
-    const onUndo = (_s: EventSource, evt: EventObject): void => {
+    const offUndo = onModelEvent(this.graph, InternalEvent.UNDO, (_s: EventSource, evt: EventObject): void => {
       edit = evt.getProperty('edit') as object;
-    };
-    model.addListener(InternalEvent.UNDO, onUndo);
+    });
     this.applying = true;
     let counts: ApplyCounts;
     try {
       counts = applyGenerated(this.graph, built.model);
     } finally {
       this.applying = false;
-      model.removeListener(onUndo);
+      offUndo();
     }
     if (edit) this.applyRecords.set(edit, { before: this.lastSynced, after: text });
     this.lastSynced = text;
