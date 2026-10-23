@@ -18,8 +18,7 @@ import { RemoteSession } from './remote-session';
 import { openShareDialog } from './share-dialog';
 import type { ShareDialogHandle } from './share-dialog';
 import { buildShareMxfile } from './share-mxfile';
-import { buildScenarioPages, scenarioIndexAttributes } from '../scenarios/scenario-format';
-import { railwayScriptAttributes } from '../railway-script/script-store';
+import { buildScenarioPages } from '../scenarios/scenario-format';
 import { installShareLinkHandler, openDiagramFile } from './share-open';
 import type { ShareOpenHost } from './share-open';
 import { discardRetiredDrawioDocument, readRetiredDrawioDocument } from '../services/retired-drawio-mode';
@@ -166,8 +165,8 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
           modelXml: tab.document.getMainPageModelXml(),
           extraPages,
           pageId,
-          // Scenarios travel with the link: index on the page, one page per step after it
-          pageAttributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(tab.document.railwayScript.get()) },
+          // Sections travel with the link (scenario index, Railway Script, title block), one page per scenario step after it
+          pageAttributes: tab.document.getMainPageAttributes(),
           scenarioPages: buildScenarioPages(scenarios, new Set()),
         };
       })

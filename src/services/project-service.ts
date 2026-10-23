@@ -53,6 +53,11 @@ export class ProjectService {
     modifiedAt: new Date().toISOString(),
   };
 
+  /** The `<diagram>` attributes the sections write on the main page (scenario index, Railway Script, title block). */
+  mainPageAttributes(): Record<string, string> {
+    return Object.assign({}, ...projectSections().map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+  }
+
   /** The state of the registered section `key` (project-sections.ts). */
   section<T>(key: string): T {
     if (!this.sectionStates.has(key)) throw new Error(`Project section "${key}" is not registered`);
@@ -93,7 +98,7 @@ export class ProjectService {
     usedIds.add(this.pageId);
     const sections = projectSections();
     const sectionPages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
-    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+    const attributes = this.mainPageAttributes();
 
     let model: Element | null = null;
     const comments: string[] = [];

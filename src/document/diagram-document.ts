@@ -303,6 +303,11 @@ export class DiagramDocument {
     return this.project.getProjectName();
   }
 
+  /** The `<diagram>` attributes of the main page written by the sections (share links write them too). */
+  getMainPageAttributes(): Record<string, string> {
+    return this.project.mainPageAttributes();
+  }
+
   /** Renames the project (Save/Export file names, `<diagram name>`); the listeners are told. */
   setProjectName(name: string): void {
     this.project.setProjectName(name);
@@ -373,6 +378,8 @@ export class DiagramDocument {
   /** The drawing pages in file order. */
   listPages(): DrawingPage[] {
     if (!this.pageListCache) {
+      // page links (data:page/id,…) need the main page's id before the first save
+      if (!this.project.getPageId()) this.project.setPageId(generatePageId());
       const pages: DrawingPage[] = [{ index: 0, id: this.project.getPageId() ?? '', name: this.project.getProjectName(), shown: false }];
       this.project.getExtraPages().forEach((xml, i) => {
         const diagram = parseDiagram(xml);

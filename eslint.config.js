@@ -47,7 +47,7 @@ export default tsEslint.config(
   //            src/security, src/drawio (logger), src/config
   //   document the open diagram (DiagramDocument) and its model services: src/document, src/services
   //   features railway (the domain base: other features may use it), scenarios, railway-script,
-  //            railml, ai, share
+  //            railml, ai, share, print (its UI part src/print/ui is ui)
   //   ui       the shell: src/ui, src/boot (composition), src/debug, src/main*.ts
   {
     files: ['src/**/*.ts'],
@@ -85,7 +85,9 @@ export default tsEslint.config(
           pattern: ['src/core/**', 'src/format/**', 'src/drawio-shapes/**', 'src/shapes/**', 'src/security/**', 'src/drawio/**', 'src/config/**'],
         },
         { type: 'document', mode: 'full', pattern: ['src/document/**', 'src/services/**'] },
-        { type: 'feature', mode: 'full', pattern: 'src/(ai|railml|railway|railway-script|scenarios|share)/**', capture: ['family'] },
+        // print sheets: the feature in src/print, its dialogs / canvas overlay / exports (shell UI) in src/print/ui
+        { type: 'ui', mode: 'full', pattern: ['src/print/ui/**'] },
+        { type: 'feature', mode: 'full', pattern: 'src/(ai|print|railml|railway|railway-script|scenarios|share)/**', capture: ['family'] },
         { type: 'ui', mode: 'full', pattern: ['src/ui/**', 'src/boot/**', 'src/debug/**', 'src/main.ts', 'src/main-editor.ts'] },
       ],
     },
