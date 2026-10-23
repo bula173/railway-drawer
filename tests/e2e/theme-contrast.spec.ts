@@ -418,7 +418,7 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.locator('#scenarios-panel .rd-scn-new').click();
   await a.check('scenario name dialog', '.rd-tpl-modal');
   await fillTemplateDialog(page, 'Wjazd pociągu');
-  await page.locator('#scenarios-panel .rd-scn-add-step').click();
+  await page.locator('#scenarios-panel .rd-scn-add-step-details').click();
   const editor = page.locator('.rd-scn-editor');
   await expect(editor).toBeVisible();
   await editor.locator('input[name="template-name"]').fill('Krok 1');
@@ -688,7 +688,7 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await fillTemplateDialog(page, 'Przebieg');
   for (const name of ['Start', 'Move']) {
     if (name === 'Move') await inGraph(page, "graph.moveCells([graph.getDataModel().getCell('s2')], 0, 40);");
-    await panel.locator('.rd-scn-add-step').click();
+    await panel.locator('.rd-scn-add-step-details').click();
     const editor = page.locator('[data-testid="scenario-step-editor"]');
     await editor.locator('input[name="template-name"]').fill(name);
     await editor.locator('.rd-tpl-btn-primary').click();

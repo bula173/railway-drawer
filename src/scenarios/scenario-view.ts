@@ -483,6 +483,11 @@ export class ScenarioViewer {
     graph.gridEnabled = false;
     // no folding icons on a picture (maxGraph shows them on every group); own copy, the options object is shared
     graph.options = { ...graph.options, foldingEnabled: false };
+    // Each step is shown with setRoot: maxGraph's default reset the view to scale 1 / translate 0 on a root
+    // change, after mount() had copied the live zoom and translate, while the live scroll position was kept, so
+    // the drawing lay outside the visible area (the reported blank step view) whenever the live view was not
+    // at the origin
+    graph.resetViewOnRootChange = false;
     configureDiagramRendering(graph);
     installStencilAutoload(graph);
     this.graph = graph;

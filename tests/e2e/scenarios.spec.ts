@@ -89,7 +89,7 @@ test.describe('scenarios', () => {
     for (let i = 1; i <= 3; i++) {
       await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
       await waitForHexagons(page, i);
-      await panel.locator('.rd-scn-add-step').click();
+      await panel.locator('.rd-scn-add-step-details').click();
       await answer(page, `Krok ${i}`);
     }
     const stepNames = panel.locator('.rd-scn-step-name');
@@ -210,7 +210,7 @@ test.describe('scenarios', () => {
     await answer(page, 'S');
     await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await waitForHexagons(page, 1);
-    await panel.locator('.rd-scn-add-step').click();
+    await panel.locator('.rd-scn-add-step-details').click();
     await answer(page, 'one');
     await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
