@@ -48,7 +48,7 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, t
 tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, ux-batch3, move-connect, object-states, canvas-scroll,
 railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
@@ -226,6 +226,15 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   track = its track reference, one undo each); scenario "▶ Present" + "⋯" menu (items, Esc, Duplicate, 24 px targets);
   start card (forced via `rd.startCard.force`: Esc, drop passes and dismisses, ERTMS action focuses the palette, "Don't
   show again"); template topic names + hover preview; 390 px `rd-narrow` banner (dismissible) and canvas width > 300.
+- `tests/e2e/ux-batch3.spec.ts` (any port): double-click on a railway signal edits its ID in place (`rd-id-editor`; route
+  entry follows, one undo step, duplicate refused with `aria-invalid`, Esc), Shift+double-click opens Data, plain shapes keep
+  label editing, `user-select: none` on diagram labels; selection colours #0f8bd0 / #29b6f2 (never #00FF00); a template
+  opened as a new diagram is at 150–200 %, inserted into a drawing it is one `.rd-multi-selection-box` without handlers and a
+  drag moves every cell by the same delta; route tool guidance (2 `.rd-route-hl-target`, S4 `.rd-route-dim`, "no route in
+  the signal direction", Esc cancels the start then leaves); one-click "+ Add step" (name field focused, Enter / Esc), row
+  details (Markdown -> Text badge), Edit… dialog, step view of a zoomed + scrolled drawing shows the drawing; Arrange (Align,
+  Distribute, Group/Ungroup, Rotate 90°, Flip, Lock/Unlock) / Edit (Duplicate, Select Vertices/Edges/None + keys) menus; Esc
+  closes More shapes (selection kept), F1 not over Save As; no HTTP >= 400 on load; compact left tabs at 1440 px.
 - `tests/e2e/ux-batch.spec.ts` (any port): menubar keyboard pattern (roles, ↓/↑/Home/End, ←/→ between menus, Enter, Esc
   returns focus) and `<kbd>` shortcut hints, Help > Keyboard Shortcuts (keys + mouse), Help > About = `#status-version`
   (package.json), Properties states none / canvas / cell incl. a transparent group selected by a click in its gap and the
@@ -241,8 +250,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   aria-label, tooltip starting with it and >= 24 px, removed buttons and freehand tools gone, 6 groups, grid toggle =
   View > Grid, Align dropdown keyboard + Align top), side panels (toolbar / Ctrl+Shift+P / Ctrl+Shift+K / View menu, kept
   after reload, 8 px resize handle with hover line, drag + keyboard resize remembered, `body.rd-narrow` hides both and a
-  toggle opens one), left tab strip (one row, » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable
-  and reopened from Extras, a wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
+  toggle opens one), left tab strip (one row; at 1440 px all tabs fit as the compact strip; a 180 px panel puts the rest
+  behind the » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable and reopened from Extras, a
+  wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
   `revealMenuItem`, `openLeftTab` (row or » menu), `leftTabLabels`.
 - `tests/e2e/access-identity.spec.ts` (any port): top-bar Cloudflare Access user (`src/ui/access-identity.ts`; dev-only
   localStorage `rd.accessProbe` = '1' makes the localhost app ask): `/cdn-cgi/access/get-identity` routed to JSON ->
@@ -418,7 +428,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   accent line on hover/focus/drag), arrow keys 16 px (Shift 64). Widths (180-520) and collapsed state in localStorage
   `rd.sidePanels`. Narrow screens: `body.rd-narrow` (narrow-screen.ts, below 900 px; rule in narrow-screen.css) hides both panels;
   a toggle then opens one for the session (`.rd-panel-open-narrow`), the stored state is untouched.
-- Left tab strip (`src/ui/left-panel-tabs.ts`): one row; tabs that do not fit (the active one always stays) get
+- Left tab strip (`src/ui/left-panel-tabs.ts`): one row; when the labels do not fit, the bar gets `.rd-tabs-compact` and
+  inactive tabs show only their icon (`TAB_ICONS` -> `TOOLBAR_ICONS` shapes/templates/layers/uml/script/train; tooltip and
+  aria-label = the label), so all tabs fit the default 240 px panel; tabs that still do not fit (the active one always stays) get
   `.rd-tab-overflow` and are listed in the "»" menu (`.left-panel-tab-more` -> `.left-panel-overflow-menu` role=menu,
   `.left-panel-overflow-item[data-tab]`, arrows/Esc), relaid on resize / switch / close. Every tab button has `data-tab`.
   Each tab is a `.left-panel-tab-btn[data-tab]` wrapper (no button in a button) with its `button.left-panel-tab-label`
@@ -542,7 +554,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   draw.io's shape picker on plain click / blank drop, containers as clone parents, Ctrl+Shift+drag port constraint,
   touch. Tests: `src/__tests__/ui/hover-arrows.test.ts`, `tests/e2e/hover-arrows.spec.ts`.
 - ERTMS palette display (`src/ui/ertms-display.ts`, wraps `ertmsPaletteSource` in main-editor.ts): titles trimmed and
-  "SIgnal" -> "Signal" at display time only (ertms.xml stays byte-identical), EN+PL railway search tags by kind / title
+  "SIgnal" -> "Signal", "Point Left/Right" -> "Points Left/Right" (`kindForLibraryTitle` takes both), the dashed one of the
+  two "Line" entries -> "Dashed Line" at display time only (ertms.xml stays byte-identical), EN+PL railway search tags by kind / title
   word (`RAILWAY_SEARCH_TAGS`: signal semafor sygnalizator, balise balisa, points switch turnout zwrotnica, axle counter
   licznik osi, buffer stop kozioł, track tor, level crossing przejazd, LEU, RBC, train pociąg); UI text says "points"
   (catalogue label "Points"). ERTMS is the FIRST section of the Shapes tab (`palettes: [ertms, ...shapesTabPalettes()]`,
@@ -572,6 +585,26 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the symbols are original work of this repository (no proprietary symbol files copied); the Polish/ETCS pictograms
   are conventional schematic depictions, not copies of PKP PLK / ERA drawings.** Tests:
   `src/railway/__tests__/railway-libraries.test.ts`, `tests/e2e/railway-shapes.spec.ts`, dark-shapes thumbnails.
+- Palette tile captions (`src/ui/palette-captions.ts`, display only): `PaletteEntry.caption` (default the title) keeps the
+  distinguishing part of long titles in the two-line captions of the ERTMS and railway sections ("1:9 R toe L", "Tarcza Tm
+  prawa", "3-komorowy prawy"); the title stays the tooltip / search text. The generated track-layout turnouts are
+  "Points 1:<n> Left|Right (toe left|right)" and the PKP PLK tarcze "… prawa / lewa" (feminine).
+- Editor commands (UX batch 3): double-click on a railway object (`railwayObjectOf`: the cell or its nearest ancestor
+  with rdKind; a double-click in a symbol group's gap resolves by `cellAtBackgroundPoint`) opens the in-place ID field
+  (`TextEditorController.startIdEditing`) -> `src/railway/rename-id.ts` `renameObjectId` (unique per kind, no spaces /
+  commas, ref/refList fields + a route's points text follow, a literal label equal to the old ID follows; one undo step);
+  Shift+double-click = `railway-edit-data-request`; plain shapes keep label editing; `.rd-graph-canvas svg` is
+  `user-select: none`. Selection colour = `--rd-selection` (handle-colors.ts `SELECTION_COLOR` #0f8bd0 / #29b6f2, round
+  sizers with a white rim, same hit bounds). More than `MULTI_SELECTION_BOX_MIN` (10) selected cells: no per-cell handlers,
+  one dashed box (`src/ui/multi-selection-box.ts`, installed per tab). Railway drawings opened into an empty tab (template
+  Open as new diagram / click insert into an empty tab, railML import, Railway Script applied into an empty tab) zoom to the
+  fit scale clamped to 150–200 % (`src/ui/railway-zoom.ts`; fit < 75 % = plain fit), new tabs stay 100 %; no separate
+  "Zoom to fit symbols" item (View > Fit exists). Edit menu: Duplicate (`duplicateCells`, also Ctrl/Cmd+D and the context
+  menu), Select Vertices / Edges / None (Ctrl/Cmd+Shift+I / E / A, `src/ui/arrange-commands.ts`); Arrange: Align ▸, Distribute
+  ▸, Group/Ungroup (`groupSelection`), Rotate 90°, Flip H/V, Lock/Unlock (`toggleLock`). Esc closes the More shapes dialog,
+  the image upload and the shape designer; F1 does not open over another dialog (`otherDialogOpen`). maxGraph's folding
+  defaults are draw.io's data: SVG icons (`installDefaultFoldingImages`, no `expanded.gif` 404); picture graphs (thumbnails,
+  scenario view) have folding off.
 - Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
   unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
   of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry
@@ -940,7 +973,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   geometry/length from the drawing (path with the stored sections). Route edges are selectable -> Data panel edits them.
 - **Route tool** (`route-tool.ts` `RouteTool`): toolbar `#btn-route-tool` / Railway > Route Tool; while active a
   capture-phase listener on `#graph-container` swallows pointer events (no selection/moves), hit test `signalAt`
-  (bounds + 6, else nearest centre within 25). Floating panel `.rd-route-tool` (status, path radios
+  (bounds + 6, else nearest centre within 25). After the start signal: the signals with a path in its direction are
+  outlined (`.rd-route-hl-target`), the others dimmed (`.rd-route-dim`), the status names them or says "no route in the
+  signal direction" (`.rd-route-none`); Esc cancels the start signal, a second Esc leaves. Floating panel `.rd-route-tool` (status, path radios
   `.rd-route-path`, ID input prefilled `R<n>`, "Create route"), highlight in `graph-overlay.ts` `GraphOverlay` (SVG
   group in the view's overlay pane, transform = scale/translate, not in the model). Esc/✕ leaves; tab switch leaves.
 - **Tables** (`route-tables-dialog.ts`): Railway > Route Table… / Interlocking Table… -> `.rd-route-dialog` with tabs
@@ -1129,7 +1164,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - **Side panel** of the view (`aside.rd-scn-side`, right of the canvas): UML on top, Markdown below, re-rendered only when
   the step's `uml`/`text` changed (stale async UML results dropped); Prev/Next/keys switch drawing + UML + text together;
   collapse toggle `.rd-scn-side-toggle`, state in localStorage `rd.scenario.sidePanel` (`collapsed`|`open`).
-- **Step editor** (`step-editor.ts` `openStepEditor`, used by "+ Add step" and ✎): `.rd-tpl-modal.rd-scn-editor` with
+- **One-click step** (scenarios-panel.ts): "+ Add step" captures the drawing at once as "Step n" with its name field focused
+  in the row (`scenario-step-name-input`; Enter/blur keeps, Esc keeps "Step n"; double-click a name to rename); the row's ▸
+  (`.rd-scn-step-details-toggle`) opens optional description / PlantUML / Markdown (`scenario-step-details`, saved on
+  change); hint "Set up the drawing and the object states first…"; "Add with details…" (`.rd-scn-add-step-details`) is the
+  dialog flow (e2e specs that fill the dialog use it). The view graph keeps its view on setRoot (`resetViewOnRootChange =
+  false`): before, a step of a zoomed / scrolled drawing was shown blank.
+- **Step editor** (`step-editor.ts` `openStepEditor`, used by "Add with details…" and Edit…): `.rd-tpl-modal.rd-scn-editor` with
   `template-name`/`template-description` inputs (same as the template dialogs, so old tests/flows work), drawing fieldset
   (add: current drawing captured; edit: radio keep / replace with current drawing), PlantUML textarea `step-uml` + preview
   `.rd-scn-uml-preview`, Markdown textarea `step-text` + preview `.rd-scn-md-preview` (debounced 300 ms), "Server…" row for
@@ -1244,6 +1285,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `scenariosChanged` flushes the tab cache, `showScenario`/`exportScenario` via `installedScenarios()` (install-scenarios
   `exportScenarioFile`: no dialog). Headless MCP: scenarios from/to the step pages. Pure modules (no DOM at import): tool-defs,
   schema-check, system-prompt, bridge/protocol, bridge/relay, mcp/* — keep them so (the Worker bundles them).
+- Panel UX: the empty chat shows "Try:" example chips (`ai-example`, `AI_EXAMPLE_PROMPTS`) that fill the message box; the
+  key privacy note is behind the "About your key" disclosure (`ai-about-key`); opening the panel focuses the message box,
+  never the key field.
 - Chat: right panel view `ai` (`index.html` `[data-right-panel="ai"]` -> `#ai-panel`; `install-ai.ts` in the main chunk
   lazy-loads `ai-panel.ts` with `@anthropic-ai/sdk`). `chat/chat-loop.ts` `ChatSession`: manual streaming loop on
   `client.beta.messages.stream` (user's key, `dangerouslyAllowBrowser`), adaptive thinking (summarized), effort, top-level
