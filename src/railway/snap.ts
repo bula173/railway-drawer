@@ -133,10 +133,21 @@ export function computeSnap(box: Box, kind: KindId, direction: string, targets: 
  * Snap of `box` as shown during a drag (the same rule as the drop), or null. Used by the track
  * highlight while dragging (snap-feedback.ts).
  */
-export function previewSnap(model: GraphDataModel, moved: Array<{ cell: Cell; box: Box }>, maxGap: number): SnapResult | null {
+export interface SnapContext {
+  byCell: Map<Cell, RailObject>;
+  targets: SnapTarget[];
+}
+
+/** The railway objects and snap targets of `model` (collected once per drag by the feedback). */
+export function snapContext(model: GraphDataModel): SnapContext {
   const objects = collectObjects(model);
-  const byCell = new Map(objects.map((o) => [o.cell, o]));
-  const targets = snapTargets(objects).filter((t) => !moved.some((m) => m.cell === t.o.cell));
+  return { byCell: new Map(objects.map((o) => [o.cell, o])), targets: snapTargets(objects) };
+}
+
+export function previewSnap(model: GraphDataModel, moved: Array<{ cell: Cell; box: Box }>, maxGap: number,
+  context: SnapContext = snapContext(model)): SnapResult | null {
+  const { byCell } = context;
+  const targets = context.targets.filter((t) => !moved.some((m) => m.cell === t.o.cell));
   if (targets.length === 0) return null;
   for (const { cell, box } of moved) {
     const o = byCell.get(cell);
@@ -172,12 +183,19 @@ export interface SnapOptions {
   maxGap?: number;
   /** Only refresh track/km of objects already on a line; never move anything (arrow-key nudges). */
   dataOnly?: boolean;
+  /**
+   * Tracks that are not snap targets: those moved/added in the same edit as the objects (a
+   * template, a whole selection dragged together keeps its layout instead of pulling its signals
+   * onto their tracks).
+   */
+  excludeTargets?: ReadonlySet<Cell>;
 }
 
 export function snapCells(model: GraphDataModel, cells: Cell[], options: SnapOptions = {}): Cell[] {
   const objects = collectObjects(model);
   const byCell = new Map(objects.map((o) => [o.cell, o]));
-  const targets = snapTargets(objects);
+  const excluded = options.excludeTargets;
+  const targets = excluded ? snapTargets(objects).filter((t) => !excluded.has(t.o.cell)) : snapTargets(objects);
   if (targets.length === 0) return [];
   const changed: Cell[] = [];
   model.beginUpdate();
@@ -300,7 +318,7 @@ export function installSnapToTrack(graph: Graph, enabled: () => boolean): () => 
     if (!cells || cells.length === 0) return;
     busy = true;
     try {
-      snapCells(model, cells, { maxGap: snapGapAtScale(graph.view?.scale ?? 1), dataOnly: dataOnly > 0 });
+      snapCells(model, cells, { maxGap: snapGapAtScale(graph.view?.scale ?? 1), dataOnly: dataOnly > 0, excludeTargets: new Set(cells) });
     } finally {
       busy = false;
     }
@@ -324,6 +342,7 @@ export const SNAP_HIGHLIGHT_COLOR = '#00a8ff';
 function installSnapFeedback(graph: Graph, enabled: () => boolean): () => void {
   let highlight: CellHighlight | null = null;
   let shownFor: Cell | null = null;
+  let context: SnapContext | null = null;
   const hide = (): void => {
     if (highlight) highlight.hide();
     shownFor = null;
@@ -354,18 +373,25 @@ function installSnapFeedback(graph: Graph, enabled: () => boolean): () => void {
         moved.push({ cell, box: { x: b.x + handler.currentDx / scale, y: b.y + handler.currentDy / scale, width: b.width, height: b.height } });
       }
     }
-    const snap = moved.length > 0 ? previewSnap(graph.getDataModel(), moved, snapGapAtScale(scale)) : null;
+    // the objects and targets are collected once per drag (the model does not change while the
+    // selection is dragged; a model change drops them), not on every mouse move
+    if (moved.length > 0) context ??= snapContext(graph.getDataModel());
+    const snap = moved.length > 0 && context ? previewSnap(graph.getDataModel(), moved, snapGapAtScale(scale), context) : null;
     if (snap) show(snap.target.cell, snap.target.id || String(snap.target.cell.id));
     else hide();
   };
   const listener = {
-    mouseDown: (): void => hide(),
+    mouseDown: (): void => { context = null; hide(); },
     mouseMove: (_sender: EventSource, me: InternalMouseEvent): void => update(me),
-    mouseUp: (): void => hide(),
+    mouseUp: (): void => { context = null; hide(); },
   };
   graph.addMouseListener(listener);
+  const model = graph.getDataModel() as unknown as EventSource;
+  const dropContext = (): void => { context = null; };
+  model.addListener(InternalEvent.CHANGE, dropContext);
   return () => {
     graph.removeMouseListener(listener);
+    model.removeListener(dropContext);
     hide();
     highlight?.destroy();
     highlight = null;
