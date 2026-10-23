@@ -9,7 +9,6 @@ export class GridSnapController {
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupGridSnap();
-    this.setupToggleButton();
   }
 
   private setupGridSnap(): void {
@@ -17,14 +16,6 @@ export class GridSnapController {
     this.graph.gridSize = this.gridSize;
     // snapLarge is not declared by maxGraph's Graph typings; set as an ad-hoc flag as before
     (this.graph as Graph & { snapLarge?: boolean }).snapLarge = true;
-  }
-
-  private setupToggleButton(): void {
-    const toggleBtn = document.getElementById('btn-grid-snap');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => this.toggleSnap());
-      this.updateButtonState(toggleBtn);
-    }
   }
 
   toggleSnap(): void {
@@ -36,21 +27,6 @@ export class GridSnapController {
     } else {
       this.graph.gridSize = 1; // Set to 1 to effectively disable snapping
       logger.debug('GridSnap', 'Grid snap disabled');
-    }
-
-    const toggleBtn = document.getElementById('btn-grid-snap');
-    if (toggleBtn) {
-      this.updateButtonState(toggleBtn);
-    }
-  }
-
-  private updateButtonState(btn: HTMLElement): void {
-    if (this.snapEnabled) {
-      btn.classList.add('active');
-      btn.title = 'Grid Snap: ON (Click to disable)';
-    } else {
-      btn.classList.remove('active');
-      btn.title = 'Grid Snap: OFF (Click to enable)';
     }
   }
 

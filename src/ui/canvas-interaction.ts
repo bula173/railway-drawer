@@ -385,3 +385,16 @@ export function installPressToMove(graph: Graph): void {
     mouseUp: () => undefined,
   });
 }
+
+/**
+ * maxGraph's PopupMenuHandler (no menu of its own here) also selected the cell under the mouse-up,
+ * or cleared the selection when that was a gap (a group's transparent area, ERTMS symbols): the
+ * selection changed after Lock & co. The context menu decides what a right-click selects.
+ */
+export function disableSelectOnPopup(graph: Graph): void {
+  const popup = graph.getPlugin('PopupMenuHandler') as { selectOnPopup?: boolean; clearSelectionOnBackground?: boolean } | undefined;
+  if (popup) {
+    popup.selectOnPopup = false;
+    popup.clearSelectionOnBackground = false;
+  }
+}

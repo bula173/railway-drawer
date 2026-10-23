@@ -11,6 +11,9 @@ import { EdgePropertiesController } from './edge-properties';
 import { CanvasProperties } from './canvas-properties';
 import { InteractiveUIController } from './interactive-ui';
 import { MenuStateView } from './menu-state';
+import { ContextMenuController } from './context-menu';
+import { PlantUmlEditorController } from './plantuml-editor';
+import { bindCommandButtons } from './toolbar';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
@@ -22,6 +25,9 @@ export interface SessionViews {
   readonly propertyFields: InteractiveUIController;
   /** Undo / Redo and grid state of the menus and toolbar. */
   readonly menuState: MenuStateView;
+  readonly contextMenu: ContextMenuController;
+  /** The PlantUML tab of the left panel. */
+  readonly plantumlEditor: PlantUmlEditorController;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
@@ -35,6 +41,11 @@ export function createSessionViews(): SessionViews {
   const canvasProperties = new CanvasProperties();
   const propertyFields = new InteractiveUIController();
   const menuState = new MenuStateView();
+  const contextMenu = new ContextMenuController();
+  const plantumlEditor = new PlantUmlEditorController();
+  // Properties > Arrange buttons that run commands (Group / Ungroup)
+  const commandButtons = new AbortController();
+  bindCommandButtons(document.getElementById('property-content') ?? document.createElement('div'), commandButtons.signal);
   return {
     properties,
     layers,
@@ -43,6 +54,8 @@ export function createSessionViews(): SessionViews {
     canvasProperties,
     propertyFields,
     menuState,
+    contextMenu,
+    plantumlEditor,
     destroy() {
       properties.destroy();
       layers.destroy();
@@ -51,6 +64,9 @@ export function createSessionViews(): SessionViews {
       canvasProperties.destroy();
       propertyFields.destroy();
       menuState.destroy();
+      contextMenu.destroy();
+      plantumlEditor.destroy();
+      commandButtons.abort();
     },
   };
 }

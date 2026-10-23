@@ -12,6 +12,7 @@ import { isPanelShown, togglePanel } from '../side-panels';
 import { isConnectionArrowsEnabled, toggleConnectionArrows } from '../hover-arrows';
 import { appContext } from '../app-context';
 import { closeAllMenus } from '../menu';
+import { hideContextMenu } from '../context-menu';
 import { globalNotificationManager } from '../notification';
 import { insertQuickShape } from '../interactive-ui';
 import { logger } from '../../drawio/logger';
@@ -197,8 +198,8 @@ export const viewCommands: readonly Command[] = [
     keys: [{ phase: 'bubble', guard: 'none', preventDefault: false, match: (e) => e.key === 'Escape' }],
     help: [{ section: 'Menus', order: 40, description: 'Close the menu', keys: () => 'Esc' }],
     // the menu bar's dropdowns (menu.ts) and the canvas context menu (context-menu.ts)
-    run: (ctx) => {
-      ctx.tab?.contextMenuController?.hide();
+    run: () => {
+      hideContextMenu();
       closeAllMenus();
     },
   },

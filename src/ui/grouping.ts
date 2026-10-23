@@ -21,7 +21,8 @@ const GROUP_STYLE: CellStyle = {
 
 /**
  * @class GroupingController
- * @brief Group (Ctrl/Cmd+G, toolbar, context menu) and ungroup (Ctrl/Cmd+Shift+G) the selection.
+ * @brief Group (Ctrl/Cmd+G, Properties > Arrange, context menu) and ungroup (Ctrl/Cmd+Shift+G) the
+ *        selection; the buttons and keys run the group / ungroup commands (ui/commands/arrange.ts).
  */
 export class GroupingController {
   /** @brief Reference to the maxGraph instance */
@@ -33,22 +34,6 @@ export class GroupingController {
    */
   constructor(graph: Graph) {
     this.graph = graph;
-    this.setupGroupingButtons();
-  }
-
-  /**
-   * @brief Wire up group and ungroup button click handlers
-   */
-  private setupGroupingButtons(): void {
-    const groupBtn = document.getElementById('btn-group');
-    const ungroupBtn = document.getElementById('btn-ungroup');
-
-    if (groupBtn) {
-      groupBtn.addEventListener('click', () => this.group());
-    }
-    if (ungroupBtn) {
-      ungroupBtn.addEventListener('click', () => this.ungroup());
-    }
   }
 
   /**

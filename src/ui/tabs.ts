@@ -10,7 +10,6 @@ import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
 import type { DiagramDocument } from '../document/diagram-document';
 import { emit, off, on } from '../core/event-bus';
 import { createTabDocument, SaveLoadController } from './saveload';
-import { ContextMenuController } from './context-menu';
 
 import { CacheService, CacheSaveResult, type CachedTabJson } from '../services/cache-service';
 import { runWhenIdle } from '../core/idle';
@@ -29,7 +28,6 @@ import { TransformController } from './transform';
 import { GridSnapController } from './grid-snap';
 import { DuplicateOffsetController } from './duplicate-offset';
 import { ExportImageController } from './export-image';
-import { PlantUmlEditorController } from './plantuml-editor';
 import { logger } from '../drawio/logger';
 
 export interface TabData extends DiagramSession {
@@ -44,7 +42,6 @@ export interface TabData extends DiagramSession {
   panController: PanController;
   gridController: GridController;
   saveLoadController: SaveLoadController;
-  contextMenuController: ContextMenuController;
   imageUploadController: ImageUploadController;
   pasteImageController: PasteImageController;
   alignmentController: AlignmentController;
@@ -53,7 +50,6 @@ export interface TabData extends DiagramSession {
   gridSnapController: GridSnapController;
   duplicateOffsetController: DuplicateOffsetController;
   exportImageController: ExportImageController;
-  plantumlEditorController: PlantUmlEditorController;
   textEditorController: TextEditorController;
   /** draw.io connection arrows around the hovered shape (hover-arrows.ts) */
   hoverArrowsController: HoverArrowsController;
@@ -68,17 +64,6 @@ type ReleasableTabData = Omit<TabData, 'graph' | 'graphCommandService'> & {
 /** A tab controller that may expose an optional destroy() hook. */
 type MaybeDestroyable = { destroy?: unknown } | null | undefined;
 
-/**
- * A DOM listener that a tab's controllers registered outside the tab's own graph element
- * (on `document`, `window`, or shared UI such as the menu bar, toolbar and properties panel).
- */
-interface TabScopedListener {
-  target: EventTarget;
-  type: string;
-  listener: EventListenerOrEventListenerObject;
-  options?: boolean | AddEventListenerOptions;
-}
-
 export class TabManager {
   private tabs: Map<string, TabData> = new Map();
   private activeTabId: string | null = null;
@@ -87,12 +72,6 @@ export class TabManager {
   private autoSaveInterval: ReturnType<typeof setInterval> | null = null;
   /** The shell's panels, created once and bound to the active tab's session (session-views.ts). */
   readonly views: SessionViews;
-  /**
-   * Shared-DOM listeners per tab. Only the active tab's listeners are attached, so every global
-   * UI action (menu, toolbar, shortcuts, properties) runs once and against the active tab.
-   * They are removed for good when the tab is closed.
-   */
-  private tabListeners: Map<string, TabScopedListener[]> = new Map();
   private cacheSaveFailed = false;
   /**
    * Supplies each tab's remote binding for the cache once the remote session exists (until then the
@@ -130,59 +109,6 @@ export class TabManager {
       tabId = `tab-${unique}`;
     } while (this.tabs.has(tabId));
     return tabId;
-  }
-
-  /**
-   * Runs `build` (the construction of one tab's controllers) and records every listener it adds
-   * to a target outside `tabElement`. The controllers bind to shared DOM and `document` directly;
-   * recording those bindings lets the TabManager attach them only while the tab is active and
-   * remove them when the tab closes, without each controller having to track that itself.
-   * `once` listeners are not recorded, since re-attaching them would re-arm them.
-   *
-   * Only listeners added while `build` runs are seen. A controller that binds to shared DOM or
-   * `document` later (when a dialog opens, an edit starts, ...) must scope that listener itself:
-   * remove it when the dialog/edit ends and in its destroy() (see DuplicateOffsetController and
-   * TextEditorController), or bind it to an element it creates and removes.
-   */
-  private captureSharedListeners<T>(tabElement: HTMLElement, sink: TabScopedListener[], build: () => T): T {
-    const proto = EventTarget.prototype;
-    const nativeAddEventListener = proto.addEventListener;
-    proto.addEventListener = function (
-      this: EventTarget,
-      type: string,
-      listener: EventListenerOrEventListenerObject | null,
-      options?: boolean | AddEventListenerOptions
-    ): void {
-      nativeAddEventListener.call(this, type, listener, options);
-      if (!listener) return;
-      if (this instanceof Node && tabElement.contains(this)) return;
-      if (typeof options === 'object' && options.once) return;
-      sink.push({ target: this, type, listener, options });
-    };
-    try {
-      return build();
-    } finally {
-      proto.addEventListener = nativeAddEventListener;
-    }
-  }
-
-  private attachTabListeners(tabId: string): void {
-    const listeners = this.tabListeners.get(tabId);
-    if (!listeners) return;
-    // Drop listeners whose AbortSignal already fired (their controller disposed them)
-    const live = listeners.filter(
-      ({ options }) => !(typeof options === 'object' && options.signal?.aborted)
-    );
-    this.tabListeners.set(tabId, live);
-    live.forEach(({ target, type, listener, options }) => {
-      target.addEventListener(type, listener, options);
-    });
-  }
-
-  private detachTabListeners(tabId: string): void {
-    this.tabListeners.get(tabId)?.forEach(({ target, type, listener, options }) => {
-      target.removeEventListener(type, listener, options);
-    });
   }
 
   /** "Diagram <n>" with the lowest n that no open tab uses (the default name of new tabs). */
@@ -229,58 +155,47 @@ export class TabManager {
     const graphCommandService = new GraphCommandService(graph);
     const diagramDocument = createTabDocument(graph, graphCommandService);
 
-    // Controllers bind to shared DOM and `document`; record those listeners so they are only
-    // attached while this tab is active (see captureSharedListeners).
-    const sharedListeners: TabScopedListener[] = [];
-    this.tabListeners.set(tabId, sharedListeners);
-    const controllers = this.captureSharedListeners(graphDiv, sharedListeners, () => {
-      // Configure double-click text editing
-      const textEditorController = new TextEditorController(graph);
+    // The tab's own controllers: they hold per-tab state and bind to the graph (and its div) only.
+    // The shared panels, menus and keys are the session views and the commands, bound once.
+    // Configure double-click text editing
+    const textEditorController = new TextEditorController(graph);
 
-      // Configure edge/connector properties
-
-      // Initialize UI controllers
-      const clipboardController = new ClipboardController(graph);
-      const deleteController = new DeleteController(graph);
-      const panController = new PanController(graph);
-      const gridController = new GridController(graph, 10);
-      const saveLoadController = new SaveLoadController(diagramDocument);
-      const contextMenuController = new ContextMenuController(graph);
-      const imageUploadController = new ImageUploadController(graph);
-      const pasteImageController = new PasteImageController(graph);
-      const alignmentController = new AlignmentController(graph);
-      const groupingController = new GroupingController(graph);
-      const plantumlEditorController = new PlantUmlEditorController(graph);
-      const transformController = new TransformController(graph);
-      const gridSnapController = new GridSnapController(graph);
-      const duplicateOffsetController = new DuplicateOffsetController(graph);
-      // File > Export as PNG/SVG: the tab's model, file named after the tab
-      const exportImageController = new ExportImageController({
-        getModelXml: () => diagramDocument.serializeToXml(),
-        getName: () => this.tabs.get(tabId)?.name ?? name,
-      });
-
-      return {
-        clipboardController,
-        deleteController,
-        panController,
-        gridController,
-        saveLoadController,
-        contextMenuController,
-        imageUploadController,
-        pasteImageController,
-        alignmentController,
-        groupingController,
-        transformController,
-        gridSnapController,
-        duplicateOffsetController,
-        exportImageController,
-        plantumlEditorController,
-        textEditorController,
-      };
+    const clipboardController = new ClipboardController(graph);
+    const deleteController = new DeleteController(graph);
+    const panController = new PanController(graph);
+    const gridController = new GridController(graph, 10);
+    const saveLoadController = new SaveLoadController(diagramDocument);
+    const imageUploadController = new ImageUploadController(graph);
+    const pasteImageController = new PasteImageController(graph);
+    const alignmentController = new AlignmentController(graph);
+    const groupingController = new GroupingController(graph);
+    const transformController = new TransformController(graph);
+    const gridSnapController = new GridSnapController(graph);
+    const duplicateOffsetController = new DuplicateOffsetController(graph);
+    // File > Export as PNG/SVG: the tab's model, file named after the tab
+    const exportImageController = new ExportImageController({
+      getModelXml: () => diagramDocument.serializeToXml(),
+      getName: () => this.tabs.get(tabId)?.name ?? name,
     });
-    // draw.io hover arrows (hover-arrows.ts): after ConnectionHandler, whose plugin it wraps. Built
-    // outside captureSharedListeners: its listeners are on the graph div and its own arrow elements.
+
+    const controllers = {
+      clipboardController,
+      deleteController,
+      panController,
+      gridController,
+      saveLoadController,
+      imageUploadController,
+      pasteImageController,
+      alignmentController,
+      groupingController,
+      transformController,
+      gridSnapController,
+      duplicateOffsetController,
+      exportImageController,
+      textEditorController,
+    };
+    // draw.io hover arrows (hover-arrows.ts): after ConnectionHandler, whose plugin it wraps; its
+    // listeners are on the graph div and its own arrow elements.
     const hoverArrowsController = new HoverArrowsController(graph);
 
     const tabData: TabData = {
@@ -299,11 +214,8 @@ export class TabManager {
       this.activeTabId = tabId;
       // the first tab is the shown one: the session views bind to it
       setActiveSession(tabData);
-    } else {
-      // Created in the background: its shared-DOM listeners stay detached until it is shown
-      this.detachTabListeners(tabId);
-      // (the session views stay on the shown tab)
     }
+    // (a tab created in the background: the session views stay on the shown tab)
 
     this.renderTabBar();
     return tabData;
@@ -522,17 +434,15 @@ export class TabManager {
     // the two clicks of a double-click, so the rename (dblclick) handler never ran on a live label.
     if (this.activeTabId === tabId) return;
 
-    // Hide previous tab and unbind its shared-DOM listeners
+    // Hide previous tab
     if (this.activeTabId) {
       const prevGraphDiv = document.getElementById(`graph-${this.activeTabId}`);
       if (prevGraphDiv) prevGraphDiv.style.display = 'none';
-      this.detachTabListeners(this.activeTabId);
     }
 
-    // Show new tab and bind its shared-DOM listeners
+    // Show new tab
     const newGraphDiv = document.getElementById(`graph-${tabId}`);
     if (newGraphDiv) newGraphDiv.style.display = 'block';
-    this.attachTabListeners(tabId);
 
     this.activeTabId = tabId;
     const newTab = this.tabs.get(tabId);
@@ -623,10 +533,6 @@ export class TabManager {
     const tab = this.tabs.get(tabId);
     if (!tab) return;
 
-    // Unbind the tab's shared-DOM listeners (menu, toolbar, document shortcuts, ...) for good
-    this.detachTabListeners(tabId);
-    this.tabListeners.delete(tabId);
-
     try {
       // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
       const controllers = [
@@ -636,7 +542,6 @@ export class TabManager {
         tab.panController,
         tab.gridController,
         tab.saveLoadController,
-        tab.contextMenuController,
         tab.imageUploadController,
         tab.pasteImageController,
         tab.alignmentController,
@@ -645,7 +550,6 @@ export class TabManager {
         tab.gridSnapController,
         tab.duplicateOffsetController,
         tab.exportImageController,
-        tab.plantumlEditorController,
         tab.textEditorController,
         tab.hoverArrowsController,
       ];

@@ -18,10 +18,20 @@ import type { Cell } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
 import { DRAWIO_MENU_PREFIX, ensureDrawioMenuItems, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 import { commandRegistry } from './commands/registry';
+import { ActiveSessionBinding, type GraphSession } from './session';
+import { disableSelectOnPopup } from './canvas-interaction';
 import { hasLockedStyle, isLayer } from './cell-lock';
 import { applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel, shortcutSpecFor } from './shortcut-keys';
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
 import type { StateMenuEntry } from '../railway/state-menu';
+
+/** The app's context menu (one, created by the TabManager's session views; tests may make more). */
+const CONTEXT_MENUS = new Set<ContextMenuController>();
+
+/** Hides the context menu (Escape: the `menus.close` command). */
+export function hideContextMenu(): void {
+  CONTEXT_MENUS.forEach((menu) => menu.hide());
+}
 
 /** Gap kept between the context menu and the window edges. */
 const VIEWPORT_MARGIN = 4;
@@ -83,8 +93,12 @@ export function contextSelectionFor(graph: Graph, hit: Cell | null): Cell[] | nu
  * Items run their `data-action` command (ui/commands) with this menu's target cells.
  */
 export class ContextMenuController {
-  /** @brief Reference to the maxGraph instance */
-  private graph: Graph;
+  /** @brief The bound session's graph (the active tab's) */
+  private graph!: Graph;
+  /** @brief Whether a session is bound (a right-click before the first tab does nothing) */
+  private bound = false;
+  /** @brief Follows the active session (or stays on the graph given to the constructor) */
+  private readonly binding: ActiveSessionBinding<GraphSession>;
   /** @brief The context menu DOM element */
   private contextMenu: HTMLElement | null;
   /** @brief Currently right-clicked cell (may be different from selection) */
@@ -103,19 +117,24 @@ export class ContextMenuController {
   private stateSection: HTMLElement | null = null;
 
   /**
-   * @brief Initialize context menu controller
-   * @param {Graph} graph - The maxGraph instance
+   * @brief The context menu of the app (TabManager's session views): DOM listeners bound once, a
+   * right-click acts on the active session's graph (session.ts). With `graph`, stays on that graph.
    */
-  constructor(graph: Graph) {
-    this.graph = graph;
-    // This controller decides what a right-click selects. maxGraph's PopupMenuHandler (no menu of
-    // its own here) also selected the cell under the mouse-up, or cleared the selection when that
-    // was a gap (a group's transparent area, ERTMS symbols): the selection changed after Lock & co.
-    const popup = graph.getPlugin('PopupMenuHandler') as { selectOnPopup?: boolean; clearSelectionOnBackground?: boolean } | undefined;
-    if (popup) {
-      popup.selectOnPopup = false;
-      popup.clearSelectionOnBackground = false;
-    }
+  constructor(graph?: Graph) {
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session) => {
+        this.graph = session.graph;
+        this.bound = true;
+        // what a right-click selects is this menu's (setupGraph 'popup-selection-off' on every tab graph)
+        disableSelectOnPopup(session.graph);
+      },
+      () => {
+        this.bound = false;
+        this.currentCell = null;
+        this.selectedCells = [];
+      },
+      graph ? { graph } : null
+    );
     this.contextMenu = document.getElementById('context-menu');
     this.clipboardService = ClipboardService.getInstance();
     // draw.io table/lane and collapse/expand items (bound below like the static items)
@@ -124,6 +143,7 @@ export class ContextMenuController {
     this.stateSection = this.ensureStateSection();
     this.setupContextMenu();
     this.setupClipboardListener();
+    CONTEXT_MENUS.add(this);
   }
 
   /**
@@ -174,14 +194,14 @@ export class ContextMenuController {
       }
       const sub = target.closest<HTMLElement>('.rd-ctx-sub');
       if (sub) this.openStateSubmenu(sub, true);
-    });
+    }, { signal: this.listenerAbort.signal });
     // hover opens a submenu; hovering another item of the menu closes it
     menu.addEventListener('mouseover', (e) => {
       const sub = (e.target as HTMLElement).closest<HTMLElement>('.rd-ctx-sub');
       if (!sub) this.closeStateSubmenus();
       else if (sub.getAttribute('aria-expanded') !== 'true') this.openStateSubmenu(sub, false);
-    });
-    section.addEventListener('keydown', (e) => this.onStateKey(e));
+    }, { signal: this.listenerAbort.signal });
+    section.addEventListener('keydown', (e) => this.onStateKey(e), { signal: this.listenerAbort.signal });
     return section;
   }
 
@@ -371,13 +391,20 @@ export class ContextMenuController {
   destroy(): void {
     this.unsubscribeClipboard?.();
     this.unsubscribeClipboard = null;
+    this.listenerAbort.abort();
+    this.binding.dispose();
+    CONTEXT_MENUS.delete(this);
   }
+
+  /** @brief Aborts the DOM listeners of this menu (destroy()) */
+  private readonly listenerAbort = new AbortController();
 
   private setupContextMenu() {
     // Show context menu on right-click
+    const signal = this.listenerAbort.signal;
     document.addEventListener('contextmenu', (e) => {
       const target = e.target as HTMLElement;
-      if (target.closest('#graph-container')) {
+      if (this.bound && target.closest('#graph-container')) {
         e.preventDefault();
         // Graph coordinates of the click (the tab's graph div may be scrolled)
         const container = this.graph.container;
@@ -409,12 +436,12 @@ export class ContextMenuController {
           this.showContextMenu(e.clientX, e.clientY, 'canvas');
         }
       }
-    });
+    }, { signal });
 
     // Hide context menu on click elsewhere
     document.addEventListener('click', () => {
       this.hide();
-    });
+    }, { signal });
 
     // Escape hides it: the `menus.close` command (ui/commands/view.ts)
 
@@ -424,11 +451,11 @@ export class ContextMenuController {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
         const action = item.getAttribute('data-action');
-        if (action) {
+        if (action && this.bound) {
           this.executeAction(action);
         }
         this.hide();
-      });
+      }, { signal });
     });
   }
 

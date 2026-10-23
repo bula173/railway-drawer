@@ -69,7 +69,7 @@ import { installDrawioBehaviour } from '../drawio-shapes/behaviour';
 import { installDrawioHandles } from '../drawio-shapes/handles';
 import { installOnce, isInstalled } from '../core/install-once';
 import { installCellLocking } from './cell-lock';
-import { installGroupBackgroundHit, installPressToMove, installRailwaySplitRules } from './canvas-interaction';
+import { disableSelectOnPopup, installGroupBackgroundHit, installPressToMove, installRailwaySplitRules } from './canvas-interaction';
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { installCanvasScroll, uninstallCanvasScroll } from './canvas-scroll';
 import { installMultiSelectionBox } from './multi-selection-box';
@@ -213,6 +213,8 @@ export const GRAPH_INSTALLERS: readonly GraphInstaller[] = [
   { name: 'hover-arrow-connection-hooks', profiles: EDITOR, install: installHoverArrowConnectionHooks },
   // ---- per-graph state kept while the tab is in the background (formerly in its panel controllers)
   { name: 'layer-default-parent', profiles: EDITOR, install: installLayerDefaultParent },
+  // the context menu decides what a right-click selects (context-menu.ts)
+  { name: 'popup-selection-off', profiles: EDITOR, install: disableSelectOnPopup },
 ];
 
 /** The installer names of a profile, in order (tests, diagnostics). */

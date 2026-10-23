@@ -72,31 +72,35 @@ export class PanController {
     this.graph = graph;
     // Normally done by setupGraph(graph, 'editor'); kept for graphs set up without it (tests)
     installPanning(graph);
-    this.setupKeyboardToggle();
   }
 
-  /** Space held = pan mode: the `view.panStart` / `view.panEnd` commands (ui/commands/view.ts). */
-  private setupKeyboardToggle() {
-    // Space released outside the window
-    window.addEventListener('blur', () => {
-      if (this.isPanMode) this.disablePan();
-    });
-  }
+  /** Space released outside the window ends pan mode (bound while pan mode is on). */
+  private readonly onWindowBlur = (): void => {
+    if (this.isPanMode) this.disablePan();
+  };
 
   /** Whether Space pan mode is on. */
   isPanning(): boolean {
     return this.isPanMode;
   }
 
+  /** Space held = pan mode: the `view.panStart` / `view.panEnd` commands (ui/commands/view.ts). */
   enablePan() {
     this.isPanMode = true;
+    window.addEventListener('blur', this.onWindowBlur);
     PAN_MODE.add(this.graph);
     this.graph.container.classList.add('rd-pan-mode');
   }
 
   disablePan() {
     this.isPanMode = false;
+    window.removeEventListener('blur', this.onWindowBlur);
     PAN_MODE.delete(this.graph);
     this.graph.container.classList.remove('rd-pan-mode');
+  }
+
+  /** Leaves pan mode (TabManager.destroyTab). */
+  destroy() {
+    if (this.isPanMode) this.disablePan();
   }
 }

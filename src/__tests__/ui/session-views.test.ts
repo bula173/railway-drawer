@@ -6,6 +6,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
 import { activeSession } from '../../ui/session';
 import { loadAppDom, clearAppDom } from './app-dom';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 
 describe('session views', () => {
   let tabManager: TabManager | null = null;
@@ -87,5 +89,21 @@ describe('session views', () => {
     // and the first tab is now the background one
     first.graph.clearSelection();
     expect(state()).toBe('cell');
+  });
+
+  it('no listener capture: src never patches EventTarget.prototype.addEventListener', () => {
+    const offenders: string[] = [];
+    const walk = (dir: string): void => {
+      for (const name of readdirSync(dir)) {
+        const path = join(dir, name);
+        if (statSync(path).isDirectory()) {
+          if (name !== '__tests__') walk(path);
+        } else if (name.endsWith('.ts') && /prototype\.addEventListener\s*=[^=]|captureSharedListeners/.test(readFileSync(path, 'utf8'))) {
+          offenders.push(name);
+        }
+      }
+    };
+    walk(join(__dirname, '..', '..'));
+    expect(offenders).toEqual([]);
   });
 });

@@ -107,9 +107,6 @@ describe('document keyboard handlers respect text editing', () => {
   });
 
   it('the duplicate dialog removes its document Escape listener when it closes', () => {
-    const multiBtn = document.createElement('button');
-    multiBtn.id = 'btn-duplicate-multi';
-    document.body.appendChild(multiBtn);
     const controller = new DuplicateOffsetController(graph);
 
     const added: EventListenerOrEventListenerObject[] = [];
@@ -125,13 +122,13 @@ describe('document keyboard handlers respect text editing', () => {
       remove(type, listener, options);
     });
 
-    multiBtn.click();
+    controller.showDuplicateDialog();
     expect(document.body.textContent).toContain('Duplicate Multiple Times');
     keydown(document.body, 'Escape');
     expect(document.body.textContent).not.toContain('Duplicate Multiple Times');
 
     // Open again, then close the tab with the dialog still open
-    multiBtn.click();
+    controller.showDuplicateDialog();
     controller.destroy();
     expect(document.body.textContent).not.toContain('Duplicate Multiple Times');
 

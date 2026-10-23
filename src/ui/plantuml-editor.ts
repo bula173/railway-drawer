@@ -1,7 +1,9 @@
 /**
  * @file plantuml-editor.ts
  * @brief PlantUML editor UI component for the left panel
- * @details Provides text input and rendering controls for PlantUML diagrams
+ * @details Provides text input and rendering controls for PlantUML diagrams. One editor for the
+ * app (TabManager's session views): its panel and buttons are built and bound once, it renders into
+ * and follows the selection of the active session's graph (session.ts).
  */
 
 import { onSelectionChange } from '../core/graph-events';
@@ -15,11 +17,16 @@ import { ActivityDiagramRenderer } from '../services/activity-diagram-renderer';
 import { ComponentDiagramRenderer } from '../services/component-diagram-renderer';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 import { logger } from '../drawio/logger';
+import { ActiveSessionBinding, type GraphSession } from './session';
 
 export class PlantUmlEditorController extends UIController {
-  private graph: Graph;
-  private offSelection: (() => void) | null = null;
-  private groupManager: PlantUmlGroupManager;
+  /** The bound session's graph (the active tab's) and its PlantUML groups. */
+  private graph!: Graph;
+  private groupManager!: PlantUmlGroupManager;
+  private bound = false;
+  private readonly binding: ActiveSessionBinding<GraphSession>;
+  /** Per tab graph: its PlantUML group manager and the group being edited (kept across tab switches). */
+  private readonly perGraph = new WeakMap<Graph, { groupManager: PlantUmlGroupManager; editing: Cell | null }>();
   private editorPanel: HTMLElement | null = null;
   private textarea: HTMLTextAreaElement | null = null;
   private renderButton: HTMLButtonElement | null = null;
@@ -29,15 +36,31 @@ export class PlantUmlEditorController extends UIController {
   private diagramPreview: HTMLElement | null = null;
   private currentEditingGroup: Cell | null = null;
 
-  constructor(graph: Graph) {
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph) {
     super();
-    this.graph = graph;
-    this.groupManager = new PlantUmlGroupManager(graph);
     logger.debug('PlantUmlEditor', 'Constructor called');
     this.createEditorPanel();
     logger.debug('PlantUmlEditor', 'Panel created:', this.editorPanel?.id);
     this.setupEventListeners();
-    this.setupSelectionListener();
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        let state = this.perGraph.get(session.graph);
+        if (!state) this.perGraph.set(session.graph, (state = { groupManager: new PlantUmlGroupManager(session.graph), editing: null }));
+        this.groupManager = state.groupManager;
+        this.currentEditingGroup = state.editing;
+        this.bound = true;
+        disposers.add(this.selectionListener(session.graph));
+      },
+      (session) => {
+        const state = this.perGraph.get(session.graph);
+        if (state) state.editing = this.currentEditingGroup;
+        this.bound = false;
+        this.currentEditingGroup = null;
+      },
+      graph ? { graph } : null
+    );
     logger.debug('PlantUmlEditor', 'Event listeners setup');
   }
 
@@ -88,10 +111,10 @@ Bob --> Alice: Hi
   }
 
   /**
-   * Setup selection listener to detect PlantUML group selection
+   * Selection listener of the bound graph: detects the selection of a PlantUML group
    */
-  private setupSelectionListener(): void {
-    this.offSelection = onSelectionChange(this.graph, () => {
+  private selectionListener(graph: Graph): () => void {
+    return onSelectionChange(graph, () => {
       const selected = this.graph.getSelectionCells();
 
       if (selected.length === 1) {
@@ -122,15 +145,15 @@ Bob --> Alice: Hi
    */
   private setupEventListeners(): void {
     if (this.renderButton) {
-      this.trackListener(this.renderButton, 'click', () => this.renderDiagram());
+      this.trackListener(this.renderButton, 'click', () => this.bound && this.renderDiagram());
     }
 
     if (this.clearButton) {
-      this.trackListener(this.clearButton, 'click', () => this.clearEditor());
+      this.trackListener(this.clearButton, 'click', () => this.bound && this.clearEditor());
     }
 
     if (this.exampleButton) {
-      this.trackListener(this.exampleButton, 'click', () => this.insertExample());
+      this.trackListener(this.exampleButton, 'click', () => this.bound && this.insertExample());
     }
 
     // Real-time validation
@@ -498,8 +521,8 @@ api --> db
   }
 
   destroy(): void {
-    // Only this tab's listeners go; #plantuml-panel is shared and stays for the other tabs
+    // #plantuml-panel stays (built once); its listeners and the graph binding go
     this.removeTrackedListeners();
-    this.offSelection?.();
+    this.binding.dispose();
   }
 }

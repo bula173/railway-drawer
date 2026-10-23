@@ -155,13 +155,13 @@ describe('TabManager tab lifecycle', () => {
     expect(undoFirst).toHaveBeenCalledTimes(2);
   });
 
-  it('closing a tab releases its clipboard subscription and open label editor', () => {
+  it('tabs add no clipboard subscriptions (one context menu view); closing a tab releases its open label editor', () => {
     const clipboard = ClipboardService.getInstance() as unknown as { listeners: unknown[] };
-    const baseline = clipboard.listeners.length;
     tabManager = new TabManager('tabs-container', 'graph-container');
+    const baseline = clipboard.listeners.length;
     tabManager.createTab('First');
     const second = tabManager.createTab('Second');
-    expect(clipboard.listeners.length).toBe(baseline + 2);
+    expect(clipboard.listeners.length).toBe(baseline);
 
     tabManager.switchTab(second.id);
     const cell = second.graph.insertVertex(second.graph.getDefaultParent(), null, 'A', 0, 0, 40, 40);
@@ -170,8 +170,11 @@ describe('TabManager tab lifecycle', () => {
     expect(document.querySelector('body > textarea')).not.toBeNull();
 
     tabManager.closeTab(second.id);
-    expect(clipboard.listeners.length).toBe(baseline + 1);
+    expect(clipboard.listeners.length).toBe(baseline);
     expect(document.querySelector('body > textarea')).toBeNull();
+    tabManager.destroy();
+    tabManager = null;
+    expect(clipboard.listeners.length).toBe(baseline - 1);
   });
 
   it.each(['Enter', ' '])(

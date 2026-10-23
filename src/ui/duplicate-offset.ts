@@ -9,19 +9,6 @@ export class DuplicateOffsetController {
 
   constructor(graph: Graph) {
     this.graph = graph;
-    this.setupButtons();
-  }
-
-  private setupButtons(): void {
-    const duplicateBtn = document.getElementById('btn-duplicate');
-    const duplicateMultiBtn = document.getElementById('btn-duplicate-multi');
-
-    if (duplicateBtn) {
-      duplicateBtn.addEventListener('click', () => this.duplicateOnce());
-    }
-    if (duplicateMultiBtn) {
-      duplicateMultiBtn.addEventListener('click', () => this.showDuplicateDialog());
-    }
   }
 
   duplicateOnce(): void {
@@ -31,7 +18,8 @@ export class DuplicateOffsetController {
     this.duplicateWithOffset(selected, 1, this.defaultOffset);
   }
 
-  private showDuplicateDialog(): void {
+  /** The "Duplicate Multiple Times" dialog (count and offset). */
+  showDuplicateDialog(): void {
     this.closeOpenDialog?.();
     const modal = document.createElement('div');
     const onEscape = (e: KeyboardEvent) => {

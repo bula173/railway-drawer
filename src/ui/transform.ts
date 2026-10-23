@@ -16,25 +16,6 @@ export class TransformController {
 
   constructor(graph: Graph) {
     this.graph = graph;
-    this.setupTransformButtons();
-  }
-
-  private setupTransformButtons(): void {
-    const flipHBtn = document.getElementById('btn-flip-h');
-    const flipVBtn = document.getElementById('btn-flip-v');
-    const rotate90CWBtn = document.getElementById('btn-rotate-90-cw');
-    const rotate90CCWBtn = document.getElementById('btn-rotate-90-ccw');
-    const matchWidthBtn = document.getElementById('btn-match-width');
-    const matchHeightBtn = document.getElementById('btn-match-height');
-    const matchSizeBtn = document.getElementById('btn-match-size');
-
-    if (flipHBtn) flipHBtn.addEventListener('click', () => this.flipHorizontal());
-    if (flipVBtn) flipVBtn.addEventListener('click', () => this.flipVertical());
-    if (rotate90CWBtn) rotate90CWBtn.addEventListener('click', () => this.rotate90CW());
-    if (rotate90CCWBtn) rotate90CCWBtn.addEventListener('click', () => this.rotate90CCW());
-    if (matchWidthBtn) matchWidthBtn.addEventListener('click', () => this.matchWidth());
-    if (matchHeightBtn) matchHeightBtn.addEventListener('click', () => this.matchHeight());
-    if (matchSizeBtn) matchSizeBtn.addEventListener('click', () => this.matchSize());
   }
 
   flipHorizontal(): void {

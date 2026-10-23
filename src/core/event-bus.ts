@@ -8,9 +8,9 @@
  * and a typo in a name or a wrong `detail` is now a type error.
  *
  * Semantics are those of the former window events (an EventTarget underneath): listeners run
- * synchronously in registration order, a throwing listener is reported and the others still run,
- * and a listener added while a TabManager builds a tab's controllers is captured as a
- * tab-scoped listener like the window ones were (tabs.ts captureSharedListeners).
+ * synchronously in registration order, a throwing listener is reported and the others still run.
+ * Modules of upper layers may add events by module augmentation (ui/session.ts:
+ * `active-session-changed`).
  *
  * Adding an event: add it to AppEventMap (name → detail type; `undefined` for no detail). A unit
  * test fails on new `new CustomEvent(` uses outside this file.

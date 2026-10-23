@@ -210,12 +210,12 @@ function installAlignMenu(): void {
  * Every `[data-command]` button inside `root` runs its command on the active tab when clicked
  * (bound on the button itself, so it runs before the Align dropdown's own close handler).
  */
-export function bindCommandButtons(root: ParentNode = document): void {
+export function bindCommandButtons(root: ParentNode = document, signal?: AbortSignal): void {
   root.querySelectorAll<HTMLElement>('[data-command]').forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = button.dataset.command;
       if (id) commandRegistry.run(id, commandRegistry.context('toolbar', { event: e }));
-    });
+    }, { signal });
   });
 }
 
