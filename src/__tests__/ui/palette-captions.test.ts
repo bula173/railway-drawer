@@ -50,7 +50,7 @@ describe('palette captions', () => {
   });
 
   it('ERTMS display: "Points Left", one "Dashed Line", kinds still found', () => {
-    const entry = (title: string, style = ''): PaletteEntry => ({ id: 'x', title, kind: 'edge', width: 1, height: 1, style });
+    const entry = (title: string, style = ''): PaletteEntry => ({ id: 'x', title, kind: 'edge', width: 1, height: 1, style, shapeNames: [], cls: '', source: 'test' }) as unknown as PaletteEntry;
     expect(ertmsDisplayEntry(entry('Point Left')).title).toBe('Points Left');
     expect(kindForLibraryTitle('Points Left')?.kind).toBe('points');
     expect(ertmsDisplayEntry(entry('Line ', 'endArrow=none;dashed=1;')).title).toBe('Dashed Line');
