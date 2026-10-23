@@ -10,6 +10,8 @@ import { off, on } from '../core/event-bus';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import './railway-data.css';
 import type { TabManager } from '../ui/tabs';
+// the bus event active-session-changed (declared by ui/session.ts)
+import type {} from '../ui/session';
 import type { RightPanelView } from '../scenarios/scenarios-panel';
 import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { PaletteEntry } from '../ui/drawio-palette/contracts';
@@ -224,7 +226,8 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     onExport: exportReport,
   });
 
-  // ---- active graph listeners
+  // ---- active graph listeners: the panels follow the active session (ui/session.ts), a background
+  // tab's selection / model changes never reach them
   let bound: { graph: Graph; dispose: () => void } | null = null;
   const onSelectionChange = (): void => {
     if (currentView === 'data') dataPanel.refresh();
@@ -233,8 +236,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     if (currentView === 'data') dataPanel.refresh();
     scheduleChecks();
   };
-  function bind(): void {
-    const graph = getGraph();
+  function bind(graph: Graph | null = getGraph()): void {
     if (bound?.graph === graph) return;
     if (bound) {
       bound.dispose();
@@ -252,8 +254,9 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
       };
     }
   }
-  const onTabChanged = (): void => {
-    bind();
+  const onSessionChanged = ({ session }: { session: { graph: Graph } | null }): void => {
+    bind(session?.graph ?? null);
+    if (!session) return;
     dataPanel.refresh();
     if (live) runChecks();
     else {
@@ -290,8 +293,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
   };
   on(RIGHT_PANEL_EVENT, onView);
-  on('tab-changed', onTabChanged);
-  on('tab-closed', onTabChanged);
+  on('active-session-changed', onSessionChanged);
   on('railway-edit-data-request', onEditData);
   on('railway-checks-request', onChecks);
   on('railway-export-request', onExport);
@@ -305,8 +307,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
       if (timer) clearTimeout(timer);
       bound?.dispose();
       off(RIGHT_PANEL_EVENT, onView);
-      off('tab-changed', onTabChanged);
-      off('tab-closed', onTabChanged);
+      off('active-session-changed', onSessionChanged);
       off('railway-edit-data-request', onEditData);
       off('railway-checks-request', onChecks);
       off('railway-export-request', onExport);
