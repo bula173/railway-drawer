@@ -4,7 +4,7 @@
  *        themed modal (app-dialogs.ts). Opened by F1 and by the window event
  *        `shortcuts-help-request` (MenuController, data-action="shortcuts").
  */
-import { openAppModal, type AppModal } from './app-dialogs';
+import { openAppModal, otherDialogOpen, type AppModal } from './app-dialogs';
 import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
 import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
 
@@ -108,6 +108,8 @@ export class ShortcutsHelpController {
   private readonly onKeyDown = (e: KeyboardEvent): void => {
     if (e.key === 'F1') {
       e.preventDefault();
+      // never on top of another open dialog (its focus trap owns the keyboard)
+      if (otherDialogOpen(this.modal?.overlay ?? null)) return;
       this.show();
     }
   };
