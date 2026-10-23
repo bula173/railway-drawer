@@ -250,6 +250,14 @@ describe('route objects, conflicts and tables', () => {
     tool.activate();
     expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toBe('Click the start (entry) signal.');
     expect(tool.pickSignalById('S1')).toBe(true);
+    // guidance: the reachable exits are outlined, the others dimmed
+    expect(tool.getReachableIds().sort()).toEqual(['S2', 'S3']);
+    expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toContain('Start: S1 — click one of the 2 highlighted exit signals (');
+    // Esc cancels the start signal (the tool stays), then S1 again
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    expect(tool.isActive()).toBe(true);
+    expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toBe('Click the start (entry) signal.');
+    expect(tool.pickSignalById('S1')).toBe(true);
     expect(tool.pickSignalById('S3')).toBe(true);
     expect(tool.getPaths().map((p) => p.points)).toEqual([[{ cellId: expect.any(String), id: 'W1', position: 'reverse' }]]);
     expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toBe('S1 → S3: 1 path');
@@ -258,6 +266,10 @@ describe('route objects, conflicts and tables', () => {
     expect(messages).toEqual(['Route R10 created: S1 → S3']);
     // back to picking a start signal; no path against the signal direction
     tool.pickSignalById('S2');
+    // shown before the second click
+    if (tool.getReachableIds().length === 0) {
+      expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toContain('no route in the signal direction');
+    }
     tool.pickSignalById('S1');
     expect(tool.getPaths()).toEqual([]);
     expect(document.querySelector('.rd-route-tool .rd-route-status')?.textContent).toBe('No path from S2 to S1 in the signal direction');
