@@ -5,6 +5,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src/**/__tests__/**/*.ts"],
+  "include": ["src/**/__tests__/**/*.ts", "src/ui/app-services.ts"],
   "exclude": ["node_modules"]
 }

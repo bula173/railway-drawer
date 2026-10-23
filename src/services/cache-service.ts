@@ -1,5 +1,4 @@
 import { isLegacyModelXml } from './drawio-xml';
-import type { ScenarioData } from '../scenarios/scenario-model';
 import { logger } from '../drawio/logger';
 import { listKeys, readItem, removeItem, writeItemOrThrow } from '../core/safe-storage';
 import { STORAGE_KEYS } from '../core/storage-keys';
@@ -24,8 +23,8 @@ export interface CacheData {
      */
     extraPages?: string[];
     pageId?: string | null;
-    /** The tab's scenarios (steps hold full drawing snapshots). Missing when there are none; sanitized on restore. */
-    scenarios?: ScenarioData[];
+    /** The tab's scenarios (ScenarioData[] of scenarios/scenario-model.ts; steps hold full drawing snapshots). Missing when there are none; sanitized on restore. */
+    scenarios?: unknown[];
     /** The tab's Railway Script text (src/railway-script). Missing when there is none. */
     railwayScript?: string;
     /**

@@ -4,9 +4,9 @@
  * @details Central registry for application services, replacing window globals
  */
 
-import type { TabManager } from '../ui/tabs';
-import { NotificationManager } from '../ui/notification';
-import { SaveStatusIndicator } from '../ui/save-status';
+import type { AppServices } from './app-services';
+
+export type { AppServices };
 
 /**
  * Central service registry using Service Locator pattern
@@ -59,27 +59,27 @@ export class ServiceRegistry {
 
   // ============= Convenience Methods =============
 
-  static getTabManager(): TabManager | undefined {
-    return ServiceRegistry.get<TabManager>('tabManager');
+  static getTabManager(): AppServices['tabManager'] | undefined {
+    return ServiceRegistry.get<AppServices['tabManager']>('tabManager');
   }
 
-  static setTabManager(tabManager: TabManager): void {
+  static setTabManager(tabManager: AppServices['tabManager']): void {
     ServiceRegistry.register('tabManager', tabManager);
   }
 
-  static getNotificationManager(): NotificationManager | undefined {
-    return ServiceRegistry.get<NotificationManager>('notificationManager');
+  static getNotificationManager(): AppServices['notificationManager'] | undefined {
+    return ServiceRegistry.get<AppServices['notificationManager']>('notificationManager');
   }
 
-  static setNotificationManager(manager: NotificationManager): void {
+  static setNotificationManager(manager: AppServices['notificationManager']): void {
     ServiceRegistry.register('notificationManager', manager);
   }
 
-  static getSaveStatusIndicator(): SaveStatusIndicator | undefined {
-    return ServiceRegistry.get<SaveStatusIndicator>('saveStatusIndicator');
+  static getSaveStatusIndicator(): AppServices['saveStatusIndicator'] | undefined {
+    return ServiceRegistry.get<AppServices['saveStatusIndicator']>('saveStatusIndicator');
   }
 
-  static setSaveStatusIndicator(indicator: SaveStatusIndicator): void {
+  static setSaveStatusIndicator(indicator: AppServices['saveStatusIndicator']): void {
     ServiceRegistry.register('saveStatusIndicator', indicator);
   }
 }
