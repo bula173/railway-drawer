@@ -8,6 +8,7 @@ import { UndoRedoController } from './undoredo';
 import { PanController } from './pan';
 import { GridController } from './grid';
 import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
+import { emit, off, on } from '../core/event-bus';
 import { SaveLoadController } from './saveload';
 import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
@@ -127,12 +128,11 @@ export class TabManager {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
     this.graphContainer = document.getElementById(graphContainerId)!;
     this.startAutoSave();
-    window.addEventListener(GRID_SETTINGS_EVENT, this.onGridSettings);
+    on(GRID_SETTINGS_EVENT, this.onGridSettings);
   }
 
   /** A load applied a file's grid to a tab: the shared controls follow when it is the active one. */
-  private readonly onGridSettings = (e: Event): void => {
-    const graph = (e as CustomEvent<{ graph?: Graph }>).detail?.graph;
+  private readonly onGridSettings = ({ graph }: { graph?: Graph }): void => {
     if (graph && graph === this.getActiveTab()?.graph) syncGridUi(graph);
   };
 
@@ -618,7 +618,7 @@ export class TabManager {
     // inactive tab still reaches the same label and opens the rename editor
     this.updateActiveTabHighlight();
     // Global listeners (custom shapes toolbar, remote-file status) follow the active tab
-    window.dispatchEvent(new CustomEvent('tab-changed', { detail: { tabId } }));
+    emit('tab-changed', { tabId });
   }
 
   private updateActiveTabHighlight(): void {
@@ -652,7 +652,7 @@ export class TabManager {
     this.destroyTab(tabId);
     this.tabs.delete(tabId);
     this.saveLoadControllers.delete(tabId);
-    window.dispatchEvent(new CustomEvent('tab-closed', { detail: { tabId } }));
+    emit('tab-closed', { tabId });
 
     // Switch to another tab if the closed tab was active
     if (this.activeTabId === tabId) {
@@ -688,7 +688,7 @@ export class TabManager {
   }
 
   destroy(): void {
-    window.removeEventListener(GRID_SETTINGS_EVENT, this.onGridSettings);
+    off(GRID_SETTINGS_EVENT, this.onGridSettings);
     // Clear auto-save interval
     if (this.autoSaveInterval) {
       clearInterval(this.autoSaveInterval);

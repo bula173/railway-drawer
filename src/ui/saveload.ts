@@ -1,3 +1,4 @@
+import { emit } from '../core/event-bus';
 import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import {
@@ -393,7 +394,7 @@ export class SaveLoadController {
         grid: settings.grid ?? DEFAULT_PAGE_SETTINGS.grid,
         gridSize: settings.gridSize ?? DEFAULT_PAGE_SETTINGS.gridSize,
       });
-      window.dispatchEvent(new CustomEvent(GRID_SETTINGS_EVENT, { detail: { graph: this.graph } }));
+      emit(GRID_SETTINGS_EVENT, { graph: this.graph });
     }
     if (settings.pageWidth && settings.pageHeight) {
       this.graph.pageFormat = new Rectangle(0, 0, settings.pageWidth, settings.pageHeight);

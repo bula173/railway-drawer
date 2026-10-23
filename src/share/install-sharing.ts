@@ -6,6 +6,7 @@
  *        (`?gitlab=`), pending sign-ins; remote bindings persisted with the tab cache (Reload/Unlink,
  *        unsaved-changes dot, close/leave warnings).
  */
+import { on } from '../core/event-bus';
 import { InternalEvent } from '@maxgraph/core';
 import type { TabData, TabManager } from '../ui/tabs';
 import { createFakeRemoteDescriptor } from '../debug/fake-remote-provider';
@@ -90,12 +91,11 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
       tabManager.flushCache();
     },
   });
-  window.addEventListener('tab-changed', () => {
+  on('tab-changed', () => {
     remoteSession.updateStatus();
     renderProviderMenuItems();
   });
-  window.addEventListener('tab-closed', (evt) => {
-    const tabId = (evt as CustomEvent<{ tabId: string }>).detail?.tabId;
+  on('tab-closed', ({ tabId }) => {
     if (tabId) remoteSession.onTabClosed(tabId);
     renderProviderMenuItems();
   });

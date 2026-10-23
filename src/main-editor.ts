@@ -24,6 +24,7 @@ import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
 import { installGlobalGraphPatches } from './ui/setup-graph';
+import { on } from './core/event-bus';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
@@ -656,7 +657,7 @@ const startCard = createStartCard({
     else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
   },
 });
-window.addEventListener('tab-changed', () => startCard.update());
+on('tab-changed', () => startCard.update());
 
 // ============= TEMPLATES TAB =============
 
@@ -749,7 +750,7 @@ if (activeTabForShapes) {
   });
 
   // Refresh custom shapes when tab changes
-  window.addEventListener('tab-changed', () => {
+  on('tab-changed', () => {
     customShapeToolbar.refresh();
   });
 

@@ -8,6 +8,7 @@
  * Menu items carry `data-action="railwayRoute:<command>"`; MenuController dispatches the window
  * event `railway-route-request` with the command as detail (see RouteCommand).
  */
+import { off, on } from '../core/event-bus';
 import { InternalEvent } from '@maxgraph/core';
 import type { EventSource, Graph } from '@maxgraph/core';
 import './railway-routes.css';
@@ -248,8 +249,8 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     run('tool');
   };
   window.addEventListener(ROUTE_REQUEST_EVENT, onRequest);
-  window.addEventListener('tab-changed', onTab);
-  window.addEventListener('tab-closed', onTab);
+  on('tab-changed', onTab);
+  on('tab-closed', onTab);
   button?.addEventListener('click', onButton);
   ensureSnap();
   bindRuler();
@@ -265,8 +266,8 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
       unbindRuler();
       snapFeature.dispose();
       window.removeEventListener(ROUTE_REQUEST_EVENT, onRequest);
-      window.removeEventListener('tab-changed', onTab);
-      window.removeEventListener('tab-closed', onTab);
+      off('tab-changed', onTab);
+      off('tab-closed', onTab);
       button?.removeEventListener('click', onButton);
     },
   };

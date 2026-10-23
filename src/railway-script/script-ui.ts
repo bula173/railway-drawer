@@ -5,6 +5,7 @@
  *        inline error marks, problem list, Apply / Auto-apply, Examples, Generate from drawing,
  *        conflict banner) and File > Import/Export Railway Script.
  */
+import { off, on } from '../core/event-bus';
 import './railway-script.css';
 import type { TabData, TabManager } from '../ui/tabs';
 import { downloadBlob } from '../railway/install-railway-data';
@@ -388,13 +389,13 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
   }
 
   const onTabChanged = (): void => bind();
-  window.addEventListener('tab-changed', onTabChanged);
+  on('tab-changed', onTabChanged);
   bind();
   panel = {
     bind,
     focus: () => textarea.focus(),
     destroy: () => {
-      window.removeEventListener('tab-changed', onTabChanged);
+      off('tab-changed', onTabChanged);
       stopStatus?.();
       stopStore?.();
       root.remove();

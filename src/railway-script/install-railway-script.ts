@@ -8,6 +8,7 @@
  * Menu items `data-action="importRailwayScript" | "exportRailwayScript"`: MenuController
  * dispatches the window event `railway-script-request` with `{ action: 'import' | 'export' }`.
  */
+import { on } from '../core/event-bus';
 import type { LeftPanelTabs } from '../ui/left-panel-tabs';
 import type { TabData, TabManager } from '../ui/tabs';
 
@@ -55,9 +56,8 @@ export function installRailwayScript(tabManager: TabManager, notify: RailwayScri
     }
   };
   tabManager.getAllTabs().forEach(attach);
-  window.addEventListener('tab-changed', () => attach(tabManager.getActiveTab()));
-  window.addEventListener('tab-closed', (evt) => {
-    const tabId = (evt as CustomEvent<{ tabId?: string }>).detail?.tabId;
+  on('tab-changed', () => attach(tabManager.getActiveTab()));
+  on('tab-closed', ({ tabId }) => {
     if (tabId && uiPromise) void uiPromise.then((ui) => ui.destroySession(tabId));
   });
 

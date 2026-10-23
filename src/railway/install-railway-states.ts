@@ -6,6 +6,7 @@
  *        dispatched by MenuController) runs on the active tab's selection; the states legend over
  *        the canvas (Railway > Object State > State Legend, localStorage `rd.railway.stateLegend`).
  */
+import { off, on } from '../core/event-bus';
 import type { Cell, Graph } from '@maxgraph/core';
 import './railway-states.css';
 import type { TabManager } from '../ui/tabs';
@@ -254,8 +255,8 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
   window.addEventListener(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
   document.addEventListener('keydown', onKey);
-  window.addEventListener('tab-changed', syncFades);
-  window.addEventListener('tab-closed', syncFades);
+  on('tab-changed', syncFades);
+  on('tab-closed', syncFades);
   syncLegend();
   syncFades();
 
@@ -266,8 +267,8 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
       window.removeEventListener(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
       document.removeEventListener('keydown', onKey);
-      window.removeEventListener('tab-changed', syncFades);
-      window.removeEventListener('tab-closed', syncFades);
+      off('tab-changed', syncFades);
+      off('tab-closed', syncFades);
       fades.dispose();
       legend?.remove();
       legend = null;

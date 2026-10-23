@@ -10,8 +10,8 @@
 import type { Graph } from '@maxgraph/core';
 import { applyGridBackground } from './grid-background';
 
-/** Window event after a load changed a tab's grid (`detail.graph`); TabManager syncs the controls. */
-export const GRID_SETTINGS_EVENT = 'rd-grid-settings';
+/** Bus event (core/event-bus.ts) after a load changed a tab's grid (`graph`); TabManager syncs the controls. */
+export const GRID_SETTINGS_EVENT = 'rd-grid-settings' as const;
 
 /** Applies a page's grid settings to `graph` (active or background tab) without touching shared controls. */
 export function applyGridSettings(graph: Graph, settings: { grid?: boolean; gridSize?: number }): void {

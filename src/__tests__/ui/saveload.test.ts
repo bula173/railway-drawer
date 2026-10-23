@@ -6,6 +6,7 @@
  * - pages 2..n of a multi-page .drawio were silently dropped (and lost on save),
  * - a draw.io file's app version (mxfile@version) was written back as this app's format version.
  */
+import { on } from '../../core/event-bus';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { Graph } from '@maxgraph/core';
 import { SaveLoadController } from '../../ui/saveload';
@@ -201,10 +202,9 @@ describe('SaveLoadController', () => {
 
   it('applies the page grid (grid / gridSize on <mxGraphModel>) to the tab and writes it back', () => {
     const events: unknown[] = [];
-    const onGrid = (e: Event): void => {
-      events.push((e as CustomEvent).detail.graph);
-    };
-    window.addEventListener('rd-grid-settings', onGrid);
+    const offGrid = on('rd-grid-settings', ({ graph: g }) => {
+      events.push(g);
+    });
     controller.load(MODEL_XML.replace('<mxGraphModel>', '<mxGraphModel grid="0" gridSize="20">'));
     expect(graph.gridEnabled).toBe(false);
     expect(graph.gridSize).toBe(20);
@@ -221,6 +221,6 @@ describe('SaveLoadController', () => {
     controller.load(MODEL_XML);
     expect(graph.gridEnabled).toBe(true);
     expect(graph.gridSize).toBe(10);
-    window.removeEventListener('rd-grid-settings', onGrid);
+    offGrid();
   });
 });

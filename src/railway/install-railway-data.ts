@@ -5,6 +5,7 @@
  *        with a count badge, Edit Data… (Extras menu, context menu), Railway Checks, and the
  *        CSV/xlsx reports (File > Export Railway Data, Checks panel).
  */
+import { off, on } from '../core/event-bus';
 import { InternalEvent } from '@maxgraph/core';
 import type { Cell, EventObject, EventSource, Graph } from '@maxgraph/core';
 import './railway-data.css';
@@ -287,8 +288,8 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
   };
   window.addEventListener(RIGHT_PANEL_EVENT, onView);
-  window.addEventListener('tab-changed', onTabChanged);
-  window.addEventListener('tab-closed', onTabChanged);
+  on('tab-changed', onTabChanged);
+  on('tab-closed', onTabChanged);
   window.addEventListener('railway-edit-data-request', onEditData);
   window.addEventListener('railway-checks-request', onChecks);
   window.addEventListener('railway-export-request', onExport);
@@ -305,8 +306,8 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
         bound.model.removeListener(onModelChange);
       }
       window.removeEventListener(RIGHT_PANEL_EVENT, onView);
-      window.removeEventListener('tab-changed', onTabChanged);
-      window.removeEventListener('tab-closed', onTabChanged);
+      off('tab-changed', onTabChanged);
+      off('tab-closed', onTabChanged);
       window.removeEventListener('railway-edit-data-request', onEditData);
       window.removeEventListener('railway-checks-request', onChecks);
       window.removeEventListener('railway-export-request', onExport);

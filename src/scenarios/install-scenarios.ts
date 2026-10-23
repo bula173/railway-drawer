@@ -6,6 +6,7 @@
  *        that view is open, and File > Export Scenario (HTML/PDF/Slides)… (`scenario-export-request`,
  *        `detail.format` 'html' | 'pdf' | 'slides'). PDF and slides modules are loaded on demand.
  */
+import { off, on } from '../core/event-bus';
 import type { TabData, TabManager } from '../ui/tabs';
 import { getDrawioThumbnailRenderer } from '../ui/drawio-palette/drawio-palette-view';
 import { confirmTemplateDialog } from '../ui/templates/template-dialogs';
@@ -337,13 +338,12 @@ export function installScenarios(
     if (state && state.tabId !== tabManager.getActiveTab()?.id) viewer.close();
     panel.refresh();
   };
-  const onTabClosed = (evt: Event): void => {
-    const closedId = (evt as CustomEvent<{ tabId: string }>).detail?.tabId;
+  const onTabClosed = ({ tabId: closedId }: { tabId: string }): void => {
     if (viewer.getState()?.tabId === closedId) viewer.close();
     panel.refresh();
   };
-  window.addEventListener('tab-changed', onTabChanged);
-  window.addEventListener('tab-closed', onTabClosed);
+  on('tab-changed', onTabChanged);
+  on('tab-closed', onTabClosed);
 
   const handleKeydown = (e: KeyboardEvent): boolean => {
     if (!viewer.isActive()) return false;
@@ -362,8 +362,8 @@ export function installScenarios(
   };
 
   const destroy = (): void => {
-    window.removeEventListener('tab-changed', onTabChanged);
-    window.removeEventListener('tab-closed', onTabClosed);
+    off('tab-changed', onTabChanged);
+    off('tab-closed', onTabClosed);
     window.removeEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
     viewer.destroy();
     panel.destroy();
