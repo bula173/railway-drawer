@@ -15,7 +15,6 @@ import { globalNotificationManager } from '../../ui/notification';
 import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
 import { installShellForTest } from './shell-harness';
-import { EdgePropertiesController } from '../../ui/edge-properties';
 import { InteractiveUIController } from '../../ui/interactive-ui';
 
 describe('TabManager tab lifecycle', () => {
@@ -58,7 +57,6 @@ describe('TabManager tab lifecycle', () => {
   const storedTabs = () => storedAutosave()!.data.tabs as Array<{ name: string; graphXml: string }>;
 
   it('closing a tab disposes the graph listeners of its controllers', () => {
-    const edge = vi.spyOn(EdgePropertiesController.prototype, 'destroy');
     const ui = vi.spyOn(InteractiveUIController.prototype, 'destroy');
     tabManager = new TabManager('tabs-container', 'graph-container');
     tabManager.createTab('One');
@@ -66,11 +64,10 @@ describe('TabManager tab lifecycle', () => {
     const selection = second.graph.getSelectionModel() as unknown as { eventListeners: unknown[] };
     const before = selection.eventListeners.length;
     tabManager.closeTab(second.id);
-    expect(edge).toHaveBeenCalledTimes(1);
     expect(ui).toHaveBeenCalledTimes(1);
-    // EdgeProperties and InteractiveUI each listened to the selection model (the session views
-    // such as the status bar listen to the shown tab only)
-    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 2 * 2);
+    // InteractiveUI listened to the selection model (the session views such as the status bar and
+    // the connector fields listen to the shown tab only)
+    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 1 * 2);
   });
 
   it('keeps the cached XML of a tab that failed to restore and tells the user', () => {

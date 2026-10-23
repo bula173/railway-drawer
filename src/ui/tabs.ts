@@ -22,7 +22,6 @@ import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
 
 import { TextEditorController } from './text-editor';
-import { EdgePropertiesController } from './edge-properties';
 
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
@@ -62,8 +61,6 @@ export interface TabData extends DiagramSession {
   exportImageController: ExportImageController;
   plantumlEditorController: PlantUmlEditorController;
   textEditorController: TextEditorController;
-  /** Edge style fields of the properties panel (kept so destroyTab removes its graph listener). */
-  edgePropertiesController: EdgePropertiesController;
   /** draw.io connection arrows around the hovered shape (hover-arrows.ts) */
   hoverArrowsController: HoverArrowsController;
 }
@@ -247,7 +244,6 @@ export class TabManager {
       const textEditorController = new TextEditorController(graph);
 
       // Configure edge/connector properties
-      const edgePropertiesController = new EdgePropertiesController(graph);
 
       // Initialize UI controllers
       const clipboardController = new ClipboardController(graph);
@@ -293,7 +289,6 @@ export class TabManager {
         exportImageController,
         plantumlEditorController,
         textEditorController,
-        edgePropertiesController,
       };
     });
     // draw.io hover arrows (hover-arrows.ts): after ConnectionHandler, whose plugin it wraps. Built
@@ -682,7 +677,6 @@ export class TabManager {
         tab.exportImageController,
         tab.plantumlEditorController,
         tab.textEditorController,
-        tab.edgePropertiesController,
         tab.hoverArrowsController,
       ];
 

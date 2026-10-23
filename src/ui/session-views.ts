@@ -7,11 +7,13 @@
 import { PropertiesPanel } from './properties';
 import { LayersController } from './layers';
 import { StatusBarController } from './statusbar';
+import { EdgePropertiesController } from './edge-properties';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
   readonly layers: LayersController;
   readonly statusBar: StatusBarController;
+  readonly edgeProperties: EdgePropertiesController;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
@@ -20,14 +22,17 @@ export function createSessionViews(): SessionViews {
   const properties = new PropertiesPanel();
   const layers = new LayersController();
   const statusBar = new StatusBarController();
+  const edgeProperties = new EdgePropertiesController();
   return {
     properties,
     layers,
     statusBar,
+    edgeProperties,
     destroy() {
       properties.destroy();
       layers.destroy();
       statusBar.destroy();
+      edgeProperties.destroy();
     },
   };
 }

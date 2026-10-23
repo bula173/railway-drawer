@@ -1,4 +1,11 @@
+/**
+ * @file edge-properties.ts
+ * @brief Connector fields of the Properties panel (arrows, line style / width / colour of the
+ *        selected edges): one view for the app (TabManager's session views) following the active
+ *        session's selection (session.ts); a background tab's selection never hides or fills it.
+ */
 import { onSelectionChange } from '../core/graph-events';
+import { ActiveSessionBinding, type GraphSession } from './session';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import {
@@ -29,23 +36,30 @@ function selectValue(select: HTMLSelectElement | null, value: string): void {
 }
 
 export class EdgePropertiesController {
-  private graph: Graph;
+  /** The bound session's graph (the active tab's). */
+  private graph!: Graph;
   private currentEdge: Cell | null = null;
   private propertiesPanel: HTMLElement | null;
-  private readonly offSelection: () => void;
+  private readonly binding: ActiveSessionBinding<GraphSession>;
 
-  constructor(graph: Graph) {
-    this.graph = graph;
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph) {
     this.propertiesPanel = document.getElementById('property-content');
-
-    this.offSelection = onSelectionChange(this.graph, () => {
-      this.update();
-    });
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        disposers.add(onSelectionChange(session.graph, () => this.update()));
+      },
+      () => {
+        this.currentEdge = null;
+      },
+      graph ? { graph } : null
+    );
   }
 
-  /** Removes the graph listener (TabManager.destroyTab). */
+  /** Unbinds the view (TabManager's views are destroyed). */
   destroy(): void {
-    this.offSelection();
+    this.binding.dispose();
   }
 
   private update(): void {
