@@ -4,6 +4,7 @@
  *        File > Export railML 3.2… (checks + non-blocking summary, then download) and
  *        File > Import railML… / File > Open / drop (new tab, warnings dialog).
  */
+import { openModal } from '../core/modal';
 import { zoomRailwayDrawing } from '../ui/railway-zoom';
 import './railml.css';
 import type { TabManager } from '../ui/tabs';
@@ -33,37 +34,18 @@ interface DialogParts {
   close: () => void;
 }
 
-/** A modal dialog like the route tables dialog (Esc / backdrop / Close). */
+/** A modal dialog like the route tables dialog (Esc / backdrop / Close; core/modal.ts). */
 function openDialog(title: string, testId: string, onClose?: () => void): DialogParts {
   document.querySelector('.rd-railml-overlay')?.remove();
   const overlay = el('div', 'rd-route-dialog-overlay rd-railml-overlay');
   const dialog = el('div', 'rd-route-dialog rd-railml-dialog');
-  dialog.dataset.testid = testId;
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-label', title);
   const content = el('div', 'rd-route-dialog-content');
   const actions = el('div', 'rd-route-dialog-actions');
   dialog.append(el('h3', 'rd-route-dialog-title', title), content, actions);
   overlay.append(dialog);
-  const onKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      close();
-    }
-    e.stopPropagation();
-  };
-  function close(): void {
-    window.removeEventListener('keydown', onKey, true);
-    overlay.remove();
-    onClose?.();
-  }
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) close();
-  });
-  window.addEventListener('keydown', onKey, true);
-  document.body.append(overlay);
-  return { overlay, dialog, content, actions, close };
+  const modal = openModal({ overlay, dialog, label: title, testId, backdropEvent: 'click' });
+  if (onClose) modal.onClose(onClose);
+  return { overlay, dialog, content, actions, close: () => modal.close() };
 }
 
 function button(label: string, className: string, onClick: () => void): HTMLButtonElement {

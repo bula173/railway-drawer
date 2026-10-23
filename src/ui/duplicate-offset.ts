@@ -1,5 +1,6 @@
 import { Graph, type Cell } from '@maxgraph/core';
 import { prepareClonedCells } from '../railway/clone';
+import { openModal } from '../core/modal';
 
 export class DuplicateOffsetController {
   private graph: Graph;
@@ -22,12 +23,8 @@ export class DuplicateOffsetController {
   showDuplicateDialog(): void {
     this.closeOpenDialog?.();
     const modal = document.createElement('div');
-    const onEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeDialog();
-    };
     const closeDialog = () => {
-      document.removeEventListener('keydown', onEscape);
-      modal.remove();
+      handle.close();
       if (this.closeOpenDialog === closeDialog) this.closeOpenDialog = null;
     };
     modal.style.cssText = `
@@ -141,21 +138,14 @@ export class DuplicateOffsetController {
 
     content.appendChild(buttonContainer);
     modal.appendChild(content);
-    document.body.appendChild(modal);
+    // Esc / backdrop close it; focus trap and return, keys kept from the diagram shortcuts: the
+    // app's modal primitive (core/modal.ts), released with the dialog
+    const handle = openModal({ overlay: modal, dialog: content, labelledBy: title, backdropEvent: 'click', onCancel: closeDialog });
 
     // Focus on count input
     countInput.focus();
     countInput.select();
 
-    // Close on background click or escape
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeDialog();
-    });
-
-    // Registered after construction, so the TabManager's per-tab listener swap does not see it:
-    // it lives exactly as long as the dialog and is removed with it (it used to stay on
-    // `document` for good, one more per dialog opened, in every tab)
-    document.addEventListener('keydown', onEscape);
     this.closeOpenDialog = closeDialog;
   }
 

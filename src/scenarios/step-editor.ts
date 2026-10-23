@@ -8,6 +8,7 @@
  * single-line field or Ctrl/Cmd+Enter anywhere saves; Escape cancels; Enter in a text area is a new
  * line. While open, a window capture listener keeps keys away from the app's shortcut dispatcher.
  */
+import { openModal } from '../core/modal';
 import '../ui/templates/templates.css';
 import './scenarios.css';
 import { MAX_SCENARIO_DESCRIPTION, MAX_SCENARIO_NAME, MAX_STEP_TEXT, MAX_STEP_UML } from './scenario-model';
@@ -62,7 +63,6 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, t
 /** Opens the step editor; resolves null when cancelled. */
 export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResult | null> {
   return new Promise((resolve) => {
-    const previousFocus = document.activeElement as HTMLElement | null;
     const delay = opts.previewDelay ?? 300;
     const renderUml = opts.renderUml ?? ((source: string) => renderStepUml(source));
     let done = false;
@@ -70,10 +70,6 @@ export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResul
 
     const overlay = el('div', 'rd-tpl-modal-overlay');
     const dialog = el('div', 'rd-tpl-modal rd-scn-editor');
-    dialog.setAttribute('role', 'dialog');
-    dialog.setAttribute('aria-modal', 'true');
-    dialog.setAttribute('aria-label', opts.heading);
-    dialog.dataset.testid = 'scenario-step-editor';
     overlay.appendChild(dialog);
     dialog.appendChild(el('h2', 'rd-tpl-modal-title', opts.heading));
     if (opts.hint) dialog.appendChild(el('p', 'rd-tpl-modal-hint', opts.hint));
@@ -236,9 +232,7 @@ export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResul
       if (done) return;
       done = true;
       for (const t of timers) clearTimeout(t);
-      window.removeEventListener('keydown', keyListener, true);
-      overlay.remove();
-      previousFocus?.focus?.();
+      modal.close();
       resolve(value);
     };
     const submit = (): void => {
@@ -258,15 +252,10 @@ export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResul
         captureDrawing: opts.mode === 'add' || !!(captureRadio as HTMLInputElement | null)?.checked,
       });
     };
-    const keyListener = (evt: KeyboardEvent): void => {
-      // typing in the editor must not reach the diagram shortcuts (document capture listener)
-      evt.stopPropagation();
-      if (evt.key === 'Escape') {
-        evt.preventDefault();
-        finish(null);
-        return;
-      }
-      if (evt.key !== 'Enter' || evt.isComposing) return;
+    /** Enter: Ctrl/Cmd+Enter or Enter in a text field saves; Enter in the server field saves that. */
+    const onKey = (evt: KeyboardEvent): boolean => {
+      if (evt.key !== 'Enter') return false;
+      if (evt.isComposing) return true;
       const target = evt.target as HTMLElement | null;
       if (evt.ctrlKey || evt.metaKey) {
         evt.preventDefault();
@@ -278,6 +267,7 @@ export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResul
         evt.preventDefault();
         submit();
       }
+      return true;
     };
     nameInput.addEventListener('input', () => {
       error.hidden = true;
@@ -285,9 +275,17 @@ export function openStepEditor(opts: StepEditorOptions): Promise<StepEditorResul
     });
     cancel.addEventListener('click', () => finish(null));
     ok.addEventListener('click', submit);
-    // no "click outside cancels" here: a stray click must not discard typed UML/Markdown
-    window.addEventListener('keydown', keyListener, true);
-    document.body.appendChild(overlay);
+    // Esc cancels; focus trap / return, keys kept from the diagram shortcuts: core/modal.ts.
+    // No "click outside cancels" here: a stray click must not discard typed UML/Markdown.
+    const modal = openModal({
+      overlay,
+      dialog,
+      label: opts.heading,
+      testId: 'scenario-step-editor',
+      closeOnBackdrop: false,
+      onCancel: () => finish(null),
+      onKey,
+    });
     nameInput.focus();
     nameInput.select();
   });

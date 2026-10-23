@@ -4,6 +4,7 @@
  *        (Extras > Route Table… / Interlocking Table…), with CSV export of the shown table and an
  *        .xlsx workbook with both (report.ts / xlsx.ts).
  */
+import { openModal } from '../core/modal';
 import type { Table } from './report';
 import { tableToCsv } from './report';
 import { buildXlsx } from './xlsx';
@@ -49,9 +50,6 @@ export function openRouteTablesDialog(options: RouteTablesDialogOptions): () => 
   let tab = options.tab;
   const overlay = el('div', 'rd-route-dialog-overlay');
   const dialog = el('div', 'rd-route-dialog');
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-label', 'Route and interlocking tables');
   overlay.append(dialog);
 
   const tabs = el('div', 'rd-route-tabs');
@@ -103,24 +101,11 @@ export function openRouteTablesDialog(options: RouteTablesDialogOptions): () => 
     );
   }
 
-  const onKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      close();
-    }
-    e.stopPropagation();
-  };
-  function close(): void {
-    window.removeEventListener('keydown', onKey, true);
-    overlay.remove();
-  }
-  closeBtn.addEventListener('click', close);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) close();
-  });
-  window.addEventListener('keydown', onKey, true);
   render();
-  document.body.append(overlay);
+  // Esc / backdrop / Close, focus trap and return: the app's modal primitive (core/modal.ts)
+  const modal = openModal({ overlay, dialog, label: 'Route and interlocking tables', backdropEvent: 'click' });
+  const close = (): void => modal.close();
+  closeBtn.addEventListener('click', close);
   closeBtn.focus();
   return close;
 }

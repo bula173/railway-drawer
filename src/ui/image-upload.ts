@@ -3,6 +3,7 @@ import { confirmDialog } from './app-dialogs';
 import { globalNotificationManager } from './notification';
 import { ImageService } from '../services/image-service';
 import { logger } from '../drawio/logger';
+import { openModal, type ModalHandle } from '../core/modal';
 
 export class ImageUploadController {
   private imageService: ImageService;
@@ -12,35 +13,35 @@ export class ImageUploadController {
     this.imageService = ImageService.getInstance();
   }
 
-  // Esc closes the dialog; bound only while it is shown (listener capture rule: bound after construction)
-  private readonly onKeyDown = (e: KeyboardEvent): void => {
-    if (e.key !== 'Escape' || !this.modal || this.modal.style.display === 'none') return;
-    e.preventDefault();
-    e.stopPropagation();
-    this.hideModal();
-  };
+  /** The open dialog (Esc / backdrop close it, focus trap and return: core/modal.ts). */
+  private handle: ModalHandle | null = null;
 
   /** File > Import > Image as Custom Shape… and the toolbar's image button (`importImage` command). */
   openUploadDialog(): void {
     if (!this.modal) this.createUploadModal();
-    if (this.modal) {
-      (this.modal as HTMLElement).style.display = 'flex';
-      window.removeEventListener('keydown', this.onKeyDown, true);
-      window.addEventListener('keydown', this.onKeyDown, true);
+    if (!this.modal) return;
+    this.modal.style.display = 'flex';
+    if (!this.handle || this.handle.closed) {
+      // the overlay is the dialog element itself (#image-upload-modal)
+      this.handle = openModal({
+        overlay: this.modal,
+        dialog: this.modal,
+        label: 'Upload Custom Shape Image',
+        backdropEvent: 'click',
+        onCancel: () => this.hideModal(),
+      });
     }
   }
 
   private hideModal(): void {
     if (this.modal) this.modal.style.display = 'none';
-    window.removeEventListener('keydown', this.onKeyDown, true);
+    this.handle?.close();
+    this.handle = null;
   }
 
   private createUploadModal(): void {
     this.modal = document.createElement('div') as HTMLDivElement;
     this.modal.id = 'image-upload-modal';
-    this.modal.setAttribute('role', 'dialog');
-    this.modal.setAttribute('aria-modal', 'true');
-    this.modal.setAttribute('aria-label', 'Upload Custom Shape Image');
     this.modal.style.cssText = `
       display: flex;
       position: fixed;
@@ -210,12 +211,6 @@ export class ImageUploadController {
 
     modalContent.appendChild(buttonContainer);
     this.modal!.appendChild(modalContent);
-    document.body.appendChild(this.modal);
-
-    // Close on background click
-    this.modal!.addEventListener('click', (e) => {
-      if (e.target === this.modal) this.hideModal();
-    });
   }
 
   private handleFileSelect(file: File, modalContent: HTMLElement, uploadArea: HTMLElement): void {
@@ -338,7 +333,8 @@ export class ImageUploadController {
   }
 
   destroy(): void {
-    window.removeEventListener('keydown', this.onKeyDown, true);
+    this.handle?.close();
+    this.handle = null;
     if (this.modal?.parentElement) {
       this.modal.parentElement.removeChild(this.modal);
     }

@@ -12,7 +12,8 @@
  */
 
 import { Graph } from '@maxgraph/core';
-import { confirmDialog, otherDialogOpen } from './app-dialogs';
+import { confirmDialog } from './app-dialogs';
+import { openModal, type ModalHandle } from '../core/modal';
 import { globalNotificationManager } from './notification';
 import { applyInlineIcons } from './toolbar';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
@@ -64,17 +65,22 @@ export class ShapeDesignerController {
     document.body.appendChild(this.modal);
 
     this.setupModalHandlers(editingShape);
-    window.removeEventListener('keydown', this.onKeyDown, true);
-    window.addEventListener('keydown', this.onKeyDown, true);
+    // Esc closes the designer (not while a confirm dialog sits on top of it: only the topmost modal
+    // takes keys); focus trap / return: the app's modal primitive (core/modal.ts). Its own backdrop
+    // (.shape-designer-overlay) closes it on a click.
+    this.handle?.close();
+    this.handle = openModal({
+      overlay: this.modal,
+      dialog: this.modal,
+      label: 'Shape designer',
+      closeOnBackdrop: false,
+      container: null,
+      onCancel: () => this.closeDesigner(),
+    });
   }
 
-  /** Esc closes the designer (not while a confirm dialog sits on top of it). */
-  private readonly onKeyDown = (e: KeyboardEvent): void => {
-    if (e.key !== 'Escape' || !this.modal || otherDialogOpen(this.modal)) return;
-    e.preventDefault();
-    e.stopPropagation();
-    this.closeDesigner();
-  };
+  /** The open designer's modal behaviour. */
+  private handle: ModalHandle | null = null;
 
   /**
    * @brief Create modal HTML structure
@@ -82,9 +88,6 @@ export class ShapeDesignerController {
   private createModalHTML(editingShape?: CustomShape): HTMLElement {
     const modal = document.createElement('div');
     modal.className = 'shape-designer-modal';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Shape designer');
     modal.innerHTML = `
       <div class="shape-designer-overlay"></div>
       <div class="shape-designer-panel">
@@ -1786,7 +1789,8 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
    * @brief Close designer modal
    */
   private closeDesigner(): void {
-    window.removeEventListener('keydown', this.onKeyDown, true);
+    this.handle?.close();
+    this.handle = null;
     if (this.modal) {
       this.modal.remove();
       this.modal = null;

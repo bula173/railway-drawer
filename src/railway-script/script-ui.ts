@@ -5,6 +5,7 @@
  *        inline error marks, problem list, Apply / Auto-apply, Examples, Generate from drawing,
  *        conflict banner) and File > Import/Export Railway Script.
  */
+import { openModal, type ModalHandle } from '../core/modal';
 import { off, on } from '../core/event-bus';
 import './railway-script.css';
 import type { TabData, TabManager } from '../ui/tabs';
@@ -464,10 +465,6 @@ export function exportActiveTab(tabManager: TabManager, notify: ScriptNotifier):
   document.querySelector('.rd-rs-export-overlay')?.remove();
   const overlay = el('div', 'rd-route-dialog-overlay rd-rs-export-overlay');
   const dialog = el('div', 'rd-route-dialog rd-rs-export-dialog');
-  dialog.dataset.testid = 'railway-script-export-dialog';
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-label', 'Export Railway Script');
   const content = el('div', 'rd-route-dialog-content');
   const actions = el('div', 'rd-route-dialog-actions');
   const hasScript = tab.document.railwayScript.has();
@@ -475,17 +472,7 @@ export function exportActiveTab(tabManager: TabManager, notify: ScriptNotifier):
     el('p', undefined, hasScript ? 'Download the Railway Script of this diagram.' : 'This diagram has no Railway Script: one is generated from its railway objects.'),
     el('p', 'rd-rs-hint', 'YAML keeps comments; JSON is the same data without them. Both validate against the JSON Schema railway-script-1.')
   );
-  const close = (): void => {
-    window.removeEventListener('keydown', onKey, true);
-    overlay.remove();
-  };
-  const onKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      close();
-    }
-    e.stopPropagation();
-  };
+  const close = (): void => modal?.close();
   const run = (format: 'yaml' | 'json'): void => {
     try {
       const { text, generated } = exportText(tab, format);
@@ -504,10 +491,13 @@ export function exportActiveTab(tabManager: TabManager, notify: ScriptNotifier):
   );
   dialog.append(el('h3', 'rd-route-dialog-title', 'Export Railway Script'), content, actions);
   overlay.append(dialog);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) close();
+  // Esc / backdrop, focus trap and return: the app's modal primitive (core/modal.ts)
+  const modal: ModalHandle = openModal({
+    overlay,
+    dialog,
+    label: 'Export Railway Script',
+    testId: 'railway-script-export-dialog',
+    backdropEvent: 'click',
   });
-  window.addEventListener('keydown', onKey, true);
-  document.body.append(overlay);
   (actions.firstElementChild as HTMLButtonElement | null)?.focus();
 }

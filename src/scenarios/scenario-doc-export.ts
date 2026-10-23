@@ -3,6 +3,7 @@
  * @brief Options dialog of "Export Scenario (PDF)…" and "Export Scenario (Slides)…": which scenario
  *        (when there is a choice), A4 portrait/landscape (PDF) and "Highlight changes".
  */
+import { openModal } from '../core/modal';
 import type { ScenarioData } from './scenario-model';
 import type { PdfOrientation } from './scenario-pdf';
 import './scenario-doc.css';
@@ -59,11 +60,7 @@ export function openScenarioDocDialog(opts: ScenarioDocDialogOptions): Promise<S
     const withSteps = opts.scenarios.filter((s) => s.steps.length > 0);
     const overlay = el('div', 'rd-tpl-modal-overlay');
     const dialog = el('div', 'rd-tpl-modal rd-scn-export-options');
-    dialog.dataset.testid = 'scenario-doc-export-dialog';
-    dialog.setAttribute('role', 'dialog');
-    dialog.setAttribute('aria-modal', 'true');
     const titleText = opts.format === 'pdf' ? 'Export scenario as PDF' : 'Export scenario as slides';
-    dialog.setAttribute('aria-label', titleText);
     dialog.appendChild(el('h2', 'rd-tpl-modal-title', titleText));
 
     let select: HTMLSelectElement | null = null;
@@ -122,9 +119,11 @@ export function openScenarioDocDialog(opts: ScenarioDocDialogOptions): Promise<S
     dialog.appendChild(actions);
     overlay.appendChild(dialog);
 
+    let done = false;
     const finish = (value: ScenarioDocChoice | null): void => {
-      window.removeEventListener('keydown', onKey, true);
-      overlay.remove();
+      if (done) return;
+      done = true;
+      modal.close();
       resolve(value);
     };
     const submit = (): void => {
@@ -134,21 +133,18 @@ export function openScenarioDocDialog(opts: ScenarioDocDialogOptions): Promise<S
       if (opts.format === 'pdf') writeOrientation(orientation);
       finish({ scenarioId, orientation, showChanges: changes.checked });
     };
-    const onKey = (evt: KeyboardEvent): void => {
-      // keep keys away from the editor's shortcut dispatcher while the dialog is open
-      evt.stopPropagation();
-      if (evt.key === 'Escape') {
-        evt.preventDefault();
-        finish(null);
-      } else if (evt.key === 'Enter' && !(evt.target instanceof HTMLButtonElement)) {
-        evt.preventDefault();
-        submit();
-      }
-    };
     cancel.addEventListener('click', () => finish(null));
     ok.addEventListener('click', submit);
-    window.addEventListener('keydown', onKey, true);
-    document.body.appendChild(overlay);
+    // Esc cancels, Enter exports; focus trap, keys kept from the editor: core/modal.ts
+    const modal = openModal({
+      overlay,
+      dialog,
+      label: titleText,
+      testId: 'scenario-doc-export-dialog',
+      closeOnBackdrop: false,
+      onCancel: () => finish(null),
+      onSubmit: submit,
+    });
     ok.focus();
   });
 }

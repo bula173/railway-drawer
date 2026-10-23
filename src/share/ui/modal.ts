@@ -1,11 +1,12 @@
 /**
  * @file modal.ts
- * @brief Accessible modal for the share dialogs: role="dialog" + aria-modal + aria-labelledby,
- *        focus moves in and is trapped (Tab/Shift+Tab), Escape and the overlay close it, focus
- *        returns to the opener. A window capture listener keeps key presses away from the app's
- *        diagram shortcuts (Delete, Ctrl+Z, ...) while it is open.
+ * @brief The share dialogs' modal (header with ✕, body, footer; `.rd-share-*` classes) on the app's
+ *        one modal primitive (core/modal.ts): role="dialog" + aria-modal + aria-labelledby, focus
+ *        trap, Escape and the overlay close it, focus returns to the opener, keys stay away from
+ *        the diagram shortcuts.
  */
 import '../share.css';
+import { openModal as openAppModalBehaviour } from '../../core/modal';
 
 export function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
@@ -36,23 +37,11 @@ export interface Modal {
   readonly closed: boolean;
 }
 
-let modalCounter = 0;
-
-const FOCUSABLE =
-  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
 export function openModal(opts: { title: string; testId?: string; className?: string }): Modal {
-  const previousFocus = document.activeElement as HTMLElement | null;
-  const id = `rd-share-modal-${++modalCounter}`;
   const overlay = el('div', 'rd-share-overlay');
   const dialog = el('div', `rd-share-modal${opts.className ? ` ${opts.className}` : ''}`);
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-labelledby', `${id}-title`);
-  if (opts.testId) dialog.dataset.testid = opts.testId;
   const header = el('div', 'rd-share-modal-header');
   const title = el('h2', 'rd-share-modal-title', opts.title);
-  title.id = `${id}-title`;
   const closeBtn = button('✕', 'rd-share-close');
   closeBtn.setAttribute('aria-label', 'Close');
   header.append(title, closeBtn);
@@ -60,66 +49,20 @@ export function openModal(opts: { title: string; testId?: string; className?: st
   const footer = el('div', 'rd-share-modal-footer');
   dialog.append(header, body, footer);
   overlay.appendChild(dialog);
-
-  const callbacks: Array<() => void> = [];
-  let closed = false;
-
-  const focusables = (): HTMLElement[] =>
-    Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE)).filter((node) => !node.closest('[hidden]'));
-
-  const keyListener = (evt: KeyboardEvent): void => {
-    if (!overlay.isConnected) return;
-    // Only the topmost dialog handles keys
-    const overlays = document.querySelectorAll('.rd-share-overlay');
-    if (overlays[overlays.length - 1] !== overlay) return;
-    evt.stopPropagation();
-    if (evt.key === 'Escape') {
-      evt.preventDefault();
-      modal.close();
-    } else if (evt.key === 'Tab') {
-      const items = focusables();
-      if (items.length === 0) return;
-      const first = items[0];
-      const last = items[items.length - 1];
-      const active = document.activeElement;
-      if (evt.shiftKey && (active === first || !dialog.contains(active))) {
-        evt.preventDefault();
-        last.focus();
-      } else if (!evt.shiftKey && (active === last || !dialog.contains(active))) {
-        evt.preventDefault();
-        first.focus();
-      }
-    }
-  };
-
-  const modal: Modal = {
+  // behaviour: the app's one modal primitive (Escape and the backdrop close it)
+  const handle = openAppModalBehaviour({ overlay, dialog, labelledBy: title, testId: opts.testId });
+  closeBtn.addEventListener('click', () => handle.close());
+  return {
     overlay,
     dialog,
     body,
     footer,
     get closed() {
-      return closed;
+      return handle.closed;
     },
-    close() {
-      if (closed) return;
-      closed = true;
-      window.removeEventListener('keydown', keyListener, true);
-      overlay.remove();
-      callbacks.forEach((cb) => cb());
-      if (previousFocus && previousFocus.isConnected) previousFocus.focus?.();
-    },
-    onClose(callback) {
-      callbacks.push(callback);
-    },
+    close: () => handle.close(),
+    onClose: (callback) => handle.onClose(callback),
   };
-
-  closeBtn.addEventListener('click', () => modal.close());
-  overlay.addEventListener('mousedown', (evt) => {
-    if (evt.target === overlay) modal.close();
-  });
-  window.addEventListener('keydown', keyListener, true);
-  document.body.appendChild(overlay);
-  return modal;
 }
 
 /** Copies text; falls back to a selected textarea + execCommand on plain-http pages. */

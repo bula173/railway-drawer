@@ -3,18 +3,15 @@
  * @brief Themed modal dialogs of the app chrome (the `.rd-tpl-modal` look of the template dialogs):
  *        Save As, confirm, message, About. They replace the native alert()/confirm()/prompt().
  *
- * role="dialog" + aria-modal + aria-labelledby, a backdrop, focus moves in and is trapped
- * (Tab/Shift+Tab), Escape cancels, Enter submits (not on buttons/links), focus returns to the
- * opener. A window capture listener keeps key presses away from the diagram shortcut dispatcher
- * (Delete, Ctrl+Z, ...) while a dialog is open.
+ * Behaviour from the one modal primitive (core/modal.ts): role="dialog" + aria-modal +
+ * aria-labelledby, a backdrop, focus trapped (Tab/Shift+Tab), Escape cancels, Enter submits (not on
+ * buttons/links), focus returns to the opener, only the topmost dialog takes keys, and no key
+ * reaches the diagram shortcuts while it is open.
  */
 import './templates/templates.css';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from '../config/build-id';
+import { openModal } from '../core/modal';
 
-const FOCUSABLE =
-  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-let dialogCounter = 0;
 
 function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag);
@@ -52,86 +49,34 @@ export interface AppModalOptions {
   onSubmit?: () => void;
 }
 
-/** Opens an empty themed modal; the caller fills `body` and `actions`. */
+/** Opens an empty themed modal; the caller fills `body` and `actions` (behaviour: core/modal.ts). */
 export function openAppModal(opts: AppModalOptions): AppModal {
-  const previousFocus = document.activeElement as HTMLElement | null;
-  const id = `rd-app-dialog-${++dialogCounter}`;
   const overlay = el('div', 'rd-tpl-modal-overlay');
   const dialog = el('div', `rd-tpl-modal rd-app-dialog${opts.className ? ` ${opts.className}` : ''}`);
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-labelledby', `${id}-title`);
-  if (opts.testId) dialog.dataset.testid = opts.testId;
   const title = el('h2', 'rd-tpl-modal-title', opts.title);
-  title.id = `${id}-title`;
   const body = el('div', 'rd-app-dialog-body');
   const actions = el('div', 'rd-tpl-modal-actions');
   dialog.append(title, body, actions);
   overlay.appendChild(dialog);
-
-  let closed = false;
-  const cancel = (): void => (opts.onCancel ? opts.onCancel() : modal.close());
-  const focusables = (): HTMLElement[] =>
-    Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE)).filter((node) => !node.closest('[hidden]'));
-
-  const keyListener = (evt: KeyboardEvent): void => {
-    if (!overlay.isConnected) return;
-    // Only the topmost dialog handles keys
-    const overlays = document.querySelectorAll('.rd-tpl-modal-overlay');
-    if (overlays[overlays.length - 1] !== overlay) return;
-    // Typing in the dialog must not trigger diagram shortcuts (document capture listener)
-    evt.stopPropagation();
-    if (evt.key === 'Escape') {
-      evt.preventDefault();
-      cancel();
-    } else if (evt.key === 'Enter' && !evt.isComposing) {
-      const target = evt.target as Element | null;
-      if (opts.onSubmit && !(target instanceof HTMLButtonElement) && !(target instanceof HTMLAnchorElement) && !(target instanceof HTMLTextAreaElement)) {
-        evt.preventDefault();
-        opts.onSubmit();
-      }
-    } else if (evt.key === 'Tab') {
-      const items = focusables();
-      if (items.length === 0) {
-        evt.preventDefault();
-        return;
-      }
-      const first = items[0];
-      const last = items[items.length - 1];
-      const active = document.activeElement;
-      if (evt.shiftKey && (active === first || !dialog.contains(active))) {
-        evt.preventDefault();
-        last.focus();
-      } else if (!evt.shiftKey && (active === last || !dialog.contains(active))) {
-        evt.preventDefault();
-        first.focus();
-      }
-    }
-  };
-
-  const modal: AppModal = {
+  const handle = openModal({
+    overlay,
+    dialog,
+    labelledBy: title,
+    testId: opts.testId,
+    onCancel: opts.onCancel ? () => opts.onCancel!() : undefined,
+    onSubmit: opts.onSubmit,
+  });
+  return {
     overlay,
     dialog,
     title,
     body,
     actions,
     get closed() {
-      return closed;
+      return handle.closed;
     },
-    close() {
-      if (closed) return;
-      closed = true;
-      window.removeEventListener('keydown', keyListener, true);
-      overlay.remove();
-      if (previousFocus && previousFocus.isConnected) previousFocus.focus?.();
-    },
+    close: () => handle.close(),
   };
-  overlay.addEventListener('mousedown', (evt) => {
-    if (evt.target === overlay) cancel();
-  });
-  window.addEventListener('keydown', keyListener, true);
-  document.body.appendChild(overlay);
-  return modal;
 }
 
 /**

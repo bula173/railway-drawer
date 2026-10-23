@@ -7,6 +7,7 @@
  */
 import './templates.css';
 import { MAX_TEMPLATE_DESCRIPTION, MAX_TEMPLATE_NAME } from './template-store';
+import { openModal as openAppModalBehaviour } from '../../core/modal';
 
 export interface TemplateDetails {
   name: string;
@@ -40,34 +41,31 @@ interface ModalParts {
   close: () => void;
 }
 
+/**
+ * The template dialogs' modal (`.rd-tpl-modal`, aria-label) on the app's one modal primitive
+ * (core/modal.ts): `onKey` takes Escape / Enter (the callers cancel / submit); focus trap, stacking,
+ * focus return and keeping keys from the diagram shortcuts are the primitive's. The callers handle a
+ * press on the backdrop.
+ */
 function openModal(heading: string, onKey: (evt: KeyboardEvent) => void, label: string): ModalParts {
-  const previousFocus = document.activeElement as HTMLElement | null;
   const overlay = el('div', 'rd-tpl-modal-overlay');
   const dialog = el('div', 'rd-tpl-modal');
-  dialog.setAttribute('role', 'dialog');
-  dialog.setAttribute('aria-modal', 'true');
-  dialog.setAttribute('aria-label', label);
   const title = el('h2', 'rd-tpl-modal-title', heading);
   const actions = el('div', 'rd-tpl-modal-actions');
   dialog.append(title);
   overlay.appendChild(dialog);
-  const keyListener = (evt: KeyboardEvent): void => {
-    // Typing in the dialog must not trigger diagram shortcuts (document capture listener)
-    evt.stopPropagation();
-    onKey(evt);
-  };
-  window.addEventListener('keydown', keyListener, true);
-  document.body.appendChild(overlay);
-  return {
+  const handle = openAppModalBehaviour({
     overlay,
     dialog,
-    actions,
-    close: () => {
-      window.removeEventListener('keydown', keyListener, true);
-      overlay.remove();
-      previousFocus?.focus?.();
+    label,
+    closeOnBackdrop: false,
+    onKey: (evt) => {
+      if (evt.key !== 'Escape' && evt.key !== 'Enter') return false;
+      onKey(evt);
+      return true;
     },
-  };
+  });
+  return { overlay, dialog, actions, close: () => handle.close() };
 }
 
 /** Asks for a template name (required) and description. Resolves null when cancelled. */

@@ -6,6 +6,7 @@
  *        that view is open, and File > Export Scenario (HTML/PDF/Slides)… (`scenario-export-request`,
  *        `detail.format` 'html' | 'pdf' | 'slides'). PDF and slides modules are loaded on demand.
  */
+import { openModal } from '../core/modal';
 import { off, on } from '../core/event-bus';
 import type { TabData, TabManager } from '../ui/tabs';
 import { getDrawioThumbnailRenderer } from '../ui/drawio-palette/drawio-palette-view';
@@ -100,18 +101,17 @@ function chooseScenario(scenarios: ScenarioData[]): Promise<ScenarioData | null>
     overlay.className = 'rd-tpl-modal-overlay';
     const dialog = document.createElement('div');
     dialog.className = 'rd-tpl-modal rd-scn-choose';
-    dialog.setAttribute('role', 'dialog');
-    dialog.setAttribute('aria-modal', 'true');
-    dialog.setAttribute('aria-label', 'Export scenario');
     const title = document.createElement('h2');
     title.className = 'rd-tpl-modal-title';
     title.textContent = 'Export which scenario?';
     dialog.appendChild(title);
     const list = document.createElement('div');
     list.className = 'rd-scn-choose-list';
+    let done = false;
     const finish = (value: ScenarioData | null): void => {
-      window.removeEventListener('keydown', onKey, true);
-      overlay.remove();
+      if (done) return;
+      done = true;
+      modal.close();
       resolve(value);
     };
     for (const scenario of scenarios) {
@@ -133,18 +133,8 @@ function chooseScenario(scenarios: ScenarioData[]): Promise<ScenarioData | null>
     actions.appendChild(cancel);
     dialog.append(list, actions);
     overlay.appendChild(dialog);
-    const onKey = (evt: KeyboardEvent): void => {
-      evt.stopPropagation();
-      if (evt.key === 'Escape') {
-        evt.preventDefault();
-        finish(null);
-      }
-    };
-    window.addEventListener('keydown', onKey, true);
-    overlay.addEventListener('mousedown', (evt) => {
-      if (evt.target === overlay) finish(null);
-    });
-    document.body.appendChild(overlay);
+    // Esc / backdrop cancel, focus trap, keys kept from the editor: core/modal.ts
+    const modal = openModal({ overlay, dialog, label: 'Export scenario', onCancel: () => finish(null) });
     (list.querySelector('button:not(:disabled)') as HTMLButtonElement | null)?.focus();
   });
 }

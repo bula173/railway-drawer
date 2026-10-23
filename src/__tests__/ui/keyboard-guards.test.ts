@@ -14,6 +14,7 @@ import { GroupingController } from '../../ui/grouping';
 import { DuplicateOffsetController } from '../../ui/duplicate-offset';
 import { createTestGraph, cleanupTestGraph } from '../setup';
 import { installCommands } from '../../ui/commands';
+import { openModalCount } from '../../core/modal';
 import type { TabData } from '../../ui/tabs';
 
 describe('document keyboard handlers respect text editing', () => {
@@ -106,33 +107,21 @@ describe('document keyboard handlers respect text editing', () => {
     expect(flip).toHaveBeenCalledTimes(1);
   });
 
-  it('the duplicate dialog removes its document Escape listener when it closes', () => {
+  it('the duplicate dialog is a modal that is released when it closes (Escape, or with its tab)', () => {
     const controller = new DuplicateOffsetController(graph);
-
-    const added: EventListenerOrEventListenerObject[] = [];
-    const removed: EventListenerOrEventListenerObject[] = [];
-    const add = document.addEventListener.bind(document);
-    const remove = document.removeEventListener.bind(document);
-    vi.spyOn(document, 'addEventListener').mockImplementation((type, listener, options) => {
-      if (type === 'keydown' && listener) added.push(listener);
-      add(type, listener, options);
-    });
-    vi.spyOn(document, 'removeEventListener').mockImplementation((type, listener, options) => {
-      if (type === 'keydown' && listener) removed.push(listener);
-      remove(type, listener, options);
-    });
-
+    const base = openModalCount();
     controller.showDuplicateDialog();
     expect(document.body.textContent).toContain('Duplicate Multiple Times');
+    expect(document.querySelector('[role="dialog"][aria-modal="true"]')).not.toBeNull();
+    expect(openModalCount()).toBe(base + 1);
     keydown(document.body, 'Escape');
     expect(document.body.textContent).not.toContain('Duplicate Multiple Times');
+    expect(openModalCount()).toBe(base);
 
     // Open again, then close the tab with the dialog still open
     controller.showDuplicateDialog();
     controller.destroy();
     expect(document.body.textContent).not.toContain('Duplicate Multiple Times');
-
-    expect(added).toHaveLength(2);
-    expect(removed).toEqual(added);
+    expect(openModalCount()).toBe(base);
   });
 });

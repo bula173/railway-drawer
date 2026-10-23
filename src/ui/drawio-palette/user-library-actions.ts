@@ -6,6 +6,7 @@
  *        native draw.io libraries: entries are `{xml, w, h, title, aspect}` with uncompressed
  *        `<mxGraphModel>` XML, which draw.io's sidebar opens as is.
  */
+import { openModal } from '../../core/modal';
 import './user-library-actions.css';
 import type { Graph } from '@maxgraph/core';
 import { readLibraryJson } from '../../drawio-shapes/engine/mxlibrary';
@@ -107,8 +108,6 @@ export function promptText(title: string, label: string, initial = '', placehold
     overlay.className = 'rd-dp-prompt-overlay';
     const box = document.createElement('div');
     box.className = 'rd-dp-prompt';
-    box.setAttribute('role', 'dialog');
-    box.setAttribute('aria-label', title);
     const head = document.createElement('div');
     head.className = 'rd-dp-prompt-title';
     head.textContent = title;
@@ -131,22 +130,29 @@ export function promptText(title: string, label: string, initial = '', placehold
     buttons.append(cancel, ok);
     box.append(head, lab, buttons);
     overlay.appendChild(box);
-    document.body.appendChild(overlay);
+    let finished = false;
     const done = (value: string | null): void => {
-      window.removeEventListener('keydown', onKey, true);
-      overlay.remove();
+      if (finished) return;
+      finished = true;
+      modal.close();
       resolve(value);
     };
-    // capture phase: keep keys away from the editor's shortcut dispatcher while the prompt is open
-    const onKey = (evt: KeyboardEvent): void => {
-      if (evt.key === 'Escape') { evt.preventDefault(); evt.stopPropagation(); done(null); }
-      else if (evt.key === 'Enter') { evt.preventDefault(); evt.stopPropagation(); done(input.value.trim() || null); }
-      else evt.stopPropagation();
-    };
-    window.addEventListener('keydown', onKey, true);
+    // Escape / backdrop = cancel, Enter = OK (also on the buttons); focus trap, keys kept from the
+    // editor's shortcuts: the app's modal primitive (core/modal.ts)
+    const modal = openModal({
+      overlay,
+      dialog: box,
+      label: title,
+      onCancel: () => done(null),
+      onKey: (evt) => {
+        if (evt.key !== 'Enter') return false;
+        evt.preventDefault();
+        done(input.value.trim() || null);
+        return true;
+      },
+    });
     cancel.addEventListener('click', () => done(null));
     ok.addEventListener('click', () => done(input.value.trim() || null));
-    overlay.addEventListener('mousedown', (evt) => { if (evt.target === overlay) done(null); });
     input.focus();
     input.select();
   });
