@@ -79,9 +79,9 @@ describe('sheet setup and geometry', () => {
     expect(g.sheetInDrawing).toEqual({ x: 0, y: 0, width: 3308, height: 2338 });
     const fitted = fitPlacement(sheetGeometry(fixed, { revisionRows: 0, legendEntries: 0 }), { width: 2000, height: 200 });
     // a wide drawing goes above the blocks over the full frame width
-    expect(fitted.rect.width).toBeCloseTo(390);
+    expect(fitted.rect.width).toBeCloseTo(380);
     const tall = fitPlacement(sheetGeometry(fixed, { revisionRows: 0, legendEntries: 0 }), { width: 100, height: 1000 });
-    expect(tall.rect.height).toBeCloseTo(277); // left of the blocks, full frame height
+    expect(tall.rect.height).toBeCloseTo(267); // left of the blocks, full frame height (5 mm padding)
   });
 
   it('persists the setup on the root cell and the draw.io page settings, undoable, through a save / open', async () => {

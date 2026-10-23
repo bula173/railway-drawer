@@ -14,6 +14,7 @@ import { installRailwayData } from '../railway/install-railway-data';
 import { installRailwayRoutes } from '../railway/install-railway-routes';
 import { installRailwayStates } from '../railway/install-railway-states';
 import { installRailml } from '../railml/install-railml';
+import { installPrintSheets } from '../print/ui/install-print';
 
 /** Scenarios, railway data / routes / states, railML; returns the scenarios handle (its key interceptor). */
 export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTMLElement): ScenariosHandle {
@@ -36,6 +37,8 @@ export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTML
   installRailwayStates(tabManager, globalNotificationManager);
   // railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
   installRailml(tabManager, globalNotificationManager);
+  // Print sheets: sheet overlay (View > Show Sheet Border), continuation markers (src/print)
+  installPrintSheets();
   return scenarios;
 }
 

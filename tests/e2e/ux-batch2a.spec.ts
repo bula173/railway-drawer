@@ -120,7 +120,7 @@ test('File menu: Import / Export submenus (nested) by mouse and keyboard', async
       .filter((c) => c.matches('.menu-dropdown-item, .menu-submenu'))
       .map((c) => c.getAttribute('data-action') ?? `▸${c.getAttribute('data-submenu')}`)
   );
-  expect(top).toEqual(['new', 'open', 'save', 'saveAs', 'saveAsTemplate', '▸import', '▸export', 'share', 'print']);
+  expect(top).toEqual(['new', 'open', 'save', 'saveAs', 'saveAsTemplate', '▸import', '▸export', 'share', 'pageSetup', 'titleBlock', 'revisions', 'print']);
 
   // mouse: Export > Railway Data > ...
   await file.click();

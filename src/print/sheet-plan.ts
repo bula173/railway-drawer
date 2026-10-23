@@ -10,7 +10,7 @@ import { buildLegend, type LegendEntry } from './legend';
 import { sheetGeometry, type SheetGeometry } from './sheet-geometry';
 import { refreshSheetRefsInXml, type SheetNumberOf } from './sheet-refs';
 import { sheetSetupFrom, type SheetSetup } from './sheet-setup';
-import { sheetTitleValues, type SheetTitleValues } from './title-block';
+import { sheetTitleValues, type RevisionRow, type SheetTitleValues } from './title-block';
 import './project-section';
 
 export interface SheetPlan {
@@ -19,6 +19,8 @@ export interface SheetPlan {
   modelXml: string;
   setup: SheetSetup;
   values: SheetTitleValues;
+  /** The document's revision rows (printed when the setup has the revision table). */
+  revisions: RevisionRow[];
   legend: LegendEntry[];
   geometry: SheetGeometry;
 }
@@ -86,6 +88,7 @@ export async function planSheets(doc: DiagramDocument, pages?: readonly number[]
       modelXml,
       setup,
       values: sheetTitleValues(titleBlock, revisions, setup, i, all.length),
+      revisions,
       legend,
       geometry: sheetGeometry(setup, { revisionRows: revisions.length, legendEntries: legend.length }),
     });

@@ -19,6 +19,8 @@ export interface Rect {
 export const TITLE_BLOCK = { width: 180, height: 50 } as const;
 /** Revision table: header and row heights (mm). */
 export const REVISION_ROW = { header: 5, row: 5 } as const;
+/** Free space between a fitted drawing and the frame / blocks (mm). */
+export const FIT_PADDING = 5;
 /** Legend: title height, row height, column width, rows per column (mm). */
 export const LEGEND = { title: 6, row: 6, column: 55, rows: 7, pad: 2 } as const;
 
@@ -98,14 +100,15 @@ export function sheetGeometry(setup: SheetSetup, input: SheetLayoutInput): Sheet
     }
   }
 
-  // A fitted drawing goes above the blocks (full width) or left of them (full height)
+  // A fitted drawing goes above the blocks (full width) or left of them (full height), FIT_PADDING inside
   const fitAreas: Rect[] = [];
   const topOfBlocks = Math.min(stackTop, legend ? legend.y : stackTop);
+  const inset = (r: Rect): Rect => ({ x: r.x + FIT_PADDING, y: r.y + FIT_PADDING, width: Math.max(1, r.width - 2 * FIT_PADDING), height: Math.max(1, r.height - 2 * FIT_PADDING) });
   if (topOfBlocks < bottom) {
-    fitAreas.push({ x: frame.x, y: frame.y, width: frame.width, height: Math.max(1, topOfBlocks - frame.y) });
-    if (besideWidth < frame.width) fitAreas.push({ x: frame.x, y: frame.y, width: frame.width - besideWidth, height: frame.height });
+    fitAreas.push(inset({ x: frame.x, y: frame.y, width: frame.width, height: Math.max(1, topOfBlocks - frame.y) }));
+    if (besideWidth < frame.width) fitAreas.push(inset({ x: frame.x, y: frame.y, width: frame.width - besideWidth, height: frame.height }));
   } else {
-    fitAreas.push({ ...frame });
+    fitAreas.push(inset(frame));
   }
 
   const unitsPerMm = {
