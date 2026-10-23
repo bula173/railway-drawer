@@ -13,6 +13,7 @@ import { isConnectionArrowsEnabled, toggleConnectionArrows } from '../hover-arro
 import { appContext } from '../app-context';
 import { closeAllMenus } from '../menu';
 import { globalNotificationManager } from '../notification';
+import { insertQuickShape } from '../interactive-ui';
 import { logger } from '../../drawio/logger';
 import { isMod, keyOf } from './keymap';
 import type { Command, KeyBinding } from './types';
@@ -146,10 +147,10 @@ export const viewCommands: readonly Command[] = [
     },
   },
   // ---- toolbar Insert group: a shape at the centre of the visible canvas, selected
-  { id: 'insertRectangle', label: 'Insert rectangle', run: (ctx) => ctx.tab?.interactiveUIController.insertQuickShape('rectangle', 100, 60, '#e1d5e7', '#9673a6') },
-  { id: 'insertEllipse', label: 'Insert ellipse', run: (ctx) => ctx.tab?.interactiveUIController.insertQuickShape('ellipse', 80, 80, '#d4e6f1', '#3498db', 'ellipse') },
-  { id: 'insertDiamond', label: 'Insert diamond', run: (ctx) => ctx.tab?.interactiveUIController.insertQuickShape('diamond', 80, 80, '#f9e79f', '#f39c12', 'diamond') },
-  { id: 'insertLine', label: 'Insert line', run: (ctx) => ctx.tab?.interactiveUIController.insertQuickShape('line', 100, 10, 'none', '#2c3e50', undefined, 2) },
+  { id: 'insertRectangle', label: 'Insert rectangle', run: (ctx) => ctx.tab && insertQuickShape(ctx.tab.graph, 'rectangle', 100, 60, '#e1d5e7', '#9673a6') },
+  { id: 'insertEllipse', label: 'Insert ellipse', run: (ctx) => ctx.tab && insertQuickShape(ctx.tab.graph, 'ellipse', 80, 80, '#d4e6f1', '#3498db', 'ellipse') },
+  { id: 'insertDiamond', label: 'Insert diamond', run: (ctx) => ctx.tab && insertQuickShape(ctx.tab.graph, 'diamond', 80, 80, '#f9e79f', '#f39c12', 'diamond') },
+  { id: 'insertLine', label: 'Insert line', run: (ctx) => ctx.tab && insertQuickShape(ctx.tab.graph, 'line', 100, 10, 'none', '#2c3e50', undefined, 2) },
   {
     id: 'connectSelection',
     label: 'Connect the two selected shapes',

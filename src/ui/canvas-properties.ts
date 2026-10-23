@@ -1,5 +1,6 @@
 import { Graph } from '@maxgraph/core';
 import { applyGridBackground } from './grid-background';
+import { ActiveSessionBinding, type GraphSession } from './session';
 
 export type CanvasSize = 'A4' | 'A5' | 'Letter' | 'Fullscreen' | 'Custom';
 
@@ -15,10 +16,15 @@ interface CanvasConfig {
 /**
  * Canvas settings (grid, background, size) of the Canvas Properties section. When it is shown is
  * decided by PropertiesPanel (properties-state.ts): after a click on the empty canvas, only while
- * nothing is selected.
+ * nothing is selected. One view for the app (TabManager's session views): the fields act on the
+ * active session's graph (session.ts); the grid fields show its grid (grid-toggle.ts syncGridUi).
  */
 export class CanvasProperties {
-  private graph: Graph;
+  /** The bound session's graph (the active tab's). */
+  private graph!: Graph;
+  private bound = false;
+  private readonly listenerAbort = new AbortController();
+  private readonly binding: ActiveSessionBinding<GraphSession>;
   private config: CanvasConfig = {
     size: 'Fullscreen',
     gridEnabled: true,
@@ -34,30 +40,51 @@ export class CanvasProperties {
     Custom: null,
   };
 
-  constructor(graph: Graph) {
-    this.graph = graph;
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph) {
     this.setupEventListeners();
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session) => {
+        this.graph = session.graph;
+        this.bound = true;
+      },
+      () => {
+        this.bound = false;
+      },
+      graph ? { graph } : null
+    );
+  }
+
+  /** Unbinds the view (TabManager's views are destroyed). */
+  destroy(): void {
+    this.listenerAbort.abort();
+    this.binding.dispose();
   }
 
   private setupEventListeners() {
-    document.getElementById('canvas-gridEnabled')?.addEventListener('change', (e) => {
+    const on = (id: string, handler: (e: Event) => void): void => {
+      document.getElementById(id)?.addEventListener('change', (e) => {
+        if (this.bound) handler(e);
+      }, { signal: this.listenerAbort.signal });
+    };
+    on('canvas-gridEnabled', (e) => {
       const enabled = (e.target as HTMLInputElement).checked;
       this.toggleGrid(enabled);
     });
 
-    document.getElementById('canvas-gridSize')?.addEventListener('change', (e) => {
+    on('canvas-gridSize', (e) => {
       const size = parseInt((e.target as HTMLInputElement).value);
       this.setGridSize(size);
     });
 
-    document.getElementById('canvas-bgColor')?.addEventListener('change', (e) => {
+    on('canvas-bgColor', (e) => {
       const color = (e.target as HTMLInputElement).value;
       const textInput = document.getElementById('canvas-bgColorText') as HTMLInputElement;
       if (textInput) textInput.value = color;
       this.setBackgroundColor(color);
     });
 
-    document.getElementById('canvas-bgColorText')?.addEventListener('change', (e) => {
+    on('canvas-bgColorText', (e) => {
       const color = (e.target as HTMLInputElement).value;
       if (/^#[0-9A-F]{6}$/i.test(color)) {
         const colorInput = document.getElementById('canvas-bgColor') as HTMLInputElement;
@@ -66,7 +93,7 @@ export class CanvasProperties {
       }
     });
 
-    document.getElementById('canvas-size')?.addEventListener('change', (e) => {
+    on('canvas-size', (e) => {
       const size = (e.target as HTMLInputElement).value as CanvasSize;
       this.setCanvasSize(size);
     });

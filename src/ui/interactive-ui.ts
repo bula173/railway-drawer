@@ -1,27 +1,62 @@
+/**
+ * @file interactive-ui.ts
+ * @brief The remaining Properties / Canvas fields and the toolbar's zoom select (label text, bold /
+ *        italic / underline, text position, writing direction, sketch, snap to grid, copy size;
+ *        canvas grid / background / size; zoom level): one view for the app (TabManager's session
+ *        views) acting on the active session's graph (session.ts), and the toolbar's quick insert.
+ */
 import { onSelectionChange } from '../core/graph-events';
 import { Graph } from '@maxgraph/core';
+import { ActiveSessionBinding, type GraphSession } from './session';
 import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
 import { syncGridControls } from './grid-toggle';
 import { logger } from '../drawio/logger';
 
 export class InteractiveUIController {
-  private graph: Graph;
-  private offSelection: (() => void) | null = null;
+  /** The bound session's graph (the active tab's). */
+  private graph!: Graph;
+  private bound = false;
   private selectedCells: Cell[] = [];
+  private readonly listenerAbort = new AbortController();
+  private readonly binding: ActiveSessionBinding<GraphSession>;
 
-  constructor(graph: Graph) {
-    this.graph = graph;
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph) {
     this.setupToolbarButtons();
     this.setupCanvasProperties();
     this.setupPropertyPanelInputs();
     this.setupTopBar();
-    this.setupGraphListeners();
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        this.bound = true;
+        this.selectedCells = session.graph.getSelectionCells();
+        disposers.add(
+          onSelectionChange(session.graph, () => {
+            this.selectedCells = session.graph.getSelectionCells();
+            this.updatePropertyPanel();
+          })
+        );
+      },
+      () => {
+        this.bound = false;
+        this.selectedCells = [];
+      },
+      graph ? { graph } : null
+    );
+  }
+
+  /** A DOM listener bound once; it acts only while a session is bound. */
+  private on(target: EventTarget | null | undefined, type: string, handler: (e: Event) => void): void {
+    target?.addEventListener(type, (e) => {
+      if (this.bound) handler(e);
+    }, { signal: this.listenerAbort.signal });
   }
 
   private setupToolbarButtons(): void {
     // Zoom buttons: ZoomController (binding them here too zoomed twice per click)
-    document.getElementById('zoom-level')?.addEventListener('change', (e: Event) => {
+    this.on(document.getElementById('zoom-level'), 'change', (e: Event) => {
       const zoomLevel = parseInt((e.target as HTMLSelectElement).value);
       // around the view centre, like the zoom buttons
       this.graph.zoomTo(zoomLevel / 100, true);
@@ -33,13 +68,13 @@ export class InteractiveUIController {
 
   private setupCanvasProperties(): void {
     const gridCheckbox = document.getElementById('canvas-gridEnabled') as HTMLInputElement;
-    gridCheckbox?.addEventListener('change', () => {
+    this.on(gridCheckbox, 'change', () => {
       this.graph.gridEnabled = gridCheckbox.checked;
       syncGridControls(gridCheckbox.checked);
     });
 
     const gridSizeInput = document.getElementById('canvas-gridSize') as HTMLInputElement;
-    gridSizeInput?.addEventListener('change', () => {
+    this.on(gridSizeInput, 'change', () => {
       const size = parseInt(gridSizeInput.value) || 10;
       this.graph.gridSize = size;
     });
@@ -47,7 +82,7 @@ export class InteractiveUIController {
     const bgColorPicker = document.getElementById('canvas-bgColor') as HTMLInputElement;
     const bgColorText = document.getElementById('canvas-bgColorText') as HTMLInputElement;
 
-    bgColorPicker?.addEventListener('change', () => {
+    this.on(bgColorPicker, 'change', () => {
       const color = bgColorPicker.value;
       if (this.graph.container) {
         this.graph.container.style.backgroundColor = color;
@@ -55,7 +90,7 @@ export class InteractiveUIController {
       if (bgColorText) bgColorText.value = color;
     });
 
-    bgColorText?.addEventListener('change', () => {
+    this.on(bgColorText, 'change', () => {
       const color = bgColorText.value;
       if (this.graph.container) {
         this.graph.container.style.backgroundColor = color;
@@ -64,7 +99,7 @@ export class InteractiveUIController {
     });
 
     const canvasSizeSelect = document.getElementById('canvas-size') as HTMLSelectElement;
-    canvasSizeSelect?.addEventListener('change', () => {
+    this.on(canvasSizeSelect, 'change', () => {
       const size = canvasSizeSelect.value;
       logger.debug('UI', `Canvas size set to ${size}`);
     });
@@ -73,7 +108,7 @@ export class InteractiveUIController {
   private setupPropertyPanelInputs(): void {
     // Text input
     const textInput = document.getElementById('prop-text') as HTMLInputElement;
-    textInput?.addEventListener('change', () => {
+    this.on(textInput, 'change', () => {
       const cells = this.graph.getSelectionCells();
       cells.forEach((cell) => {
         // cellLabelChanged keeps the other attributes of a draw.io UserObject value
@@ -88,13 +123,13 @@ export class InteractiveUIController {
         style.fontStyle = (Number(resolved.fontStyle) || 0) ^ bit;
       });
     };
-    document.querySelector('.text-bold')?.addEventListener('click', () => toggleFontStyle(1));
-    document.querySelector('.text-italic')?.addEventListener('click', () => toggleFontStyle(2));
-    document.querySelector('.text-underline')?.addEventListener('click', () => toggleFontStyle(4));
+    this.on(document.querySelector('.text-bold'), 'click', () => toggleFontStyle(1));
+    this.on(document.querySelector('.text-italic'), 'click', () => toggleFontStyle(2));
+    this.on(document.querySelector('.text-underline'), 'click', () => toggleFontStyle(4));
 
     // Text position
     const textPosition = document.getElementById('prop-position') as HTMLSelectElement;
-    textPosition?.addEventListener('change', () => {
+    this.on(textPosition, 'change', () => {
       const value = textPosition.value;
       const alignMap: Record<string, string> = { top: 'top', center: 'middle', bottom: 'bottom' };
       this.updateCellStyle('verticalAlign', alignMap[value] || 'middle');
@@ -102,7 +137,7 @@ export class InteractiveUIController {
 
     // Writing direction
     const writingDirection = document.getElementById('prop-writingDirection') as HTMLSelectElement;
-    writingDirection?.addEventListener('change', () => {
+    this.on(writingDirection, 'change', () => {
       this.updateCellStyle('textDirection', writingDirection.value);
     });
 
@@ -111,12 +146,12 @@ export class InteractiveUIController {
     // here applied every edit twice; prop-useLine used to toggle `rounded` here)
 
     const sketch = document.getElementById('prop-sketch') as HTMLInputElement;
-    sketch?.addEventListener('change', () => {
+    this.on(sketch, 'change', () => {
       this.updateCellStyle('sketch', sketch.checked ? 1 : 0);
     });
 
     // Misc buttons
-    document.getElementById('btn-snap-to-grid')?.addEventListener('click', () => {
+    this.on(document.getElementById('btn-snap-to-grid'), 'click', () => {
       const cells = this.graph.getSelectionCells();
       cells.forEach((cell) => {
         const geo = cell.getGeometry();
@@ -130,7 +165,7 @@ export class InteractiveUIController {
 
     // NOTE: Group/Ungroup are handled by GroupingController to avoid duplicates
 
-    document.getElementById('btn-copySize')?.addEventListener('click', () => {
+    this.on(document.getElementById('btn-copySize'), 'click', () => {
       const cells = this.graph.getSelectionCells();
       if (cells.length > 0) {
         const sourceCell = cells[0];
@@ -159,16 +194,10 @@ export class InteractiveUIController {
     // .share-btn opens the Share dialog; bound once in main-editor.ts (src/share/share-dialog.ts)
   }
 
-  private setupGraphListeners(): void {
-    this.offSelection = onSelectionChange(this.graph, () => {
-      this.selectedCells = this.graph.getSelectionCells();
-      this.updatePropertyPanel();
-    });
-  }
-
-  /** Removes the graph listener (TabManager.destroyTab). */
+  /** Unbinds the view (TabManager's views are destroyed). */
   destroy(): void {
-    this.offSelection?.();
+    this.listenerAbort.abort();
+    this.binding.dispose();
   }
 
   private updateCellStyle(key: string, value: unknown): void {
@@ -185,47 +214,47 @@ export class InteractiveUIController {
       textInput.value = this.graph.convertValueToString(cell);
     }
   }
+}
 
-  /** A shape at the centre of the visible canvas, selected (toolbar Insert group). */
-  insertQuickShape(
-    shapeType: string,
-    width: number,
-    height: number,
-    fillColor: string,
-    strokeColor: string,
-    shape?: string,
-    strokeWidth?: number
-  ): void {
-    const parent = this.graph.getDefaultParent();
-    const container = this.graph.container as HTMLElement;
-    // Centre of the visible part of the canvas (the graph div scrolls), graph coordinates
-    const { scale, translate } = this.graph.view;
-    const centerX = (container.scrollLeft + container.clientWidth / 2) / scale - translate.x - width / 2;
-    const centerY = (container.scrollTop + container.clientHeight / 2) / scale - translate.y - height / 2;
+/** A shape at the centre of the visible canvas of `graph`, selected (toolbar Insert group, one undoable edit). */
+export function insertQuickShape(
+  graph: Graph,
+  shapeType: string,
+  width: number,
+  height: number,
+  fillColor: string,
+  strokeColor: string,
+  shape?: string,
+  strokeWidth?: number
+): void {
+  const parent = graph.getDefaultParent();
+  const container = graph.container as HTMLElement;
+  // Centre of the visible part of the canvas (the graph div scrolls), graph coordinates
+  const { scale, translate } = graph.view;
+  const centerX = (container.scrollLeft + container.clientWidth / 2) / scale - translate.x - width / 2;
+  const centerY = (container.scrollTop + container.clientHeight / 2) / scale - translate.y - height / 2;
 
-    let style = `fillColor=${fillColor};strokeColor=${strokeColor};`;
-    if (strokeWidth !== undefined) {
-      style += `strokeWidth=${strokeWidth};`;
-    }
-    if (shape) {
-      style += `shape=${shape};`;
-    }
-
-    this.graph.batchUpdate(() => {
-      const cell = this.graph.insertVertex(
-        parent,
-        null,
-        shapeType.charAt(0).toUpperCase() + shapeType.slice(1),
-        centerX,
-        centerY,
-        width,
-        height,
-        // string style passed through unchanged (insertVertex is typed for CellStyle objects)
-        style as unknown as CellStyle
-      );
-      this.graph.setSelectionCells([cell]);
-      this.graph.refresh();
-    });
+  let style = `fillColor=${fillColor};strokeColor=${strokeColor};`;
+  if (strokeWidth !== undefined) {
+    style += `strokeWidth=${strokeWidth};`;
+  }
+  if (shape) {
+    style += `shape=${shape};`;
   }
 
+  graph.batchUpdate(() => {
+    const cell = graph.insertVertex(
+      parent,
+      null,
+      shapeType.charAt(0).toUpperCase() + shapeType.slice(1),
+      centerX,
+      centerY,
+      width,
+      height,
+      // string style passed through unchanged (insertVertex is typed for CellStyle objects)
+      style as unknown as CellStyle
+    );
+    graph.setSelectionCells([cell]);
+    graph.refresh();
+  });
 }

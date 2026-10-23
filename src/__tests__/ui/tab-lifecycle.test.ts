@@ -15,7 +15,6 @@ import { globalNotificationManager } from '../../ui/notification';
 import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
 import { installShellForTest } from './shell-harness';
-import { InteractiveUIController } from '../../ui/interactive-ui';
 
 describe('TabManager tab lifecycle', () => {
   let tabManager: TabManager | null = null;
@@ -56,18 +55,20 @@ describe('TabManager tab lifecycle', () => {
   const autosave = (tm: TabManager) => (tm as unknown as { saveToCache(): void }).saveToCache();
   const storedTabs = () => storedAutosave()!.data.tabs as Array<{ name: string; graphXml: string }>;
 
-  it('closing a tab disposes the graph listeners of its controllers', () => {
-    const ui = vi.spyOn(InteractiveUIController.prototype, 'destroy');
+  it('the session views listen to the shown tab only; closing it hands them to the next one', () => {
     tabManager = new TabManager('tabs-container', 'graph-container');
-    tabManager.createTab('One');
+    const first = tabManager.createTab('One');
     const second = tabManager.createTab('Two');
-    const selection = second.graph.getSelectionModel() as unknown as { eventListeners: unknown[] };
-    const before = selection.eventListeners.length;
+    const listeners = (graph: typeof first.graph): number =>
+      (graph.getSelectionModel() as unknown as { eventListeners: unknown[] }).eventListeners.length;
+    const firstShown = listeners(first.graph);
+    const secondHidden = listeners(second.graph);
+    tabManager.switchTab(second.id);
+    // Properties, status bar, connector and property fields moved to the shown tab
+    expect(listeners(second.graph)).toBeGreaterThanOrEqual(secondHidden + 4);
+    expect(listeners(first.graph)).toBeLessThanOrEqual(firstShown - 4);
     tabManager.closeTab(second.id);
-    expect(ui).toHaveBeenCalledTimes(1);
-    // InteractiveUI listened to the selection model (the session views such as the status bar and
-    // the connector fields listen to the shown tab only)
-    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 1 * 2);
+    expect(listeners(first.graph)).toBe(firstShown);
   });
 
   it('keeps the cached XML of a tab that failed to restore and tells the user', () => {

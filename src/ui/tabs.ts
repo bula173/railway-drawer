@@ -11,9 +11,7 @@ import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
 import type { DiagramDocument } from '../document/diagram-document';
 import { emit, off, on } from '../core/event-bus';
 import { createTabDocument, SaveLoadController } from './saveload';
-import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
-import { InteractiveUIController } from './interactive-ui';
 
 import { CacheService, CacheSaveResult, type CachedTabJson } from '../services/cache-service';
 import { runWhenIdle } from '../core/idle';
@@ -48,9 +46,7 @@ export interface TabData extends DiagramSession {
   panController: PanController;
   gridController: GridController;
   saveLoadController: SaveLoadController;
-  canvasProperties: CanvasProperties;
   contextMenuController: ContextMenuController;
-  interactiveUIController: InteractiveUIController;
   imageUploadController: ImageUploadController;
   pasteImageController: PasteImageController;
   alignmentController: AlignmentController;
@@ -252,9 +248,7 @@ export class TabManager {
       const panController = new PanController(graph);
       const gridController = new GridController(graph, 10);
       const saveLoadController = new SaveLoadController(diagramDocument);
-      const canvasProperties = new CanvasProperties(graph);
       const contextMenuController = new ContextMenuController(graph);
-      const interactiveUIController = new InteractiveUIController(graph);
       const imageUploadController = new ImageUploadController(graph);
       const pasteImageController = new PasteImageController(graph);
       const alignmentController = new AlignmentController(graph);
@@ -276,9 +270,7 @@ export class TabManager {
         panController,
         gridController,
         saveLoadController,
-        canvasProperties,
         contextMenuController,
-        interactiveUIController,
         imageUploadController,
         pasteImageController,
         alignmentController,
@@ -664,9 +656,7 @@ export class TabManager {
         tab.panController,
         tab.gridController,
         tab.saveLoadController,
-        tab.canvasProperties,
         tab.contextMenuController,
-        tab.interactiveUIController,
         tab.imageUploadController,
         tab.pasteImageController,
         tab.alignmentController,

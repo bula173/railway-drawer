@@ -8,12 +8,17 @@ import { PropertiesPanel } from './properties';
 import { LayersController } from './layers';
 import { StatusBarController } from './statusbar';
 import { EdgePropertiesController } from './edge-properties';
+import { CanvasProperties } from './canvas-properties';
+import { InteractiveUIController } from './interactive-ui';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
   readonly layers: LayersController;
   readonly statusBar: StatusBarController;
   readonly edgeProperties: EdgePropertiesController;
+  readonly canvasProperties: CanvasProperties;
+  /** The other Properties / Canvas fields and the zoom select (interactive-ui.ts). */
+  readonly propertyFields: InteractiveUIController;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
@@ -23,16 +28,23 @@ export function createSessionViews(): SessionViews {
   const layers = new LayersController();
   const statusBar = new StatusBarController();
   const edgeProperties = new EdgePropertiesController();
+  // canvas grid field: CanvasProperties' change handler runs before InteractiveUIController's (as before)
+  const canvasProperties = new CanvasProperties();
+  const propertyFields = new InteractiveUIController();
   return {
     properties,
     layers,
     statusBar,
     edgeProperties,
+    canvasProperties,
+    propertyFields,
     destroy() {
       properties.destroy();
       layers.destroy();
       statusBar.destroy();
       edgeProperties.destroy();
+      canvasProperties.destroy();
+      propertyFields.destroy();
     },
   };
 }
