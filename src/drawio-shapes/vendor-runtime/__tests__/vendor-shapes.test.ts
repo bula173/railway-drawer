@@ -68,7 +68,7 @@ describe('vendored draw.io shape libraries', () => {
     const errors: string[] = [];
     let n = 0;
     for (const f of readdirSync(DATA)) {
-      if (!f.endsWith('.json') || f === 'catalogue.json' || f === 'search-index.json') continue;
+      if (!f.endsWith('.json') || f === 'catalogue.json') continue;
       const def = JSON.parse(readFileSync(`${DATA}/${f}`, 'utf8')) as {
         id: string;
         entries: Array<{ title: string; kind: string; cls: string; style?: string; value?: string; width: number; height: number; shapeNames: string[] }>;

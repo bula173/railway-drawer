@@ -510,10 +510,10 @@ export class HoverArrowsController {
       return;
     }
     this.current = state;
-    // never inside the cell's own bounds (a stencil/icon drawn smaller than its cell has a
-    // smaller shape bounding box): a press inside the shape must reach the shape, not an arrow
-    const bounds = Rectangle.fromRectangle(state);
-    if (state.shape?.boundingBox) bounds.add(state.shape.boundingBox);
+    // never inside the cell's own bounds: the union of the cell, its shape (a stencil/icon drawn
+    // smaller or larger than its cell) and its label (e.g. a km post's label below the vertex), so
+    // a press on the shape or on its label reaches the cell, not an arrow
+    const bounds = hoverArrowAnchorBounds(state);
     bounds.grow(this.graph.tolerance);
     bounds.grow(ARROW_SPACING);
     const cx = state.getCenterX();
@@ -806,6 +806,19 @@ export class HoverArrowsController {
     this.reset();
     this.cleanups.splice(0).forEach((fn) => fn());
   }
+}
+
+/**
+ * The area the hover arrows stay outside of: the cell bounds plus its shape's bounding box plus
+ * its label's bounding box (a label outside the vertex, e.g. `verticalLabelPosition=bottom`).
+ */
+export function hoverArrowAnchorBounds(state: CellState): Rectangle {
+  const bounds = Rectangle.fromRectangle(state);
+  const shapeBox = state.shape?.boundingBox;
+  if (shapeBox) bounds.add(shapeBox);
+  const labelBox = state.text?.boundingBox;
+  if (labelBox && labelBox.width > 0 && labelBox.height > 0 && state.text?.node?.style.visibility !== 'hidden') bounds.add(labelBox);
+  return bounds;
 }
 
 function contains(r: Rectangle, x: number, y: number): boolean {

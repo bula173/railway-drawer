@@ -764,6 +764,8 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await expect(exportDialog).toHaveCount(0);
   await page.locator('[data-right-panel="properties"]').click();
 
+  await auditPrintDialogs(page, a);
+
   // Remote file (fake provider): open dialog, status menu, Reload confirm with unsaved changes
   await openMenu(page, 'file');
   await page.locator('#file-menu-remote-items .menu-dropdown-item[data-provider="fake-remote"][data-remote-action="open"]').click();
@@ -789,6 +791,39 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.shot('remote-confirm');
   await confirm.getByRole('button', { name: 'Cancel' }).click();
   await expect(confirm).toHaveCount(0);
+}
+
+/** Print sheets (src/print): Page Setup, Title Block, Revisions, Pages, Export Sheets dialogs and the sheet border. */
+async function auditPrintDialogs(page: Page, a: Auditor): Promise<void> {
+  const dialogs: Array<[string, string, string]> = [
+    ['file', 'pageSetup', 'sheet-setup-dialog'],
+    ['file', 'titleBlock', 'title-block-dialog'],
+    ['file', 'revisions', 'revisions-dialog'],
+    ['view', 'pages', 'pages-dialog'],
+    ['file', 'exportSheets', 'export-sheets-dialog'],
+  ];
+  for (const [menu, action, testId] of dialogs) {
+    await openMenu(page, menu);
+    const item = page.locator(`.menu-dropdown[data-menu="${menu}"] [data-action="${action}"]`);
+    await revealMenuItem(item);
+    await item.click();
+    const dialog = page.locator(`[data-testid="${testId}"]`);
+    await expect(dialog).toBeVisible();
+    if (action === 'revisions') await dialog.locator('.rd-print-add-rev').click();
+    await a.check(`print: ${action} dialog`, `[data-testid="${testId}"]`);
+    if (action === 'pageSetup') {
+      await a.shot('print-page-setup');
+      // Apply shows the sheet border on the canvas
+      await dialog.locator('.rd-tpl-btn-primary').click();
+      await expect(dialog).toHaveCount(0);
+      await expect(page.locator('[data-testid="sheet-overlay"]')).toHaveCount(1);
+      await a.check('print: sheet border on the canvas', '#graph-container');
+      await a.shot('print-sheet-border');
+      continue;
+    }
+    await page.keyboard.press('Escape');
+    await expect(dialog).toHaveCount(0);
+  }
 }
 
 async function auditRailwayScript(page: Page, a: Auditor): Promise<void> {

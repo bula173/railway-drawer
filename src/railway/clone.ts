@@ -14,6 +14,7 @@ import type { Cell, GraphDataModel } from '@maxgraph/core';
 import type { KindId } from './catalogue';
 import { renumberInsertedObjects } from './insert-ids';
 import { getCellKind, isElementValue, readObjectId } from './object-data';
+import { registerPasteHook } from '../services/clipboard-service';
 
 /** Data that belongs to the original object, never to a copy of it. */
 export const CLONE_DROPPED_ATTRS = ['rdRoutes', 'rdRailmlId', 'rdRailmlIlId', 'rdRailmlNetElements'] as const;
@@ -43,3 +44,6 @@ export function prepareClonedCells(model: GraphDataModel, cells: Cell[]): Map<Ki
   }
   return renamed;
 }
+
+// Pasted copies (Edit > Paste, Ctrl/Cmd+V) are renumbered like every other clone
+registerPasteHook(prepareClonedCells);

@@ -59,3 +59,53 @@ export function flipSelection(graph: Graph, key: 'flipH' | 'flipV'): Cell[] {
 export function toggleSelectionLocked(graph: Graph): boolean {
   return toggleCellsLocked(graph, graph.getSelectionCells());
 }
+
+/**
+ * Properties > Arrange > Snap to Grid: the selected vertices' positions rounded to the grid, through
+ * the model in one undo step (locked cells and relative geometries keep theirs).
+ */
+export function snapSelectionToGrid(graph: Graph): Cell[] {
+  const size = graph.gridSize > 0 ? graph.gridSize : 10;
+  const model = graph.getDataModel();
+  const changed: Cell[] = [];
+  model.batchUpdate(() => {
+    for (const cell of transformableVertices(graph)) {
+      const geo = cell.getGeometry();
+      if (!geo || geo.relative) continue;
+      const x = Math.round(geo.x / size) * size;
+      const y = Math.round(geo.y / size) * size;
+      if (x === geo.x && y === geo.y) continue;
+      const next = geo.clone();
+      next.x = x;
+      next.y = y;
+      model.setGeometry(cell, next);
+      changed.push(cell);
+    }
+  });
+  return changed;
+}
+
+/**
+ * Properties > Arrange > Copy Size: the other selected vertices get the width and height of the first
+ * selected cell, through the model in one undo step (locked cells keep their size).
+ */
+export function matchSelectionSize(graph: Graph): Cell[] {
+  const [first, ...rest] = graph.getSelectionCells();
+  const source = first?.getGeometry();
+  if (!source) return [];
+  const model = graph.getDataModel();
+  const changed: Cell[] = [];
+  model.batchUpdate(() => {
+    for (const cell of rest) {
+      const geo = cell.getGeometry();
+      if (!cell.isVertex() || graph.isCellLocked(cell) || !geo) continue;
+      if (geo.width === source.width && geo.height === source.height) continue;
+      const next = geo.clone();
+      next.width = source.width;
+      next.height = source.height;
+      model.setGeometry(cell, next);
+      changed.push(cell);
+    }
+  });
+  return changed;
+}

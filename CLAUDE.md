@@ -49,7 +49,7 @@ tools/mcp-local/src + stylelint), test:run, build, `wrangler deploy --dry-run` a
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, ux-batch3, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, train-run, csp). No
+railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, print-sheets, train-run, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 E2E specs (what each covers, helpers, CI rules): [docs/architecture/e2e.md](docs/architecture/e2e.md). CI fails on flaky
@@ -97,6 +97,7 @@ tests (a test that passes only on a retry fails) and on CSP violations; all spec
 | Object states | `src/railway/states*.ts` | [object-states.md](docs/architecture/object-states.md), docs/STATES.md |
 | railML 3.2 | `src/railml` | [railml.md](docs/architecture/railml.md), docs/RAILML.md |
 | Railway Script | `src/railway-script` | [railway-script.md](docs/architecture/railway-script.md), docs/RAILWAY-SCRIPT.md |
+| Pages, print sheets (page setup, title block, revisions, legend, sheet references, sheet PDF / Print…) | `src/document/diagram-document.ts` (pages), `src/print`, `src/print/ui` | [print-sheets.md](docs/architecture/print-sheets.md) |
 | Scenarios (steps, view, exports, UML, Markdown) | `src/scenarios` | [scenarios.md](docs/architecture/scenarios.md) |
 | Train run (simulation, run view, scenario from run, AI tool) | `src/railway/train-run`, `src/scenarios/train-run-scenario.ts` | [train-run.md](docs/architecture/train-run.md) |
 | PlantUML (editor tab, step UML) | `src/ui/plantuml-editor.ts`, `src/services/plantuml-*.ts`, `src/services/*-diagram-renderer.ts` | [plantuml.md](docs/architecture/plantuml.md) |

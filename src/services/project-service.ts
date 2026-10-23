@@ -53,6 +53,11 @@ export class ProjectService {
     modifiedAt: new Date().toISOString(),
   };
 
+  /** The `<diagram>` attributes the sections write on the main page (scenario index, Railway Script, title block). */
+  mainPageAttributes(): Record<string, string> {
+    return Object.assign({}, ...projectSections().map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+  }
+
   /** The state of the registered section `key` (project-sections.ts). */
   section<T>(key: string): T {
     if (!this.sectionStates.has(key)) throw new Error(`Project section "${key}" is not registered`);
@@ -75,12 +80,25 @@ export class ProjectService {
   /**
    * Wraps the model XML of the shown page (a draw.io `<mxGraphModel>`, optionally followed by
    * comments such as the PlantUML metadata) into a native draw.io `<mxfile>`. The scenario step
-   * pages follow it, then the preserved pages of the opened file (`extraPages`), unchanged.
+   * pages follow it, then the preserved pages of the opened file (`extraPages`, or the given ones:
+   * DiagramDocument passes them with the page it shows written in place), unchanged.
    */
-  generateProjectXml(graphXml: string): string {
+  /**
+   * What the registered sections write into a file: the main page's `<diagram>` attributes and the
+   * pages after it (serialised `<diagram>` elements; `usedIds` are taken page ids). Also used by the
+   * share link, which writes every tab as one page with its sections.
+   */
+  sectionContent(usedIds: Set<string> = new Set()): { attributes: Record<string, string>; pages: string[] } {
+    const sections = projectSections();
+    const pages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
+    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+    return { attributes, pages };
+  }
+
+  generateProjectXml(graphXml: string, extraPages: readonly string[] = this.extraPages): string {
     // The shown page's id must not collide with the ids of the preserved pages
     const usedIds = new Set<string>();
-    for (const pageXml of this.extraPages) {
+    for (const pageXml of extraPages) {
       const id = new DOMParser().parseFromString(pageXml, 'text/xml').documentElement?.getAttribute('id');
       if (id) usedIds.add(id);
     }
@@ -90,9 +108,7 @@ export class ProjectService {
       } while (usedIds.has(this.pageId));
     }
     usedIds.add(this.pageId);
-    const sections = projectSections();
-    const sectionPages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
-    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
+    const { attributes, pages: sectionPages } = this.sectionContent(usedIds);
 
     let model: Element | null = null;
     const comments: string[] = [];
@@ -113,7 +129,7 @@ export class ProjectService {
 
     return buildMxfile(
       [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes }],
-      [...sectionPages, ...this.extraPages],
+      [...sectionPages, ...extraPages],
       {
         host: PROJECT_HOST,
         modified: this.projectMetadata.modifiedAt,
@@ -245,7 +261,7 @@ export class ProjectService {
    * Returns the model XML of one <diagram> page: the uncompressed model element (plus any
    * comments stored next to it, e.g. PlantUML metadata), or the decompressed text content.
    */
-  private async extractDiagramModelXml(diagramEl: Element): Promise<string | null> {
+  async extractDiagramModelXml(diagramEl: Element): Promise<string | null> {
     const graphModel =
       diagramEl.getElementsByTagName('mxGraphModel')[0] ??
       diagramEl.getElementsByTagName('GraphDataModel')[0];

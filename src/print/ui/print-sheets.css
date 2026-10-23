@@ -1,0 +1,228 @@
+/* Print sheets (src/print/ui): canvas sheet overlay, the sheet dialogs, Print… */
+
+/* ---- View > Show Sheet Border: under the cells, recoloured from the theme */
+.rd-sheet-overlay {
+  pointer-events: none;
+}
+
+.rd-sheet-overlay .rd-sheet-line {
+  stroke: var(--rd-text-subtle);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-sheet-overlay .rd-sheet-strong {
+  stroke: var(--rd-text-muted);
+  stroke-width: 1.5px;
+}
+
+.rd-sheet-overlay .rd-sheet-paper {
+  stroke: var(--rd-border-strong);
+  stroke-dasharray: 6 4;
+}
+
+.rd-sheet-overlay .rd-sheet-fill {
+  fill: var(--rd-surface);
+  fill-opacity: 0.9;
+}
+
+.rd-sheet-overlay .rd-sheet-text {
+  fill: var(--rd-text);
+}
+
+.rd-sheet-overlay .rd-sheet-label {
+  fill: var(--rd-text-muted);
+}
+
+/* ---- dialogs */
+.rd-print-dialog {
+  max-width: min(680px, 94vw);
+}
+
+.rd-print-dialog fieldset {
+  margin: 0 0 10px;
+  padding: 6px 10px 8px;
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+}
+
+.rd-print-dialog legend {
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--rd-text-muted);
+}
+
+.rd-print-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 12px;
+}
+
+.rd-print-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rd-print-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: var(--rd-text);
+}
+
+.rd-print-field input[type='text'],
+.rd-print-field input[type='number'],
+.rd-print-field input[type='date'],
+.rd-print-field select,
+.rd-print-rev-table input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid var(--rd-input-border);
+  border-radius: 3px;
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
+  font: inherit;
+}
+
+.rd-print-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--rd-text);
+}
+
+.rd-print-hint {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--rd-text-muted);
+}
+
+.rd-print-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rd-print-logo img {
+  max-width: 90px;
+  max-height: 40px;
+  border: 1px solid var(--rd-border);
+  background: var(--rd-surface);
+}
+
+.rd-print-rev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: var(--rd-text);
+}
+
+.rd-print-rev-table th {
+  padding: 2px 4px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--rd-text-muted);
+}
+
+.rd-print-rev-table td {
+  padding: 2px;
+}
+
+.rd-print-pages {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  max-height: 260px;
+  overflow: auto;
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+}
+
+.rd-print-pages li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--rd-divider);
+  font-size: 13px;
+  color: var(--rd-text);
+}
+
+.rd-print-pages li:last-child {
+  border-bottom: none;
+}
+
+.rd-print-pages li[aria-current='page'] {
+  background: var(--rd-selected);
+}
+
+.rd-print-pages .rd-print-page-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rd-print-pages .rd-tpl-btn {
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* ---- Print…: only the sheets, one per page in their own paper size */
+#rd-print-root {
+  display: none;
+}
+
+@media print {
+  html,
+  body {
+    background: none;
+  }
+
+  body > *:not(#rd-print-root) {
+    display: none !important;
+  }
+
+  #rd-print-root {
+    display: block;
+  }
+
+  #rd-print-root .rd-print-sheet {
+    margin: 0;
+    padding: 0;
+    break-after: page;
+  }
+
+  #rd-print-root .rd-print-sheet:last-child {
+    break-after: auto;
+  }
+
+  #rd-print-root svg {
+    display: block;
+  }
+
+  .rd-print-sheet[data-paper='A0-portrait'] { page: rd-a0p; }
+  .rd-print-sheet[data-paper='A0-landscape'] { page: rd-a0l; }
+  .rd-print-sheet[data-paper='A1-portrait'] { page: rd-a1p; }
+  .rd-print-sheet[data-paper='A1-landscape'] { page: rd-a1l; }
+  .rd-print-sheet[data-paper='A2-portrait'] { page: rd-a2p; }
+  .rd-print-sheet[data-paper='A2-landscape'] { page: rd-a2l; }
+  .rd-print-sheet[data-paper='A3-portrait'] { page: rd-a3p; }
+  .rd-print-sheet[data-paper='A3-landscape'] { page: rd-a3l; }
+  .rd-print-sheet[data-paper='A4-portrait'] { page: rd-a4p; }
+  .rd-print-sheet[data-paper='A4-landscape'] { page: rd-a4l; }
+}
+
+@page rd-a0p { size: 841mm 1189mm; margin: 0; }
+@page rd-a0l { size: 1189mm 841mm; margin: 0; }
+@page rd-a1p { size: 594mm 841mm; margin: 0; }
+@page rd-a1l { size: 841mm 594mm; margin: 0; }
+@page rd-a2p { size: 420mm 594mm; margin: 0; }
+@page rd-a2l { size: 594mm 420mm; margin: 0; }
+@page rd-a3p { size: 297mm 420mm; margin: 0; }
+@page rd-a3l { size: 420mm 297mm; margin: 0; }
+@page rd-a4p { size: 210mm 297mm; margin: 0; }
+@page rd-a4l { size: 297mm 210mm; margin: 0; }

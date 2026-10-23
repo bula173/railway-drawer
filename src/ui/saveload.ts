@@ -9,6 +9,7 @@
 // Feature sections of the project file (scenarios, Railway Script): registered before any DiagramDocument exists
 import '../scenarios/project-section';
 import '../railway-script/project-section';
+import '../print/project-section';
 import type { Graph } from '@maxgraph/core';
 import { DiagramDocument } from '../document/diagram-document';
 import { resetCanvasScroll } from './canvas-scroll';

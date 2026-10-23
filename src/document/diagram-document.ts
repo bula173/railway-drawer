@@ -18,13 +18,14 @@
  * effects of a load (grid background, scroll reset) are injected as DocumentViewHooks, so this
  * module stays in the document layer.
  */
-import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
+import { Graph, GraphDataModel, Rectangle, xmlUtils } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import { emit } from '../core/event-bus';
 import { Disposers, onModelChange } from '../core/graph-events';
 import {
   emptyDrawioModelXml,
   exportModelToDrawioXml,
+  generatePageId,
   DEFAULT_PAGE_SETTINGS,
   importModelXml,
   sanitizeXmlText,
@@ -35,6 +36,59 @@ import { projectSections } from '../services/project-sections';
 import { migrateLegacyLayers, type LegacyLayerMigration } from '../services/legacy-layers';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 import { logger } from '../drawio/logger';
+
+declare module '../core/event-bus' {
+  interface AppEventMap {
+    /** The drawing pages of the document in `graph` changed: another page is shown, a page was added, renamed or removed. */
+    'rd-pages-changed': { graph: Graph };
+    /** The page settings (draw.io page format / scale) of the page shown in `graph` changed (a load, setPageSettings, its undo / redo). */
+    'rd-page-settings': { graph: Graph };
+  }
+}
+
+/** One drawing page of the file (`<diagram>`): the main page (index 0) or a kept page 2..n. */
+export interface DrawingPage {
+  index: number;
+  /** The `<diagram id>` ('' when the main page has none yet). */
+  id: string;
+  name: string;
+  shown: boolean;
+}
+
+/** `<diagram>` element of a serialized page (null when it does not parse). */
+function parseDiagram(diagramXml: string): Element | null {
+  const doc = new DOMParser().parseFromString(diagramXml, 'text/xml');
+  if (doc.getElementsByTagName('parsererror').length > 0) return null;
+  return doc.documentElement?.nodeName === 'diagram' ? doc.documentElement : null;
+}
+
+/** The page `diagramXml` with its content replaced by `modelXml` (uncompressed; attributes kept). */
+function replacePageModel(diagramXml: string, modelXml: string): string {
+  const diagram = parseDiagram(diagramXml);
+  const model = new DOMParser().parseFromString(modelXml, 'text/xml');
+  if (!diagram || model.getElementsByTagName('parsererror').length > 0) return diagramXml;
+  while (diagram.firstChild) diagram.removeChild(diagram.firstChild);
+  model.childNodes.forEach((node) => diagram.appendChild(diagram.ownerDocument.importNode(node, true)));
+  // getXml: newlines in attribute values (multi-line labels) must stay escaped
+  return xmlUtils.getXml(diagram);
+}
+
+/**
+ * Undoable change of the shown page's page settings (model.execute; undo / redo swap the values),
+ * like draw.io's ChangePageSetup.
+ */
+class PageSettingsChange {
+  constructor(
+    private readonly doc: DiagramDocument,
+    private settings: PageSettings
+  ) {}
+
+  execute(): void {
+    const previous = this.doc.getPageSettings();
+    this.doc.replacePageSettings(this.settings);
+    this.settings = previous;
+  }
+}
 
 /** One cell of exportAsJson(), read from the draw.io XML the tab saves. */
 export interface JsonExportCell {
@@ -205,6 +259,13 @@ export class DiagramDocument {
   private readonly nameListeners = new Set<(name: string) => void>();
   private readonly cache: CacheState = { modelDirty: true, xmlJson: null, xmlFingerprint: '', xmlAt: 0, sectionJson: new Map() };
   private readonly disposers = new Disposers();
+  /** The drawing page shown in the graph: 0 = the main page, i = kept page `extraPages[i - 1]`. */
+  private shownPage = 0;
+  /** The main page's model XML while another page is shown. */
+  private mainPageXml: string | null = null;
+  /** The shown kept page was edited since it was shown (else it is written back unchanged). */
+  private shownPageDirty = false;
+  private pageListCache: DrawingPage[] | null = null;
 
   constructor(graph: Graph, opts: DiagramDocumentOptions = {}) {
     this.graph = graph;
@@ -214,6 +275,7 @@ export class DiagramDocument {
     this.disposers.add(
       onModelChange(graph, () => {
         this.cache.modelDirty = true;
+        this.shownPageDirty = true;
         this.unrestoredXml = null;
       })
     );
@@ -237,13 +299,24 @@ export class DiagramDocument {
     return this.project.section<T>(key);
   }
 
+  /** The sections' main-page attributes and pages, as the saved file has them (the share link writes them per tab). */
+  sectionContent(): { attributes: Record<string, string>; pages: string[] } {
+    return this.project.sectionContent();
+  }
+
   getProjectName(): string {
     return this.project.getProjectName();
+  }
+
+  /** The `<diagram>` attributes of the main page written by the sections (share links write them too). */
+  getMainPageAttributes(): Record<string, string> {
+    return this.project.mainPageAttributes();
   }
 
   /** Renames the project (Save/Export file names, `<diagram name>`); the listeners are told. */
   setProjectName(name: string): void {
     this.project.setProjectName(name);
+    this.pageListCache = null;
     this.nameChanged(name);
   }
 
@@ -268,20 +341,186 @@ export class DiagramDocument {
    * The tab cache stores them so a save after a browser reload still writes every page.
    */
   getPreservedPages(): { extraPages: string[]; pageId: string | null } {
-    return { extraPages: this.project.getExtraPages(), pageId: this.project.getPageId() };
+    return { extraPages: this.canonicalExtraPages(), pageId: this.project.getPageId() };
   }
 
-  /** Restores what getPreservedPages() returned (from the tab cache). */
+  /** Restores what getPreservedPages() returned (from the tab cache); the main page is shown. */
   setPreservedPages(extraPages: string[], pageId: string | null): void {
+    this.resetPages();
     this.project.setExtraPages(extraPages);
     this.project.setPageId(pageId);
+  }
+
+  /** The main page's model XML (the graph's, unless another page is shown): page 1 of a save / share. */
+  getMainPageModelXml(): string {
+    return this.shownPage > 0 && this.mainPageXml !== null ? this.mainPageXml : this.serializeToXml();
+  }
+
+  /** The kept pages with the shown one (when edited) written in place. */
+  private canonicalExtraPages(): string[] {
+    const pages = this.project.getExtraPages();
+    if (this.shownPage > 0 && this.shownPageDirty && pages[this.shownPage - 1] !== undefined) {
+      pages[this.shownPage - 1] = replacePageModel(pages[this.shownPage - 1], this.serializeToXml());
+    }
+    return pages;
+  }
+
+  // ---- drawing pages --------------------------------------------------------------------------
+  //
+  // The graph shows one drawing page. The main page (index 0) carries the project name and the
+  // feature sections (scenarios, Railway Script); pages 2..n are kept as serialized <diagram>
+  // elements. Showing another page keeps the main page's model XML and writes an edited page back
+  // into its slot, so a save writes every page in the file's order. Scenario step pages are not
+  // drawing pages (they belong to the scenarios section).
+
+  private resetPages(): void {
+    this.shownPage = 0;
+    this.mainPageXml = null;
+    this.shownPageDirty = false;
+    this.pageListCache = null;
+  }
+
+  /** The drawing pages in file order. */
+  listPages(): DrawingPage[] {
+    if (!this.pageListCache) {
+      // page links (data:page/id,…) need the main page's id before the first save
+      if (!this.project.getPageId()) this.project.setPageId(generatePageId());
+      const pages: DrawingPage[] = [{ index: 0, id: this.project.getPageId() ?? '', name: this.project.getProjectName(), shown: false }];
+      this.project.getExtraPages().forEach((xml, i) => {
+        const diagram = parseDiagram(xml);
+        pages.push({ index: i + 1, id: diagram?.getAttribute('id') ?? '', name: diagram?.getAttribute('name') || `Page ${i + 2}`, shown: false });
+      });
+      this.pageListCache = pages;
+    }
+    return this.pageListCache.map((page) => ({ ...page, shown: page.index === this.shownPage }));
+  }
+
+  /** Index of the shown drawing page (0: the main page). */
+  shownPageIndex(): number {
+    return this.shownPage;
+  }
+
+  /** The model XML of drawing page `index` (the graph's for the shown page), or null. */
+  async getPageModelXml(index: number): Promise<string | null> {
+    if (index === this.shownPage) return this.serializeToXml();
+    if (index === 0) return this.mainPageXml;
+    const xml = this.project.getExtraPages()[index - 1];
+    const diagram = xml === undefined ? null : parseDiagram(xml);
+    return diagram ? this.project.extractDiagramModelXml(diagram) : null;
+  }
+
+  /**
+   * Shows drawing page `index` in the graph (not undoable, like a load: the undo history is
+   * cleared). Throws, keeping the shown page, when the page cannot be read.
+   */
+  async showPage(index: number): Promise<void> {
+    const pages = this.project.getExtraPages();
+    if (index === this.shownPage || index < 0 || index > pages.length) return;
+    const targetXml = await this.getPageModelXml(index);
+    if (!targetXml) throw new Error(`Page ${index + 1} has no diagram`);
+    const current = this.serializeToXml();
+    const previous = { shown: this.shownPage, main: this.mainPageXml, dirty: this.shownPageDirty };
+    if (this.shownPage === 0) this.mainPageXml = current;
+    else if (this.shownPageDirty) pages[this.shownPage - 1] = replacePageModel(pages[this.shownPage - 1], current);
+    try {
+      this.load(targetXml);
+    } catch (error) {
+      this.mainPageXml = previous.main;
+      throw error;
+    }
+    this.project.setExtraPages(pages);
+    this.shownPage = index;
+    if (index === 0) this.mainPageXml = null;
+    this.shownPageDirty = false;
+    this.pageListCache = null;
+    emit('rd-pages-changed', { graph: this.graph });
+  }
+
+  /** Adds an empty drawing page (the shown page's page settings) after the last one; returns its index. */
+  addPage(name: string): number {
+    const pages = this.project.getExtraPages();
+    const used = new Set(this.listPages().map((page) => page.id));
+    let id: string;
+    do id = generatePageId();
+    while (used.has(id));
+    const doc = new DOMParser().parseFromString('<diagram/>', 'text/xml');
+    const diagram = doc.documentElement;
+    diagram.setAttribute('id', id);
+    diagram.setAttribute('name', name.trim() || `Page ${pages.length + 2}`);
+    const empty = emptyDrawioModelXml({ ...this.pageSettings, grid: this.graph.gridEnabled, gridSize: this.graph.gridSize });
+    diagram.appendChild(doc.importNode(new DOMParser().parseFromString(empty, 'text/xml').documentElement, true));
+    pages.push(xmlUtils.getXml(diagram));
+    this.project.setExtraPages(pages);
+    this.pageListCache = null;
+    this.cache.modelDirty = true;
+    emit('rd-pages-changed', { graph: this.graph });
+    return pages.length;
+  }
+
+  /** Renames drawing page `index` (the main page's name is the project name). */
+  renamePage(index: number, name: string): void {
+    const text = name.trim();
+    if (!text) return;
+    if (index === 0) {
+      this.setProjectName(text);
+    } else {
+      const pages = this.project.getExtraPages();
+      const diagram = pages[index - 1] === undefined ? null : parseDiagram(pages[index - 1]);
+      if (!diagram) return;
+      diagram.setAttribute('name', text);
+      pages[index - 1] = xmlUtils.getXml(diagram);
+      this.project.setExtraPages(pages);
+      this.pageListCache = null;
+      this.cache.modelDirty = true;
+    }
+    emit('rd-pages-changed', { graph: this.graph });
+  }
+
+  /** Removes drawing page `index` (not the main page); the main page is shown when it was the shown one. */
+  async removePage(index: number): Promise<void> {
+    if (index <= 0 || index > this.project.getExtraPages().length) return;
+    if (this.shownPage === index) await this.showPage(0);
+    const pages = this.project.getExtraPages();
+    pages.splice(index - 1, 1);
+    this.project.setExtraPages(pages);
+    if (this.shownPage > index) this.shownPage--;
+    this.pageListCache = null;
+    this.cache.modelDirty = true;
+    emit('rd-pages-changed', { graph: this.graph });
+  }
+
+  // ---- page settings ----------------------------------------------------------------------------
+
+  /** The shown page's draw.io page settings (`<mxGraphModel>` attributes; grid: see serializeToXml). */
+  getPageSettings(): PageSettings {
+    return { ...this.pageSettings, ...(this.pageSettings.extra ? { extra: { ...this.pageSettings.extra } } : {}) };
+  }
+
+  /** Changes page settings of the shown page (one undoable model edit, like draw.io's Page Setup). */
+  setPageSettings(patch: Partial<PageSettings>): void {
+    const next: PageSettings = { ...this.getPageSettings(), ...patch };
+    const model = this.graph.getDataModel();
+    model.beginUpdate();
+    try {
+      model.execute(new PageSettingsChange(this, next) as unknown as Parameters<typeof model.execute>[0]);
+    } finally {
+      model.endUpdate();
+    }
+  }
+
+  /** Replaces the page settings (PageSettingsChange); the graph's page format follows. */
+  replacePageSettings(settings: PageSettings): void {
+    this.pageSettings = { ...settings };
+    if (settings.pageWidth && settings.pageHeight) this.graph.pageFormat = new Rectangle(0, 0, settings.pageWidth, settings.pageHeight);
+    if (settings.pageScale && settings.pageScale > 0) this.graph.pageScale = settings.pageScale;
+    emit('rd-page-settings', { graph: this.graph });
   }
 
   // ---- file ---------------------------------------------------------------------------------
 
   /** The whole tab as a native draw.io file (`<mxfile>`: shown page plus the preserved pages). */
   getProjectXml(): string {
-    return this.project.generateProjectXml(this.serializeToXml());
+    return this.project.generateProjectXml(this.getMainPageModelXml(), this.canonicalExtraPages());
   }
 
   /** Parses a project file's text (draw.io `<mxfile>`, legacy `<project>`, bare model) without applying it. */
@@ -295,6 +534,7 @@ export class DiagramDocument {
    */
   applyParsedProject(parsed: ParsedProject): void {
     this.load(parsed.graphXml);
+    this.resetPages();
     this.project.setProjectMetadata(parsed.metadata);
     // Pages 2..n are not shown, but are kept so a save writes them back unchanged
     this.project.setExtraPages(parsed.extraPages);
@@ -450,6 +690,7 @@ export class DiagramDocument {
     if (settings.pageScale && settings.pageScale > 0) {
       this.graph.pageScale = settings.pageScale;
     }
+    emit('rd-page-settings', { graph: this.graph });
   }
 
   // ---- remote binding -----------------------------------------------------------------------
@@ -541,7 +782,9 @@ export class DiagramDocument {
       ...(extraPages.length > 0 ? { extraPages } : {}),
       ...(pageId ? { pageId } : {}),
     });
-    const parts = [head.slice(1, -1), `"graphXml":${this.cacheXmlJson(ctx)}`];
+    // Another page shown: the main page's XML (a restored tab shows the main page)
+    const graphXml = this.shownPage > 0 && this.mainPageXml !== null ? JSON.stringify(this.mainPageXml) : this.cacheXmlJson(ctx);
+    const parts = [head.slice(1, -1), `"graphXml":${graphXml}`];
     if (tail !== '{}') parts.push(tail.slice(1, -1));
     for (const section of projectSections()) {
       if (!section.toCache) continue;

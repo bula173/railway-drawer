@@ -5,6 +5,8 @@ draw.io cannot open; this module writes and reads draw.io `<mxfile>/<diagram>/<m
 
 - Saves are `.drawio` (`DiagramDocument` + `ProjectService`; `SaveLoadController` is the file I/O over the document); the cache stores `<mxGraphModel>` per tab,
   plus pages 2..n (`extraPages`, `pageId`) so multi-page files survive a reload and a save.
+  Any drawing page can be shown in the tab (`DiagramDocument.showPage`, View > Pages…); saves keep the file's page
+  order (see [print-sheets.md](print-sheets.md)).
 - App-only data lives in style keys draw.io preserves: `rdShape` (legacy app shape such as `customHexagon`
   exported as a similar draw.io shape via `DRAWIO_SHAPE_MAP`; restored on import, added keys removed;
   draw.io shape names are native now and never mapped), `rdOwn`, `rdLayerId`, `rdPlantUml`

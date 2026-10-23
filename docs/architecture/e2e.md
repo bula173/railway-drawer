@@ -122,6 +122,14 @@
   `tests/e2e/helpers/press-probe-lib.ts`; the full 5x5 grid at 100/200 % is `tests/e2e/helpers/press-probe.spec.ts`
   (`PRESS_PROBE=1 PRESS_PROBE_OUT=<file.md>`), drag smoothness `tests/e2e/helpers/drag-perf.spec.ts` (`DRAG_PERF=1`);
   both are skipped otherwise.
+- `tests/e2e/print-sheets.spec.ts` (any port; `PRINT_SHEETS_SHOTS=<dir>` keeps the screenshots and the PDF): File >
+  Page Setup… A3 landscape + Title Block… + Revisions… (Polish text) -> the sheet border overlay (format, title block
+  fields, sheet 1 z 1, frame) on the canvas; View > Pages… adds a page; View > Insert Sheet Reference… markers on both
+  pages, a real click goes to the target page; File > Export > Sheets (PDF): 2 pages, MediaBox A3 landscape, DejaVu
+  embedded, the text of each page read through the fonts' ToUnicode maps (title block, revision, drawing labels, marker
+  labels with the target sheet number, legend); File > Print… (window.print stubbed): 2 sheets in `#rd-print-root`, app
+  hidden under print media, container removed on afterprint; the .drawio keeps page/pageScale/pageWidth/pageHeight,
+  rdSheetTitle, rdTitleBlock and the page links.
 - `tests/e2e/canvas-scroll.spec.ts` (any port, real `page.mouse` / keyboard input, scrollbars shown: the spec drops
   Playwright's `--hide-scrollbars`): zoomed in, the tab graph div scrolls (not `#graph-container`) with 12 px scrollbars;
   wheel scrolls, Shift+wheel horizontally, Ctrl+wheel zooms keeping the point under the pointer (±3 px), zoom buttons /

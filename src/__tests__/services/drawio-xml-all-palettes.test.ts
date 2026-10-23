@@ -22,7 +22,7 @@ const ROOT = path.resolve(__dirname, '../../..');
 const DATA = path.join(ROOT, 'src/drawio-shapes/palettes/data');
 const CORE = new Set(['general', 'misc', 'advanced', 'basic', 'arrows2', 'flowchart', 'arrows'].map((id) => `${id}.json`));
 const files = fs.readdirSync(DATA)
-  .filter((f) => f.endsWith('.json') && !CORE.has(f) && f !== 'catalogue.json' && f !== 'search-index.json')
+  .filter((f) => f.endsWith('.json') && !CORE.has(f) && f !== 'catalogue.json')
   .sort();
 
 let graph: Graph;

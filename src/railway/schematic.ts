@@ -7,11 +7,17 @@
  *        objects as vertices and library entries as their (grouped) cells with the data on the top
  *        cell. Pure DOM, runs in jsdom.
  */
-import type { KindId } from '../railway/catalogue';
-import type { Pt } from '../railway/geometry';
-import { ID_PLACEHOLDER } from '../railway/object-data';
+import type { KindId } from './catalogue';
+import type { Pt } from './geometry';
+import { ID_PLACEHOLDER } from './object-data';
 import type { LibraryEntry } from '../drawio-shapes/engine';
-import { parseXml } from './xml';
+
+/** A library entry's model XML as a document (generated, well-formed; a broken one throws). */
+function parseXml(text: string): XMLDocument {
+  const doc = new DOMParser().parseFromString(text, 'application/xml');
+  if (doc.getElementsByTagName('parsererror').length > 0) throw new Error('A library symbol is not well-formed XML');
+  return doc;
+}
 
 /** Default size of a kind drawn without a library symbol. */
 export function defaultSize(kind: KindId): [number, number] {

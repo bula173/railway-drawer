@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { base64UrlEncode, codeChallengeS256, randomVerifier, sha256 } from '../providers/gitlab/pkce';
+import { base64UrlEncode, codeChallengeS256, randomVerifier } from '../providers/gitlab/pkce';
+import { sha256 } from '../../security/sha256';
 import {
   GITLAB_AUTH_KEY,
   GITLAB_FLOW_KEY,

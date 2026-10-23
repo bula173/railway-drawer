@@ -9,7 +9,7 @@ import type { TabData } from '../tabs';
 import type { ShortcutSpec } from '../shortcut-keys';
 
 /** Where a command was invoked from (a few commands act on the context-menu target instead of the selection). */
-export type CommandSource = 'menu' | 'contextMenu' | 'toolbar' | 'keyboard' | 'api';
+export type CommandSource = 'menu' | 'contextMenu' | 'toolbar' | 'panel' | 'keyboard' | 'api';
 
 /** The cell(s) a context-menu command acts on and where the menu was opened. */
 export interface ContextMenuTarget {

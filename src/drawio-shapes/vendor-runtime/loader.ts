@@ -4,6 +4,7 @@
  * Nothing here is part of the main chunk: the stencil engine imports this module dynamically the
  * first time a drawing, palette or library uses a shape name it does not know yet.
  */
+import { reportLoadFailure } from '../../core/load-failure';
 import { logger } from '../../drawio/logger';
 import { flushHandleFactories, getMxShim } from './mx-shim';
 
@@ -64,7 +65,7 @@ export function loadVendorModule(id: string): Promise<void> {
     installed.set(id, p);
     p.catch((err: unknown) => {
       installed.delete(id);
-      logger.warn(LOG, 'draw.io shape library failed to load', { id, error: err instanceof Error ? err.message : String(err) });
+      reportLoadFailure('warn', LOG, 'draw.io shape library failed to load', err, { id });
     });
   }
   return p;

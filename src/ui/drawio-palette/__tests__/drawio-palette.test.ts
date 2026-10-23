@@ -2,6 +2,7 @@ import { Graph, InternalEvent, UndoManager } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { styleToString } from '../../../services/drawio-xml';
+import { openModalCount } from '../../../core/modal';
 import {
   createDrawioPaletteView,
   EXPANDED_STORAGE_KEY,
@@ -247,6 +248,36 @@ describe('drawio palette view', () => {
     (container.querySelector('.rd-dp-more') as HTMLButtonElement).click();
     (container.querySelector('.rd-dp-more') as HTMLButtonElement).click();
     expect(menu.querySelector<HTMLInputElement>('input[data-menu-item-id="app-Basic"]')!.checked).toBe(false);
+  });
+
+  it('More shapes is a modal (core/modal): aria-modal, Esc and the backdrop close it, the focus goes back', async () => {
+    const v = create();
+    await v.ready;
+    const more = container.querySelector<HTMLButtonElement>('.rd-dp-more')!;
+    more.focus();
+    more.click();
+    const menu = container.querySelector<HTMLElement>('.rd-dp-menu')!;
+    expect(menu.getAttribute('role')).toBe('dialog');
+    expect(menu.getAttribute('aria-modal')).toBe('true');
+    expect(menu.getAttribute('aria-label')).toBe('More shapes');
+    expect(menu.dataset.testid).toBe('more-shapes-dialog');
+    expect(openModalCount()).toBe(1);
+    const esc = new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true });
+    menu.dispatchEvent(esc);
+    expect(esc.defaultPrevented).toBe(true);
+    expect(menu.hidden).toBe(true);
+    expect(menu.isConnected).toBe(false);
+    expect(openModalCount()).toBe(0);
+    expect(document.activeElement).toBe(more);
+    // a press on the backdrop closes it, the close button too
+    more.click();
+    const backdrop = container.querySelector<HTMLElement>('.rd-dp-menu-backdrop')!;
+    backdrop.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    expect(menu.hidden).toBe(true);
+    v.openMoreShapes();
+    menu.querySelector<HTMLButtonElement>('.rd-dp-menu-close')!.click();
+    expect(menu.isConnected).toBe(false);
+    expect(openModalCount()).toBe(0);
   });
 
   it('persists the expanded state of categories', async () => {

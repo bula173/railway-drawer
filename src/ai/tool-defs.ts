@@ -42,7 +42,9 @@ export type AiToolName =
   | 'build_scenario'
   | 'view_scenario'
   | 'export_scenario'
-  | 'simulate_train_run';
+  | 'simulate_train_run'
+  | 'set_title_block'
+  | 'export_sheets';
 
 /** Railway object kinds of the catalogue (src/railway/catalogue.ts; a test keeps them equal). */
 export const AI_KIND_IDS = ['signal', 'balise', 'baliseGroup', 'track', 'trackSection', 'points', 'levelCrossing', 'bufferStop', 'rbc', 'leu', 'axleCounter', 'insulatedJoint', 'train', 'route'] as const;
@@ -91,6 +93,7 @@ const STEP_REF: ToolSchema = { type: ['integer', 'string'], description: 'Step n
 const STEP_UML = str('PlantUML source shown beside the drawing (usually a sequence diagram: @startuml … @enduml). Optional.', 20_000);
 const STEP_TEXT = str('Markdown text of the step (explanation for the reader). Optional.', 20_000);
 const num = (description: string): ToolSchema => ({ type: 'number', description, minimum: -1_000_000, maximum: 1_000_000 });
+const TITLE_FIELD = (what: string): ToolSchema => str(what, 300);
 
 export const AI_TOOLS: readonly AiToolDef[] = [
   {
@@ -430,6 +433,48 @@ export const AI_TOOLS: readonly AiToolDef[] = [
       ['routes', 'speedKmh', 'lengthM']
     ),
     mutating: true,
+  },
+  {
+    name: 'set_title_block',
+    title: 'Set title block',
+    description:
+      'Sets the title block (tabliczka rysunkowa) printed on every sheet, the revision table and, with `sheet`, the sheet setup of the SHOWN page (A0-A4, portrait/landscape, fixed scale 1:n or fit, this page\'s sheet title / number). Only the given fields change; "" clears one. Labels print in Polish (lang pl, default) or English. Returns the values now set. Export the sheets with export_sheets.',
+    input_schema: obj({
+      project: TITLE_FIELD('Project name.'),
+      title: TITLE_FIELD('Drawing title.'),
+      drawingNumber: TITLE_FIELD('Drawing number.'),
+      scale: TITLE_FIELD('Scale text ("" = from the sheet setup: 1:n or "bez skali").'),
+      designed: TITLE_FIELD('Designed by / author.'),
+      checked: TITLE_FIELD('Checked by.'),
+      approved: TITLE_FIELD('Approved by.'),
+      date: TITLE_FIELD('Date, e.g. 2026-10-24.'),
+      revision: TITLE_FIELD('Revision ("" = the last row of the revision table).'),
+      company: TITLE_FIELD('Company name.'),
+      status: TITLE_FIELD('Status, e.g. "Do uzgodnień".'),
+      lang: { type: 'string', enum: ['pl', 'en'] },
+      revisions: {
+        type: 'array',
+        maxItems: 50,
+        description: 'Replaces the revision table (oldest first).',
+        items: obj({ rev: str('Revision, e.g. A.', 20), date: str('Date.', 40), description: str('What changed.', 300), author: str('Author.', 80), checked: str('Checked by.', 80) }, ['rev']),
+      },
+      sheet: obj({
+        format: { type: 'string', enum: ['A0', 'A1', 'A2', 'A3', 'A4'] },
+        orientation: { type: 'string', enum: ['portrait', 'landscape'] },
+        scale: { type: 'number', minimum: 0, maximum: 1000, description: 'n of a fixed scale 1:n; 0 = fit the drawing to the sheet.' },
+        sheetTitle: str('This page\'s sheet title ("" = the document title).', 300),
+        sheetNumber: str('This page\'s sheet number ("" = its position).', 20),
+        showBorder: { type: 'boolean', description: 'Show the sheet border on the canvas (default true).' },
+      }),
+    }),
+    mutating: true,
+  },
+  {
+    name: 'export_sheets',
+    title: 'Export sheets (PDF)',
+    description: 'Saves the drawing sheets as one PDF in the user\'s browser: one page per drawing page in its paper size, with frame, title block, revision table and legend. pages: 1-based page numbers (default all).',
+    input_schema: obj({ pages: { type: 'array', maxItems: 200, items: { type: 'integer', minimum: 1, maximum: 1000 } } }),
+    mutating: false,
   },
 ];
 

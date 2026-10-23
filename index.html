@@ -51,6 +51,8 @@
                   <!-- src/ui/export-image.ts (diagram-image-export.ts, the same images as Share > Export PNG/SVG) -->
                   <div class="menu-dropdown-item" data-action="exportPng" title="PNG image of the current diagram (2x, on its background)">PNG Image…</div>
                   <div class="menu-dropdown-item" data-action="exportSvg" title="SVG image of the current diagram">SVG Image…</div>
+                  <!-- src/print/ui/sheet-export.ts: one sheet per page with frame, title block, revisions, legend -->
+                  <div class="menu-dropdown-item" data-action="exportSheets" title="Drawing sheets with frame, title block, revision table and legend: PDF, SVG or PNG">Sheets (PDF / SVG / PNG)…</div>
                   <div class="rd-sep"></div>
                   <div class="menu-dropdown-item" data-action="exportRailml" title="railML 3.2 file of the current diagram: topology, infrastructure, routes, layout">railML 3.2…</div>
                   <div class="menu-dropdown-item" data-action="exportRailwayScript" title="The diagram's Railway Script as .rdl.yaml or .rdl.json (generated from the drawing when it has none)">Railway Script…</div>
@@ -79,7 +81,12 @@
               </div>
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="share" title="Link with the diagram, downloads, cloud storage">Share…</div>
-              <div class="menu-dropdown-item" data-action="print">Print</div>
+              <div class="rd-sep"></div>
+              <!-- src/print: sheet setup of the shown page, the document's title block and revision table -->
+              <div class="menu-dropdown-item" data-action="pageSetup" title="Paper format, orientation, scale, margins and frame of the shown page's sheet">Page Setup…</div>
+              <div class="menu-dropdown-item" data-action="titleBlock" title="Title block (tabliczka rysunkowa) printed on every sheet">Title Block…</div>
+              <div class="menu-dropdown-item" data-action="revisions" title="Revision table (tabela zmian) printed above the title block">Revisions…</div>
+              <div class="menu-dropdown-item" data-action="print" title="Print the sheets (one per page, in their paper size)">Print…</div>
             </div>
           </div>
 
@@ -117,9 +124,17 @@
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="showGrid" role="menuitemcheckbox" aria-checked="true" title="Show the grid and snap to it (also the toolbar grid button)">Grid</div>
               <div class="menu-dropdown-item" data-action="toggleDarkMode" role="menuitemcheckbox" aria-checked="false">Dark Mode</div>
+              <!-- src/print/ui/sheet-overlay.ts: draw.io's page view (page="1") with the frame and title block -->
+              <div class="menu-dropdown-item" data-action="toggleSheetBorder" role="menuitemcheckbox" aria-checked="false" title="The sheet (paper, frame, title block) of the shown page on the canvas; File > Page Setup… sets it up">Show Sheet Border</div>
               <div class="menu-dropdown-item" data-action="toggleErtmsTab" role="menuitemcheckbox" aria-checked="false">ERTMS Tab</div>
               <!-- src/ui/hover-arrows.ts (draw.io View > Connection Arrows, Alt+Shift+A) -->
               <div class="menu-dropdown-item" data-action="toggleConnectionArrows" role="menuitemcheckbox" aria-checked="true" title="Arrows around the shape under the pointer: click to add a connected copy, drag to connect (Alt+Shift+A)">Connection Arrows</div>
+              <div class="rd-sep"></div>
+              <!-- src/print: the drawing pages (sheets) of the file -->
+              <div class="menu-dropdown-item" data-action="pages" title="Go to, add, rename or delete the pages of the file">Pages…</div>
+              <div class="menu-dropdown-item" data-action="nextPage">Next Page</div>
+              <div class="menu-dropdown-item" data-action="previousPage">Previous Page</div>
+              <div class="menu-dropdown-item" data-action="insertSheetRef" title="A &quot;continued on sheet n&quot; marker that links to another page">Insert Sheet Reference…</div>
             </div>
           </div>
 
@@ -777,12 +792,12 @@
                   <!-- Z-Order Controls -->
                   <div style="margin-bottom: 16px;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                      <button class="rd-btn" id="btn-toFront" style="padding: 8px; font-size: 12px; font-weight: 500;">To Front</button>
-                      <button class="rd-btn" id="btn-toBack" style="padding: 8px; font-size: 12px; font-weight: 500;">To Back</button>
+                      <button class="rd-btn" id="btn-toFront" data-command="toFront" style="padding: 8px; font-size: 12px; font-weight: 500;">To Front</button>
+                      <button class="rd-btn" id="btn-toBack" data-command="toBack" style="padding: 8px; font-size: 12px; font-weight: 500;">To Back</button>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px;">
-                      <button class="rd-btn" id="btn-bringForward" style="padding: 8px; font-size: 12px; font-weight: 500;">Bring Forward</button>
-                      <button class="rd-btn" id="btn-sendBackward" style="padding: 8px; font-size: 12px; font-weight: 500;">Send Backward</button>
+                      <button class="rd-btn" id="btn-bringForward" data-command="bringForward" style="padding: 8px; font-size: 12px; font-weight: 500;">Bring Forward</button>
+                      <button class="rd-btn" id="btn-sendBackward" data-command="sendBackward" style="padding: 8px; font-size: 12px; font-weight: 500;">Send Backward</button>
                     </div>
                   </div>
 
@@ -872,7 +887,7 @@
                         <label class="rd-field-label">Angle</label>
                         <input class="rd-input" type="number" id="prop-rotation" value="0" min="0" max="360" style="width: 100%; padding: 4px; font-size: 11px; box-sizing: border-box;" />
                       </div>
-                      <button class="rd-btn" id="btn-rotate90" style="width: 100%; padding: 6px; font-size: 11px; font-weight: 500;">Rotate Shape Only by 90°</button>
+                      <button class="rd-btn" id="btn-rotate90" data-command="rotate90" style="width: 100%; padding: 6px; font-size: 11px; font-weight: 500;">Rotate Shape Only by 90°</button>
                     </div>
                   </div>
 
@@ -884,21 +899,21 @@
                     </div>
                     <div class="collapsible-content" data-section="flip" style="padding: 8px;">
                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                        <button class="rd-btn" id="btn-flipHorizontal" style="padding: 8px; font-size: 12px; font-weight: 500;">Horizontal</button>
-                        <button class="rd-btn" id="btn-flipVertical" style="padding: 8px; font-size: 12px; font-weight: 500;">Vertical</button>
+                        <button class="rd-btn" id="btn-flipHorizontal" data-command="flipHorizontal" style="padding: 8px; font-size: 12px; font-weight: 500;">Horizontal</button>
+                        <button class="rd-btn" id="btn-flipVertical" data-command="flipVertical" style="padding: 8px; font-size: 12px; font-weight: 500;">Vertical</button>
                       </div>
                     </div>
                   </div>
 
                   <!-- Misc Buttons -->
                   <div style="margin-bottom: 0;">
-                    <button class="rd-btn" id="btn-snap-to-grid" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Snap to Grid</button>
+                    <button class="rd-btn" id="btn-snap-to-grid" data-command="snapToGrid" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Snap to Grid</button>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
                       <button class="rd-btn" id="btn-group" data-command="group" style="padding: 8px; font-size: 12px; font-weight: 500;">Group</button>
                       <button class="rd-btn" id="btn-ungroup" data-command="ungroup" style="padding: 8px; font-size: 12px; font-weight: 500;">Ungroup</button>
                     </div>
-                    <button class="rd-btn" id="btn-copySize" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Copy Size</button>
-                    <button class="rd-btn" id="btn-lock" style="width: 100%; padding: 8px; font-size: 12px; font-weight: 500;">Lock</button>
+                    <button class="rd-btn" id="btn-copySize" data-command="matchSize" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Copy Size</button>
+                    <button class="rd-btn" id="btn-lock" data-command="toggleLock" style="width: 100%; padding: 8px; font-size: 12px; font-weight: 500;">Lock</button>
                   </div>
                 </div>
               </div>

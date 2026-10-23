@@ -75,6 +75,10 @@ export interface AiTarget {
   showScenario?(scenarioId: string, index: number): void;
   /** Builds a scenario document and saves it in the user's browser; resolves the file name. */
   exportScenario?(scenarioId: string, format: ScenarioExportFormat, options: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean }): Promise<string>;
+  /** Print sheets (src/print): title block / revisions / sheet setup of the shown page; resolves what is set now. */
+  setTitleBlock?(input: Record<string, unknown>): Promise<object>;
+  /** Saves the sheets PDF (1-based page numbers; all when empty) in the user's browser. */
+  exportSheets?(pages: number[]): Promise<{ fileName: string; sheets: number }>;
 }
 
 export type ScenarioExportFormat = 'html' | 'pdf' | 'slides';

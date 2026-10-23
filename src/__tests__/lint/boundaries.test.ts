@@ -27,6 +27,20 @@ describe('module boundaries (core <- document <- features <- ui)', () => {
     expect(await boundaryErrors('src/railway/probe.ts', "import { ScenarioSet } from '../scenarios/scenario-model';\nexport const x = ScenarioSet;\n")).toBe(1);
     // the step editor is a plain feature module now (no UI shell imports)
     expect(await boundaryErrors('src/scenarios/step-editor.ts', "import { confirmDialog } from '../ui/app-dialogs';\nexport const x = confirmDialog;\n")).toBe(1);
+    // resolved exceptions stay resolved:
+    // the clipboard (document) -> railway (it runs registered paste hooks now)
+    expect(await boundaryErrors('src/services/clipboard-service.ts', "import { prepareClonedCells } from '../railway/clone';\nexport const x = prepareClonedCells;\n")).toBe(1);
+    // former feature-glue files -> the UI shell (zoom via the bus, ERTMS library and icons in core, askConfirm)
+    expect(await boundaryErrors('src/railml/railml-ui.ts', "import { zoomRailwayDrawing } from '../ui/railway-zoom';\nexport const x = zoomRailwayDrawing;\n")).toBe(1);
+    expect(await boundaryErrors('src/railway-script/session.ts', "import { loadErtmsLibraryEntries } from '../ui/drawio-palette/ertms-source';\nexport const x = loadErtmsLibraryEntries;\n")).toBe(1);
+    expect(await boundaryErrors('src/railway-script/script-ui.ts', "import { confirmDialog } from '../ui/app-dialogs';\nexport const x = confirmDialog;\n")).toBe(1);
+    expect(await boundaryErrors('src/share/ui/remote-dialogs.ts', "import { createToolbarIcon } from '../../ui/toolbar';\nexport const x = createToolbarIcon;\n")).toBe(1);
+    // cross-feature imports that were exceptions
+    expect(await boundaryErrors('src/scenarios/probe.ts', "import { codeChallengeS256 } from '../share/providers/gitlab/pkce';\nexport const x = codeChallengeS256;\n")).toBe(1);
+    expect(await boundaryErrors('src/share/probe.ts', "import { isScenarioStepPage } from '../scenarios/scenario-format';\nexport const x = isScenarioStepPage;\n")).toBe(1);
+    expect(await boundaryErrors('src/share/probe.ts', "import { railwayScriptAttributes } from '../railway-script/script-store';\nexport const x = railwayScriptAttributes;\n")).toBe(1);
+    expect(await boundaryErrors('src/railway-script/probe.ts', "import { exportRailml } from '../railml/export';\nexport const x = exportRailml;\n")).toBe(1);
+    expect(await boundaryErrors('src/ai/probe.ts', "import { codeChallengeS256 } from '../share/providers/gitlab/pkce';\nexport const x = codeChallengeS256;\n")).toBe(1);
   }, 60_000);
 
   it('accepts imports along the layers', async () => {

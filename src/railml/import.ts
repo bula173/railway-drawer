@@ -31,7 +31,7 @@ import type { LibraryEntry } from '../drawio-shapes/engine';
 import { RAILML_ID_ATTR, RAILML_IL_ID_ATTR, RAILML_NE_ATTR, RAILML_TVD_ATTR } from './export';
 import { protectionFromRailml, technologyFromRailml } from './mapping';
 import { PRESERVED_ATTR, PreservedStore, pathOf } from './preserve';
-import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from './schematic';
+import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from '../railway/schematic';
 import { DC_NS, RAILML_NS, RD_NS, RD_REGISTER, childNamed, childrenNamed, parseXml, pathNamed } from './xml';
 
 export interface RailmlImportOptions {

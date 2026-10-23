@@ -7,6 +7,7 @@
  * 14 standard PDF fonts cannot show (Polish letters, arrows, ...). Imported only by scenario-pdf.ts,
  * which is itself loaded lazily.
  */
+import { reportLoadFailure } from '../core/load-failure';
 import sansUrl from 'dejavu-fonts-ttf/ttf/DejaVuSans.ttf?url';
 import sansBoldUrl from 'dejavu-fonts-ttf/ttf/DejaVuSans-Bold.ttf?url';
 import monoUrl from 'dejavu-fonts-ttf/ttf/DejaVuSansMono.ttf?url';
@@ -38,7 +39,7 @@ export function loadPdfFonts(): Promise<PdfFontFiles | null> {
   cached ??= Promise.all([fetchFont(sansUrl), fetchFont(sansBoldUrl), fetchFont(monoUrl)])
     .then(([sans, sansBold, mono]) => ({ sans, sansBold, mono }))
     .catch((error: unknown) => {
-      console.warn('[Scenarios] PDF fonts could not be loaded, using the standard fonts:', error);
+      reportLoadFailure('warn', 'Scenarios', 'PDF fonts could not be loaded, using the standard fonts', error);
       cached = null;
       return null;
     });

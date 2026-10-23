@@ -38,9 +38,12 @@
 - **Commands** (`src/ui/commands/`): every menu item (`data-action`), context-menu item, toolbar button
   (`data-command`) and keyboard shortcut runs a registered `Command { id, label, run(ctx), isEnabled?, isChecked?,
   shortcut?, keys?, help? }` (families: `railwayRoute:`, `railwayState:`, `exportRailway:`, `drawio:` get the rest of the
-  id as `ctx.arg`) on the active tab (`ctx.tab`); `ctx.source` (menu / contextMenu / toolbar / keyboard) and the context
-  menu's `ctx.target` (right-clicked cells, click position) select the few variants (context Paste at the click point,
-  Ctrl/Cmd+D = offset copy, Ctrl/Cmd+1 = fit 20 px). Contributions: file, edit, view, arrange, railway, features
+  id as `ctx.arg`) on the active tab (`ctx.tab`); `ctx.source` (menu / contextMenu / toolbar / panel / keyboard) and the
+  context menu's `ctx.target` (right-clicked cells, click position) select the few variants (context Paste at the click
+  point, Ctrl/Cmd+D = offset copy, Ctrl/Cmd+1 = fit 20 px; a `panel` arrange command does nothing while the active graph
+  is hidden). The Properties > Arrange buttons are `data-command` buttons (z-order, Rotate 90°, Flip, Group / Ungroup,
+  Snap to Grid `snapToGrid`, Copy Size `matchSize`, Lock `toggleLock`; bound by `session-views.ts` with source `panel`,
+  one undo step each); the panel's model listener refreshes the rotation field, flip and lock state. Contributions: file, edit, view, arrange, railway, features
   (scenarios, Railway Script, railML, share; the AI assistant has none), help. Adding an action = a command (+ the
   `data-action` in index.html); `src/ui/commands/__tests__/registry.test.ts` fails on a data-action without a command,
   a shared shortcut, or a shortcut without a key binding or Help row.
@@ -199,7 +202,7 @@
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
 - Connection arrows = draw.io HoverIcons (`src/ui/hover-arrows.ts` `HoverArrowsController`, one per tab, built in
   `TabManager.createTab` after the graph setup (ConnectionHandler patches), `tab.hoverArrowsController`): four DOM arrows (draw.io's images,
-  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around (never over: outside the union of the cell's bounds and its shape's bounding box) the cell a click would
+  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around (never over: outside the union of the cell's bounds, its shape's bounding box and its label's bounding box, `hoverArrowAnchorBounds`: a press on a label outside the vertex, e.g. a km post's, moves the cell) the cell a click would
   select (`hoverArrowCell`: group before its children, unlocked incl. group/layer, connectable or a group, no edges,
   `allowArrows=0` honoured) after a 140 ms rest; never while a button is down, editing, Route tool active
   (`.rd-route-tool-active`) or in the scenario view (`body.rd-scenario-viewing`). Hidden outside the cell+arrows box
@@ -281,7 +284,8 @@
   model update (one undo), new cell selected, no container drop. Not ported: draw.io's Shift+Click shape replace.
 - Start card (`src/ui/start-card.ts`, boot/panels.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
   Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
-  Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
+  Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. A non-modal `openFloatingPanel` (core/modal.ts) while
+  shown: role=dialog labelled by its title, Esc only when no modal is open, focus back when it was inside. Hidden while dragging (drops reach the canvas).
   Automated browsers (`navigator.webdriver`) do not get it unless `rd.startCard.force` = '1' (e2e clicks the canvas centre).
 - Narrow screens (`src/ui/narrow-screen.ts`): < 900 px -> `body.rd-narrow` (fallback CSS hides both side panels and
   `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`). Start card actions that need the left

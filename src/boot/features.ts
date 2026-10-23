@@ -20,9 +20,13 @@ import type { GraphDataModel } from '@maxgraph/core';
 import { setupGraph } from '../ui/setup-graph';
 import { appKeymap } from '../ui/commands';
 import { ServiceRegistry } from '../services/service-registry';
+import { installPrintSheets } from '../print/ui/install-print';
+import { installRailwayZoomRequests } from '../ui/railway-zoom';
 
 /** Scenarios, railway data / routes / states, railML; returns the scenarios handle (its key interceptor). */
 export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTMLElement): ScenariosHandle {
+  // railML import / Railway Script drawings open at the railway zoom (bus request of the features)
+  installRailwayZoomRequests();
   /**
    * @brief Scenarios of the active tab (right panel "Scenarios", next to Properties)
    * @details Each step is a snapshot of the drawing, saved as its own draw.io page. Clicking a step
@@ -73,6 +77,8 @@ export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTML
   ServiceRegistry.register('trainRun', trainRun);
   // railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
   installRailml(tabManager, globalNotificationManager);
+  // Print sheets: sheet overlay (View > Show Sheet Border), continuation markers (src/print)
+  installPrintSheets();
   return scenarios;
 }
 

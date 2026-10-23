@@ -1,6 +1,6 @@
 /**
  * The generated draw.io catalogue (all v32.4.1 sidebar palettes): consistency of catalogue.json,
- * search-index.json and the palette files, lazy loading, the global search, notices for vendor
+ * the search index shards and the palette files, lazy loading, the global search, notices for vendor
  * icon sets and the vendored stencils/images the entries reference.
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
@@ -16,7 +16,7 @@ describe('draw.io catalogue', () => {
     const cat: PaletteCatalogue = await loadPaletteCatalogue();
     expect(cat.drawioTag).toBe('v32.4.1');
     expect(cat.palettes.length).toBe(504);
-    const files = readdirSync(DATA).filter((f) => f.endsWith('.json') && f !== 'catalogue.json' && f !== 'search-index.json');
+    const files = readdirSync(DATA).filter((f) => f.endsWith('.json') && f !== 'catalogue.json');
     expect(files.length).toBe(cat.palettes.length);
     const libs = new Map(cat.libraries.map((l) => [l.id, l]));
     let total = 0;
