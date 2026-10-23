@@ -43,15 +43,49 @@ step** per call, compact JSON result + a one-line summary for the visible log.
 | `delete_cells` | By cell id or railway object id, or everything. |
 | `set_states` | `state` / `aspect` / `position` per object (docs/STATES.md), reset, reset all. |
 | `routes` | list / find / add / set / occupy / release on the drawn topology. |
-| `list_templates`, `insert_template` | ERTMS + user templates; insert at x/y or open as a new tab. |
+| `list_templates` | ERTMS + user templates ranked for `query` (English or Polish words; PL stems → EN terms, e.g. "wjazd" → entry/entrance/route, "przejście poziomu" → level transition). Per template: id, display + original name, summary (topic, ETCS level, counts of tracks/signals/sections/points/balise groups, signal ids), size, score. No match → all names. |
+| `describe_template` | One template as a Railway Script generated from its drawing (ids, kinds, tracks, km) + ids by kind + its other labels, to plan edits. |
+| `insert_template` | `mode: newTab` (default where tabs exist: opens it as a new, now active, tab; ids unchanged) or `intoTab` (one undo step, at `at` or the view centre; taken ids renumbered, returned as `renamed` template id → new id). Returns the object ids by kind. |
 | `check_drawing` | The railway data checks (Checks panel). |
 | `export_drawing` | png (returned as an image so the model can look at the drawing), svg, drawio, railML 3.2, Railway Script YAML/JSON; optional download. |
 | `undo` | Undo n steps of the tab. |
+| `list_scenarios` | The tab's scenarios (Scenarios panel): ids, names, descriptions, steps (number, id, name, has UML / text). |
+| `create_scenario`, `update_scenario` | Create; rename / describe / `delete: true`. |
+| `add_scenario_step` | `{scenario, name, description?, uml?, text?, states?: [{id, state\|aspect\|position}], routes?: [{id, action: set\|occupy\|release}], resetStates?, captureDrawing = true, position?}`: reset (optional) → route actions → states on the drawing, then the drawing is captured exactly like the panel's "+ Add step". Returns the changes from the previous step (`TC3: free → occupied`). |
+| `update_scenario_step`, `delete_scenario_step`, `reorder_scenario_steps` | Edit name/description/UML/text, or apply states/routes to the current drawing and recapture (`recapture: true` without changes); delete; move `step` to `to` or a full `order`. Steps are addressed by number, id or name; scenarios by id or name. |
+| `build_scenario` | `{name, description?, resetStates = true, restoreDrawing = false, steps: [...]}` (≤ 30 steps): creates the scenario and every step in ONE call / undo step. |
+| `view_scenario` | Opens the read-only scenario view at a step for the user (not in headless mode). |
+| `export_scenario` | `pdf` / `slides` / `html` (+ `orientation`, `showChanges`), saved in the browser without the options dialog (not in headless mode). |
+
+**Scenario semantics.** Step states are *incremental*: a step starts from the drawing as the previous
+step left it and changes only the listed objects (`""` = back to the default of that dimension).
+`resetStates` on a step resets every object (free / stop / normal) first, which makes that step
+*absolute*; `build_scenario` resets once before step 1 by default (the scenario starts from the drawing
+as drawn) and leaves the drawing at the last step unless `restoreDrawing: true`. Chosen over
+"absolute by default" because railway scenarios are told as a sequence of changes (route set → train
+enters TC2 → TC1 released) and listing every object in every step would be long and error-prone.
+All ids of a call are checked first: an unknown id changes nothing and the error names it together
+with the valid ids by kind (or says that the drawing has no routes yet).
+
+**Undo.** A scenario call records ONE undoable edit on the tab's model: the drawing changes (states,
+routes) plus a `ScenarioSetChange` (`scenario-tools.ts`) that swaps the touched scenarios with their
+earlier copies (`ScenarioSet.captureState/restoreState`; scenarios changed in the panel meanwhile stay).
+So Ctrl+Z / redo, "Undo AI turn" and Discard in confirm mode revert scenario data and states together.
+The app writes the tab cache right after a scenario change (like the panel). Headless MCP: scenarios
+are read from and written to the file's step pages (`scenario-format.ts`).
 
 The system prompt (`system-prompt.ts`) teaches the Railway Script from the same sources as its JSON
 Schema (catalogue fields, aliases, state keys, nested lists, joints), the three built-in examples and
 the conventions (km chainage, nominal = increasing km = left to right, signals on the right of their
 direction, ETCS NID_C/NID_BG/RBC, ID prefixes). It is deterministic, so it is cached.
+
+It also prescribes **templates first**: for "prepare / draw a layout or scenario" requests the model
+searches the templates with the user's keywords, picks the closest, inserts it (new tab unless asked
+otherwise), inspects and adapts it (move/rename/add/remove objects, routes, states), builds from
+scratch only when nothing fits, and tells the user which template it used. It teaches the scenario
+workflow (states → step, `build_scenario` for a whole scenario, typical train movement steps, PlantUML
+message sequences) and a Polish → English railway vocabulary (rozjazd = points, odcinek izolowany =
+track section, przebieg = route, wjazd/wyjazd = entry/exit, zajęty/wolny = occupied/free, …).
 
 ## In-app chat
 
@@ -63,10 +97,14 @@ Right panel **AI** (`[data-right-panel="ai"]`; the chunk with the Anthropic SDK 
 - **Prompt box**: Enter sends, Shift+Enter new line, Esc stops while running. The answer streams;
   the model's summarized thinking is in a collapsed "Thinking" line; Markdown is rendered (images are
   never loaded).
-- **Tool log**: one line per call, e.g. `✓ Applied Railway Script: 1 track, 2 points, 5 signals`;
-  errors show the first `line:col` problems.
+- **Tool log**: one line per call, e.g. `✓ Applied Railway Script: 1 track, 2 points, 5 signals`,
+  `✓ Inserted template "Level transition L1 → L2" as new tab (S2, S4_Exit, S6)` (into a tab: the renamed
+  ids, `S2→S7, TC1→TC5 …`), `✓ Added step 2 "Train enters TC3" to scenario "Wjazd"`,
+  `✓ Built scenario "Wjazd" with 3 steps`; errors show the first `line:col` problems.
 - **Confirm mode**: each change is applied, shown on the canvas with a summary (`3 added, 1 changed`)
-  and waits for **Keep** / **Discard**; Discard undoes it and tells the model.
+  and waits for **Keep** / **Discard**; Discard undoes it and tells the model. Scenario tools add the
+  line "Scenarios: changed (Discard removes this change too)"; Discard reverts the scenario data with
+  the states (same undo step).
 - **Stop** aborts the stream or the waiting tool; unanswered tool calls are closed properly.
 - **Undo AI turn** undoes every edit of the last turn (only while they are still the newest edits of
   their tab; later manual edits are kept and reported).

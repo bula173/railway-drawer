@@ -48,7 +48,7 @@ tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, all-shapes, access-identity). No
+railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -179,6 +179,10 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (one undo); Data panel State select; route Set (sections/route green, W1 reverse, S1 proceed) / Railway > Object State >
   Occupy Route / Release (W1 back); State Legend; scenario "Show changes" lists `TC2: free → occupied` and `S2: aspect stop →
   proceed`; dark theme renders the state colours unchanged; Reset All States. Screenshots `test-results/object-states/`.
+- `tests/e2e/ai-scenarios.spec.ts` (any port, Anthropic API mocked with `page.route`, no key/network): "Przygotuj scenariusz
+  wjazdu pociągu…" -> mocked list_templates / insert_template (newTab, "Level transition L1 → L2") / build_scenario (3 steps
+  with states) / view_scenario -> friendly tool-log lines, new active tab, incremental step states, the scenario view steps
+  1/3 -> 3/3, the Scenarios panel lists the steps; confirm mode: Discard of add_scenario_step removes the step and its states.
 - `tests/e2e/ai.spec.ts` (any port, Anthropic API mocked with `page.route`, SSE from `src/ai/__tests__/sse.ts`, no key/network):
   AI panel key masked + only in localStorage `rd.ai.settings` (cache/other storage/requests never contain it), Remove; a typed
   request -> mocked tool calls (get_drawing, apply_railway_script, set_states) draw T1/S1/S2 -> "Undo AI turn" (2 steps);
@@ -1178,12 +1182,24 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 ### AI assistant (`src/ai/`, docs/AI.md)
 
-- One tool core for the in-app chat and MCP: `tool-defs.ts` (12 tools, JSON Schemas, `additionalProperties: false`),
+- One tool core for the in-app chat and MCP: `tool-defs.ts` (23 tools, JSON Schemas, `additionalProperties: false`),
   `schema-check.ts` (strict validator, also used by the Worker / local server), `tools.ts` `executeAiTool(target, name,
   input)` (never throws; at most ONE undoable edit per call, edits reported for "Undo AI turn"), `target.ts` `AiTarget`
   (graph, undo, Railway Script store/session, optional catalogue/templates/render/download), `app-target.ts` (the ACTIVE
   tab, resolved per call), `shape-search.ts`, `system-prompt.ts` (Railway Script reference generated from catalogue +
-  language tables + `SCRIPT_TEMPLATES`; deterministic for caching). Pure modules (no DOM at import): tool-defs,
+  language tables + `SCRIPT_TEMPLATES`, the "templates first" workflow, the scenario workflow and a PL -> EN railway
+  vocabulary; deterministic for caching). Executors are split: `tools.ts` (drawing tools + dispatch), `tool-kit.ts`
+  (outcome type, ToolError, id helpers), `step-actions.ts` (state/route resolution: everything checked before anything
+  changes, unknown ids listed with the valid ones), `template-tools.ts` (list_templates: derived summary/ETCS level/
+  counts/signal ids/size, PL/EN keyword ranking via `SYNONYMS` stems + stopwords; describe_template = generated Railway
+  Script of the template; insert_template newTab|intoTab with `renamed` id map via `insertTemplate(..., onRenamed)`),
+  `scenario-tools.ts` (list/create/update scenarios, add/update/delete/reorder steps, build_scenario, view_scenario,
+  export_scenario on `AiTarget.scenarios()` = the tab's ScenarioSet; steps incremental, `resetStates` makes one absolute,
+  build_scenario resets before step 1 by default, `restoreDrawing` optional). Scenario undo: ONE model edit per call =
+  drawing changes + `ScenarioSetChange` (execute() swaps `ScenarioSet.captureState/restoreState` of the touched scenarios;
+  others, e.g. made in the panel meanwhile, stay), so Ctrl+Z, Undo AI turn and confirm Discard revert both. App target:
+  `scenariosChanged` flushes the tab cache, `showScenario`/`exportScenario` via `installedScenarios()` (install-scenarios
+  `exportScenarioFile`: no dialog). Headless MCP: scenarios from/to the step pages. Pure modules (no DOM at import): tool-defs,
   schema-check, system-prompt, bridge/protocol, bridge/relay, mcp/* — keep them so (the Worker bundles them).
 - Chat: right panel view `ai` (`index.html` `[data-right-panel="ai"]` -> `#ai-panel`; `install-ai.ts` in the main chunk
   lazy-loads `ai-panel.ts` with `@anthropic-ai/sdk`). `chat/chat-loop.ts` `ChatSession`: manual streaming loop on
@@ -1201,8 +1217,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   else ASSETS), `worker/ai-bridge.ts` Durable Object `AiBridge` (hibernation API, pairing in storage, alarm cleanup).
   Local: `tools/mcp-local/src` (`main.ts` stdio, `bridge-server.ts` ws on 127.0.0.1 with origin allow-list,
   `headless*.ts` jsdom + tool core on a `.drawio` file).
-- Tests: `src/ai/__tests__/` (tools on a jsdom tab, system prompt, chat loop against a fake SSE Messages API, protocol/relay,
-  MCP endpoint over HTTP, local bridge + headless file), `tests/e2e/ai.spec.ts`; the AI panel is in theme-contrast.
+- Tests: `src/ai/__tests__/` (tools on a jsdom tab, `scenario-tools.test.ts` (scenario tools, undo, errors, template
+  analysis/ranking PL/EN, id mapping), system prompt, chat loop against a fake SSE Messages API incl. the template-first
+  flow, protocol/relay, MCP endpoint over HTTP (tool list), local bridge + headless file incl. scenarios),
+  `tests/e2e/ai.spec.ts`, `tests/e2e/ai-scenarios.spec.ts`; the AI panel is in theme-contrast.
 
 ### Sharing (`src/share/`)
 
