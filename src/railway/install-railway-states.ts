@@ -9,6 +9,7 @@
 import type { Cell, Graph } from '@maxgraph/core';
 import './railway-states.css';
 import type { TabManager } from '../ui/tabs';
+import { createGraphFeature } from '../core/graph-feature';
 import type { RailwayNotifier } from './install-railway-data';
 import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
@@ -231,16 +232,8 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     if (typeof detail === 'string') run(detail);
   };
   // points in reverse: the straight continuation faded (view overlay per tab graph, points-fade.ts)
-  const fades = new Map<Graph, () => void>();
-  const syncFades = (): void => {
-    const graphs = new Set(tabManager.getAllTabs().map((t) => t.graph));
-    for (const g of graphs) if (!fades.has(g)) fades.set(g, installPointsFade(g));
-    for (const [g, off] of fades) {
-      if (graphs.has(g)) continue;
-      off();
-      fades.delete(g);
-    }
-  };
+  const fades = createGraphFeature('points-fade', installPointsFade);
+  const syncFades = (): void => fades.sync(tabManager.getAllTabs().map((t) => t.graph));
 
   // Alt+F/O/R/N/V/1-4 on the selection (state-shortcuts.ts; event.code: Alt types characters on
   // macOS). Bubble phase after main-editor's dispatcher; the scenario view swallows Alt keys before.
@@ -273,8 +266,7 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
       document.removeEventListener('keydown', onKey);
       window.removeEventListener('tab-changed', syncFades);
       window.removeEventListener('tab-closed', syncFades);
-      for (const off of fades.values()) off();
-      fades.clear();
+      fades.dispose();
       legend?.remove();
       legend = null;
     },

@@ -1,5 +1,5 @@
-import { Graph, RubberBandHandler, CellEditorHandler, InternalEvent } from '@maxgraph/core';
-import { configureDiagramRendering } from './diagram-graph-setup';
+import { Graph, InternalEvent } from '@maxgraph/core';
+import { setupGraph, teardownGraph } from './setup-graph';
 import { PropertiesPanel } from './properties';
 import { StatusBarController } from './statusbar';
 import { ClipboardController } from './clipboard';
@@ -13,22 +13,18 @@ import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
-import { installDrawioBehaviour } from '../drawio-shapes/behaviour';
-import { installDrawioHandles } from '../drawio-shapes/handles';
-import { installStencilAutoload } from './drawio-stencil-autoload';
+
 import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
 import { sanitizeScenarios } from '../scenarios/scenario-model';
 import { sanitizeCachedScript } from '../railway-script/script-store';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
-import { ConnectionHandler } from './connections';
+
 import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
-import { installCellLocking } from './cell-lock';
-import { installGroupBackgroundHit, installRailwaySplitRules } from './canvas-interaction';
-import { installCanvasScroll, uninstallCanvasScroll } from './canvas-scroll';
+
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
@@ -242,58 +238,16 @@ export class TabManager {
     graphDiv.style.display = this.activeTabId ? 'none' : 'block';
     this.graphContainer.appendChild(graphDiv);
 
-    // Initialize graph with defaults
+    // Defaults, rendering compat, editing behaviour, connections, panning: the ordered installer
+    // list of setup-graph.ts (shared with the scenario view and the palette thumbnails)
     const graph = new Graph(graphDiv);
-    graph.cellsMovable = true;
-    graph.cellsResizable = true;
-    graph.cellsEditable = true;
-    graph.cellsSelectable = true;
-    graph.setConnectable(true);
-    graph.dropEnabled = true;
-    graph.setMultigraph(false);
-
-    // Enable rubber band selection - drag to select multiple objects
-    new RubberBandHandler(graph);
-
-    // Enable text editing on double-click
-    const cellEditorHandler = new CellEditorHandler(graph);
-    // Store on graph for access by TextEditorController
-    (graph as Graph & { cellEditorHandler?: CellEditorHandler }).cellEditorHandler = cellEditorHandler;
-
-    // Configure scrolling behavior
-    graph.ignoreScrollbars = false; // Use native scrollbars
-    graph.translateToScrollPosition = false; // Don't convert scroll to translate
-
-    // Styles and rendering compat shared with the scenario view graph (diagram-graph-setup.ts)
-    configureDiagramRendering(graph);
-    installDrawioBehaviour(graph);
-    // draw.io lock: locked=1 on cells and layers (cell-lock.ts)
-    installCellLocking(graph);
-    // A press in a gap of a transparent group (ERTMS symbols) moves the group (canvas-interaction.ts)
-    installGroupBackgroundHit(graph);
-    // maxGraph cancels the default of presses on the canvas, so a text field elsewhere (Railway
-    // Script, Data panel) kept the focus and swallowed canvas shortcuts; a press on the canvas
-    // moves the focus off it, like draw.io
-    graphDiv.addEventListener('pointerdown', () => {
-      const active = document.activeElement;
-      if (active instanceof HTMLElement && active !== document.body && !graphDiv.contains(active)) active.blur();
-    }, true);
-    // No edge split when a railway symbol is dropped on a track (or with Alt/Shift, like draw.io)
-    installRailwaySplitRules(graph);
-    installDrawioHandles(graph);
-    // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
-    installStencilAutoload(graph);
-    // draw.io scrolling canvas: padding around the content, zoom around the focus (canvas-scroll.ts)
-    installCanvasScroll(graph);
+    setupGraph(graph, 'editor');
 
     // Controllers bind to shared DOM and `document`; record those listeners so they are only
     // attached while this tab is active (see captureSharedListeners).
     const sharedListeners: TabScopedListener[] = [];
     this.tabListeners.set(tabId, sharedListeners);
     const controllers = this.captureSharedListeners(graphDiv, sharedListeners, () => {
-      // Configure connection points on shapes
-      new ConnectionHandler(graph);
-
       // Configure double-click text editing
       const textEditorController = new TextEditorController(graph);
 
@@ -805,7 +759,7 @@ export class TabManager {
 
       // Dispose graph (removes event listeners, clears model, disposes view)
       if (tab.graph) {
-        uninstallCanvasScroll(tab.graph);
+        teardownGraph(tab.graph);
         tab.graph.destroy();
       }
 

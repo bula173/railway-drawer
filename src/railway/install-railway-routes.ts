@@ -12,6 +12,7 @@ import { InternalEvent } from '@maxgraph/core';
 import type { EventSource, Graph } from '@maxgraph/core';
 import './railway-routes.css';
 import type { TabManager } from '../ui/tabs';
+import { createGraphFeature } from '../core/graph-feature';
 import { GraphOverlay, pointsAttr, svgEl } from './graph-overlay';
 import { downloadBlob } from './install-railway-data';
 import type { RailwayNotifier } from './install-railway-data';
@@ -97,12 +98,8 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
   });
 
   // ---- per graph: snap to track
-  const snapInstalled = new WeakMap<Graph, () => void>();
-  const ensureSnap = (): void => {
-    for (const tab of tabManager.getAllTabs()) {
-      if (!snapInstalled.has(tab.graph)) snapInstalled.set(tab.graph, installSnapToTrack(tab.graph, () => snap));
-    }
-  };
+  const snapFeature = createGraphFeature('snap-to-track', (graph) => installSnapToTrack(graph, () => snap));
+  const ensureSnap = (): void => snapFeature.sync(tabManager.getAllTabs().map((tab) => tab.graph));
 
   // ---- km ruler of the selected track
   let rulerGraph: Graph | null = null;
@@ -264,7 +261,7 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     destroy() {
       tool.deactivate();
       unbindRuler();
-      for (const tab of tabManager.getAllTabs()) snapInstalled.get(tab.graph)?.();
+      snapFeature.dispose();
       window.removeEventListener(ROUTE_REQUEST_EVENT, onRequest);
       window.removeEventListener('tab-changed', onTab);
       window.removeEventListener('tab-closed', onTab);

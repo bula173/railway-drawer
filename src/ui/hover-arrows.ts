@@ -40,6 +40,7 @@ import {
 import { isLayer } from './cell-lock';
 import { isGroupVertex, isNearGraphBounds } from './canvas-interaction';
 import { prepareClonedCells } from '../railway/clone';
+import { installOnce } from '../core/install-once';
 
 export type ArrowDirection = 'north' | 'east' | 'south' | 'west';
 export const ARROW_DIRECTIONS: readonly ArrowDirection[] = ['north', 'east', 'south', 'west'];
@@ -302,6 +303,34 @@ const SVG_NS = 'http://www.w3.org/2000/svg';
 export interface HoverArrowsOptions {
   /** Extra veto (tests, read-only views). */
   isBlocked?: () => boolean;
+}
+
+/** Per graph: whether its hover-arrows controller has a connection dragged from an arrow. */
+const ARROW_DRAGGING = new WeakMap<Graph, () => boolean>();
+
+/**
+ * While a connection dragged from a hover arrow ends on the blank canvas: a connected clone there
+ * (ConnectionHandler plugin hooks; setup-graph.ts installer `hover-arrow-connection-hooks`,
+ * idempotent). Without an active arrow drag of the graph's HoverArrowsController the handler
+ * behaves as maxGraph's.
+ */
+export function installHoverArrowConnectionHooks(graph: Graph): void {
+  const handler = graph.getPlugin('ConnectionHandler') as ConnectionHandler | undefined;
+  if (!handler || !installOnce(graph, 'hover-arrow-connection-hooks')) return;
+  const dragging = (): boolean => ARROW_DRAGGING.get(graph)?.() ?? false;
+  const origCreateTarget = handler.isCreateTarget.bind(handler);
+  const origCreateVertex = handler.createTargetVertex.bind(handler);
+  const origSelect = handler.selectCells.bind(handler);
+  handler.isCreateTarget = (evt: MouseEvent) => (dragging() ? true : origCreateTarget(evt));
+  handler.createTargetVertex = (evt: MouseEvent, source: Cell) => {
+    const vertex = origCreateVertex(evt, source);
+    if (dragging() && vertex) prepareClonedCells(graph.getDataModel(), [vertex]);
+    return vertex;
+  };
+  handler.selectCells = (edge: Cell, target: Cell | null) => {
+    if (dragging() && target) graph.setSelectionCell(target);
+    else origSelect(edge, target);
+  };
 }
 
 export class HoverArrowsController {
@@ -754,26 +783,15 @@ export class HoverArrowsController {
   private installConnectionHooks(): void {
     const handler = this.connectionHandler();
     if (!handler) return;
-    const origCreateTarget = handler.isCreateTarget.bind(handler);
-    const origCreateVertex = handler.createTargetVertex.bind(handler);
-    const origSelect = handler.selectCells.bind(handler);
-    handler.isCreateTarget = (evt: MouseEvent) => (this.arrowDrag ? true : origCreateTarget(evt));
-    handler.createTargetVertex = (evt: MouseEvent, source: Cell) => {
-      const vertex = origCreateVertex(evt, source);
-      if (this.arrowDrag && vertex) prepareClonedCells(this.graph.getDataModel(), [vertex]);
-      return vertex;
-    };
-    handler.selectCells = (edge: Cell, target: Cell | null) => {
-      if (this.arrowDrag && target) this.graph.setSelectionCell(target);
-      else origSelect(edge, target);
-    };
+    // Normally done by setupGraph(graph, 'editor'); kept for graphs set up without it (tests)
+    installHoverArrowConnectionHooks(this.graph);
+    const dragging = (): boolean => this.arrowDrag != null;
+    ARROW_DRAGGING.set(this.graph, dragging);
     const onReset = () => { this.arrowDrag = null; };
     handler.addListener(InternalEvent.RESET, onReset);
     this.cleanups.push(() => {
       handler.removeListener(onReset);
-      handler.isCreateTarget = origCreateTarget;
-      handler.createTargetVertex = origCreateVertex;
-      handler.selectCells = origSelect;
+      if (ARROW_DRAGGING.get(this.graph) === dragging) ARROW_DRAGGING.delete(this.graph);
     });
   }
 

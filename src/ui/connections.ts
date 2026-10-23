@@ -125,7 +125,7 @@ export function installSymbolGroupConnect(): void {
  */
 export function installDrawioConnectionStart(graph: Graph): void {
   const handler = graph.getPlugin('ConnectionHandler') as MaxConnectionHandler | undefined;
-  if (!handler) return;
+  if (!handler || !installOnce(graph, 'drawio-connection-start')) return;
   const origValidSource = handler.isValidSource.bind(handler);
   handler.isValidSource = (cell: Cell, me: InternalMouseEvent): boolean =>
     handler.first !== null && origValidSource(cell, me);
@@ -256,6 +256,7 @@ function inwardDistance(state: CellState, px: number, py: number, x: number, y: 
  * isOutlineConnectEvent), which turned every body drop into a fixed point at the drop position.
  */
 export function installDrawioEdgeEnds(graph: Graph): void {
+  if (!installOnce(graph, 'drawio-edge-ends')) return;
   const handler = graph.getPlugin('ConnectionHandler') as MaxConnectionHandler | undefined;
   if (handler) {
     handler.constraintHandler.pointImage = CONNECTION_POINT_IMAGE;
@@ -273,31 +274,38 @@ export function installDrawioEdgeEnds(graph: Graph): void {
   }) as Graph['createEdgeHandler'];
 }
 
+/**
+ * The connection behaviour of an editor graph, in this order (setup-graph.ts runs the same
+ * installers as separate named steps; this wrapper is for graphs set up without it, e.g. tests).
+ * All installers are idempotent.
+ */
 export class ConnectionHandler {
   constructor(graph: Graph) {
     installSymbolGroupConnect();
-    this.configureConnectionConstraints(graph);
+    installConnectionConstraints(graph);
     installDrawioConnectionStart(graph);
     installDrawioEdgeEnds(graph);
-    // after installDrawioHandles (tabs.ts): wraps its createVertexHandler (sizers of small shapes)
+    // after installDrawioHandles: wraps its createVertexHandler (sizers of small shapes)
     installPressToMove(graph);
   }
+}
 
-  private configureConnectionConstraints(graph: Graph): void {
-    const originalGetAllConstraints = graph.getAllConnectionConstraints.bind(graph);
+/** Connection points of vertices: draw.io's own constraints, else the defaults (idempotent). */
+export function installConnectionConstraints(graph: Graph): void {
+  if (!installOnce(graph, 'connection-constraints')) return;
+  const originalGetAllConstraints = graph.getAllConnectionConstraints.bind(graph);
 
-    graph.getAllConnectionConstraints = function (terminal: CellState | null, source: boolean) {
-      const constraints = originalGetAllConstraints(terminal, source);
+  graph.getAllConnectionConstraints = function (terminal: CellState | null, source: boolean) {
+    const constraints = originalGetAllConstraints(terminal, source);
 
-      if (terminal && terminal.cell && terminal.cell.isVertex() && !isLayer(graph, terminal.cell)) {
-        // draw.io shapes: their own fixed points (`points` style, getConstraints, stencil, constraints)
-        const drawio = getDrawioConnectionConstraints(terminal);
-        if (drawio && drawio.length > 0) return drawio;
-        return defaultConnectionConstraints(terminal);
-      }
+    if (terminal && terminal.cell && terminal.cell.isVertex() && !isLayer(graph, terminal.cell)) {
+      // draw.io shapes: their own fixed points (`points` style, getConstraints, stencil, constraints)
+      const drawio = getDrawioConnectionConstraints(terminal);
+      if (drawio && drawio.length > 0) return drawio;
+      return defaultConnectionConstraints(terminal);
+    }
 
-      return constraints || [];
-    };
-  }
+    return constraints || [];
+  };
 }
 

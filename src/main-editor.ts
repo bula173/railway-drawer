@@ -23,6 +23,7 @@ import type { CellStyle } from '@maxgraph/core';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
+import { installGlobalGraphPatches } from './ui/setup-graph';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
@@ -79,6 +80,8 @@ registerDrawioCodecs();
 
 // draw.io stencils: shape=stencil(...), named stencil sets from public/stencils/, JS shapes win
 installStencilEngine({ baseUrl: import.meta.env.BASE_URL });
+// Page-wide maxGraph prototype patches (Cell.prototype.isConnectable), once (setup-graph.ts)
+installGlobalGraphPatches();
 setDrawioPaletteEngine({ ensureStencilsForXml, installDrawioCompat, parseMxLibrary });
 
 try {

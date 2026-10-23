@@ -5,7 +5,7 @@
  *        clone the SVG, clear the model.
  */
 import { Graph, Rectangle, Shape } from '@maxgraph/core';
-import { configureDiagramRendering } from '../diagram-graph-setup';
+import { setupGraph } from '../setup-graph';
 import { drawioColorModeKey, setGraphColorMode } from '../../drawio-shapes/engine/graph-compat';
 import type { PaletteEngine, PaletteEntry } from './contracts';
 import { createCellsForEntry, entryStyles } from './entry-cells';
@@ -172,12 +172,9 @@ export class ThumbnailRenderer {
     });
     document.body.appendChild(host);
     const graph = new Graph(host);
-    graph.setEnabled(false);
-    graph.setTooltips(false);
-    graph.gridEnabled = false;
     // the same rendering setup as every tab graph (draw.io styles, UserObject labels, light-dark(),
-    // sanitized HTML labels as the outermost getLabel wrapper, edge styles, tables)
-    configureDiagramRendering(graph);
+    // sanitized HTML labels as the outermost getLabel wrapper, edge styles, tables): setup-graph.ts
+    setupGraph(graph, 'thumbnail');
     this.host = host;
     this.graph = graph;
     return graph;

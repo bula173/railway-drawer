@@ -14,7 +14,7 @@
  *
  * The sanitizing getLabel wrapper must be the OUTERMOST one: anything wrapping it later
  * (placeholders, light-dark() rewrites, UserObject labels) could put unsanitized HTML back.
- * configureDiagramRendering installs it last; `installDrawioHtmlLabels` re-wraps when called again
+ * setupGraph (ui/setup-graph.ts) installs it last; `installDrawioHtmlLabels` re-wraps when called again
  * after another wrapper was added, so calling it last is enough.
  */
 import type { Cell, Graph } from '@maxgraph/core';

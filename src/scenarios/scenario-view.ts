@@ -3,7 +3,7 @@
  * @brief Read-only presentation of scenario steps on the canvas.
  *
  * The step is shown in a separate, disabled Graph (configured like a tab graph, see
- * diagram-graph-setup.ts) inside `#graph-container`, in place of the active tab's graph div, which
+ * setup-graph.ts, profile 'view') inside `#graph-container`, in place of the active tab's graph div, which
  * is only hidden: its model, selection, view and undo history are never touched, so "Back to
  * editing" shows the live drawing exactly as it was. A banner names the scenario and the step and
  * has Prev/Next, "Replace drawing with this step…" and "Back to editing". A collapsible side panel
@@ -14,8 +14,8 @@
  */
 import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
 import { importModelXml, sanitizeXmlText } from '../services/drawio-xml';
-import { configureDiagramRendering } from '../ui/diagram-graph-setup';
-import { installStencilAutoload } from '../ui/drawio-stencil-autoload';
+import { setupGraph } from '../ui/setup-graph';
+
 import type { ScenarioData, ScenarioSet, ScenarioStepData } from './scenario-model';
 import { renderStepUml, showUmlResult } from './step-uml';
 import type { UmlRenderResult } from './step-uml';
@@ -478,11 +478,8 @@ export class ScenarioViewer {
   private ensureGraph(): Graph {
     if (this.graph) return this.graph;
     const graph = new Graph(this.host!);
-    graph.setEnabled(false);
-    graph.setTooltips(false);
-    graph.gridEnabled = false;
-    configureDiagramRendering(graph);
-    installStencilAutoload(graph);
+    // read-only: rendering compat as in the tabs + stencil autoload (setup-graph.ts)
+    setupGraph(graph, 'view');
     this.graph = graph;
     return graph;
   }

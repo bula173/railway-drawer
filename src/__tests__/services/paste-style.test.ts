@@ -5,7 +5,7 @@ import { GraphCommandService } from '../../services/graph-command-service';
 import { installCellLocking } from '../../ui/cell-lock';
 import { PASTE_STYLE_KEYS, ownStyleCopy } from '../../ui/style-edit';
 import { parseStyleString } from '../../services/drawio-xml';
-import { configureDiagramRendering } from '../../ui/diagram-graph-setup';
+import { setupGraph } from '../../ui/setup-graph';
 
 let graph: Graph | null = null;
 afterEach(() => {
@@ -16,7 +16,7 @@ afterEach(() => {
 function setup(): { graph: Graph; service: GraphCommandService; add: (style: string, value?: string) => Cell } {
   const g = new Graph(document.createElement('div'));
   graph = g;
-  configureDiagramRendering(g);
+  setupGraph(g, 'thumbnail');
   installCellLocking(g);
   const service = new GraphCommandService(g);
   const add = (style: string, value = 'x'): Cell =>

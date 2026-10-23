@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { Graph } from '@maxgraph/core';
 import { isSafeCss, sanitizeHtmlLabel, sanitizeMarkdownFragment, sanitizeSvgMarkup } from '../sanitize';
 import { installDrawioHtmlLabels } from '../../drawio-shapes/engine/html-labels';
-import { configureDiagramRendering } from '../../ui/diagram-graph-setup';
+import { setupGraph } from '../../ui/setup-graph';
 import { sanitizeHtml } from '../../scenarios/markdown';
 
 const ROOT = resolve(__dirname, '../../..');
@@ -189,7 +189,7 @@ describe('sanitizing getLabel is the outermost wrapper', () => {
   it('sanitizes what placeholders / UserObject labels produce', () => {
     const graph = new Graph(document.createElement('div'));
     try {
-      configureDiagramRendering(graph);
+      setupGraph(graph, 'thumbnail');
       const doc = document.implementation.createDocument(null, null, null);
       const obj = doc.createElement('object');
       obj.setAttribute('label', '<b>%name%</b>');

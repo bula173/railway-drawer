@@ -21,7 +21,7 @@ import {
 } from '../../ui/style-edit';
 import { PropertiesPanel } from '../../ui/properties';
 import { EdgePropertiesController } from '../../ui/edge-properties';
-import { configureDiagramRendering } from '../../ui/diagram-graph-setup';
+import { setupGraph } from '../../ui/setup-graph';
 import { exportModelToDrawioXml, parseDrawioStyle } from '../../services/drawio-xml';
 import { createTestGraph, cleanupTestGraph } from '../setup';
 import { loadAppDom, clearAppDom } from './app-dom';
@@ -60,7 +60,7 @@ describe('style-edit helpers', () => {
 
   beforeEach(() => {
     graph = createTestGraph();
-    configureDiagramRendering(graph);
+    setupGraph(graph, 'thumbnail');
   });
 
   afterEach(() => cleanupTestGraph(graph));
@@ -155,7 +155,7 @@ describe('properties panels on draw.io / template cells', () => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
     loadAppDom();
     graph = createTestGraph();
-    configureDiagramRendering(graph);
+    setupGraph(graph, 'thumbnail');
     document.getElementById('graph-container')!.appendChild(graph.container);
     panel = new PropertiesPanel(graph);
     new EdgePropertiesController(graph);
