@@ -4,7 +4,7 @@
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
-import { SaveLoadController } from '../../ui/saveload';
+import { DiagramDocument } from '../../document/diagram-document';
 import { CacheService } from '../../services/cache-service';
 import { loadAppDom, clearAppDom } from './app-dom';
 import { storedAutosave } from './autosave-store';
@@ -102,28 +102,28 @@ describe('TabManager incremental autosave', () => {
     const one = tm.createTab('One');
     const two = tm.createTab('Two');
     expect(save(tm)).toBe(true);
-    const serialize = vi.spyOn(SaveLoadController.prototype, 'serializeToXml');
+    const serialize = vi.spyOn(DiagramDocument.prototype, 'serializeToXml');
     expect(save(tm)).toBe(true);
     expect(serialize).not.toHaveBeenCalled();
 
     two.graph.insertVertex(two.graph.getDefaultParent(), null, 'Edited', 0, 0, 40, 40);
     save(tm);
     expect(serialize).toHaveBeenCalledTimes(1);
-    expect(serialize.mock.contexts[0]).toBe(two.saveLoadController);
+    expect(serialize.mock.contexts[0]).toBe(two.document);
     expect(storedAutosave()?.data.tabs.find((t) => t.id === two.id)?.graphXml).toContain('Edited');
 
     one.graph.gridEnabled = !one.graph.gridEnabled; // not a model change: the fingerprint sees it
     serialize.mockClear();
     save(tm);
-    expect(serialize.mock.contexts).toContain(one.saveLoadController);
+    expect(serialize.mock.contexts).toContain(one.document);
   });
 
   it('caches scenario and tab name changes without serialising the model again', () => {
     tm = new TabManager('tabs-container', 'graph-container');
     const tab = tm.createTab('One');
     save(tm);
-    const serialize = vi.spyOn(SaveLoadController.prototype, 'serializeToXml');
-    tab.saveLoadController.getScenarios().create('S', '');
+    const serialize = vi.spyOn(DiagramDocument.prototype, 'serializeToXml');
+    tab.document.scenarios.create('S', '');
     tm.renameTab(tab.id, 'Renamed');
     save(tm);
     expect(serialize).not.toHaveBeenCalled();

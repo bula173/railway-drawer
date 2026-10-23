@@ -161,12 +161,12 @@ export function installScenarios(
     graphContainer,
     renderUml: installOptions.renderUml,
     getActiveTabId: () => tabManager.getActiveTab()?.id ?? null,
-    getScenarios: (id) => tabById(id)?.saveLoadController.getScenarios() ?? null,
+    getScenarios: (id) => tabById(id)?.document.scenarios ?? null,
     getLiveGraph: (id) => tabById(id)?.graph ?? null,
     onStateChange: (state) => panel.setViewState(state),
     onReplaceDrawing: (state, step) => {
       void (async () => {
-        const scenario = tabById(state.tabId)?.saveLoadController.getScenarios().get(state.scenarioId);
+        const scenario = tabById(state.tabId)?.document.scenarios.get(state.scenarioId);
         const ok = await confirmTemplateDialog(
           `Replace the drawing with step ${state.index + 1} "${step.name}"${scenario ? ` of "${scenario.name}"` : ''}? ` +
             'You can undo this with Ctrl+Z.',
@@ -193,8 +193,8 @@ export function installScenarios(
       return {
         id: tab.id,
         name: tab.name,
-        scenarios: tab.saveLoadController.getScenarios(),
-        captureDrawing: () => captureDrawing(tab.saveLoadController),
+        scenarios: tab.document.scenarios,
+        captureDrawing: () => captureDrawing(tab.document),
       };
     },
     viewer,
@@ -220,7 +220,7 @@ export function installScenarios(
   const exportScenario = async (scenarioId?: string): Promise<string | null> => {
     const tab = tabManager.getActiveTab();
     if (!tab) return null;
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     let scenario: ScenarioData | null = null;
     const viewing = viewer.getState();
     if (scenarioId) scenario = set.get(scenarioId);
@@ -287,7 +287,7 @@ export function installScenarios(
   const exportScenarioDoc = async (format: ScenarioDocFormat, scenarioId?: string): Promise<string | null> => {
     const tab = tabManager.getActiveTab();
     if (!tab) return null;
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const all = set.list();
     if (!all.some((s) => s.steps.length > 0)) {
       notify.warning('This diagram has no scenario with steps to export (right panel › Scenarios).');
@@ -377,7 +377,7 @@ export function installScenarios(
     options: { orientation?: 'portrait' | 'landscape'; showChanges?: boolean } = {}
   ): Promise<string> => {
     const tab = tabById(tabId);
-    const scenario = tab?.saveLoadController.getScenarios().get(scenarioId);
+    const scenario = tab?.document.scenarios.get(scenarioId);
     if (!tab || !scenario) throw new Error('scenario not found');
     if (scenario.steps.length === 0) throw new Error(`"${scenario.name}" has no steps to export`);
     const { blob, fileName } = await buildDoc(scenario, tab.name, format, options);

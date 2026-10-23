@@ -82,7 +82,7 @@ describe('TabManager cache restore', () => {
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'Żółw', 0, 0, 40, 40);
     CacheService.save({
       projectName: 'Projekt',
-      tabs: [{ id: tab.id, name: tab.name, graphXml: tab.saveLoadController.serializeToXml() }],
+      tabs: [{ id: tab.id, name: tab.name, graphXml: tab.document.serializeToXml() }],
       activeTabId: tab.id,
       timestamp: Date.now(),
     });
@@ -218,15 +218,15 @@ describe('TabManager per-tab project names and cached old layers', () => {
     expect(title()).toBe('Station A');
     tabManager.switchTab(second.id);
     expect(title()).toBe('Untitled Diagram');
-    second.saveLoadController.setProjectName('Yard');
+    second.document.setProjectName('Yard');
     tabManager.renameActiveProject('Yard North');
     expect(second.name).toBe('Yard North');
-    expect(second.saveLoadController.getProjectName()).toBe('Yard North');
-    expect(first.saveLoadController.getProjectName()).toBe('Station A');
+    expect(second.document.getProjectName()).toBe('Yard North');
+    expect(first.document.getProjectName()).toBe('Station A');
     tabManager.switchTab(first.id);
     expect(title()).toBe('Station A');
     // a background tab's file load does not take over the title
-    second.saveLoadController.setProjectName('Elsewhere');
+    second.document.setProjectName('Elsewhere');
     expect(title()).toBe('Station A');
 
     expect(tabManager.flushCache()).toBe(true);
@@ -239,8 +239,8 @@ describe('TabManager per-tab project names and cached old layers', () => {
     tabManager = startApp();
     expect(title()).toBe('Station A');
     const [a, b] = tabManager.getAllTabs();
-    expect(a.saveLoadController.getProjectName()).toBe('Station A');
-    expect(b.saveLoadController.getProjectName()).toBe('Elsewhere');
+    expect(a.document.getProjectName()).toBe('Station A');
+    expect(b.document.getProjectName()).toBe('Elsewhere');
     tabManager.switchTab(b.id);
     expect(title()).toBe('Elsewhere');
   });
@@ -256,8 +256,8 @@ describe('TabManager per-tab project names and cached old layers', () => {
     tabManager = startApp();
     const [one, two] = tabManager.getAllTabs();
     expect(tabManager.getActiveTab()).toBe(two);
-    expect(two.saveLoadController.getProjectName()).toBe('Old project');
-    expect(one.saveLoadController.getProjectName()).toBe('Untitled Diagram');
+    expect(two.document.getProjectName()).toBe('Old project');
+    expect(one.document.getProjectName()).toBe('Untitled Diagram');
     expect(title()).toBe('Old project');
   });
 

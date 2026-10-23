@@ -246,7 +246,7 @@ describe('TabManager tab lifecycle', () => {
       const tab = tabManager.createTab('Station A');
       tabManager.switchTab(tab.id);
       // tabs opened from a file / link / File > New are named after their project
-      tab.saveLoadController.setProjectName('Station A');
+      tab.document.setProjectName('Station A');
       const rename = (from: string, to: string): void => {
         doubleClick(tabElement(from).querySelector<HTMLElement>('.tab-label')!);
         const input = tabElement(from).querySelector('input')!;
@@ -255,11 +255,11 @@ describe('TabManager tab lifecycle', () => {
       };
       rename('Station A', 'Station B');
       expect(tab.name).toBe('Station B');
-      expect(tab.saveLoadController.getProjectName()).toBe('Station B');
-      tab.saveLoadController.setProjectName('Project X');
+      expect(tab.document.getProjectName()).toBe('Station B');
+      tab.document.setProjectName('Project X');
       rename('Station B', 'My label');
       expect(tab.name).toBe('My label');
-      expect(tab.saveLoadController.getProjectName()).toBe('Project X');
+      expect(tab.document.getProjectName()).toBe('Project X');
     });
 
     it('Escape cancels the rename even though removing the field blurs it', () => {

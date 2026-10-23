@@ -67,17 +67,17 @@ async function blobToBase64(blob: Blob): Promise<string> {
 const MAX_PNG_SCALE = 1;
 
 export function tabTarget(tab: TabData, tabManager: TabManager): AiTarget {
-  const slc = tab.saveLoadController;
+  const doc = tab.document;
   return {
     graph: tab.graph,
-    tabName: () => slc.getProjectName() || tab.name,
-    scriptStore: slc.getRailwayScript(),
+    tabName: () => doc.getProjectName() || tab.name,
+    scriptStore: doc.railwayScript,
     scriptSession: async () => (await import('../railway-script/script-ui')).ensureSession(tab),
     undo: () => tab.graphCommandService.undo(),
     canUndo: () => tab.graphCommandService.canUndo(),
     nextUndoEdit: () => tab.graphCommandService.nextUndoEdit(),
-    modelXml: () => slc.serializeToXml(),
-    projectXml: () => slc.getProjectXml(),
+    modelXml: () => doc.serializeToXml(),
+    projectXml: () => doc.getProjectXml(),
     catalog: appShapeCatalog,
     templates: async (): Promise<DiagramTemplate[]> => {
       let builtIn: DiagramTemplate[] = [];
@@ -95,7 +95,7 @@ export function tabTarget(tab: TabData, tabManager: TabManager): AiTarget {
     renderPng: async (xml) => blobToBase64(await renderXmlToPngBlob(xml, { scale: MAX_PNG_SCALE, border: 10 })),
     renderSvg: (xml) => renderXmlToSvgDocument(xml, { border: 10 }),
     download: (name, content, mime) => downloadBlob(typeof content === 'string' ? new Blob([content], { type: mime }) : content, name),
-    scenarios: () => slc.getScenarios(),
+    scenarios: () => doc.scenarios,
     // steps hold whole drawings: write the tab cache at once (like the Scenarios panel)
     scenariosChanged: () => {
       tabManager.flushCache();

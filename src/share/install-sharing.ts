@@ -76,8 +76,8 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
       const model = tab.graph.getDataModel();
       const listener = (): void => onChange();
       model.addListener(InternalEvent.CHANGE, listener);
-      const stopScenarios = tab.saveLoadController.getScenarios().subscribe(onChange);
-      const stopScript = tab.saveLoadController.getRailwayScript().subscribe(() => onChange());
+      const stopScenarios = tab.document.scenarios.subscribe(onChange);
+      const stopScript = tab.document.railwayScript.subscribe(() => onChange());
       return () => {
         model.removeListener(listener);
         stopScenarios();
@@ -158,15 +158,15 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   const shareXml = (): string =>
     buildShareMxfile(
       tabManager.getAllTabs().map((tab) => {
-        const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
-        const scenarios = tab.saveLoadController.getScenarios().list();
+        const { extraPages, pageId } = tab.document.getPreservedPages();
+        const scenarios = tab.document.scenarios.list();
         return {
           name: tab.name,
-          modelXml: tab.saveLoadController.serializeToXml(),
+          modelXml: tab.document.serializeToXml(),
           extraPages,
           pageId,
           // Scenarios travel with the link: index on the page, one page per step after it
-          pageAttributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(tab.saveLoadController.getRailwayScript().get()) },
+          pageAttributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(tab.document.railwayScript.get()) },
           scenarioPages: buildScenarioPages(scenarios, new Set()),
         };
       })
@@ -174,7 +174,7 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   const activeModelXml = (): string => {
     const tab = tabManager.getActiveTab();
     if (!tab) throw new Error('No diagram is open');
-    return tab.saveLoadController.serializeToXml();
+    return tab.document.serializeToXml();
   };
   const imageName = (): string => safeFileName(tabManager.getActiveTab()?.name || documentTitle());
 

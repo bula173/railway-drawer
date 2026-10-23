@@ -116,7 +116,7 @@ test.describe('scenario as a document', () => {
     const stepXml = await page.evaluate(async () => {
       const registry = await import('/src/services/service-registry.ts' as string);
       const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
-      return tab.saveLoadController.getScenarios().list()[0].steps.map((s: { xml: string }) => s.xml).join('\n');
+      return tab.document.scenarios.list()[0].steps.map((s: { xml: string }) => s.xml).join('\n');
     });
     expect(stepXml).not.toContain('rdDiff');
 
@@ -222,7 +222,7 @@ test.describe('scenario as a document', () => {
     await freshApp(page);
     await page.evaluate(async (xml) => {
       const registry = await import('/src/services/service-registry.ts' as string);
-      registry.ServiceRegistry.getTabManager().getActiveTab().saveLoadController.load(xml);
+      registry.ServiceRegistry.getTabManager().getActiveTab().document.load(xml);
     }, `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
 <mxCell id="A" value="Alpha" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="120" height="60" as="geometry"/></mxCell>
 <mxCell id="L2" value="Upper" parent="0"/>

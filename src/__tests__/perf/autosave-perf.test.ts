@@ -64,7 +64,7 @@ describe.skipIf(!process.env.RD_PERF)('autosave performance', () => {
         version: '1',
         data: {
           projectName: 'P',
-          tabs: tabs.map((t) => ({ id: t.id, name: t.name, graphXml: t.saveLoadController.serializeToXml() })),
+          tabs: tabs.map((t) => ({ id: t.id, name: t.name, graphXml: t.document.serializeToXml() })),
           activeTabId: tabs[0].id,
           timestamp: Date.now(),
         },

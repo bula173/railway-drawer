@@ -69,7 +69,7 @@ ${railObj('s4', 'rdKind="signal" rdId="S4" rdDirection="reverse" rdTrackId="T1"'
 </root></mxGraphModel>`;
 
 async function loadLayout(page: Page): Promise<void> {
-  await inGraph(page, 'tab.saveLoadController.load(arg);', RAIL_LAYOUT);
+  await inGraph(page, 'tab.document.load(arg);', RAIL_LAYOUT);
   await expect.poll(() => inGraph<number>(page, 'return graph.getDefaultParent().children.length;')).toBe(7);
 }
 

@@ -33,7 +33,7 @@ export class ProjectNameEditor {
     if (this.isEditing || !this.titleElement) return;
 
     this.isEditing = true;
-    const currentName = this.host.getActiveTab()?.saveLoadController.getProjectName() ||
+    const currentName = this.host.getActiveTab()?.document.getProjectName() ||
       this.titleElement.textContent || 'Untitled Diagram';
 
     // Create input element

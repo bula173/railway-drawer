@@ -3,15 +3,22 @@
  * @brief The scenarios' part of the project file (services/project-sections.ts): one page per step
  *        after the shown page, and the scenario index on the shown page's `<diagram>`
  *        (scenario-format.ts). Imported for its registration by ui/saveload.ts (and the unit test
- *        setup); adds the typed `scenarios` to ProjectService and ParsedProject.
+ *        setup); adds the typed `scenarios` to DiagramDocument, ProjectService and ParsedProject.
  */
-import { ProjectService } from '../services/project-service';
+import { defineSectionAccessor } from '../document/diagram-document';
 import { registerProjectSection } from '../services/project-sections';
-import { ScenarioSet } from './scenario-model';
+import { ScenarioSet, sanitizeScenarios } from './scenario-model';
 import type { ScenarioData } from './scenario-model';
 import { assembleScenarios, buildScenarioPages, isScenarioStepPage, scenarioIndexAttributes } from './scenario-format';
 
 export const SCENARIOS_SECTION = 'scenarios';
+
+declare module '../document/diagram-document' {
+  interface DiagramDocument {
+    /** Scenarios of this diagram; written as one page per step after the shown page. */
+    readonly scenarios: ScenarioSet;
+  }
+}
 
 declare module '../services/project-service' {
   interface ProjectService {
@@ -33,13 +40,11 @@ registerProjectSection<ScenarioSet, ScenarioData[]>({
   claimsPage: (page) => isScenarioStepPage(page),
   parse: (mainPage, claimed) => assembleScenarios(mainPage, claimed),
   empty: () => [],
+  load: (set, scenarios) => set.replaceAll(scenarios),
+  // Only written when there are scenarios (steps hold full drawing snapshots)
+  toCache: (set) => (set.size > 0 ? set.toJSON() : undefined),
+  fromCache: (set, cached) => set.replaceAll(sanitizeScenarios(cached)),
+  subscribe: (set, listener) => set.subscribe(listener),
 });
 
-if (!Object.getOwnPropertyDescriptor(ProjectService.prototype, SCENARIOS_SECTION)) {
-  Object.defineProperty(ProjectService.prototype, SCENARIOS_SECTION, {
-    get(this: ProjectService): ScenarioSet {
-      return this.section<ScenarioSet>(SCENARIOS_SECTION);
-    },
-    configurable: true,
-  });
-}
+defineSectionAccessor(SCENARIOS_SECTION);

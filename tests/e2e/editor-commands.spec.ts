@@ -44,7 +44,7 @@ async function inTab<T>(page: Page, body: string, arg?: unknown): Promise<T> {
 }
 
 async function loadModel(page: Page, xml: string): Promise<void> {
-  await inTab(page, 'tab.saveLoadController.load(arg);', xml);
+  await inTab(page, 'tab.document.load(arg);', xml);
 }
 
 /** Child ids of the default layer, bottom to top. */
@@ -257,7 +257,7 @@ test.describe('editor commands', () => {
   test('JSON export lists the cells of the active tab', async ({ page }) => {
     await freshApp(page);
     await loadModel(page, MODEL_XML);
-    const json = await inTab<string>(page, 'return tab.saveLoadController.exportAsJson();');
+    const json = await inTab<string>(page, 'return tab.document.exportAsJson();');
     const data = JSON.parse(json) as { cells: Array<Record<string, unknown>> };
     const byId = new Map(data.cells.map((c) => [c.id, c]));
     expect(data.cells.length).toBe(7);

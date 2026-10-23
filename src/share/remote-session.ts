@@ -36,13 +36,17 @@ import type { BrowseOptions, BrowseResult, ConflictChoice } from './ui/remote-di
 export interface RemoteTab {
   id: string;
   name: string;
-  saveLoadController: {
+  /** The tab's document (document/diagram-document.ts): file content and the remote save handler. */
+  document: {
     getProjectXml(): string;
-    loadProjectXml(xml: string, sourceName: string, opts?: { quiet?: boolean }): Promise<void>;
     setSaveHandler(handler: (() => void) | null): void;
-    markAsSavedToDisk?(target?: string): void;
     /** True when the last open changed the diagram against the file (old app layers migrated). */
     hasUnsavedLoadChanges?(): boolean;
+  };
+  /** File I/O (ui/saveload.ts). */
+  saveLoadController: {
+    loadProjectXml(xml: string, sourceName: string, opts?: { quiet?: boolean }): Promise<void>;
+    markAsSavedToDisk?(target?: string): void;
     /** Called after a file from disk was opened into the tab (File > Open): the tab is unbound. */
     onLocalFileOpened?(listener: () => void): () => void;
   };
@@ -222,11 +226,11 @@ export class RemoteSession {
   /** Binds `tab` to `file` as just opened/saved: verified, no unsaved changes. */
   bind(tab: RemoteTab, file: RemoteFileInfo, savedXml?: string): void {
     // Just opened, but the open migrated the file (old app layers): unsaved until saved back
-    const changedOnOpen = savedXml === undefined && tab.saveLoadController.hasUnsavedLoadChanges?.() === true;
+    const changedOnOpen = savedXml === undefined && tab.document.hasUnsavedLoadChanges?.() === true;
     this.setBinding(tab, file, {
       verified: true,
       savedAt: Date.now(),
-      savedHash: changedOnOpen ? '' : contentFingerprint(savedXml ?? tab.saveLoadController.getProjectXml()),
+      savedHash: changedOnOpen ? '' : contentFingerprint(savedXml ?? tab.document.getProjectXml()),
       dirty: changedOnOpen,
     });
     // Edits made while a save was running are still unsaved
@@ -237,7 +241,7 @@ export class RemoteSession {
   private setBinding(tab: RemoteTab, file: RemoteFileInfo, state: BindingState): void {
     this.bindings.set(tab.id, file);
     this.states.set(tab.id, state);
-    tab.saveLoadController.setSaveHandler(() => {
+    tab.document.setSaveHandler(() => {
       void this.saveBack(tab.id);
     });
     if (!this.watchers.has(tab.id)) {
@@ -264,7 +268,7 @@ export class RemoteSession {
 
   unbind(tabId: string): void {
     const tab = this.host.getAllTabs().find((t) => t.id === tabId);
-    tab?.saveLoadController.setSaveHandler(null);
+    tab?.document.setSaveHandler(null);
     const had = this.bindings.has(tabId);
     this.forget(tabId);
     this.updateStatus();
@@ -312,7 +316,7 @@ export class RemoteSession {
     let savedHash: string | null = null;
     if (!restored.dirty) {
       try {
-        savedHash = contentFingerprint(tab.saveLoadController.getProjectXml());
+        savedHash = contentFingerprint(tab.document.getProjectXml());
       } catch {
         savedHash = null;
       }
@@ -357,7 +361,7 @@ export class RemoteSession {
     let dirty = true;
     if (state.savedHash !== null) {
       try {
-        dirty = contentFingerprint(tab.saveLoadController.getProjectXml()) !== state.savedHash;
+        dirty = contentFingerprint(tab.document.getProjectXml()) !== state.savedHash;
       } catch {
         dirty = state.dirty;
       }
@@ -510,7 +514,7 @@ export class RemoteSession {
       const choice = await this.ui.browse(provider, opts);
       if (!choice || choice.mode !== 'save') return false;
       try {
-        const xml = tab.saveLoadController.getProjectXml();
+        const xml = tab.document.getProjectXml();
         const result = await provider.saveAs(choice.path, choice.name, xml, choice.conflict, ...withValues(choice.values));
         if (result.ok) {
           this.bind(tab, result.file, xml);
@@ -543,7 +547,7 @@ export class RemoteSession {
         this.notify.info(`Not saved: saving to ${provider.label} needs a sign-in. Your changes are still in this tab.`);
         return false;
       }
-      const xml = tab.saveLoadController.getProjectXml();
+      const xml = tab.document.getProjectXml();
       // Provider save fields (GitLab: commit message, merge request)
       const fields = provider.saveFields?.({ kind: 'save', file: binding }) ?? [];
       let values: SaveFieldValues | undefined;

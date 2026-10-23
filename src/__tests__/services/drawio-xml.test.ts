@@ -22,7 +22,8 @@ import {
   type PageSettings,
 } from '../../services/drawio-xml';
 import { ProjectService } from '../../services/project-service';
-import { SaveLoadController } from '../../ui/saveload';
+import { createTabDocument } from '../../ui/saveload';
+import type { DiagramDocument } from '../../document/diagram-document';
 import { PlantUmlGroupManager } from '../../services/plantuml-group-manager';
 import { registerErtmsShapes } from '../../shapes/ertms';
 import { createTestGraph, cleanupTestGraph } from '../setup';
@@ -445,7 +446,7 @@ describe('drawio-xml', () => {
 
 describe('golden fixtures and legacy files', () => {
   let graph: Graph;
-  let controller: SaveLoadController;
+  let controller: DiagramDocument;
 
   beforeEach(() => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -454,7 +455,7 @@ describe('golden fixtures and legacy files', () => {
     // As TabManager.createTab() sets up every graph
     registerDrawioNamedStyles(graph.getStylesheet());
     installUserObjectLabels(graph);
-    controller = new SaveLoadController(graph);
+    controller = createTabDocument(graph);
   });
 
   afterEach(() => {
@@ -536,7 +537,7 @@ describe('golden fixtures and legacy files', () => {
     const again = createTestGraph();
     registerDrawioNamedStyles(again.getStylesheet());
     try {
-      const second = new SaveLoadController(again);
+      const second = createTabDocument(again);
       second.load(exported);
       expect(second.serializeToXml()).toBe(exported);
     } finally {
@@ -607,7 +608,7 @@ describe('golden fixtures and legacy files', () => {
     const again = createTestGraph();
     registerDrawioNamedStyles(again.getStylesheet());
     try {
-      new SaveLoadController(again).load(saved);
+      createTabDocument(again).load(saved);
       const m = again.getDataModel();
       expect(m.getCell('a')?.getStyle()).toMatchObject({ shape: 'ellipse-shape', strokeColor: '#000000' });
       expect((m.getCell('a') as unknown as { __layerId?: string }).__layerId).toBeUndefined();

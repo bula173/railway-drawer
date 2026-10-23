@@ -45,9 +45,9 @@ export function installRailwayScript(tabManager: TabManager, notify: RailwayScri
     if (!tab) return;
     if (!watched.has(tab)) {
       watched.add(tab);
-      tab.saveLoadController.getRailwayScript().subscribe(() => attach(tab));
+      tab.document.railwayScript.subscribe(() => attach(tab));
     }
-    if (tab.saveLoadController.getRailwayScript().has()) {
+    if (tab.document.railwayScript.has()) {
       loadUi()
         .then((ui) => {
           if (tabManager.getAllTabs().includes(tab)) ui.ensureSession(tab);

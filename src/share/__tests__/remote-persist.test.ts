@@ -40,14 +40,16 @@ function makeTab(id: string, name: string, edits: Map<string, () => void>): Test
       tab.xml = xml;
       edits.get(id)?.();
     },
-    saveLoadController: {
+    document: {
       getProjectXml: () => tab.xml,
-      loadProjectXml: vi.fn(async (xml: string) => {
-        tab.change(xml);
-      }),
       setSaveHandler: (h: (() => void) | null) => {
         tab.handler = h;
       },
+    },
+    saveLoadController: {
+      loadProjectXml: vi.fn(async (xml: string) => {
+        tab.change(xml);
+      }),
       markAsSavedToDisk: vi.fn(),
       onLocalFileOpened: (listener: () => void) => {
         tab.localOpen.push(listener);

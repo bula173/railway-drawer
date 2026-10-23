@@ -9,7 +9,7 @@
 import { on } from '../../core/event-bus';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { Graph } from '@maxgraph/core';
-import { SaveLoadController } from '../../ui/saveload';
+import { createTabDocument, SaveLoadController } from '../../ui/saveload';
 import { GraphCommandService } from '../../services/graph-command-service';
 import { PlantUmlGroupManager } from '../../services/plantuml-group-manager';
 import { ProjectService, PROJECT_FORMAT_VERSION } from '../../services/project-service';
@@ -57,7 +57,7 @@ describe('SaveLoadController', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {});
     graph = createTestGraph();
     commandService = new GraphCommandService(graph);
-    controller = new SaveLoadController(graph, commandService);
+    controller = new SaveLoadController(createTabDocument(graph, commandService));
   });
 
   afterEach(() => {
@@ -109,12 +109,12 @@ describe('SaveLoadController', () => {
       lastModified: 2,
     });
 
-    const xml = controller.serializeToXml();
+    const xml = controller.document.serializeToXml();
     expect(xml).toContain('PLANTUML_METADATA_UTF8:');
 
     const target = createTestGraph();
     try {
-      new SaveLoadController(target).load(xml);
+      createTabDocument(target).load(xml);
       const restored = target.getDataModel().getCell('g1');
       expect(restored?.getValue()).toBe('Łódź');
       expect(new PlantUmlGroupManager(target).getPlantUmlMetadata(restored)).toEqual({
@@ -205,20 +205,20 @@ describe('SaveLoadController', () => {
     const offGrid = on('rd-grid-settings', ({ graph: g }) => {
       events.push(g);
     });
-    controller.load(MODEL_XML.replace('<mxGraphModel>', '<mxGraphModel grid="0" gridSize="20">'));
+    controller.document.load(MODEL_XML.replace('<mxGraphModel>', '<mxGraphModel grid="0" gridSize="20">'));
     expect(graph.gridEnabled).toBe(false);
     expect(graph.gridSize).toBe(20);
     expect(events).toEqual([graph]);
-    let model = new DOMParser().parseFromString(controller.serializeToXml(), 'text/xml').documentElement;
+    let model = new DOMParser().parseFromString(controller.document.serializeToXml(), 'text/xml').documentElement;
     expect(model.getAttribute('grid')).toBe('0');
     expect(model.getAttribute('gridSize')).toBe('20');
     // View > Grid on -> saved as grid="1"
     graph.gridEnabled = true;
-    model = new DOMParser().parseFromString(controller.serializeToXml(), 'text/xml').documentElement;
+    model = new DOMParser().parseFromString(controller.document.serializeToXml(), 'text/xml').documentElement;
     expect(model.getAttribute('grid')).toBe('1');
     // no attributes: draw.io's defaults (grid on, 10)
     graph.gridEnabled = false;
-    controller.load(MODEL_XML);
+    controller.document.load(MODEL_XML);
     expect(graph.gridEnabled).toBe(true);
     expect(graph.gridSize).toBe(10);
     offGrid();

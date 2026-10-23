@@ -9,7 +9,9 @@
  *
  * Sections register when their module is imported (scenarios/project-section.ts,
  * railway-script/project-section.ts; imported by ui/saveload.ts and the unit test setup). Each
- * section also adds its typed property to ProjectService / ParsedProject (module augmentation).
+ * section also adds its typed property to DiagramDocument / ProjectService / ParsedProject (module
+ * augmentation). The DiagramDocument (document/diagram-document.ts) applies an opened file's
+ * values (`load`) and keeps the sections in the tab cache (`toCache` / `fromCache`, under `key`).
  */
 
 /** A page (2..n) of an opened file claimed by a section, with its model XML. */
@@ -35,6 +37,14 @@ export interface ProjectSection<State = unknown, Parsed = unknown> {
   parse(mainPage: Element | undefined, claimed: ClaimedPage[]): Parsed;
   /** The section's value of files without sections (legacy `<project>`, a bare model). */
   empty(): Parsed;
+  /** Replaces the state with the value parse() / empty() returned for an opened file. */
+  load(state: State, parsed: Parsed): void;
+  /** The section's value in the tab cache entry (under `key`); undefined: not written. */
+  toCache?(state: State): unknown;
+  /** Restores the state from the tab cache value (untrusted; undefined when the entry has none). */
+  fromCache?(state: State, cached: unknown): void;
+  /** Calls `listener` after every change (the autosave rebuilds the cache value only then). */
+  subscribe?(state: State, listener: () => void): () => void;
 }
 
 const SECTIONS: ProjectSection[] = [];

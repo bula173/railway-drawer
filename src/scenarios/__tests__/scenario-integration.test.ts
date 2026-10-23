@@ -103,9 +103,9 @@ describe('scenarios with tabs', () => {
   it('keeps scenarios in the tab cache and restores them', () => {
     const { tm, tab } = start();
     insert(tab, 'A');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('Wjazd "IC" <1>', 'opis ąę');
-    set.addStep(s.id, { name: 'Krok 1', description: 'd', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'Krok 1', description: 'd', xml: captureDrawing(tab.document) });
     expect(tm.flushCache()).toBe(true);
     const cached = storedAutosave()!;
     expect(cached.data.tabs[0].scenarios).toHaveLength(1);
@@ -120,7 +120,7 @@ describe('scenarios with tabs', () => {
     expect(CacheService.exists()).toBe(true);
     expect(tabManager.restoreFromCache()).toBe(true);
     const restored = tabManager.getActiveTab()!;
-    expect(restored.saveLoadController.getScenarios().list()).toEqual(expected);
+    expect(restored.document.scenarios.list()).toEqual(expected);
     expect(labels(restored)).toEqual(['A']);
   });
 
@@ -139,7 +139,7 @@ describe('scenarios with tabs', () => {
     loadAppDom();
     tabManager = new TabManager('tabs-container', 'graph-container');
     tabManager.restoreFromCache();
-    const list = tabManager.getActiveTab()!.saveLoadController.getScenarios().list();
+    const list = tabManager.getActiveTab()!.document.scenarios.list();
     expect(list).toHaveLength(1);
     expect(list[0].steps.map((s) => s.name)).toEqual(['good']);
   });
@@ -147,15 +147,15 @@ describe('scenarios with tabs', () => {
   it('viewing steps never changes the live drawing or its undo history', () => {
     const { tab, h } = start();
     insert(tab, 'A');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('S');
-    set.addStep(s.id, { name: 'only A', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'only A', xml: captureDrawing(tab.document) });
     insert(tab, 'B', 100);
-    set.addStep(s.id, { name: 'A and B', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'A and B', xml: captureDrawing(tab.document) });
     insert(tab, 'C', 200);
     tab.graph.setSelectionCells(tab.graph.getChildCells(tab.graph.getDefaultParent()).slice(0, 1));
 
-    const liveXml = tab.saveLoadController.serializeToXml();
+    const liveXml = tab.document.serializeToXml();
     const before = history(tab);
     const liveDiv = document.getElementById(`graph-${tab.id}`)!;
 
@@ -194,7 +194,7 @@ describe('scenarios with tabs', () => {
     expect(h.viewer.isActive()).toBe(false);
     expect(liveDiv.style.display).toBe('block');
     expect(document.body.classList.contains('rd-scenario-viewing')).toBe(false);
-    expect(tab.saveLoadController.serializeToXml()).toBe(liveXml);
+    expect(tab.document.serializeToXml()).toBe(liveXml);
     expect(history(tab)).toEqual(before);
     expect(tab.graph.getSelectionCount()).toBe(1);
     expect(labels(tab)).toEqual(['A', 'B', 'C']);
@@ -208,11 +208,11 @@ describe('scenarios with tabs', () => {
   it('follows changes of the scenario while viewing and closes when its steps are gone', () => {
     const { tab, h } = start();
     insert(tab, 'A');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('S');
-    const one = set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.saveLoadController) });
+    const one = set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.document) });
     insert(tab, 'B', 100);
-    const two = set.addStep(s.id, { name: 'two', xml: captureDrawing(tab.saveLoadController) });
+    const two = set.addStep(s.id, { name: 'two', xml: captureDrawing(tab.document) });
     h.viewer.open(tab.id, s.id, 1);
     set.updateStep(s.id, two.id, { name: 'zwei' });
     expect(document.querySelector('.rd-scn-banner-title')?.textContent).toBe('S — step 2/2: zwei');
@@ -227,9 +227,9 @@ describe('scenarios with tabs', () => {
   it('closes the view when another tab is activated', () => {
     const { tm, tab, h } = start();
     insert(tab, 'A');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('S');
-    set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.document) });
     const other = tm.createTab('Other');
     h.viewer.open(tab.id, s.id, 0);
     tm.switchTab(other.id);
@@ -242,10 +242,10 @@ describe('scenarios with tabs', () => {
   it('the tab\'s project XML (File > Save, remote providers) carries the scenarios, and loading a file replaces them', async () => {
     const { tab } = start();
     insert(tab, 'A');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('Ruch');
-    set.addStep(s.id, { name: 'Pierwszy', xml: captureDrawing(tab.saveLoadController) });
-    const xml = tab.saveLoadController.getProjectXml();
+    set.addStep(s.id, { name: 'Pierwszy', xml: captureDrawing(tab.document) });
+    const xml = tab.document.getProjectXml();
     expect(xml).toContain('name="Ruch / 1. Pierwszy"');
     const expected = set.list();
     set.replaceAll([]);
@@ -277,7 +277,7 @@ describe('scenarios with tabs', () => {
   it('"Replace drawing with this step" is one undoable edit', () => {
     const { tab } = start();
     insert(tab, 'A');
-    const step = captureDrawing(tab.saveLoadController);
+    const step = captureDrawing(tab.document);
     insert(tab, 'B', 100);
     replaceDrawingWithSnapshot(tab.graph, step);
     expect(labels(tab)).toEqual(['A']);

@@ -43,7 +43,7 @@ export function ensureSession(tab: TabData): ScriptSession {
   let s = sessions.get(tab.id);
   if (!s || s.graph !== tab.graph) {
     s?.destroy();
-    s = new ScriptSession(tab.graph, tab.saveLoadController.getRailwayScript());
+    s = new ScriptSession(tab.graph, tab.document.railwayScript);
     sessions.set(tab.id, s);
   }
   return s;
@@ -139,7 +139,7 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
     const tab = tabManager.getActiveTab();
     if (!tab) return;
     if (textarea.value.trim() !== '' && !(await confirmReplace('Replace the script with one generated from the drawing?'))) return;
-    const r = generateScript(tab.graph.getDataModel(), tab.saveLoadController.getProjectName());
+    const r = generateScript(tab.graph.getDataModel(), tab.document.getProjectName());
     setText(r.text, false);
     const total = Object.values(r.counts).reduce((s, n) => s + (n ?? 0), 0);
     if (r.skipped.length > 0) notify.warning(`Script generated (${total} objects). Not written: ${r.skipped.slice(0, 5).join('; ')}${r.skipped.length > 5 ? '; …' : ''}`);
@@ -305,7 +305,7 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
   function setText(text: string, fromEditor: boolean): void {
     if (!boundTab) return;
     textarea.value = text;
-    boundTab.saveLoadController.getRailwayScript().set(text, fromEditor ? 'editor' : 'api');
+    boundTab.document.railwayScript.set(text, fromEditor ? 'editor' : 'api');
     ensureSession(boundTab);
     render(current()?.status() ?? null);
     if (!fromEditor) return;
@@ -339,7 +339,7 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
 
   textarea.addEventListener('input', () => {
     if (!boundTab) return;
-    boundTab.saveLoadController.getRailwayScript().set(textarea.value, 'editor');
+    boundTab.document.railwayScript.set(textarea.value, 'editor');
     ensureSession(boundTab);
     renderGutter();
     renderHighlight();
@@ -371,7 +371,7 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
       render(null);
       return;
     }
-    const store = tab.saveLoadController.getRailwayScript();
+    const store = tab.document.railwayScript;
     textarea.value = store.get();
     const s = ensureSession(tab);
     stopStatus = s.onStatus((st) => render(st));
@@ -414,9 +414,9 @@ export async function importScriptText(tabManager: TabManager, notify: ScriptNot
   const parsed = parseScript(text);
   const name = parsed.model?.name || fileName.replace(/(\.rdl)?\.(ya?ml|json)$/i, '') || 'Railway Script';
   const tab = tabManager.createTab(name);
-  tab.saveLoadController.setProjectName(name);
+  tab.document.setProjectName(name);
   tabManager.switchTab(tab.id);
-  tab.saveLoadController.getRailwayScript().set(text, 'load');
+  tab.document.railwayScript.set(text, 'load');
   const session = ensureSession(tab);
   const result = await session.apply();
   panel?.bind();
@@ -446,10 +446,10 @@ export function chooseAndImport(tabManager: TabManager, notify: ScriptNotifier):
 
 /** The active tab's script as YAML or JSON text (generated from the drawing when it has none). */
 export function exportText(tab: TabData, format: 'yaml' | 'json'): { text: string; generated: boolean } {
-  let text = tab.saveLoadController.getRailwayScript().get();
+  let text = tab.document.railwayScript.get();
   let generated = false;
   if (text.trim() === '') {
-    text = generateScript(tab.graph.getDataModel(), tab.saveLoadController.getProjectName()).text;
+    text = generateScript(tab.graph.getDataModel(), tab.document.getProjectName()).text;
     generated = true;
   }
   if (format === 'yaml') return { text, generated };
@@ -470,7 +470,7 @@ export function exportActiveTab(tabManager: TabManager, notify: ScriptNotifier):
   dialog.setAttribute('aria-label', 'Export Railway Script');
   const content = el('div', 'rd-route-dialog-content');
   const actions = el('div', 'rd-route-dialog-actions');
-  const hasScript = tab.saveLoadController.getRailwayScript().has();
+  const hasScript = tab.document.railwayScript.has();
   content.append(
     el('p', undefined, hasScript ? 'Download the Railway Script of this diagram.' : 'This diagram has no Railway Script: one is generated from its railway objects.'),
     el('p', 'rd-rs-hint', 'YAML keeps comments; JSON is the same data without them. Both validate against the JSON Schema railway-script-1.')
@@ -489,7 +489,7 @@ export function exportActiveTab(tabManager: TabManager, notify: ScriptNotifier):
   const run = (format: 'yaml' | 'json'): void => {
     try {
       const { text, generated } = exportText(tab, format);
-      const name = `${fileBaseName(tab.saveLoadController.getProjectName() || tab.name)}.rdl.${format}`;
+      const name = `${fileBaseName(tab.document.getProjectName() || tab.name)}.rdl.${format}`;
       downloadBlob(new Blob([text], { type: format === 'json' ? 'application/json' : 'application/yaml' }), name);
       notify.success(`Exported ${name}${generated ? ' (generated from the drawing)' : ''}`);
       close();

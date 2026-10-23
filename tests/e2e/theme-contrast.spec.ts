@@ -637,7 +637,7 @@ async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
 
 async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   // Route tool floating panel (layout loaded like a file)
-  await inGraph(page, 'tab.saveLoadController.load(arg); graph.container.scrollLeft -= 20; graph.container.scrollTop -= 20;', RAIL_LAYOUT);
+  await inGraph(page, 'tab.document.load(arg); graph.container.scrollLeft -= 20; graph.container.scrollTop -= 20;', RAIL_LAYOUT);
 
   // Context menu of points W1 with the railway state submenus (Position ▸ open), states legend
   const w1 = await inGraph<{ x: number; y: number }>(

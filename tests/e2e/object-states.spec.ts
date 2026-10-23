@@ -6,7 +6,7 @@
  *        Position ▸ Normal / Reverse fades / shows the diverging leg; route Set / Occupy / Release;
  *        Railway > Object State items and the legend; a scenario step diff lists "TC2: free →
  *        occupied"; the state colours are rendered unchanged in the dark theme. Screenshots in
- *        test-results/object-states/. Any port; the layout is loaded with saveLoadController.load.
+ *        test-results/object-states/. Any port; the layout is loaded with document.load.
  */
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
@@ -114,7 +114,7 @@ async function openApp(page: Page, theme: 'light' | 'dark' = 'light'): Promise<v
   }, theme);
   await page.reload();
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
-  await inGraph(page, 'tab.saveLoadController.load(arg); graph.container.scrollLeft -= 60; graph.container.scrollTop -= 60;', LAYOUT);
+  await inGraph(page, 'tab.document.load(arg); graph.container.scrollLeft -= 60; graph.container.scrollTop -= 60;', LAYOUT);
 }
 
 test('track section, signal, points: right-click states, save, reset, undo', async ({ page }) => {

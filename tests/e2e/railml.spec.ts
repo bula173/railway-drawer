@@ -105,7 +105,7 @@ test('railML export: summary dialog and a railML 3.2 download of the active tab'
   const pageErrors: string[] = [];
   page.on('pageerror', (err) => pageErrors.push(err.message));
   await freshPage(page);
-  await inGraph(page, 'tab.saveLoadController.load(arg);', LAYOUT);
+  await inGraph(page, 'tab.document.load(arg);', LAYOUT);
 
   await menu(page, 'file', 'exportRailml');
   const dialog = page.locator('[data-testid="railml-export-dialog"]');

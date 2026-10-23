@@ -54,7 +54,7 @@ export function insertTemplate(
 
 /** The part of TabManager that "Open as new diagram" needs. */
 export interface TemplateTabHost {
-  createTab(name: string): { id: string; saveLoadController: { load(xml: string): void; setProjectName?(name: string): void } };
+  createTab(name: string): { id: string; document: { load(xml: string): void; setProjectName?(name: string): void } };
   switchTab(tabId: string): void;
   closeTab(tabId: string): void;
 }
@@ -63,13 +63,13 @@ export interface TemplateTabHost {
 export function openTemplateAsNewDiagram(host: TemplateTabHost, template: DiagramTemplate): string {
   const tab = host.createTab(template.name);
   try {
-    tab.saveLoadController.load(wrapModelXml(template.xml));
+    tab.document.load(wrapModelXml(template.xml));
   } catch (err) {
     host.closeTab(tab.id);
     throw err;
   }
   // The tab's project is named after the template too: top-bar title, Save/Export file names
-  tab.saveLoadController.setProjectName?.(template.name);
+  tab.document.setProjectName?.(template.name);
   host.switchTab(tab.id);
   // railway symbols are small: open zoomed in (150-200 %, src/ui/railway-zoom.ts)
   const graph = (tab as { graph?: Graph }).graph;

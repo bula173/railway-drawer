@@ -324,11 +324,11 @@ export class MenuController {
    * downloads, also for a tab bound to a remote file.
    */
   private async saveProjectAs(): Promise<void> {
-    const name = await promptSaveAs(this.saveLoadController.getProjectName() || 'Untitled Diagram');
+    const name = await promptSaveAs(this.saveLoadController.document.getProjectName() || 'Untitled Diagram');
     if (name === null) return;
     const tabManager = ServiceRegistry.getTabManager();
     if (tabManager) tabManager.renameActiveProject(name);
-    else this.saveLoadController.setProjectName(name);
+    else this.saveLoadController.document.setProjectName(name);
     this.saveLoadController.saveProjectToDisk();
   }
 

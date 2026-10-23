@@ -84,18 +84,18 @@ describe('scenario view: show changes, autoplay, PDF/slides export', () => {
     });
     const graph = tab.graph;
     const parent = graph.getDefaultParent();
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const s = set.create('Run');
     const a = graph.insertVertex(parent, 'cellA', 'Train', 10, 10, 60, 30);
-    set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'one', xml: captureDrawing(tab.document) });
     const moved = a.getGeometry()!.clone();
     moved.translate(100, 0);
     graph.getDataModel().setGeometry(a, moved);
     graph.insertVertex(parent, 'cellB', 'S2', 300, 10, 40, 40);
-    set.addStep(s.id, { name: 'two', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'two', xml: captureDrawing(tab.document) });
     graph.setCellStyles('fillColor', '#ff0000', [a]);
     graph.removeCells([graph.getDataModel().getCell('cellB') as Cell]);
-    set.addStep(s.id, { name: 'three', text: '# Done', xml: captureDrawing(tab.saveLoadController) });
+    set.addStep(s.id, { name: 'three', text: '# Done', xml: captureDrawing(tab.document) });
     const xmls = set.get(s.id)!.steps.map((st) => st.xml);
     return { tab, h: handle, scenarioId: s.id, xmls };
   }
@@ -106,7 +106,7 @@ describe('scenario view: show changes, autoplay, PDF/slides export', () => {
 
   it('"Show changes" highlights against the previous step in the view only, with legend and list', () => {
     const { h, scenarioId, tab, xmls } = start();
-    const liveXml = tab.saveLoadController.serializeToXml();
+    const liveXml = tab.document.serializeToXml();
     h.viewer.open(tab.id, scenarioId, 1);
     const view = document.querySelector('[data-testid="scenario-view"]') as HTMLElement;
     const legend = document.querySelector('[data-testid="scenario-diff-legend"]') as HTMLElement;
@@ -142,9 +142,9 @@ describe('scenario view: show changes, autoplay, PDF/slides export', () => {
     expect(diffKinds(h)).toEqual([]);
 
     // snapshots and the live drawing untouched
-    expect(tab.saveLoadController.getScenarios().get(scenarioId)!.steps.map((s) => s.xml)).toEqual(xmls);
+    expect(tab.document.scenarios.get(scenarioId)!.steps.map((s) => s.xml)).toEqual(xmls);
     h.viewer.close();
-    expect(tab.saveLoadController.serializeToXml()).toBe(liveXml);
+    expect(tab.document.serializeToXml()).toBe(liveXml);
     // off again: plain snapshot
     h.viewer.setShowChanges(false);
     h.viewer.open(tab.id, scenarioId, 1);

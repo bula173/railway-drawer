@@ -25,7 +25,7 @@ import {
   type PageSettings,
 } from '../../services/drawio-xml';
 import { ProjectService } from '../../services/project-service';
-import { SaveLoadController } from '../../ui/saveload';
+import { createTabDocument } from '../../ui/saveload';
 import { PlantUmlGroupManager } from '../../services/plantuml-group-manager';
 import { createTestGraph, cleanupTestGraph } from '../setup';
 
@@ -195,7 +195,7 @@ describe('drawio-xml robustness', () => {
       expect(sanitizeXmlText('a\ud800b\udc00c🚆')).toBe('a\uFFFDb\uFFFDc🚆');
       const graph = createTestGraph();
       try {
-        new SaveLoadController(graph).load(wrap('<mxCell id="2" value="v\u000bt" vertex="1" parent="1"/>'));
+        createTabDocument(graph).load(wrap('<mxCell id="2" value="v\u000bt" vertex="1" parent="1"/>'));
         expect(graph.getDataModel().getCell('2')?.getValue()).toBe('vt');
       } finally {
         cleanupTestGraph(graph);
@@ -244,7 +244,7 @@ describe('PlantUML metadata survives a draw.io re-save', () => {
       const manager = new PlantUmlGroupManager(graph);
       const group = manager.createPlantUmlGroup(graph.getDefaultParent(), 'Sekwencja', '@startuml\nA -> B: żółw\n@enduml', 'sequence');
       const metadata = manager.getPlantUmlMetadata(group);
-      const projectXml = new ProjectService().generateProjectXml(new SaveLoadController(graph).serializeToXml());
+      const projectXml = new ProjectService().generateProjectXml(createTabDocument(graph).serializeToXml());
 
       // draw.io re-encodes <diagram> from its model: comments are gone, style keys stay
       const doc = new DOMParser().parseFromString(projectXml, 'text/xml');
@@ -257,7 +257,7 @@ describe('PlantUML metadata survives a draw.io re-save', () => {
       expect(resaved).toContain('rdPlantUml=');
 
       const parsed = await new ProjectService().parseProjectXml(resaved);
-      new SaveLoadController(target).load(parsed.graphXml);
+      createTabDocument(target).load(parsed.graphXml);
       const restored = target.getDataModel().getCell(group.getId()!);
       expect(new PlantUmlGroupManager(target).getPlantUmlMetadata(restored)).toEqual(metadata);
       // The key is internal: it does not stay in the cell style

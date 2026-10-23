@@ -168,7 +168,7 @@ test.describe('AI builds scenarios from templates', () => {
     expect(await scenarios(page)).toEqual([{ name: 'Test', steps: [] }]);
     const occupied = await page.evaluate(async () => {
       const registry = await import('/src/services/service-registry.ts' as string);
-      return (registry.ServiceRegistry.getTabManager().getActiveTab().saveLoadController.serializeToXml() as string).includes('rdState="occupied"');
+      return (registry.ServiceRegistry.getTabManager().getActiveTab().document.serializeToXml() as string).includes('rdState="occupied"');
     });
     expect(occupied).toBe(false);
     const last = bodies[3].messages as Array<{ content: Array<{ is_error?: boolean; content?: string }> }>;

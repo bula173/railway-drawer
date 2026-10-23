@@ -42,7 +42,7 @@ async function inTab<T>(page: Page, body: string, arg?: unknown): Promise<T> {
 }
 
 async function loadModel(page: Page, xml: string): Promise<void> {
-  await inTab(page, 'tab.saveLoadController.load(arg); graph.clearSelection();', xml);
+  await inTab(page, 'tab.document.load(arg); graph.clearSelection();', xml);
 }
 
 function selectedIds(page: Page): Promise<string[]> {

@@ -287,7 +287,7 @@ describe('railway Data and Checks panels', () => {
     scenarios!.showPanel('data');
     setField('kind', 'signal');
     setField('notes', 'Łódź „Kaliska”');
-    const step = captureDrawing(tab.saveLoadController);
+    const step = captureDrawing(tab.document);
     expect(step).toContain('rdKind="signal"');
     expect(step).toContain('rdNotes="Łódź „Kaliska”"');
     const shared = buildShareMxfile([{ name: tab.name, modelXml: step }]);

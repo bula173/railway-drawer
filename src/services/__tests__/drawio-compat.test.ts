@@ -26,7 +26,7 @@ import {
   registerDrawioCodecs,
   registerDrawioNamedStyles,
 } from '../drawio-xml';
-import { SaveLoadController } from '../../ui/saveload';
+import { createTabDocument, SaveLoadController } from '../../ui/saveload';
 import { registerErtmsShapes } from '../../shapes/ertms';
 import { parseMxLibrary } from '../../drawio-shapes/engine';
 import { decodeShareHash, encodeShareData } from '../../share/share-link';
@@ -185,14 +185,14 @@ describe('draw.io compatibility guard', () => {
     registerDrawioNamedStyles(graph.getStylesheet());
     installUserObjectLabels(graph);
     graphs.push(graph);
-    return { graph, controller: new SaveLoadController(graph) };
+    return { graph, controller: new SaveLoadController(createTabDocument(graph)) };
   }
 
   /** File > Open of `fileXml`, then File > Save: the saved <mxfile>. */
   async function openAndSave(fileXml: string, name = 'fixture.drawio'): Promise<{ saved: string; graph: Graph }> {
     const { graph, controller } = newTab();
     await controller.loadProjectXml(fileXml, name, { quiet: true });
-    return { saved: controller.getProjectXml(), graph };
+    return { saved: controller.document.getProjectXml(), graph };
   }
 
   beforeAll(() => {
@@ -331,7 +331,7 @@ describe('draw.io compatibility guard', () => {
     cell.setId('app-hex');
     cell.setVertex(true);
     graph.getDataModel().add(layer, cell);
-    const saved = controller.getProjectXml();
+    const saved = controller.document.getProjectXml();
     const style = innerCell(cellElements(pagesOf(saved)[0].model).get('app-hex')!).getAttribute('style') ?? '';
     expect(parseStyleString(style)).toMatchObject({ shape: 'hexagon', perimeter: 'hexagonPerimeter2', rdShape: 'hexagon-shape' });
 
@@ -369,8 +369,8 @@ describe('draw.io compatibility guard', () => {
       expect(entries.every((e) => e.xml?.startsWith('<mxGraphModel'))).toBe(true);
       const { controller } = newTab();
       for (const [index, entry] of entries.entries()) {
-        controller.load(entry.xml!);
-        expectSameModel(parseXml(entry.xml!).documentElement, parseXml(controller.serializeToXml()).documentElement, `ERTMS #${index} ${entry.title}`);
+        controller.document.load(entry.xml!);
+        expectSameModel(parseXml(entry.xml!).documentElement, parseXml(controller.document.serializeToXml()).documentElement, `ERTMS #${index} ${entry.title}`);
       }
       // ~0.5 s alone; the whole suite runs files in parallel
     }, 30_000);

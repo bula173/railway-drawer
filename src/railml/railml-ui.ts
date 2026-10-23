@@ -103,7 +103,7 @@ export function exportSummary(r: RailmlExportResult): string[] {
 export function exportActiveTab(tabManager: TabManager, notify: RailmlNotifier): void {
   const tab = tabManager.getActiveTab();
   if (!tab) return;
-  const title = tab.saveLoadController.getProjectName() || tab.name;
+  const title = tab.document.getProjectName() || tab.name;
   let extension = true;
   const run = (): RailmlExportResult => exportRailml(tab.graph.getDataModel(), { title, extension });
   let result = run();
@@ -201,8 +201,8 @@ export async function importIntoNewTab(tabManager: TabManager, notify: RailmlNot
   const name = result.name || fileName.replace(/\.(railml|xml)$/i, '') || 'railML';
   const tab = tabManager.createTab(name);
   try {
-    tab.saveLoadController.load(result.modelXml);
-    tab.saveLoadController.setProjectName(name);
+    tab.document.load(result.modelXml);
+    tab.document.setProjectName(name);
   } catch (error) {
     tabManager.closeTab(tab.id);
     notify.error(`Could not import ${fileName}: ${error instanceof Error ? error.message : String(error)}`);

@@ -382,7 +382,7 @@ test.describe('dark theme: shapes are readable', () => {
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     await openApp(page, 'light');
-    await inGraph(page, 'tab.saveLoadController.load(arg);', MODEL_XML);
+    await inGraph(page, 'tab.document.load(arg);', MODEL_XML);
 
     const snapshot = async (): Promise<{ file: string; png: string; size: string }> => {
       const [file] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'export')]);

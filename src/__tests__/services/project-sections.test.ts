@@ -26,6 +26,9 @@ describe('project sections (feature parts of the project file)', () => {
       claimsPage: (page) => page.getAttribute('rdTestNotePage') === '1',
       parse: (main, claimed) => `${main?.getAttribute('rdTestNote') ?? ''}|${claimed.length}`,
       empty: () => 'none',
+      load: (s, value) => {
+        s.value = value;
+      },
     });
     expect(projectSections().map((s) => s.key)).toEqual(['scenarios', 'testNote', 'railwayScript']);
 

@@ -90,7 +90,7 @@ describe('remote bindings in the tab cache', () => {
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'A', 0, 0, 40, 40);
     CacheService.save({
       projectName: 'P',
-      tabs: [{ id: tab.id, name: tab.name, graphXml: tab.saveLoadController.serializeToXml() }],
+      tabs: [{ id: tab.id, name: tab.name, graphXml: tab.document.serializeToXml() }],
       activeTabId: tab.id,
       timestamp: Date.now(),
     });
@@ -114,7 +114,7 @@ describe('remote bindings in the tab cache', () => {
     const tab = first.tabManager.getActiveTab()!;
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'Signal', 10, 10, 40, 40);
     // the "remote" file, as if opened from Test storage at version v3
-    localStorage.setItem('rd.fakeRemote.files', JSON.stringify({ 'Station.drawio': { xml: tab.saveLoadController.getProjectXml(), version: 'v3' } }));
+    localStorage.setItem('rd.fakeRemote.files', JSON.stringify({ 'Station.drawio': { xml: tab.document.getProjectXml(), version: 'v3' } }));
     first.sharing.remoteSession.bind(tab, remoteFile('v3'));
     // bindings are written at once
     const stored = cachedTabs()[0].remote as Record<string, unknown>;

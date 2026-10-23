@@ -134,7 +134,7 @@ describe('scenario steps with UML and text', () => {
     await wait();
     expect(document.querySelector('.rd-scn-editor')).toBeNull();
 
-    const scenario = tab.saveLoadController.getScenarios().list()[0];
+    const scenario = tab.document.scenarios.list()[0];
     expect(scenario.steps.map((s) => [s.name, s.uml.split('\n')[1] ?? s.uml, s.text.split('\n')[0]])).toEqual([
       ['Krok 1', 'Train -> RBC : MA Request', '## Żądanie MA'],
       ['Krok 2', 'RBC -> IXL : route?', '# Second'],
@@ -186,10 +186,10 @@ describe('scenario steps with UML and text', () => {
   it('edit step: keeps the drawing unless "replace" is chosen; old steps without UML/text show hints', async () => {
     const { tab, panel } = start();
     await newScenario(panel, 'S');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const scenarioId = set.list()[0].id;
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'one', 10, 10, 60, 30);
-    set.addStep(scenarioId, { name: 'old step', xml: tab.saveLoadController.serializeToXml() });
+    set.addStep(scenarioId, { name: 'old step', xml: tab.document.serializeToXml() });
     const firstXml = set.list()[0].steps[0].xml;
 
     // the existing step: view shows empty hints
@@ -227,15 +227,15 @@ describe('scenario steps with UML and text', () => {
     expect(await h.exportScenario()).toBeNull();
     expect(notify.warning).toHaveBeenCalledWith(expect.stringMatching(/no scenario with steps/));
     await newScenario(panel, 'Wjazd "A" <1>');
-    const set = tab.saveLoadController.getScenarios();
+    const set = tab.document.scenarios;
     const id = set.list()[0].id;
     set.addStep(id, {
       name: 'Krok 1',
-      xml: tab.saveLoadController.serializeToXml(),
+      xml: tab.document.serializeToXml(),
       uml: 'Train -> RBC : MA Request',
       text: '## Opis\n- punkt <script>alert(1)</script>\n[x](javascript:alert(1))',
     });
-    set.addStep(id, { name: 'Krok 2', xml: tab.saveLoadController.serializeToXml() });
+    set.addStep(id, { name: 'Krok 2', xml: tab.document.serializeToXml() });
     // File > Export Scenario (HTML)… (window event from MenuController); only one scenario: no chooser
     emit('scenario-export-request');
     await wait(20);
@@ -262,7 +262,7 @@ describe('scenario steps with UML and text', () => {
 
     // several scenarios: the chooser asks
     await newScenario(panel, 'Druga');
-    set.addStep(set.list()[1].id, { name: 'x', xml: tab.saveLoadController.serializeToXml() });
+    set.addStep(set.list()[1].id, { name: 'x', xml: tab.document.serializeToXml() });
     const pending = h.exportScenario();
     await wait();
     const items = Array.from(document.querySelectorAll('.rd-scn-choose-item')) as HTMLButtonElement[];

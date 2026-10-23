@@ -8,7 +8,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { Graph } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import { GraphCommandService, stepOrder } from '../../services/graph-command-service';
-import { SaveLoadController, modelXmlToJsonCells } from '../../ui/saveload';
+import { createTabDocument, modelXmlToJsonCells } from '../../ui/saveload';
 import { modelBackground } from '../../ui/diagram-image-export';
 import { createTestGraph, cleanupTestGraph } from '../setup';
 
@@ -114,7 +114,7 @@ describe('SaveLoadController.exportAsJson', () => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
     const graph = createTestGraph();
     try {
-      const controller = new SaveLoadController(graph);
+      const controller = createTabDocument(graph);
       controller.load(
         '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
           '<mxCell id="a" value="Alpha" style="rounded=1;fillColor=#dae8fc;" vertex="1" parent="1"><mxGeometry x="10" y="20" width="30" height="40" as="geometry"/></mxCell>' +

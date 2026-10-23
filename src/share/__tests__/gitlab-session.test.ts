@@ -17,12 +17,14 @@ function makeTab(id: string, name = id): RemoteTab & { handler: (() => void) | n
     id,
     name,
     handler: null as (() => void) | null,
-    saveLoadController: {
+    document: {
       getProjectXml: () => '<mxfile/>',
-      loadProjectXml: vi.fn(async () => undefined),
       setSaveHandler: (h: (() => void) | null) => {
         tab.handler = h;
       },
+    },
+    saveLoadController: {
+      loadProjectXml: vi.fn(async () => undefined),
       markAsSavedToDisk: vi.fn(),
     },
   };

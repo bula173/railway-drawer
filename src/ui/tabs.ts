@@ -1,4 +1,4 @@
-import { Graph, InternalEvent } from '@maxgraph/core';
+import { Graph } from '@maxgraph/core';
 import { setupGraph, teardownGraph } from './setup-graph';
 import { PropertiesPanel } from './properties';
 import { StatusBarController } from './statusbar';
@@ -8,18 +8,16 @@ import { UndoRedoController } from './undoredo';
 import { PanController } from './pan';
 import { GridController } from './grid';
 import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
+import type { DiagramDocument } from '../document/diagram-document';
 import { emit, off, on } from '../core/event-bus';
-import { SaveLoadController } from './saveload';
+import { createTabDocument, SaveLoadController } from './saveload';
 import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
 
 import { CacheService, CacheSaveResult, type CachedTabJson } from '../services/cache-service';
-import { Disposers, onModelChange } from '../core/graph-events';
 import { runWhenIdle } from '../core/idle';
-import { sanitizeScenarios } from '../scenarios/scenario-model';
-import { sanitizeCachedScript } from '../railway-script/script-store';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
@@ -46,6 +44,8 @@ export interface TabData {
   name: string;
   graph: Graph;
   graphCommandService: GraphCommandService;
+  /** The tab's document (model, project, pages, sections, remote binding, autosave state). */
+  document: DiagramDocument;
   propertiesPanel: PropertiesPanel;
   statusBarController: StatusBarController;
   clipboardController: ClipboardController;
@@ -76,10 +76,6 @@ export interface TabData {
   hoverArrowsController: HoverArrowsController;
 }
 
-/**
- * A DOM listener that a tab's controllers registered outside the tab's own graph element
- * (on `document`, `window`, or shared UI such as the menu bar, toolbar and properties panel).
- */
 /** TabData whose graph references are released (nulled) when the tab is destroyed. */
 type ReleasableTabData = Omit<TabData, 'graph' | 'graphCommandService'> & {
   graph: Graph | null;
@@ -90,27 +86,9 @@ type ReleasableTabData = Omit<TabData, 'graph' | 'graphCommandService'> & {
 type MaybeDestroyable = { destroy?: unknown } | null | undefined;
 
 /**
- * Autosave state of a tab. The tab's model is serialised again only when it changed (model CHANGE
- * events: edits, undo/redo, loads) or the other inputs of serializeToXml changed (page settings,
- * grid, PlantUML metadata: SaveLoadController.getSerializationFingerprint); the scenarios' JSON
- * only after a scenario change. Safety net for changes that bypass the model's events: the ACTIVE
- * tab is serialised again at least every RESERIALIZE_ACTIVE_MS.
+ * A DOM listener that a tab's controllers registered outside the tab's own graph element
+ * (on `document`, `window`, or shared UI such as the menu bar, toolbar and properties panel).
  */
-interface TabCacheState {
-  modelDirty: boolean;
-  /** JSON string of the serialised graph XML, and what it was made from. */
-  xmlJson: string | null;
-  xmlFingerprint: string;
-  xmlAt: number;
-  /** JSON of the scenarios (null: changed since, or not computed yet) and their count. */
-  scenariosJson: string | null;
-  scenarioCount: number;
-  disposers: Disposers;
-}
-
-/** The active tab's XML is rebuilt at least this often, even without model events. */
-const RESERIALIZE_ACTIVE_MS = 30_000;
-
 interface TabScopedListener {
   target: EventTarget;
   type: string;
@@ -124,7 +102,6 @@ export class TabManager {
   private tabBarContainer: HTMLElement;
   private graphContainer: HTMLElement;
   private autoSaveInterval: ReturnType<typeof setInterval> | null = null;
-  private saveLoadControllers: Map<string, SaveLoadController> = new Map();
   /**
    * Shared-DOM listeners per tab. Only the active tab's listeners are attached, so every global
    * UI action (menu, toolbar, shortcuts, properties) runs once and against the active tab.
@@ -133,24 +110,14 @@ export class TabManager {
   private tabListeners: Map<string, TabScopedListener[]> = new Map();
   private cacheSaveFailed = false;
   /**
-   * Cached diagram XML of tabs that could not be restored, by tab id. Until the user edits such
-   * a tab, autosave writes this XML back unchanged instead of the tab's empty model, so the
-   * diagram is not destroyed and a later fix or version can still recover it.
+   * Supplies each tab's remote binding for the cache once the remote session exists (until then the
+   * binding restored from the cache, kept by the tab's document, is written back).
    */
-  private unrestoredTabXml: Map<string, string> = new Map();
-  /**
-   * Remote-file binding data per tab (`CacheData.tabs[].remote`, opaque here). Filled by
-   * restoreFromCache, which runs before sharing is installed; the remote session claims each entry
-   * (takeCachedRemote) and from then on supplies it through the writer (setRemoteCacheWriter).
-   */
-  private cachedRemote: Map<string, unknown> = new Map();
   private remoteCacheWriter: ((tabId: string) => unknown) | null = null;
   /** Asked before the user closes a tab with its × button; false keeps the tab. */
   private closeGuard: ((tabId: string) => boolean | Promise<boolean>) | null = null;
   /** Decorates each rendered tab element (unsaved-changes dot of remote-bound tabs). */
   private tabDecorator: ((tabId: string, element: HTMLElement) => void) | null = null;
-  /** Autosave state per tab (see TabCacheState). */
-  private tabCache: Map<string, TabCacheState> = new Map();
   /** Cancels the autosave scheduled for the next idle period. */
   private cancelIdleSave: (() => void) | null = null;
 
@@ -246,7 +213,7 @@ export class TabManager {
    */
   openNewTab(): TabData {
     const tab = this.createTab();
-    tab.saveLoadController.setProjectName(tab.name);
+    tab.document.setProjectName(tab.name);
     this.switchTab(tab.id);
     // The title follows the shown tab (setProjectName ran while the tab was still hidden)
     this.showProjectName(tab);
@@ -272,6 +239,9 @@ export class TabManager {
     // list of setup-graph.ts (shared with the scenario view and the palette thumbnails)
     const graph = new Graph(graphDiv);
     setupGraph(graph, 'editor');
+    // Initialize centralized command service, and the tab's document (load / save / autosave state)
+    const graphCommandService = new GraphCommandService(graph);
+    const diagramDocument = createTabDocument(graph, graphCommandService);
 
     // Controllers bind to shared DOM and `document`; record those listeners so they are only
     // attached while this tab is active (see captureSharedListeners).
@@ -284,9 +254,6 @@ export class TabManager {
       // Configure edge/connector properties
       const edgePropertiesController = new EdgePropertiesController(graph);
 
-      // Initialize centralized command service
-      const graphCommandService = new GraphCommandService(graph);
-
       // Initialize UI controllers
       const propertiesPanel = new PropertiesPanel(graph);
       const statusBarController = new StatusBarController(graph);
@@ -295,7 +262,7 @@ export class TabManager {
       const undoRedoController = new UndoRedoController(graph, graphCommandService);
       const panController = new PanController(graph);
       const gridController = new GridController(graph, 10);
-      const saveLoadController = new SaveLoadController(graph, graphCommandService);
+      const saveLoadController = new SaveLoadController(diagramDocument);
       const canvasProperties = new CanvasProperties(graph);
       const contextMenuController = new ContextMenuController(graph);
       const menuController = new MenuController(graph, graphCommandService, saveLoadController);
@@ -315,13 +282,12 @@ export class TabManager {
       const duplicateOffsetController = new DuplicateOffsetController(graph);
       // File > Export as PNG/SVG: the tab's model, file named after the tab
       const exportImageController = new ExportImageController({
-        getModelXml: () => saveLoadController.serializeToXml(),
+        getModelXml: () => diagramDocument.serializeToXml(),
         getName: () => this.tabs.get(tabId)?.name ?? name,
       });
       menuController.setExportImageController(exportImageController);
 
       return {
-        graphCommandService,
         propertiesPanel,
         statusBarController,
         clipboardController,
@@ -349,7 +315,6 @@ export class TabManager {
         edgePropertiesController,
       };
     });
-    const { saveLoadController } = controllers;
     // draw.io hover arrows (hover-arrows.ts): after ConnectionHandler, whose plugin it wraps. Built
     // outside captureSharedListeners: its listeners are on the graph div and its own arrow elements.
     const hoverArrowsController = new HoverArrowsController(graph);
@@ -358,13 +323,13 @@ export class TabManager {
       id: tabId,
       name,
       graph,
+      graphCommandService,
+      document: diagramDocument,
       ...controllers,
       hoverArrowsController,
     };
 
     this.tabs.set(tabId, tabData);
-    this.saveLoadControllers.set(tabId, saveLoadController);
-    this.trackTabCache(tabData);
 
     if (!this.activeTabId) {
       this.activeTabId = tabId;
@@ -394,71 +359,9 @@ export class TabManager {
     });
   }
 
-  /** Starts the autosave bookkeeping of a new tab (dirty flags fed by its model and scenarios). */
-  private trackTabCache(tab: TabData): void {
-    const state: TabCacheState = {
-      modelDirty: true,
-      xmlJson: null,
-      xmlFingerprint: '',
-      xmlAt: 0,
-      scenariosJson: null,
-      scenarioCount: 0,
-      disposers: new Disposers(),
-    };
-    state.disposers.add(onModelChange(tab.graph, () => {
-      state.modelDirty = true;
-    }));
-    state.disposers.add(tab.saveLoadController.getScenarios().subscribe(() => {
-      state.scenariosJson = null;
-    }));
-    this.tabCache.set(tab.id, state);
-  }
-
-  /** JSON string of the tab's graph XML: the cached one unless the tab changed (TabCacheState). */
-  private tabXmlJson(tab: TabData, state: TabCacheState, now: number): string {
-    const unrestored = this.unrestoredTabXml.get(tab.id);
-    if (unrestored !== undefined) return JSON.stringify(unrestored);
-    const fingerprint = tab.saveLoadController.getSerializationFingerprint();
-    const due = tab.id === this.activeTabId && now - state.xmlAt >= RESERIALIZE_ACTIVE_MS;
-    if (state.xmlJson === null || state.modelDirty || fingerprint !== state.xmlFingerprint || due) {
-      // cleared first: a change while serialising marks the tab again
-      state.modelDirty = false;
-      state.xmlJson = JSON.stringify(tab.saveLoadController.serializeToXml());
-      state.xmlFingerprint = fingerprint;
-      state.xmlAt = now;
-    }
-    return state.xmlJson;
-  }
-
-  /** The tab's cache entry (CacheData['tabs'][number]) as JSON. */
+  /** The tab's cache entry (CacheData['tabs'][number]) as JSON (only what changed is serialised again). */
   private tabCacheJson(tab: TabData, now: number): string {
-    let state = this.tabCache.get(tab.id);
-    if (!state) {
-      this.trackTabCache(tab);
-      state = this.tabCache.get(tab.id)!;
-    }
-    const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
-    if (state.scenariosJson === null) {
-      const scenarios = tab.saveLoadController.getScenarios().toJSON();
-      state.scenariosJson = JSON.stringify(scenarios);
-      state.scenarioCount = scenarios.length;
-    }
-    const railwayScript = tab.saveLoadController.getRailwayScript().get();
-    const head = JSON.stringify({ id: tab.id, name: tab.name, projectName: tab.saveLoadController.getProjectName() });
-    // Only written when there is something to keep, so single-page caches stay as they were
-    const tail = JSON.stringify({
-      ...(extraPages.length > 0 ? { extraPages } : {}),
-      ...(pageId ? { pageId } : {}),
-    });
-    const after = JSON.stringify({
-      ...(railwayScript.trim() ? { railwayScript } : {}),
-      ...this.remoteCacheEntry(tab.id),
-    });
-    const parts = [head.slice(1, -1), `"graphXml":${this.tabXmlJson(tab, state, now)}`];
-    if (tail !== '{}') parts.push(tail.slice(1, -1));
-    if (state.scenarioCount > 0) parts.push(`"scenarios":${state.scenariosJson}`);
-    if (after !== '{}') parts.push(after.slice(1, -1));
-    return `{${parts.join(',')}}`;
+    return tab.document.cacheEntryJson({ id: tab.id, name: tab.name, now, active: tab.id === this.activeTabId }, this.remoteCacheValue(tab));
   }
 
   /**
@@ -482,16 +385,14 @@ export class TabManager {
     return result === 'saved';
   }
 
-  /** `{ remote }` of a tab for the cache, or nothing when it is not bound. */
-  private remoteCacheEntry(tabId: string): { remote?: unknown } {
-    let remote: unknown;
+  /** The remote binding of a tab for the cache (undefined / null: not bound). */
+  private remoteCacheValue(tab: TabData): unknown {
     try {
-      remote = this.remoteCacheWriter ? this.remoteCacheWriter(tabId) : this.cachedRemote.get(tabId);
+      return this.remoteCacheWriter ? this.remoteCacheWriter(tab.id) : tab.document.peekRestoredRemote();
     } catch (error) {
       console.error('[TabManager] Remote binding not cached:', error);
-      remote = undefined;
+      return undefined;
     }
-    return remote === undefined || remote === null ? {} : { remote };
   }
 
   /** Supplies each tab's remote binding for the cache (replaces the restored entries). */
@@ -501,9 +402,7 @@ export class TabManager {
 
   /** The cached remote binding of a restored tab, once (undefined when it had none). */
   takeCachedRemote(tabId: string): unknown {
-    const remote = this.cachedRemote.get(tabId);
-    this.cachedRemote.delete(tabId);
-    return remote;
+    return this.tabs.get(tabId)?.document.takeRestoredRemote();
   }
 
   setCloseGuard(guard: ((tabId: string) => boolean | Promise<boolean>) | null): void {
@@ -552,34 +451,25 @@ export class TabManager {
 
     for (const tabCache of cacheData.tabs) {
       const tabData = this.createTab(tabCache.name);
-      // Pages 2..n of the opened file are kept even when page 1 cannot be restored
-      const extraPages = Array.isArray(tabCache.extraPages)
-        ? tabCache.extraPages.filter((page): page is string => typeof page === 'string')
-        : [];
-      const pageId = typeof tabCache.pageId === 'string' && tabCache.pageId ? tabCache.pageId : null;
-      tabData.saveLoadController.setPreservedPages(extraPages, pageId);
-      // Scenarios are kept even when the drawing itself cannot be restored
-      tabData.saveLoadController.getScenarios().replaceAll(sanitizeScenarios(tabCache.scenarios));
-      tabData.saveLoadController.getRailwayScript().set(sanitizeCachedScript(tabCache.railwayScript), 'load');
-      // Each tab's own project (caches of earlier versions: only the active tab's, set below)
-      if (typeof tabCache.projectName === 'string' && tabCache.projectName) {
-        tabData.saveLoadController.setProjectName(tabCache.projectName);
-      }
+      // Pages 2..n, scenarios, Railway Script and the tab's own project name (caches of earlier
+      // versions: only the active tab's, set below) are kept even when the drawing cannot be restored
+      tabData.document.restoreCacheEntry(tabCache);
       try {
-        tabData.saveLoadController.load(tabCache.graphXml);
+        tabData.document.load(tabCache.graphXml);
         if (CacheService.isLegacyGraphXml(tabCache.graphXml)) migratedTabs++;
         // Old app layers (rdLayerId) became draw.io layers: unsaved, and cached right away
-        if (tabData.saveLoadController.hasUnsavedLoadChanges()) {
+        if (tabData.document.hasUnsavedLoadChanges()) {
           migratedTabs++;
           layerMigratedTabs++;
         }
       } catch (error) {
         failedTabs++;
         console.error('[TabManager] Failed to restore tab from cache:', tabCache.name, error);
-        this.keepUnrestoredXml(tabData, tabCache.graphXml);
+        // autosave writes the cached XML back unchanged until the tab is edited
+        tabData.document.keepUnrestoredXml(tabCache.graphXml);
       }
       // Claimed by the remote session (install-sharing.ts) once it exists
-      if (tabCache.remote !== undefined && tabCache.remote !== null) this.cachedRemote.set(tabData.id, tabCache.remote);
+      if (tabCache.remote !== undefined && tabCache.remote !== null) tabData.document.setRestoredRemote(tabCache.remote);
 
       // Track the first tab as active, or the tab matching the cached active tab
       if (activeTabId === null || tabCache.id === cacheData.activeTabId) {
@@ -595,7 +485,7 @@ export class TabManager {
     const active = this.getActiveTab();
     const activeCache = cacheData.tabs.find((t) => t.id === cacheData.activeTabId) ?? cacheData.tabs[0];
     if (active && typeof activeCache?.projectName !== 'string' && cacheData.projectName) {
-      active.saveLoadController.setProjectName(cacheData.projectName);
+      active.document.setProjectName(cacheData.projectName);
     }
     if (active) this.showProjectName(active);
 
@@ -624,27 +514,13 @@ export class TabManager {
     return this.tabs.size > 0;
   }
 
-  /**
-   * Keeps the cached XML of a tab that failed to restore, so autosave does not overwrite it with
-   * the empty model. The first edit of the tab (any model change) makes it a normal tab again.
-   */
-  private keepUnrestoredXml(tab: TabData, graphXml: string): void {
-    this.unrestoredTabXml.set(tab.id, graphXml);
-    const model = tab.graph.getDataModel();
-    const onFirstEdit = () => {
-      this.unrestoredTabXml.delete(tab.id);
-      model.removeListener(onFirstEdit);
-    };
-    model.addListener(InternalEvent.CHANGE, onFirstEdit);
-  }
-
   clearCache(): void {
     CacheService.clear();
   }
 
   /** The active tab's project name (the cache's top-level `projectName`, for older readers). */
   private getProjectName(): string {
-    return this.getActiveTab()?.saveLoadController.getProjectName() || 'Untitled Diagram';
+    return this.getActiveTab()?.document.getProjectName() || 'Untitled Diagram';
   }
 
   /** Puts `tab`'s project name on the top-bar title (each tab has its own project). */
@@ -652,7 +528,7 @@ export class TabManager {
     const titleElement = document.querySelector('.document-title') as HTMLElement | null;
     // Not while the title is being edited (its input lives inside the element)
     if (titleElement && !titleElement.querySelector('input')) {
-      titleElement.textContent = tab.saveLoadController.getProjectName();
+      titleElement.textContent = tab.document.getProjectName();
     }
   }
 
@@ -666,9 +542,9 @@ export class TabManager {
   renameActiveProject(newName: string): void {
     const tab = this.getActiveTab();
     if (!tab) return;
-    const oldName = tab.saveLoadController.getProjectName();
+    const oldName = tab.document.getProjectName();
     if (newName === oldName) return;
-    tab.saveLoadController.setProjectName(newName);
+    tab.document.setProjectName(newName);
     if (tab.name === oldName) {
       tab.name = newName;
       this.renderTabBar();
@@ -738,9 +614,6 @@ export class TabManager {
     // Destroy the tab and clean up resources
     this.destroyTab(tabId);
     this.tabs.delete(tabId);
-    this.saveLoadControllers.delete(tabId);
-    this.tabCache.get(tabId)?.disposers.dispose();
-    this.tabCache.delete(tabId);
     emit('tab-closed', { tabId });
 
     // Switch to another tab if the closed tab was active
@@ -768,10 +641,7 @@ export class TabManager {
     const tab = this.tabs.get(tabId);
     if (tab) {
       tab.name = newName;
-      const saveLoadController = this.saveLoadControllers.get(tabId);
-      if (saveLoadController) {
-        saveLoadController.setProjectName(newName);
-      }
+      tab.document.setProjectName(newName);
       this.renderTabBar();
     }
   }
@@ -785,8 +655,6 @@ export class TabManager {
     }
     this.cancelIdleSave?.();
     this.cancelIdleSave = null;
-    this.tabCache.forEach((state) => state.disposers.dispose());
-    this.tabCache.clear();
 
     // Clean up all tabs
     Array.from(this.tabs.keys()).forEach((tabId) => {
@@ -794,7 +662,6 @@ export class TabManager {
     });
 
     this.tabs.clear();
-    this.saveLoadControllers.clear();
     this.activeTabId = null;
   }
 
@@ -805,8 +672,6 @@ export class TabManager {
     // Unbind the tab's shared-DOM listeners (menu, toolbar, document shortcuts, ...) for good
     this.detachTabListeners(tabId);
     this.tabListeners.delete(tabId);
-    this.unrestoredTabXml.delete(tabId);
-    this.cachedRemote.delete(tabId);
 
     try {
       // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
@@ -850,6 +715,9 @@ export class TabManager {
           }
         }
       });
+
+      // The document's model / section listeners (autosave state)
+      tab.document.dispose();
 
       // Dispose graph (removes event listeners, clears model, disposes view)
       if (tab.graph) {
@@ -988,8 +856,8 @@ export class TabManager {
       if (save && newName && newName !== tab.name && this.tabs.get(tab.id) === tab) {
         // Mirror of renameActiveProject: a label that is the project's name renames the project too
         // (top-bar title, Save/Export file name, <diagram name>); other projects keep their name
-        if (tab.saveLoadController.getProjectName() === tab.name) {
-          tab.saveLoadController.setProjectName(newName);
+        if (tab.document.getProjectName() === tab.name) {
+          tab.document.setProjectName(newName);
           if (tab.id === this.activeTabId) this.showProjectName(tab);
         }
         tab.name = newName;

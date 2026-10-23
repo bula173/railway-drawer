@@ -300,7 +300,7 @@ test.describe('UI backlog', () => {
     // a label of its own: neither rule touches the other name
     await page.evaluate(async () => {
       const registry = await import('/src/services/service-registry.ts' as string);
-      registry.ServiceRegistry.getTabManager().getActiveTab().saveLoadController.setProjectName('Interlocking');
+      registry.ServiceRegistry.getTabManager().getActiveTab().document.setProjectName('Interlocking');
     });
     await renameLabel('Station South', 'My view');
     expect(await exportName()).toBe('Interlocking.drawio');

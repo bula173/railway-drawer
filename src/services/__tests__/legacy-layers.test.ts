@@ -10,7 +10,7 @@ import { GraphDataModel } from '@maxgraph/core';
 import type { Cell, Graph } from '@maxgraph/core';
 import { importModelXml, registerDrawioCodecs, registerDrawioNamedStyles, installUserObjectLabels } from '../drawio-xml';
 import { migrateLegacyLayers } from '../legacy-layers';
-import { SaveLoadController } from '../../ui/saveload';
+import { createTabDocument, SaveLoadController } from '../../ui/saveload';
 import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { createTestGraph, cleanupTestGraph } from '../../__tests__/setup';
 
@@ -27,7 +27,7 @@ describe('old app layers (rdLayerId) -> draw.io layers', () => {
     registerDrawioNamedStyles(graph.getStylesheet());
     installUserObjectLabels(graph);
     graphs.push(graph);
-    return { graph, controller: new SaveLoadController(graph) };
+    return { graph, controller: new SaveLoadController(createTabDocument(graph)) };
   }
 
   beforeAll(() => registerDrawioCodecs());
@@ -70,12 +70,12 @@ describe('old app layers (rdLayerId) -> draw.io layers', () => {
     expect(graph.getDefaultParent()).toBe(model.getCell('1'));
 
     // the tab is modified: not "saved to disk"
-    expect(controller.hasUnsavedLoadChanges()).toBe(true);
+    expect(controller.document.hasUnsavedLoadChanges()).toBe(true);
     expect(unsaved).toHaveBeenCalled();
     expect(savedToDisk).not.toHaveBeenCalled();
 
     // saved as draw.io layers, without rdLayerId
-    const saved = controller.getProjectXml();
+    const saved = controller.document.getProjectXml();
     expect(saved).not.toContain('rdLayerId');
     const doc = new DOMParser().parseFromString(saved, 'text/xml');
     const layerEls = Array.from(doc.getElementsByTagName('mxCell')).filter((c) => c.getAttribute('parent') === '0');
@@ -91,8 +91,8 @@ describe('old app layers (rdLayerId) -> draw.io layers', () => {
     // one-time: reopening the saved file changes nothing and leaves it saved
     const again = newTab();
     await again.controller.loadProjectXml(saved, 'old.drawio', { quiet: true });
-    expect(again.controller.hasUnsavedLoadChanges()).toBe(false);
-    expect(again.controller.getProjectXml()).toBe(saved);
+    expect(again.controller.document.hasUnsavedLoadChanges()).toBe(false);
+    expect(again.controller.document.getProjectXml()).toBe(saved);
   });
 
   it('only drops the attribute when every cell was on the old default layer', () => {
@@ -101,12 +101,12 @@ describe('old app layers (rdLayerId) -> draw.io layers', () => {
 <mxCell id="b" value="B" style="rounded=0;rdLayerId=layer-0;" vertex="1" parent="1"><mxGeometry x="60" width="40" height="20" as="geometry"/></mxCell>
 </root></mxGraphModel>`;
     const { graph, controller } = newTab();
-    controller.load(xml);
+    controller.document.load(xml);
     const model = graph.getDataModel();
     expect(ids(model.getRoot()!.children)).toEqual(['1']);
     expect(ids(model.getCell('1')!.children)).toEqual(['a', 'b']);
-    expect(controller.hasUnsavedLoadChanges()).toBe(true);
-    expect(controller.serializeToXml()).not.toContain('rdLayerId');
+    expect(controller.document.hasUnsavedLoadChanges()).toBe(true);
+    expect(controller.document.serializeToXml()).not.toContain('rdLayerId');
   });
 
   it('leaves files without rdLayerId and files with real layers alone', () => {
@@ -122,10 +122,10 @@ describe('old app layers (rdLayerId) -> draw.io layers', () => {
 <mxCell id="a" value="A" style="rounded=0;rdLayerId=layer-5;" vertex="1" parent="L2"><mxGeometry width="40" height="20" as="geometry"/></mxCell>
 </root></mxGraphModel>`;
     const { graph, controller } = newTab();
-    controller.load(xml);
-    expect(controller.hasUnsavedLoadChanges()).toBe(false);
+    controller.document.load(xml);
+    expect(controller.document.hasUnsavedLoadChanges()).toBe(false);
     expect(ids(graph.getDataModel().getRoot()!.children)).toEqual(['1', 'L2']);
-    expect(controller.serializeToXml()).toContain('rdLayerId=layer-5;');
+    expect(controller.document.serializeToXml()).toContain('rdLayerId=layer-5;');
   });
 
   it('does not reuse an old layer id that a cell already has', () => {
