@@ -48,7 +48,7 @@ export default tsEslint.config(
   //   document the open diagram (DiagramDocument) and its model services: src/document, src/services
   //   features railway (the domain base: other features may use it), scenarios, railway-script,
   //            railml, ai, share
-  //   ui       the shell: src/ui, src/debug, src/main*.ts
+  //   ui       the shell: src/ui, src/boot (composition), src/debug, src/main*.ts
   {
     files: ['src/**/*.ts'],
     ignores: ['src/**/__tests__/**'],
@@ -87,7 +87,7 @@ export default tsEslint.config(
         },
         { type: 'document', mode: 'full', pattern: ['src/document/**', 'src/services/**'] },
         { type: 'feature', mode: 'full', pattern: 'src/(ai|railml|railway|railway-script|scenarios|share)/**', capture: ['family'] },
-        { type: 'ui', mode: 'full', pattern: ['src/ui/**', 'src/debug/**', 'src/main.ts', 'src/main-editor.ts'] },
+        { type: 'ui', mode: 'full', pattern: ['src/ui/**', 'src/boot/**', 'src/debug/**', 'src/main.ts', 'src/main-editor.ts'] },
       ],
     },
     rules: {
