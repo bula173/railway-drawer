@@ -4,6 +4,7 @@
  *        order, search over titles and tags, "More shapes…" visibility menu, real-rendered
  *        thumbnails, hover preview, click/drag insertion and user library import.
  */
+import { reportLoadFailure } from '../../core/load-failure';
 import type { Cell, Graph } from '@maxgraph/core';
 import './drawio-palette.css';
 import { logger } from '../../drawio/logger';
@@ -556,9 +557,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       .catch((err: unknown) => {
         cat.loading = null;
         cat.body.replaceChildren(el('div', 'rd-dp-empty', 'Could not load this palette'));
-        logger.error('drawio-palette', `Palette ${cat.id} failed to load`, {
-          error: err instanceof Error ? err.message : String(err),
-        });
+        reportLoadFailure('error', 'drawio-palette', `Palette ${cat.id} failed to load`, err);
       });
     return cat.loading;
   }
@@ -702,7 +701,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         globalSearchTimer = null;
         Promise.all([import('./global-search'), ensureCatalogue()])
           .then(([m]) => (token === globalSearchToken && !destroyed ? m.renderGlobalSearch(searchResults, query, internals(), () => token === globalSearchToken) : undefined))
-          .catch((err: unknown) => logger.warn('drawio-palette', 'Library search failed', { error: err instanceof Error ? err.message : String(err) }))
+          .catch((err: unknown) => reportLoadFailure('warn', 'drawio-palette', 'Library search failed', err))
           .finally(resolve);
       }, 150);
     });
@@ -1058,9 +1057,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         .then(addCataloguePalettes)
         .catch((err: unknown) => {
           cataloguePromise = null;
-          logger.warn('drawio-palette', 'draw.io library catalogue failed to load', {
-            error: err instanceof Error ? err.message : String(err),
-          });
+          reportLoadFailure('warn', 'drawio-palette', 'draw.io library catalogue failed to load', err);
         });
     }
     return cataloguePromise;

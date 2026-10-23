@@ -32,6 +32,11 @@ renumbering); new code must not add to them. Probe test: `src/__tests__/lint/bou
   Esc / Enter, backdrop, stacking, focus return; the caller's DOM classes kept). `ui/app-dialogs.ts` `openAppModal`,
   `confirmDialog`, `promptSaveAs`, `showAboutDialog` are built on it. Guard: no native `alert` / `confirm` / `prompt`.
 - `drawio/logger.ts`: logging (debug only in dev builds); eslint `no-console` (warn / error allowed).
+- `core/load-failure.ts` `reportLoadFailure(level, category, message, err)`: every lazy loader (palettes, catalogue,
+  library search, stencils, vendor shape modules, templates, lazy panels, PDF fonts) reports its failure through it. A
+  failure while the page is being left (`pagehide`, or within 5 s of `beforeunload`) or an `AbortError` is logged at
+  debug and returns false (the caller skips its notification); a real failure logs at `level`, returns true and the
+  caller shows its error state ("Could not load this palette", templates error, notification).
 
 ## Graph setup
 

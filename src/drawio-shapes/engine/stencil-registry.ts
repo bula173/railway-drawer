@@ -17,6 +17,7 @@
  * same name.
  */
 
+import { reportLoadFailure } from '../../core/load-failure';
 import { createInstallScope, installOnce, isInstalled } from '../../core/install-once';
 import { CellRenderer, Shape, StencilShape, StencilShapeRegistry } from '@maxgraph/core';
 import type { CellState } from '@maxgraph/core';
@@ -259,10 +260,7 @@ function loadStencilFile(file: string): Promise<void> {
         const names = parseStencilSet(doc);
         logger.debug(LOG, 'Stencil set loaded', { url, stencils: names.length });
       } catch (err) {
-        logger.warn(LOG, 'Stencil set failed to load', {
-          url,
-          error: err instanceof Error ? err.message : String(err),
-        });
+        reportLoadFailure('warn', LOG, 'Stencil set failed to load', err, { url });
       }
     })();
     filePromises.set(url, promise);

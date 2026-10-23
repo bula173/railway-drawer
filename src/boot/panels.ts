@@ -4,6 +4,7 @@
  *        AI, the AppContext), the Shapes / ERTMS tabs, narrow screens, the start card, the Templates
  *        tab and the custom shapes.
  */
+import { reportLoadFailure } from '../core/load-failure';
 import { shapeRegistry, ShapeToolbar } from '../shapes';
 import type { TabManager } from '../ui/tabs';
 import { provideAppContext } from '../ui/app-context';
@@ -287,7 +288,7 @@ export function bootCustomShapes(tabManager: TabManager): void {
       shapeDesigner ??= import('../ui/shape-designer').then((m) => new m.ShapeDesignerController(designerGraph));
       shapeDesigner.then((designer) => designer.openDesigner(shapeId)).catch((error: unknown) => {
         shapeDesigner = null;
-        console.error('[ShapeDesigner] could not be loaded', error);
+        if (!reportLoadFailure('error', 'ShapeDesigner', 'could not be loaded', error)) return;
         ServiceRegistry.getNotificationManager()?.error('The shape designer could not be loaded. Check the connection and try again.');
       });
     };

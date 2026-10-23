@@ -5,6 +5,7 @@
  *        Anthropic SDK, the tool core and the bridge) the first time it is shown. Nothing AI-related
  *        is downloaded or sent before that.
  */
+import { reportLoadFailure } from '../core/load-failure';
 import { on } from '../core/event-bus';
 import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { TabManager } from '../ui/tabs';
@@ -20,7 +21,7 @@ export function installAi(tabManager: TabManager, notify: AiNotifier): void {
     panel ??= import('./ai-panel').then((m) => m.mountAiPanel(container, { tabManager, notify }));
     panel.then((p) => p.focus()).catch((error: unknown) => {
       panel = null;
-      console.error('[AI] panel failed to load', error);
+      if (!reportLoadFailure('error', 'AI', 'panel failed to load', error)) return;
       notify.error(`AI assistant: ${error instanceof Error ? error.message : String(error)}`);
     });
   };
