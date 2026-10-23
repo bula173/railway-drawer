@@ -4,7 +4,7 @@
  *        and the "Save as template…" flow.
  */
 import type { Cell, Graph } from '@maxgraph/core';
-import { renumberInsertedObjects } from '../../railway/insert-ids';
+import { prepareClonedCells } from '../../railway/clone';
 import { withSnapSuspended } from '../../railway/snap';
 import { getDrawioPaletteEngine } from '../drawio-palette/drawio-palette-view';
 import { insertEntry, wrapModelXml } from '../drawio-palette/entry-cells';
@@ -30,7 +30,7 @@ export interface TemplateNotifier {
 export function insertTemplate(graph: Graph, template: DiagramTemplate, at?: { x: number; y: number }): Cell[] {
   const entry = templateToPaletteEntry(template);
   const inserted = withSnapSuspended(() =>
-    insertEntry(graph, entry, at, (cells) => renumberInsertedObjects(graph.getDataModel(), cells)));
+    insertEntry(graph, entry, at, (cells) => prepareClonedCells(graph.getDataModel(), cells)));
   if (inserted.length > 0) {
     // Named stencils not loaded yet (the autoload also does this for tab graphs)
     getDrawioPaletteEngine()

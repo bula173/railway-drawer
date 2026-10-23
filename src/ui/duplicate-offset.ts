@@ -1,5 +1,6 @@
 import { Graph, type Cell } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
+import { prepareClonedCells } from '../railway/clone';
 
 export class DuplicateOffsetController {
   private graph: Graph;
@@ -195,13 +196,13 @@ export class DuplicateOffsetController {
     this.graph.batchUpdate(() => {
       for (let i = 0; i < count; i++) {
         const cloned = this.graph.cloneCells(selected);
+        // railway IDs unique (each round sees the previous one), copies lose route / railML ids
+        prepareClonedCells(this.graph.getDataModel(), cloned);
         const imported = this.graph.importCells(cloned, offset * (i + 1), offset * (i + 1));
         duplicated.push(...imported);
       }
       this.graph.setSelectionCells(duplicated);
     });
-
-    console.log(`[DuplicateOffset] Created ${count} duplicates with ${offset}px offset`);
   }
 
   destroy(): void {
