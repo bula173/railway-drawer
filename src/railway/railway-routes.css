@@ -40,6 +40,20 @@
   vector-effect: non-scaling-stroke;
 }
 
+/* Guidance after the start signal (route-tool.ts): reachable exits outlined, the other signals dimmed */
+.rd-route-overlay .rd-route-hl-target {
+  fill: none;
+  stroke: #ff8f00;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-route-overlay .rd-route-dim {
+  fill: var(--rd-canvas-bg);
+  fill-opacity: 0.72;
+  stroke: none;
+}
+
 .rd-route-tool {
   position: fixed;
   z-index: 900;
@@ -72,6 +86,11 @@
 
 .rd-route-status {
   margin: 0;
+}
+
+.rd-route-status.rd-route-none {
+  color: var(--rd-danger);
+  font-weight: 600;
 }
 
 .rd-route-paths {

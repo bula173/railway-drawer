@@ -641,6 +641,10 @@ def ertms_extra():
 PL_SIG = 'semafor świetlny swietlny light signal pkp plk'
 
 
+# "tarcza" is feminine: Tarcza … prawa / lewa (semafor, sygnał, powtarzacz: prawy / lewy)
+TARCZA_SIDES = (('R', 'prawa'), ('L', 'lewa'))
+
+
 def railway_pl():
     out = []
     generic = {2: [GREEN, RED], 3: [ORANGE, RED, GREEN], 4: [ORANGE, RED, ORANGE, GREEN], 5: [WHITE, ORANGE, RED, ORANGE, GREEN]}
@@ -660,20 +664,20 @@ def railway_pl():
     for d, side in (('R', 'prawy'), ('L', 'lewy')):
         out.append(light_signal(f'Powtarzacz semafora {side}', d, [ORANGE, GREEN], f'{PL_SIG} powtarzacz repeater sp sp1 sp2 sp3 sp4',
                                 notes='Powtarzacz semafora (Sp)', frame=True))
-    for d, side in (('R', 'prawy'), ('L', 'lewy')):
+    for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza ostrzegawcza świetlna To {side}', d, [ORANGE, GREEN],
                                 'tarcza ostrzegawcza to os os1 os2 os3 os4 distant warning signal', notes='Tarcza ostrzegawcza (To)'))
-    for d, side in (('R', 'prawy'), ('L', 'lewy')):
+    for d, side in TARCZA_SIDES:
         out.append(disc_signal(f'Tarcza ostrzegawcza kształtowa {side}', d,
                                'tarcza ostrzegawcza kształtowa ksztaltowa to os distant disc', 'Tarcza ostrzegawcza kształtowa (To)'))
-    for d, side in (('R', 'prawy'), ('L', 'lewy')):
+    for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza ostrzegawcza przejazdowa Osp {side}', d, [ORANGE, WHITE],
                                 'tarcza ostrzegawcza przejazdowa osp osp1 osp2 level crossing warning przejazd',
                                 notes='Tarcza ostrzegawcza przejazdowa (Osp)'))
-    for d, side in (('R', 'prawy'), ('L', 'lewy')):
+    for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza zaporowa Tz {side}', d, [RED, WHITE], 'tarcza zaporowa tz stop shunting ms2',
                                 signal_type='shunting', notes='Tarcza zaporowa (Tz)', lamp=7))
-    for d, side in (('R', 'prawy'), ('L', 'lewy')):
+    for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza manewrowa Tm {side}', d, [SHUNT_BLUE, WHITE], 'tarcza manewrowa tm ms1 ms2 shunting signal manewry',
                                 signal_type='shunting', notes='Tarcza manewrowa (Tm)', lamp=7))
     for d, side in (('R', 'prawy'), ('L', 'lewy')):
@@ -753,7 +757,8 @@ def track_layout():
             for up in (True, False):
                 hand = points_data(toe_left, up)['rdHand'].capitalize()
                 toe = 'toe left' if toe_left else 'toe right'
-                out.append(turnout_set(f'Turnout 1:{ratio} {hand} ({toe})', ratio, toe_left, up,
+                # EN "Points" (the catalogue label); "turnout" / "rozjazd" / "zwrotnica" stay search tags
+                out.append(turnout_set(f'Points 1:{ratio} {hand} ({toe})', ratio, toe_left, up,
                                        f'1:{ratio} {hand.lower()} {"lewy" if hand == "Left" else "prawy"}'))
     out.append(crossover('Single Crossover Down', 'down', 'single pojedynczy'))
     out.append(crossover('Single Crossover Up', 'up', 'single pojedynczy'))

@@ -220,6 +220,9 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   let unsubscribe: (() => void) | null = null;
   let viewState: ScenarioViewState | null = viewer.getState();
   let dragging: { scenarioId: string; stepId: string } | null = null;
+  /** Step whose name is edited in its row (focused after "+ Add step"), and steps with their details open. */
+  let renaming: string | null = null;
+  const detailsOpen = new Set<string>();
 
   const root = el('div', 'rd-scn-panel');
   container.replaceChildren(root);
@@ -307,7 +310,28 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     if (ok) t.scenarios.remove(scenario.id);
   }
 
-  async function addStep(t: ScenarioTabRef, scenario: ScenarioData): Promise<void> {
+  /**
+   * "+ Add step": captures the drawing at once as "Step n" and puts the name into edit mode in its row (type to
+   * rename, Enter / Tab keeps it, Esc keeps "Step n"); description, UML and text are optional in the row's details.
+   */
+  function addStep(t: ScenarioTabRef, scenario: ScenarioData): void {
+    if (!t.scenarios.get(scenario.id)) return;
+    let xml: string;
+    try {
+      xml = t.captureDrawing();
+    } catch (error) {
+      notify.error(`Could not capture the drawing: ${error instanceof Error ? error.message : String(error)}`);
+      return;
+    }
+    const step = t.scenarios.addStep(scenario.id, { name: `Step ${scenario.steps.length + 1}`, xml });
+    expanded.add(xkey(t.id, scenario.id));
+    renaming = step.id;
+    render();
+    options.onStepsChanged?.();
+  }
+
+  /** "Add with details…": the step editor dialog (name, description, UML, text), then the capture. */
+  async function addStepWithDetails(t: ScenarioTabRef, scenario: ScenarioData): Promise<void> {
     const details = await stepEditor({
       heading: 'Add step',
       hint: `Step ${scenario.steps.length + 1} of "${scenario.name}": the current drawing, plus an optional UML diagram and text.`,
@@ -404,6 +428,96 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
   // ------------------------------------------------------------------ rendering
 
+  /** Saves step fields from the row (no-op when unchanged; the step may be gone). */
+  function saveStepFields(t: ScenarioTabRef, scenario: ScenarioData, step: ScenarioStepData, fields: { name?: string; description?: string; uml?: string; text?: string }): void {
+    const changed = Object.entries(fields).some(([k, v]) => v !== (step as unknown as Record<string, unknown>)[k]);
+    if (!changed) return;
+    try {
+      t.scenarios.updateStep(scenario.id, step.id, fields);
+      options.onStepsChanged?.();
+    } catch {
+      // deleted meanwhile
+    }
+  }
+
+  /** Keeps clicks / keys / drags inside an inline editor away from the row (present, reorder). */
+  function inlineEditor<T extends HTMLElement>(node: T, item: HTMLElement): T {
+    node.addEventListener('click', (e) => e.stopPropagation());
+    node.addEventListener('dblclick', (e) => e.stopPropagation());
+    node.addEventListener('keydown', (e) => e.stopPropagation());
+    node.addEventListener('focus', () => (item.draggable = false));
+    node.addEventListener('blur', () => (item.draggable = true));
+    return node;
+  }
+
+  /** The step name as an input in its row (after "+ Add step" or a double-click on the name). */
+  function stepNameInput(t: ScenarioTabRef, scenario: ScenarioData, step: ScenarioStepData, index: number, item: HTMLElement): HTMLInputElement {
+    const input = inlineEditor(el('input', 'rd-input rd-scn-step-name-input'), item);
+    input.type = 'text';
+    input.value = step.name;
+    input.maxLength = 200;
+    input.dataset.testid = 'scenario-step-name-input';
+    input.setAttribute('aria-label', `Name of step ${index + 1}`);
+    let done = false;
+    const finish = (save: boolean): void => {
+      if (done) return;
+      done = true;
+      renaming = null;
+      const name = input.value.trim();
+      if (save && name) saveStepFields(t, scenario, step, { name });
+      render();
+    };
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        finish(true);
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        finish(false);
+      }
+    });
+    input.addEventListener('blur', () => finish(true));
+    // focused once it is in the document
+    requestAnimationFrame(() => {
+      if (input.isConnected && !done) {
+        input.focus();
+        input.select();
+      }
+    });
+    return input;
+  }
+
+  /** Optional description, PlantUML and Markdown of a step, edited in its row (saved on change). */
+  function stepDetails(t: ScenarioTabRef, scenario: ScenarioData, step: ScenarioStepData, index: number, item: HTMLElement): HTMLElement {
+    const box = inlineEditor(el('div', 'rd-scn-step-details'), item);
+    box.dataset.testid = 'scenario-step-details';
+    const field = (label: string, node: HTMLInputElement | HTMLTextAreaElement, key: 'description' | 'uml' | 'text'): HTMLElement => {
+      const wrap = el('label', 'rd-scn-step-field');
+      wrap.append(el('span', 'rd-field-label', label), node);
+      node.classList.add('rd-input');
+      node.value = step[key] ?? '';
+      node.name = `step-inline-${key}`;
+      node.addEventListener('change', () => saveStepFields(t, scenario, step, { [key]: node.value }));
+      node.addEventListener('focus', () => (item.draggable = false));
+      node.addEventListener('blur', () => (item.draggable = true));
+      return wrap;
+    };
+    const description = el('input');
+    description.type = 'text';
+    description.placeholder = 'Optional: what happens in this step';
+    const uml = el('textarea');
+    uml.rows = 3;
+    uml.placeholder = 'Optional: a PlantUML sequence diagram';
+    const text = el('textarea');
+    text.rows = 3;
+    text.placeholder = 'Optional: notes in Markdown';
+    const more = el('button', 'rd-tpl-btn rd-tpl-btn-small rd-scn-step-open-editor', 'Edit… (previews, drawing)');
+    more.type = 'button';
+    more.addEventListener('click', () => run(() => editStep(t, scenario, index, step)));
+    box.append(field('Description', description, 'description'), field('PlantUML', uml, 'uml'), field('Text (Markdown)', text, 'text'), more);
+    return box;
+  }
+
   function renderStep(t: ScenarioTabRef, scenario: ScenarioData, step: ScenarioStepData, index: number): HTMLElement {
     const item = el('li', 'rd-scn-step');
     item.dataset.stepId = step.id;
@@ -425,11 +539,33 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
     const text = el('div', 'rd-scn-step-text');
     const title = el('div', 'rd-scn-step-title');
-    const stepName = el('span', 'rd-scn-step-name', step.name);
-    stepName.title = step.name;
-    title.append(el('span', 'rd-scn-step-num', `${index + 1}.`), stepName);
+    title.append(el('span', 'rd-scn-step-num', `${index + 1}.`));
+    if (renaming === step.id) {
+      title.append(stepNameInput(t, scenario, step, index, item));
+    } else {
+      const stepName = el('span', 'rd-scn-step-name', step.name);
+      stepName.title = `${step.name} (double-click to rename)`;
+      stepName.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        renaming = step.id;
+        render();
+      });
+      title.append(stepName);
+    }
+    const detailsToggle = el('button', 'rd-scn-step-details-toggle', detailsOpen.has(step.id) ? '▾' : '▸');
+    detailsToggle.type = 'button';
+    detailsToggle.title = 'Description, UML and text of this step (optional)';
+    detailsToggle.setAttribute('aria-label', `Details of step ${index + 1}`);
+    detailsToggle.setAttribute('aria-expanded', String(detailsOpen.has(step.id)));
+    detailsToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (detailsOpen.has(step.id)) detailsOpen.delete(step.id);
+      else detailsOpen.add(step.id);
+      render();
+    });
+    title.append(detailsToggle);
     text.appendChild(title);
-    if (step.description) text.appendChild(el('div', 'rd-scn-step-desc', step.description));
+    if (step.description && !detailsOpen.has(step.id)) text.appendChild(el('div', 'rd-scn-step-desc', step.description));
     if (step.uml || step.text) {
       const badges = el('div', 'rd-scn-step-badges');
       if (step.uml) badges.appendChild(el('span', 'rd-scn-badge-small rd-scn-badge-uml', 'UML'));
@@ -451,6 +587,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     actions.addEventListener('click', (e) => e.stopPropagation());
     actions.addEventListener('keydown', (e) => e.stopPropagation());
     item.append(thumb, text, actions);
+    if (detailsOpen.has(step.id)) item.append(stepDetails(t, scenario, step, index, item));
 
     item.addEventListener('click', () => present(t, scenario, index));
     item.addEventListener('keydown', (e) => {
@@ -569,11 +706,19 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
         scenario.steps.forEach((step, index) => list.appendChild(renderStep(t, scenario, step, index)));
         body.appendChild(list);
       }
+      // order hint: the step is a snapshot, so the drawing and the object states come first
+      body.appendChild(el('p', 'rd-scn-add-hint', 'Set up the drawing and the object states first (Railway > Object State), then "+ Add step" captures them.'));
+      const addRow = el('div', 'rd-scn-add-row');
       const add = el('button', 'rd-tpl-btn rd-tpl-btn-small rd-scn-add-step', '+ Add step');
       add.type = 'button';
-      add.title = 'Add the current drawing (plus optional UML and text) as the next step';
+      add.title = 'Capture the current drawing now as the next step (name it in the list)';
       add.addEventListener('click', () => run(() => addStep(t, scenario)));
-      body.appendChild(add);
+      const addDetails = el('button', 'rd-tpl-btn rd-tpl-btn-small rd-scn-add-step-details', 'Add with details…');
+      addDetails.type = 'button';
+      addDetails.title = 'Open the step editor (name, description, PlantUML, Markdown with previews), then capture the drawing';
+      addDetails.addEventListener('click', () => run(() => addStepWithDetails(t, scenario)));
+      addRow.append(add, addDetails);
+      body.appendChild(addRow);
       item.appendChild(body);
     }
     return item;

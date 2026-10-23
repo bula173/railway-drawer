@@ -3,7 +3,9 @@
  * @brief Route drawing mode (toolbar button, Extras > Route Tool): click the start signal, then the
  *        end signal; the paths over the track topology are listed (points positions, sections,
  *        length), the chosen one is highlighted in an overlay, and "Create route" adds the route
- *        object (route-store.ts). Esc or the ✕ button leaves the mode.
+ *        object (route-store.ts). Guidance: once the start signal is picked, the signals reachable in its
+ *        direction are outlined and the others dimmed, and "No route in the signal direction" shows before
+ *        any further click. Esc cancels the picked start signal (a second Esc / the ✕ button leaves the mode).
  *
  * While active, a capture-phase listener on `#graph-container` takes the pointer events away from
  * maxGraph (no selection, no moving), so the drawing cannot change under the tool.
@@ -78,6 +80,9 @@ export class RouteTool {
   private chosen = 0;
   private overlay: GraphOverlay | null = null;
   private panel: HTMLElement | null = null;
+  /** After the start signal: the signals a route can end at, and the other signals (dimmed). */
+  private reachable: RailObject[] = [];
+  private unreachable: RailObject[] = [];
   private readonly container: HTMLElement | null;
 
   constructor(private readonly options: RouteToolOptions) {
@@ -121,6 +126,8 @@ export class RouteTool {
     this.graph = null;
     this.entry = this.exit = null;
     this.paths = [];
+    this.reachable = [];
+    this.unreachable = [];
     this.options.onChange?.(false);
   }
 
@@ -130,7 +137,29 @@ export class RouteTool {
     this.exit = null;
     this.paths = [];
     this.chosen = 0;
+    this.reachable = [];
+    this.unreachable = [];
     this.render();
+  }
+
+  /** The signals a route from the start signal can end at (after it was picked). */
+  getReachableIds(): string[] {
+    return this.reachable.map((o) => o.id);
+  }
+
+  /** Splits the other signals into reachable exits (a path in the start signal's direction) and the rest. */
+  private computeReachable(entry: RailObject): void {
+    const objects = this.objects();
+    const from = objects.find((o) => o.cell === entry.cell);
+    this.reachable = [];
+    this.unreachable = [];
+    if (!from) return;
+    const topo = buildTopology(objects);
+    for (const o of objects) {
+      if (o.kind.id !== 'signal' || o.cell === entry.cell) continue;
+      const ok = findRoutePaths(topo, from, o).paths.length > 0;
+      (ok ? this.reachable : this.unreachable).push(o);
+    }
   }
 
   /** The current paths (after both signals were picked). */
@@ -149,6 +178,7 @@ export class RouteTool {
       this.entry = signal;
       this.exit = null;
       this.paths = [];
+      this.computeReachable(signal);
       this.render();
       return;
     }
@@ -217,7 +247,9 @@ export class RouteTool {
     if (e.key === 'Escape') {
       e.preventDefault();
       e.stopPropagation();
-      this.deactivate();
+      // Esc cancels the picked start signal first, then leaves the tool
+      if (this.entry) this.reset();
+      else this.deactivate();
     }
   };
 
@@ -229,6 +261,17 @@ export class RouteTool {
     if (path) {
       children.push(svgEl('polyline', { points: pointsAttr(path.line), class: 'rd-route-hl-casing' }));
       children.push(svgEl('polyline', { points: pointsAttr(path.line), class: 'rd-route-hl' }));
+    }
+    if (this.entry && !this.exit) {
+      // guidance: reachable exit signals outlined, the others dimmed
+      for (const o of this.unreachable) {
+        const b = absoluteBounds(o.cell);
+        if (b) children.push(svgEl('rect', { x: b.x - 3, y: b.y - 3, width: b.width + 6, height: b.height + 6, class: 'rd-route-dim', 'data-signal': o.id }));
+      }
+      for (const o of this.reachable) {
+        const b = absoluteBounds(o.cell);
+        if (b) children.push(svgEl('rect', { x: b.x - 4, y: b.y - 4, width: b.width + 8, height: b.height + 8, rx: 4, class: 'rd-route-hl-target', 'data-signal': o.id }));
+      }
     }
     for (const o of [this.entry, this.exit]) {
       const b = o ? absoluteBounds(o.cell) : null;
@@ -259,7 +302,13 @@ export class RouteTool {
     const body = el('div', 'rd-route-tool-body');
     const status = el('p', 'rd-route-status');
     if (!this.entry) status.textContent = 'Click the start (entry) signal.';
-    else if (!this.exit) status.textContent = `Start: ${this.entry.id || 'signal'} — click the end (exit) signal.`;
+    else if (!this.exit && this.reachable.length === 0) {
+      status.textContent = `Start: ${this.entry.id || 'signal'} — no route in the signal direction. Pick another start signal (Esc).`;
+      status.classList.add('rd-route-none');
+    } else if (!this.exit) {
+      const n = this.reachable.length;
+      status.textContent = `Start: ${this.entry.id || 'signal'} — click ${n === 1 ? 'the highlighted exit signal' : `one of the ${n} highlighted exit signals`} (${this.reachable.map((o) => o.id).join(', ')}).`;
+    }
     else if (this.paths.length === 0) status.textContent = problem ?? 'No path.';
     else status.textContent = `${this.entry.id} → ${this.exit.id}: ${this.paths.length} path${this.paths.length === 1 ? '' : 's'}`;
     body.append(status);

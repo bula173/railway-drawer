@@ -5,7 +5,7 @@
  *        `shortcuts-help-request` (MenuController, data-action="shortcuts").
  */
 import { off, on } from '../core/event-bus';
-import { openAppModal, type AppModal } from './app-dialogs';
+import { openAppModal, otherDialogOpen, type AppModal } from './app-dialogs';
 import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
 import { STATE_SHORTCUTS } from '../railway/state-shortcuts';
 
@@ -40,6 +40,9 @@ export function shortcutSections(mac: boolean = isMacPlatform()): ShortcutSectio
         { keys: k('duplicate'), description: 'Duplicate' },
         { keys: 'Delete / Backspace', description: 'Delete the selection' },
         { keys: k('selectAll'), description: 'Select all' },
+        { keys: k('selectVertices'), description: 'Select vertices (shapes)' },
+        { keys: k('selectEdges'), description: 'Select edges (connectors)' },
+        { keys: k('selectNone'), description: 'Select none' },
         { keys: 'Esc', description: 'Clear the selection' },
         { keys: 'Arrow keys', description: 'Move the selection by 1 px' },
         { keys: 'Shift+Arrow keys', description: 'Move the selection by the grid size' },
@@ -109,6 +112,8 @@ export class ShortcutsHelpController {
   private readonly onKeyDown = (e: KeyboardEvent): void => {
     if (e.key === 'F1') {
       e.preventDefault();
+      // never on top of another open dialog (its focus trap owns the keyboard)
+      if (otherDialogOpen(this.modal?.overlay ?? null)) return;
       this.show();
     }
   };

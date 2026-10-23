@@ -188,25 +188,35 @@ export class DuplicateOffsetController {
   }
 
   private duplicateWithOffset(cells: Cell[], count: number, offset: number): void {
-    const selected = cells.filter((cell: Cell) => !cell.isEdge?.());
-    if (selected.length === 0) return;
-
-    const duplicated: Cell[] = [];
-
-    this.graph.batchUpdate(() => {
-      for (let i = 0; i < count; i++) {
-        const cloned = this.graph.cloneCells(selected);
-        // railway IDs unique (each round sees the previous one), copies lose route / railML ids
-        prepareClonedCells(this.graph.getDataModel(), cloned);
-        const imported = this.graph.importCells(cloned, offset * (i + 1), offset * (i + 1));
-        duplicated.push(...imported);
-      }
-      this.graph.setSelectionCells(duplicated);
-    });
+    duplicateCells(this.graph, cells, count, offset);
   }
 
   destroy(): void {
     // A dialog left open when the tab closes goes with the tab, with its document listener
     this.closeOpenDialog?.();
   }
+}
+
+/**
+ * Duplicates the vertices among `cells` (selected edges are skipped, like before) `count` times, `offset` px
+ * apart, in one undo step and selects the copies.
+ * Railway IDs stay unique (each round sees the previous one), copies lose route / railML ids
+ * (src/railway/clone.ts). Ctrl/Cmd+D, Edit > Duplicate and the context menu use it.
+ */
+export function duplicateCells(graph: Graph, cells: Cell[], count = 1, offset = 20): Cell[] {
+  const selected = cells.filter((cell: Cell) => !cell.isEdge?.());
+  if (selected.length === 0) return [];
+
+  const duplicated: Cell[] = [];
+
+  graph.batchUpdate(() => {
+    for (let i = 0; i < count; i++) {
+      const cloned = graph.cloneCells(selected);
+      prepareClonedCells(graph.getDataModel(), cloned);
+      const imported = graph.importCells(cloned, offset * (i + 1), offset * (i + 1));
+      duplicated.push(...imported);
+    }
+    graph.setSelectionCells(duplicated);
+  });
+  return duplicated;
 }

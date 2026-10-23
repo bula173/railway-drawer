@@ -92,9 +92,14 @@
               <div class="menu-dropdown-item" data-action="cut">Cut</div>
               <div class="menu-dropdown-item" data-action="copy">Copy</div>
               <div class="menu-dropdown-item" data-action="paste">Paste</div>
+              <div class="menu-dropdown-item" data-action="duplicate" title="Copy the selection next to it">Duplicate</div>
               <div class="menu-dropdown-item" data-action="delete">Delete</div>
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="selectAll">Select All</div>
+              <!-- src/ui/arrange-commands.ts (draw.io Edit > Select Vertices / Edges / None) -->
+              <div class="menu-dropdown-item" data-action="selectVertices">Select Vertices</div>
+              <div class="menu-dropdown-item" data-action="selectEdges">Select Edges</div>
+              <div class="menu-dropdown-item" data-action="selectNone">Select None</div>
             </div>
           </div>
 
@@ -126,9 +131,35 @@
               <div class="menu-dropdown-item" data-action="bringForward">Bring Forward</div>
               <div class="menu-dropdown-item" data-action="sendBackward">Send Backward</div>
               <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="alignLeft">Align Left</div>
-              <div class="menu-dropdown-item" data-action="alignCenter">Align Center</div>
-              <div class="menu-dropdown-item" data-action="alignRight">Align Right</div>
+              <!-- like draw.io's Arrange menu; src/ui/arrange-commands.ts, AlignmentController (one undo step each) -->
+              <div class="menu-submenu" data-submenu="align">
+                <div class="menu-submenu-title">Align</div>
+                <div class="menu-submenu-list">
+                  <div class="menu-dropdown-item" data-action="alignLeft">Left</div>
+                  <div class="menu-dropdown-item" data-action="alignCenter">Center</div>
+                  <div class="menu-dropdown-item" data-action="alignRight">Right</div>
+                  <div class="rd-sep"></div>
+                  <div class="menu-dropdown-item" data-action="alignTop">Top</div>
+                  <div class="menu-dropdown-item" data-action="alignMiddle">Middle</div>
+                  <div class="menu-dropdown-item" data-action="alignBottom">Bottom</div>
+                </div>
+              </div>
+              <div class="menu-submenu" data-submenu="distribute">
+                <div class="menu-submenu-title">Distribute</div>
+                <div class="menu-submenu-list">
+                  <div class="menu-dropdown-item" data-action="distributeHorizontally">Horizontally</div>
+                  <div class="menu-dropdown-item" data-action="distributeVertically">Vertically</div>
+                </div>
+              </div>
+              <div class="rd-sep"></div>
+              <div class="menu-dropdown-item" data-action="group">Group</div>
+              <div class="menu-dropdown-item" data-action="ungroup">Ungroup</div>
+              <div class="rd-sep"></div>
+              <div class="menu-dropdown-item" data-action="rotate90">Rotate 90°</div>
+              <div class="menu-dropdown-item" data-action="flipHorizontal">Flip Horizontal</div>
+              <div class="menu-dropdown-item" data-action="flipVertical">Flip Vertical</div>
+              <div class="rd-sep"></div>
+              <div class="menu-dropdown-item" data-action="toggleLock" title="Lock the selection against moving, resizing and editing (or unlock it)">Lock/Unlock</div>
             </div>
           </div>
 
@@ -322,10 +353,10 @@
         <div id="rightpanel-container" class="right-panel">
           <!-- Properties | Data | Checks | Scenarios switch (src/scenarios/scenarios-panel.ts installRightPanelSwitch) -->
           <div class="right-panel-switch" role="tablist" aria-label="Right panel">
-            <button type="button" class="right-panel-switch-btn active" role="tab" aria-selected="true" aria-controls="property-content" data-right-panel="properties">Properties</button>
+            <button type="button" class="right-panel-switch-btn active" role="tab" aria-selected="true" aria-controls="property-content" data-right-panel="properties" title="Format and properties of the selection">Properties</button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-data-panel" data-right-panel="data" tabindex="-1" title="Railway object data of the selection">Data</button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-checks-panel" data-right-panel="checks" tabindex="-1" title="Railway data checks and reports">Checks<span class="rd-rw-badge" hidden></span></button>
-            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="scenarios-panel" data-right-panel="scenarios" tabindex="-1">Scenarios</button>
+            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="scenarios-panel" data-right-panel="scenarios" tabindex="-1" title="Scenarios: step-by-step states of the drawing">Scenarios</button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="ai-panel" data-right-panel="ai" tabindex="-1" title="AI assistant: describe the drawing (your own Anthropic API key, or an MCP client)">AI</button>
           </div>
           <!-- AI assistant (src/ai, lazy chunk) -->

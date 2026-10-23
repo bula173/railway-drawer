@@ -126,10 +126,15 @@ test('Railway Script: text draws the layout, edits flow both ways, errors are li
 
   // ---- drawing -> text: drag S1 to the right with the mouse; the text gets its new km
   const from = await centreOnPage(page, 'signal:S1');
+  // the script was drawn into an empty tab, so it opened zoomed in (railway-zoom.ts): 100 drawing units
+  const zoom = await page.evaluate(async () => {
+    const registry = await import('/src/services/service-registry.ts' as string);
+    return registry.ServiceRegistry.getTabManager().getActiveTab().graph.view.scale as number;
+  });
   await page.mouse.move(from.x, from.y);
   await page.mouse.down();
-  await page.mouse.move(from.x + 40, from.y, { steps: 4 });
-  await page.mouse.move(from.x + 100, from.y, { steps: 6 });
+  await page.mouse.move(from.x + 40 * zoom, from.y, { steps: 4 });
+  await page.mouse.move(from.x + 100 * zoom, from.y, { steps: 6 });
   await page.mouse.up();
   await expect.poll(async () => Number(/id: S1, track: T1, at: ([\d.]+)/.exec(await text.inputValue())?.[1] ?? 0)).toBeGreaterThan(0.45);
   objs = await objects(page);

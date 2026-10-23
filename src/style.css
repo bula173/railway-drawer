@@ -734,6 +734,22 @@ body.rd-col-resizing {
   cursor: pointer;
 }
 
+/* Icons only in the compact strip (left-panel-tabs.ts): inactive tabs icon-only, the active one its label */
+.left-panel-tab-icon {
+  display: none;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-icon {
+  display: inline-block;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-label > span {
+  display: none;
+}
+.rd-tabs-compact .left-panel-tab-btn:not(.active) .left-panel-tab-label {
+  padding: 6px 6px 4px;
+}
+
 .left-panel-tab-btn .tab-close-btn {
   align-self: stretch;
   min-width: 24px;
@@ -2372,4 +2388,17 @@ svg.mxGraph .mxHandle {
 }
 .rd-ctx-radio[aria-checked="true"] {
   font-weight: 600;
+}
+
+/* Diagram labels are not text-selectable (a double-click edits the label / railway ID instead of selecting the
+   HTML label's words); the in-place editors are outside the SVG */
+.rd-graph-canvas svg,
+.rd-graph-canvas svg * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* In-place railway ID editor (text-editor.ts startIdEditing) */
+.rd-id-editor[aria-invalid='true'] {
+  border-color: var(--rd-danger-solid) !important;
 }

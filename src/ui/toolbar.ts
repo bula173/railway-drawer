@@ -71,6 +71,12 @@ export const TOOLBAR_ICONS: Readonly<Record<string, string>> = {
   toFront: '<path d="M4 4h16"/><path d="M12 21V9"/><path d="m7 14 5-5 5 5"/>',
   toBack: '<path d="M4 20h16"/><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/>',
   closePath: '<path d="M5 18 9 6l7 3 3 9Z"/>',
+  // left-panel tabs (left-panel-tabs.ts compact strip)
+  shapes: '<rect x="3" y="3" width="8" height="8" rx="1"/><circle cx="17" cy="7" r="4"/><path d="M7 13 3 21h8Z"/><rect x="13" y="13" width="8" height="8" rx="4"/>',
+  templates: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/>',
+  uml: '<rect x="3" y="3" width="6" height="4" rx="1"/><rect x="15" y="3" width="6" height="4" rx="1"/><path d="M6 7v14M18 7v14"/><path d="M6 11h12M18 16H6"/><path d="m15 9 3 2-3 2M9 14l-3 2 3 2"/>',
+  script: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4"/><path d="m14 5-4 14"/>',
 };
 
 /** An `<svg>` icon (aria-hidden) for `name`, or null when unknown. */

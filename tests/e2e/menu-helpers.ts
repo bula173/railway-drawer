@@ -33,13 +33,16 @@ export async function clickMenuItem(page: Page, menu: string, action: string): P
  */
 export async function openLeftTab(page: Page, tab: string): Promise<void> {
   const button = page.locator(`.left-panel-tab-btn[data-tab="${tab}"]`);
-  if (!(await button.isVisible())) {
-    await page.locator('.left-panel-tab-more').click();
-    await page.locator(`.left-panel-overflow-item[data-tab="${tab}"]`).click();
-  } else {
-    await button.click();
-  }
-  await expect(button).toHaveClass(/\bactive\b/);
+  // the strip is re-laid out while the app settles (panel width, compact icons): retry with the current layout
+  await expect(async () => {
+    if (await button.isVisible()) {
+      await button.click({ timeout: 2000 });
+    } else {
+      await page.locator('.left-panel-tab-more').click({ timeout: 2000 });
+      await page.locator(`.left-panel-overflow-item[data-tab="${tab}"]`).click({ timeout: 2000 });
+    }
+    await expect(button).toHaveClass(/\bactive\b/, { timeout: 2000 });
+  }).toPass();
 }
 
 /** The labels of the left-panel tabs that are open (in the row or in the "»" menu), in order. */

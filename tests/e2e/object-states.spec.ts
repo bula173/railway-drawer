@@ -286,7 +286,7 @@ test('route Set / Occupy / Release, Railway menu, legend, scenario diff, dark th
       await rightClick(page, 450, 120);
       await pickState(page, 'aspect', 'proceed');
     }
-    await panel.locator('.rd-scn-add-step').click();
+    await panel.locator('.rd-scn-add-step-details').click();
     const editor = page.locator('[data-testid="scenario-step-editor"]');
     await editor.locator('input[name="template-name"]').fill(name);
     await editor.locator('.rd-tpl-btn-primary').click();

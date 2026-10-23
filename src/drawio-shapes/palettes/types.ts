@@ -21,6 +21,8 @@ export interface PaletteEntry {
   title: string;
   /** draw.io search tags, as Sidebar.addEntry receives them. */
   tags?: string;
+  /** Short tile caption of captioned palettes (palette-captions.ts); default: the title. Display only. */
+  caption?: string;
   /** vertex/edge: a single cell built from style/value/size; cells: insert `xml`. */
   kind: 'vertex' | 'edge' | 'cells';
   width: number;

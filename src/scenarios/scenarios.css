@@ -273,10 +273,74 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.rd-scn-add-step {
-  width: 100%;
-  min-height: 24px;
+/* One-click "+ Add step" next to "Add with details…" (the step editor dialog) */
+.rd-scn-add-row {
+  display: flex;
+  gap: 4px;
   margin-top: 2px;
+}
+.rd-scn-add-step {
+  flex: 1 1 auto;
+  min-height: 24px;
+}
+.rd-scn-add-step-details {
+  flex: 0 0 auto;
+  min-height: 24px;
+}
+.rd-scn-add-hint {
+  margin: 6px 2px 4px;
+  color: var(--rd-text-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+/* Inline step editing: the name in the row, optional details (description, UML, text) below it */
+.rd-scn-step {
+  flex-wrap: wrap;
+}
+.rd-scn-step-name-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 22px;
+  padding: 1px 4px;
+  font: inherit;
+  font-weight: 500;
+}
+.rd-scn-step-details-toggle {
+  flex: 0 0 auto;
+  min-width: 24px;
+  min-height: 22px;
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: var(--rd-text-muted);
+  cursor: pointer;
+}
+.rd-scn-step-details-toggle:hover {
+  color: var(--rd-text);
+}
+.rd-scn-step-details {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 2px 2px;
+  border-top: 1px solid var(--rd-border);
+  cursor: default;
+}
+.rd-scn-step-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rd-scn-step-field textarea {
+  min-height: 44px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11px;
+  resize: vertical;
+}
+.rd-scn-step-open-editor {
+  align-self: flex-start;
+  min-height: 24px;
 }
 .rd-scn-new {
   min-height: 24px;

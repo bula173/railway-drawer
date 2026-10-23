@@ -59,56 +59,56 @@
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 100,
     "h": 20,
-    "title": "Turnout 1:9 Left (toe left)",
+    "title": "Points 1:9 Left (toe left)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 left lewy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"80\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 100,
     "h": 20,
-    "title": "Turnout 1:9 Right (toe left)",
+    "title": "Points 1:9 Right (toe left)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 right prawy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"80\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 100,
     "h": 20,
-    "title": "Turnout 1:9 Right (toe right)",
+    "title": "Points 1:9 Right (toe right)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 right prawy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"80\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 100,
     "h": 20,
-    "title": "Turnout 1:9 Left (toe right)",
+    "title": "Points 1:9 Left (toe right)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:9 left lewy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 120,
     "h": 20,
-    "title": "Turnout 1:12 Left (toe left)",
+    "title": "Points 1:12 Left (toe left)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 left lewy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 120,
     "h": 20,
-    "title": "Turnout 1:12 Right (toe left)",
+    "title": "Points 1:12 Right (toe left)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 right prawy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"right\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"100\" y=\"20\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 120,
     "h": 20,
-    "title": "Turnout 1:12 Right (toe right)",
+    "title": "Points 1:12 Right (toe right)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 right prawy"
   },
   {
     "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;object label=\"\" rdKind=\"track\" id=\"2\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"0\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"120\" y=\"0\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;object label=\"\" rdKind=\"points\" rdHand=\"left\" rdPosition=\"normal\" id=\"3\"&gt;&lt;mxCell style=\"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"100\" y=\"0\" as=\"sourcePoint\"/&gt;&lt;mxPoint x=\"20\" y=\"20\" as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/object&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
     "w": 120,
     "h": 20,
-    "title": "Turnout 1:12 Left (toe right)",
+    "title": "Points 1:12 Left (toe right)",
     "tags": "points switch turnout zwrotnica rozjazd track tor 1:12 left lewy"
   },
   {

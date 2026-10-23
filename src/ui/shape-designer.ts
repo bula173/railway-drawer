@@ -12,7 +12,7 @@
  */
 
 import { Graph } from '@maxgraph/core';
-import { confirmDialog } from './app-dialogs';
+import { confirmDialog, otherDialogOpen } from './app-dialogs';
 import { globalNotificationManager } from './notification';
 import { applyInlineIcons } from './toolbar';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
@@ -64,7 +64,17 @@ export class ShapeDesignerController {
     document.body.appendChild(this.modal);
 
     this.setupModalHandlers(editingShape);
+    window.removeEventListener('keydown', this.onKeyDown, true);
+    window.addEventListener('keydown', this.onKeyDown, true);
   }
+
+  /** Esc closes the designer (not while a confirm dialog sits on top of it). */
+  private readonly onKeyDown = (e: KeyboardEvent): void => {
+    if (e.key !== 'Escape' || !this.modal || otherDialogOpen(this.modal)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    this.closeDesigner();
+  };
 
   /**
    * @brief Create modal HTML structure
@@ -72,6 +82,9 @@ export class ShapeDesignerController {
   private createModalHTML(editingShape?: CustomShape): HTMLElement {
     const modal = document.createElement('div');
     modal.className = 'shape-designer-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Shape designer');
     modal.innerHTML = `
       <div class="shape-designer-overlay"></div>
       <div class="shape-designer-panel">
@@ -1773,6 +1786,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
    * @brief Close designer modal
    */
   private closeDesigner(): void {
+    window.removeEventListener('keydown', this.onKeyDown, true);
     if (this.modal) {
       this.modal.remove();
       this.modal = null;

@@ -17,6 +17,7 @@
  * @version 0.6.0
  */
 
+import { selectEdges, selectNone, selectVertices } from './ui/arrange-commands';
 import '@maxgraph/core/css/common.css';
 import './style.css';
 import type { CellStyle } from '@maxgraph/core';
@@ -295,10 +296,17 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
     activeTab.graphCommandService.paste();
   }
-  if (mod && key === 'a') {
+  if (mod && key === 'a' && !e.shiftKey) {
     e.preventDefault();
     // Same command as Edit > Select All (draw.io: the layer's cells and their descendants)
     activeTab.graphCommandService.selectAll();
+  }
+  // draw.io: Ctrl/Cmd+Shift+A = Select None, +I = Select Vertices, +E = Select Edges (Edit menu, arrange-commands.ts)
+  if (mod && e.shiftKey && !e.altKey && (key === 'a' || key === 'i' || key === 'e')) {
+    e.preventDefault();
+    if (key === 'a') selectNone(activeTab.graph);
+    else if (key === 'i') selectVertices(activeTab.graph);
+    else selectEdges(activeTab.graph);
   }
   if ((e.key === 'Delete' || e.key === 'Backspace') && activeTab.graph.getSelectionCount() > 0) {
     e.preventDefault();

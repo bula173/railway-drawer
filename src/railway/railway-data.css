@@ -14,11 +14,20 @@
   color: var(--text, #333);
 }
 
-/* Four switch buttons in the 280px panel */
+/* Five switch buttons in the 280px panel: each keeps its own padding (labels never run together, e.g.
+   "ChecksScenarios"); in a narrower panel a label is cut with an ellipsis (the title names it) */
+.right-panel-switch {
+  gap: 1px;
+  overflow: hidden;
+}
 .right-panel-switch-btn {
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 12px;
-  padding: 0 2px;
+  padding: 0 6px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .rd-rw-badge {
   display: inline-block;

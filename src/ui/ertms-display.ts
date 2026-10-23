@@ -2,7 +2,8 @@
  * @file ertms-display.ts
  * @brief Display-time clean-up of the ERTMS library palette (public/libraries/ertms.xml stays
  *        byte-identical: it is the draw.io compatibility fixture): titles without stray spaces or
- *        typos ("SIgnal Right 4" -> "Signal Right 4", "Line " -> "Line"), and railway search tags in
+ *        typos ("SIgnal Right 4" -> "Signal Right 4", "Line " -> "Line"; the dashed one of the two "Line" entries
+ *        -> "Dashed Line"; "Point Left" -> "Points Left"), short tile captions, and railway search tags in
  *        English and Polish (points = "switch", "turnout", "zwrotnica"; signal = "semafor", ...).
  *
  * Wraps the palette source given to the palette views in main-editor.ts; the kinds assigned on
@@ -10,16 +11,28 @@
  */
 import type { LazyPaletteSource, PaletteDef, PaletteEntry } from './drawio-palette';
 import { kindForLibraryTitle } from '../railway/catalogue';
+import { withShortCaption } from './palette-captions';
 
 /** Search words of the points (turnout) entries, besides their title. */
-export const POINTS_SEARCH_TAGS = 'points switch turnout zwrotnica';
+export const POINTS_SEARCH_TAGS = 'points switch turnout zwrotnica rozjazd';
 
-/** Title as shown: trimmed (\s also matches non-breaking spaces), single spaces, "SIgnal" -> "Signal". */
+/**
+ * Title as shown: trimmed (\s also matches non-breaking spaces), single spaces, "SIgnal" -> "Signal", EN
+ * "Points" like the catalogue ("Point Left" -> "Points Left"; kindForLibraryTitle takes both).
+ */
 export function ertmsDisplayTitle(title: string): string {
   return title
     .replace(/\s+/g, ' ')
     .trim()
-    .replace(/\b([A-Z])([A-Z])([a-z]{2,})\b/g, (_m, first: string, second: string, rest: string) => `${first}${second.toLowerCase()}${rest}`);
+    .replace(/\b([A-Z])([A-Z])([a-z]{2,})\b/g, (_m, first: string, second: string, rest: string) => `${first}${second.toLowerCase()}${rest}`)
+    .replace(/^Point (Left|Right)$/, 'Points $1');
+}
+
+/** The library has two entries titled "Line": the dashed thin one is shown as "Dashed Line". */
+function distinctLineTitle(entry: PaletteEntry, title: string): string {
+  if (title !== 'Line') return title;
+  const body = `${entry.style ?? ''} ${entry.xml ?? ''}`;
+  return /dashed=1/.test(body) ? 'Dashed Line' : title;
 }
 
 /**
@@ -71,9 +84,9 @@ export function railwaySearchTags(title: string): string {
 }
 
 export function ertmsDisplayEntry(entry: PaletteEntry): PaletteEntry {
-  const title = ertmsDisplayTitle(entry.title);
+  const title = distinctLineTitle(entry, ertmsDisplayTitle(entry.title));
   const tags = [entry.tags, railwaySearchTags(title)].filter(Boolean).join(' ');
-  return { ...entry, title, ...(tags ? { tags } : {}) };
+  return withShortCaption({ ...entry, title, ...(tags ? { tags } : {}) });
 }
 
 /** The same palette source with cleaned titles and the extra search tags. */

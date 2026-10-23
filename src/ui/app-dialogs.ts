@@ -254,3 +254,10 @@ export function showAboutDialog(): AppModal {
   close.focus();
   return modal;
 }
+
+/** An open modal dialog (app dialogs, template / step editors, share, More shapes) other than `own`. */
+export function otherDialogOpen(own: Element | null): boolean {
+  const open = Array.from(document.querySelectorAll<HTMLElement>('[aria-modal="true"], .rd-tpl-modal, .rd-dp-menu[role="dialog"]'))
+    .filter((el) => !el.hidden && el.isConnected && el.getClientRects().length > 0);
+  return open.some((el) => !own || !own.contains(el));
+}

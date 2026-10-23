@@ -267,7 +267,7 @@ describe('scenarios with tabs', () => {
     const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation((k: string) => {
       if (isAutosaveKey(k)) throw new DOMException('full', 'QuotaExceededError');
     });
-    (panel.querySelector('.rd-scn-add-step') as HTMLButtonElement).click();
+    (panel.querySelector('.rd-scn-add-step-details') as HTMLButtonElement).click();
     await answerDialog('big');
     expect(panel.querySelectorAll('.rd-scn-step')).toHaveLength(1);
     expect(notify.warning).toHaveBeenCalledWith(expect.stringContaining('browser storage is full'));
@@ -309,7 +309,7 @@ describe('scenarios with tabs', () => {
     // 3 steps, the drawing changes in between
     for (const [i, label] of ['A', 'B', 'C'].entries()) {
       insert(tab, label, i * 100);
-      (panel.querySelector('.rd-scn-add-step') as HTMLButtonElement).click();
+      (panel.querySelector('.rd-scn-add-step-details') as HTMLButtonElement).click();
       await answerDialog(`Krok ${label}`);
     }
     const stepNames = (): string[] => Array.from(panel.querySelectorAll('.rd-scn-step-name')).map((n) => n.textContent ?? '');

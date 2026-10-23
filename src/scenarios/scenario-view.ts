@@ -482,6 +482,11 @@ export class ScenarioViewer {
     const graph = new Graph(this.host!);
     // read-only: rendering compat as in the tabs + stencil autoload (setup-graph.ts)
     setupGraph(graph, 'view');
+    // Each step is shown with setRoot: maxGraph's default reset the view to scale 1 / translate 0 on a root
+    // change, after mount() had copied the live zoom and translate, while the live scroll position was kept, so
+    // the drawing lay outside the visible area (the reported blank step view) whenever the live view was not
+    // at the origin
+    graph.resetViewOnRootChange = false;
     this.graph = graph;
     return graph;
   }

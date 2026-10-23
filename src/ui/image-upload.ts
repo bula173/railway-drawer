@@ -18,21 +18,34 @@ export class ImageUploadController {
     }
   }
 
-  private openUploadDialog(): void {
-    if (this.modal) {
-      (this.modal as HTMLElement).style.display = 'flex';
-      return;
-    }
+  // Esc closes the dialog; bound only while it is shown (listener capture rule: bound after construction)
+  private readonly onKeyDown = (e: KeyboardEvent): void => {
+    if (e.key !== 'Escape' || !this.modal || this.modal.style.display === 'none') return;
+    e.preventDefault();
+    e.stopPropagation();
+    this.hideModal();
+  };
 
-    this.createUploadModal();
+  private openUploadDialog(): void {
+    if (!this.modal) this.createUploadModal();
     if (this.modal) {
       (this.modal as HTMLElement).style.display = 'flex';
+      window.removeEventListener('keydown', this.onKeyDown, true);
+      window.addEventListener('keydown', this.onKeyDown, true);
     }
+  }
+
+  private hideModal(): void {
+    if (this.modal) this.modal.style.display = 'none';
+    window.removeEventListener('keydown', this.onKeyDown, true);
   }
 
   private createUploadModal(): void {
     this.modal = document.createElement('div') as HTMLDivElement;
     this.modal.id = 'image-upload-modal';
+    this.modal.setAttribute('role', 'dialog');
+    this.modal.setAttribute('aria-modal', 'true');
+    this.modal.setAttribute('aria-label', 'Upload Custom Shape Image');
     this.modal.style.cssText = `
       display: flex;
       position: fixed;
@@ -197,11 +210,7 @@ export class ImageUploadController {
       cursor: pointer;
       font-weight: 600;
     `;
-    closeBtn.addEventListener('click', () => {
-      if (this.modal) {
-        (this.modal as HTMLElement).style.display = 'none';
-      }
-    });
+    closeBtn.addEventListener('click', () => this.hideModal());
     buttonContainer.appendChild(closeBtn);
 
     modalContent.appendChild(buttonContainer);
@@ -210,9 +219,7 @@ export class ImageUploadController {
 
     // Close on background click
     this.modal!.addEventListener('click', (e) => {
-      if (e.target === this.modal) {
-        (this.modal as HTMLElement).style.display = 'none';
-      }
+      if (e.target === this.modal) this.hideModal();
     });
   }
 
@@ -336,6 +343,7 @@ export class ImageUploadController {
   }
 
   destroy(): void {
+    window.removeEventListener('keydown', this.onKeyDown, true);
     if (this.modal?.parentElement) {
       this.modal.parentElement.removeChild(this.modal);
     }

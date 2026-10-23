@@ -501,7 +501,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     thumb.style.width = `${THUMB_SIZE}px`;
     thumb.style.height = `${THUMB_SIZE}px`;
     item.appendChild(thumb);
-    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.title));
+    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.caption ?? entry.title));
     pendingThumbs.set(thumb, entry);
     if (observer) observer.observe(thumb);
     else renderThumb(thumb);
@@ -784,6 +784,17 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     if (!menu.hidden && !menu.contains(evt.target as Node) && evt.target !== moreBtn) menu.hidden = true;
   };
   document.addEventListener('mousedown', closeMenu);
+  // Esc closes the More shapes dialog like every other dialog (capture: before the shortcut dispatcher clears the
+  // selection); focus goes back to its button when it was inside
+  const escMenu = (evt: KeyboardEvent): void => {
+    if (evt.key !== 'Escape' || menu.hidden || evt.defaultPrevented) return;
+    evt.preventDefault();
+    evt.stopPropagation();
+    const hadFocus = menu.contains(document.activeElement);
+    menu.hidden = true;
+    if (hadFocus || document.activeElement === document.body) moreBtn.focus();
+  };
+  window.addEventListener('keydown', escMenu, true);
 
   // ------------------------------------------------------------------ user libraries
 
@@ -1132,6 +1143,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     hidePreview();
     observer?.disconnect();
     document.removeEventListener('mousedown', closeMenu);
+    window.removeEventListener('keydown', escMenu, true);
     if (options.dropTarget) {
       options.dropTarget.removeEventListener('dragover', onDragOver);
       options.dropTarget.removeEventListener('drop', onDrop, true);

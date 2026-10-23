@@ -72,6 +72,7 @@ import { installCellLocking } from './cell-lock';
 import { installGroupBackgroundHit, installPressToMove, installRailwaySplitRules } from './canvas-interaction';
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { installCanvasScroll, uninstallCanvasScroll } from './canvas-scroll';
+import { installMultiSelectionBox } from './multi-selection-box';
 import {
   installConnectionConstraints,
   installDrawioConnectionStart,
@@ -129,6 +130,8 @@ export const GRAPH_INSTALLERS: readonly GraphInstaller[] = [
       graph.setEnabled(false);
       graph.setTooltips(false);
       graph.gridEnabled = false;
+      // no folding icons on a picture (maxGraph shows them on every group); own copy, the options object is shared
+      graph.options = { ...graph.options, foldingEnabled: false };
     },
   },
   // ---- rendering (every profile): styles and draw.io rendering compatibility
@@ -195,6 +198,8 @@ export const GRAPH_INSTALLERS: readonly GraphInstaller[] = [
     installCanvasScroll(graph);
     return () => uninstallCanvasScroll(graph);
   } },
+  // a large selection (an inserted template) gets one bounding box instead of per-cell handles (draw.io)
+  { name: 'multi-selection-box', profiles: EDITOR, install: (graph) => installMultiSelectionBox(graph) },
   // ---- connections (formerly the tab's ConnectionHandler constructor, same order)
   { name: 'symbol-group-connect', profiles: EDITOR, install: () => installGlobalGraphPatches() },
   { name: 'connection-constraints', profiles: EDITOR, install: installConnectionConstraints },

@@ -222,7 +222,7 @@ test.describe('dark theme: shapes are readable', () => {
     ids.signal = await insertFromPalette(page, 'ertms', 'Signal Left 3');
     ids.balise = await insertFromPalette(page, 'ertms', 'Single Balise Right');
     ids.track = await insertFromPalette(page, 'ertms', 'Track');
-    ids.point = await insertFromPalette(page, 'ertms', 'Point Left');
+    ids.point = await insertFromPalette(page, 'ertms', 'Points Left');
     ids.train = await insertFromPalette(page, 'ertms', 'Train');
     ids.text = await insertFromPalette(page, 'general', 'Text');
     ids.rectangle = await insertFromPalette(page, 'general', 'Rectangle');
@@ -304,7 +304,7 @@ test.describe('dark theme: shapes are readable', () => {
       }
       return [...colours];
     });
-    // the handles' black outline sits on their green fill; the fill / dashed border carry the contrast
+    // the handles' white rim sits on their blue fill; the fill / dashed border carry the contrast
     const visibleFeedback = feedback.filter((c) => c !== 'stroke:#000000' && c !== 'stroke:#ffffff');
     expect(visibleFeedback.length).toBeGreaterThan(0);
     const fbRatios = await contrastIn(page, visibleFeedback.map((c) => [c.split(':')[1], CANVAS] as [string, string]));

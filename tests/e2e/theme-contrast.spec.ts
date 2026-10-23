@@ -372,12 +372,20 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.check('left: Templates tab', '#leftpanel-container');
   await openLeftTab(page, 'layers');
   await a.check('left: Layers tab', '#leftpanel-container');
-  // The tab strip's » overflow menu and the toolbar's Align / distribute dropdown
+  // The compact tab strip (inactive tabs as icons) fits the default panel; a narrow panel (keyboard resize) puts
+  // the rest behind the » overflow menu. Then the toolbar's Align / distribute dropdown
+  await expect(page.locator('.left-panel-tabbar.rd-tabs-compact')).toBeVisible();
+  await a.check('left: compact tab strip', '.left-panel-tabbar');
+  const leftHandle = page.locator('#leftpanel-container > .panel-resize-handle');
+  await leftHandle.focus();
+  await page.keyboard.press('Shift+ArrowLeft');
   await page.locator('.left-panel-tab-more').click();
   await expect(page.locator('.left-panel-overflow-menu')).toBeVisible();
   await a.check('left: tab overflow (») menu', '#leftpanel-container');
   await a.shot('tab-overflow');
   await page.keyboard.press('Escape');
+  await leftHandle.focus();
+  await page.keyboard.press('Shift+ArrowRight');
   await page.locator('#btn-align').click();
   await expect(page.locator('#align-menu')).toBeVisible();
   await page.locator('#btn-align-middle').hover();
@@ -410,7 +418,7 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.locator('#scenarios-panel .rd-scn-new').click();
   await a.check('scenario name dialog', '.rd-tpl-modal');
   await fillTemplateDialog(page, 'Wjazd pociągu');
-  await page.locator('#scenarios-panel .rd-scn-add-step').click();
+  await page.locator('#scenarios-panel .rd-scn-add-step-details').click();
   const editor = page.locator('.rd-scn-editor');
   await expect(editor).toBeVisible();
   await editor.locator('input[name="template-name"]').fill('Krok 1');
@@ -423,6 +431,17 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await expect(editor).toHaveCount(0);
   await page.locator('#scenarios-panel .rd-scn-toggle').first().click().catch(() => undefined);
   await a.check('right: Scenarios panel (1 scenario, 1 step)', '#rightpanel-container');
+  // one-click "+ Add step": inline name editor, then the row's optional details (ux batch 3)
+  if (!(await page.locator('#scenarios-panel .rd-scn-add-step').isVisible())) await page.locator('#scenarios-panel .rd-scn-toggle').first().click();
+  await page.locator('#scenarios-panel .rd-scn-add-step').click();
+  await expect(page.getByTestId('scenario-step-name-input')).toBeFocused();
+  await a.check('scenario step: inline name editor', '#scenarios-panel .rd-scn-steps');
+  await page.keyboard.press('Enter');
+  await page.locator('#scenarios-panel .rd-scn-step-details-toggle').last().click();
+  await expect(page.getByTestId('scenario-step-details')).toBeVisible();
+  await a.check('scenario step: inline details', '#scenarios-panel .rd-scn-step-details');
+  await a.shot('step-inline');
+  await page.locator('#scenarios-panel .rd-scn-step-details-toggle').last().click();
   // the scenario's "⋯" action menu
   await page.locator('#scenarios-panel .rd-scn-head .rd-scn-more').first().click();
   await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toBeVisible();
@@ -651,6 +670,17 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.check('Route tool panel (start)', '.rd-route-tool');
   await clickRailwayObject(page, 'S1');
   await expect(tool.locator('.rd-route-status')).toContainText('Start: S1');
+  // guidance (ux batch 3): reachable exits outlined in the overlay, the panel names them
+  await expect(page.locator('.rd-route-overlay .rd-route-hl-target')).toHaveCount(2);
+  await a.check('Route tool panel (reachable exits)', '.rd-route-tool');
+  await a.shot('route-guidance');
+  // no route in the signal direction (S3 is the last signal of its track), shown before a second click
+  await page.keyboard.press('Escape');
+  await clickRailwayObject(page, 'S3');
+  await expect(tool.locator('.rd-route-status.rd-route-none')).toContainText('no route in the signal direction');
+  await a.check('Route tool panel (no route)', '.rd-route-tool');
+  await page.keyboard.press('Escape');
+  await clickRailwayObject(page, 'S1');
   await clickRailwayObject(page, 'S3');
   await expect(tool.locator('.rd-route-path')).toContainText('W1 reverse');
   await a.check('Route tool panel (path, Create)', '.rd-route-tool');
@@ -680,7 +710,7 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await fillTemplateDialog(page, 'Przebieg');
   for (const name of ['Start', 'Move']) {
     if (name === 'Move') await inGraph(page, "graph.moveCells([graph.getDataModel().getCell('s2')], 0, 40);");
-    await panel.locator('.rd-scn-add-step').click();
+    await panel.locator('.rd-scn-add-step-details').click();
     const editor = page.locator('[data-testid="scenario-step-editor"]');
     await editor.locator('input[name="template-name"]').fill(name);
     await editor.locator('.rd-tpl-btn-primary').click();

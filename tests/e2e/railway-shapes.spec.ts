@@ -103,15 +103,15 @@ test('railway libraries: sections, Polish semafor with lamp aspects, search, tur
     section(page, id).locator('.rd-dp-item:not([hidden])').evaluateAll((n) => n.map((e) => (e as HTMLElement).title));
   const search = page.locator(`${PALETTE} .rd-dp-search`);
   await search.fill('tarcza');
-  await expect.poll(() => hits('rail-pl')).toContain('Tarcza manewrowa Tm prawy');
-  expect(await hits('rail-pl')).toContain('Tarcza ostrzegawcza świetlna To lewy');
+  await expect.poll(() => hits('rail-pl')).toContain('Tarcza manewrowa Tm prawa');
+  expect(await hits('rail-pl')).toContain('Tarcza ostrzegawcza świetlna To lewa');
   await search.fill('marker board');
   await expect.poll(() => hits('etcs-extra')).toEqual(['ETCS Stop Marker Right', 'ETCS Stop Marker Left', 'ETCS Location Marker Right', 'ETCS Location Marker Left']);
   await search.fill('');
 
   // Turnout set from Track layout: a track and a points leg with generated IDs; railML export
   await inGraph(page, 'graph.removeCells(graph.getChildCells(graph.getDefaultParent()), true);');
-  const turnout = await insert(page, 'track-layout', 'Turnout 1:9 Left (toe left)');
+  const turnout = await insert(page, 'track-layout', 'Points 1:9 Left (toe left)');
   const parts = await Promise.all(turnout.map((id) => info(page, id)));
   expect(parts.map((p) => [p.kind, p.attrs.rdId])).toEqual([['track', 'T1'], ['points', 'W1']]);
   expect(parts[1].attrs).toMatchObject({ rdHand: 'left', rdPosition: 'normal' });

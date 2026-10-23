@@ -40,6 +40,53 @@
   color: var(--rd-text-muted);
   line-height: 1.4;
 }
+.rd-ai-empty-text {
+  margin: 0 0 6px;
+}
+.rd-ai-try {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+.rd-ai-try-label {
+  font-weight: 600;
+  color: var(--rd-text-muted);
+}
+/* example prompt chips: pills, clearly buttons (not the composer's input look) */
+.rd-ai-btn.rd-ai-chip {
+  min-height: 24px;
+  padding: 2px 10px;
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 12px;
+  background: var(--rd-surface-2);
+  color: var(--rd-link);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
+  cursor: pointer;
+}
+.rd-ai-btn.rd-ai-chip:hover {
+  background: var(--rd-hover);
+}
+/* "About your key" disclosure (button + the privacy note) */
+.rd-ai-btn.rd-ai-disclosure {
+  align-self: flex-start;
+  min-height: 24px;
+  padding: 2px 0;
+  border: none;
+  background: none;
+  color: var(--rd-link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.rd-ai-btn.rd-ai-disclosure::before {
+  content: '▸ ';
+}
+.rd-ai-btn.rd-ai-disclosure[aria-expanded='true']::before {
+  content: '▾ ';
+}
 
 .rd-ai-msg {
   padding: 6px 8px;

@@ -109,7 +109,7 @@ describe('scenario steps with UML and text', () => {
     await newScenario(panel, 'Wjazd');
 
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'A', 10, 10, 60, 30);
-    (panel.querySelector('.rd-scn-add-step') as HTMLButtonElement).click();
+    (panel.querySelector('.rd-scn-add-step-details') as HTMLButtonElement).click();
     await fillEditor({
       name: 'Krok 1',
       uml: '@startuml\nTrain -> RBC : MA Request\nRBC --> Train : MA\n@enduml',
@@ -127,7 +127,7 @@ describe('scenario steps with UML and text', () => {
     expect(document.querySelector('.rd-scn-editor')).toBeNull();
 
     tab.graph.insertVertex(tab.graph.getDefaultParent(), null, 'B', 100, 10, 60, 30);
-    (panel.querySelector('.rd-scn-add-step') as HTMLButtonElement).click();
+    (panel.querySelector('.rd-scn-add-step-details') as HTMLButtonElement).click();
     await fillEditor({ name: 'Krok 2', uml: 'RBC -> IXL : route?', text: '# Second\n1. one\n2. two' });
     // Ctrl+Enter saves from a text area
     field<HTMLTextAreaElement>('step-uml').dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', ctrlKey: true, bubbles: true }));

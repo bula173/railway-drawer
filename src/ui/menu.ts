@@ -13,6 +13,9 @@ import { promptSaveAs, showAboutDialog } from './app-dialogs';
 import { applyShortcutHints } from './shortcut-keys';
 import { ServiceRegistry } from '../services/service-registry';
 import { logger } from '../drawio/logger';
+import { flipSelection, rotateSelection90, selectEdges, selectNone, selectVertices, toggleSelectionLocked } from './arrange-commands';
+import { groupSelection, ungroupSelection } from './grouping';
+import { duplicateCells } from './duplicate-offset';
 
 /** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
 
@@ -441,6 +444,23 @@ export class MenuController {
         this.commandService.selectAll();
         break;
 
+      // draw.io Edit menu additions (src/ui/arrange-commands.ts; Duplicate = Ctrl/Cmd+D, one undo step)
+      case 'duplicate':
+        duplicateCells(this.graph, this.graph.getSelectionCells());
+        break;
+
+      case 'selectVertices':
+        selectVertices(this.graph);
+        break;
+
+      case 'selectEdges':
+        selectEdges(this.graph);
+        break;
+
+      case 'selectNone':
+        selectNone(this.graph);
+        break;
+
       case 'zoomIn':
         this.graph.zoomIn();
         break;
@@ -513,6 +533,51 @@ export class MenuController {
         if (this.alignmentController) {
           this.alignmentController.alignRight();
         }
+        break;
+
+      case 'alignTop':
+        this.alignmentController?.alignTop();
+        break;
+
+      case 'alignMiddle':
+        this.alignmentController?.alignMiddle();
+        break;
+
+      case 'alignBottom':
+        this.alignmentController?.alignBottom();
+        break;
+
+      case 'distributeHorizontally':
+        this.alignmentController?.distributeHorizontally();
+        break;
+
+      case 'distributeVertically':
+        this.alignmentController?.distributeVertically();
+        break;
+
+      // Arrange menu like draw.io: one undoable edit each, locked cells skipped
+      case 'group':
+        groupSelection(this.graph);
+        break;
+
+      case 'ungroup':
+        ungroupSelection(this.graph);
+        break;
+
+      case 'rotate90':
+        rotateSelection90(this.graph);
+        break;
+
+      case 'flipHorizontal':
+        flipSelection(this.graph, 'flipH');
+        break;
+
+      case 'flipVertical':
+        flipSelection(this.graph, 'flipV');
+        break;
+
+      case 'toggleLock':
+        toggleSelectionLocked(this.graph);
         break;
 
       case 'plantumlEditor': {

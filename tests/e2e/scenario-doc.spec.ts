@@ -33,7 +33,7 @@ async function withGraph<T>(page: Page, body: string): Promise<T> {
 }
 
 async function addStep(page: Page, name: string, fields: { uml?: string; text?: string } = {}): Promise<void> {
-  await page.locator('#scenarios-panel .rd-scn-add-step').click();
+  await page.locator('#scenarios-panel .rd-scn-add-step-details').click();
   const editor = page.locator('[data-testid="scenario-step-editor"]');
   await expect(editor).toBeVisible();
   await editor.locator('input[name="template-name"]').fill(name);
