@@ -4,6 +4,9 @@
  */
 
 import { Graph } from '@maxgraph/core';
+// Feature sections of the project file, as registered by ui/saveload.ts in the app
+import '../scenarios/project-section';
+import '../railway-script/project-section';
 
 /**
  * Create a test graph instance

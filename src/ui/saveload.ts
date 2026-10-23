@@ -1,4 +1,7 @@
 import { emit } from '../core/event-bus';
+// Feature sections of the project file (scenarios, Railway Script): registered before any ProjectService exists
+import '../scenarios/project-section';
+import '../railway-script/project-section';
 import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
 import type { Cell } from '@maxgraph/core';
 import {

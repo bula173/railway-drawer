@@ -1,16 +1,7 @@
 import { xmlUtils } from '@maxgraph/core';
 import { buildMxfile, emptyDrawioModelXml, generatePageId, sanitizeXmlText } from './drawio-xml';
 import { InflateLimitError, MAX_INFLATED_BYTES, NoCompressionStreamError, inflateRawBytes } from './deflate-stream';
-import { ScenarioSet } from '../scenarios/scenario-model';
-import type { ScenarioData } from '../scenarios/scenario-model';
-import {
-  assembleScenarios,
-  buildScenarioPages,
-  isScenarioStepPage,
-  scenarioIndexAttributes,
-} from '../scenarios/scenario-format';
-import type { ScenarioStepPage } from '../scenarios/scenario-format';
-import { RailwayScriptStore, railwayScriptAttributes, readRailwayScriptAttribute } from '../railway-script/script-store';
+import { projectSections, type ClaimedPage } from './project-sections';
 import { logger } from '../drawio/logger';
 
 export interface ProjectMetadata {
@@ -39,10 +30,8 @@ export interface ParsedProject {
   extraPageNames: string[];
   /** Id of the loaded page's <diagram>, reused when saving; null when it had none. */
   pageId: string | null;
-  /** Scenarios rebuilt from the step pages and the main page's index (see scenario-format.ts). */
-  scenarios: ScenarioData[];
-  /** The main page's Railway Script (`rdRailwayScript`, src/railway-script); '' when none. */
-  railwayScript: string;
+  // Feature sections add their parsed values here (project-sections.ts, declaration merging):
+  // `scenarios` (scenarios/project-section.ts), `railwayScript` (railway-script/project-section.ts)
 }
 
 export class ProjectService {
@@ -50,10 +39,12 @@ export class ProjectService {
   private extraPages: string[] = [];
   /** Id of the shown page's <diagram>; kept between saves so files diff cleanly. */
   private pageId: string | null = null;
-  /** Scenarios of this diagram; written as one page per step after the shown page. */
-  readonly scenarios = new ScenarioSet();
-  /** Railway Script of this diagram (src/railway-script); saved on the main page's `<diagram>`. */
-  readonly railwayScript = new RailwayScriptStore();
+  /**
+   * State of the registered feature sections (project-sections.ts), by key: the scenarios (one
+   * page per step after the shown page) and the Railway Script (an attribute of the shown page).
+   * The features add typed accessors (`scenarios`, `railwayScript`).
+   */
+  private readonly sectionStates = new Map<string, unknown>(projectSections().map((s) => [s.key, s.create()]));
 
   private projectMetadata: ProjectMetadata = {
     name: 'Untitled Diagram',
@@ -61,6 +52,12 @@ export class ProjectService {
     createdAt: new Date().toISOString(),
     modifiedAt: new Date().toISOString(),
   };
+
+  /** The state of the registered section `key` (project-sections.ts). */
+  section<T>(key: string): T {
+    if (!this.sectionStates.has(key)) throw new Error(`Project section "${key}" is not registered`);
+    return this.sectionStates.get(key) as T;
+  }
 
   setProjectName(name: string): void {
     this.projectMetadata.name = name;
@@ -93,8 +90,9 @@ export class ProjectService {
       } while (usedIds.has(this.pageId));
     }
     usedIds.add(this.pageId);
-    const scenarios = this.scenarios.list();
-    const scenarioPages = buildScenarioPages(scenarios, usedIds);
+    const sections = projectSections();
+    const sectionPages = sections.flatMap((s) => s.pages?.(this.sectionStates.get(s.key), usedIds) ?? []);
+    const attributes = Object.assign({}, ...sections.map((s) => s.mainPageAttributes(this.sectionStates.get(s.key)))) as Record<string, string>;
 
     let model: Element | null = null;
     const comments: string[] = [];
@@ -114,8 +112,8 @@ export class ProjectService {
     }
 
     return buildMxfile(
-      [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(this.railwayScript.get()) } }],
-      [...scenarioPages, ...this.extraPages],
+      [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes }],
+      [...sectionPages, ...this.extraPages],
       {
         host: PROJECT_HOST,
         modified: this.projectMetadata.modifiedAt,
@@ -151,36 +149,38 @@ export class ProjectService {
     const extraPages: string[] = [];
     const extraPageNames: string[] = [];
     let pageId: string | null = null;
-    let scenarios: ScenarioData[] = [];
-    let railwayScript = '';
+    const sections = projectSections();
+    // Section values; null: not an mxfile (each section's empty value)
+    let mainPage: Element | undefined;
+    let claimed: Map<string, ClaimedPage[]> | null = null;
 
     // Handle mxfile format (standard draw.io)
     if (rootEl.nodeName === 'mxfile') {
       // Pages are the direct <diagram> children of <mxfile>
       const pages = Array.from(rootEl.children).filter((el) => el.nodeName === 'diagram');
       const diagramEl = pages[0];
-      const stepPages: ScenarioStepPage[] = [];
+      mainPage = diagramEl;
+      claimed = new Map(sections.map((s) => [s.key, []]));
       for (const [index, page] of pages.slice(1).entries()) {
-        // Scenario steps become scenarios again; a step page that cannot be read stays a kept page
-        if (isScenarioStepPage(page)) {
+        // Pages of a section (scenario steps) go back to it; one that cannot be read stays a kept page
+        const owner = sections.find((s) => s.claimsPage?.(page));
+        if (owner) {
           try {
-            const stepXml = await this.extractDiagramModelXml(page);
-            if (stepXml !== null) {
-              ProjectService.validateGraphModelXml(stepXml);
-              if (!/^\s*<mxGraphModel[\s>/]/.test(stepXml)) throw new Error('not a draw.io model');
-              stepPages.push({ page, xml: stepXml });
+            const pageXml = await this.extractDiagramModelXml(page);
+            if (pageXml !== null) {
+              ProjectService.validateGraphModelXml(pageXml);
+              if (!/^\s*<mxGraphModel[\s>/]/.test(pageXml)) throw new Error('not a draw.io model');
+              claimed.get(owner.key)!.push({ page, xml: pageXml });
               continue;
             }
           } catch (error) {
-            console.warn('[Project] Keeping an unreadable scenario step page as a page:', page.getAttribute('name'), error);
+            console.warn(`[Project] Keeping an unreadable ${owner.key} page as a page:`, page.getAttribute('name'), error);
           }
         }
         // getXml: newlines in attribute values (multi-line labels) must stay escaped
         extraPages.push(xmlUtils.getXml(page));
         extraPageNames.push(page.getAttribute('name') || `Page ${index + 2}`);
       }
-      scenarios = assembleScenarios(diagramEl, stepPages);
-      railwayScript = readRailwayScriptAttribute(diagramEl);
       const isOwnFile = rootEl.getAttribute('host') === PROJECT_HOST;
       metadata = {
         name: diagramEl?.getAttribute('name') || 'Untitled Diagram',
@@ -222,7 +222,9 @@ export class ProjectService {
     }
     ProjectService.validateGraphModelXml(graphXml);
 
-    return { metadata, graphXml, extraPages, extraPageNames, pageId, scenarios, railwayScript };
+    const parsed: Record<string, unknown> = { metadata, graphXml, extraPages, extraPageNames, pageId };
+    for (const s of sections) parsed[s.key] = claimed ? s.parse(mainPage, claimed.get(s.key) ?? []) : s.empty();
+    return parsed as unknown as ParsedProject;
   }
 
   /**
