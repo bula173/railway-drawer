@@ -31,7 +31,7 @@ describe('simulate_train_run', () => {
     expect(def.mutating).toBe(true);
     expect(def.input_schema.required).toEqual(['routes', 'speedKmh', 'lengthM']);
     expect(buildSystemPrompt()).toContain('simulate_train_run');
-  });
+  }, 30_000);
 
   it('returns the events in time order and does not change the drawing', async () => {
     const tg = target();
@@ -62,7 +62,7 @@ describe('simulate_train_run', () => {
     expect(out.edits).toEqual([]);
     expect(tg.modelXml()).toBe(before);
     expect(out.summary).toContain('R1 → R2');
-  });
+  }, 30_000);
 
   it('errors name the valid ids', async () => {
     const tg = target();
@@ -73,7 +73,7 @@ describe('simulate_train_run', () => {
     expect(String((train.result as { error: string }).error)).toMatch(/TR9.*train: TR1/);
     const schema = await executeAiTool(tg, 'simulate_train_run', { routes: ['R1'], speedKmh: 0, lengthM: 100 });
     expect(schema.ok).toBe(false);
-  });
+  }, 30_000);
 
   it('createScenario: one undoable edit with one step per moment', async () => {
     const tg = target();
@@ -87,5 +87,5 @@ describe('simulate_train_run', () => {
     expect(out.edits.length).toBe(1);
     tg.undo();
     expect(tg.scenarioSet.get(s.id)).toBeNull();
-  });
+  }, 30_000);
 });

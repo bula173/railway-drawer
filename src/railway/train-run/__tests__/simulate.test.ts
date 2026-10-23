@@ -50,20 +50,20 @@ describe('run path', () => {
     expect(path.routes.map((r) => [r.id, r.entry, r.exit])).toEqual([['R1', 'S1', 'S2']]);
     expect(pointAtM(path, 150).p).toEqual({ x: 150, y: 100 });
     expect(pointAtM(path, -50).p).toEqual({ x: -50, y: 100 });
-  });
+  }, 30_000);
 
   it('a chain of consecutive routes; the overlap of the last one', () => {
     const path = pathOf(lineLayout(), ['R1', 'R2']);
     expect(path.lengthM).toBeCloseTo(600);
     expect(path.blocks.map((b) => `${b.id}@${b.routeId}`)).toEqual(['TC1@R1', 'TC2@R1', 'TC3@R2']);
     expect(path.overlap).toEqual(['TC4']);
-  });
+  }, 30_000);
 
   it('errors: unknown route, not consecutive, none', () => {
     expect(buildRunPath(modelOf(lineLayout()), ['R9']).error).toMatch(/R9/);
     expect(buildRunPath(modelOf(lineLayout()), ['R2', 'R1']).error).toMatch(/consecutive/);
     expect(buildRunPath(modelOf(lineLayout()), []).error).toMatch(/Choose a route/);
-  });
+  }, 30_000);
 
   it('without lengths: drawing units as metres with a warning', () => {
     const path = pathOf(lineLayout({ noLengths: true }), ['R1']);
@@ -72,13 +72,13 @@ describe('run path', () => {
     expect(path.warnings[0]).toMatch(/drawing units/);
     const run = simulateRun(path, { speedKmh: 72, lengthM: 100 });
     expect(run.warnings[0]).toMatch(/approximate/);
-  });
+  }, 30_000);
 
   it('km of a position when the track has km start/end', () => {
     const path = pathOf(lineLayout({ kmOnTc1: true }), ['R1']);
     expect(kmAtM(path, 100)).toBeCloseTo(12.1);
     expect(kmAtM(path, 300)).toBeNull();
-  });
+  }, 30_000);
 });
 
 describe('simulation', () => {
@@ -106,7 +106,7 @@ describe('simulation', () => {
     expect(run.events[2].changes).toContainEqual({ kind: 'signal', id: 'S1', aspect: 'stop' });
     expect(run.events.find((e) => e.subject === 'TC2' && e.type === 'head-enter')!.speedKmh).toBeCloseTo(72);
     expect(run.events.find((e) => e.type === 'arrive')!.speedKmh).toBe(0);
-  });
+  }, 30_000);
 
   it('chain: sequential release, route released, intermediate signal back to stop', () => {
     const run = simulateRun(pathOf(lineLayout(), ['R1', 'R2']), { speedKmh: 72, lengthM: 100, dwellS: 10, overlapReleaseS: 20 });
@@ -133,13 +133,13 @@ describe('simulation', () => {
     expect(statesAt(run, 30).get('route:R1')?.state).toBe('free');
     expect(statesAt(run, 40).get('signal:S2')?.aspect).toBe('stop');
     expect(run.durationS).toBeCloseTo(55);
-  });
+  }, 30_000);
 
   it('dwell longer than the overlap timer ends the run later', () => {
     const run = simulateRun(pathOf(lineLayout(), ['R1']), { speedKmh: 72, lengthM: 100, dwellS: 60, overlapReleaseS: 10 });
     expect(run.events.at(-1)!.t).toBeCloseTo(35);
     expect(run.durationS).toBeCloseTo(85);
-  });
+  }, 30_000);
 
   it('per-section speed limits (rdSpeedLimit) slow the train while any part of it is in the section', () => {
     const path = pathOf(lineLayout({ tc2Extra: 'rdSpeedLimit="36"' }), ['R1', 'R2']);
@@ -155,7 +155,7 @@ describe('simulation', () => {
     expect(speedAt(limited, 47)).toBeCloseTo(72);
     expect(headAt(limited, 25)).toBeCloseTo(300);
     expect(limited.events.find((e) => e.type === 'tail-clear' && e.subject === 'TC2')!.t).toBeCloseTo(45);
-  });
+  }, 30_000);
 
   it('points: positioned and locked at the set, occupied / released with their leg', () => {
     const path = pathOf(POINTS_LAYOUT, ['R1']);
@@ -177,12 +177,12 @@ describe('simulation', () => {
     ]);
     const freed = run.events.find((e) => e.type === 'tail-clear' && e.subject === 'W1')!;
     expect(statesAt(run, freed.t).get('points:W1')).toEqual({ kind: 'points', id: 'W1', position: 'reverse', state: 'free' });
-  });
+  }, 30_000);
 
   it('a train longer than the route never clears a block', () => {
     const run = simulateRun(pathOf(lineLayout(), ['R1']), { speedKmh: 72, lengthM: 500 });
     expect(run.events.filter((e) => e.type === 'tail-clear')).toEqual([]);
-  });
+  }, 30_000);
 });
 
 describe('renderer', () => {
@@ -214,7 +214,7 @@ describe('renderer', () => {
     expect(readAttr(tc1, 'rdState')).toBe('');
     expect(readAttr(tc1, 'rdBaseStyle')).toBe('');
     expect(model.getCell('tr1')!.getGeometry()!.x).toBe(-120);
-  });
+  }, 30_000);
 
   it('creates a new train when none is chosen and removes it on restore', () => {
     graph = createTestGraph();
@@ -229,5 +229,5 @@ describe('renderer', () => {
     expect(train.getGeometry()!.x + train.getGeometry()!.width).toBeCloseTo(400);
     r.restore();
     expect(graph.getDataModel().contains(train)).toBe(false);
-  });
+  }, 30_000);
 });

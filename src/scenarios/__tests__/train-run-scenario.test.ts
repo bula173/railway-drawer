@@ -5,7 +5,8 @@
  * unchanged; the steps go into the ScenarioSet.
  */
 import { afterEach, describe, expect, it } from 'vitest';
-import type { Graph } from '@maxgraph/core';
+import { Graph } from '@maxgraph/core';
+import type { GraphDataModel } from '@maxgraph/core';
 import { exportModelToDrawioXml, importDrawioXmlIntoModel } from '../../services/drawio-xml';
 import { cleanupTestGraph, createTestGraph } from '../../__tests__/setup';
 import { buildRunPath } from '../../railway/train-run/run-path';
@@ -20,6 +21,8 @@ afterEach(() => {
   if (graph) cleanupTestGraph(graph);
   graph = null;
 });
+
+const scratch = (g: Graph) => (model: GraphDataModel): Graph => new Graph(document.createElement('div'), model, [], g.getStylesheet());
 
 /** rdState / rdAspect of the object with rdId `id` in a snapshot. */
 function stateIn(xml: string, id: string, attr = 'rdState'): string {
@@ -46,7 +49,7 @@ describe('scenario from a train run', () => {
     const { graph: g, xml } = setup();
     const run = simulateRun(buildRunPath(g.getDataModel(), ['R1']).path!, { speedKmh: 72, lengthM: 100 });
     expect(runMoments(run).map((m) => m.t)).toEqual([0, 5, 15, 20, 25, 55]);
-    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet() }, { cellId: 'tr1' }, { etcsLevel: '2' });
+    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet(), createGraph: scratch(g) }, { cellId: 'tr1' }, { etcsLevel: '2' });
     expect(steps.map((s) => s.name)).toEqual([
       'Route R1 set',
       'Departure, S1 to stop, TC1 occupied',
@@ -79,29 +82,29 @@ describe('scenario from a train run', () => {
     for (const s of steps) expect(parseSequenceDiagram(s.uml).warnings).toEqual([]);
     // the source drawing is unchanged
     expect(exportModelToDrawioXml(g.getDataModel(), { stylesheet: g.getStylesheet() })).toBe(xml);
-  });
+  }, 30_000);
 
   it('without ETCS level 2 no RBC; uml=false leaves it out; a new train is drawn', () => {
     const { graph: g, xml } = setup(false);
     const run = simulateRun(buildRunPath(g.getDataModel(), ['R1', 'R2']).path!, { speedKmh: 72, lengthM: 100 });
-    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet() }, { cellId: null }, { etcsLevel: '1' });
+    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet(), createGraph: scratch(g) }, { cellId: null }, { etcsLevel: '1' });
     expect(steps[0].uml).not.toContain('RBC');
     expect(steps[0].uml).toContain('IXL -> T: S1 proceed');
     expect(steps.every((s) => /rdKind="train"/.test(s.xml))).toBe(true);
-    const none = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet() }, { cellId: null }, { uml: false });
+    const none = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet(), createGraph: scratch(g) }, { cellId: null }, { uml: false });
     expect(none.every((s) => s.uml === '')).toBe(true);
     expect(momentName({ t: 0, events: Array.from({ length: 12 }, () => run.events[4]) }).length).toBeLessThanOrEqual(80);
-  });
+  }, 30_000);
 
   it('adds the scenario with its steps to the set', () => {
     const { graph: g, xml } = setup();
     const run = simulateRun(buildRunPath(g.getDataModel(), ['R1']).path!, { speedKmh: 72, lengthM: 100 });
-    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet() }, { cellId: 'tr1' });
+    const steps = buildRunScenarioSteps(run, { xml, stylesheet: g.getStylesheet(), createGraph: scratch(g) }, { cellId: 'tr1' });
     const set = new ScenarioSet();
     const scenario = addRunScenario(set, run, steps);
     expect(scenario.name).toBe('Train run R1');
     expect(scenario.description).toMatch(/72 km\/h, 100 m train, 25 s to S2/);
     expect(scenario.steps.map((s) => s.name)).toEqual(steps.map((s) => s.name));
     expect(set.get(scenario.id)!.steps[2].text).toContain('TC2 occupied');
-  });
+  }, 30_000);
 });

@@ -6,13 +6,13 @@
  *        step). Each step gets a name, a Markdown text (time, head position in m / km, speed, the
  *        events) and, optionally, a PlantUML sequence diagram of the messages between the
  *        Interlocking, the RBC (ETCS level 2: movement authority request / grant, position reports)
- *        and the train. The drawings are snapshots made on a scratch graph (the run's states put on
+ *        and the train. The drawings are snapshots made on an off-screen graph (the run's states put on
  *        a copy of the drawing with RunRenderer), so the live drawing is never touched; the steps go
  *        into the tab's ScenarioSet like any other, so the view, autoplay and the PDF / slides
  *        exports work unchanged.
  */
-import { Graph, GraphDataModel } from '@maxgraph/core';
-import type { Stylesheet } from '@maxgraph/core';
+import { GraphDataModel } from '@maxgraph/core';
+import type { Graph, Stylesheet } from '@maxgraph/core';
 import { exportModelToDrawioXml, importModelXml, sanitizeXmlText } from '../services/drawio-xml';
 import { formatChainage } from '../railway/km';
 import { kmAtM } from '../railway/train-run/run-path';
@@ -174,9 +174,14 @@ export function momentUml(run: RunResult, m: RunMoment, trainId: string, etcsLev
 export interface RunSnapshotSource {
   /** The drawing as draw.io model XML (DiagramDocument.serializeToXml()). */
   xml: string;
-  /** Stylesheet of the live graph (resolved styles decide which parts take a state's look). */
+  /** Stylesheet of the live graph (written into the snapshots like the tab's own save). */
   stylesheet: Stylesheet;
   htmlLabels?: boolean;
+  /**
+   * An off-screen graph on `model`, configured like the tab graphs (setup-graph.ts profile 'view':
+   * resolved styles decide which parts take a state's look); destroyed afterwards.
+   */
+  createGraph(model: GraphDataModel): Graph;
 }
 
 /**
@@ -186,8 +191,7 @@ export interface RunSnapshotSource {
 export function buildRunScenarioSteps(run: RunResult, source: RunSnapshotSource, train: TrainChoice, options: RunScenarioOptions = {}): RunScenarioStep[] {
   const model = new GraphDataModel();
   const page = importModelXml(sanitizeXmlText(source.xml), model) ?? undefined;
-  const host = document.createElement('div');
-  const graph = new Graph(host, model, [], source.stylesheet);
+  const graph = source.createGraph(model);
   try {
     const renderer = new RunRenderer(graph, run, train);
     const level = options.etcsLevel ?? '';

@@ -3,6 +3,7 @@
  * track, a Railway Script session and the real ERTMS library (catalogue + templates).
  */
 import { vi } from 'vitest';
+import { Graph } from '@maxgraph/core';
 import { fixture as scriptFixture } from '../../railway-script/__tests__/helpers';
 import type { Fixture } from '../../railway-script/__tests__/helpers';
 import { ertmsEntries } from '../../railml/__tests__/helpers';
@@ -48,6 +49,7 @@ export function createTestTarget(text = ''): TestTarget {
     shown,
     exported,
     scenarios: () => scenarioSet,
+    scratchGraph: (model) => new Graph(document.createElement('div'), model, [], fx.graph.getStylesheet()),
     showScenario: (scenarioId, index) => {
       shown.push({ scenarioId, index });
     },

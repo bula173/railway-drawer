@@ -17,6 +17,8 @@ import { openTemplateAsNewDiagram } from '../ui/templates/template-actions';
 import type { DiagramTemplate } from '../ui/templates/template-types';
 import type { TabData, TabManager } from '../ui/tabs';
 import type { AiTarget, CatalogShape, ShapeCatalog } from './target';
+import { Graph } from '@maxgraph/core';
+import { setupGraph } from '../ui/setup-graph';
 
 let catalogPromise: Promise<CatalogShape[]> | null = null;
 
@@ -96,6 +98,11 @@ export function tabTarget(tab: TabData, tabManager: TabManager): AiTarget {
     renderSvg: (xml) => renderXmlToSvgDocument(xml, { border: 10 }),
     download: (name, content, mime) => downloadBlob(typeof content === 'string' ? new Blob([content], { type: mime }) : content, name),
     scenarios: () => doc.scenarios,
+    scratchGraph: (model) => {
+      const graph = new Graph(document.createElement('div'), model);
+      setupGraph(graph, 'view');
+      return graph;
+    },
     // steps hold whole drawings: write the tab cache at once (like the Scenarios panel)
     scenariosChanged: () => {
       tabManager.flushCache();

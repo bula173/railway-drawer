@@ -16,6 +16,7 @@ import { installRailwayStates } from '../railway/install-railway-states';
 import { installRailml } from '../railml/install-railml';
 import { installTrainRun } from '../railway/train-run/install-train-run';
 import { Graph } from '@maxgraph/core';
+import type { GraphDataModel } from '@maxgraph/core';
 import { setupGraph } from '../ui/setup-graph';
 import { appKeymap } from '../ui/commands';
 import { ServiceRegistry } from '../services/service-registry';
@@ -55,7 +56,13 @@ export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTML
       const tab = tabManager.getAllTabs().find((t) => t.id === runTab.id);
       if (!tab) return null;
       const { addRunScenario, buildRunScenarioSteps } = await import('../scenarios/train-run-scenario');
-      const steps = buildRunScenarioSteps(run, { xml: tab.document.serializeToXml(), stylesheet: tab.graph.getStylesheet(), htmlLabels: tab.graph.isHtmlLabels() }, train, { etcsLevel });
+      const createGraph = (model: GraphDataModel): Graph => {
+        const graph = new Graph(document.createElement('div'), model);
+        setupGraph(graph, 'view');
+        return graph;
+      };
+      const source = { xml: tab.document.serializeToXml(), stylesheet: tab.graph.getStylesheet(), htmlLabels: tab.graph.isHtmlLabels(), createGraph };
+      const steps = buildRunScenarioSteps(run, source, train, { etcsLevel });
       const scenario = addRunScenario(tab.document.scenarios, run, steps);
       scenarios.showPanel('scenarios');
       return scenario.name;

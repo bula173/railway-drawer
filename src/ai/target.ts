@@ -6,7 +6,7 @@
  *        one from a test graph. Keeping this an interface makes the tools testable in jsdom and lets
  *        the shape catalogue grow (feature/all-shapes) without touching the tools.
  */
-import type { Graph } from '@maxgraph/core';
+import type { Graph, GraphDataModel } from '@maxgraph/core';
 import type { PaletteEntry } from '../drawio-shapes/palettes';
 import type { RailwayScriptStore } from '../railway-script/script-store';
 import type { ApplyOutcome, SessionStatus } from '../railway-script/session';
@@ -65,6 +65,8 @@ export interface AiTarget {
   renderSvg?(modelXml: string): Promise<string>;
   /** Saves a file in the user's browser. */
   download?(name: string, content: string | Blob, mime: string): void;
+  /** An off-screen read-only graph on `model` (configured like the tab graphs) for snapshots; destroyed by the caller. */
+  scratchGraph?(model: GraphDataModel): Graph;
   /** The tab's scenarios (the Scenarios panel's store); missing = scenarios not available. */
   scenarios?(): ScenarioSet;
   /** Called after a tool changed the scenarios (the app writes the tab cache at once). */

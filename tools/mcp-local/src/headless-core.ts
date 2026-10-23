@@ -145,6 +145,7 @@ export function openDrawioFile(path: string, publicDir: string, log: (m: string)
     },
     templates: async () => splitErtmsLibrary(entries()).templates,
     scenarios: () => scenarios,
+    scratchGraph: (model) => new Graph(document.createElement('div'), model, [], graph.getStylesheet()),
   };
 
   let queue: Promise<unknown> = Promise.resolve();

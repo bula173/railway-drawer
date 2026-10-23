@@ -66,9 +66,11 @@ export const simulateTrainRun: Executor = async (target, input) => {
   let summary = `Simulated ${run.path.routes.map((r) => r.id).join(' → ')} (${events.length} events, arrival after ${round(run.arriveS)} s)`;
   if (input.createScenario === true) {
     const set = requireSet(target);
+    const createGraph = target.scratchGraph;
+    if (!createGraph) return fail('creating a scenario from a run is not available here (simulate without createScenario)');
     const steps = buildRunScenarioSteps(
       run,
-      { xml: target.modelXml(), stylesheet: target.graph.getStylesheet(), htmlLabels: target.graph.isHtmlLabels() },
+      { xml: target.modelXml(), stylesheet: target.graph.getStylesheet(), htmlLabels: target.graph.isHtmlLabels(), createGraph: (m) => createGraph(m) },
       { cellId: trainCellId },
       { etcsLevel, uml: input.uml !== false }
     );
