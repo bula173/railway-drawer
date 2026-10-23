@@ -4,11 +4,11 @@
  *        ~35 cells and every one got its own dashed border and handles (unreadable). Above `MULTI_SELECTION_BOX_MIN`
  *        selected cells no per-cell handlers are created (SelectionCellsHandler.getHandledSelectionCells) and one
  *        dashed rectangle in the selection colour (`--rd-selection`, handle-colors.ts) frames the selection's
- *        bounding box. A press on any selected cell still moves them all (SelectionHandler does not need the
- *        handlers); smaller selections keep their handles. View only (overlay pane), nothing saved or undoable.
+ *        bounding box. A press on any selected cell still moves them all (selected cells count as handled, so
+ *        SelectionHandler delays the selection like with handlers); smaller selections keep their handles. View only (overlay pane), nothing saved or undoable.
  */
 import { InternalEvent, Rectangle } from '@maxgraph/core';
-import type { EventSource, Graph } from '@maxgraph/core';
+import type { Cell, EventSource, Graph } from '@maxgraph/core';
 import { GraphOverlay, svgEl } from '../railway/graph-overlay';
 import { selectionColor } from '../drawio-shapes/engine/handle-colors';
 
@@ -16,7 +16,11 @@ import { selectionColor } from '../drawio-shapes/engine/handle-colors';
 export const MULTI_SELECTION_BOX_MIN = 10;
 const PADDING = 4;
 
-type HandledCells = { getHandledSelectionCells(): ReturnType<Graph['getSelectionCells']>; refresh(): void };
+type HandledCells = {
+  getHandledSelectionCells(): ReturnType<Graph['getSelectionCells']>;
+  isHandled(cell: Cell): boolean;
+  refresh(): void;
+};
 
 /** True when `graph`'s selection is shown as one box. */
 export function isMultiSelectionBox(graph: Graph): boolean {
@@ -37,6 +41,10 @@ export function installMultiSelectionBox(graph: Graph): () => void {
   if (!handler) return () => undefined;
   const base = handler.getHandledSelectionCells.bind(handler);
   handler.getHandledSelectionCells = () => (isMultiSelectionBox(graph) ? [] : base());
+  // SelectionHandler delays the selection of a press on a "handled" cell (so a drag moves the whole selection);
+  // without handlers it would select just the pressed cell: in box mode every selected cell counts as handled
+  const baseHandled = handler.isHandled.bind(handler);
+  handler.isHandled = (cell: Cell) => (isMultiSelectionBox(graph) ? graph.isCellSelected(cell) : baseHandled(cell));
 
   let overlay: GraphOverlay | null = null;
   const redraw = (): void => {
@@ -76,6 +84,7 @@ export function installMultiSelectionBox(graph: Graph): () => void {
     model.removeListener(redraw);
     view.removeListener(redraw);
     handler.getHandledSelectionCells = base;
+    handler.isHandled = baseHandled;
     overlay?.destroy();
     overlay = null;
   };
