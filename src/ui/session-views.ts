@@ -10,6 +10,7 @@ import { StatusBarController } from './statusbar';
 import { EdgePropertiesController } from './edge-properties';
 import { CanvasProperties } from './canvas-properties';
 import { InteractiveUIController } from './interactive-ui';
+import { MenuStateView } from './menu-state';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
@@ -19,6 +20,8 @@ export interface SessionViews {
   readonly canvasProperties: CanvasProperties;
   /** The other Properties / Canvas fields and the zoom select (interactive-ui.ts). */
   readonly propertyFields: InteractiveUIController;
+  /** Undo / Redo and grid state of the menus and toolbar. */
+  readonly menuState: MenuStateView;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
@@ -31,6 +34,7 @@ export function createSessionViews(): SessionViews {
   // canvas grid field: CanvasProperties' change handler runs before InteractiveUIController's (as before)
   const canvasProperties = new CanvasProperties();
   const propertyFields = new InteractiveUIController();
+  const menuState = new MenuStateView();
   return {
     properties,
     layers,
@@ -38,6 +42,7 @@ export function createSessionViews(): SessionViews {
     edgeProperties,
     canvasProperties,
     propertyFields,
+    menuState,
     destroy() {
       properties.destroy();
       layers.destroy();
@@ -45,6 +50,7 @@ export function createSessionViews(): SessionViews {
       edgeProperties.destroy();
       canvasProperties.destroy();
       propertyFields.destroy();
+      menuState.destroy();
     },
   };
 }

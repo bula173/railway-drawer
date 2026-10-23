@@ -4,7 +4,6 @@ import { createSessionViews, type SessionViews } from './session-views';
 import { setActiveSession, type DiagramSession } from './session';
 import { ClipboardController } from './clipboard';
 import { DeleteController } from './delete';
-import { UndoRedoController } from './undoredo';
 import { PanController } from './pan';
 import { GridController } from './grid';
 import { GRID_SETTINGS_EVENT, syncGridUi } from './grid-toggle';
@@ -42,7 +41,6 @@ export interface TabData extends DiagramSession {
   document: DiagramDocument;
   clipboardController: ClipboardController;
   deleteController: DeleteController;
-  undoRedoController: UndoRedoController;
   panController: PanController;
   gridController: GridController;
   saveLoadController: SaveLoadController;
@@ -244,7 +242,6 @@ export class TabManager {
       // Initialize UI controllers
       const clipboardController = new ClipboardController(graph);
       const deleteController = new DeleteController(graph);
-      const undoRedoController = new UndoRedoController(graph, graphCommandService);
       const panController = new PanController(graph);
       const gridController = new GridController(graph, 10);
       const saveLoadController = new SaveLoadController(diagramDocument);
@@ -266,7 +263,6 @@ export class TabManager {
       return {
         clipboardController,
         deleteController,
-        undoRedoController,
         panController,
         gridController,
         saveLoadController,
@@ -306,10 +302,7 @@ export class TabManager {
     } else {
       // Created in the background: its shared-DOM listeners stay detached until it is shown
       this.detachTabListeners(tabId);
-      tabData.undoRedoController.setActive(false);
-      // Its constructors rendered into the shared panels; point them back at the active tab
-      const activeTab = this.getActiveTab();
-      if (activeTab) this.refreshSharedPanels(activeTab);
+      // (the session views stay on the shown tab)
     }
 
     this.renderTabBar();
@@ -544,9 +537,8 @@ export class TabManager {
     this.activeTabId = tabId;
     const newTab = this.tabs.get(tabId);
     if (newTab) {
-      // the session views rebind to the shown tab (session.ts), then the remaining per-tab panels
+      // the session views (panels, menu state) rebind to the shown tab (session.ts)
       setActiveSession(newTab);
-      this.refreshSharedPanels(newTab);
       this.showProjectName(newTab);
     }
     // Only the highlight changes: keep the tab elements, so a double-click that started on an
@@ -562,17 +554,6 @@ export class TabManager {
       tabElement.classList.toggle('active', isActive);
       tabElement.setAttribute('aria-selected', String(isActive));
     });
-  }
-
-  /**
-   * Shows `tab`'s state in the shared panels whose content is per tab. Hidden tabs ignore
-   * selection/history events and a background tab's constructors render into these panels,
-   * so they are refreshed whenever the active tab changes.
-   */
-  private refreshSharedPanels(tab: TabData): void {
-    this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
-    // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
-    syncGridUi(tab.graph);
   }
 
   closeTab(tabId: string): void {
@@ -652,7 +633,6 @@ export class TabManager {
         tab.graphCommandService,
         tab.clipboardController,
         tab.deleteController,
-        tab.undoRedoController,
         tab.panController,
         tab.gridController,
         tab.saveLoadController,

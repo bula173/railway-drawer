@@ -7,6 +7,7 @@
 import { installOnce } from '../core/install-once';
 import { applyShortcutHints } from './shortcut-keys';
 import { commandRegistry } from './commands/registry';
+import { syncMenuItemsFromCommands } from './menu-state';
 
 /** Families that run without the graph refresh that follows the other menu actions (as before). */
 const NO_REFRESH_PREFIXES = ['exportRailway:', 'railwayRoute:', 'railwayState:'];
@@ -83,6 +84,8 @@ function openMenu(menu: string, focus: 'first' | 'last' | null): void {
   if (!dropdown || !button) return;
   closeAllMenus();
   setupMenuItemsAria(dropdown);
+  // check marks / disabled items from the commands (menu-state.ts)
+  syncMenuItemsFromCommands(dropdown);
   dropdown.style.display = 'block';
   button.setAttribute('aria-expanded', 'true');
   setRovingButton(button);
