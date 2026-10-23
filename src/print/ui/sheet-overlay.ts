@@ -13,16 +13,9 @@ import type { Graph } from '@maxgraph/core';
 import { on } from '../../core/event-bus';
 import { onModelChange, onViewTransform, type Disposers } from '../../core/graph-events';
 import { ActiveSessionBinding, type DiagramSession } from '../../ui/session';
-import { buildLegend } from '../legend';
-import { getLegendLibrary } from '../sheet-plan';
-import { sheetGeometry } from '../sheet-geometry';
-import { readSheetSetup } from '../sheet-setup';
-import { buildSheetDecorations } from '../sheet-svg';
-import { sheetTitleValues } from '../title-block';
 import './print-sheets.css';
 
-const SVG_NS = 'http://www.w3.org/2000/svg';
-const OVERLAY_CLASS = 'rd-sheet-overlay';
+export const OVERLAY_CLASS = 'rd-sheet-overlay';
 
 /** Whether the shown page of `session` has its sheet border on (draw.io page view). */
 export function isSheetBorderShown(session: Pick<DiagramSession, 'document'> | null): boolean {
@@ -34,44 +27,14 @@ export function setSheetBorderShown(session: Pick<DiagramSession, 'document'>, s
   session.document.replacePageSettings({ ...session.document.getPageSettings(), page: shown });
 }
 
-function overlayGroup(graph: Graph): SVGGElement | null {
-  const pane = graph.view.getBackgroundPane() as SVGGElement | null;
-  if (!pane) return null;
-  let group = pane.querySelector<SVGGElement>(`:scope > g.${OVERLAY_CLASS}`);
-  if (!group) {
-    group = document.createElementNS(SVG_NS, 'g') as SVGGElement;
-    group.setAttribute('class', OVERLAY_CLASS);
-    group.setAttribute('data-testid', 'sheet-overlay');
-    group.setAttribute('aria-hidden', 'true');
-    pane.appendChild(group);
-  }
-  return group;
-}
-
-/** Draws (or removes) the overlay of `session`'s shown page. */
-export function renderSheetOverlay(session: DiagramSession): void {
-  const { graph, document: doc } = session;
-  const pane = graph.view.getBackgroundPane() as SVGGElement | null;
+/** Draws (or removes) the overlay of `session`'s shown page; the renderer loads on first use. */
+export async function renderSheetOverlay(session: DiagramSession): Promise<void> {
   if (!isSheetBorderShown(session)) {
-    pane?.querySelector(`:scope > g.${OVERLAY_CLASS}`)?.remove();
+    (session.graph.view.getBackgroundPane() as SVGGElement | null)?.querySelector(`:scope > g.${OVERLAY_CLASS}`)?.remove();
     return;
   }
-  const group = overlayGroup(graph);
-  if (!group) return;
-  const setup = readSheetSetup(doc.getPageSettings(), graph.getDataModel());
-  const pages = doc.listPages();
-  const store = doc.titleBlock;
-  const revisions = store.revisions();
-  const legend = setup.legend ? buildLegend(doc.serializeToXml(), getLegendLibrary()) : [];
-  const geometry = sheetGeometry(setup, { revisionRows: revisions.length, legendEntries: legend.length });
-  const values = sheetTitleValues(store.get(), revisions, setup, doc.shownPageIndex(), pages.length);
-  const decorations = buildSheetDecorations(document, { setup, geometry, values, revisions, legend, paperEdge: true });
-  const { scale, translate } = graph.view;
-  // paper mm -> drawing units (the sheet at the origin) -> screen
-  decorations.setAttribute('transform', `scale(${geometry.unitsPerMm.x} ${geometry.unitsPerMm.y})`);
-  group.setAttribute('transform', `scale(${scale}) translate(${translate.x} ${translate.y})`);
-  group.setAttribute('data-format', `${setup.format} ${setup.orientation}`);
-  group.replaceChildren(decorations);
+  const { renderSheetOverlay: render } = await import('./sheet-overlay-render');
+  render(session);
 }
 
 /**
@@ -85,7 +48,7 @@ export function installSheetOverlay(): ActiveSessionBinding {
       const draw = (): void => {
         if (timer) clearTimeout(timer);
         timer = null;
-        renderSheetOverlay(session);
+        void renderSheetOverlay(session);
       };
       const later = (): void => {
         if (!isSheetBorderShown(session)) return;
