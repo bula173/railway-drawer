@@ -76,62 +76,6 @@ export class ClassDiagramRenderer {
     setTimeout(() => this.graph.fit(50), 100);
   }
 
-  render(diagramData: DiagramData): void {
-    logger.debug('ClassDiagram', 'Rendering');
-    const parent = this.graph.getDefaultParent();
-
-    const classes = diagramData.elements.filter((el) => el.type === 'class');
-    logger.debug('ClassDiagram', 'Found classes:', classes.length);
-
-    if (classes.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      const classMap = new Map<string, Cell>();
-      let col = 0;
-      let row = 0;
-      const colsPerRow = Math.ceil(Math.sqrt(classes.length));
-
-      classes.forEach((cls) => {
-        const x = this.startX + col * this.classSpacingX;
-        const y = this.startY + row * this.classSpacingY;
-
-        const classLabel = this.formatClassLabel(cls);
-
-        const classCell = this.graph.insertVertex(
-          parent,
-          `class_${cls.id}`,
-          classLabel,
-          x,
-          y,
-          this.classWidth,
-          this.classHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;align=left;verticalAlign=top;fontSize=11;' as unknown as CellStyle
-        );
-
-        classMap.set(cls.id, classCell);
-
-        col++;
-        if (col >= colsPerRow) {
-          col = 0;
-          row++;
-        }
-      });
-
-      // Draw relationships
-      diagramData.connections.forEach((conn) => {
-        const fromClass = classMap.get(conn.from);
-        const toClass = classMap.get(conn.to);
-
-        if (fromClass && toClass) {
-          const relationshipStyle = this.getRelationshipStyle(conn.type);
-          this.graph.insertEdge(parent, null, conn.label || '', fromClass, toClass, relationshipStyle as unknown as CellStyle);
-        }
-      });
-    });
-
-    setTimeout(() => this.graph.fit(50), 100);
-  }
-
   private formatClassLabel(cls: DiagramElement): string {
     let label = cls.label;
     if (cls.attributes && cls.attributes.length > 0) {

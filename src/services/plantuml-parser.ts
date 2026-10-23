@@ -22,7 +22,7 @@ export interface DiagramElement {
 }
 
 export interface DiagramData {
-  type: 'sequence' | 'class' | 'state' | 'activity' | 'component' | 'unknown';
+  type: 'sequence' | 'class' | 'state' | 'activity' | 'component';
   title?: string;
   elements: DiagramElement[];
   connections: Array<{
@@ -34,8 +34,11 @@ export interface DiagramData {
 }
 
 /**
- * PlantUML text parser
- * Uses the plantuml-parser library for comprehensive syntax support
+ * PlantUML text parser of the left-panel PlantUML editor (ui/plantuml-editor.ts): the diagram type
+ * (sequence when nothing else is named), its elements and connections, parsed with regular
+ * expressions; the canvas renderers (services/*-diagram-renderer.ts) draw them as editable cells.
+ * The scenario step UML has its own, fuller sequence parser and SVG renderer
+ * (services/plantuml-sequence-svg.ts): see docs/architecture/plantuml.md.
  */
 export class PlantUmlParser {
   /**
@@ -66,7 +69,7 @@ export class PlantUmlParser {
 
 
   /**
-   * Fallback regex-based parsing when library parsing fails
+   * Parses the lines of the detected diagram type
    */
   private static parseWithRegex(lines: string[], data: DiagramData): void {
     switch (data.type) {
@@ -85,8 +88,6 @@ export class PlantUmlParser {
       case 'component':
         this.parseComponentDiagram(lines, data);
         break;
-      default:
-        this.parseSequenceDiagram(lines, data);
     }
   }
 
@@ -371,30 +372,6 @@ export class PlantUmlParser {
           type: 'dependency',
         });
       }
-    }
-  }
-
-  /**
-   * Get default width/height for different element types
-   */
-  static getDefaultDimensions(type: DiagramElement['type']): { width: number; height: number } {
-    switch (type) {
-      case 'actor':
-        return { width: 80, height: 100 };
-      case 'participant':
-        return { width: 100, height: 40 };
-      case 'class':
-        return { width: 180, height: 120 };
-      case 'state':
-        return { width: 120, height: 60 };
-      case 'activity':
-        return { width: 140, height: 50 };
-      case 'component':
-        return { width: 160, height: 80 };
-      case 'note':
-        return { width: 150, height: 60 };
-      default:
-        return { width: 100, height: 60 };
     }
   }
 }

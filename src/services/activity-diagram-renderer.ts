@@ -63,49 +63,4 @@ export class ActivityDiagramRenderer {
 
     setTimeout(() => this.graph.fit(50), 100);
   }
-
-  render(diagramData: DiagramData): void {
-    logger.debug('ActivityDiagram', 'Rendering');
-    const parent = this.graph.getDefaultParent();
-
-    const activities = diagramData.elements.filter((el) => el.type === 'activity');
-    logger.debug('ActivityDiagram', 'Found activities:', activities.length);
-
-    if (activities.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      const activityMap = new Map<string, { cell: Cell; y: number }>();
-      const centerX = this.startX + 150;
-
-      activities.forEach((activity, index) => {
-        const y = this.startY + index * this.activitySpacingY;
-
-        const activityCell = this.graph.insertVertex(
-          parent,
-          `activity_${activity.id}`,
-          activity.label,
-          centerX - this.activityWidth / 2,
-          y,
-          this.activityWidth,
-          this.activityHeight,
-          'rounded=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=11;' as unknown as CellStyle
-        );
-
-        activityMap.set(activity.id, { cell: activityCell, y });
-      });
-
-      // Draw flows
-      diagramData.connections.forEach((conn) => {
-        const fromInfo = activityMap.get(conn.from);
-        const toInfo = activityMap.get(conn.to);
-
-        if (fromInfo && toInfo) {
-          const flowStyle = 'endArrow=block;strokeColor=#0288d1;';
-          this.graph.insertEdge(parent, null, conn.label || '', fromInfo.cell, toInfo.cell, flowStyle as unknown as CellStyle);
-        }
-      });
-    });
-
-    setTimeout(() => this.graph.fit(50), 100);
-  }
 }

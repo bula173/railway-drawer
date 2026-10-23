@@ -7,9 +7,9 @@
  */
 
 import { onSelectionChange } from '../core/graph-events';
-import { Graph, Cell, CellStyle } from '@maxgraph/core';
+import { Graph, Cell } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
-import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
+import { PlantUmlParser, DiagramData } from '../services/plantuml-parser';
 import { SequenceDiagramRenderer } from '../services/sequence-diagram-renderer';
 import { ClassDiagramRenderer } from '../services/class-diagram-renderer';
 import { StateDiagramRenderer } from '../services/state-diagram-renderer';
@@ -163,44 +163,6 @@ Bob --> Alice: Hi
   }
 
   /**
-   * Show the editor panel
-   */
-  show(): void {
-    logger.debug('PlantUmlEditor', 'show() called');
-    logger.debug('PlantUmlEditor', 'editorPanel exists:', !!this.editorPanel);
-    if (this.editorPanel) {
-      logger.debug('PlantUmlEditor', 'Adding visible class');
-      this.editorPanel.classList.add('visible');
-      logger.debug('PlantUmlEditor', 'visible class added, classList:', this.editorPanel.className);
-      if (this.textarea) {
-        setTimeout(() => this.textarea?.focus(), 100);
-      }
-    } else {
-      console.error('[PlantUmlEditor] editorPanel is null!');
-    }
-  }
-
-  /**
-   * Toggle the editor panel visibility
-   */
-  toggle(): void {
-    if (this.editorPanel?.classList.contains('visible')) {
-      this.hide();
-    } else {
-      this.show();
-    }
-  }
-
-  /**
-   * Hide the editor panel
-   */
-  hide(): void {
-    if (this.editorPanel) {
-      this.editorPanel.classList.remove('visible');
-    }
-  }
-
-  /**
    * Render PlantUML diagram to canvas
    */
   private renderDiagram(): void {
@@ -283,122 +245,10 @@ Bob --> Alice: Hi
         logger.debug('PlantUML', 'Using component diagram renderer');
         new ComponentDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
         break;
-      default:
-        logger.debug('PlantUML', 'Using generic diagram renderer');
-        this.convertAndAddToGraph(diagramData, groupToRender);
     }
   }
 
-  /**
-   * Convert diagram data to maxGraph cells
-   */
-  private convertAndAddToGraph(diagramData: DiagramData, parentGroup?: Cell): void {
-    // If no parent group provided, use default parent
-    const parent = parentGroup || this.graph.getDefaultParent();
-    const yPos = 30;
-    const elementMap = new Map<string, Cell>();
-
-    this.graph.batchUpdate(() => {
-      // Add all elements first
-      diagramData.elements.forEach((element, index) => {
-        const dims = PlantUmlParser.getDefaultDimensions(element.type);
-        const xPos = 20 + (index % 3) * 220;
-        const yActual = yPos + Math.floor(index / 3) * 150;
-
-        const styleStr = this.getShapeStyle(element);
-        const cellValue = this.getCellValue(element);
-
-        const vertex = this.graph.insertVertex(
-          parent,
-          `plantuml_${element.id}`,
-          cellValue,
-          xPos,
-          yActual,
-          dims.width,
-          dims.height,
-          styleStr as unknown as CellStyle
-        );
-
-        elementMap.set(element.id, vertex);
-      });
-
-      // Add connections
-      diagramData.connections.forEach((conn) => {
-        const fromCell = elementMap.get(conn.from);
-        const toCell = elementMap.get(conn.to);
-
-        if (fromCell && toCell) {
-          const edgeStyleStr = this.getEdgeStyle(conn.type || 'default');
-          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, edgeStyleStr as unknown as CellStyle);
-        }
-      });
-    });
-
-    // Fit diagram to view
-    setTimeout(() => this.graph.fit(50), 100);
-  }
-
-  /**
-   * Get shape style based on element type
-   */
-  private getShapeStyle(element: DiagramElement): string {
-    const baseStyle = `rounded=1;shadow=0;html=1;fontSize=11;`;
-
-    switch (element.type) {
-      case 'actor':
-        return `${baseStyle}shape=actor;fillColor=#E1D5FE;strokeColor=#6D28D9;`;
-      case 'participant':
-        return `${baseStyle}shape=rect;fillColor=#DBEAFE;strokeColor=#0284C7;`;
-      case 'class':
-        return `${baseStyle}shape=rectangle;fillColor=#F3E8FF;strokeColor=#7E22CE;`;
-      case 'state':
-        return `${baseStyle}ellipse;fillColor=#D1FAE5;strokeColor=#059669;`;
-      case 'activity':
-        return `${baseStyle}shape=rectangle;fillColor=#FEF3C7;strokeColor=#F59E0B;`;
-      case 'component':
-        return `${baseStyle}shape=component;fillColor=#EDE9FE;strokeColor=#7C3AED;`;
-      case 'note':
-        return `${baseStyle}shape=note;fillColor=#FEF08A;strokeColor=#CA8A04;`;
-      default:
-        return `${baseStyle}fillColor=#F0F0F0;strokeColor=#666666;`;
-    }
-  }
-
-  /**
-   * Get edge style based on connection type
-   */
-  private getEdgeStyle(type?: string): string {
-    switch (type) {
-      case 'async':
-        return 'dashed=1;dashPattern=5,5;';
-      case 'composition':
-        return 'endArrow=diamond;endFill=1;';
-      case 'aggregation':
-        return 'endArrow=diamondThin;endFill=0;';
-      case 'transition':
-        return 'endArrow=block;';
-      case 'initial':
-        return 'startArrow=circle;endArrow=block;';
-      case 'final':
-        return 'endArrow=circle;';
-      default:
-        return 'endArrow=block;';
-    }
-  }
-
-  /**
-   * Get cell value (label) from element
-   */
-  private getCellValue(element: DiagramElement): string {
-    if (element.type === 'class' && element.attributes?.length) {
-      return `${element.label}\n---\n${element.attributes.join('\n')}\n---\n${element.methods?.join('\n') || ''}`;
-    }
-    return element.label;
-  }
-
-  /**
-   * Update diagram preview
-   */
+  /** Live summary of the parsed diagram under the editor. */
   private updatePreview(): void {
     if (!this.textarea || !this.diagramPreview) return;
 
