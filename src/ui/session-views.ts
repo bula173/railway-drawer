@@ -6,10 +6,12 @@
  */
 import { PropertiesPanel } from './properties';
 import { LayersController } from './layers';
+import { StatusBarController } from './statusbar';
 
 export interface SessionViews {
   readonly properties: PropertiesPanel;
   readonly layers: LayersController;
+  readonly statusBar: StatusBarController;
   /** Unbinds every view (DOM and graph listeners). */
   destroy(): void;
 }
@@ -17,12 +19,15 @@ export interface SessionViews {
 export function createSessionViews(): SessionViews {
   const properties = new PropertiesPanel();
   const layers = new LayersController();
+  const statusBar = new StatusBarController();
   return {
     properties,
     layers,
+    statusBar,
     destroy() {
       properties.destroy();
       layers.destroy();
+      statusBar.destroy();
     },
   };
 }

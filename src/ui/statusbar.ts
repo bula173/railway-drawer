@@ -1,39 +1,54 @@
-import { Disposers, onGraphEvent, onSelectionChange } from '../core/graph-events';
+/**
+ * @file statusbar.ts
+ * @brief The status bar (zoom, selection count, message, version / build) and the toolbar's zoom
+ *        select: one view for the app (TabManager's session views) showing the active session's
+ *        zoom and selection (session.ts); a background tab's changes never reach it.
+ */
+import { onGraphEvent, onSelectionChange } from '../core/graph-events';
 import { Graph, InternalEvent } from '@maxgraph/core';
+import { ActiveSessionBinding, type GraphSession } from './session';
 
 export class StatusBarController {
-  private graph: Graph;
-  private readonly disposers = new Disposers();
+  /** The bound session's graph (the active tab's). */
+  private graph!: Graph;
+  private bound = false;
+  private readonly binding: ActiveSessionBinding<GraphSession>;
 
-  constructor(graph: Graph) {
-    this.graph = graph;
-    this.setupListeners();
+  /** Follows the active session; with `graph`, stays on that graph (tests). */
+  constructor(graph?: Graph) {
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        this.bound = true;
+        // Zoom in the status bar and the toolbar select, on every scale change: buttons, menu, keys,
+        // wheel/pinch (zoomIn/zoomOut/setScale fire SCALE), fit and zoomTo (SCALE_AND_TRANSLATE)
+        disposers.add(onGraphEvent(session.graph.view, [InternalEvent.SCALE, InternalEvent.SCALE_AND_TRANSLATE], () => this.syncZoom()));
+        // Selection count of the shown tab
+        disposers.add(onSelectionChange(session.graph, () => this.syncSelection()));
+        // the shown tab's zoom and selection (also after a tab switch)
+        this.syncZoom();
+        this.syncSelection();
+      },
+      () => {
+        this.bound = false;
+      },
+      graph ? { graph } : null
+    );
   }
 
-  private setupListeners(): void {
-    // Zoom in the status bar and the toolbar select, on every scale change: buttons, menu, keys,
-    // wheel/pinch (zoomIn/zoomOut/setScale fire SCALE), fit and zoomTo (SCALE_AND_TRANSLATE)
-    const onScale = () => this.syncZoom();
-    this.disposers.add(onGraphEvent(this.graph.view, [InternalEvent.SCALE, InternalEvent.SCALE_AND_TRANSLATE], onScale));
-    this.syncZoom();
-
-    // Selection count (only while this tab is shown: a background tab's selection change, e.g. a
-    // load or a script applied to it, must not overwrite the shown tab's count)
-    this.disposers.add(onSelectionChange(this.graph, () => this.syncSelection()));
-  }
-
-  /** Removes the graph listeners (TabManager.destroyTab). */
+  /** Unbinds the view (TabManager's views are destroyed). */
   destroy(): void {
-    this.disposers.dispose();
+    this.binding.dispose();
   }
 
-  /** True while this tab's graph is the shown one (the status bar DOM is shared by all tabs). */
+  /** True while the bound graph is shown (the scenario view hides it). */
   private isShown(): boolean {
+    if (!this.bound) return false;
     const container = this.graph.container;
     return !!container && container.isConnected && container.style.display !== 'none';
   }
 
-  /** Shows this tab's selection count in the status bar (only while this tab is shown). */
+  /** Shows the shown tab's selection count in the status bar. */
   syncSelection(): void {
     if (!this.isShown()) return;
     const statusSelected = document.getElementById('status-selected');
@@ -41,8 +56,8 @@ export class StatusBarController {
   }
 
   /**
-   * Shows this tab's zoom in the status bar and the toolbar's zoom select (only while this tab is
-   * the shown one: the DOM is shared). A zoom that is not one of the presets gets its own option.
+   * Shows the shown tab's zoom in the status bar and the toolbar's zoom select. A zoom that is not
+   * one of the presets gets its own option.
    */
   syncZoom(): void {
     if (!this.isShown()) return;

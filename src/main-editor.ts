@@ -180,13 +180,10 @@ new ProjectNameEditor(tabManager);
  * @details Displays the current build identifier (git commit hash or 'dev')
  * and the build timestamp (date and time)
  */
-const activeTab = tabManager.getActiveTab();
-if (activeTab?.statusBarController) {
-  // One source for the status bar and Help > About (config/build-id.ts, package.json version)
-  activeTab.statusBarController.setVersion(APP_VERSION);
-  activeTab.statusBarController.setBuildId(BUILD_ID);
-  activeTab.statusBarController.setBuildDate(BUILD_TIME);
-}
+// One source for the status bar and Help > About (config/build-id.ts, package.json version)
+tabManager.views.statusBar.setVersion(APP_VERSION);
+tabManager.views.statusBar.setBuildId(BUILD_ID);
+tabManager.views.statusBar.setBuildDate(BUILD_TIME);
 
 // ============= SCENARIOS =============
 

@@ -2,7 +2,6 @@ import { Graph } from '@maxgraph/core';
 import { setupGraph, teardownGraph } from './setup-graph';
 import { createSessionViews, type SessionViews } from './session-views';
 import { setActiveSession, type DiagramSession } from './session';
-import { StatusBarController } from './statusbar';
 import { ClipboardController } from './clipboard';
 import { DeleteController } from './delete';
 import { UndoRedoController } from './undoredo';
@@ -44,7 +43,6 @@ export interface TabData extends DiagramSession {
   graphCommandService: GraphCommandService;
   /** The tab's document (model, project, pages, sections, remote binding, autosave state). */
   document: DiagramDocument;
-  statusBarController: StatusBarController;
   clipboardController: ClipboardController;
   deleteController: DeleteController;
   undoRedoController: UndoRedoController;
@@ -252,7 +250,6 @@ export class TabManager {
       const edgePropertiesController = new EdgePropertiesController(graph);
 
       // Initialize UI controllers
-      const statusBarController = new StatusBarController(graph);
       const clipboardController = new ClipboardController(graph);
       const deleteController = new DeleteController(graph);
       const undoRedoController = new UndoRedoController(graph, graphCommandService);
@@ -277,7 +274,6 @@ export class TabManager {
       });
 
       return {
-        statusBarController,
         clipboardController,
         deleteController,
         undoRedoController,
@@ -588,8 +584,6 @@ export class TabManager {
    */
   private refreshSharedPanels(tab: TabData): void {
     this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
-    tab.statusBarController.syncZoom();
-    tab.statusBarController.syncSelection();
     // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
     syncGridUi(tab.graph);
   }
@@ -669,7 +663,6 @@ export class TabManager {
       // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
       const controllers = [
         tab.graphCommandService,
-        tab.statusBarController,
         tab.clipboardController,
         tab.deleteController,
         tab.undoRedoController,

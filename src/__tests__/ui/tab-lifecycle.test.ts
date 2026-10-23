@@ -16,7 +16,6 @@ import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
 import { installShellForTest } from './shell-harness';
 import { EdgePropertiesController } from '../../ui/edge-properties';
-import { StatusBarController } from '../../ui/statusbar';
 import { InteractiveUIController } from '../../ui/interactive-ui';
 
 describe('TabManager tab lifecycle', () => {
@@ -60,7 +59,6 @@ describe('TabManager tab lifecycle', () => {
 
   it('closing a tab disposes the graph listeners of its controllers', () => {
     const edge = vi.spyOn(EdgePropertiesController.prototype, 'destroy');
-    const status = vi.spyOn(StatusBarController.prototype, 'destroy');
     const ui = vi.spyOn(InteractiveUIController.prototype, 'destroy');
     tabManager = new TabManager('tabs-container', 'graph-container');
     tabManager.createTab('One');
@@ -69,10 +67,10 @@ describe('TabManager tab lifecycle', () => {
     const before = selection.eventListeners.length;
     tabManager.closeTab(second.id);
     expect(edge).toHaveBeenCalledTimes(1);
-    expect(status).toHaveBeenCalledTimes(1);
     expect(ui).toHaveBeenCalledTimes(1);
-    // EdgeProperties, StatusBar and InteractiveUI each listened to the selection model
-    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 3 * 2);
+    // EdgeProperties and InteractiveUI each listened to the selection model (the session views
+    // such as the status bar listen to the shown tab only)
+    expect(selection.eventListeners.length).toBeLessThanOrEqual(before - 2 * 2);
   });
 
   it('keeps the cached XML of a tab that failed to restore and tells the user', () => {
