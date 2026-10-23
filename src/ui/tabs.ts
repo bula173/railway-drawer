@@ -1,6 +1,7 @@
 import { Graph } from '@maxgraph/core';
 import { setupGraph, teardownGraph } from './setup-graph';
-import { PropertiesPanel } from './properties';
+import { createSessionViews, type SessionViews } from './session-views';
+import { setActiveSession, type DiagramSession } from './session';
 import { StatusBarController } from './statusbar';
 import { ClipboardController } from './clipboard';
 import { DeleteController } from './delete';
@@ -37,14 +38,13 @@ import { ExportImageController } from './export-image';
 import { PlantUmlEditorController } from './plantuml-editor';
 import { logger } from '../drawio/logger';
 
-export interface TabData {
+export interface TabData extends DiagramSession {
   id: string;
   name: string;
   graph: Graph;
   graphCommandService: GraphCommandService;
   /** The tab's document (model, project, pages, sections, remote binding, autosave state). */
   document: DiagramDocument;
-  propertiesPanel: PropertiesPanel;
   statusBarController: StatusBarController;
   clipboardController: ClipboardController;
   deleteController: DeleteController;
@@ -98,6 +98,8 @@ export class TabManager {
   private tabBarContainer: HTMLElement;
   private graphContainer: HTMLElement;
   private autoSaveInterval: ReturnType<typeof setInterval> | null = null;
+  /** The shell's panels, created once and bound to the active tab's session (session-views.ts). */
+  readonly views: SessionViews;
   /**
    * Shared-DOM listeners per tab. Only the active tab's listeners are attached, so every global
    * UI action (menu, toolbar, shortcuts, properties) runs once and against the active tab.
@@ -120,6 +122,7 @@ export class TabManager {
   constructor(tabBarContainerId: string, graphContainerId: string) {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
     this.graphContainer = document.getElementById(graphContainerId)!;
+    this.views = createSessionViews();
     this.startAutoSave();
     on(GRID_SETTINGS_EVENT, this.onGridSettings);
   }
@@ -251,7 +254,6 @@ export class TabManager {
       const edgePropertiesController = new EdgePropertiesController(graph);
 
       // Initialize UI controllers
-      const propertiesPanel = new PropertiesPanel(graph);
       const statusBarController = new StatusBarController(graph);
       const clipboardController = new ClipboardController(graph);
       const deleteController = new DeleteController(graph);
@@ -278,7 +280,6 @@ export class TabManager {
       });
 
       return {
-        propertiesPanel,
         statusBarController,
         clipboardController,
         deleteController,
@@ -321,6 +322,8 @@ export class TabManager {
 
     if (!this.activeTabId) {
       this.activeTabId = tabId;
+      // the first tab is the shown one: the session views bind to it
+      setActiveSession(tabData);
     } else {
       // Created in the background: its shared-DOM listeners stay detached until it is shown
       this.detachTabListeners(tabId);
@@ -562,6 +565,8 @@ export class TabManager {
     this.activeTabId = tabId;
     const newTab = this.tabs.get(tabId);
     if (newTab) {
+      // the session views rebind to the shown tab (session.ts), then the remaining per-tab panels
+      setActiveSession(newTab);
       this.refreshSharedPanels(newTab);
       this.showProjectName(newTab);
     }
@@ -588,7 +593,6 @@ export class TabManager {
   private refreshSharedPanels(tab: TabData): void {
     this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
     tab.layersController.refresh();
-    tab.propertiesPanel.update();
     tab.statusBarController.syncZoom();
     tab.statusBarController.syncSelection();
     // View > Grid, toolbar and Properties > Canvas show this tab's grid (per tab, from its file)
@@ -599,6 +603,8 @@ export class TabManager {
     if (!this.tabs.has(tabId)) return;
     if (this.tabs.size === 1) return; // Keep at least one tab
 
+    // The views let go of the shown tab before its graph is destroyed (switchTab below binds the next)
+    if (this.activeTabId === tabId) setActiveSession(null);
     // Destroy the tab and clean up resources
     this.destroyTab(tabId);
     this.tabs.delete(tabId);
@@ -635,6 +641,8 @@ export class TabManager {
   }
 
   destroy(): void {
+    // the views let go of the shown tab before the graphs are destroyed
+    setActiveSession(null);
     off(GRID_SETTINGS_EVENT, this.onGridSettings);
     // Clear auto-save interval
     if (this.autoSaveInterval) {
@@ -651,6 +659,7 @@ export class TabManager {
 
     this.tabs.clear();
     this.activeTabId = null;
+    this.views.destroy();
   }
 
   private destroyTab(tabId: string): void {
@@ -665,7 +674,6 @@ export class TabManager {
       // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
       const controllers = [
         tab.graphCommandService,
-        tab.propertiesPanel,
         tab.statusBarController,
         tab.clipboardController,
         tab.deleteController,

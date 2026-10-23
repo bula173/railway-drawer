@@ -12,9 +12,15 @@
  *
  * The panel automatically updates when selection changes and applies changes
  * directly to the graph model with immediate visual feedback.
+ *
+ * One panel for the app (TabManager's session views): its DOM listeners are bound once, its graph
+ * listeners follow the active session (session.ts ActiveSessionBinding), so a background tab's
+ * selection or model changes never reach the visible panel.
  */
 
 import { Graph, InternalEvent, constants } from '@maxgraph/core';
+import { onGraphEvent, onModelChange, onSelectionChange } from '../core/graph-events';
+import { ActiveSessionBinding, type GraphSession } from './session';
 import type { EventObject } from '@maxgraph/core';
 import { selectionTitle, setPropertiesPanelState } from './properties-state';
 import type { Geometry } from '@maxgraph/core';
@@ -110,8 +116,14 @@ function selectValue(select: HTMLSelectElement | null, value: string): void {
  * @note Placeholder is shown when nothing is selected; editor shows when a cell is selected
  */
 export class PropertiesPanel {
-  /** @brief Reference to the maxGraph instance */
-  private graph: Graph;
+  /** @brief The bound session's graph (the active tab's; null before the first tab) */
+  private graph!: Graph;
+  /** @brief Follows the active session (or stays on the graph given to the constructor) */
+  private readonly binding: ActiveSessionBinding<GraphSession>;
+  /** @brief Whether a graph is bound (set before the binding's first update runs) */
+  private bound = false;
+  /** @brief "Canvas Properties were asked for" of each graph shown before (kept per tab) */
+  private readonly canvasRequestedByGraph = new WeakMap<Graph, boolean>();
   /** @brief Cell whose values are currently displayed in the panel */
   private currentCell: Cell | null = null;
   /**
@@ -121,7 +133,7 @@ export class PropertiesPanel {
    * selection changes only refresh displayed values and never add listeners.
    */
   private readonly listenerAbort = new AbortController();
-  /** @brief Selection model listener, kept for removal in destroy() */
+  /** @brief Selection model listener */
   private readonly selectionListener = () => this.update();
   /**
    * @brief Canvas Properties were asked for (a click on the empty canvas); cleared when a cell is
@@ -157,35 +169,46 @@ export class PropertiesPanel {
    * Sets up the panel UI, tab buttons, collapsible sections, and event listeners.
    * Automatically updates when the selection in the graph changes.
    */
-  constructor(graph: Graph) {
-    this.graph = graph;
+  constructor(graph?: Graph) {
     this.setupTabButtons();
     this.setupCollapsibles();
     this.setupEventListeners();
-
-    this.graph.getSelectionModel().addListener('change', this.selectionListener);
-    this.graph.getDataModel().addListener('change', this.modelListener);
-    this.graph.addListener(InternalEvent.CLICK, this.clickListener);
+    this.binding = new ActiveSessionBinding<GraphSession>(
+      (session, disposers) => {
+        this.graph = session.graph;
+        this.bound = true;
+        this.canvasRequested = this.canvasRequestedByGraph.get(session.graph) ?? false;
+        disposers.add(onSelectionChange(session.graph, this.selectionListener));
+        disposers.add(onModelChange(session.graph, this.modelListener));
+        disposers.add(onGraphEvent(session.graph, InternalEvent.CLICK, this.clickListener));
+        // the shown tab's selection (also after a tab switch)
+        this.update();
+      },
+      (session) => {
+        this.canvasRequestedByGraph.set(session.graph, this.canvasRequested);
+        this.bound = false;
+        this.currentCell = null;
+      },
+      graph ? { graph } : null
+    );
   }
 
   /**
    * @brief Remove all DOM and graph listeners registered by this panel
-   * @details Called by TabManager.destroyTab() when the owning tab is closed.
+   * @details Called when the TabManager's views are destroyed.
    */
   destroy() {
     this.listenerAbort.abort();
-    this.graph.getSelectionModel().removeListener(this.selectionListener);
-    this.graph.getDataModel().removeListener(this.modelListener);
-    this.graph.removeListener(this.clickListener);
+    this.binding.dispose();
     this.currentCell = null;
   }
 
   /**
-   * @brief Whether this panel's graph is the one currently shown
-   * @details The panel DOM is shared by every tab (one PropertiesPanel per tab),
-   * so only the panel of the visible graph may react to edits.
+   * @brief Whether the panel is bound to a graph that is shown
+   * @details Only the active session's graph is bound; the scenario view hides it.
    */
   private isActive(): boolean {
+    if (!this.bound) return false;
     const container = this.graph.container;
     return !!container && container.isConnected && container.style.display !== 'none';
   }
@@ -445,7 +468,6 @@ export class PropertiesPanel {
     const headers = document.querySelectorAll('.collapsible-header');
     headers.forEach((header) => {
       header.addEventListener('click', () => {
-        // Every tab's panel registers this toggle; only one may flip it
         if (!this.isActive()) return;
         const section = header.getAttribute('data-section');
         const content = document.querySelector(
