@@ -215,7 +215,8 @@ describe('rule settings', () => {
     expect(s['balise-order'].severity).toBe('error');
     expect(s['overlap-length'].params).toEqual({ min: 50 });
     expect(s['signal-spacing'].params).toEqual({ min: 200 });
-    expect(s['signal-side'].params).toEqual({ side: 'right' });
+    expect(s['signal-side']).toEqual({ enabled: false, severity: 'warning', params: { side: 'right' } }); // off by default (drawing conventions differ)
+    expect(RULE_DEFS.filter((d) => !s[d.id].enabled).map((d) => d.id)).toEqual(['signal-side']);
     for (const d of RULE_DEFS) expect(d.label.pl && d.label.en && d.help.pl && d.help.en).toBeTruthy();
   });
 
@@ -223,10 +224,16 @@ describe('rule settings', () => {
     const s = defaultRuleSettings();
     expect(serializeRuleSettings(s)).toBe('');
     s['overlap-length'].params.min = 120;
-    s['signal-side'].enabled = false;
+    s['signal-side'].enabled = true;
+    s['signal-spacing'].enabled = false;
     s['balise-order'].severity = 'warning';
     const text = serializeRuleSettings(s);
-    expect(JSON.parse(text)).toEqual({ 'balise-order': { severity: 'warning' }, 'overlap-length': { params: { min: 120 } }, 'signal-side': { enabled: false } });
+    expect(JSON.parse(text)).toEqual({
+      'balise-order': { severity: 'warning' },
+      'overlap-length': { params: { min: 120 } },
+      'signal-side': { enabled: true },
+      'signal-spacing': { enabled: false },
+    });
     expect(parseRuleSettings(text)).toEqual(s);
     const bad = parseRuleSettings('{"overlap-length":{"params":{"min":-5}},"nope":{},"signal-side":{"params":{"side":"up"},"severity":"fatal"}}');
     expect(bad).toEqual(defaultRuleSettings());
@@ -295,6 +302,8 @@ describe('rules on the built-in ERTMS templates', () => {
       const report = validateModelReport(graph.getDataModel());
       for (const i of report.issues) expect(i.cellId, `${tpl.name}: ${i.message}`).toBeTruthy();
       findings += report.issues.filter((i) => RULE_DEFS.some((d) => d.id === i.rule)).length + report.notes.length;
+      // the templates draw signals above a left-to-right track: the side rule is off by default
+      expect(report.issues.filter((i) => i.rule === 'signal-side'), tpl.name).toEqual([]);
       cleanupTestGraph(graph);
       graph = null;
     }

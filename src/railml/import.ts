@@ -78,9 +78,7 @@ const CONTAINERS: Record<string, readonly string[]> = {
   levelCrossingsIS: ['levelCrossingIS'],
   interlocking: ['assetsForInterlockings', 'radioBlockCentres'],
   assetsForInterlockings: ['assetsForInterlocking'],
-  // conflictingRoutes: derived from the routes (interlocking.ts), recomputed by the export
-  assetsForInterlocking: ['tvdSections', 'switchesIL', 'signalsIL', 'routes', 'conflictingRoutes', 'overlaps'],
-  conflictingRoutes: ['conflictingRoute'],
+  assetsForInterlocking: ['tvdSections', 'switchesIL', 'signalsIL', 'routes', 'overlaps'],
   tvdSections: ['tvdSection'],
   switchesIL: ['switchIL'],
   signalsIL: ['signalIL'],

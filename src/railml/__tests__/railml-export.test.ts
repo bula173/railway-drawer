@@ -7,7 +7,8 @@ import { exportRailml } from '../export';
 import { importRailml } from '../import';
 import { checkRailmlStructure } from '../structure';
 import { RAILML_NS, RD_NS, isNcName } from '../xml';
-import { Layout, all, fixture, parse, specLayout } from './helpers';
+import { Layout, all, ertmsEntries, fixture, parse, specLayout } from './helpers';
+import { crossoverLayout } from '../../railway/__tests__/layouts';
 import { readCountryId, setCountryId } from '../../railway/project-settings';
 import { exportModelToDrawioXml, importDrawioXmlIntoModel } from '../../services/drawio-xml';
 import { GraphDataModel } from '@maxgraph/core';
@@ -259,5 +260,45 @@ describe('railML export: insulated rail joints (TC joint markers)', () => {
     const joint = collectObjects(back.model).find((o) => o.kind.id === 'insulatedJoint')!;
     expect(joint.id).toBe('J1');
     expect(joint.values.sections).toBe('TC1, TC2');
+  });
+});
+
+describe('railML export of the route conflicts (interlocking.ts)', () => {
+  const crossover = () => {
+    const l = crossoverLayout();
+    l.route('R1', 'S1', 'S2');
+    l.route('R2', 'S3', 'S4');
+    l.route('R3', 'S1', 'S4');
+    return l;
+  };
+
+  it('codes and flank protection only in the rd extension of the route; no core conflict elements', () => {
+    const r = exportRailml(crossover().model, { title: 'Crossover', date: DATE });
+    const doc = parse(r.xml);
+    expect(all(doc, 'route')).toHaveLength(3);
+    for (const name of ['conflictingRoutes', 'conflictingRoute', 'refersToRoute', 'conflictsWithRoute']) expect(all(doc, name), name).toEqual([]);
+    expect(r.counts.conflictingRoute).toBeUndefined();
+    const routeExt = [...doc.getElementsByTagNameNS(RD_NS, 'object')].filter((e) => e.getAttribute('kind') === 'route' && e.getAttribute('ref'));
+    const of = (designator: string): Element => {
+      const e = routeExt.find((x) => child(byId(doc, x.getAttribute('ref')!), 'designator')?.getAttribute('entry') === designator);
+      if (!e) throw new Error(`no rd:object for ${designator}`);
+      return e;
+    };
+    expect(of('R3').getAttribute('rdConflicts')).toBe('R1:SPF R2:SPF');
+    expect(of('R1').getAttribute('rdConflicts')).toBe('R3:SPF');
+    expect(of('R1').getAttribute('rdFlank')).toBe('W2:normal');
+    expect(of('R3').getAttribute('rdFlank')).toBe('S3:stop');
+    // without the extension: nothing about conflicts at all
+    const pure = exportRailml(crossover().model, { title: 'Crossover', date: DATE, extension: false }).xml;
+    expect(pure).not.toMatch(/conflict|rdFlank/i);
+  });
+
+  it('the derived values are not read back: export -> import -> export is byte-stable', () => {
+    // the first import adds the library symbols' styles to the bare test layout: compare from there
+    const start = exportRailml(importRailml(exportRailml(crossover().model, { title: 'Crossover', date: DATE }).xml, { symbols: ertmsEntries() }).model, { title: 'Crossover', date: DATE }).xml;
+    expect(start).toContain('rdConflicts="R1:SPF R2:SPF" rdFlank="S3:stop"');
+    const imported = importRailml(start, { symbols: ertmsEntries() });
+    for (const o of collectObjects(imported.model).filter((x) => x.kind.id === 'route')) expect(Object.keys(o.values).join(',')).not.toMatch(/conflict|flank/i);
+    expect(exportRailml(imported.model, { title: 'Crossover', date: DATE }).xml).toBe(start);
   });
 });

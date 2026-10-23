@@ -46,6 +46,8 @@ export interface RuleDef {
   label: Bi;
   help: Bi;
   severity: RuleSeverity;
+  /** false: off until the project turns it on (a check whose drawing convention varies). Default true. */
+  enabledByDefault?: boolean;
   params: RuleParamDef[];
 }
 
@@ -106,10 +108,11 @@ export const RULE_DEFS: readonly RuleDef[] = [
     id: 'signal-side',
     label: { en: 'Signal on the correct side', pl: 'Semafor po właściwej stronie' },
     help: {
-      en: 'A signal stands on the configured side of the track for its direction of travel (right-hand running: right).',
-      pl: 'Semafor stoi po ustawionej stronie toru względem kierunku jazdy (ruch prawostronny: po prawej).',
+      en: 'A signal stands on the configured side of the track for its direction of travel (right-hand running: right). Off by default: schematic conventions differ (the ERTMS templates draw signals above a left-to-right track, snap to track places them below), so turn it on when the project draws signals on their physical side.',
+      pl: 'Semafor stoi po ustawionej stronie toru względem kierunku jazdy (ruch prawostronny: po prawej). Domyślnie wyłączona: konwencje schematów są różne (szablony ERTMS rysują semafory nad torem biegnącym od lewej do prawej, przyciąganie do toru pod nim), więc włącz ją, gdy projekt rysuje semafory po ich rzeczywistej stronie.',
     },
     severity: 'warning',
+    enabledByDefault: false,
     params: [
       {
         key: 'side',
@@ -179,7 +182,7 @@ export function getRuleDef(id: string): RuleDef | null {
 
 export function defaultRuleSettings(): RuleSettings {
   const out = {} as RuleSettings;
-  for (const d of RULE_DEFS) out[d.id] = { enabled: true, severity: d.severity, params: Object.fromEntries(d.params.map((p) => [p.key, p.default])) };
+  for (const d of RULE_DEFS) out[d.id] = { enabled: d.enabledByDefault !== false, severity: d.severity, params: Object.fromEntries(d.params.map((p) => [p.key, p.default])) };
   return out;
 }
 
@@ -227,7 +230,7 @@ export function serializeRuleSettings(settings: RuleSettings): string {
     const c = settings[d.id];
     if (!c) continue;
     const diff: { enabled?: boolean; severity?: RuleSeverity; params?: Record<string, number | string> } = {};
-    if (c.enabled === false) diff.enabled = false;
+    if (c.enabled !== (d.enabledByDefault !== false)) diff.enabled = c.enabled;
     if (c.severity !== d.severity) diff.severity = c.severity;
     for (const p of d.params) {
       const v = c.params[p.key];

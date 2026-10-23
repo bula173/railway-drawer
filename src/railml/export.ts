@@ -602,23 +602,13 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
     }
     count('route');
   }
-  // Conflicting routes (railML 3.2 interlocking conflictingRoutes, derived: interlocking.ts); the
-  // reason codes and the flank protection have no verified railML place: rd extension (rdConflicts,
-  // rdFlank on the route), recomputed on every export, not read back by the import
+  // Conflicting routes and flank protection (derived: interlocking.ts): only in the rd extension of
+  // the route (rdConflicts, rdFlank), recomputed on every export and not read back by the import. No
+  // core railML elements: the IL names for conflicts are not verified against the (not vendored) XSD
   const exportedRoutes = new Map<string, RailObject>();
   for (const [o] of routeExt) if (o.values.entrySignal && o.values.exitSignal && byKindId('signal', o.values.entrySignal) && byKindId('signal', o.values.exitSignal)) exportedRoutes.set(o.cellId, o);
   if (exportedRoutes.size > 0) {
     const il = computeInterlocking(objects, topo);
-    const routeOf = new Map(il.routes.map((r) => [r.id.toUpperCase(), exportedRoutes.get(r.cellId)]));
-    for (const c of il.conflicts) {
-      const a = routeOf.get(c.a.toUpperCase());
-      const b = routeOf.get(c.b.toUpperCase());
-      if (!a || !b) continue;
-      const cr = el(ensureOrdered(assets(), 'conflictingRoutes'), 'conflictingRoute', { id: ids.take(`cr_${idOf(a)}_${idOf(b)}`) });
-      el(cr, 'refersToRoute', { ref: idOf(a) });
-      el(cr, 'conflictsWithRoute', { ref: idOf(b) });
-      count('conflictingRoute');
-    }
     for (const r of il.routes) {
       const o = exportedRoutes.get(r.cellId);
       const ext = o ? routeExt.get(o) : undefined;

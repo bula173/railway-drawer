@@ -36,6 +36,11 @@ export function openRuleSettingsDialog(options: RuleSettingsDialogOptions): () =
       'p',
       'rd-il-note',
       'Saved in this diagram. Distances are metres along the track: they need the tracks\' length or km start/end (else the rule is skipped with a note). Ustawienia reguł zapisywane w rysunku.'
+    ),
+    el(
+      'p',
+      'rd-il-note rd-rules-defaults-note',
+      'The default thresholds are placeholders, not PKP PLK (or other) norms: set the values of your project and its regulations. Domyślne progi są przykładowe, nie są normami PKP PLK: ustaw wartości obowiązujące w projekcie.'
     )
   );
   const table = el('table', 'rd-rules-table');
