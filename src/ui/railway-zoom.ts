@@ -11,6 +11,8 @@
  */
 import type { Graph } from '@maxgraph/core';
 import { centerCanvasContent, resetCanvasScroll } from './canvas-scroll';
+import { on } from '../core/event-bus';
+import { createInstallScope, installOnce } from '../core/install-once';
 
 export const RAILWAY_MIN_ZOOM = 1.5;
 export const RAILWAY_MAX_ZOOM = 2;
@@ -40,4 +42,15 @@ export function zoomRailwayDrawing(graph: Graph): void {
   const target = railwayOpenZoom(fit);
   if (Math.abs(target - s) > 1e-3) graph.view.setScale(target);
   centerCanvasContent(graph);
+}
+
+const PAGE = createInstallScope();
+
+/**
+ * The features (railML import, Railway Script) ask for this zoom with the bus event
+ * `railway-zoom-request` (synchronous), so they do not import the canvas code; once per page (boot).
+ */
+export function installRailwayZoomRequests(): void {
+  if (!installOnce(PAGE, 'railway-zoom-requests')) return;
+  on('railway-zoom-request', ({ graph }) => zoomRailwayDrawing(graph));
 }

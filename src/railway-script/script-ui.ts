@@ -17,13 +17,13 @@ import { parseScript } from './parse';
 import type { SessionStatus } from './session';
 import { ScriptSession } from './session';
 import { SCRIPT_TEMPLATES } from './templates';
-import { confirmDialog } from '../ui/app-dialogs';
+import { askConfirm } from '../core/confirm';
 import { readItem, writeItem } from '../core/safe-storage';
 import { STORAGE_KEYS } from '../core/storage-keys';
 
 /** Themed confirmation before the editor's text is replaced (not the native confirm()). */
 function confirmReplace(message: string): Promise<boolean> {
-  return confirmDialog({ title: 'Replace the script', message, confirmLabel: 'Replace', testId: 'rs-replace-confirm' });
+  return askConfirm({ title: 'Replace the script', message, confirmLabel: 'Replace', testId: 'rs-replace-confirm' });
 }
 
 export interface ScriptNotifier {

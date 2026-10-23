@@ -16,7 +16,7 @@
   strict mode with `allowUnionTypes` + the `x-expected` annotation keyword); `model.ts` = semantic checks.
 - Text -> drawing: `parse.ts` (npm `yaml` 2.9.1, eemeli/yaml, ISC; positions -> `line:col`), `layout.ts` (x from km with
   `page.scale`, y from lanes; auto lanes from points hand (toe rule, `legSide`); legs to the diverging track's nearer end), `build.ts` (cells with
-  `src/railml/schematic.ts` = `ModelBuilder`/`Symbols`/fallback styles moved out of the railML import and shared; routes via
+  `src/railway/schematic.ts` = `ModelBuilder`/`Symbols`/fallback styles moved out of the railML import and shared; routes via
   `findRoutePaths`); generated top cells carry `rdScript="<kind>:<id>"` + `rdScriptShape`. `apply.ts` reconciles into the tab
   in ONE undoable edit (inside `withSnapSuspended`, snap.ts): remove gone, add new (generated order), replace on another
   `rdScriptShape` or adoption (unmarked object with the same kind+ID), else geometry + owned data (label/style/user attrs

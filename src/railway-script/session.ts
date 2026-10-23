@@ -13,7 +13,7 @@
  * The `applying` flag keeps an apply's own model events out of the sync (no feedback loop).
  */
 import { onModelChange, onModelEvent } from '../core/graph-events';
-import { zoomRailwayDrawing } from '../ui/railway-zoom';
+import { emit as emitAppEvent } from '../core/event-bus';
 import { InternalEvent, RootChange } from '@maxgraph/core';
 import type { EventObject, EventSource, Graph } from '@maxgraph/core';
 import type { KindId } from '../railway/catalogue';
@@ -46,7 +46,7 @@ export interface ApplyOutcome {
 type SymbolsLoader = () => Promise<LibraryEntry[]>;
 
 let symbolsLoader: SymbolsLoader = async () => {
-  const { loadErtmsLibraryEntries } = await import('../ui/drawio-palette/ertms-source');
+  const { loadErtmsLibraryEntries } = await import('../drawio-shapes/ertms-library');
   return loadErtmsLibraryEntries();
 };
 let symbolsCache: Promise<LibraryEntry[]> | null = null;
@@ -184,7 +184,7 @@ export class ScriptSession {
     this.snapshot = takeSnapshot(this.graph.getDataModel(), parsed.model);
     this.conflict = false;
     this.lastApply = { counts, objects: built.counts, at: Date.now() };
-    if (wasEmpty) zoomRailwayDrawing(this.graph);
+    if (wasEmpty) emitAppEvent('railway-zoom-request', { graph: this.graph });
     this.emit();
     return { ok: true, diagnostics: this.diagnostics, counts };
   }

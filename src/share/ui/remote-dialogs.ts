@@ -15,7 +15,7 @@ import type {
   StorageProvider,
 } from '../providers/types';
 import { button, copyText, el, openModal } from './modal';
-import { createToolbarIcon } from '../../ui/toolbar';
+import { createToolbarIcon } from '../../core/icons';
 
 export type BrowseResult =
   | { mode: 'open'; path: BrowseEntry[]; file: BrowseEntry }

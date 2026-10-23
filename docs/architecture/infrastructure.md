@@ -13,9 +13,21 @@ The shared building blocks every change builds on. Each has a guard (unit test o
 | features | `src/railway` (the domain base the others may use), `src/scenarios`, `src/railway-script`, `src/railml`, `src/ai`, `src/share` |
 | ui | `src/ui`, `src/boot`, `src/debug`, `src/main.ts`, `src/main-editor.ts` |
 
-The listed exceptions in the config are current reality with a TODO each (feature UI glue that uses the shell,
-type-only imports of UI types in feature install signatures, a few cross-feature imports, the clipboard's railway
-renumbering); new code must not add to them. Probe test: `src/__tests__/lint/boundaries.test.ts`.
+The listed exceptions in the config are current reality with a TODO each; new code must not add to them. Probe
+test: `src/__tests__/lint/boundaries.test.ts` (also pins the resolved ones). What remains:
+
+- feature UI glue that uses the shell: `ai/app-target.ts`, `ai/template-tools.ts`, `ai/tools.ts` (the AI tools drive
+  the templates, palettes and image export of the shell), `scenarios/install-scenarios.ts`, `scenario-view.ts`,
+  `scenarios-panel.ts` (palette view, template dialogs, image export, `setupGraph` for the step view),
+  `share/install-sharing.ts` (image export of the Share dialog);
+- type-only imports of UI types (`TabManager`, `TabData`) in feature install signatures;
+- `ai` -> `scenarios` / `railway-script` / `railml` (the assistant's tools and prompt use those features).
+
+Resolved: the clipboard runs registered paste hooks (`registerPasteHook`; railway/clone.ts registers the renumbering);
+the share link writes the project sections generically (`DiagramDocument.sectionContent`, `claimsPage`); `sha256` is
+in `security/`, the railML/Railway Script cell builder in `railway/schematic.ts`, the icon set in `core/icons.ts`, the
+ERTMS library download in `drawio-shapes/ertms-library.ts`; features ask for the railway zoom with the bus event
+`railway-zoom-request` and for a yes/no answer with `core/confirm.ts` `askConfirm` (ui/app-dialogs.ts provides it).
 
 ## Core helpers
 

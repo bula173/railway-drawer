@@ -226,7 +226,7 @@ or `"$schema": "…/railway-script-1.schema.json"` in JSON. The app serves the f
 `src/railway-script/`: `language.ts` (lists, key aliases), `schema.ts` (the JSON Schema; the public
 file is kept equal by a test), `validate.ts` (draft-07 subset validator interpreting that schema),
 `parse.ts` (eemeli/yaml `yaml` 2.9.1, positions), `model.ts` (normalized model + semantic checks),
-`layout.ts`, `build.ts` (cells via `src/railml/schematic.ts`, shared with the railML import),
+`layout.ts`, `build.ts` (cells via `src/railway/schematic.ts`, shared with the railML import),
 `apply.ts` (reconcile into the tab, one undo step), `sync.ts` (drawing → text), `generate.ts`,
 `session.ts` (per tab: apply / sync / undo / conflicts), `script-ui.ts` + `railway-script.css`
 (panel, import/export; lazy chunk with the YAML parser), `script-store.ts` and
