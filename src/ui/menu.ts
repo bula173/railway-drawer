@@ -8,14 +8,13 @@ import { setGridShown } from './grid-toggle';
 import { togglePanel } from './side-panels';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
-import type { LeftPanelTabs } from './left-panel-tabs';
+import { appContext } from './app-context';
 import { promptSaveAs, showAboutDialog } from './app-dialogs';
 import { applyShortcutHints } from './shortcut-keys';
 import { ServiceRegistry } from '../services/service-registry';
 import { logger } from '../drawio/logger';
 
 /** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
-type WindowWithLeftPanelTabs = Window & { __leftPanelTabs?: LeftPanelTabs };
 
 export class MenuController {
   private graph: Graph;
@@ -478,7 +477,7 @@ export class MenuController {
         break;
 
       case 'railwayScriptEditor':
-        (window as WindowWithLeftPanelTabs).__leftPanelTabs?.switchTab('railwayScript');
+        appContext()?.leftPanelTabs.switchTab('railwayScript');
         break;
 
       // Same commands as the canvas context menu (GraphCommandService): one undoable edit each
@@ -518,7 +517,7 @@ export class MenuController {
 
       case 'plantumlEditor': {
         logger.debug('Menu', 'PlantUML editor clicked');
-        const leftPanelTabs = (window as WindowWithLeftPanelTabs).__leftPanelTabs;
+        const leftPanelTabs = appContext()?.leftPanelTabs;
         if (leftPanelTabs) {
           // If tab is hidden, show it; otherwise switch to it
           if (leftPanelTabs.isTabHidden('plantuml')) {
@@ -536,7 +535,7 @@ export class MenuController {
 
       case 'toggleErtmsTab': {
         // Optional left-panel tab with only the ERTMS library; visibility is persisted by main-editor.ts
-        const leftPanelTabs = (window as WindowWithLeftPanelTabs).__leftPanelTabs;
+        const leftPanelTabs = appContext()?.leftPanelTabs;
         if (leftPanelTabs) {
           if (leftPanelTabs.isTabHidden('ertms')) leftPanelTabs.showTab('ertms');
           else leftPanelTabs.closeTab('ertms');

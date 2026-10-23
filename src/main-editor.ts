@@ -24,6 +24,7 @@ import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
 import { installGlobalGraphPatches } from './ui/setup-graph';
+import { provideAppContext } from './ui/app-context';
 import { emit, on } from './core/event-bus';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
@@ -480,8 +481,8 @@ installRailwayScript(tabManager, globalNotificationManager, leftPanelTabs, docum
 // AI assistant: right panel view "AI" (src/ai; lazy chunk, docs/AI.md)
 installAi(tabManager, globalNotificationManager);
 
-// Make leftPanelTabs globally accessible for menu handlers
-(window as Window & { __leftPanelTabs?: LeftPanelTabs }).__leftPanelTabs = leftPanelTabs;
+// The shell objects for code created per tab (menu handlers): ui/app-context.ts
+provideAppContext({ tabManager, notify: globalNotificationManager, saveStatus: globalSaveStatusIndicator, leftPanelTabs });
 
 // ============= SHAPES TAB =============
 
