@@ -84,18 +84,7 @@ export class GroupingController {
    * @returns The new group cell, or null when fewer than 2 shapes are selected
    */
   group(): Cell | null {
-    const vertices = this.graph.getSelectionCells().filter((cell: Cell) => cell.isVertex());
-    if (vertices.length < 2) {
-      logger.debug('Grouping', 'Select at least 2 shapes to group');
-      return null;
-    }
-
-    const container = this.graph.createGroupCell(vertices);
-    container.setStyle({ ...GROUP_STYLE });
-    // One undoable model edit (groupCells runs in its own batch update)
-    const group = this.graph.groupCells(container, 0, vertices);
-    this.graph.setSelectionCell(group);
-    return group;
+    return groupSelection(this.graph);
   }
 
   /**
@@ -104,17 +93,38 @@ export class GroupingController {
    * @returns The cells that were ungrouped
    */
   ungroup(): Cell[] {
-    const groups = this.graph.getSelectionCells().filter((cell: Cell) => cell.getChildCount() > 0);
-    if (groups.length === 0) {
-      logger.debug('Grouping', 'Select a group to ungroup');
-      return [];
-    }
-    const children = this.graph.ungroupCells(groups);
-    if (children.length > 0) this.graph.setSelectionCells(children);
-    return children;
+    return ungroupSelection(this.graph);
   }
 
   destroy(): void {
     // Cleanup if needed
   }
+}
+
+/** Groups the selected shapes (2+ vertices; edges are ignored) into a container; Arrange > Group too. */
+export function groupSelection(graph: Graph): Cell | null {
+  const vertices = graph.getSelectionCells().filter((cell: Cell) => cell.isVertex());
+  if (vertices.length < 2) {
+    logger.debug('Grouping', 'Select at least 2 shapes to group');
+    return null;
+  }
+
+  const container = graph.createGroupCell(vertices);
+  container.setStyle({ ...GROUP_STYLE });
+  // One undoable model edit (groupCells runs in its own batch update)
+  const group = graph.groupCells(container, 0, vertices);
+  graph.setSelectionCell(group);
+  return group;
+}
+
+/** Ungroups the selected groups (children back to the group's parent); Arrange > Ungroup too. */
+export function ungroupSelection(graph: Graph): Cell[] {
+  const groups = graph.getSelectionCells().filter((cell: Cell) => cell.getChildCount() > 0);
+  if (groups.length === 0) {
+    logger.debug('Grouping', 'Select a group to ungroup');
+    return [];
+  }
+  const children = graph.ungroupCells(groups);
+  if (children.length > 0) graph.setSelectionCells(children);
+  return children;
 }

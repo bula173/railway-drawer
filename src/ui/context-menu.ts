@@ -23,6 +23,7 @@ import { ACTION_SHORTCUTS, applyShortcutHints, ariaKeyShortcut, formatShortcut, 
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
 import type { StateMenuEntry } from '../railway/state-menu';
 import { logger } from '../drawio/logger';
+import { duplicateCells } from './duplicate-offset';
 
 /** Gap kept between the context menu and the window edges. */
 const VIEWPORT_MARGIN = 4;
@@ -553,11 +554,8 @@ export class ContextMenuController {
         break;
 
       case 'duplicate':
-        {
-          const cloned = this.graph.cloneCells(cellsToOperate);
-          const imported = this.graph.importCells(cloned, 20, 20);
-          this.graph.setSelectionCells(imported);
-        }
+        // same as Ctrl/Cmd+D and Edit > Duplicate: railway IDs renumbered (src/railway/clone.ts), one undo step
+        duplicateCells(this.graph, cellsToOperate.filter((cell): cell is Cell => !!cell));
         break;
 
       case 'saveAsTemplate':
