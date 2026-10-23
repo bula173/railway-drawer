@@ -1,9 +1,9 @@
 import { EventObject, EventSource, Graph, InternalEvent, UndoManager, styleUtils } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
-import { withSnapDataOnly } from '../railway/snap';
+import { withSnapDataOnly } from '../core/snap-mode';
 import type { Cell } from '@maxgraph/core';
-import { copyPasteStyle, pasteStyleToCells } from '../ui/style-edit';
-import type { StyleRecord } from '../ui/style-edit';
+import { copyPasteStyle, pasteStyleToCells } from './style-edit';
+import type { StyleRecord } from './style-edit';
 import { logger } from '../drawio/logger';
 
 /**

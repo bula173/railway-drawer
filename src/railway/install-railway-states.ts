@@ -16,7 +16,7 @@ import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
 import { installPointsFade } from './points-fade';
 import { stateShortcutCommand } from './state-shortcuts';
-import { shouldIgnoreGraphShortcut } from '../ui/delete';
+import { shouldIgnoreGraphShortcut } from '../core/keyboard-guard';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
 import { STATE_SCHEME, scaledStrokeWidth } from './states';

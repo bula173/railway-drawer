@@ -32,6 +32,7 @@ import type { RailObject } from './validation';
 import { collectObjects } from './validation';
 import { readItem, writeItem } from '../core/safe-storage';
 import { STORAGE_KEYS } from '../core/storage-keys';
+import { isSnapDataOnly, isSnapSuspended, withSnapDataOnly, withSnapSuspended } from '../core/snap-mode';
 
 export const SNAP_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'axleCounter', 'leu']);
 /**
@@ -255,18 +256,8 @@ function editedCells(changes: unknown[]): Cell[] | null {
   return [...cells];
 }
 
-let suspended = 0;
-let dataOnly = 0;
-
-/** Runs `fn` with snapping limited to track/km data (no geometry change): arrow-key nudges. */
-export function withSnapDataOnly<T>(fn: () => T): T {
-  dataOnly++;
-  try {
-    return fn();
-  } finally {
-    dataOnly--;
-  }
-}
+// withSnapDataOnly / withSnapSuspended live in core/snap-mode.ts (also used by the services layer)
+export { withSnapDataOnly, withSnapSuspended };
 
 /** Alt state of the last pointer/key event (draw.io: Alt while dragging disables snapping). */
 let altDown = false;
@@ -291,18 +282,6 @@ export function setSnapAltDownForTest(on: boolean): void {
   altDown = on;
 }
 
-/**
- * Runs `fn` without snapping (for edits that place objects exactly, such as the Railway Script's
- * generated drawing: its km come from the script, not from the position).
- */
-export function withSnapSuspended<T>(fn: () => T): T {
-  suspended++;
-  try {
-    return fn();
-  } finally {
-    suspended--;
-  }
-}
 
 /** Snaps objects moved or inserted on `graph` while `enabled()`; returns the uninstaller. */
 export function installSnapToTrack(graph: Graph, enabled: () => boolean): () => void {
@@ -310,13 +289,13 @@ export function installSnapToTrack(graph: Graph, enabled: () => boolean): () => 
   installAltTracking();
   let busy = false;
   const onBeforeUndo = (_sender: EventSource, evt: EventObject): void => {
-    if (busy || suspended > 0 || !enabled() || altDown) return;
+    if (busy || isSnapSuspended() || !enabled() || altDown) return;
     const edit = evt.getProperty('edit') as { changes?: unknown[] } | undefined;
     const cells = editedCells(edit?.changes ?? []);
     if (!cells || cells.length === 0) return;
     busy = true;
     try {
-      snapCells(model, cells, { maxGap: snapGapAtScale(graph.view?.scale ?? 1), dataOnly: dataOnly > 0, excludeTargets: new Set(cells) });
+      snapCells(model, cells, { maxGap: snapGapAtScale(graph.view?.scale ?? 1), dataOnly: isSnapDataOnly(), excludeTargets: new Set(cells) });
     } finally {
       busy = false;
     }
@@ -358,7 +337,7 @@ function installSnapFeedback(graph: Graph, enabled: () => boolean): () => void {
   const update = (me: InternalMouseEvent): void => {
     const handler = graph.getPlugin('SelectionHandler') as (SelectionHandler & { cells: Cell[] | null; first: unknown }) | undefined;
     const evt = me.getEvent() as MouseEvent | undefined;
-    if (!handler || !handler.cells || !handler.first || !graph.isMouseDown || suspended > 0 || !enabled() || evt?.altKey ||
+    if (!handler || !handler.cells || !handler.first || !graph.isMouseDown || isSnapSuspended() || !enabled() || evt?.altKey ||
       (handler.currentDx === 0 && handler.currentDy === 0)) {
       hide();
       return;

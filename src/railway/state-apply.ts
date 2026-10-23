@@ -12,7 +12,7 @@
  * the remembered draw.io style string (style-edit.ts), so a reset saves byte-identical styles.
  */
 import type { Cell, Graph } from '@maxgraph/core';
-import { applyStyleToCells, effectiveColor, resolvedStyle } from '../ui/style-edit';
+import { applyStyleToCells, effectiveColor, resolvedStyle } from '../services/style-edit';
 import { splitRefList } from './catalogue';
 import type { KindId } from './catalogue';
 import { absoluteBounds, projectOnPolyline, trackPolyline } from './geometry';
