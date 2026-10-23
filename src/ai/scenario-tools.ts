@@ -39,7 +39,7 @@ export class ScenarioSetChange {
   }
 }
 
-function requireSet(target: AiTarget): ScenarioSet {
+export function requireSet(target: AiTarget): ScenarioSet {
   if (!target.scenarios) fail('scenarios are not available here');
   return target.scenarios!();
 }
@@ -83,7 +83,7 @@ export function resolveStep(scenario: ScenarioData, ref: unknown): number {
  * Runs `mutate` (drawing and/or scenario changes) as ONE undoable edit of the tab's model that also
  * restores the scenarios `ids` (and removes scenarios the call created) on undo.
  */
-function scenarioEdit<T>(target: AiTarget, set: ScenarioSet, ids: string[], mutate: () => T): T {
+export function scenarioEdit<T>(target: AiTarget, set: ScenarioSet, ids: string[], mutate: () => T): T {
   const model = target.graph.getDataModel();
   const before = set.captureState(ids);
   const known = new Set(before.order);

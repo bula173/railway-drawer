@@ -45,6 +45,7 @@ import { ToolError, fail, findObject, ok, validIdsText } from './tool-kit';
 import type { Executor, Input, ToolOutcome } from './tool-kit';
 import { getToolDef } from './tool-defs';
 import type { AiToolName } from './tool-defs';
+import { simulateTrainRun } from './train-run-tool';
 
 /** Most characters of text a tool returns (exports, scripts). */
 export const MAX_RESULT_TEXT = 100_000;
@@ -503,6 +504,7 @@ const EXECUTORS: Record<AiToolName, Executor> = {
   build_scenario: buildScenario,
   view_scenario: viewScenario,
   export_scenario: exportScenario,
+  simulate_train_run: simulateTrainRun,
 };
 
 /**

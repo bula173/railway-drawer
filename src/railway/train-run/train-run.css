@@ -1,0 +1,212 @@
+/* Train run view (run-view.ts): docked panel over the canvas, the run's own graph, the event list */
+.rd-trn-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+}
+.rd-trn-view[hidden] {
+  display: none;
+}
+.rd-trn-bar {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--rd-route-bg);
+  border-bottom: 2px solid var(--rd-route-border);
+  color: var(--rd-text);
+  font-family: var(--font-family);
+  font-size: 12px;
+  cursor: default;
+}
+.rd-trn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+.rd-trn-badge {
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--rd-route);
+  color: var(--rd-route-on-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.rd-trn-field,
+.rd-trn-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.rd-trn-field-label {
+  font-weight: 600;
+}
+.rd-trn-unit {
+  color: var(--rd-text);
+}
+.rd-trn-input {
+  height: 24px;
+  padding: 1px 4px;
+  border: 1px solid var(--rd-input-border);
+  border-radius: 3px;
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
+  font: inherit;
+}
+.rd-trn-routes {
+  width: 120px;
+}
+.rd-trn-speed,
+.rd-trn-length,
+.rd-trn-dwell,
+.rd-trn-overlap {
+  width: 64px;
+}
+.rd-trn-btn {
+  min-height: 24px;
+  padding: 3px 10px;
+  border: 1px solid var(--rd-route-border);
+  border-radius: 4px;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  font: inherit;
+  cursor: pointer;
+}
+.rd-trn-btn:hover:not(:disabled) {
+  background: var(--rd-hover);
+}
+.rd-trn-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.rd-trn-btn:focus-visible,
+.rd-trn-input:focus-visible,
+.rd-trn-scrubber:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+.rd-trn-btn-primary {
+  background: var(--rd-route);
+  border-color: var(--rd-route-strong);
+  color: var(--rd-route-on-accent);
+  font-weight: 600;
+}
+.rd-trn-btn-primary:hover:not(:disabled) {
+  background: var(--rd-route-strong);
+}
+.rd-trn-play[aria-pressed='true'] {
+  background: var(--rd-route-line);
+}
+.rd-trn-scrubber {
+  flex: 1 1 160px;
+  min-width: 120px;
+  accent-color: var(--rd-route-strong);
+}
+.rd-trn-time,
+.rd-trn-status {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rd-trn-time {
+  font-weight: 600;
+}
+.rd-trn-message {
+  padding: 3px 8px;
+  border-left: 3px solid var(--rd-warning-solid);
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+}
+.rd-trn-message-error {
+  border-left-color: var(--rd-danger-solid);
+  background: var(--rd-danger-bg);
+}
+.rd-trn-message[hidden] {
+  display: none;
+}
+.rd-trn-body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.rd-trn-host {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: auto;
+  background: var(--rd-canvas-bg);
+  cursor: default;
+}
+.rd-trn-side {
+  display: flex;
+  flex: 0 0 240px;
+  flex-direction: column;
+  min-height: 0;
+  border-left: 1px solid var(--rd-border);
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  font-size: 12px;
+}
+.rd-trn-side-heading {
+  margin: 0;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--rd-border);
+  font-size: 12px;
+  font-weight: 700;
+}
+.rd-trn-events {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 4px 0;
+  overflow: auto;
+  list-style: none;
+}
+.rd-trn-event {
+  display: flex;
+  gap: 8px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.rd-trn-event:hover {
+  background: var(--rd-hover);
+}
+.rd-trn-event-time {
+  flex: 0 0 52px;
+  font-variant-numeric: tabular-nums;
+  color: var(--rd-text-muted);
+}
+.rd-trn-event-past .rd-trn-event-time {
+  color: var(--rd-text);
+}
+.rd-trn-event-current {
+  background: var(--rd-route-line);
+  font-weight: 600;
+}
+.rd-trn-event-current:hover {
+  background: var(--rd-route-line);
+}
+
+/* the live drawing is hidden while a run is shown: its tools would act on it unseen */
+body.rd-train-run-viewing #menu-bar,
+body.rd-train-run-viewing #toolbar-container,
+body.rd-train-run-viewing #leftpanel-container,
+body.rd-train-run-viewing #property-content,
+body.rd-train-run-viewing #railway-data-panel,
+body.rd-train-run-viewing #railway-checks-panel {
+  pointer-events: none;
+  opacity: 0.45;
+  user-select: none;
+}
+
+@media (width <= 700px) {
+  .rd-trn-side {
+    display: none;
+  }
+}

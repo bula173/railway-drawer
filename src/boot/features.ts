@@ -14,6 +14,11 @@ import { installRailwayData } from '../railway/install-railway-data';
 import { installRailwayRoutes } from '../railway/install-railway-routes';
 import { installRailwayStates } from '../railway/install-railway-states';
 import { installRailml } from '../railml/install-railml';
+import { installTrainRun } from '../railway/train-run/install-train-run';
+import { Graph } from '@maxgraph/core';
+import { setupGraph } from '../ui/setup-graph';
+import { appKeymap } from '../ui/commands';
+import { ServiceRegistry } from '../services/service-registry';
 
 /** Scenarios, railway data / routes / states, railML; returns the scenarios handle (its key interceptor). */
 export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTMLElement): ScenariosHandle {
@@ -34,6 +39,31 @@ export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTML
   // Route tool, route/interlocking tables, snap to track, km ruler (src/railway/install-railway-routes.ts)
   installRailwayRoutes(tabManager, globalNotificationManager);
   installRailwayStates(tabManager, globalNotificationManager);
+  /**
+   * @brief Railway > Train Run…: animated run of a train over a route / route chain (src/railway/train-run)
+   * @details Shown on its own view graph (the live drawing is only hidden), playback with a timeline;
+   * "Create scenario from run" adds a scenario (one step per moment), "Keep final state" is one undo step.
+   */
+  const trainRun = installTrainRun(tabManager, globalNotificationManager, graphContainer, {
+    createViewGraph: (host) => {
+      const graph = new Graph(host);
+      setupGraph(graph, 'view');
+      return graph;
+    },
+    beforeOpen: () => scenarios.viewer.close(),
+    createScenario: async (runTab, run, train, etcsLevel) => {
+      const tab = tabManager.getAllTabs().find((t) => t.id === runTab.id);
+      if (!tab) return null;
+      const { addRunScenario, buildRunScenarioSteps } = await import('../scenarios/train-run-scenario');
+      const steps = buildRunScenarioSteps(run, { xml: tab.document.serializeToXml(), stylesheet: tab.graph.getStylesheet(), htmlLabels: tab.graph.isHtmlLabels() }, train, { etcsLevel });
+      const scenario = addRunScenario(tab.document.scenarios, run, steps);
+      scenarios.showPanel('scenarios');
+      return scenario.name;
+    },
+  });
+  // the run view's keys (Esc, Space, ←/→; editing keys blocked) before the scenario view's (bootKeyboard)
+  appKeymap.addInterceptor((e) => trainRun.handleKeydown(e));
+  ServiceRegistry.register('trainRun', trainRun);
   // railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
   installRailml(tabManager, globalNotificationManager);
   return scenarios;

@@ -50,6 +50,7 @@ test('Railway menu: route tools, data, checks and toggles; mouse and keyboard; g
     'railwayRoute:conflictTable',
     'railwayRoute:updateRoutes',
     'railwayRoute:recalcKm',
+    'railwayRoute:trainRun',
     'editData',
     'railwayChecks',
     'railwayScriptEditor',
