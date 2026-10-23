@@ -10,8 +10,11 @@ test.describe('Content-Security-Policy', () => {
     const res = await request.get('/');
     const headers = res.headers();
     expect(headers['content-security-policy']).toContain("script-src 'self'");
-    // dev server: the exact production policy (no 'unsafe-eval') as Report-Only next to it
-    expect(headers['content-security-policy-report-only']).toContain("script-src 'self';");
+    // dev server: 'unsafe-eval' for the e2e harness, the exact production policy as Report-Only next
+    // to it; vite preview (production build): the production policy itself
+    const reportOnly = headers['content-security-policy-report-only'];
+    if (reportOnly) expect(reportOnly).toContain("script-src 'self';");
+    else expect(headers['content-security-policy']).not.toContain('unsafe-eval');
     expect(headers['content-security-policy']).toContain("frame-ancestors 'none'");
     expect(headers['x-content-type-options']).toBe('nosniff');
     expect(headers['referrer-policy']).toBe('strict-origin-when-cross-origin');

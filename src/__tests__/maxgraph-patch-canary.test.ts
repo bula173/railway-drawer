@@ -142,6 +142,15 @@ describe('@maxgraph/core patch canary', () => {
     }
   });
 
+  it('eval paths of maxGraph are off once the draw.io codecs are registered (files are untrusted)', async () => {
+    const { registerDrawioCodecs } = await import('../services/drawio-xml');
+    const core = await import('@maxgraph/core');
+    registerDrawioCodecs();
+    expect(core.StylesheetCodec.allowEval).toBe(false);
+    expect(core.ObjectCodec.allowEval).toBe(false);
+    expect(core.StencilShape.allowEval).toBe(false);
+  });
+
   it("CellEditorHandler.getInitialValue escapes the label (the editor's innerHTML is not a sanitizer sink)", () => {
     expect(String(proto(CellEditorHandler).getInitialValue)).toContain('htmlEntities');
   });

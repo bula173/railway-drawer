@@ -27,7 +27,9 @@ import {
   ObjectCodec,
   Point,
   Rectangle,
+  StencilShape,
   Stylesheet,
+  StylesheetCodec,
   SvgCanvas2D,
   mxCellCodec,
   registerModelCodecs,
@@ -997,6 +999,11 @@ let codecsRegistered = false;
  */
 export function registerDrawioCodecs(): void {
   if (codecsRegistered) return;
+  // Files are untrusted: none of maxGraph's eval() paths (stylesheet <add> text, codec <add> text,
+  // stencil attribute code) may ever run (StylesheetCodec defaults to true; the CSP blocks eval too)
+  StylesheetCodec.allowEval = false;
+  ObjectCodec.allowEval = false;
+  StencilShape.allowEval = false;
   registerModelCodecs();
   // Replaces maxGraph's 'mxCell' codec; the legacy 'Cell' codec is untouched
   CodecRegistry.register(new DrawioCellCodec(), false);

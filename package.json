@@ -19,6 +19,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test --project=chromium",
     "test:e2e:headed": "playwright test --project=chromium --headed",
+    "test:e2e:preview": "playwright test --project=chromium -c playwright.preview.config.ts",
     "typecheck:e2e": "tsc --noEmit -p tsconfig.e2e.json",
     "typecheck:worker": "tsc --noEmit -p worker/tsconfig.json && tsc --noEmit -p tools/mcp-local/tsconfig.json",
     "build:mcp-local": "vite build --config tools/mcp-local/vite.config.ts",
