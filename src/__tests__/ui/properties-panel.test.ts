@@ -7,7 +7,7 @@
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { Cell, Graph, InternalEvent, UndoManager } from '@maxgraph/core';
-import type { EventObject } from '@maxgraph/core';
+import type { CellStyle, EventObject } from '@maxgraph/core';
 import { PropertiesPanel } from '../../ui/properties';
 import { bindCommandButtons } from '../../ui/toolbar';
 import { commandRegistry } from '../../ui/commands/registry';
@@ -163,7 +163,7 @@ describe('PropertiesPanel handlers', () => {
 
   it('copy size gives the other selected vertices the first one\'s size, one undo step; locked cells keep theirs', () => {
     const c = graph.insertVertex(graph.getDefaultParent(), null, 'C', 300, 10, 30, 30);
-    const d = graph.insertVertex(graph.getDefaultParent(), null, 'D', 400, 10, 50, 20, 'locked=1;');
+    const d = graph.insertVertex(graph.getDefaultParent(), null, 'D', 400, 10, 50, 20, 'locked=1;' as unknown as CellStyle);
     const ga = a.getGeometry()!.clone(); ga.width = 120; ga.height = 60; graph.getDataModel().setGeometry(a, ga);
     undo.clear();
     graph.setSelectionCells([a, b, c, d]);
