@@ -18,7 +18,7 @@ import { importModelXml, sanitizeXmlText } from '../../services/drawio-xml';
 import { formatChainage } from '../km';
 import { GraphOverlay, pointsAttr, svgEl } from '../graph-overlay';
 import { allCells, getCellKind, readAttr, readObjectId } from '../object-data';
-import { buildRunPath, kmAtM, lineBetween } from './run-path';
+import { buildRunPath, kmAtM, lineBetween, pointAtM } from './run-path';
 import { RunRenderer } from './run-renderer';
 import type { TrainChoice } from './run-renderer';
 import { formatSeconds, headAt, simulateRun, speedAt, statesAt } from './simulate';
@@ -500,8 +500,11 @@ export class TrainRunView {
     this.renderer.showAt(this.time);
     const head = headAt(run, this.time);
     // the train's length along the track (view overlay, not in the model)
-    const body = lineBetween(run.path, head - run.options.lengthM, head);
-    this.overlay?.set(body.length >= 2 ? [svgEl('polyline', { points: pointsAttr(body), fill: 'none', stroke: '#c62828', 'stroke-width': 10, 'stroke-opacity': 0.35, 'stroke-linecap': 'round', class: 'rd-trn-extent' })] : []);
+    // drawn beside the track (above a horizontal one), so the occupied colour stays visible
+    const { dir } = pointAtM(run.path, head);
+    const shift = Math.abs(dir.x) >= Math.abs(dir.y) ? { x: 0, y: -9 } : { x: 9, y: 0 };
+    const body = lineBetween(run.path, head - run.options.lengthM, head).map((p) => ({ x: p.x + shift.x, y: p.y + shift.y }));
+    this.overlay?.set(body.length >= 2 ? [svgEl('polyline', { points: pointsAttr(body), fill: 'none', stroke: '#6a1b9a', 'stroke-width': 5, 'stroke-opacity': 0.55, 'stroke-linecap': 'round', class: 'rd-trn-extent' })] : []);
     this.scrubber.value = String(Math.round(this.time * 10) / 10);
     this.timeEl.textContent = `${this.time.toFixed(1)} s / ${run.durationS.toFixed(1)} s`;
     const km = kmAtM(run.path, head);

@@ -59,6 +59,8 @@
   of objects naming a track with km start/end (within 60, rounded to metres, one undo step). Railway > km Ruler (toolbar `#btn-km-ruler`)
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so
   ticks are >= 40 units apart, every 5th step and the ends labelled.
+- **Train run** (Railway > Train Run…, `railwayRoute:trainRun`, handled by `train-run/install-train-run.ts`): animated run
+  over a route chain, see [train-run.md](train-run.md).
 - Wiring (`install-railway-routes.ts`, one call in `boot/features.ts`): menu items `data-action="railwayRoute:<cmd>"`
   (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> the `railwayRoute:` command
   emits the bus event `railway-route-request` (also the toolbar route tool / km ruler buttons); `aria-checked` kept in sync.

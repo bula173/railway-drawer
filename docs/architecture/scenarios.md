@@ -110,6 +110,8 @@
   (`.rd-scn-export-slides`); `exportScenarioDoc(format, id?)` opens `openScenarioDocDialog` (`scenario-doc-export.ts`:
   scenario select when several, A4 portrait/landscape remembered in `rd.scenario.pdfOrientation`, "Highlight changes"
   preset from the view's toggle). Tests inject `docDialog`, `renderDrawingPng`, `pdfDeps`.
+- Railway > Train Run… "Create scenario from run" (and the AI tool `simulate_train_run`) builds a whole scenario from a
+  simulated run: [train-run.md](train-run.md) (`src/scenarios/train-run-scenario.ts`).
 - Templates store only cells (no scenarios), so they are unaffected; cache, share links and remote providers serialize
   the step pages/JSON and carry `uml`/`text` automatically.
 - Keyboard: the keymap's interceptor (`bootKeyboard`) calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the

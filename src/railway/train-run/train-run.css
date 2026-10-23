@@ -178,7 +178,7 @@
   background: var(--rd-hover);
 }
 .rd-trn-event-time {
-  flex: 0 0 52px;
+  flex: 0 0 66px;
   font-variant-numeric: tabular-nums;
   color: var(--rd-text-muted);
 }

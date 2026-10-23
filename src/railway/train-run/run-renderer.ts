@@ -25,8 +25,8 @@ import type { RunResult } from './simulate';
 /** Style of a train created for a run (the ERTMS palette's train symbol). */
 export const NEW_TRAIN_STYLE = 'shape=ertms-train;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#404040;';
 export const NEW_TRAIN_SIZE = { width: 50, height: 20 };
-/** Gap between the train symbol and the track line. */
-const TRAIN_GAP = 4;
+/** Gap between the train symbol and the track line (room for the length overlay of the run view). */
+const TRAIN_GAP = 12;
 
 export interface TrainChoice {
   /** Cell id of an existing train (null: a new train is created). */
