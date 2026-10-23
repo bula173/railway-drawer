@@ -15,9 +15,12 @@ import { installRailwayRoutes } from '../railway/install-railway-routes';
 import { installRailwayStates } from '../railway/install-railway-states';
 import { installRailml } from '../railml/install-railml';
 import { installPrintSheets } from '../print/ui/install-print';
+import { installRailwayZoomRequests } from '../ui/railway-zoom';
 
 /** Scenarios, railway data / routes / states, railML; returns the scenarios handle (its key interceptor). */
 export function bootRailwayFeatures(tabManager: TabManager, graphContainer: HTMLElement): ScenariosHandle {
+  // railML import / Railway Script drawings open at the railway zoom (bus request of the features)
+  installRailwayZoomRequests();
   /**
    * @brief Scenarios of the active tab (right panel "Scenarios", next to Properties)
    * @details Each step is a snapshot of the drawing, saved as its own draw.io page. Clicking a step

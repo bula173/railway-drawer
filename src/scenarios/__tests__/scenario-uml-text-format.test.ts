@@ -138,7 +138,7 @@ describe('step UML and text in the file', () => {
   it('share links carry them (tab split keeps the step pages)', async () => {
     const scenarios = project().scenarios.list();
     const xml = buildShareMxfile([
-      { name: 'Tab 1', modelXml: MODEL('one'), pageAttributes: scenarioIndexAttributes(scenarios), scenarioPages: buildScenarioPages(scenarios, new Set()) },
+      { name: 'Tab 1', modelXml: MODEL('one'), pageAttributes: scenarioIndexAttributes(scenarios), sectionPages: buildScenarioPages(scenarios, new Set()) },
     ]);
     const split = splitSharedFile(xml);
     const parsed = await new ProjectService().parseProjectXml(split[0].fileXml);

@@ -13,6 +13,10 @@
  * a press on the backdrop = cancel; keys inside never reach the app's shortcuts (window capture
  * listener, stopPropagation); the focus goes back to the element that had it when it closes.
  * The other dialog code (otherDialogOpen, F1) sees it as `[aria-modal="true"]`.
+ *
+ * openFloatingPanel is the non-modal variant for floating UI that leaves the app usable (the start
+ * card, the route tool panel): role + label, Escape (only while no modal is open), focus return.
+ * The More shapes dialog is a modal (openModal on its own backdrop).
  */
 
 const FOCUSABLE =
@@ -171,4 +175,99 @@ export function openModal(opts: ModalOptions): ModalHandle {
   RELEASE.set(handle, release);
   if (opts.container !== null) (opts.container ?? document.body).appendChild(overlay);
   return handle;
+}
+
+// ---------------------------------------------------------------- non-modal floating panels
+
+export interface FloatingPanelOptions {
+  /** The panel element (the caller's classes). */
+  element: HTMLElement;
+  /** The title: aria-labelledby (an id is assigned when it has none). */
+  labelledBy?: HTMLElement | null;
+  /** aria-label when there is no title element. */
+  label?: string;
+  /** data-testid of the panel. */
+  testId?: string;
+  /** Escape (default: close). */
+  onEscape?: () => void;
+  /** Escape only while the focus is inside the panel (default false: anywhere on the page). */
+  escapeWhenFocusedOnly?: boolean;
+  /** Where the element goes (default document.body); null: the caller has placed it. */
+  container?: HTMLElement | null;
+  /** close() removes the element from the page (default true; false: the caller hides it). */
+  removeOnClose?: boolean;
+}
+
+export interface FloatingPanelHandle {
+  readonly element: HTMLElement;
+  readonly closed: boolean;
+  /** Releases the Escape listener (once), removes the element (removeOnClose), runs the onClose callbacks, gives the focus back when it was inside. */
+  close(): void;
+  onClose(callback: () => void): void;
+}
+
+/** The open floating panels, the most recent last (only it gets Escape). */
+const FLOATING: FloatingPanelHandle[] = [];
+
+/**
+ * The non-modal variant (start card, route tool panel): role="dialog" without aria-modal (the app
+ * stays usable, no focus trap, no backdrop), aria-labelledby / aria-label, Escape for the most
+ * recent panel while no modal is open (a modal over it gets Escape first), and the focus back to the
+ * element that had it at open when the focus was inside the panel at close.
+ */
+export function openFloatingPanel(opts: FloatingPanelOptions): FloatingPanelHandle {
+  const { element } = opts;
+  const previousFocus = document.activeElement as HTMLElement | null;
+  element.setAttribute('role', 'dialog');
+  element.removeAttribute('aria-modal');
+  if (opts.labelledBy) {
+    if (!opts.labelledBy.id) opts.labelledBy.id = `rd-modal-title-${++labelCounter}`;
+    element.setAttribute('aria-labelledby', opts.labelledBy.id);
+  } else if (opts.label) {
+    element.setAttribute('aria-label', opts.label);
+  }
+  if (opts.testId) element.dataset.testid = opts.testId;
+  const callbacks: Array<() => void> = [];
+  let closed = false;
+
+  const keyListener = (evt: KeyboardEvent): void => {
+    if (evt.key !== 'Escape' || evt.defaultPrevented || evt.isComposing) return;
+    pruneDetached();
+    if (STACK.length > 0 || FLOATING[FLOATING.length - 1] !== handle || !element.isConnected) return;
+    if (opts.escapeWhenFocusedOnly && !element.contains(document.activeElement)) return;
+    evt.preventDefault();
+    evt.stopPropagation();
+    if (opts.onEscape) opts.onEscape();
+    else handle.close();
+  };
+
+  const handle: FloatingPanelHandle = {
+    element,
+    get closed() {
+      return closed;
+    },
+    close() {
+      if (closed) return;
+      closed = true;
+      window.removeEventListener('keydown', keyListener, true);
+      const index = FLOATING.indexOf(handle);
+      if (index >= 0) FLOATING.splice(index, 1);
+      const hadFocus = element.contains(document.activeElement);
+      if (opts.removeOnClose !== false) element.remove();
+      for (const callback of callbacks.splice(0)) callback();
+      if (hadFocus && previousFocus && previousFocus.isConnected && !element.contains(previousFocus)) previousFocus.focus?.();
+    },
+    onClose(callback) {
+      callbacks.push(callback);
+    },
+  };
+  window.addEventListener('keydown', keyListener, true);
+  FLOATING.push(handle);
+  if (opts.container !== null) (opts.container ?? document.body).appendChild(element);
+  return handle;
+}
+
+/** The number of open floating panels (tests, diagnostics). */
+export function openFloatingPanelCount(): number {
+  return FLOATING.length;
 }

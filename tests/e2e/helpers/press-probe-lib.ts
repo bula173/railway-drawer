@@ -55,7 +55,7 @@ const selectedIds = (page: Page): Promise<string[]> =>
   inTab<string[]>(page, 'return graph.getSelectionCells().map((c) => c.id).sort();');
 
 /** Clicks a palette tile; returns the inserted (selected) cell ids. */
-async function paletteInsert(page: Page, section: string, title: string): Promise<string[]> {
+export async function paletteInsert(page: Page, section: string, title: string): Promise<string[]> {
   await inTab(page, 'graph.clearSelection();');
   const sec = page.locator(`#drawio-palette-container section[data-palette-id="${section}"]`);
   if ((await sec.locator('.rd-dp-header').getAttribute('aria-expanded')) !== 'true') await sec.locator('.rd-dp-header').click();
@@ -72,7 +72,7 @@ function modelVertex(page: Page, style: string, w: number, h: number, value = ''
 }
 
 /** Moves the cells by (dx, dy) so that the bounding box of `ids` starts at (x, y). */
-async function placeAt(page: Page, ids: string[], x: number, y: number): Promise<void> {
+export async function placeAt(page: Page, ids: string[], x: number, y: number): Promise<void> {
   await inTab(page, `
     const m = graph.getDataModel(); const cells = arg.ids.map((id) => m.getCell(id));
     const b = graph.getBoundingBoxFromGeometry(cells, true);

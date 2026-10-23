@@ -791,12 +791,12 @@
                   <!-- Z-Order Controls -->
                   <div style="margin-bottom: 16px;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                      <button class="rd-btn" id="btn-toFront" style="padding: 8px; font-size: 12px; font-weight: 500;">To Front</button>
-                      <button class="rd-btn" id="btn-toBack" style="padding: 8px; font-size: 12px; font-weight: 500;">To Back</button>
+                      <button class="rd-btn" id="btn-toFront" data-command="toFront" style="padding: 8px; font-size: 12px; font-weight: 500;">To Front</button>
+                      <button class="rd-btn" id="btn-toBack" data-command="toBack" style="padding: 8px; font-size: 12px; font-weight: 500;">To Back</button>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px;">
-                      <button class="rd-btn" id="btn-bringForward" style="padding: 8px; font-size: 12px; font-weight: 500;">Bring Forward</button>
-                      <button class="rd-btn" id="btn-sendBackward" style="padding: 8px; font-size: 12px; font-weight: 500;">Send Backward</button>
+                      <button class="rd-btn" id="btn-bringForward" data-command="bringForward" style="padding: 8px; font-size: 12px; font-weight: 500;">Bring Forward</button>
+                      <button class="rd-btn" id="btn-sendBackward" data-command="sendBackward" style="padding: 8px; font-size: 12px; font-weight: 500;">Send Backward</button>
                     </div>
                   </div>
 
@@ -886,7 +886,7 @@
                         <label class="rd-field-label">Angle</label>
                         <input class="rd-input" type="number" id="prop-rotation" value="0" min="0" max="360" style="width: 100%; padding: 4px; font-size: 11px; box-sizing: border-box;" />
                       </div>
-                      <button class="rd-btn" id="btn-rotate90" style="width: 100%; padding: 6px; font-size: 11px; font-weight: 500;">Rotate Shape Only by 90°</button>
+                      <button class="rd-btn" id="btn-rotate90" data-command="rotate90" style="width: 100%; padding: 6px; font-size: 11px; font-weight: 500;">Rotate Shape Only by 90°</button>
                     </div>
                   </div>
 
@@ -898,21 +898,21 @@
                     </div>
                     <div class="collapsible-content" data-section="flip" style="padding: 8px;">
                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                        <button class="rd-btn" id="btn-flipHorizontal" style="padding: 8px; font-size: 12px; font-weight: 500;">Horizontal</button>
-                        <button class="rd-btn" id="btn-flipVertical" style="padding: 8px; font-size: 12px; font-weight: 500;">Vertical</button>
+                        <button class="rd-btn" id="btn-flipHorizontal" data-command="flipHorizontal" style="padding: 8px; font-size: 12px; font-weight: 500;">Horizontal</button>
+                        <button class="rd-btn" id="btn-flipVertical" data-command="flipVertical" style="padding: 8px; font-size: 12px; font-weight: 500;">Vertical</button>
                       </div>
                     </div>
                   </div>
 
                   <!-- Misc Buttons -->
                   <div style="margin-bottom: 0;">
-                    <button class="rd-btn" id="btn-snap-to-grid" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Snap to Grid</button>
+                    <button class="rd-btn" id="btn-snap-to-grid" data-command="snapToGrid" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Snap to Grid</button>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
                       <button class="rd-btn" id="btn-group" data-command="group" style="padding: 8px; font-size: 12px; font-weight: 500;">Group</button>
                       <button class="rd-btn" id="btn-ungroup" data-command="ungroup" style="padding: 8px; font-size: 12px; font-weight: 500;">Ungroup</button>
                     </div>
-                    <button class="rd-btn" id="btn-copySize" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Copy Size</button>
-                    <button class="rd-btn" id="btn-lock" style="width: 100%; padding: 8px; font-size: 12px; font-weight: 500;">Lock</button>
+                    <button class="rd-btn" id="btn-copySize" data-command="matchSize" style="width: 100%; padding: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 500;">Copy Size</button>
+                    <button class="rd-btn" id="btn-lock" data-command="toggleLock" style="width: 100%; padding: 8px; font-size: 12px; font-weight: 500;">Lock</button>
                   </div>
                 </div>
               </div>

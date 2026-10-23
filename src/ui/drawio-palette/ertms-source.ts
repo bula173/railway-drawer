@@ -14,38 +14,13 @@ import { libraryToPaletteDef } from './library-adapter';
 import type { LibraryEntry, PaletteDef } from './contracts';
 import { splitErtmsLibrary } from '../templates/ertms-templates';
 import type { DiagramTemplate } from '../templates/template-types';
+import { ERTMS_LIBRARY_FILE, fetchErtmsLibraryText, resetErtmsLibraryCache } from '../../drawio-shapes/ertms-library';
 
-export const ERTMS_LIBRARY_FILE = 'libraries/ertms.xml';
-
-function libraryUrl(baseUrl: string): string {
-  const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-  return `${base}${ERTMS_LIBRARY_FILE}`;
-}
-
-/** One download per URL and page (the palette views and the Templates tab share it). */
-const textCache = new Map<string, Promise<string>>();
-
-function fetchLibraryText(url: string): Promise<string> {
-  let pending = textCache.get(url);
-  if (!pending) {
-    pending = fetch(url).then((response) => {
-      if (!response.ok) throw new Error(`HTTP ${response.status} loading ${url}`);
-      return response.text();
-    });
-    pending.catch(() => textCache.delete(url));
-    textCache.set(url, pending);
-  }
-  return pending;
-}
-
-/** Test helper: forgets downloaded library files. */
-export function resetErtmsLibraryCache(): void {
-  textCache.clear();
-}
+export { ERTMS_LIBRARY_FILE, resetErtmsLibraryCache };
 
 /** All entries of the ERTMS library (elements and scenarios). */
 export async function loadErtmsLibraryEntries(baseUrl: string = import.meta.env.BASE_URL): Promise<LibraryEntry[]> {
-  return getDrawioPaletteEngine().parseMxLibrary(await fetchLibraryText(libraryUrl(baseUrl)));
+  return getDrawioPaletteEngine().parseMxLibrary(await fetchErtmsLibraryText(baseUrl));
 }
 
 /** Palette definition with only the simple ERTMS elements (ids keep the library index). */

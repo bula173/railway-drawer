@@ -67,18 +67,12 @@ export default tsEslint.config(
             'src/ai/app-target.ts',
             'src/ai/template-tools.ts',
             'src/ai/tools.ts',
-            'src/railml/railml-ui.ts',
-            'src/railway-script/script-ui.ts',
-            'src/railway-script/session.ts',
             'src/scenarios/install-scenarios.ts',
             'src/scenarios/scenario-view.ts',
             'src/scenarios/scenarios-panel.ts',
             'src/share/install-sharing.ts',
-            'src/share/ui/**',
           ],
         },
-        // TODO(layers): renumbers pasted railway objects (railway/clone); make it a registered paste hook
-        { type: 'document-railway', mode: 'full', pattern: ['src/services/clipboard-service.ts'] },
         {
           type: 'core',
           mode: 'full',
@@ -99,24 +93,20 @@ export default tsEslint.config(
           message: 'Layer violation (core <- document <- features <- ui): see the boundaries block in eslint.config.js',
           rules: [
             { from: ['core'], allow: ['core'] },
-            { from: ['document'], allow: ['core', 'document', 'document-railway'] },
-            { from: ['document-railway'], allow: ['core', 'document', ['feature', { family: 'railway' }]] },
+            { from: ['document'], allow: ['core', 'document'] },
             // features: core, document, their own family, and railway (the domain base)
             {
               from: ['feature', 'feature-glue'],
-              allow: ['core', 'document', 'document-railway', ['feature', { family: '${from.family}' }], ['feature', { family: 'railway' }]],
+              allow: ['core', 'document', ['feature', { family: '${from.family}' }], ['feature', { family: 'railway' }]],
             },
-            // TODO(layers): cross-feature imports of the current code (should go through the bus or core)
-            { from: [['feature', { family: 'ai' }]], allow: [['feature', { family: 'scenarios' }], ['feature', { family: 'railway-script' }], ['feature', { family: 'railml' }], ['feature', { family: 'share' }]] },
-            { from: [['feature', { family: 'share' }]], allow: [['feature', { family: 'scenarios' }], ['feature', { family: 'railway-script' }]] },
-            { from: [['feature', { family: 'scenarios' }]], allow: [['feature', { family: 'share' }]] },
-            { from: [['feature', { family: 'railway-script' }]], allow: [['feature', { family: 'railml' }]] },
+            // TODO(layers): the AI assistant uses the scenario, Railway Script and railML features (its tools and prompt)
+            { from: [['feature', { family: 'ai' }]], allow: [['feature', { family: 'scenarios' }], ['feature', { family: 'railway-script' }], ['feature', { family: 'railml' }]] },
             // TODO(layers): features name UI types (TabManager, ...) in their install signatures; use AppContext interfaces
             { from: ['feature'], allow: ['ui'], importKind: 'type' },
             // TODO(layers): the feature UI glue above may use the UI shell and any feature
             { from: ['feature-glue'], allow: ['ui', 'feature', 'feature-glue'] },
             { from: ['feature'], allow: ['feature-glue'] },
-            { from: ['ui'], allow: ['core', 'document', 'document-railway', 'feature', 'feature-glue', 'ui'] },
+            { from: ['ui'], allow: ['core', 'document', 'feature', 'feature-glue', 'ui'] },
           ],
         },
       ],

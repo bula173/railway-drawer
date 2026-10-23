@@ -63,7 +63,7 @@ shape modules (703 shapes); 204 stencil sets; 2094 images.
 
 Also written by extract-palettes.ts: `catalogue.json` (draw.io's More shapes categories from
 `updateEntries()`, libraries from `Sidebar.configuration`, per palette count, JS shapes and stencil
-packages, vendor notices from `libraries.ts`), `search-index.json`, `public/img/**` (all of `img/`)
+packages, vendor notices from `libraries.ts`), `search/search-index-NN.json` (the search index in ~200 kB shards, `search-shards.ts`), `public/img/**` (all of `img/`)
 and `third_party/drawio-libraries/*.md`.
 
 Licensing: draw.io is Apache-2.0 (`third_party/drawio/LICENSE`); the stencil libraries carry the

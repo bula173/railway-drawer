@@ -1,4 +1,4 @@
-import { createToolbarIcon } from './toolbar';
+import { createToolbarIcon } from '../core/icons';
 
 export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml' | 'railwayScript';
 

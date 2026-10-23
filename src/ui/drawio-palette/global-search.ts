@@ -1,7 +1,7 @@
 /**
  * @file global-search.ts
  * @brief Search over every draw.io library (loaded on the first search): matches the generated
- *        title/tag index (src/drawio-shapes/palettes/data/search-index.json) and shows the hits of
+ *        title/tag index (src/drawio-shapes/palettes/data/search/*.json shards) and shows the hits of
  *        libraries that are not in the Shapes tab, grouped by library, below the tab's own results.
  *        Palette data is only fetched for the libraries whose tiles are shown.
  */

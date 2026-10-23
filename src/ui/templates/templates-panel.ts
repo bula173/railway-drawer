@@ -7,6 +7,7 @@
  * user templates). Enter on a focused tile opens the same popover. Dragging a tile onto the
  * canvas inserts it at the drop point (dataTransfer type TEMPLATE_DRAG_TYPE = template id).
  */
+import { reportLoadFailure } from '../../core/load-failure';
 import type { Graph } from '@maxgraph/core';
 import './templates.css';
 import { logger } from '../../drawio/logger';
@@ -539,9 +540,7 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
     })
     .catch((err: unknown) => {
       builtInState = 'error';
-      logger.error('templates', 'ERTMS templates failed to load', {
-        error: err instanceof Error ? err.message : String(err),
-      });
+      reportLoadFailure('error', 'templates', 'ERTMS templates failed to load', err);
     })
     .then(() => {
       if (!destroyed) renderBuiltIn();

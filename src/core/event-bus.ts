@@ -37,6 +37,8 @@ export interface AppEventMap {
   'railway-state-request': string | undefined;
   'railway-script-request': { action: 'import' | 'export' };
   'railml-request': { action: 'export' } | { action: 'import' } | { action: 'open'; text: string; name: string };
+  /** A generated railway drawing was opened into `graph` (railML import, Railway Script): ui/railway-zoom.ts zooms it. */
+  'railway-zoom-request': { graph: Graph };
 
   // ---- app requests
   /** Scenario export; no detail = the HTML document. */

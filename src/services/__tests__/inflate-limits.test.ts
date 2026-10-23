@@ -58,7 +58,7 @@ describe('one mxfile builder', () => {
     const model = '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/></root></mxGraphModel><!--meta-->';
     const xml = buildShareMxfile(
       [
-        { name: 'A', modelXml: model, pageId: 'p1', scenarioPages: ['<diagram id="p1" name="A step"><mxGraphModel/></diagram>'], extraPages: ['<notADiagram/>'] },
+        { name: 'A', modelXml: model, pageId: 'p1', sectionPages: ['<diagram id="p1" name="A step"><mxGraphModel/></diagram>'], extraPages: ['<notADiagram/>'] },
         { name: '', modelXml: model, pageId: 'p1', pageAttributes: { rdScenarios: 'x' } },
       ],
       '2026-01-01T00:00:00.000Z'

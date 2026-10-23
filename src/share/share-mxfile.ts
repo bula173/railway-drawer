@@ -7,7 +7,7 @@
 import { xmlUtils } from '@maxgraph/core';
 import { buildMxfile, generatePageId, sanitizeXmlText } from '../services/drawio-xml';
 import type { MxfilePage, MxfileRawPage } from '../services/drawio-xml';
-import { isScenarioStepPage } from '../scenarios/scenario-format';
+import { projectSections } from '../services/project-sections';
 
 /** One tab of the sender. */
 export interface SharePageSource {
@@ -19,10 +19,10 @@ export interface SharePageSource {
   pageId?: string | null;
   /** Pages 2..n of the file the tab opened, as serialized `<diagram>` elements. */
   extraPages?: string[];
-  /** Extra attributes of the shown page's `<diagram>` (the scenario index `rdScenarios`). */
+  /** Extra attributes of the shown page's `<diagram>` (the project sections': scenario index `rdScenarios`, Railway Script). */
   pageAttributes?: Record<string, string>;
-  /** The tab's scenario step pages (serialized `<diagram>` elements), written right after its page. */
-  scenarioPages?: string[];
+  /** The tab's project section pages (scenario steps; serialized `<diagram>` elements), written right after its page. */
+  sectionPages?: string[];
 }
 
 /** Largest number of pages a shared file may open as tabs. */
@@ -35,6 +35,11 @@ function parse(xml: string): Document | null {
   const doc = new DOMParser().parseFromString(xml, 'text/xml');
   if (doc.getElementsByTagName('parsererror').length > 0 || !doc.documentElement) return null;
   return doc;
+}
+
+/** Whether a project section (scenarios: the step pages) claims the page: it belongs to the page before it. */
+function claimedBySection(page: Element): boolean {
+  return projectSections().some((section) => section.claimsPage?.(page) ?? false);
 }
 
 /** Builds one `<mxfile>` with a page per tab (and the tabs' preserved pages after each). */
@@ -60,8 +65,8 @@ export function buildShareMxfile(sources: SharePageSource[], modified: string = 
       });
       pages.push({ id: source.pageId ?? '', name: source.name || 'Page', model, comments, attributes: source.pageAttributes });
     }
-    // Step pages right after their tab's page: splitSharedFile keeps them with it
-    for (const xml of [...(source.scenarioPages ?? []), ...(source.extraPages ?? [])]) pages.push({ xml });
+    // Section (step) pages right after their tab's page: splitSharedFile keeps them with it
+    for (const xml of [...(source.sectionPages ?? []), ...(source.extraPages ?? [])]) pages.push({ xml });
   }
   return buildMxfile(pages, [], { host: SHARE_HOST, modified, agent: SHARE_AGENT, version: '1.0' }, { pageId: uniqueId });
 }
@@ -95,7 +100,7 @@ export function splitSharedFile(xml: string, fallbackName = 'Shared diagram'): S
   const groups: Element[][] = [];
   for (const page of pages) {
     const last = groups[groups.length - 1];
-    if (last && isScenarioStepPage(page)) last.push(page);
+    if (last && claimedBySection(page)) last.push(page);
     else groups.push([page]);
   }
   if (groups.length > MAX_SHARED_PAGES) {

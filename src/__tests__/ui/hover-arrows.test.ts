@@ -4,8 +4,8 @@
  * groups), connectVertex as one undo step, and the persisted View > Connection Arrows setting.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { Graph, InternalEvent, UndoManager } from '@maxgraph/core';
-import type { Cell, EventObject, EventSource } from '@maxgraph/core';
+import { Graph, InternalEvent, Rectangle, UndoManager } from '@maxgraph/core';
+import type { Cell, CellState, EventObject, EventSource } from '@maxgraph/core';
 import { installCellLocking, setCellsLocked } from '../../ui/cell-lock';
 import {
   CONNECTION_ARROWS_KEY,
@@ -16,6 +16,7 @@ import {
   connectMode,
   connectVertex,
   findConnectTarget,
+  hoverArrowAnchorBounds,
   hoverArrowCell,
   isConnectionArrowsEnabled,
   prepareClonedCells,
@@ -242,5 +243,25 @@ describe('controller and setting', () => {
     (controller as unknown as { show(c: Cell): void }).show(a);
     controller.destroy();
     expect(container.querySelectorAll('.rd-hover-arrow').length).toBe(0);
+  });
+});
+
+describe('hoverArrowAnchorBounds', () => {
+  const fakeState = (shapeBox: Rectangle | null, labelBox: Rectangle | null): CellState =>
+    Object.assign(new Rectangle(100, 100, 8, 16), {
+      shape: shapeBox ? { boundingBox: shapeBox } : null,
+      text: labelBox ? { boundingBox: labelBox, node: { style: { visibility: '' } } } : null,
+    }) as unknown as CellState;
+
+  it('is the union of the cell, its shape and its label (a km post label below the vertex)', () => {
+    const b = hoverArrowAnchorBounds(fakeState(new Rectangle(99, 99, 10, 18), new Rectangle(94, 117, 20, 11)));
+    expect([b.x, b.y, b.width, b.height]).toEqual([94, 99, 20, 29]);
+  });
+
+  it('ignores a missing or empty label', () => {
+    const b = hoverArrowAnchorBounds(fakeState(null, new Rectangle(0, 0, 0, 0)));
+    expect([b.x, b.y, b.width, b.height]).toEqual([100, 100, 8, 16]);
+    const c = hoverArrowAnchorBounds(fakeState(null, null));
+    expect([c.x, c.y, c.width, c.height]).toEqual([100, 100, 8, 16]);
   });
 });
