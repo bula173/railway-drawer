@@ -527,8 +527,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   checkCollisions). Click = `connectVertex` (draw.io Graph.connectVertex, one batchUpdate so one undo step and the ERTMS
   snap joins it): an unlocked cell within 40 px of the point 80 (`defaultEdgeLength`) beyond the side is connected,
   else a clone (`graph.cloneCells`, `prepareClonedCells`: next free railway ID per kind, `rdRoutes`/`rdRailml*Id`/
-  `rdRailmlNetElements` dropped; the shared version is `src/railway/clone.ts`, used by copy/paste, Ctrl+D duplicate,
-  palette and template inserts — hover-arrows.ts still has its own copy until it imports it) is added 80 away in the source's parent and connected; Ctrl/Cmd = always clone,
+  `rdRailmlNetElements` dropped; one shared module `src/railway/clone.ts`, also used by copy/paste, Ctrl+D duplicate,
+  palette and template inserts: free IDs kept, colliding ones renumbered, references among the clones follow) is added 80 away in the source's parent and connected; Ctrl/Cmd = always clone,
   Shift = no clone (dangling edge), Ctrl+Shift = clone without edge; the new cell (else the edge) is selected. Edges get
   the connection handler's style (graph default). Drag = `ConnectionHandler.start` from the cell (draw.io
   HoverIcons.drag); while it runs `isCreateTarget` is true, so a drop on blank canvas inserts a prepared clone at the

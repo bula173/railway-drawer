@@ -283,11 +283,6 @@ function installAltTracking(): void {
   });
 }
 
-/** Whether Alt is held in the current pointer gesture (snapping off). */
-export function isSnapAltDown(): boolean {
-  return altDown;
-}
-
 /** Test hook: sets the tracked Alt state. */
 export function setSnapAltDownForTest(on: boolean): void {
   altDown = on;

@@ -8,7 +8,7 @@ import { ClipboardService } from '../../services/clipboard-service';
 import { DuplicateOffsetController } from '../../ui/duplicate-offset';
 import { exportRailml } from '../../railml/export';
 import { specLayout } from '../../railml/__tests__/helpers';
-import { CLONE_DROPPED_ATTRS as HOVER_DROPPED_ATTRS } from '../../ui/hover-arrows';
+import { CLONE_DROPPED_ATTRS as HOVER_DROPPED_ATTRS, prepareClonedCells as hoverPrepare } from '../../ui/hover-arrows';
 import type { PaletteEntry } from '../../drawio-shapes/palettes/types';
 
 let graph: Graph | null = null;
@@ -40,8 +40,9 @@ function signalIds(g: Graph): string[] {
 }
 
 describe('one prepareClonedCells for every clone path', () => {
-  it('keeps the same dropped attributes as the hover-arrow clone', () => {
-    expect([...CLONE_DROPPED_ATTRS]).toEqual([...HOVER_DROPPED_ATTRS]);
+  it('the hover-arrow clone uses this very module', () => {
+    expect(HOVER_DROPPED_ATTRS).toBe(CLONE_DROPPED_ATTRS);
+    expect(hoverPrepare).toBe(prepareClonedCells);
   });
 
   it('copy / paste twice: S1 -> S4, S5 unique, copies without route list / railML ids', () => {
