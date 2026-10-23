@@ -12,6 +12,8 @@
  */
 import { styleUtils } from '@maxgraph/core';
 import type { Cell, Graph } from '@maxgraph/core';
+import { openFloatingPanel } from '../core/modal';
+import type { FloatingPanelHandle } from '../core/modal';
 import { absoluteBounds, centerOf } from './geometry';
 import type { Pt } from './geometry';
 import { GraphOverlay, pointsAttr, svgEl } from './graph-overlay';
@@ -80,6 +82,8 @@ export class RouteTool {
   private chosen = 0;
   private overlay: GraphOverlay | null = null;
   private panel: HTMLElement | null = null;
+  /** The panel as a non-modal floating panel (core/modal.ts): role, label, focus return. */
+  private floating: FloatingPanelHandle | null = null;
   /** After the start signal: the signals a route can end at, and the other signals (dimmed). */
   private reachable: RailObject[] = [];
   private unreachable: RailObject[] = [];
@@ -107,7 +111,6 @@ export class RouteTool {
     graph.clearSelection();
     this.overlay = new GraphOverlay(graph, 'rd-route-overlay');
     for (const type of POINTER_EVENTS) this.container?.addEventListener(type, this.onPointer, true);
-    window.addEventListener('keydown', this.onKey, true);
     this.container?.classList.add('rd-route-tool-active');
     this.reset();
     this.options.onChange?.(true);
@@ -117,10 +120,11 @@ export class RouteTool {
     if (!this.active) return;
     this.active = false;
     for (const type of POINTER_EVENTS) this.container?.removeEventListener(type, this.onPointer, true);
-    window.removeEventListener('keydown', this.onKey, true);
     this.container?.classList.remove('rd-route-tool-active');
     this.overlay?.destroy();
     this.overlay = null;
+    this.floating?.close();
+    this.floating = null;
     this.panel?.remove();
     this.panel = null;
     this.graph = null;
@@ -242,15 +246,11 @@ export class RouteTool {
     else this.options.notify.warning('Click a signal (railway object of kind Signal).');
   };
 
-  private readonly onKey = (e: KeyboardEvent): void => {
+  /** Esc (from the floating panel, only while no modal is open): cancels the picked start signal first, then leaves the tool. */
+  private readonly onEscape = (): void => {
     if (!this.active) return;
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      e.stopPropagation();
-      // Esc cancels the picked start signal first, then leaves the tool
-      if (this.entry) this.reset();
-      else this.deactivate();
-    }
+    if (this.entry) this.reset();
+    else this.deactivate();
   };
 
   private render(problem?: string): void {
@@ -282,9 +282,7 @@ export class RouteTool {
     // Panel
     if (!this.panel) {
       this.panel = el('div', 'rd-route-tool');
-      this.panel.setAttribute('role', 'dialog');
-      this.panel.setAttribute('aria-label', 'Route tool');
-      document.body.appendChild(this.panel);
+      this.floating = openFloatingPanel({ element: this.panel, label: 'Route tool', onEscape: this.onEscape });
       const rect = this.container?.getBoundingClientRect();
       if (rect) {
         this.panel.style.top = `${Math.round(rect.top + 8)}px`;

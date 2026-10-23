@@ -34,7 +34,7 @@
   adds every catalogue palette as a hidden lazy section (`.rd-dp-catalogue`, `data-library`, ⓘ attribution) after the
   built-in sections, before user libraries, once `loadPaletteCatalogue()` resolved (`view.catalogueReady`); palette data
   loads on expand/search only; `ready` still covers just the built-in sections. Main editor passes
-  `skipCataloguePalettes: ['basic']` (merged General). "More shapes…" = dialog `.rd-dp-menu` (`role=dialog`): "In the
+  `skipCataloguePalettes: ['basic']` (merged General). "More shapes…" = modal dialog `.rd-dp-menu` (`openModal` on the `.rd-dp-menu-backdrop` inside the palette root while open; aria-modal, focus trap, Esc, backdrop press closes, focus back to the button): "In the
   Shapes tab" rows (unchanged `.rd-dp-menu-row`, data-palette-id / data-menu-item-id), then `more-shapes-dialog.ts`
   (lazy): filter, draw.io categories + "Legacy" (azure, veeam, arrows not in draw.io's dialog), one checkbox per library
   (`input[data-library-id]`, toggles all its palettes, flags in `rd.drawioPalettes.visible`, first palette expands),

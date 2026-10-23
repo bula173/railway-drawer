@@ -281,7 +281,8 @@
   model update (one undo), new cell selected, no container drop. Not ported: draw.io's Shift+Click shape replace.
 - Start card (`src/ui/start-card.ts`, boot/panels.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
   Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
-  Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
+  Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. A non-modal `openFloatingPanel` (core/modal.ts) while
+  shown: role=dialog labelled by its title, Esc only when no modal is open, focus back when it was inside. Hidden while dragging (drops reach the canvas).
   Automated browsers (`navigator.webdriver`) do not get it unless `rd.startCard.force` = '1' (e2e clicks the canvas centre).
 - Narrow screens (`src/ui/narrow-screen.ts`): < 900 px -> `body.rd-narrow` (fallback CSS hides both side panels and
   `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`). Start card actions that need the left

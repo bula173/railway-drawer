@@ -30,7 +30,10 @@ renumbering); new code must not add to them. Probe test: `src/__tests__/lint/bou
 - `core/keyboard-guard.ts` `shouldIgnoreGraphShortcut` (typing in inputs / contentEditable / IME / cell editor).
 - `core/modal.ts` `openModal`: the one modal primitive (role=dialog, aria-modal, labelledby / label, focus trap,
   Esc / Enter, backdrop, stacking, focus return; the caller's DOM classes kept). `ui/app-dialogs.ts` `openAppModal`,
-  `confirmDialog`, `promptSaveAs`, `showAboutDialog` are built on it. Guard: no native `alert` / `confirm` / `prompt`.
+  `confirmDialog`, `promptSaveAs`, `showAboutDialog` are built on it; the More shapes dialog uses it on its own backdrop.
+  `openFloatingPanel` is the non-modal variant (start card, route tool panel): role=dialog without aria-modal, label,
+  Esc for the most recent panel only while no modal is open, focus return; no backdrop, no focus trap. Guard: no native
+  `alert` / `confirm` / `prompt`.
 - `drawio/logger.ts`: logging (debug only in dev builds); eslint `no-console` (warn / error allowed).
 - `core/load-failure.ts` `reportLoadFailure(level, category, message, err)`: every lazy loader (palettes, catalogue,
   library search, stencils, vendor shape modules, templates, lazy panels, PDF fonts) reports its failure through it. A

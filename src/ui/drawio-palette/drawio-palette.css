@@ -193,8 +193,15 @@
   background: var(--rd-surface-2);
 }
 
+.rd-dp-menu-backdrop {
+  /* the modal backdrop of "More shapes…" (a press on it closes the dialog) */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--rd-backdrop);
+}
 .rd-dp-menu {
-  /* "More shapes…": a dialog over the editor (draw.io's MoreShapesDialog) */
+  /* "More shapes…": a modal dialog over the editor (draw.io's MoreShapesDialog) */
   position: fixed;
   top: 64px;
   left: 50%;
