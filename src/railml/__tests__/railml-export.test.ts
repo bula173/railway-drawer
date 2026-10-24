@@ -278,7 +278,7 @@ describe('railML export of the route conflicts (interlocking.ts)', () => {
     expect(all(doc, 'route')).toHaveLength(3);
     for (const name of ['conflictingRoutes', 'conflictingRoute', 'refersToRoute', 'conflictsWithRoute']) expect(all(doc, name), name).toEqual([]);
     expect(r.counts.conflictingRoute).toBeUndefined();
-    const routeExt = [...doc.getElementsByTagNameNS(RD_NS, 'object')].filter((e) => e.getAttribute('kind') === 'route' && e.getAttribute('ref'));
+    const routeExt = Array.from(doc.getElementsByTagNameNS(RD_NS, 'object')).filter((e) => e.getAttribute('kind') === 'route' && e.getAttribute('ref'));
     const of = (designator: string): Element => {
       const e = routeExt.find((x) => child(byId(doc, x.getAttribute('ref')!), 'designator')?.getAttribute('entry') === designator);
       if (!e) throw new Error(`no rd:object for ${designator}`);
