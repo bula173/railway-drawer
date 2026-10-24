@@ -1,0 +1,1082 @@
+{
+ "Section timer (L1)": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG4; id=B1; position=1] @1+59.5",
+   "balise:B2 [direction=nominal; groupId=BG5; id=B2; position=1] @2+144.5",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @3+135.5",
+   "balise:B4 [direction=nominal; groupId=BG7; id=B4; position=1] @6+45.3",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @1+53.5",
+   "baliseGroup:BG5 [count=1; direction=nominal; id=BG5; nidBg=5] @2+139.5",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @3+130.5",
+   "baliseGroup:BG7 [count=1; direction=nominal; id=BG7; nidBg=7] @6+41.3",
+   "insulatedJoint:J1 [id=J1; sections=TC2, TC3; trackId=T2] @0+24.5",
+   "insulatedJoint:J2 [id=J2; sections=TC3, TC4; trackId=T2] @1+73",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @2+157",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @3+148",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @4+55",
+   "insulatedJoint:J6 [id=J6; sections=TC7, TC8; trackId=T2] @6+61.8",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "signal:BS6 [aspects=4; direction=nominal; id=BS6; signalType=main] @2+18.3",
+   "signal:BS7 [aspects=4; direction=reverse; id=BS7; signalType=main] @2+139.5",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @3+21.5",
+   "signal:S4 [aspects=4; direction=nominal; id=S4; signalType=main] @4+18.3",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @7+13.8",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T2]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @2+89.5"
+  ],
+  "routes": [
+   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (NaN)",
+   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (NaN)",
+   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 |  |  | TC5, TC6 | TC6 | R1 (S), R3 (S) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R3 | S4 | S6 | W1 normal (facing) |  | TC6, TC7, TC8 | TC8 | R2 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC5 |  | shared section",
+   "R2 | R3 | TC6 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "MA length and speed": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG2; id=B1; position=1] @0+45",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @0+35",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+100",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+146",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+137",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+109",
+   "signal:S36 [aspects=3; direction=nominal; id=S36; signalType=main] @1+20.8",
+   "signal:S37 [aspects=3; direction=reverse; id=S37; signalType=main] @2+124.5",
+   "signal:S38 [aspects=3; direction=nominal; id=S38; signalType=main] @3+14",
+   "signal:S39 [aspects=3; direction=reverse; id=S39; signalType=main] @3+96.5",
+   "signal:S40 [aspects=3; direction=nominal; id=S40; signalType=main] @4+14",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @2+53"
+  ],
+  "routes": [
+   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (NaN)",
+   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (NaN)",
+   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S36 | S38 |  |  | TC2, TC3, TC4 | TC4 | R2 (S), R3 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
+   "R2 | S38 | S40 |  |  | TC4, TC5 | TC5 | R1 (S), R3 (S,D) | Proceed (S40 proceed) / Caution (S40 at stop)",
+   "R3 | S39 | S37 |  |  | TC4, TC3 | TC3 | R1 (S,D), R2 (S,D) | Proceed (S37 proceed) / Caution (S37 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC4 |  | shared section",
+   "R1 | R3 | TC3, TC4 |  | shared section + opposing directions",
+   "R2 | R3 | TC4 |  | shared section + opposing directions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S37: Signal S37 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S38: Signal S38 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S39: Signal S39 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S40: Signal S40 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S40: No axle counter or insulated joint beyond signal S40 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Level transition L0 → L1": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @1+99",
+   "balise:B2 [direction=nominal; groupId=BG4; id=B2; position=1] @2+141",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @3+82",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @1+98",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @2+138",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @3+81",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+158",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+192",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+153",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+94",
+   "signal:S2_Exit [aspects=3; direction=nominal; id=S2_Exit; signalType=main] @1+20.3",
+   "signal:S4_Entry [aspects=3; direction=nominal; id=S4_Entry; signalType=main] @3+14",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @4+18",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @0+51"
+  ],
+  "routes": [
+   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 339 m (≈ drawing units) (NaN)",
+   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S2_Exit | S4_Entry |  |  | TC2, TC3, TC4 | TC4 | R2 (S) | Proceed (S4_Entry proceed) / Caution (S4_Entry at stop)",
+   "R2 | S4_Entry | S6 |  |  | TC4, TC5 | TC5 | R1 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC4 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S2_Exit: Signal S2_Exit has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Level transition L0 → L1, shortened route": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @1+88",
+   "balise:B2 [direction=nominal; groupId=BG4; id=B2; position=1] @2+141",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @3+82",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @1+89",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @2+138",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @3+81",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+72",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+226",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+153",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+94",
+   "signal:S2_Exit [aspects=3; direction=nominal; id=S2_Exit; signalType=main] @1+18",
+   "signal:S4_Entry [aspects=3; direction=nominal; id=S4_Entry; signalType=main] @3+14",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @4+18",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @2+52"
+  ],
+  "routes": [
+   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 375 m (≈ drawing units) (NaN)",
+   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S2_Exit | S4_Entry |  |  | TC2, TC3, TC4 | TC4 | R2 (S) | Proceed (S4_Entry proceed) / Caution (S4_Entry at stop)",
+   "R2 | S4_Entry | S6 |  |  | TC4, TC5 | TC5 | R1 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC4 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S2_Exit: Signal S2_Exit has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Level transition L1 → L2": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @0+105",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @1+88",
+   "balise:B3 [direction=nominal; groupId=BG3; id=B3; position=1] @1+142",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @1+213",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @0+94",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @1+89",
+   "baliseGroup:BG3 [count=1; direction=nominal; function=infill; id=BG3; nidBg=3] @1+143",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @1+210",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+124",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+225",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+94",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @1+18",
+   "signal:S4_Exit [aspects=3; direction=nominal; id=S4_Exit; signalType=main] @2+14",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @3+18",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @1+127"
+  ],
+  "routes": [
+   "S2->S4_Exit: TC2 → TC3 · no points · 221 m (≈ drawing units) (NaN)",
+   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S2 | S4_Exit |  |  | TC2, TC3 | TC3 | R2 (S) | Proceed (S4_Exit proceed) / Caution (S4_Exit at stop)",
+   "R2 | S4_Exit | S6 |  |  | TC3, TC4 | TC4 | R1 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC3 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S6: Signal S6 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "MA length and speed 2": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG2; id=B1; position=1] @0+45",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @0+35",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+100",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+153.5",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+72.5",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+70",
+   "insulatedJoint:J5 [id=J5; sections=TC5, TC6; trackId=T1] @4+83",
+   "insulatedJoint:J6 [id=J6; sections=TC6, TC7; trackId=T1] @5+94",
+   "insulatedJoint:J7 [id=J7; sections=TC7, TC8; trackId=T1] @6+69",
+   "signal:S34 [aspects=3; direction=nominal; id=S34; signalType=main] @1+20.8",
+   "signal:S35 [aspects=3; direction=reverse; id=S35; signalType=main] @2+60",
+   "signal:S37 [aspects=3; direction=reverse; id=S37; signalType=main] @5+81.5",
+   "signal:S38 [aspects=3; direction=nominal; id=S38; signalType=main] @6+20.8",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T1]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T1]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @1+57"
+  ],
+  "routes": [
+   "S34->S38: TC2 → TC3 → TC4 → TC5 → TC6 → TC7 · no points · 473 m (≈ drawing units) (NaN)",
+   "S37->S35: TC6 → TC5 → TC4 → TC3 · no points · 247 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S34 | S38 |  |  | TC2, TC3, TC4, TC5, TC6, TC7 | TC7 | R2 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
+   "R2 | S37 | S35 |  |  | TC6, TC5, TC4, TC3 | TC3 | R1 (S,D) | Proceed (S35 proceed) / Caution (S35 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC3, TC4, TC5, TC6 |  | shared section + opposing directions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S35: Signal S35 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S37: Signal S37 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S38: Signal S38 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal"
+  ]
+ },
+ "Temporary speed restrictions (L1)": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG4; id=B1; position=1] @0+59",
+   "balise:B2 [direction=nominal; groupId=BG5; id=B2; position=1] @1+143",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @2+109",
+   "balise:B4 [direction=nominal; groupId=BG7; id=B4; position=1] @6+98",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @0+57",
+   "baliseGroup:BG5 [count=1; direction=nominal; id=BG5; nidBg=5] @1+137",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @2+106",
+   "baliseGroup:BG7 [count=1; direction=nominal; id=BG7; nidBg=7] @6+95",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @9+27",
+   "insulatedJoint:J2 [id=J2; sections=TC3, TC4; trackId=T2] @0+73",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @1+158",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @2+121",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @3+58",
+   "insulatedJoint:J6 [id=J6; sections=TC8, TC9; trackId=T2] @5+80.9",
+   "insulatedJoint:J7 [id=J7; sections=TC9, TC10; trackId=T2] @6+111",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "signal:BS6 [aspects=4; direction=nominal; id=BS6; signalType=main] @1+20",
+   "signal:BS7 [aspects=4; direction=reverse; id=BS7; signalType=main] @1+139.5",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @2+19.3",
+   "signal:S4 [aspects=4; direction=nominal; id=S4; signalType=main] @3+18",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @7+18",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T2]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @1+136"
+  ],
+  "routes": [
+   "BS6->S2: TC4 → TC5 · no points · 157 m (≈ drawing units) (NaN)",
+   "S2->S4: TC5 → TC6 · no points · 120 m (≈ drawing units) (NaN)",
+   "S4->S6: TC6 → TC7 → TC8 → TC9 → TC10 · W1 normal · 277 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 |  |  | TC5, TC6 | TC6 | R1 (S), R3 (S) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R3 | S4 | S6 | W1 normal (facing) |  | TC6, TC7, TC8, TC9, TC10 | TC10 | R2 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC5 |  | shared section",
+   "R2 | R3 | TC6 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "End of authority (L1)": {
+  "objects": [
+   "balise:B1 [direction=reverse; groupId=BG1; id=B1; position=1] @10+15",
+   "balise:B2 [direction=nominal; groupId=BG3; id=B2; position=1] @10+135",
+   "balise:B3 [direction=reverse; groupId=BG2; id=B3; position=1] @4+15.5",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @4+135.5",
+   "balise:B5 [direction=reverse; groupId=BG6; id=B5; position=1] @8+15",
+   "balise:B6 [direction=nominal; groupId=BG7; id=B6; position=1] @0+250",
+   "balise:B7 [direction=nominal; groupId=BG8; id=B7; position=1] @1+155",
+   "baliseGroup:BG1 [count=1; direction=reverse; id=BG1; nidBg=1] @10+20",
+   "baliseGroup:BG2 [count=1; direction=reverse; id=BG2; nidBg=2] @4+20.5",
+   "baliseGroup:BG3 [count=1; direction=nominal; id=BG3; nidBg=3] @10+128",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @4+128.5",
+   "baliseGroup:BG6 [count=1; direction=reverse; id=BG6; nidBg=6] @8+20",
+   "baliseGroup:BG7 [count=1; direction=nominal; id=BG7; nidBg=7] @0+247",
+   "baliseGroup:BG8 [count=1; direction=nominal; id=BG8; nidBg=8] @1+152",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @9+40",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @10+148",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @0+268",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @1+171.6",
+   "insulatedJoint:J5 [id=J5; sections=TC7, TC8; trackId=T2] @3+90.8",
+   "insulatedJoint:J6 [id=J6; sections=TC8, TC9; trackId=T2] @4+149.5",
+   "insulatedJoint:J7 [id=J7; sections=TC10, TC11; trackId=T2] @6+38.8",
+   "insulatedJoint:J8 [id=J8; sections=TC11, TC12; trackId=T2] @7+57.5",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "points:W2 [hand=right; id=W2; position=normal]",
+   "signal:BS1 [aspects=4; direction=reverse; id=BS1; signalType=main] @0+250.5",
+   "signal:S1 [aspects=3; direction=nominal; id=S1; signalType=main] @1+20.8",
+   "signal:S2 [aspects=4; direction=nominal; id=S2; signalType=main] @2+20.4",
+   "signal:S3 [aspects=4; direction=reverse; id=S3; signalType=main] @7+42",
+   "signal:S4 [aspects=3; direction=nominal; id=S4; signalType=main] @5+18",
+   "signal:SS1 [aspects=3; direction=reverse; id=SS1; signalType=shunting] @9+28.5",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @11+14",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T2]",
+   "trackSection:TC11 [id=TC11; sectionType=tc; trackId=T2]",
+   "trackSection:TC12 [id=TC12; sectionType=tc; trackId=T2]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @0+153"
+  ],
+  "routes": [
+   "S1->S2: TC5 → TC6 · no points · 171 m (≈ drawing units) (NaN)",
+   "S2->S4: TC6 → TC7 → TC8 → TC9 · W1 normal · 300 m (≈ drawing units) (NaN)",
+   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (NaN)",
+   "S3->BS1: TC11 → TC10 → TC9 → TC8 → TC7 → TC6 → TC5 → TC4 · W2 normal, W1 normal · 661 m (≈ drawing units) (NaN)",
+   "S3->SS1: TC11 → TC10 → TC3 → TC2 → TC1 · W2 reverse · 368 m (≈ drawing units) (NaN)",
+   "SS1->BS1: TC1 → TC6 → TC5 → TC4 · W1 reverse · 370 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S1 | S2 |  |  | TC5, TC6 | TC6 | R2 (S), R3 (S), R4 (S,D), R6 (S,D) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 | W1 normal (facing) | SS1 stop | TC6, TC7, TC8, TC9 | TC9 | R1 (S), R3 (S,P), R4 (S,D), R6 (S,P,F,D) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R3 | S2 | SS2 | W1 reverse (facing) | W2 reverse | TC6, TC1, TC2, TC3 | TC3 | R1 (S), R2 (S,P), R4 (S,P,F,D), R5 (S,D), R6 (S,D) | Proceed (SS2 proceed) / Caution (SS2 at stop); speed restriction (W1 reverse)",
+   "R4 | S3 | BS1 | W2 normal (facing), W1 normal (trailing) | SS2 stop, SS1 stop | TC11, TC10, TC9, TC8, TC7, TC6, TC5, TC4 | TC4 | R1 (S,D), R2 (S,D), R3 (S,P,F,D), R5 (S,P), R6 (S,P,F) | Proceed (BS1 proceed) / Caution (BS1 at stop)",
+   "R5 | S3 | SS1 | W2 reverse (facing) | S4 stop | TC11, TC10, TC3, TC2, TC1 | TC1 | R3 (S,D), R4 (S,P), R6 (S) | Proceed (SS1 proceed) / Caution (SS1 at stop); speed restriction (W2 reverse)",
+   "R6 | SS1 | BS1 | W1 reverse (trailing) | W2 reverse | TC1, TC6, TC5, TC4 | TC4 | R1 (S,D), R2 (S,P,F,D), R3 (S,D), R4 (S,P,F), R5 (S) | Proceed (BS1 proceed) / Caution (BS1 at stop); speed restriction (W1 reverse)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC6 |  | shared section",
+   "R1 | R3 | TC6 |  | shared section",
+   "R1 | R4 | TC5, TC6 |  | shared section + opposing directions",
+   "R1 | R6 | TC5, TC6 |  | shared section + opposing directions",
+   "R2 | R3 | TC6 | W1 (normal/reverse) | shared section + opposite points positions",
+   "R2 | R4 | TC6, TC7, TC8, TC9 |  | shared section + opposing directions",
+   "R2 | R6 | TC6 | W1 (normal/reverse) | shared section + opposite points positions + flank protection + opposing directions",
+   "R3 | R4 | TC6 | W1 (reverse/normal) | shared section + opposite points positions + flank protection + opposing directions",
+   "R3 | R5 | TC1, TC2, TC3 |  | shared section + opposing directions",
+   "R3 | R6 | TC6, TC1 |  | shared section + opposing directions",
+   "R4 | R5 | TC11, TC10 | W2 (normal/reverse) | shared section + opposite points positions",
+   "R4 | R6 | TC6, TC5, TC4 | W1 (normal/reverse) | shared section + opposite points positions + flank protection",
+   "R5 | R6 | TC1 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal BS1: No axle counter or insulated joint beyond signal BS1 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Conventional block": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @13+58",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @3+48.5",
+   "balise:B3 [direction=nominal; groupId=BG3; id=B3; position=1] @4+75.5",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @6+84.5",
+   "balise:B5 [direction=nominal; groupId=BG5; id=B5; position=1] @7+162.5",
+   "balise:B6 [direction=nominal; groupId=BG6; id=B6; position=1] @8+79.5",
+   "balise:B7 [direction=nominal; groupId=BG7; id=B7; position=1] @11+45.3",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @13+51",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @3+42.5",
+   "baliseGroup:BG3 [count=1; direction=nominal; id=BG3; nidBg=3] @4+68.5",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @6+78.5",
+   "baliseGroup:BG5 [count=1; direction=nominal; id=BG5; nidBg=5] @7+151.5",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @8+74.5",
+   "baliseGroup:BG7 [count=1; direction=nominal; id=BG7; nidBg=7] @11+41.3",
+   "insulatedJoint:J1 [id=J1; sections=TC2, TC3; trackId=T2] @13+74.5",
+   "insulatedJoint:J10 [id=J10; sections=TC13, TC14; trackId=T3] @9+55",
+   "insulatedJoint:J11 [id=J11; sections=TC14, TC15; trackId=T3] @11+61.8",
+   "insulatedJoint:J2 [id=J2; sections=TC4, TC5; trackId=T3] @0+74.5",
+   "insulatedJoint:J3 [id=J3; sections=TC6, TC7; trackId=T3] @2+37.9",
+   "insulatedJoint:J4 [id=J4; sections=TC7, TC8; trackId=T3] @3+65",
+   "insulatedJoint:J5 [id=J5; sections=TC8, TC9; trackId=T3] @4+90",
+   "insulatedJoint:J6 [id=J6; sections=TC9, TC10; trackId=T3] @5+93",
+   "insulatedJoint:J7 [id=J7; sections=TC10, TC11; trackId=T3] @6+98",
+   "insulatedJoint:J8 [id=J8; sections=TC11, TC12; trackId=T3] @7+175",
+   "insulatedJoint:J9 [id=J9; sections=TC12, TC13; trackId=T3] @8+92",
+   "points:W1 [hand=right; id=W1; position=normal]",
+   "points:W2 [hand=left; id=W2; position=normal]",
+   "signal:BS2 [aspects=4; direction=nominal; id=BS2; signalType=main] @4+18.3",
+   "signal:BS4 [aspects=4; direction=nominal; id=BS4; signalType=main] @5+18.3",
+   "signal:BS6 [aspects=4; direction=nominal; id=BS6; signalType=main] @7+18.3",
+   "signal:BS7 [aspects=4; direction=reverse; id=BS7; signalType=main] @7+157.5",
+   "signal:S1 [aspects=3; direction=reverse; id=S1; signalType=main] @3+51",
+   "signal:S2 [aspects=4; direction=reverse; id=S2; signalType=main] @2+19.9",
+   "signal:S3 [aspects=3; direction=nominal; id=S3; signalType=main] @8+14.5",
+   "signal:S4 [aspects=4; direction=nominal; id=S4; signalType=main] @9+18.3",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @12+13.8",
+   "signal:SS1 [aspects=3; direction=nominal; id=SS1; signalType=shunting] @1+13.8",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @14+16.5",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "track:T3 [id=T3]",
+   "trackSection:TC1 [id=TC1; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T3]",
+   "trackSection:TC11 [id=TC11; sectionType=tc; trackId=T3]",
+   "trackSection:TC12 [id=TC12; sectionType=tc; trackId=T3]",
+   "trackSection:TC13 [id=TC13; sectionType=tc; trackId=T3]",
+   "trackSection:TC14 [id=TC14; sectionType=tc; trackId=T3]",
+   "trackSection:TC15 [id=TC15; sectionType=tc; trackId=T3]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T2]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T3]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T3]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T3]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T3]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T3]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T3]",
+   "train:TR1 [id=TR1] @7+94.5"
+  ],
+  "routes": [
+   "BS2->BS4: TC8 → TC9 · no points · 90 m (≈ drawing units) (NaN)",
+   "BS4->BS6: TC9 → TC10 → TC11 · no points · 191 m (≈ drawing units) (NaN)",
+   "BS6->S3: TC11 → TC12 · no points · 171 m (≈ drawing units) (NaN)",
+   "BS7->S1: TC11 → TC10 → TC9 → TC8 → TC7 · no points · 453 m (≈ drawing units) (NaN)",
+   "S1->S2: TC7 → TC6 · no points · 69 m (≈ drawing units) (NaN)",
+   "S3->S4: TC12 → TC13 · no points · 96 m (≈ drawing units) (NaN)",
+   "S4->S6: TC13 → TC14 → TC15 · W2 normal · 125 m (≈ drawing units) (NaN)",
+   "SS1->BS2: TC5 → TC6 → TC7 → TC8 · W1 normal · 197 m (≈ drawing units) (NaN)",
+   "SS2->BS2: TC3 → TC6 → TC7 → TC8 · W1 reverse · 231 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS2 | BS4 |  |  | TC8, TC9 | TC9 | R2 (S), R4 (S,D), R8 (S), R9 (S) | Proceed (BS4 proceed) / Caution (BS4 at stop)",
+   "R2 | BS4 | BS6 |  |  | TC9, TC10, TC11 | TC11 | R1 (S), R3 (S), R4 (S,D) | Proceed (BS6 proceed) / Caution (BS6 at stop)",
+   "R3 | BS6 | S3 |  |  | TC11, TC12 | TC12 | R2 (S), R4 (S,D), R6 (S) | Proceed (S3 proceed) / Caution (S3 at stop)",
+   "R4 | BS7 | S1 |  |  | TC11, TC10, TC9, TC8, TC7 | TC7 | R1 (S,D), R2 (S,D), R3 (S,D), R5 (S), R8 (S,D), R9 (S,D) | Proceed (S1 proceed) / Caution (S1 at stop)",
+   "R5 | S1 | S2 |  |  | TC7, TC6 | TC6 | R4 (S), R8 (S,D), R9 (S,D) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R6 | S3 | S4 |  |  | TC12, TC13 | TC13 | R3 (S), R7 (S) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R7 | S4 | S6 | W2 normal (facing) |  | TC13, TC14, TC15 | TC15 | R6 (S) | Proceed (S6 proceed) / Caution (S6 at stop)",
+   "R8 | SS1 | BS2 | W1 normal (trailing) | SS2 stop | TC5, TC6, TC7, TC8 | TC8 | R1 (S), R4 (S,D), R5 (S,D), R9 (S,P,F) | Proceed (BS2 proceed) / Caution (BS2 at stop)",
+   "R9 | SS2 | BS2 | W1 reverse (trailing) | SS1 stop | TC3, TC6, TC7, TC8 | TC8 | R1 (S), R4 (S,D), R5 (S,D), R8 (S,P,F) | Proceed (BS2 proceed) / Caution (BS2 at stop); speed restriction (W1 reverse)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC9 |  | shared section",
+   "R1 | R4 | TC8, TC9 |  | shared section + opposing directions",
+   "R1 | R8 | TC8 |  | shared section",
+   "R1 | R9 | TC8 |  | shared section",
+   "R2 | R3 | TC11 |  | shared section",
+   "R2 | R4 | TC9, TC10, TC11 |  | shared section + opposing directions",
+   "R3 | R4 | TC11 |  | shared section + opposing directions",
+   "R3 | R6 | TC12 |  | shared section",
+   "R4 | R5 | TC7 |  | shared section",
+   "R4 | R8 | TC8, TC7 |  | shared section + opposing directions",
+   "R4 | R9 | TC8, TC7 |  | shared section + opposing directions",
+   "R5 | R8 | TC7, TC6 |  | shared section + opposing directions",
+   "R5 | R9 | TC7, TC6 |  | shared section + opposing directions",
+   "R6 | R7 | TC13 |  | shared section",
+   "R8 | R9 | TC6, TC7, TC8 | W1 (normal/reverse) | shared section + opposite points positions + flank protection"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Shortened route (L2)": {
+  "objects": [
+   "balise:B1 [direction=reverse; groupId=BG5; id=B1; position=1] @10+15",
+   "balise:B2 [direction=nominal; groupId=BG6; id=B2; position=1] @10+152",
+   "balise:B3 [direction=reverse; groupId=BG3; id=B3; position=1] @4+15.5",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @4+151.5",
+   "balise:B5 [direction=nominal; groupId=BG1; id=B5; position=1] @0+250",
+   "balise:B6 [direction=nominal; groupId=BG2; id=B6; position=1] @1+96",
+   "balise:B7 [direction=reverse; groupId=BG7; id=B7; position=1] @7+18.5",
+   "balise:B8 [direction=nominal; groupId=BG8; id=B8; position=1] @7+89.5",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @0+247",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @1+93",
+   "baliseGroup:BG3 [count=1; direction=reverse; id=BG3; nidBg=3] @4+20.5",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @4+144.5",
+   "baliseGroup:BG5 [count=1; direction=reverse; id=BG5; nidBg=5] @10+20",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @10+145",
+   "baliseGroup:BG7 [count=1; direction=reverse; id=BG7; nidBg=7] @7+24.5",
+   "baliseGroup:BG8 [count=1; direction=nominal; id=BG8; nidBg=8] @7+82.5",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @9+22",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @10+166",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @0+268",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @1+112.6",
+   "insulatedJoint:J5 [id=J5; sections=TC7, TC8; trackId=T2] @3+74.3",
+   "insulatedJoint:J6 [id=J6; sections=TC8, TC9; trackId=T2] @4+165.5",
+   "insulatedJoint:J7 [id=J7; sections=TC10, TC11; trackId=T2] @6+61.7",
+   "insulatedJoint:J8 [id=J8; sections=TC11, TC12; trackId=T2] @7+103.5",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "points:W2 [hand=right; id=W2; position=normal]",
+   "signal:S1 [aspects=3; direction=nominal; id=S1; signalType=main] @5+17.5",
+   "signal:S2 [aspects=4; direction=nominal; id=S2; signalType=main] @2+20.4",
+   "signal:S4 [aspects=3; direction=nominal; id=S4; signalType=main] @8+17.5",
+   "signal:S5 [aspects=3; direction=reverse; id=S5; signalType=main] @6+49.7",
+   "signal:SS1 [aspects=3; direction=reverse; id=SS1; signalType=shunting] @9+10.5",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @11+14",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T2]",
+   "trackSection:TC11 [id=TC11; sectionType=tc; trackId=T2]",
+   "trackSection:TC12 [id=TC12; sectionType=tc; trackId=T2]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @4+91.5"
+  ],
+  "routes": [
+   "S1->S4: TC9 → TC10 → TC11 → TC12 · W2 normal · 240 m (≈ drawing units) (NaN)",
+   "S2->S1: TC6 → TC7 → TC8 → TC9 · W1 normal · 317 m (≈ drawing units) (NaN)",
+   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 351 m (≈ drawing units) (NaN)",
+   "S5->SS1: TC10 → TC3 → TC2 → TC1 · W2 reverse · 340 m (≈ drawing units) (NaN)",
+   "SS2->S4: TC3 → TC10 → TC11 → TC12 · W2 reverse · 282 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S1 | S4 | W2 normal (trailing) | SS2 stop | TC9, TC10, TC11, TC12 | TC12 | R2 (S), R3 (F), R4 (S,P,F,D), R5 (S,P,F) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R2 | S2 | S1 | W1 normal (facing) | SS1 stop | TC6, TC7, TC8, TC9 | TC9 | R1 (S), R3 (S,P) | Proceed (S1 proceed) / Caution (S1 at stop)",
+   "R3 | S2 | SS2 | W1 reverse (facing) | W2 reverse | TC6, TC1, TC2, TC3 | TC3 | R1 (F), R2 (S,P), R4 (S,D), R5 (S) | Proceed (SS2 proceed) / Caution (SS2 at stop); speed restriction (W1 reverse)",
+   "R4 | S5 | SS1 | W2 reverse (facing) | S1 stop | TC10, TC3, TC2, TC1 | TC1 | R1 (S,P,F,D), R3 (S,D), R5 (S,D) | Proceed (SS1 proceed) / Caution (SS1 at stop); speed restriction (W2 reverse)",
+   "R5 | SS2 | S4 | W2 reverse (trailing) | S1 stop | TC3, TC10, TC11, TC12 | TC12 | R1 (S,P,F), R3 (S), R4 (S,D) | Proceed (S4 proceed) / Caution (S4 at stop); speed restriction (W2 reverse)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC9 |  | shared section",
+   "R1 | R3 |  |  | flank protection",
+   "R1 | R4 | TC10 | W2 (normal/reverse) | shared section + opposite points positions + flank protection + opposing directions",
+   "R1 | R5 | TC10, TC11, TC12 | W2 (normal/reverse) | shared section + opposite points positions + flank protection",
+   "R2 | R3 | TC6 | W1 (normal/reverse) | shared section + opposite points positions",
+   "R3 | R4 | TC1, TC2, TC3 |  | shared section + opposing directions",
+   "R3 | R5 | TC3 |  | shared section",
+   "R4 | R5 | TC10, TC3 |  | shared section + opposing directions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S4: No axle counter or insulated joint beyond signal S4 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Section timer (L1) 2": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG4; id=B1; position=1] @1+59.5",
+   "balise:B2 [direction=nominal; groupId=BG5; id=B2; position=1] @2+144.5",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @3+135.5",
+   "balise:B4 [direction=nominal; groupId=BG7; id=B4; position=1] @6+45.3",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @1+53.5",
+   "baliseGroup:BG5 [count=1; direction=nominal; id=BG5; nidBg=5] @2+139.5",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @3+130.5",
+   "baliseGroup:BG7 [count=1; direction=nominal; id=BG7; nidBg=7] @6+41.3",
+   "insulatedJoint:J1 [id=J1; sections=TC2, TC3; trackId=T2] @0+24.5",
+   "insulatedJoint:J2 [id=J2; sections=TC3, TC4; trackId=T2] @1+73",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @2+157",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @3+148",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @4+55",
+   "insulatedJoint:J6 [id=J6; sections=TC7, TC8; trackId=T2] @6+61.8",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "signal:BS6 [aspects=4; direction=nominal; id=BS6; signalType=main] @2+18.3",
+   "signal:BS7 [aspects=4; direction=reverse; id=BS7; signalType=main] @2+139.5",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @3+21.5",
+   "signal:S4 [aspects=4; direction=nominal; id=S4; signalType=main] @4+18.3",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @7+13.8",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T2]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @2+89.5"
+  ],
+  "routes": [
+   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (NaN)",
+   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (NaN)",
+   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 |  |  | TC5, TC6 | TC6 | R1 (S), R3 (S) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R3 | S4 | S6 | W1 normal (facing) |  | TC6, TC7, TC8 | TC8 | R2 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC5 |  | shared section",
+   "R2 | R3 | TC6 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "MA length and speed 3": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG2; id=B1; position=1] @0+45",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @0+35",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+100",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+146",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+137",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+109",
+   "signal:S36 [aspects=3; direction=nominal; id=S36; signalType=main] @1+20.8",
+   "signal:S37 [aspects=3; direction=reverse; id=S37; signalType=main] @2+124.5",
+   "signal:S38 [aspects=3; direction=nominal; id=S38; signalType=main] @3+14",
+   "signal:S39 [aspects=3; direction=reverse; id=S39; signalType=main] @3+96.5",
+   "signal:S40 [aspects=3; direction=nominal; id=S40; signalType=main] @4+14",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @2+53"
+  ],
+  "routes": [
+   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (NaN)",
+   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (NaN)",
+   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S36 | S38 |  |  | TC2, TC3, TC4 | TC4 | R2 (S), R3 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
+   "R2 | S38 | S40 |  |  | TC4, TC5 | TC5 | R1 (S), R3 (S,D) | Proceed (S40 proceed) / Caution (S40 at stop)",
+   "R3 | S39 | S37 |  |  | TC4, TC3 | TC3 | R1 (S,D), R2 (S,D) | Proceed (S37 proceed) / Caution (S37 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC4 |  | shared section",
+   "R1 | R3 | TC3, TC4 |  | shared section + opposing directions",
+   "R2 | R3 | TC4 |  | shared section + opposing directions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S37: Signal S37 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S38: Signal S38 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S39: Signal S39 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning bg-signal-distance S40: Signal S40 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S40: No axle counter or insulated joint beyond signal S40 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "On-sight movement authority (L2)": {
+  "objects": [
+   "balise:B1 [direction=reverse; groupId=BG1; id=B1; position=1] @3+16.5",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @3+223.5",
+   "baliseGroup:BG1 [count=1; direction=reverse; id=BG1; nidBg=1] @3+20.5",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @3+218.5",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @6+40",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @7+169",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @0+22.5",
+   "insulatedJoint:J4 [id=J4; sections=TC6, TC7; trackId=T2] @2+51.8",
+   "insulatedJoint:J5 [id=J5; sections=TC7, TC8; trackId=T2] @3+236.5",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "points:W2 [hand=right; id=W2; position=normal]",
+   "signal:S02 [aspects=4; direction=nominal; id=S02; signalType=main] @1+17.7",
+   "signal:S1 [aspects=3; direction=reverse; id=S1; signalType=main] @2+38.8",
+   "signal:S4 [aspects=3; direction=nominal; id=S4; signalType=main] @4+18",
+   "signal:SS1 [aspects=3; direction=reverse; id=SS1; signalType=shunting] @6+28.5",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @8+14",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @3+89.5"
+  ],
+  "routes": [
+   "S02->S4: TC5 → TC6 → TC7 → TC8 · W1 normal · 340 m (≈ drawing units) (NaN)",
+   "S02->SS2: TC5 → TC1 → TC2 → TC3 · W1 reverse · 347 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S02 | S4 | W1 normal (facing) | SS1 stop | TC5, TC6, TC7, TC8 | TC8 | R2 (S,P) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R2 | S02 | SS2 | W1 reverse (facing) | S1 stop | TC5, TC1, TC2, TC3 | TC3 | R1 (S,P) | Proceed (SS2 proceed) / Caution (SS2 at stop); speed restriction (W1 reverse)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC5 | W1 (normal/reverse) | shared section + opposite points positions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S02: Signal S02 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S4: No axle counter or insulated joint beyond signal S4 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Train routes to a station": {
+  "objects": [
+   "balise:B1 [direction=reverse; groupId=BG1; id=B1; position=1] @10+15",
+   "balise:B2 [direction=nominal; groupId=BG3; id=B2; position=1] @10+135",
+   "balise:B3 [direction=reverse; groupId=BG2; id=B3; position=1] @6+15.5",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @6+135.5",
+   "balise:B5 [direction=nominal; groupId=BG8; id=B5; position=1] @3+53.5",
+   "baliseGroup:BG1 [count=1; direction=reverse; id=BG1; nidBg=1] @10+20",
+   "baliseGroup:BG2 [count=1; direction=reverse; id=BG2; nidBg=2] @6+20.5",
+   "baliseGroup:BG3 [count=1; direction=nominal; id=BG3; nidBg=3] @10+128",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @6+128.5",
+   "baliseGroup:BG8 [count=1; direction=nominal; id=BG8; nidBg=8] @3+50.5",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @9+40",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @10+148",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @0+148.5",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @1+47",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @2+55",
+   "insulatedJoint:J6 [id=J6; sections=TC7, TC8; trackId=T2] @3+70",
+   "insulatedJoint:J7 [id=J7; sections=TC9, TC10; trackId=T2] @5+90.8",
+   "insulatedJoint:J8 [id=J8; sections=TC10, TC11; trackId=T2] @6+149.5",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "points:W2 [hand=right; id=W2; position=normal]",
+   "signal:S60 [aspects=4; direction=nominal; id=S60; signalType=main] @4+20.5",
+   "signal:S61 [aspects=3; direction=reverse; id=S61; signalType=main] @9+28.5",
+   "signal:S62 [aspects=3; direction=nominal; id=S62; signalType=main] @11+14",
+   "signal:S64 [aspects=3; direction=nominal; id=S64; signalType=main] @7+18",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T2]",
+   "trackSection:TC11 [id=TC11; sectionType=tc; trackId=T2]",
+   "trackSection:TC12 [id=TC12; sectionType=tc; trackId=T2]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @0+81"
+  ],
+  "routes": [
+   "S60->S62: TC8 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (NaN)",
+   "S60->S64: TC8 → TC9 → TC10 → TC11 · W1 normal · 300 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S60 | S62 | W1 reverse (facing) | W2 reverse | TC8, TC1, TC2, TC3 | TC3 | R2 (S,P) | Proceed (S62 proceed) / Caution (S62 at stop); speed restriction (W1 reverse)",
+   "R2 | S60 | S64 | W1 normal (facing) | S61 stop | TC8, TC9, TC10, TC11 | TC11 | R1 (S,P) | Proceed (S64 proceed) / Caution (S64 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC8 | W1 (reverse/normal) | shared section + opposite points positions"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S62: No axle counter or insulated joint beyond signal S62 before the next signal; rule: 0 m–20 m beyond the signal",
+   "warning detection-at-signal S64: No axle counter or insulated joint beyond signal S64 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Full supervision MA (L2)": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @6+126",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @2+97.7",
+   "balise:B3 [direction=nominal; groupId=BG3; id=B3; position=1] @4+103.5",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @6+120",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @2+93.7",
+   "baliseGroup:BG3 [count=1; direction=nominal; id=BG3; nidBg=3] @4+97.5",
+   "insulatedJoint:J1 [id=J1; sections=TC1; trackId=T1] @6+10.5",
+   "insulatedJoint:J2 [id=J2; sections=TC1, TC2; trackId=T1] @6+142.5",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T2] @0+144.5",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @2+112.2",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @3+115",
+   "insulatedJoint:J6 [id=J6; sections=TC7, TC8; trackId=T2] @4+116",
+   "points:W1 [hand=right; id=W1; position=normal]",
+   "signal:BS2 [aspects=4; direction=nominal; id=BS2; signalType=main] @3+18.5",
+   "signal:BS4 [aspects=4; direction=nominal; id=BS4; signalType=main] @5+18.7",
+   "signal:S1 [aspects=3; direction=reverse; id=S1; signalType=main] @2+98.2",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @7+13.5",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @2+47.7"
+  ],
+  "routes": [
+   "BS2->BS4: TC6 → TC7 → TC8 · no points · 231 m (≈ drawing units) (NaN)",
+   "SS2->BS2: TC2 → TC5 → TC6 · W1 reverse · 251 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS2 | BS4 |  |  | TC6, TC7, TC8 | TC8 | R2 (S) | Proceed (BS4 proceed) / Caution (BS4 at stop)",
+   "R2 | SS2 | BS2 | W1 reverse (trailing) |  | TC2, TC5, TC6 | TC6 | R1 (S) | Proceed (BS2 proceed) / Caution (BS2 at stop); speed restriction (W1 reverse)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC6 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal BS4: No axle counter or insulated joint beyond signal BS4 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "External interlocking route (L1)": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG8; id=B1; position=1] @9+19",
+   "balise:B2 [direction=nominal; groupId=BG1; id=B2; position=1] @2+28",
+   "balise:B3 [direction=nominal; groupId=BG2; id=B3; position=1] @2+136",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @3+111",
+   "balise:B5 [direction=nominal; groupId=BG6; id=B5; position=1] @4+85",
+   "balise:B6 [direction=nominal; groupId=BG10; id=B6; position=1] @6+69.3",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @2+28",
+   "baliseGroup:BG10 [count=1; direction=nominal; id=BG10; nidBg=10] @6+66.3",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @2+126",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @3+107",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @4+78",
+   "baliseGroup:BG8 [count=1; direction=nominal; id=BG8; nidBg=8] @9+15",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @9+32",
+   "insulatedJoint:J2 [id=J2; sections=TC3, TC4; trackId=T2] @0+42",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @1+134",
+   "insulatedJoint:J4 [id=J4; sections=TC5, TC6; trackId=T2] @2+147",
+   "insulatedJoint:J5 [id=J5; sections=TC6, TC7; trackId=T2] @3+124",
+   "insulatedJoint:J6 [id=J6; sections=TC7, TC8; trackId=T2] @4+97",
+   "insulatedJoint:J7 [id=J7; sections=TC9, TC10; trackId=T2] @6+82.3",
+   "points:W1 [hand=left; id=W1; position=normal]",
+   "signal:S10 [aspects=3; direction=nominal; id=S10; signalType=main] @7+18",
+   "signal:S12_EXTERNAL [aspects=3; direction=nominal; id=S12_EXTERNAL; signalType=main] @2+20.8",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @3+20.8",
+   "signal:S4 [aspects=3; direction=nominal; id=S4; signalType=main] @4+20.8",
+   "signal:S6 [aspects=4; direction=nominal; id=S6; signalType=main] @5+21",
+   "signal:S9 [aspects=3; direction=reverse; id=S9; signalType=main] @2+133.5",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC10 [id=TC10; sectionType=tc; trackId=T2]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T2]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @1+58"
+  ],
+  "routes": [
+   "S12_EXTERNAL->S2: TC5 → TC6 · no points · 147 m (≈ drawing units) (NaN)",
+   "S2->S4: TC6 → TC7 · no points · 124 m (≈ drawing units) (NaN)",
+   "S4->S6: TC7 → TC8 · no points · 97 m (≈ drawing units) (NaN)",
+   "S6->S10: TC8 → TC9 → TC10 · W1 normal · 122 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S12_EXTERNAL | S2 |  |  | TC5, TC6 | TC6 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 |  |  | TC6, TC7 | TC7 | R1 (S), R3 (S) | Proceed (S4 proceed) / Caution (S4 at stop)",
+   "R3 | S4 | S6 |  |  | TC7, TC8 | TC8 | R2 (S), R4 (S) | Proceed (S6 proceed) / Caution (S6 at stop)",
+   "R4 | S6 | S10 | W1 normal (facing) |  | TC8, TC9, TC10 | TC10 | R3 (S) | Proceed (S10 proceed) / Caution (S10 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC6 |  | shared section",
+   "R2 | R3 | TC7 |  | shared section",
+   "R3 | R4 | TC8 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S12_EXTERNAL: Signal S12_EXTERNAL has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S10: No axle counter or insulated joint beyond signal S10 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Level transition L1 → L2, staff responsible": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @0+71",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @1+90",
+   "balise:B3 [direction=nominal; groupId=BG3; id=B3; position=1] @1+116",
+   "balise:B4 [direction=nominal; groupId=BG4; id=B4; position=1] @1+239",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @0+66",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @1+81.5",
+   "baliseGroup:BG3 [count=1; direction=nominal; function=infill; id=BG3; nidBg=3] @1+115",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @1+233",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+94",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+258",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+94",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @1+10.5",
+   "signal:S4_Exit [aspects=3; direction=nominal; id=S4_Exit; signalType=main] @2+14",
+   "signal:S6 [aspects=3; direction=nominal; id=S6; signalType=main] @3+18",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @1+133"
+  ],
+  "routes": [
+   "S2->S4_Exit: TC2 → TC3 · no points · 262 m (≈ drawing units) (NaN)",
+   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | S2 | S4_Exit |  |  | TC2, TC3 | TC3 | R2 (S) | Proceed (S4_Exit proceed) / Caution (S4_Exit at stop)",
+   "R2 | S4_Exit | S6 |  |  | TC3, TC4 | TC4 | R1 (S) | Proceed (S6 proceed) / Caution (S6 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC3 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S6: Signal S6 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal S6: No axle counter or insulated joint beyond signal S6 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Dynamic speed profile": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG1; id=B1; position=1] @7+115.5",
+   "balise:B2 [direction=nominal; groupId=BG2; id=B2; position=1] @4+77.5",
+   "baliseGroup:BG1 [count=1; direction=nominal; id=BG1; nidBg=1] @7+109.5",
+   "baliseGroup:BG2 [count=1; direction=nominal; id=BG2; nidBg=2] @4+73.5",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @6+30.5",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @7+132",
+   "insulatedJoint:J3 [id=J3; sections=TC4, TC5; trackId=T2] @0+162.5",
+   "insulatedJoint:J4 [id=J4; sections=TC6, TC7; trackId=T2] @2+38.2",
+   "insulatedJoint:J5 [id=J5; sections=TC7, TC8; trackId=T2] @3+202",
+   "insulatedJoint:J6 [id=J6; sections=TC8, TC9; trackId=T2] @4+92",
+   "points:W1 [hand=right; id=W1; position=normal]",
+   "signal:BS2 [aspects=4; direction=nominal; id=BS2; signalType=main] @5+18.5",
+   "signal:S1 [aspects=3; direction=reverse; id=S1; signalType=main] @4+78",
+   "signal:SS2 [aspects=3; direction=nominal; id=SS2; signalType=shunting] @8+13.5",
+   "track:T1 [id=T1]",
+   "track:T2 [id=T2]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T2]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T2]",
+   "trackSection:TC6 [id=TC6; sectionType=tc; trackId=T2]",
+   "trackSection:TC7 [id=TC7; sectionType=tc; trackId=T2]",
+   "trackSection:TC8 [id=TC8; sectionType=tc; trackId=T2]",
+   "trackSection:TC9 [id=TC9; sectionType=tc; trackId=T2]",
+   "train:TR1 [id=TR1] @7+126.5"
+  ],
+  "routes": [
+   "SS2->BS2: TC3 → TC6 → TC7 → TC8 → TC9 · W1 reverse · 483 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | SS2 | BS2 | W1 reverse (trailing) |  | TC3, TC6, TC7, TC8, TC9 | TC9 |  | Proceed (BS2 proceed) / Caution (BS2 at stop); speed restriction (W1 reverse)"
+  ],
+  "conflicts": [],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning bg-signal-distance S1: Signal S1 has no balise group in rear (on its approach up to the previous signal); rule: 0 m–50 m in front of the signal",
+   "warning detection-at-signal BS2: No axle counter or insulated joint beyond signal BS2 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ },
+ "Powerless section": {
+  "objects": [
+   "balise:B1 [direction=nominal; groupId=BG4; id=B1; position=1] @1+138",
+   "balise:B2 [direction=nominal; groupId=BG5; id=B2; position=1] @2+104",
+   "balise:B3 [direction=nominal; groupId=BG6; id=B3; position=1] @3+182",
+   "baliseGroup:BG4 [count=1; direction=nominal; id=BG4; nidBg=4] @1+132",
+   "baliseGroup:BG5 [count=1; direction=nominal; id=BG5; nidBg=5] @2+98",
+   "baliseGroup:BG6 [count=1; direction=nominal; id=BG6; nidBg=6] @3+176",
+   "insulatedJoint:J1 [id=J1; sections=TC1, TC2; trackId=T1] @0+50",
+   "insulatedJoint:J2 [id=J2; sections=TC2, TC3; trackId=T1] @1+157",
+   "insulatedJoint:J3 [id=J3; sections=TC3, TC4; trackId=T1] @2+123",
+   "insulatedJoint:J4 [id=J4; sections=TC4, TC5; trackId=T1] @3+201",
+   "signal:BS6 [aspects=4; direction=nominal; id=BS6; signalType=main] @2+18",
+   "signal:S2 [aspects=3; direction=nominal; id=S2; signalType=main] @3+18",
+   "signal:S4 [aspects=3; direction=nominal; id=S4; signalType=main] @4+18",
+   "track:T1 [id=T1]",
+   "trackSection:TC1 [id=TC1; sectionType=tc; trackId=T1]",
+   "trackSection:TC2 [id=TC2; sectionType=tc; trackId=T1]",
+   "trackSection:TC3 [id=TC3; sectionType=tc; trackId=T1]",
+   "trackSection:TC4 [id=TC4; sectionType=tc; trackId=T1]",
+   "trackSection:TC5 [id=TC5; sectionType=tc; trackId=T1]",
+   "train:TR1 [id=TR1] @1+76"
+  ],
+  "routes": [
+   "BS6->S2: TC3 → TC4 · no points · 123 m (≈ drawing units) (NaN)",
+   "S2->S4: TC4 → TC5 · no points · 201 m (≈ drawing units) (NaN)"
+  ],
+  "interlocking": [
+   "R1 | BS6 | S2 |  |  | TC3, TC4 | TC4 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
+   "R2 | S2 | S4 |  |  | TC4, TC5 | TC5 | R1 (S) | Proceed (S4 proceed) / Caution (S4 at stop)"
+  ],
+  "conflicts": [
+   "R1 | R2 | TC4 |  | shared section"
+  ],
+  "findings": [
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "note: [object Object]",
+   "warning detection-at-signal S4: No axle counter or insulated joint beyond signal S4 before the next signal; rule: 0 m–20 m beyond the signal"
+  ]
+ }
+}
