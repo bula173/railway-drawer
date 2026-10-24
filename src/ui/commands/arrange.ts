@@ -2,7 +2,8 @@
  * @file arrange.ts
  * @brief Arrange menu, Align dropdown and context-menu commands: z-order (one undoable edit each),
  *        align / distribute (AlignmentController), Group / Ungroup (Ctrl/Cmd+G, Ctrl/Cmd+Shift+G),
- *        Rotate 90°, Flip, Lock/Unlock, Snap to Grid, Copy Size (match size), and the transform keys
+ *        Rotate 90°, Flip, Lock/Unlock, Snap to Grid, Copy Size (match size), Normalize Symbol Sizes
+ *        (the railway symbol size standard, one undoable edit), and the transform keys
  *        (Ctrl/Cmd+H / J / R, Shift+R). The Properties > Arrange buttons run these too (source
  *        'panel': nothing happens while the active tab's graph is not shown, e.g. the scenario view).
  */
@@ -77,6 +78,16 @@ export const arrangeCommands: readonly Command[] = [
   { id: 'toggleLock', label: 'Lock/Unlock', run: onTab((tab) => toggleSelectionLocked(tab.graph)) },
   { id: 'snapToGrid', label: 'Snap to Grid', run: onTab((tab) => void snapSelectionToGrid(tab.graph)) },
   { id: 'matchSize', label: 'Copy Size (match the first selected)', run: onTab((tab) => void matchSelectionSize(tab.graph)) },
+  {
+    // the symbol size standard (docs/architecture/symbol-sizes.md); lazy: user-triggered
+    id: 'normalizeSymbolSizes',
+    label: 'Normalize Symbol Sizes',
+    run: onTab((tab) => {
+      void import('../../railway/normalize-sizes').then(({ normalizeSymbolSizes, selectedSymbols }) => {
+        normalizeSymbolSizes(tab.graph, selectedSymbols(tab.graph));
+      });
+    }),
+  },
   // ---- transform keys (TransformController: geometry flips / rotation of the selection)
   {
     id: 'transform.flipHorizontal',
