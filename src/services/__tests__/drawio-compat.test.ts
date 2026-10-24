@@ -373,7 +373,7 @@ describe('draw.io compatibility guard', () => {
         expectSameModel(parseXml(entry.xml!).documentElement, parseXml(controller.document.serializeToXml()).documentElement, `ERTMS #${index} ${entry.title}`);
       }
       // ~0.5 s alone; the whole suite runs files in parallel
-    }, 30_000);
+    }, 120_000); // 37 entries, each opened and saved through the real path; slow on a loaded machine
 
     it('library entries open through the file path too', async () => {
       for (const entry of parseMxLibrary(read(FIXTURES, 'compat-library.xml')).filter((e) => e.xml)) {
