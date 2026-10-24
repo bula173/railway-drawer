@@ -52,7 +52,7 @@
   shape designer, all 4 notification types, status/tab bars; a second test per theme: context menu with the railway Position ▸ submenu open, Railway > Object State submenu,
   states legend, Route tool panel + Route
   Table/Interlocking dialog on a loaded layout (route table, conflicts matrix, interlocking table tabs; Rule settings
-  dialog), scenario view with "Show changes" legend/Changes list and autoplay
+  dialog), Train run panel + events list, scenario view with "Show changes" legend/Changes list and autoplay
   running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
   per theme: Railway Script tab with an example made invalid (error + warning: problem list, gutter, inline marks), conflict
   banner and toolbar; the editor's text-transparent highlight mirror carries `data-contrast-skip` (its text is skipped only
@@ -154,6 +154,14 @@
   (one undo); Data panel State select; route Set (sections/route green, W1 reverse, S1 proceed) / Railway > Object State >
   Occupy Route / Release (W1 back); State Legend; scenario "Show changes" lists `TC2: free → occupied` and `S2: aspect stop →
   proceed`; dark theme renders the state colours unchanged; Reset All States. Screenshots `test-results/object-states/`.
+- `tests/e2e/train-run.spec.ts` (any port; layout TC1-TC4 200 m, S1-S3, R1/R2, train TR1 ETCS L2 72 km/h 100 m via
+  `tab.document.load`): Railway > Train Run… (defaults from TR1, routes "R1, R2", 13 events), t = 0 reserved green /
+  overlap / S1 proceed in the view graph, play at 10×: a MutationObserver log of `data-occupied` = '' → TC1 → TC1,TC2 →
+  TC2 → TC2,TC3 → TC3 (times within 1 s), the train cell moves monotonically to S3, live model untouched while playing,
+  end state, scrubber t = 17 s (TC1/TC2 rendered #ff0000, head 240 m), ⏭ / ←, Esc restores the exact XML with no undo
+  step; selected route preselected, "Create scenario from run" -> Scenarios panel "6 steps" with names, ▶ Present
+  shows text + UML (position report), saved project = drawing unchanged + 6 step pages; Keep final state = one Ctrl+Z.
+  Screenshots `test-results/train-run/`.
 - `tests/e2e/ai-scenarios.spec.ts` (any port, Anthropic API mocked with `page.route`, no key/network): "Przygotuj scenariusz
   wjazdu pociągu…" -> mocked list_templates / insert_template (newTab, "Level transition L1 → L2") / build_scenario (3 steps
   with states) / view_scenario -> friendly tool-log lines, new active tab, incremental step states, the scenario view steps

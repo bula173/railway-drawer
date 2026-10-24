@@ -17,7 +17,8 @@
   drawing changes + `ScenarioSetChange` (execute() swaps `ScenarioSet.captureState/restoreState` of the touched scenarios;
   others, e.g. made in the panel meanwhile, stay), so Ctrl+Z, Undo AI turn and confirm Discard revert both. App target:
   `scenariosChanged` flushes the tab cache, `showScenario`/`exportScenario` via `installedScenarios()` (install-scenarios
-  `exportScenarioFile`: no dialog). Headless MCP: scenarios from/to the step pages. Pure modules (no DOM at import): tool-defs,
+  `exportScenarioFile`: no dialog). `train-run-tool.ts` `simulate_train_run` (train run events, optional scenario in one
+  undoable edit via `scenarioEdit`; [train-run.md](train-run.md)). Headless MCP: scenarios from/to the step pages. Pure modules (no DOM at import): tool-defs,
   schema-check, system-prompt, bridge/protocol, bridge/relay, mcp/* — keep them so (the Worker bundles them).
 - Panel UX: the empty chat shows "Try:" example chips (`ai-example`, `AI_EXAMPLE_PROMPTS`) that fill the message box; the
   key privacy note is behind the "About your key" disclosure (`ai-about-key`); opening the panel focuses the message box,

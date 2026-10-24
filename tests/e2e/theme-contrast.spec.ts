@@ -717,6 +717,21 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.keyboard.press('Escape');
   await expect(rules).toHaveCount(0);
 
+  // Train run panel (R1 just created; W1 has no length: the "approximate" warning is shown), mid-run
+  await openMenu(page, 'railway');
+  await page.locator('.menu-dropdown[data-menu="railway"] [data-action="railwayRoute:trainRun"]').click();
+  const run = page.locator('[data-testid="train-run-view"]');
+  await expect(run).toHaveAttribute('data-state', 'ready');
+  await expect(run.locator('.rd-trn-message')).toBeVisible();
+  for (let i = 0; i < 4; i++) await run.locator('[data-testid="train-run-step"]').click();
+  await expect(run.locator('.rd-trn-event-current')).toHaveCount(1);
+  await run.locator('.rd-trn-event').first().hover();
+  await a.check('Train run panel (settings, playback, warning)', '.rd-trn-bar');
+  await a.check('Train run events list', '.rd-trn-side');
+  await a.shot('train-run');
+  await run.locator('[data-testid="train-run-close"]').click();
+  await expect(run).toBeHidden();
+
   // Scenario with two steps (S1 moved in step 2), viewed with "Show changes" and autoplay
   await page.locator('[data-right-panel="scenarios"]').click();
   const panel = page.locator('#scenarios-panel');

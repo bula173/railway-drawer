@@ -134,6 +134,8 @@ async function setup(page: Page): Promise<{ rect: string; sig: string; bal: stri
 
 test.describe('moving (real mouse)', () => {
   test('a drag lands where it is released with the grid off, on the grid with it on (100 % and 150 %)', async ({ page }) => {
+    // 48 real-mouse drags (2 zooms x grid on/off x 3 shapes x 4 distances)
+    test.slow();
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     const { rect, sig, bal, trk } = await setup(page);

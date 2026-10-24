@@ -44,6 +44,7 @@ export type AiToolName =
   | 'build_scenario'
   | 'view_scenario'
   | 'export_scenario'
+  | 'simulate_train_run'
   | 'set_title_block'
   | 'export_sheets';
 
@@ -426,6 +427,29 @@ export const AI_TOOLS: readonly AiToolDef[] = [
       ['format']
     ),
     mutating: false,
+  },
+  {
+    name: 'simulate_train_run',
+    title: 'Simulate train run',
+    description:
+      'Simulates a train running over a route or a chain of consecutive routes (each starts at the previous exit signal) of the active tab, in metres from the tracks\' length/km (drawing units where unknown: approximate, with a warning). Returns the event list in time order: routes set at t=0 (sections reserved, points positioned and locked, overlap of the last route, entry signal proceed), departure after setupS, each entry signal back to stop when the head passes it, each section/points occupied when the head enters and freed when the tail clears it (sequential release; routes released with their last section), arrival at the exit signal, overlap released overlapReleaseS after the stop. Each event has t (s), headM, km (when known) and speedKmh. The drawing is not changed. createScenario=true also adds a scenario with one step per moment (drawing snapshot with the states and the train, Markdown text with time/position/speed, PlantUML sequence Interlocking/RBC/Train with MA request/grant for ETCS level 2) in ONE undo step; use view_scenario to show it.',
+    input_schema: obj(
+      {
+        routes: { type: 'array', minItems: 1, maxItems: 20, items: str('Route id, e.g. R1.', 80), description: 'Route ids in travel order (one route or consecutive routes).' },
+        train: str('Id of an existing train (e.g. TR1); omitted: a new train is drawn in the scenario steps.', 80),
+        speedKmh: { type: 'number', minimum: 1, maximum: 600, description: 'Speed in km/h.' },
+        lengthM: { type: 'number', minimum: 0, maximum: 5000, description: 'Train length in metres.' },
+        useSpeedLimits: { type: 'boolean', description: 'Slow down to the rdSpeedLimit (km/h) of sections/tracks under the train (default false).' },
+        dwellS: { type: 'number', minimum: 0, maximum: 3600, description: 'Dwell at the exit signal after the stop (s, default 0).' },
+        overlapReleaseS: { type: 'number', minimum: 0, maximum: 3600, description: 'Overlap release timer after the stop (s, default 30).' },
+        setupS: { type: 'number', minimum: 0, maximum: 600, description: 'Time from the route set to the departure (s, default 5).' },
+        createScenario: { type: 'boolean', description: 'Also create a scenario from the run (default false).' },
+        scenarioName: str('Name of the created scenario (default "Train run <routes>").', 80),
+        uml: { type: 'boolean', description: 'Add the PlantUML sequence to each scenario step (default true).' },
+      },
+      ['routes', 'speedKmh', 'lengthM']
+    ),
+    mutating: true,
   },
   {
     name: 'set_title_block',
