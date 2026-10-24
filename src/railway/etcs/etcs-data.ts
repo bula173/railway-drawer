@@ -101,6 +101,28 @@ export function newPacket(nid: number): EtcsPacket {
   return { nid, vars };
 }
 
+/** The packet with the schema defaults filled in where a variable (also in iteration entries) is missing. */
+export function withDefaults(packet: EtcsPacket): EtcsPacket {
+  const def = getPacketDef(packet.nid);
+  if (!def) return packet;
+  const vars: EtcsBlock = { ...packet.vars };
+  if (def.qdir && vars.Q_DIR === undefined) vars.Q_DIR = 1;
+  if (def.scale && vars.Q_SCALE === undefined) vars.Q_SCALE = 1;
+  const fill = (items: PacketItem[], block: EtcsBlock): void => {
+    defaultsFor(items, block);
+    for (const it of items) {
+      if ('iter' in it && Array.isArray(block[it.iter])) block[it.iter] = (block[it.iter] as EtcsBlock[]).map((e) => {
+        const copy = { ...e };
+        fill(it.items, copy);
+        return copy;
+      });
+      else if ('if' in it) fill(it.items.filter((x) => 'iter' in x), block);
+    }
+  };
+  fill(def.items, vars);
+  return { ...packet, vars };
+}
+
 /** A new iteration entry of `iterKey` with the defaults. */
 export function newIterEntry(nid: number, iterKey: string, parentPath: string[] = []): EtcsBlock {
   const def = getPacketDef(nid);

@@ -49,6 +49,9 @@ step** per call, compact JSON result + a one-line summary for the visible log.
 | `check_drawing` | The railway data checks (Checks panel), incl. the configurable rule checks of the diagram (Railway > Rule Settings…). |
 | `get_interlocking_table` | The interlocking table of the drawn routes (points + facing/trailing, sections, overlap, flank protection, conflicting routes with codes, entry signal aspect); `lang: pl` = PKP-style Polish text. |
 | `get_route_conflicts` | Conflicting route pairs with reason codes (S/O/P/F/D) and details, plus the conflict matrix. |
+| `get_balise_data` | ETCS data of the balise groups: all groups (NID_C / NID_BG / balises / orientation / packet numbers) or one group (header, packets with physical values, telegram bits, problems). |
+| `set_balise_packets` | Stores packets (+ header values) on a group, `mode` replace / append; validated against the packet schema (ranges, required, N_ITER), refused with the errors; missing variables with a default take it; one undo step. |
+| `recompute_balise_data` | D_LINK / L_ENDSECTION / gradient / SSP from the drawing for one or all groups; hand-set values kept and reported as mismatches; `apply: true` stores (one undo step). |
 | `export_drawing` | png (returned as an image so the model can look at the drawing), svg, drawio, railML 3.2, Railway Script YAML/JSON; optional download. |
 | `undo` | Undo n steps of the tab. |
 | `list_scenarios` | The tab's scenarios (Scenarios panel): ids, names, descriptions, steps (number, id, name, has UML / text). |

@@ -31,6 +31,15 @@ import { COMPUTED_FIELDS, EXTRA_ATTRS, ON_TRACK_KINDS, STATE_KEYS, listForKind, 
 import type { ScriptModel, ScriptObject, TrackObject } from './model';
 import type { JsonPath } from './validate';
 
+/** rdEtcs JSON as the script's `etcs` object (the text when it is not JSON). */
+function etcsObject(text: string): unknown {
+  try {
+    return JSON.parse(text) as unknown;
+  } catch {
+    return text;
+  }
+}
+
 export interface SnapshotEntry {
   obj: ScriptObject;
   cell: Cell;
@@ -260,7 +269,7 @@ export function drawingEdits(ctx: SyncContext): ScriptEdit[] {
       if (key === 'track' || key === 'at' || key === 'lane' || key === 'to') continue;
       const a = before.attrs[attr] ?? '';
       const b = now[attr] ?? '';
-      if (a !== b) edits.push(b === '' ? { op: 'unset', path: [...obj.path, key] } : { op: 'set', path: [...obj.path, key], value: b });
+      if (a !== b) edits.push(b === '' ? { op: 'unset', path: [...obj.path, key] } : { op: 'set', path: [...obj.path, key], value: attr === 'rdEtcs' ? etcsObject(b) : b });
     }
   }
 

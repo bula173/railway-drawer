@@ -70,6 +70,8 @@ export const EXTRA_ATTRS: Partial<Record<KindId, Record<string, string>>> = {
   track: { kind: 'rdTrackKind', lane: 'rdLane' },
   points: { type: 'rdPointsType', to: 'rdDivergingTrack' },
   train: { direction: 'rdDirection', track: 'rdTrackId', at: 'rdKm' },
+  // the ETCS data of a balise group (railway/etcs/etcs-data.ts): a JSON object in the script
+  baliseGroup: { etcs: 'rdEtcs' },
 };
 
 /**

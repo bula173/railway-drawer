@@ -48,5 +48,11 @@
   (`km`, else `kmStart`; none last), then kind order, then natural ID order. CSV = UTF-8 BOM, CRLF, RFC 4180 quoting,
   formula injection guarded (`'` prefix unless numeric). `.xlsx` = dependency-free stored ZIP (CRC32) with one sheet
   per report (inline strings, numbers as numbers, bold frozen header).
+- **Line data** (optional catalogue fields): track / track section "Speed limit" [km/h] (`rdSpeedLimit`, also
+  points; `rdVmax` read as a fallback) and "Gradient" [‰] (`rdGradient`: a number, or `km:value` steps;
+  + rising left to right); used by the ETCS SSP / gradient values and the train run.
+- **ETCS data** of balise groups (`rdEtcs` JSON, editor, computed values, checks, exports):
+  [etcs-data.md](etcs-data.md). Data panel: "ETCS data…" button with a packet summary for one selected group.
+  Reports: File > Export > Railway Data > Balise ETCS data (CSV / .xlsx / JSON) and Balise telegram report (HTML).
 - Tests: `src/railway/__tests__/` (catalogue + real ERTMS library mapping, object data round trip/undo/insert,
   every rule, CSV/xlsx, panels with real tabs).

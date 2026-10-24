@@ -27,6 +27,16 @@
 | `detection-between-signals` | Train detection between signals / Kontrola niezajętości między semaforami | warning | — | Between consecutive signals of one direction there is a track section (a piece covered by a TVD) or a detection point. Only when the drawing models detection. |
 | `signal-direction` | Signal direction of routes / Kierunek semaforów przebiegów | warning | — | Entry and exit signals of routes have a direction (a wrong direction already gives `route-path`). |
 | `points-detection` | Points without detection / Zwrotnica bez kontroli niezajętości | warning | — | One of the points' legs (toe/normal/reverse pieces) lies in a track section, or a detection point lies on a leg. Only when the drawing models detection. |
+| `etcs-linking-missing` | Linked group without linking packet / Grupa linkowana bez pakietu linkowania | warning | — | A group with ETCS data and Q_LINK = 1 has a packet 5. |
+| `etcs-linking-distance` | Linking distance vs the drawing / Odległość linkowania a rysunek | warning | tolerance 5 m | The summed D_LINK to each linked NID_BG equals the distance along the drawing in the packet direction (±tolerance); a linked NID_BG not ahead is a finding; no metres = note. |
+| `etcs-no-packets` | Balise group without packets / Grupa balis bez pakietów | warning | — | Once a group of the drawing has ETCS data: every group has a packet besides 255. |
+| `etcs-duplicate-nid-bg` | Duplicate NID_BG within NID_C / Powtórzony NID_BG w NID_C | error | — | No two groups share NID_C (diagram default when empty) + NID_BG. Also without ETCS data. |
+| `etcs-packet-direction` | Packet direction vs the group / Kierunek pakietu a grupa | warning | — | Q_DIR nominal/reverse needs the group's orientation; a single unlinked balise needs Q_DIR both; packet 5 / 12 look towards the groups / main signals of that direction. |
+| `etcs-tsr-revocation` | TSR without revocation / TSR bez odwołania | warning | — | A revocable packet 65 (NID_TSR ≠ 255) has a packet 66 with its NID_TSR somewhere in the drawing. |
+| `etcs-packet-invalid` | Invalid ETCS packet data / Błędne dane pakietów ETCS | error | — | The group's ETCS data passes the editor validation (one finding per group). |
+
+The ETCS rules (`etcs/etcs-checks.ts`, [etcs-data.md](etcs-data.md)) only run on drawings with ETCS data
+(`rdEtcs` on a group), except the duplicate NID_BG rule; the built-in templates have none (0 findings).
 
 The defaults are placeholders, not PKP PLK (or any other) norms: set the project's values per diagram. The
 dialog says so too. A rule can be off by default (`RuleDef.enabledByDefault: false`; the stored JSON then holds

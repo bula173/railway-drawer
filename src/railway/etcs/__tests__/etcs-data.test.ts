@@ -32,8 +32,10 @@ import {
   toRaw,
   validateEtcsData,
 } from '../etcs-data';
-import { buildEtcsEnv, computePacket, recomputeGroup } from '../etcs-compute';
+import { buildEtcsEnv } from '../etcs-compute';
+import { computePacket, recomputeGroup } from '../etcs-recompute';
 import { PACKETS, VARS } from '../etcs-schema';
+import { VARIABLE_COLUMNS, buildEtcsHtmlReport, buildEtcsJson, buildEtcsSummaryTable, buildEtcsVariableTable } from '../etcs-export';
 
 const CTX = { nidC: 510, nidBg: 12, nTotal: 1 };
 
@@ -368,5 +370,35 @@ describe('ETCS data round trips', () => {
     const third = exportRailml(importRailml(second).model, { date: '2026-10-24T00:00:00Z' }).xml;
     expect(third).toBe(second);
     expect(second).toContain(`v_rdEtcs="${before.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}"`);
+  });
+});
+
+describe('ETCS exports', () => {
+  it('variable table, summary, JSON and HTML report', () => {
+    const l = lineLayout();
+    const p5 = { ...newPacket(5), vars: { ...newPacket(5).vars, D_LINK: 300, NID_BG: 2 }, auto: ['D_LINK'] };
+    const p72 = newPacket(72);
+    p72.vars.X_TEXT = 'Hello <b>';
+    setEtcsData(l.model, [cellOf(l, 'BG1')], { ...emptyEtcsData(), packets: [p5, p72] });
+    const e = env(l);
+    const vars = buildEtcsVariableTable(e);
+    expect(vars.columns).toEqual(VARIABLE_COLUMNS);
+    const row = (name: string) => vars.rows.find((r) => r[0] === 'BG1' && r[5] !== 0 && r[11] === name)!;
+    expect(row('D_LINK').slice(5)).toEqual([1, 5, 'Linking', 'nominal', '0 1', '', 'D_LINK', 300, 'm', 300, 15, 'drawing']);
+    expect(row('NID_BG')[16]).toBe('manual');
+    expect(row('L_PACKET')[16]).toBe('derived');
+    expect(row('X_TEXT').slice(12, 16)).toEqual(['Hello <b>', '', 'Hello <b>', 72]);
+    expect(vars.rows.filter((r) => r[11] === 'NID_PACKET' && r[6] === 255)).toHaveLength(1);
+    const summary = buildEtcsSummaryTable(e);
+    expect(summary.rows.map((r) => r[0])).toEqual(['BG1', 'BG2', 'BG3']);
+    expect(summary.rows[0][9]).toBe('5, 72, 255');
+    expect(summary.rows[1][9]).toBe('no ETCS data');
+    const json = JSON.parse(buildEtcsJson(e, l.model, 'Line'));
+    expect(json).toMatchObject({ format: 'railway-drawer-etcs', version: 1, defaultNidC: '510' });
+    expect(json.groups[0].data.packets[0].vars.D_LINK).toBe(300);
+    const html = buildEtcsHtmlReport(e, 'Line <1>', new Date('2026-10-24T00:00:00Z'));
+    expect(html).toContain('<title>Line &lt;1&gt; — ETCS balise telegrams</title>');
+    expect(html).toContain('Hello &lt;b&gt;');
+    expect(html).not.toContain('Hello <b>');
   });
 });

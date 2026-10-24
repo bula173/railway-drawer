@@ -23,6 +23,7 @@ import { disableSelectOnPopup } from './canvas-interaction';
 import { hasLockedStyle, isLayer } from './cell-lock';
 import { applyShortcutHints, ariaKeyShortcut, formatShortcut, setMenuItemLabel, shortcutSpecFor } from './shortcut-keys';
 import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
+import { getCellKind } from '../railway/object-data';
 import type { StateMenuEntry } from '../railway/state-menu';
 
 /** The app's context menu (one, created by the TabManager's session views; tests may make more). */
@@ -509,6 +510,12 @@ export class ContextMenuController {
       if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? '' : 'none';
     }
 
+    // ETCS Data... only for balise groups (or a balise of one)
+    const etcsItem = this.contextMenu.querySelector<HTMLElement>('[data-action="etcsData"]');
+    if (etcsItem) {
+      const cells = this.selectedCells.length > 0 ? this.selectedCells : this.currentCell ? [this.currentCell] : [];
+      etcsItem.style.display = type === 'cell' && cells.some((c) => ['baliseGroup', 'balise'].includes(getCellKind(c) ?? '')) ? '' : 'none';
+    }
     updateDrawioMenuItems(this.contextMenu, this.graph, type === 'cell' ? this.currentCell : null);
     this.closeStateSubmenus();
     this.renderStateSection(type === 'cell' ? buildStateMenu(this.selectedCells) : []);

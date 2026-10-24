@@ -85,7 +85,7 @@ script keys:
 | `tracks` | track | `startKm`/`kmStart`, `endKm`/`kmEnd` or `start`/`end`/`StartPos`/`EndPos` (metres); `lane` (row: 0, 1 below, -1 above; automatic when omitted), `kind: main\|siding`, `bufferStops: [start, end]` (IDs `BS-<track>-start/end`) or `[{ id, at: start\|end\|km }]`, nested lists |
 | `points` | points | `track`, `at`, `to` (diverging track; its nearer end starts at the points), `hand: left\|right` (read from the toe: looking from the toe towards the frog, leg to the left = left; derived from the drawing when omitted), `position`, `type` (free text) |
 | `signals` | signal | `track`, `at`, `direction: nominal\|reverse`, `type` (= `signalType`: `main`, `shunting`, `markerBoard`, `etcsStopMarker`), `aspects` (1–6); `routes` is computed |
-| `baliseGroups` | baliseGroup | `track`, `at`, `direction`, `nidC`, `nidBg`, `function`, `leu`, `balises`: a count (`2` → balises `<group>-1`, `<group>-2`) or a list of IDs / `{ id, at, direction }` |
+| `baliseGroups` | baliseGroup | `track`, `at`, `direction`, `nidC`, `nidBg`, `function`, `leu`, `balises`: a count (`2` → balises `<group>-1`, `<group>-2`) or a list of IDs / `{ id, at, direction }`; optional `etcs`: the group's ETCS telegram data `{ header, packets: [{ nid, vars, pig? }] }` (docs/architecture/etcs-data.md) |
 | `balises` | balise | `track`, `at`, `group` (= `groupId`), `position`, `direction` |
 | `axleCounters` | axleCounter | `track`, `at`; `sections` is filled from the sections that start/end at it |
 | `joints` | insulatedJoint (track circuit joint, the ERTMS "TC" marker) | `track`, `at`; `sections` is filled from the sections that start/end at it |

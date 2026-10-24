@@ -1,0 +1,264 @@
+/* ETCS data dialog (etcs-dialog.ts), on the route dialog classes of railway-routes.css; tokens only */
+.rd-etcs-dialog {
+  width: min(1180px, calc(100vw - 32px));
+}
+
+.rd-etcs-sub {
+  margin: 0;
+  padding: 0 16px 6px;
+  color: var(--rd-text-muted);
+}
+
+.rd-etcs-content {
+  min-height: 320px;
+}
+
+.rd-etcs-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.rd-etcs-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rd-etcs-header,
+.rd-etcs-iter {
+  margin: 0;
+  padding: 6px 10px 8px;
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+}
+
+.rd-etcs-header legend,
+.rd-etcs-iter legend {
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.rd-etcs-iter {
+  margin: 6px 0;
+}
+
+.rd-etcs-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 40%) 1fr auto;
+  gap: 2px 8px;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.rd-etcs-label {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.rd-etcs-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.rd-etcs-help {
+  grid-column: 1 / -1;
+  color: var(--rd-text-muted);
+  font-size: 11px;
+}
+
+.rd-etcs-help-pl {
+  font-style: italic;
+}
+
+.rd-etcs-auto,
+.rd-etcs-uncertain {
+  padding: 0 5px;
+  border-radius: 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.rd-etcs-auto {
+  background: var(--rd-info-bg);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-info);
+}
+
+.rd-etcs-uncertain {
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-warning);
+}
+
+.rd-etcs-mismatch {
+  grid-column: 2 / -1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+}
+
+.rd-etcs-uncertain-note,
+.rd-etcs-fixed,
+.rd-etcs-len,
+.rd-etcs-note {
+  color: var(--rd-text-muted);
+  font-size: 12px;
+}
+
+.rd-etcs-list-title,
+.rd-etcs-form-title,
+.rd-etcs-problems-title,
+.rd-etcs-result-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.rd-etcs-packets {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.rd-etcs-packet-item {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--rd-border);
+}
+
+.rd-etcs-packet-item:hover {
+  background: var(--rd-hover);
+}
+
+.rd-etcs-packet-item[aria-selected='true'] {
+  background: var(--rd-selected);
+  font-weight: 600;
+}
+
+.rd-etcs-packet-item.rd-etcs-has-error .rd-etcs-nid {
+  color: var(--rd-danger);
+}
+
+.rd-etcs-nid {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+.rd-etcs-pdir {
+  color: var(--rd-text-muted);
+}
+
+.rd-etcs-empty {
+  padding: 6px 8px;
+  color: var(--rd-text-muted);
+}
+
+.rd-etcs-add-row,
+.rd-etcs-move {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.rd-etcs-add-select {
+  flex: 1;
+  min-width: 0;
+}
+
+.rd-etcs-entry {
+  padding: 4px 0 6px;
+  border-bottom: 1px dashed var(--rd-border);
+}
+
+.rd-etcs-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.rd-etcs-pig {
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.rd-etcs-pigs {
+  grid-template-columns: minmax(150px, 40%) repeat(8, auto);
+  justify-content: start;
+}
+
+.rd-etcs-problems,
+.rd-etcs-result {
+  padding: 0 16px;
+  max-height: 140px;
+  overflow: auto;
+}
+
+.rd-etcs-problems ul,
+.rd-etcs-result ul {
+  margin: 2px 0 6px;
+  padding-left: 18px;
+}
+
+.rd-etcs-error {
+  margin: 0;
+  padding: 0 16px;
+  color: var(--rd-danger);
+}
+
+.rd-etcs-spacer {
+  flex: 1;
+}
+
+.rd-etcs-telegram {
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rd-border);
+}
+
+.rd-etcs-telegram h4 {
+  margin: 4px 0;
+}
+
+.rd-etcs-tgtable {
+  margin: 6px 0;
+}
+
+.rd-etcs-total {
+  margin: 4px 0;
+}
+
+.rd-etcs-hex {
+  display: block;
+  padding: 4px 6px;
+  border-radius: 3px;
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.rd-etcs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (width <= 760px) {
+  .rd-etcs-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -53,6 +53,7 @@ test('Railway menu: route tools, data, checks and toggles; mouse and keyboard; g
     'railwayRoute:recalcKm',
     'railwayRoute:trainRun',
     'editData',
+    'etcsData',
     'railwayChecks',
     'railwayRoute:ruleSettings',
     'railwayScriptEditor',

@@ -71,6 +71,15 @@ export const railwayCommands: readonly Command[] = [
       emit('railway-edit-data-request');
     },
   },
+  {
+    id: 'etcsData',
+    label: 'ETCS Data…',
+    run: (ctx) => {
+      // the ETCS editor of the selected balise group (src/railway/etcs); the context menu selects its cells first
+      if (ctx.target && ctx.target.cells.length > 0) ctx.tab?.graph.setSelectionCells(ctx.target.cells);
+      emit('railway-etcs-request');
+    },
+  },
   { id: 'railwayChecks', label: 'Run Checks', run: () => emit('railway-checks-request') },
   {
     id: DRAWIO_MENU_PREFIX,

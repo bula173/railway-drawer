@@ -153,7 +153,7 @@ test('interlocking: conflict matrix, interlocking table, XLSX/CSV export, rule s
   await expect(overlapIssues).toHaveCount(0);
   await clickMenuItem(page, 'railway', 'railwayRoute:ruleSettings');
   const settings = page.locator('[data-testid="rule-settings-dialog"]');
-  await expect(settings.locator('tr[data-rule]')).toHaveCount(10);
+  await expect(settings.locator('tr[data-rule]')).toHaveCount(17);
   const overlapRow = settings.locator('tr[data-rule="overlap-length"]');
   await expect(overlapRow).toContainText('Minimalna długość zakładki');
   await expect(overlapRow.locator('[data-param="min"]')).toHaveValue('50');

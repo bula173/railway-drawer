@@ -1,6 +1,6 @@
 # AI assistant
 
-- One tool core for the in-app chat and MCP: `tool-defs.ts` (23 tools, JSON Schemas, `additionalProperties: false`),
+- One tool core for the in-app chat and MCP: `tool-defs.ts` (31 tools, JSON Schemas, `additionalProperties: false`),
   `schema-check.ts` (strict validator, also used by the Worker / local server), `tools.ts` `executeAiTool(target, name,
   input)` (never throws; at most ONE undoable edit per call, edits reported for "Undo AI turn"), `target.ts` `AiTarget`
   (graph, undo, Railway Script store/session, optional catalogue/templates/render/download), `app-target.ts` (the ACTIVE
@@ -17,7 +17,7 @@
   drawing changes + `ScenarioSetChange` (execute() swaps `ScenarioSet.captureState/restoreState` of the touched scenarios;
   others, e.g. made in the panel meanwhile, stay), so Ctrl+Z, Undo AI turn and confirm Discard revert both. App target:
   `scenariosChanged` flushes the tab cache, `showScenario`/`exportScenario` via `installedScenarios()` (install-scenarios
-  `exportScenarioFile`: no dialog). `train-run-tool.ts` `simulate_train_run` (train run events, optional scenario in one
+  `exportScenarioFile`: no dialog). `etcs-tools.ts` (`get_balise_data`, `set_balise_packets`, `recompute_balise_data`: [etcs-data.md](etcs-data.md)). `train-run-tool.ts` `simulate_train_run` (train run events, optional scenario in one
   undoable edit via `scenarioEdit`; [train-run.md](train-run.md)). Headless MCP: scenarios from/to the step pages. Pure modules (no DOM at import): tool-defs,
   schema-check, system-prompt, bridge/protocol, bridge/relay, mcp/* — keep them so (the Worker bundles them).
 - Panel UX: the empty chat shows "Try:" example chips (`ai-example`, `AI_EXAMPLE_PROMPTS`) that fill the message box; the
