@@ -12,6 +12,13 @@ import type { PointsEntry } from '../railway/routes';
 import { parsePointsList } from '../railway/routes';
 import { COMMON_SCRIPT_KEYS, EXTRA_ATTRS, KEY_ALIASES, LISTS, STATE_KEYS, TRACK_NESTED_LISTS, kindForList, matchKey, objectKey, stateValuesFor } from './language';
 import type { JsonPath } from './validate';
+import { ETCS_ATTR, normalizeEtcsData, parseEtcsData, serializeEtcsData } from '../railway/etcs/etcs-data';
+
+/** The `etcs` key of a balise group: an object (or its JSON text) -> the stored rdEtcs JSON. */
+function etcsText(value: unknown): string {
+  if (typeof value === 'string') return parseEtcsData(value).data ? serializeEtcsData(parseEtcsData(value).data!) : value;
+  return serializeEtcsData(normalizeEtcsData(value).data);
+}
 
 export interface PageOptions {
   /** Drawing units per metre. */
@@ -169,7 +176,7 @@ export function readScriptModel(doc: unknown): ReadResult {
     }
     for (const [key, attr] of Object.entries(EXTRA_ATTRS[kind] ?? {})) {
       if (item[key] !== undefined && item[key] !== null && !(key in COMMON_SCRIPT_KEYS && def.fields.some((f) => f.key === COMMON_SCRIPT_KEYS[key]))) {
-        o.attrs[attr] = str(item[key]);
+        o.attrs[attr] = attr === ETCS_ATTR ? etcsText(item[key]) : str(item[key]);
       }
     }
     // runtime states (state / aspect): stored as rdState / rdAspect, the look is applied by apply.ts

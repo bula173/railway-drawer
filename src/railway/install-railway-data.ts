@@ -18,13 +18,14 @@ import type { PaletteEntry } from '../ui/drawio-palette/contracts';
 import { KINDS, isErtmsLibraryEntry, kindForPaletteEntry, kindForStyle } from './catalogue';
 import { handOfLegCell } from './hand';
 import { prepareClonedCells } from './clone';
-import { applyPresetToNewCells, setRailwayData } from './object-data';
+import { applyPresetToNewCells, getCellKind, readAttr, setRailwayData } from './object-data';
 import { createRailwayDataPanel } from './data-panel';
 import type { RailwayDataPanel } from './data-panel';
 import { createChecksPanel } from './checks-panel';
 import type { ChecksPanel, ChecksResult } from './checks-panel';
 import type { Issue } from './validation';
 import { collectObjects, countIssues, validateModelReport } from './validation';
+import { etcsEnvFromModel } from './etcs/etcs-compute';
 import type { ReportId } from './report';
 import { REPORTS, buildReportTable, fileBaseName, getReport, tableToCsv } from './report';
 import { readItem, writeItem } from '../core/safe-storage';
@@ -56,6 +57,8 @@ export interface InstallRailwayDataOptions {
 }
 
 export const LIVE_CHECKS_KEY = STORAGE_KEYS.railwayLiveChecks;
+/** `exportRailway:<id>` of the balise ETCS data. */
+const ETCS_EXPORTS = ['etcsCsv', 'etcsXlsx', 'etcsJson', 'etcsReport'];
 
 function readLive(): boolean {
   try {
@@ -292,12 +295,67 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
   };
   const onExport = (id: string): void => {
     if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
+    else if (ETCS_EXPORTS.includes(id)) void exportEtcs(id);
+  };
+  /** Balise ETCS data exports (lazy etcs/etcs-export.ts; the XLSX writer is its own chunk). */
+  const exportEtcs = async (id: string): Promise<void> => {
+    const tab = tabManager.getActiveTab();
+    if (!tab) return;
+    const model = tab.graph.getDataModel();
+    const base = fileBaseName(tab.name);
+    try {
+      const { buildEtcsVariableTable, buildEtcsSummaryTable, buildEtcsJson, buildEtcsHtmlReport } = await import('./etcs/etcs-export');
+      const env = etcsEnvFromModel(model);
+      const withData = env.groups.filter((g) => g.data).length;
+      if (env.groups.length === 0) {
+        notify.warning('The diagram has no balise groups.');
+        return;
+      }
+      if (id === 'etcsCsv') {
+        const table = buildEtcsVariableTable(env);
+        download(new Blob([tableToCsv(table)], { type: 'text/csv;charset=utf-8' }), `${base}-balise-data.csv`);
+      } else if (id === 'etcsXlsx') {
+        const { buildXlsx } = await import('./xlsx');
+        const bytes = buildXlsx([buildEtcsSummaryTable(env), buildEtcsVariableTable(env)]);
+        download(new Blob([bytes as BlobPart], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), `${base}-balise-data.xlsx`);
+      } else if (id === 'etcsJson') {
+        download(new Blob([buildEtcsJson(env, model, tab.name)], { type: 'application/json' }), `${base}-balise-data.json`);
+      } else {
+        download(new Blob([buildEtcsHtmlReport(env, tab.name)], { type: 'text/html;charset=utf-8' }), `${base}-balise-telegrams.html`);
+      }
+      if (withData === 0) notify.warning(`No balise group has ETCS data yet (Railway > ETCS Data…): exported ${env.groups.length} group${env.groups.length === 1 ? '' : 's'} without packets`);
+      else notify.success(`Exported the ETCS data of ${withData} balise group${withData === 1 ? '' : 's'}`);
+    } catch (error) {
+      notify.error(`Could not export the ETCS data: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  };
+  /** Railway > ETCS Data… / context menu / Data panel: the editor of the selected balise group (or of a selected balise's group). */
+  const onEtcs = (): void => {
+    const graph = getGraph();
+    if (!graph) return;
+    const model = graph.getDataModel();
+    const selected = graph.getSelectionCells();
+    let group = selected.find((c) => getCellKind(c) === 'baliseGroup') ?? null;
+    if (!group) {
+      const balise = selected.find((c) => getCellKind(c) === 'balise');
+      const gid = balise ? readAttr(balise, 'rdGroupId').trim().toUpperCase() : '';
+      group = gid ? collectObjects(model).find((o) => o.kind.id === 'baliseGroup' && o.id.toUpperCase() === gid)?.cell ?? null : null;
+    }
+    if (!group) {
+      notify.warning('Select a balise group (or one of its balises) first, then ETCS Data… edits its telegram data.');
+      return;
+    }
+    const cell = group;
+    import('./etcs/etcs-dialog')
+      .then(({ openEtcsDialog }) => openEtcsDialog({ model, cell, notify, download }))
+      .catch((error: unknown) => notify.error(`Could not open the ETCS editor: ${error instanceof Error ? error.message : String(error)}`));
   };
   on(RIGHT_PANEL_EVENT, onView);
   on('active-session-changed', onSessionChanged);
   on('railway-edit-data-request', onEditData);
   on('railway-checks-request', onChecks);
   on('railway-export-request', onExport);
+  on('railway-etcs-request', onEtcs);
 
   return {
     dataPanel,
@@ -312,6 +370,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
       off('railway-edit-data-request', onEditData);
       off('railway-checks-request', onChecks);
       off('railway-export-request', onExport);
+      off('railway-etcs-request', onEtcs);
       dataPanel.destroy();
       checksPanel.destroy();
     },

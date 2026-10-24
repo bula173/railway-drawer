@@ -25,7 +25,8 @@
   left/right, hasTvdSection, overlap); conflicting route pairs with their codes and the flank
   protection (interlocking.ts) -> only `rdConflicts` / `rdFlank` on the route's rd extension object (derived: recomputed
   by the export, ignored by the import; no core element, the railML 3.2 IL conflict names are not verified without the
-  XSD, [rules.md](rules.md)). **Unmapped**: leu, train (rd extension only). Name + `designator
+  XSD, [rules.md](rules.md)). **Unmapped**: leu, train (rd extension only). ETCS packet data of balise groups (`rdEtcs`,
+  [etcs-data.md](etcs-data.md)): railML 3.2 has no packet content, so it is only `v_rdEtcs` on the group's rd object. Name + `designator
   register="_RailwayDrawer" entry=<rdId>` on every object.
 - **rd extension** (`rd:railwayDrawer` last root child, ns `https://railwaydrawer.mksystemdesign.org/railml/rd/1`,
   option in the dialog): `rd:object kind ref` with the fields railML does not hold (aspects, remarks, km start/end,

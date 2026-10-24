@@ -2,7 +2,7 @@
 
 - Language: YAML or JSON, `railwayScript: 1`, km based (nominal = increasing km = left to right); lists `tracks` (with
   `startKm/endKm`, aliases `kmStart/kmEnd`, metres `start/end/StartPos/EndPos`, `lane`, `kind`, `bufferStops`, nested lists),
-  `points` (`at`, `to`, `hand`), `signals`, `baliseGroups` (`balises`: count or list), `balises`, `axleCounters`, `sections`
+  `points` (`at`, `to`, `hand`), `signals`, `baliseGroups` (`balises`: count or list; `etcs`: the ETCS data object = `rdEtcs`, [etcs-data.md](etcs-data.md)), `balises`, `axleCounters`, `sections`
   (`from`/`to` km or detection point IDs), `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` (`from`, `to`,
   `via`, `overlap`); catalogue field names are keys, `x`/`y` override positions; unknown keys = warnings (kept).
   `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).

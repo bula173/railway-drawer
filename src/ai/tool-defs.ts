@@ -32,6 +32,9 @@ export type AiToolName =
   | 'check_drawing'
   | 'get_interlocking_table'
   | 'get_route_conflicts'
+  | 'get_balise_data'
+  | 'set_balise_packets'
+  | 'recompute_balise_data'
   | 'export_drawing'
   | 'undo'
   | 'list_scenarios'
@@ -270,6 +273,63 @@ export const AI_TOOLS: readonly AiToolDef[] = [
     description: 'Pairs of conflicting routes with the reason codes (S shared section, O overlap, P opposite points positions, F flank protection, D opposing directions) and details, plus the conflict matrix (route ids × route ids).',
     input_schema: obj({}),
     mutating: false,
+  },
+  {
+    name: 'get_balise_data',
+    title: 'Balise ETCS data',
+    description:
+      'ETCS data of the balise groups (docs: etcs-data.md). Without group: every group with NID_C / NID_BG / balises / orientation / km and its packet numbers. With group: its telegram header, packets ({nid, vars, auto, pig}; values physical: metres, km/h, s, ‰, special keywords like "inf"/"end"), telegram bits per balise and validation problems.',
+    input_schema: obj({ group: str('Balise group id, e.g. BG1 (omit for all groups).', 80) }),
+    mutating: false,
+  },
+  {
+    name: 'set_balise_packets',
+    title: 'Set balise packets',
+    description:
+      'Stores ETCS packets (and optionally header values) on a balise group, validated against the packet schema (SUBSET-026 v3.6.0: packets 5, 12, 21, 27, 41, 44, 46, 65, 66, 72, 79, 132, 136, 137; 255 is added automatically). Packet = {nid, vars, pig?}: vars hold Q_DIR (0 reverse, 1 nominal, 2 both), Q_SCALE (0 10 cm, 1 1 m, 2 10 m) and the variables by name with physical values; iterations as arrays under their key (5: links, 12: sections, 21/27: steps, 27 diff, 41/46: levels, 79: positions). Missing variables that have a schema default take it. NID_C / NID_BG / N_TOTAL / N_PIG come from the drawing. mode replace (default) or append. Refused with the errors when invalid; one undo step. Use recompute_balise_data to fill distances from the drawing.',
+    input_schema: obj(
+      {
+        group: str('Balise group id, e.g. BG1.', 80),
+        mode: { type: 'string', enum: ['replace', 'append'] },
+        header: obj({
+          Q_UPDOWN: { type: 'integer', enum: [0, 1] },
+          M_VERSION: { type: 'integer', enum: [16, 17, 32, 33] },
+          Q_MEDIA: { type: 'integer', enum: [0, 1] },
+          M_DUP: { type: 'integer', enum: [0, 1, 2] },
+          M_MCOUNT: { type: ['integer', 'string'], description: '0-253, "all" (255) or "never" (254).' },
+          Q_LINK: { type: 'integer', enum: [0, 1] },
+        }),
+        baliseHeaders: {
+          type: 'array',
+          maxItems: 8,
+          description: 'Per-balise header values that differ: [{pig, M_DUP?, M_MCOUNT?}].',
+          items: obj({ pig: { type: 'integer', minimum: 0, maximum: 7 }, M_DUP: { type: 'integer', enum: [0, 1, 2] }, M_MCOUNT: { type: ['integer', 'string'] } }, ['pig']),
+        },
+        packets: {
+          type: 'array',
+          maxItems: 40,
+          items: obj(
+            {
+              nid: { type: 'integer', enum: [5, 12, 21, 27, 41, 44, 46, 65, 66, 72, 79, 132, 136, 137] },
+              vars: { type: 'object', description: 'Variables by name (physical values), iterations as arrays of objects.' },
+              pig: { type: 'array', maxItems: 8, items: { type: 'integer', minimum: 0, maximum: 7 }, description: 'N_PIG of the balises carrying the packet (default all).' },
+              auto: { type: 'array', maxItems: 200, items: { type: 'string', maxLength: 80 } },
+            },
+            ['nid', 'vars']
+          ),
+        },
+      },
+      ['group', 'packets']
+    ),
+    mutating: true,
+  },
+  {
+    name: 'recompute_balise_data',
+    title: 'Recompute balise data',
+    description:
+      'Computes packet values from the drawing (packet 5 D_LINK / NID_BG / Q_LINKORIENTATION to the groups ahead, 12 L_ENDSECTION to the end of authority, 21 gradient from rdGradient, 27 static speed profile from rdSpeedLimit) for one group or all groups with ETCS data. Values set by hand are kept and reported as mismatches. apply=true stores the result (one undo step); otherwise the computed packets are returned only.',
+    input_schema: obj({ group: str('Balise group id (omit for all groups with ETCS data).', 80), apply: { type: 'boolean' } }),
+    mutating: true,
   },
   {
     name: 'export_drawing',

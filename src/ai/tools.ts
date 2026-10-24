@@ -47,6 +47,7 @@ import type { Executor, Input, ToolOutcome } from './tool-kit';
 import { getToolDef } from './tool-defs';
 import type { AiToolName } from './tool-defs';
 import { simulateTrainRun } from './train-run-tool';
+import { getBaliseData, recomputeBaliseData, setBalisePackets } from './etcs-tools';
 
 /** Most characters of text a tool returns (exports, scripts). */
 export const MAX_RESULT_TEXT = 100_000;
@@ -540,6 +541,9 @@ const EXECUTORS: Record<AiToolName, Executor> = {
   check_drawing: checkDrawing,
   get_interlocking_table: getInterlockingTable,
   get_route_conflicts: getRouteConflicts,
+  get_balise_data: getBaliseData,
+  set_balise_packets: setBalisePackets,
+  recompute_balise_data: recomputeBaliseData,
   export_drawing: exportDrawing,
   undo: undoTool,
   list_scenarios: listScenarios,

@@ -372,6 +372,20 @@
           "$ref": "#/definitions/km",
           "description": "km end [km]"
         },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
+        },
+        "gradient": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Gradient [‰] — + rising left to right; or from km on: \"12.000:+3.5; 12+450:-2\" (ETCS packet 21)"
+        },
         "notes": {
           "type": [
             "string",
@@ -556,6 +570,12 @@
         "track": {
           "$ref": "#/definitions/id",
           "description": "Track ID (implied inside a track item)"
+        },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
         },
         "notes": {
           "type": [
@@ -799,6 +819,32 @@
           "description": "Balises of the group: a count (IDs <group>-1, ...) or a list of IDs / { id, at }",
           "x-expected": "a number of balises (1–8) or a list of balises"
         },
+        "etcs": {
+          "type": "object",
+          "description": "ETCS telegram data of the group (docs/architecture/etcs-data.md): { header, packets: [{ nid, vars, pig? }], balises? }",
+          "properties": {
+            "header": {
+              "type": "object"
+            },
+            "packets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "nid"
+                ],
+                "properties": {
+                  "nid": {
+                    "type": "integer"
+                  },
+                  "vars": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
         "x": {
           "type": "number",
           "description": "Layout override: x of the centre (a track: of its first point), drawing units"
@@ -1038,6 +1084,20 @@
         "endKm": {
           "$ref": "#/definitions/km",
           "description": "km end [km]"
+        },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
+        },
+        "gradient": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Gradient [‰] — + rising left to right; or from km on: \"12.000:+3.5; 12+450:-2\" (ETCS packet 21)"
         },
         "notes": {
           "type": [

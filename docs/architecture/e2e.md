@@ -52,7 +52,7 @@
   shape designer, all 4 notification types, status/tab bars; a second test per theme: context menu with the railway Position ▸ submenu open, Railway > Object State submenu,
   states legend, Route tool panel + Route
   Table/Interlocking dialog on a loaded layout (route table, conflicts matrix, interlocking table tabs; Rule settings
-  dialog), Train run panel + events list, scenario view with "Show changes" legend/Changes list and autoplay
+  dialog; ETCS data editor of BG1 after Recompute: badges, mismatch, problems, Save error; telegrams tab), Train run panel + events list, scenario view with "Show changes" legend/Changes list and autoplay
   running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
   per theme: Railway Script tab with an example made invalid (error + warning: problem list, gutter, inline marks), conflict
   banner and toolbar; the editor's text-transparent highlight mirror carries `data-contrast-skip` (its text is skipped only
@@ -119,6 +119,15 @@
   download unzipped in node (stored ZIP) and its sheets parsed (Polish PKP headers, then "English headers"),
   Railway > Rule Settings… (min overlap 150 m -> 3 live `overlap-length` findings with a related link, stored as
   `rdRuleSettings`; min > max refused; Reset to defaults -> findings and attribute gone), rule notes. In CI.
+- `tests/e2e/etcs-data.spec.ts` (any port): ERTMS template `ertms-tpl-20` opened as a new diagram (T1, single-balise
+  groups BG1/BG4/BG6, three main signals); T1 length + speed limit in the Data panel; BG1's Data panel "ETCS data…"
+  opens the editor; packets 5 + 27 added (missing D_LINK listed), Recompute from drawing fills D_LINK to BG4 / BG6
+  (from the geometry and the length), NID_BG, Q_LINKORIENTATION and the SSP (120 km/h, `end` at S6) marked "from
+  drawing"; Q_LOCACC 99 -> problem + `aria-invalid` + Save refused; a hand-set D_LINK -> mismatch "drawing: … m" +
+  Use; telegram view (830 bits, hex `A1…`); Save -> `rdEtcs` JSON, Data panel summary, live checks
+  (`etcs-no-packets` ×2), Railway > ETCS Data…; File > Export > Railway Data > Balise ETCS data (.xlsx) parsed
+  (sheets "Balise groups" / "Balise data", D_LINK row source "drawing"); Ctrl+Z / Ctrl+Y of the save; File > Save
+  keeps `rdEtcs`. Screenshots in the test output dir. In CI.
 - `tests/e2e/press-to-move.spec.ts` (any port, real `page.mouse` input, 1600x1100): every kind of object (draw.io
   rectangle 40x20 / 120x60, ellipse, text, image, AWS icon, mxgraph.basic stencil, ERTMS signal group, balise, PKP semafor
   group, turnout, track, connector, template group) hovered, pressed over a grid incl. near edges/corners and dragged 30 px:

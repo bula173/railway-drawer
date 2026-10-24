@@ -14,13 +14,15 @@
 import type { Cell, Graph } from '@maxgraph/core';
 import type { FieldDef, KindDef, KindId } from './catalogue';
 import { KINDS, getKind, normalizeFieldInput } from './catalogue';
-import { getCellKind, getRawKind, labelIdChange, labelShowsId, readField, readObjectId, setRailwayData } from './object-data';
+import { getCellKind, getRawKind, labelIdChange, labelShowsId, readAttr, readField, readObjectId, setRailwayData } from './object-data';
 import { applyObjectStates, cellSchemeId, readStates } from './state-apply';
 import { STATE_SCHEME } from './states';
 import type { StateDimension } from './states';
 import type { Issue } from './validation';
 import { collectObjects } from './validation';
 import { COUNTRY_ATTR, DEFAULT_COUNTRY_ID, normalizeCountryId, readCountryId, readCountryIdRaw, setCountryId } from './project-settings';
+import { emit } from '../core/event-bus';
+import { ETCS_ATTR, readEtcsData } from './etcs/etcs-data';
 
 export interface RailwayDataPanelOptions {
   container: HTMLElement;
@@ -321,6 +323,23 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
 
     renderStateFields(t, form);
 
+    // ETCS telegram data of a balise group (etcs/etcs-dialog.ts, lazy)
+    if (kind.id === 'baliseGroup' && cells.length === 1) {
+      const row = el('div', 'rd-rw-row rd-rw-etcs');
+      const parsed = readEtcsData(cells[0]);
+      const n = parsed.data ? parsed.data.packets.length : 0;
+      const btn = el('button', 'rd-rw-btn rd-rw-etcs-btn', 'ETCS data…');
+      btn.type = 'button';
+      btn.dataset.testid = 'data-etcs-button';
+      btn.addEventListener('click', () => {
+        if (!t.graph.isCellSelected(cells[0])) t.graph.setSelectionCell(cells[0]);
+        emit('railway-etcs-request');
+      });
+      const summary = parsed.problems.length > 0 ? 'stored data unreadable' : parsed.data ? `${n} packet${n === 1 ? '' : 's'}: ${parsed.data.packets.map((p) => p.nid).join(', ') || '—'}` : 'no ETCS data yet';
+      row.append(el('span', 'rd-rw-label', 'ETCS telegram'), btn, el('div', 'rd-rw-hint', summary));
+      form.append(row);
+    }
+
     // Label shows the ID (draw.io placeholder %rdId%)
     const toggleRow = el('label', 'rd-rw-row rd-rw-check');
     const toggle = el('input');
@@ -451,8 +470,8 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
       signature = 'empty';
       return;
     }
-    // runtime states are part of the signature: their selects are rebuilt when a state changes
-    const next = cells.map((c) => `${String(c.getId())}:${getRawKind(c) ?? ''}:${readStates(c).state}:${readStates(c).aspect}`).join('|');
+    // runtime states (their selects) and the ETCS data (its summary) are part of the signature: rebuilt when they change
+    const next = cells.map((c) => `${String(c.getId())}:${getRawKind(c) ?? ''}:${readStates(c).state}:${readStates(c).aspect}:${readAttr(c, ETCS_ATTR)}`).join('|');
     if (next !== signature || !kindSelect || !root.contains(kindSelect)) {
       // Rebuild unless the user is typing in this panel (the edit triggered this refresh)
       signature = next;

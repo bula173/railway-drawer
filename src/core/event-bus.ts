@@ -29,6 +29,8 @@ export interface AppEventMap {
   // ---- railway requests (menus, toolbar, context menu → railway features)
   'railway-checks-request': undefined;
   'railway-edit-data-request': undefined;
+  /** Railway > ETCS Data…, context menu, Data panel: the ETCS editor of the selected balise group. */
+  'railway-etcs-request': undefined;
   /** Export format of the railway data (e.g. 'xlsx'). */
   'railway-export-request': string;
   /** A RouteCommand of install-railway-routes.ts. */

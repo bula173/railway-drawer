@@ -66,6 +66,10 @@
                       <div class="menu-dropdown-item" data-action="exportRailway:points">Points (CSV)</div>
                       <div class="menu-dropdown-item" data-action="exportRailway:all">All railway objects (CSV)</div>
                       <div class="menu-dropdown-item" data-action="exportRailway:xlsx">Workbook, all lists (.xlsx)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:etcsCsv" title="One row per balise group / packet / variable">Balise ETCS data (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:etcsXlsx" title="Summary per balise group and one row per packet variable">Balise ETCS data (.xlsx)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:etcsJson">Balise ETCS data (JSON)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:etcsReport" title="Printable telegram report (HTML; print it to PDF)">Balise telegram report (HTML)</div>
                     </div>
                   </div>
                   <!-- src/scenarios: scenario-export-request event (HTML; PDF / slides with detail.format) -->
@@ -192,6 +196,7 @@
               <div class="menu-dropdown-item" data-action="railwayRoute:trainRun" title="Animate a train over the selected route (or a chain of routes): sections occupied and released, timeline, scenario">Train Run…</div>
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="editData" title="Data panel of the selected railway object">Edit Data…</div>
+              <div class="menu-dropdown-item" data-action="etcsData" title="ETCS telegram header and packets of the selected balise group (linking, MA, gradient, speed profile, …)">ETCS Data…</div>
               <div class="menu-dropdown-item" data-action="railwayChecks" title="Checks panel: duplicate IDs, missing data, topology">Run Checks</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:ruleSettings" title="Engineering rule checks of this diagram: on/off, severity, thresholds">Rule Settings…</div>
               <div class="menu-dropdown-item" data-action="railwayScriptEditor" title="Left-panel tab Railway Script (import/export: File menu)">Railway Script Editor</div>
@@ -981,6 +986,7 @@
       <div class="rd-sep"></div>
       <div class="context-menu-item" data-action="editStyle">Edit Style...</div>
       <div class="context-menu-item" data-action="editData">Edit Data...</div>
+      <div class="context-menu-item" data-action="etcsData">ETCS Data...</div>
       <!-- Delete stays last (context-menu.ts moves it after the draw.io table/lane items) -->
       <div class="rd-sep" data-sep="delete"></div>
       <div class="context-menu-item context-menu-item-danger" data-action="delete">Delete</div>

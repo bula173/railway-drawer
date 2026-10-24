@@ -14,7 +14,7 @@
  * runtime. Screenshots of both themes go to test-results/theme-contrast/.
  *
  * A second test per theme covers the railway / scenario-document / remote-file features: the
- * Route tool floating panel, the Route Table / Interlocking dialog (all tabs) and Rule settings (a small layout loaded into
+ * Route tool floating panel, the Route Table / Interlocking dialog (all tabs) Rule settings and the ETCS data editor (packets with recompute badges, a mismatch and errors; telegrams) (a small layout loaded into
  * the tab), the scenario view with "Show changes" (legend, Changes list) and autoplay running,
  * the scenario PDF export options dialog, and the remote status menu + Reload confirm dialog
  * (the dev-only fake provider, localStorage `rd.fakeRemote`, like remote-persist.spec.ts).
@@ -597,7 +597,17 @@ const railLine = (x1: number, y1: number, x2: number, y2: number): string =>
 const railBox = (cx: number, cy: number): string => `<mxGeometry x="${cx - 10}" y="${cy - 10}" width="20" height="20" as="geometry"/>`;
 const TRACK = 'endArrow=none;html=1;strokeWidth=4;';
 const SIGNAL = 'triangle;whiteSpace=wrap;html=1;fillColor=#000000;';
-/** Two tracks, points W1, three signals (the ertms-routes.spec.ts layout). */
+const BALISE_GROUP = 'rounded=1;fillColor=none;dashed=1;';
+/** ETCS data of BG1: packet 5 with a hand-set D_LINK the drawing does not confirm, packet 27 without values (errors). */
+const ETCS_BG1 = JSON.stringify({
+  v: 1,
+  header: {},
+  packets: [
+    { nid: 5, vars: { Q_DIR: 1, Q_SCALE: 1, D_LINK: 150, Q_NEWCOUNTRY: 0, NID_BG: 2, Q_LINKREACTION: 1, Q_LOCACC: 5, links: [] } },
+    { nid: 27, vars: { Q_DIR: 1, Q_SCALE: 1 } },
+  ],
+}).replace(/"/g, '&quot;');
+/** Two tracks, points W1, three signals (the ertms-routes.spec.ts layout), balise groups BG1 (ETCS data) and BG2. */
 const RAIL_LAYOUT = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
 ${railObj('t1', 'rdKind="track" rdId="T1" rdKmStart="10" rdKmEnd="10.5"', TRACK, railLine(0, 100, 500, 100), true)}
 ${railObj('t2', 'rdKind="track" rdId="T2" rdKmStart="20" rdKmEnd="20.35"', TRACK, railLine(150, 180, 500, 180), true)}
@@ -605,6 +615,8 @@ ${railObj('w1', 'rdKind="points" rdId="W1" rdPosition="normal" rdTrackId="T1"', 
 ${railObj('s1', 'rdKind="signal" rdId="S1" rdDirection="nominal" rdTrackId="T1"', SIGNAL, railBox(40, 114))}
 ${railObj('s2', 'rdKind="signal" rdId="S2" rdDirection="nominal" rdTrackId="T1"', SIGNAL, railBox(450, 114))}
 ${railObj('s3', 'rdKind="signal" rdId="S3" rdDirection="nominal" rdTrackId="T2"', SIGNAL, railBox(440, 194))}
+${railObj('bg1', `rdKind="baliseGroup" rdId="BG1" rdNidBg="1" rdDirection="nominal" rdTrackId="T1" rdEtcs="${ETCS_BG1}"`, BALISE_GROUP, railBox(100, 100))}
+${railObj('bg2', 'rdKind="baliseGroup" rdId="BG2" rdNidBg="2" rdDirection="nominal" rdTrackId="T1"', BALISE_GROUP, railBox(300, 100))}
 </root></mxGraphModel>`;
 
 const REMOTE_FILE = 'Station.drawio';
@@ -711,11 +723,31 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await openMenu(page, 'railway');
   await page.locator('.menu-dropdown[data-menu="railway"] [data-action="railwayRoute:ruleSettings"]').click();
   const rules = page.locator('[data-testid="rule-settings-dialog"]');
-  await expect(rules.locator('tr[data-rule]')).toHaveCount(10);
+  await expect(rules.locator('tr[data-rule]')).toHaveCount(17);
   await a.check('Rule settings dialog', '.rd-route-dialog-overlay');
   await a.shot('rule-settings');
   await page.keyboard.press('Escape');
   await expect(rules).toHaveCount(0);
+  // Railway > ETCS Data… of BG1: recompute (from-drawing badges, a mismatch, errors), the telegram view
+  await inGraph(page, "graph.setSelectionCell(graph.getDataModel().getCell('bg1'));");
+  await openMenu(page, 'railway');
+  await page.locator('.menu-dropdown[data-menu="railway"] [data-action="etcsData"]').click();
+  const etcs = page.locator('[data-testid="etcs-dialog"]');
+  await etcs.locator('.rd-etcs-recompute').click();
+  await etcs.locator('.rd-etcs-packet-item[data-nid="5"]').click();
+  await expect(etcs.locator('.rd-etcs-mismatch')).toContainText('drawing: 200 m');
+  await expect(etcs.locator('.rd-etcs-auto')).not.toHaveCount(0);
+  await expect(etcs.locator('.rd-etcs-problems li')).not.toHaveCount(0);
+  await etcs.locator('.rd-etcs-save').click();
+  await expect(etcs.locator('.rd-etcs-error')).toContainText('Not saved');
+  await a.check('ETCS data dialog (packets, recompute, errors)', '.rd-route-dialog-overlay');
+  await a.shot('etcs-data');
+  await etcs.locator('.rd-route-tab[data-tab="telegrams"]').click();
+  await expect(etcs.locator('.rd-etcs-telegram')).toHaveCount(1);
+  await a.check('ETCS data dialog (telegrams)', '.rd-route-dialog-overlay');
+  await a.shot('etcs-telegrams');
+  await page.keyboard.press('Escape');
+  await expect(etcs).toHaveCount(0);
 
   // Train run panel (R1 just created; W1 has no length: the "approximate" warning is shown), mid-run
   await openMenu(page, 'railway');

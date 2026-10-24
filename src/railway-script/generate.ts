@@ -210,6 +210,16 @@ export function generateScript(model: GraphDataModel, name = ''): GenerateResult
       item.at = r3(where.km);
     }
     Object.assign(item, fields(o, kind === 'baliseGroup' ? ['count'] : []));
+    if (kind === 'baliseGroup') {
+      const etcs = readAttr(o.cell, 'rdEtcs').trim();
+      if (etcs) {
+        try {
+          item.etcs = JSON.parse(etcs) as unknown;
+        } catch {
+          item.etcs = etcs;
+        }
+      }
+    }
     if (kind === 'train') {
       const dir = readAttr(o.cell, 'rdDirection');
       if (dir) item.direction = dir;
