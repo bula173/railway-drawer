@@ -11,6 +11,7 @@ import type { KindId } from './catalogue';
 import type { Pt } from './geometry';
 import { ID_PLACEHOLDER } from './object-data';
 import type { LibraryEntry } from '../drawio-shapes/engine';
+import { BOARD_SIGNAL_TYPES, SYMBOL_SIZES, standardSize, symbolClassOf } from './symbol-sizes';
 
 /** A library entry's model XML as a document (generated, well-formed; a broken one throws). */
 function parseXml(text: string): XMLDocument {
@@ -19,28 +20,20 @@ function parseXml(text: string): XMLDocument {
   return doc;
 }
 
-/** Default size of a kind drawn without a library symbol. */
-export function defaultSize(kind: KindId): [number, number] {
+/**
+ * Default size of a kind drawn without a library symbol: the symbol size standard
+ * (symbol-sizes.ts; a signal without the ERTMS library gets the signal box, a marker board the
+ * board box).
+ */
+export function defaultSize(kind: KindId, signalType = ''): [number, number] {
+  const cls = symbolClassOf(kind, signalType);
+  if (cls) {
+    const { w, h } = standardSize(cls);
+    return [w, h];
+  }
   switch (kind) {
-    case 'axleCounter':
-      return [10, 10];
-    case 'bufferStop':
-      return [6, 24];
-    case 'levelCrossing':
-      return [30, 40];
-    case 'rbc':
-      return [50, 30];
-    case 'leu':
-      return [34, 18];
-    case 'signal':
-      return [20, 20];
-    case 'balise':
-      return [12, 12];
     case 'trackSection':
-    case 'insulatedJoint':
-      return [10, 12];
-    case 'train':
-      return [50, 20];
+      return [SYMBOL_SIZES.insulatedJoint.w, SYMBOL_SIZES.insulatedJoint.h];
     default:
       return [24, 24];
   }
@@ -55,7 +48,8 @@ export function fallbackStyle(kind: KindId): string {
     case 'axleCounter':
       return 'ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=9;';
     case 'bufferStop':
-      return 'rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=none;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=9;';
+      // the stop bar across the track, in the buffer stop box
+      return 'shape=line;direction=south;html=1;strokeWidth=4;strokeColor=#000000;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=9;';
     case 'signal':
       return 'triangle;whiteSpace=wrap;html=1;fillColor=#000000;';
     case 'balise':
@@ -115,6 +109,7 @@ export class Symbols {
     const dir = it.values.direction;
     switch (it.kind) {
       case 'signal': {
+        if (BOARD_SIGNAL_TYPES.has(it.values.signalType ?? '')) return `marker board ${it.values.signalType} ${dir === 'reverse' ? 'left' : 'right'}`;
         if (dir === 'reverse') return this.get('signal left 3') ? 'signal left 3' : null;
         if (it.values.aspects === '4' && this.get('signal right 4')) return 'signal right 4';
         return this.get('signal right 3') ? 'signal right 3' : null;
@@ -133,10 +128,46 @@ export class Symbols {
     }
   }
 
+  /** The symbol of an object: an ERTMS library entry, a marker board built in the board box. */
   forItem(it: { kind: KindId; values: Record<string, string> }): LibrarySymbol | null {
+    if (it.kind === 'signal' && BOARD_SIGNAL_TYPES.has(it.values.signalType ?? '')) return markerBoardSymbol(it.values.signalType, it.values.direction ?? '');
     const t = this.titleFor(it);
     return t ? this.get(t) : null;
   }
+}
+
+const MARKER_FACE: Record<string, string> = {
+  markerBoard: 'rounded=0;whiteSpace=wrap;html=1;fillColor=#1565c0;strokeColor=#0d47a1;',
+  etcsStopMarker: 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffd600;strokeColor=#000000;',
+};
+
+/**
+ * An ETCS marker board (markerBoard / etcsStopMarker) as a symbol in the standard board box: a
+ * post with an arm and the coloured face, the post on the left (nominal) or right (reverse), the ID
+ * above. The railway data goes on the group (ModelBuilder.symbol).
+ */
+export function markerBoardSymbol(signalType: string, direction: string): LibrarySymbol {
+  const B = SYMBOL_SIZES.board;
+  const [fw, fh] = B.symbolFace;
+  const reverse = direction === 'reverse';
+  const X = (x: number, w = 0): number => (reverse ? B.w - x - w : x);
+  const a0 = 1 + B.arm;
+  const fx = a0 + (B.w - a0 - fw) / 2;
+  const fy = (B.h - fh) / 2;
+  const line = 'endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;';
+  const edge = (id: string, x1: number, y1: number, x2: number, y2: number): string =>
+    `<mxCell id="${id}" style="${line}" edge="1" parent="2"><mxGeometry relative="1" as="geometry">` +
+    `<mxPoint x="${r2(x1)}" y="${r2(y1)}" as="sourcePoint"/><mxPoint x="${r2(x2)}" y="${r2(y2)}" as="targetPoint"/></mxGeometry></mxCell>`;
+  const xml =
+    '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
+    `<mxCell id="2" value="" style="group;verticalLabelPosition=top;verticalAlign=bottom;fontSize=9;" vertex="1" parent="1" connectable="0">` +
+    `<mxGeometry width="${B.w}" height="${B.h}" as="geometry"/></mxCell>` +
+    edge('3', X(1), 0, X(1), B.h) +
+    edge('4', X(1), B.h / 2, X(fx), B.h / 2) +
+    `<mxCell id="5" value="" style="${MARKER_FACE[signalType] ?? MARKER_FACE.markerBoard}" vertex="1" parent="2">` +
+    `<mxGeometry x="${r2(X(fx, fw))}" y="${r2(fy)}" width="${fw}" height="${fh}" as="geometry"/></mxCell>` +
+    '</root></mxGraphModel>';
+  return { title: `marker board ${signalType} ${reverse ? 'left' : 'right'}`, xml, w: B.w, h: B.h };
 }
 
 // ---------------------------------------------------------------------------------------------

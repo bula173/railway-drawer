@@ -34,9 +34,9 @@
    "train:TR1 [id=TR1] @2+89.5"
   ],
   "routes": [
-   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (NaN)",
-   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (NaN)",
-   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (NaN)"
+   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (160.2 u, 160.2 m)",
+   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (144.8 u, 144.8 m)",
+   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (124.5 u, 124.5 m)"
   ],
   "interlocking": [
    "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
@@ -77,9 +77,9 @@
    "train:TR1 [id=TR1] @2+53"
   ],
   "routes": [
-   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (NaN)",
-   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (NaN)",
-   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (NaN)"
+   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (276.3 u, 276.3 m)",
+   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (109 u, 109 m)",
+   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (109 u, 109 m)"
   ],
   "interlocking": [
    "R1 | S36 | S38 |  |  | TC2, TC3, TC4 | TC4 | R2 (S), R3 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
@@ -127,8 +127,8 @@
    "train:TR1 [id=TR1] @0+51"
   ],
   "routes": [
-   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 339 m (≈ drawing units) (NaN)",
-   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (NaN)"
+   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 339 m (≈ drawing units) (338.8 u, 338.8 m)",
+   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (98 u, 98 m)"
   ],
   "interlocking": [
    "R1 | S2_Exit | S4_Entry |  |  | TC2, TC3, TC4 | TC4 | R2 (S) | Proceed (S4_Entry proceed) / Caution (S4_Entry at stop)",
@@ -170,8 +170,8 @@
    "train:TR1 [id=TR1] @2+52"
   ],
   "routes": [
-   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 375 m (≈ drawing units) (NaN)",
-   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (NaN)"
+   "S2_Exit->S4_Entry: TC2 → TC3 → TC4 · no points · 375 m (≈ drawing units) (375 u, 375 m)",
+   "S4_Entry->S6: TC4 → TC5 · no points · 98 m (≈ drawing units) (98 u, 98 m)"
   ],
   "interlocking": [
    "R1 | S2_Exit | S4_Entry |  |  | TC2, TC3, TC4 | TC4 | R2 (S) | Proceed (S4_Entry proceed) / Caution (S4_Entry at stop)",
@@ -213,8 +213,8 @@
    "train:TR1 [id=TR1] @1+127"
   ],
   "routes": [
-   "S2->S4_Exit: TC2 → TC3 · no points · 221 m (≈ drawing units) (NaN)",
-   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (NaN)"
+   "S2->S4_Exit: TC2 → TC3 · no points · 221 m (≈ drawing units) (221 u, 221 m)",
+   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (98 u, 98 m)"
   ],
   "interlocking": [
    "R1 | S2 | S4_Exit |  |  | TC2, TC3 | TC3 | R2 (S) | Proceed (S4_Exit proceed) / Caution (S4_Exit at stop)",
@@ -259,8 +259,8 @@
    "train:TR1 [id=TR1] @1+57"
   ],
   "routes": [
-   "S34->S38: TC2 → TC3 → TC4 → TC5 → TC6 → TC7 · no points · 473 m (≈ drawing units) (NaN)",
-   "S37->S35: TC6 → TC5 → TC4 → TC3 · no points · 247 m (≈ drawing units) (NaN)"
+   "S34->S38: TC2 → TC3 → TC4 → TC5 → TC6 → TC7 · no points · 473 m (≈ drawing units) (473 u, 473 m)",
+   "S37->S35: TC6 → TC5 → TC4 → TC3 · no points · 247 m (≈ drawing units) (247 u, 247 m)"
   ],
   "interlocking": [
    "R1 | S34 | S38 |  |  | TC2, TC3, TC4, TC5, TC6, TC7 | TC7 | R2 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
@@ -317,9 +317,9 @@
    "train:TR1 [id=TR1] @1+136"
   ],
   "routes": [
-   "BS6->S2: TC4 → TC5 · no points · 157 m (≈ drawing units) (NaN)",
-   "S2->S4: TC5 → TC6 · no points · 120 m (≈ drawing units) (NaN)",
-   "S4->S6: TC6 → TC7 → TC8 → TC9 → TC10 · W1 normal · 277 m (≈ drawing units) (NaN)"
+   "BS6->S2: TC4 → TC5 · no points · 157 m (≈ drawing units) (157.3 u, 157.3 m)",
+   "S2->S4: TC5 → TC6 · no points · 120 m (≈ drawing units) (119.8 u, 119.8 m)",
+   "S4->S6: TC6 → TC7 → TC8 → TC9 → TC10 · W1 normal · 277 m (≈ drawing units) (277 u, 277 m)"
   ],
   "interlocking": [
    "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
@@ -388,12 +388,12 @@
    "train:TR1 [id=TR1] @0+153"
   ],
   "routes": [
-   "S1->S2: TC5 → TC6 · no points · 171 m (≈ drawing units) (NaN)",
-   "S2->S4: TC6 → TC7 → TC8 → TC9 · W1 normal · 300 m (≈ drawing units) (NaN)",
-   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (NaN)",
-   "S3->BS1: TC11 → TC10 → TC9 → TC8 → TC7 → TC6 → TC5 → TC4 · W2 normal, W1 normal · 661 m (≈ drawing units) (NaN)",
-   "S3->SS1: TC11 → TC10 → TC3 → TC2 → TC1 · W2 reverse · 368 m (≈ drawing units) (NaN)",
-   "SS1->BS1: TC1 → TC6 → TC5 → TC4 · W1 reverse · 370 m (≈ drawing units) (NaN)"
+   "S1->S2: TC5 → TC6 · no points · 171 m (≈ drawing units) (171.3 u, 171.3 m)",
+   "S2->S4: TC6 → TC7 → TC8 → TC9 · W1 normal · 300 m (≈ drawing units) (300 u, 300 m)",
+   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (333.8 u, 333.8 m)",
+   "S3->BS1: TC11 → TC10 → TC9 → TC8 → TC7 → TC6 → TC5 → TC4 · W2 normal, W1 normal · 661 m (≈ drawing units) (661 u, 661 m)",
+   "S3->SS1: TC11 → TC10 → TC3 → TC2 → TC1 · W2 reverse · 368 m (≈ drawing units) (368.5 u, 368.5 m)",
+   "SS1->BS1: TC1 → TC6 → TC5 → TC4 · W1 reverse · 370 m (≈ drawing units) (369.8 u, 369.8 m)"
   ],
   "interlocking": [
    "R1 | S1 | S2 |  |  | TC5, TC6 | TC6 | R2 (S), R3 (S), R4 (S,D), R6 (S,D) | Proceed (S2 proceed) / Caution (S2 at stop)",
@@ -487,15 +487,15 @@
    "train:TR1 [id=TR1] @7+94.5"
   ],
   "routes": [
-   "BS2->BS4: TC8 → TC9 · no points · 90 m (≈ drawing units) (NaN)",
-   "BS4->BS6: TC9 → TC10 → TC11 · no points · 191 m (≈ drawing units) (NaN)",
-   "BS6->S3: TC11 → TC12 · no points · 171 m (≈ drawing units) (NaN)",
-   "BS7->S1: TC11 → TC10 → TC9 → TC8 → TC7 · no points · 453 m (≈ drawing units) (NaN)",
-   "S1->S2: TC7 → TC6 · no points · 69 m (≈ drawing units) (NaN)",
-   "S3->S4: TC12 → TC13 · no points · 96 m (≈ drawing units) (NaN)",
-   "S4->S6: TC13 → TC14 → TC15 · W2 normal · 125 m (≈ drawing units) (NaN)",
-   "SS1->BS2: TC5 → TC6 → TC7 → TC8 · W1 normal · 197 m (≈ drawing units) (NaN)",
-   "SS2->BS2: TC3 → TC6 → TC7 → TC8 · W1 reverse · 231 m (≈ drawing units) (NaN)"
+   "BS2->BS4: TC8 → TC9 · no points · 90 m (≈ drawing units) (90 u, 90 m)",
+   "BS4->BS6: TC9 → TC10 → TC11 · no points · 191 m (≈ drawing units) (191 u, 191 m)",
+   "BS6->S3: TC11 → TC12 · no points · 171 m (≈ drawing units) (171.2 u, 171.2 m)",
+   "BS7->S1: TC11 → TC10 → TC9 → TC8 → TC7 · no points · 453 m (≈ drawing units) (452.5 u, 452.5 m)",
+   "S1->S2: TC7 → TC6 · no points · 69 m (≈ drawing units) (69 u, 69 m)",
+   "S3->S4: TC12 → TC13 · no points · 96 m (≈ drawing units) (95.8 u, 95.8 m)",
+   "S4->S6: TC13 → TC14 → TC15 · W2 normal · 125 m (≈ drawing units) (124.5 u, 124.5 m)",
+   "SS1->BS2: TC5 → TC6 → TC7 → TC8 · W1 normal · 197 m (≈ drawing units) (196.5 u, 196.5 m)",
+   "SS2->BS2: TC3 → TC6 → TC7 → TC8 · W1 reverse · 231 m (≈ drawing units) (230.7 u, 230.7 m)"
   ],
   "interlocking": [
    "R1 | BS2 | BS4 |  |  | TC8, TC9 | TC9 | R2 (S), R4 (S,D), R8 (S), R9 (S) | Proceed (BS4 proceed) / Caution (BS4 at stop)",
@@ -584,11 +584,11 @@
    "train:TR1 [id=TR1] @4+91.5"
   ],
   "routes": [
-   "S1->S4: TC9 → TC10 → TC11 → TC12 · W2 normal · 240 m (≈ drawing units) (NaN)",
-   "S2->S1: TC6 → TC7 → TC8 → TC9 · W1 normal · 317 m (≈ drawing units) (NaN)",
-   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 351 m (≈ drawing units) (NaN)",
-   "S5->SS1: TC10 → TC3 → TC2 → TC1 · W2 reverse · 340 m (≈ drawing units) (NaN)",
-   "SS2->S4: TC3 → TC10 → TC11 → TC12 · W2 reverse · 282 m (≈ drawing units) (NaN)"
+   "S1->S4: TC9 → TC10 → TC11 → TC12 · W2 normal · 240 m (≈ drawing units) (240 u, 240 m)",
+   "S2->S1: TC6 → TC7 → TC8 → TC9 · W1 normal · 317 m (≈ drawing units) (316.5 u, 316.5 m)",
+   "S2->SS2: TC6 → TC1 → TC2 → TC3 · W1 reverse · 351 m (≈ drawing units) (351.4 u, 351.4 m)",
+   "S5->SS1: TC10 → TC3 → TC2 → TC1 · W2 reverse · 340 m (≈ drawing units) (340.4 u, 340.4 m)",
+   "SS2->S4: TC3 → TC10 → TC11 → TC12 · W2 reverse · 282 m (≈ drawing units) (281.9 u, 281.9 m)"
   ],
   "interlocking": [
    "R1 | S1 | S4 | W2 normal (trailing) | SS2 stop | TC9, TC10, TC11, TC12 | TC12 | R2 (S), R3 (F), R4 (S,P,F,D), R5 (S,P,F) | Proceed (S4 proceed) / Caution (S4 at stop)",
@@ -650,9 +650,9 @@
    "train:TR1 [id=TR1] @2+89.5"
   ],
   "routes": [
-   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (NaN)",
-   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (NaN)",
-   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (NaN)"
+   "BS6->S2: TC4 → TC5 · no points · 160 m (≈ drawing units) (160.2 u, 160.2 m)",
+   "S2->S4: TC5 → TC6 · no points · 145 m (≈ drawing units) (144.8 u, 144.8 m)",
+   "S4->S6: TC6 → TC7 → TC8 · W1 normal · 125 m (≈ drawing units) (124.5 u, 124.5 m)"
   ],
   "interlocking": [
    "R1 | BS6 | S2 |  |  | TC4, TC5 | TC5 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
@@ -693,9 +693,9 @@
    "train:TR1 [id=TR1] @2+53"
   ],
   "routes": [
-   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (NaN)",
-   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (NaN)",
-   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (NaN)"
+   "S36->S38: TC2 → TC3 → TC4 · no points · 276 m (≈ drawing units) (276.3 u, 276.3 m)",
+   "S38->S40: TC4 → TC5 · no points · 109 m (≈ drawing units) (109 u, 109 m)",
+   "S39->S37: TC4 → TC3 · no points · 109 m (≈ drawing units) (109 u, 109 m)"
   ],
   "interlocking": [
    "R1 | S36 | S38 |  |  | TC2, TC3, TC4 | TC4 | R2 (S), R3 (S,D) | Proceed (S38 proceed) / Caution (S38 at stop)",
@@ -751,8 +751,8 @@
    "train:TR1 [id=TR1] @3+89.5"
   ],
   "routes": [
-   "S02->S4: TC5 → TC6 → TC7 → TC8 · W1 normal · 340 m (≈ drawing units) (NaN)",
-   "S02->SS2: TC5 → TC1 → TC2 → TC3 · W1 reverse · 347 m (≈ drawing units) (NaN)"
+   "S02->S4: TC5 → TC6 → TC7 → TC8 · W1 normal · 340 m (≈ drawing units) (339.8 u, 339.8 m)",
+   "S02->SS2: TC5 → TC1 → TC2 → TC3 · W1 reverse · 347 m (≈ drawing units) (346.5 u, 346.5 m)"
   ],
   "interlocking": [
    "R1 | S02 | S4 | W1 normal (facing) | SS1 stop | TC5, TC6, TC7, TC8 | TC8 | R2 (S,P) | Proceed (S4 proceed) / Caution (S4 at stop)",
@@ -813,8 +813,8 @@
    "train:TR1 [id=TR1] @0+81"
   ],
   "routes": [
-   "S60->S62: TC8 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (NaN)",
-   "S60->S64: TC8 → TC9 → TC10 → TC11 · W1 normal · 300 m (≈ drawing units) (NaN)"
+   "S60->S62: TC8 → TC1 → TC2 → TC3 · W1 reverse · 334 m (≈ drawing units) (333.8 u, 333.8 m)",
+   "S60->S64: TC8 → TC9 → TC10 → TC11 · W1 normal · 300 m (≈ drawing units) (300 u, 300 m)"
   ],
   "interlocking": [
    "R1 | S60 | S62 | W1 reverse (facing) | W2 reverse | TC8, TC1, TC2, TC3 | TC3 | R2 (S,P) | Proceed (S62 proceed) / Caution (S62 at stop); speed restriction (W1 reverse)",
@@ -864,8 +864,8 @@
    "train:TR1 [id=TR1] @2+47.7"
   ],
   "routes": [
-   "BS2->BS4: TC6 → TC7 → TC8 · no points · 231 m (≈ drawing units) (NaN)",
-   "SS2->BS2: TC2 → TC5 → TC6 · W1 reverse · 251 m (≈ drawing units) (NaN)"
+   "BS2->BS4: TC6 → TC7 → TC8 · no points · 231 m (≈ drawing units) (231.2 u, 231.2 m)",
+   "SS2->BS2: TC2 → TC5 → TC6 · W1 reverse · 251 m (≈ drawing units) (251.1 u, 251.1 m)"
   ],
   "interlocking": [
    "R1 | BS2 | BS4 |  |  | TC6, TC7, TC8 | TC8 | R2 (S) | Proceed (BS4 proceed) / Caution (BS4 at stop)",
@@ -925,10 +925,10 @@
    "train:TR1 [id=TR1] @1+58"
   ],
   "routes": [
-   "S12_EXTERNAL->S2: TC5 → TC6 · no points · 147 m (≈ drawing units) (NaN)",
-   "S2->S4: TC6 → TC7 · no points · 124 m (≈ drawing units) (NaN)",
-   "S4->S6: TC7 → TC8 · no points · 97 m (≈ drawing units) (NaN)",
-   "S6->S10: TC8 → TC9 → TC10 · W1 normal · 122 m (≈ drawing units) (NaN)"
+   "S12_EXTERNAL->S2: TC5 → TC6 · no points · 147 m (≈ drawing units) (147 u, 147 m)",
+   "S2->S4: TC6 → TC7 · no points · 124 m (≈ drawing units) (124 u, 124 m)",
+   "S4->S6: TC7 → TC8 · no points · 97 m (≈ drawing units) (97.3 u, 97.3 m)",
+   "S6->S10: TC8 → TC9 → TC10 · W1 normal · 122 m (≈ drawing units) (122 u, 122 m)"
   ],
   "interlocking": [
    "R1 | S12_EXTERNAL | S2 |  |  | TC5, TC6 | TC6 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",
@@ -974,8 +974,8 @@
    "train:TR1 [id=TR1] @1+133"
   ],
   "routes": [
-   "S2->S4_Exit: TC2 → TC3 · no points · 262 m (≈ drawing units) (NaN)",
-   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (NaN)"
+   "S2->S4_Exit: TC2 → TC3 · no points · 262 m (≈ drawing units) (261.5 u, 261.5 m)",
+   "S4_Exit->S6: TC3 → TC4 · no points · 98 m (≈ drawing units) (98 u, 98 m)"
   ],
   "interlocking": [
    "R1 | S2 | S4_Exit |  |  | TC2, TC3 | TC3 | R2 (S) | Proceed (S4_Exit proceed) / Caution (S4_Exit at stop)",
@@ -1023,7 +1023,7 @@
    "train:TR1 [id=TR1] @7+126.5"
   ],
   "routes": [
-   "SS2->BS2: TC3 → TC6 → TC7 → TC8 → TC9 · W1 reverse · 483 m (≈ drawing units) (NaN)"
+   "SS2->BS2: TC3 → TC6 → TC7 → TC8 → TC9 · W1 reverse · 483 m (≈ drawing units) (482.7 u, 482.7 m)"
   ],
   "interlocking": [
    "R1 | SS2 | BS2 | W1 reverse (trailing) |  | TC3, TC6, TC7, TC8, TC9 | TC9 |  | Proceed (BS2 proceed) / Caution (BS2 at stop); speed restriction (W1 reverse)"
@@ -1061,8 +1061,8 @@
    "train:TR1 [id=TR1] @1+76"
   ],
   "routes": [
-   "BS6->S2: TC3 → TC4 · no points · 123 m (≈ drawing units) (NaN)",
-   "S2->S4: TC4 → TC5 · no points · 201 m (≈ drawing units) (NaN)"
+   "BS6->S2: TC3 → TC4 · no points · 123 m (≈ drawing units) (123 u, 123 m)",
+   "S2->S4: TC4 → TC5 · no points · 201 m (≈ drawing units) (201 u, 201 m)"
   ],
   "interlocking": [
    "R1 | BS6 | S2 |  |  | TC3, TC4 | TC4 | R2 (S) | Proceed (S2 proceed) / Caution (S2 at stop)",

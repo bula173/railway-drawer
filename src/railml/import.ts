@@ -32,6 +32,7 @@ import { RAILML_ID_ATTR, RAILML_IL_ID_ATTR, RAILML_NE_ATTR, RAILML_TVD_ATTR } fr
 import { protectionFromRailml, technologyFromRailml } from './mapping';
 import { PRESERVED_ATTR, PreservedStore, pathOf } from './preserve';
 import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from '../railway/schematic';
+import { BOARD_SIGNAL_TYPES } from '../railway/symbol-sizes';
 import { DC_NS, RAILML_NS, RD_NS, RD_REGISTER, childNamed, childrenNamed, parseXml, pathNamed } from './xml';
 
 export interface RailmlImportOptions {
@@ -596,6 +597,15 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
     for (const [k, v] of Object.entries(it.ext ?? {})) if (k.startsWith('v_')) attrs[k.slice(2)] = v;
     return attrs;
   };
+  /** Data of a symbol: a marker board shows its ID above (it has no text part of its own). */
+  const symbolAttrs = (it: Item): Record<string, string> => {
+    const attrs = dataAttrs(it);
+    if (it.kind === 'signal' && BOARD_SIGNAL_TYPES.has(it.values.signalType ?? '') && attrs.label === undefined) {
+      attrs.label = ID_PLACEHOLDER;
+      attrs.placeholders = '1';
+    }
+    return attrs;
+  };
   const count = (k: KindId): void => {
     counts[k] = (counts[k] ?? 0) + 1;
   };
@@ -677,14 +687,14 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
     }
     if (it.kind === 'baliseGroup') continue; // after the balises
     const sym = it.ext?.style ? null : symbols.forItem(it);
-    const size = sym ? { w: sym.w, h: sym.h } : sizeOf(it, ...defaultSize(it.kind));
+    const size = sym ? { w: sym.w, h: sym.h } : sizeOf(it, ...defaultSize(it.kind, it.values.signalType));
     const p = spotPoint(it, size);
     if (!p) {
       parking.push(it);
       continue;
     }
     centres.set(it, p);
-    if (sym) b.symbol(sym, dataAttrs(it), p, it.values.id);
+    if (sym) b.symbol(sym, symbolAttrs(it), p, it.values.id);
     else b.vertex(dataAttrs(it), it.ext?.style ?? fallbackStyle(it.kind), p, size, !it.ext?.style && !it.ext?.v_label);
     count(it.kind);
   }
@@ -713,8 +723,8 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
     parking.forEach((it, i) => {
       const sym = it.ext?.style ? null : symbols.forItem(it);
       const p = { x: 40 + i * 70, y };
-      if (sym) b.symbol(sym, dataAttrs(it), p, it.values.id);
-      else b.vertex(dataAttrs(it), it.ext?.style ?? fallbackStyle(it.kind), p, sizeOf(it, ...defaultSize(it.kind)), !it.ext?.style && !it.ext?.v_label);
+      if (sym) b.symbol(sym, symbolAttrs(it), p, it.values.id);
+      else b.vertex(dataAttrs(it), it.ext?.style ?? fallbackStyle(it.kind), p, sizeOf(it, ...defaultSize(it.kind, it.values.signalType)), !it.ext?.style && !it.ext?.v_label);
       count(it.kind);
     });
     warnings.push(`${parking.length} object${parking.length === 1 ? ' has' : 's have'} no location on the topology and ${parking.length === 1 ? 'was' : 'were'} put in a row below the drawing: ${parking.map((p) => `${getKind(p.kind)!.label} ${p.values.id || p.railId}`).slice(0, 8).join(', ')}${parking.length > 8 ? ', …' : ''}`);

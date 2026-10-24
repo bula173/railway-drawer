@@ -19,6 +19,7 @@ import { buildTopology } from '../railway/topology';
 import { collectObjects, indexObjects } from '../railway/validation';
 import type { LibraryEntry } from '../drawio-shapes/engine';
 import { BALISE_GROUP_STYLE, ModelBuilder, SECTION_LINE_STYLE, Symbols, defaultSize, fallbackStyle } from '../railway/schematic';
+import { BOARD_SIGNAL_TYPES } from '../railway/symbol-sizes';
 import { importDrawioXmlIntoModel, registerDrawioCodecs } from '../services/drawio-xml';
 import type { Layout, LayoutIssue } from './layout';
 import { centreOnTrack, layoutScript } from './layout';
@@ -41,8 +42,6 @@ export function scriptCellId(key: string): string {
   return `rs-${key.replace(/[^A-Za-z0-9_.:-]/g, '_')}`;
 }
 
-const MARKER_STYLE = 'rounded=0;whiteSpace=wrap;html=1;fillColor=#1565c0;strokeColor=#0d47a1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=9;';
-const STOP_MARKER_STYLE = 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffd600;strokeColor=#000000;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=9;';
 
 function dataAttrs(o: ScriptObject, shape: string): Record<string, string> {
   const def = getKind(o.kind)!;
@@ -99,8 +98,8 @@ export function buildScriptModel(model: ScriptModel, entries: LibraryEntry[]): B
   for (const o of model.objects) {
     if (o.kind === 'points' || o.kind === 'trackSection' || o.kind === 'baliseGroup') continue;
     const at = layout.onTrack.get(o);
-    const sym = o.kind === 'signal' && (o.values.signalType === 'markerBoard' || o.values.signalType === 'etcsStopMarker') ? null : symbols.forItem(o);
-    const size = sym ? { w: sym.w, h: sym.h } : o.kind === 'signal' ? { w: 10, h: 16 } : (([w, h]) => ({ w, h }))(defaultSize(o.kind));
+    const sym = symbols.forItem(o);
+    const size = sym ? { w: sym.w, h: sym.h } : (([w, h]) => ({ w, h }))(defaultSize(o.kind, o.values.signalType));
     let c: Pt | null = at ? centreOnTrack(o.kind, o.values.direction ?? o.attrs.rdDirection ?? '', at, size, model.page.laneSpacing) : null;
     if (o.x !== undefined || o.y !== undefined) c = { x: o.x ?? c?.x ?? 0, y: o.y ?? c?.y ?? 0 };
     if (!c) {
@@ -113,10 +112,12 @@ export function buildScriptModel(model: ScriptModel, entries: LibraryEntry[]): B
   function place(o: ScriptObject, c: Pt, sym: ReturnType<Symbols['forItem']>, size: { w: number; h: number }): void {
     b.useId(scriptCellId(o.key));
     if (sym) {
-      b.symbol(sym, dataAttrs(o, `symbol:${symbols.titleFor(o) ?? ''}`), c, o.id);
+      const board = o.kind === 'signal' && BOARD_SIGNAL_TYPES.has(o.values.signalType ?? '');
+      // a marker board shows its ID above (as the former plain marker shape)
+      const label: Record<string, string> = board ? { label: ID_PLACEHOLDER, placeholders: '1' } : {};
+      b.symbol(sym, { ...dataAttrs(o, `symbol:${symbols.titleFor(o) ?? ''}`), ...label }, c, o.id);
     } else {
-      const style = o.kind === 'signal' ? (o.values.signalType === 'etcsStopMarker' ? STOP_MARKER_STYLE : MARKER_STYLE) : fallbackStyle(o.kind);
-      b.vertex(dataAttrs(o, `shape:${o.kind}:${o.values.signalType ?? ''}`), style, c, size, true);
+      b.vertex(dataAttrs(o, `shape:${o.kind}:${o.values.signalType ?? ''}`), fallbackStyle(o.kind), c, size, true);
     }
     count(counts, o.kind);
   }
@@ -148,7 +149,7 @@ export function buildScriptModel(model: ScriptModel, entries: LibraryEntry[]): B
     const y = b.maxY() + 80;
     parking.forEach((o, i) => {
       const sym = symbols.forItem(o);
-      const size = sym ? { w: sym.w, h: sym.h } : (([w, h]) => ({ w, h }))(defaultSize(o.kind));
+      const size = sym ? { w: sym.w, h: sym.h } : (([w, h]) => ({ w, h }))(defaultSize(o.kind, o.values.signalType));
       place(o, { x: model.page.originX + 30 + i * 80, y }, sym, size);
     });
   }

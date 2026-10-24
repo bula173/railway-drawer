@@ -68,7 +68,7 @@ function semanticsOf(tpl: DiagramTemplate): Semantics {
       if (a === b) continue;
       const found = findRoutePaths(topo, a, b);
       if (found.paths.length === 0) continue;
-      routes.push(`${a.id}->${b.id}: ${found.paths.map((p) => `${describePath(p)} (${r1(p.length)})`).join(' | ')}`);
+      routes.push(`${a.id}->${b.id}: ${found.paths.map((p) => `${describePath(p)} (${r1(p.units)} u, ${r1(p.metres)} m)`).join(' | ')}`);
       toAdd.push({ path: found.paths[0], a, b });
     }
   }

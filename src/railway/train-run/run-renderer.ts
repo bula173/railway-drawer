@@ -17,6 +17,7 @@ import { parseDrawioStyle } from '../../format/drawio-xml';
 import { absoluteBounds } from '../geometry';
 import { ID_PLACEHOLDER, allCells, buildDataValue, getCellKind, nextFreeId, readObjectId, usedIds } from '../object-data';
 import { applyObjectStates, readStates } from '../state-apply';
+import { SYMBOL_SIZES } from '../symbol-sizes';
 import type { StateItem } from '../state-apply';
 import { pointAtM } from './run-path';
 import { changeKey, headAt, statesAt } from './simulate';
@@ -24,7 +25,8 @@ import type { RunResult } from './simulate';
 
 /** Style of a train created for a run (the ERTMS palette's train symbol). */
 export const NEW_TRAIN_STYLE = 'shape=ertms-train;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#404040;';
-export const NEW_TRAIN_SIZE = { width: 50, height: 20 };
+/** A new train: the standard train box (symbol-sizes.ts). */
+export const NEW_TRAIN_SIZE = { width: SYMBOL_SIZES.train.w, height: SYMBOL_SIZES.train.h };
 /** Gap between the train symbol and the track line (room for the length overlay of the run view). */
 const TRAIN_GAP = 12;
 
