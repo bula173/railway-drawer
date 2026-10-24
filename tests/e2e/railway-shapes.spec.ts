@@ -135,3 +135,43 @@ test('railway libraries: sections, Polish semafor with lamp aspects, search, tur
   expect(counts.netElements).toBeGreaterThanOrEqual(3);
   expect(pageErrors).toEqual([]);
 });
+
+test('symbol size standard: signals from ERTMS, PKP and ETCS extra insert with equal boxes, marker boards share theirs', async ({ page }) => {
+  const pageErrors: string[] = [];
+  page.on('pageerror', (err) => pageErrors.push(err.message));
+  await fresh(page);
+  /** Inserted top cell: model size and rendered size (scale 1), lamps found by the states. */
+  const boxOf = async (id: string, title: string): Promise<{ title: string; w: number; h: number; vw: number; vh: number; lamps: number }> => {
+    const [cell] = await insert(page, id, title);
+    return inGraph(page, `
+      const cell = graph.getDataModel().getCell(arg.cell);
+      const st = graph.view.getState(cell);
+      const s = graph.view.scale;
+      const lamps = (cell.children || []).filter((c) => c.isVertex() && !(c.children || []).length
+        && Math.abs(c.getGeometry().width - c.getGeometry().height) < 0.5).length;
+      return { title: arg.title, w: cell.getGeometry().width, h: cell.getGeometry().height,
+        vw: Math.round(st.width / s), vh: Math.round(st.height / s), lamps };`, { cell, title });
+  };
+  const signals = [
+    ['ertms', 'Signal Right 3'], ['ertms', 'Signal Left 3'],
+    ['rail-pl', 'Semafor 2-komorowy prawy'], ['rail-pl', 'Semafor 5-komorowy lewy'], ['rail-pl', 'Tarcza manewrowa Tm prawa'],
+    ['rail-pl', 'Sygnał zastępczy Sz prawy'], ['rail-pl', 'Semafor kształtowy 2-ramienny prawy'],
+  ] as const;
+  const boxes = [];
+  for (const [id, title] of signals) boxes.push(await boxOf(id, title));
+  for (const b of boxes) {
+    expect({ w: b.w, h: b.h, vw: b.vw, vh: b.vh }, b.title).toEqual({ w: 50, h: 20, vw: 50, vh: 20 });
+    expect(b.lamps, b.title).toBeGreaterThan(0);
+  }
+  const boards = [];
+  for (const [id, title] of [['etcs-extra', 'ETCS Stop Marker Right'], ['etcs-extra', 'ETCS Location Marker Left'], ['etcs-extra', 'Level Transition L2'], ['rail-pl', 'Wskaźnik W4']] as const) {
+    boards.push(await boxOf(id, title));
+  }
+  for (const b of boards) expect({ w: b.w, h: b.h }, b.title).toEqual({ w: 30, h: 20 });
+  // balises of every library one size
+  for (const [id, title] of [['ertms', 'Single Balise Right'], ['etcs-extra', 'Fixed Balise Left'], ['etcs-extra', 'Switchable Balise Right']] as const) {
+    const b = await boxOf(id, title);
+    expect({ w: b.w, h: b.h }, title).toEqual({ w: 12, h: 12 });
+  }
+  expect(pageErrors).toEqual([]);
+});
