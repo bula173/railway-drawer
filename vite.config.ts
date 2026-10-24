@@ -140,8 +140,11 @@ export default defineConfig(({ mode }) => {
       // (~542 kB minified, ~144 kB gzip, no deep imports in 0.10) and main-editor is the editor itself
       // (~700 kB / ~219 kB gzip: every per-tab controller is built for the first tab; it was ~941 kB
       // before draw.io's JS shapes got their own chunk). Rarely used features are lazy chunks
-      // (CLAUDE.md "Boot"). 800 kB leaves room for growth while a chunk beyond it still warns.
-      chunkSizeWarningLimit: 800,
+      // (CLAUDE.md "Boot"). Since the live rule checks (railway/rule-checks.ts, which use the
+      // interlocking computation) run with the Checks panel and the train-run installer is eager,
+      // main-editor is ~825 kB / ~266 kB gzip; loading them lazily would make validation async.
+      // 900 kB leaves room for growth while a chunk beyond it still warns.
+      chunkSizeWarningLimit: 900,
   },
   test: {
     environment: 'jsdom',
