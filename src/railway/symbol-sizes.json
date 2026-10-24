@@ -1,0 +1,20 @@
+{
+  "grid": 10,
+  "signal": { "w": 50, "h": 20, "head": 12, "lamp": 8, "mastInset": 1, "arm": 5, "fontSize": 8 },
+  "board": { "w": 30, "h": 20, "face": [20, 14], "symbolFace": [14, 14], "arm": 5, "fontSize": 7 },
+  "balise": { "w": 12, "h": 12 },
+  "baliseGroup": { "pitch": 16, "label": 10, "h": 24, "linkedH": 26, "fontSize": 8 },
+  "axleCounter": { "w": 12, "h": 12 },
+  "insulatedJoint": { "w": 10, "h": 12 },
+  "leu": { "w": 30, "h": 20, "fontSize": 8 },
+  "rbc": { "w": 40, "h": 30, "fontSize": 10 },
+  "bufferStop": { "w": 14, "h": 20 },
+  "trackEnd": { "w": 10, "h": 20 },
+  "levelCrossing": { "w": 20, "h": 40 },
+  "kmPost": { "w": 10, "h": 20, "fontSize": 8 },
+  "hectometrePost": { "w": 10, "h": 10, "fontSize": 8 },
+  "locationAnnotation": { "w": 12, "h": 24, "fontSize": 8 },
+  "train": { "h": 20, "w": 50, "fontSize": 8 },
+  "line": { "strokeWidth": 6 },
+  "snapGap": 4
+}

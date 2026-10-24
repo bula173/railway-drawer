@@ -45,10 +45,20 @@ Steps (deterministic; entries that do not change keep their exact bytes):
       project-settings.ts), so a template follows the country of the diagram it is inserted into;
     - trains: groups with the train stencils: `train` TR<n>.
     IDs are unique per template; the app renumbers colliding IDs on insert (insertTemplate).
+ 5. symbol size standard (src/railway/symbol-sizes.json, docs/architecture/symbol-sizes.md), in the
+    palette elements and the templates (after the analysis of step 4, so the data does not depend
+    on it): every signal is re-laid out in the standard signal box (cells, ids and styles kept:
+    lamps one diameter, the lamp row centred beside the mast, the head band on the track side, the
+    ID text in the label band on the far side), in a template re-placed beside its nearest track as
+    the snap puts it (centre along the track kept, side as drawn); trains are scaled to the
+    standard height (aspect kept, texts keep their box; the edge facing the track kept); TC joint
+    marker groups get the standard joint box around their centre (a loose joint bar keeps its
+    drawing). The palette entries' "w"/"h" follow.
 """
 import html
 import json
 import math
+import os
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -282,8 +292,32 @@ def annotate_element(xml, title):
     if preset['rdKind'] == 'points':
         a, b = model.edge_points(top[0])
         preset = {'rdKind': 'points', 'rdHand': hand_of_leg(a, b), 'rdPosition': 'normal'}
+    # the standard sizes: a signal below its track (nominal) has its head at the top
+    if preset['rdKind'] == 'signal':
+        relayout_signal(model, top[0], preset['rdDirection'] == 'nominal')
+    elif preset['rdKind'] == 'train' and model.children(top[0]):
+        normalise_train(model, top[0])
+    elif preset['rdKind'] == 'insulatedJoint':
+        normalise_joint(model, top[0])
     set_data(model, top[0], preset)
     return model_text(model.doc)
+
+
+def entry_size(xml):
+    """Width/height of a palette element (its single top-level cell; None for edges)."""
+    model = Model(xml)
+    top = model.top()
+    if len(top) != 1 or model.is_edge(top[0]):
+        return None
+    return model.box(top[0])[2:]
+
+
+def replace_size(part, size):
+    """Writes the entry's "w"/"h" keys (the palette tile / insert size) in the raw entry text."""
+    for key, v in zip(('w', 'h'), size):
+        part, n = re.subn(r'(\n    "%s": )[-\d.e]+' % key, lambda m: m.group(1) + fmt(v), part, count=1)
+        assert n == 1, key
+    return part
 
 
 # ------------------------------------------------------------------------------------------------
@@ -397,6 +431,214 @@ def fmt(v):
     return str(int(r)) if r == int(r) else str(r)
 
 
+# ------------------------------------------------------------------------------------------------
+# symbol size standard (src/railway/symbol-sizes.json, docs/architecture/symbol-sizes.md)
+# ------------------------------------------------------------------------------------------------
+
+STD = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'src', 'railway', 'symbol-sizes.json'),
+                     encoding='utf-8'))
+# a symbol farther than this from every track line (centre distance) keeps its place (legends)
+ON_TRACK_DISTANCE = 40
+
+
+def set_style_key(el, key, value):
+    c = cell_of(el)
+    parts = [p for p in c.get('style', '').split(';') if p and not p.startswith(key + '=')]
+    parts.append(f'{key}={value}')
+    c.set('style', ';'.join(parts) + ';')
+
+
+def set_attr(g, key, v):
+    """draw.io leaves zero coordinates out."""
+    if key in ('x', 'y') and round(v, 2) == 0:
+        g.attrib.pop(key, None)
+    else:
+        g.set(key, fmt(v))
+
+
+def set_box(model, el, x, y, w, h):
+    g = model.geo(el)
+    set_attr(g, 'x', x)
+    set_attr(g, 'y', y)
+    g.set('width', fmt(w))
+    g.set('height', fmt(h))
+
+
+def edge_all_points(model, el):
+    """(element, x, y) of every point of an edge geometry (terminal points and waypoints)."""
+    g = model.geo(el)
+    out = [(p, num(p.get('x')), num(p.get('y'))) for p in g.findall('mxPoint') if p.get('as') in ('sourcePoint', 'targetPoint')]
+    arr = g.find('Array')
+    if arr is not None:
+        out += [(p, num(p.get('x')), num(p.get('y'))) for p in arr.findall('mxPoint')]
+    return out
+
+
+def set_point(p, x, y):
+    set_attr(p, 'x', x)
+    set_attr(p, 'y', y)
+
+
+def set_edge_ends(model, el, a, b):
+    g = model.geo(el)
+    for p in g.findall('mxPoint'):
+        if p.get('as') == 'sourcePoint':
+            set_point(p, *a)
+        elif p.get('as') == 'targetPoint':
+            set_point(p, *b)
+
+
+def origin_in(model, el, top):
+    """Offset of `el`'s coordinate system inside the group `top` (its nested groups' x/y)."""
+    x = y = 0.0
+    pid = cell_of(el).get('parent')
+    while pid != top.get('id'):
+        p = model.by_id[pid]
+        bx, by, _, _ = model.box(p)
+        x += bx
+        y += by
+        pid = cell_of(p).get('parent')
+    return x, y
+
+
+def nearest_line(lines, c):
+    """The horizontal track line nearest to the point `c` within ON_TRACK_DISTANCE (or None)."""
+    best = None
+    for line in lines:
+        if line['x0'] - 8 <= c[0] <= line['x1'] + 8:
+            d = abs(c[1] - line['y'])
+            if d <= ON_TRACK_DISTANCE and (best is None or d < best[0]):
+                best = (d, line)
+    return best[1] if best else None
+
+
+def relayout_signal(model, el, head_top):
+    """Lays a signal group out in the standard signal box (STD['signal']), keeping its cells, ids and
+    styles: the head band (mast + arm + lamps, the lamp row centred beside the mast) on the track
+    side (`head_top`: the signal is below its track), the texts (ID label) in the label band on the
+    far side, the mast on its drawn side (left of the lamps: nominal). Other parts (crosses drawn over
+    a lamp) follow the lamp row. Nested groups cover the whole box. Sets the group's width/height;
+    the caller places it."""
+    S = STD['signal']
+    W, H, HB, L = S['w'], S['h'], S['head'], S['lamp']
+    lamps, masts, arms, texts, groups, others = [], [], [], [], [], []
+    for k in model.descendants(el):
+        sig = child_sig(model, k)
+        ox, oy = origin_in(model, k, el)
+        if model.is_edge(k):
+            pts = [(p, x + ox, y + oy) for p, x, y in edge_all_points(model, k)]
+            (masts if sig == 'E:227' else arms if sig == 'E:228' else others).append((k, pts))
+        elif model.children(k):
+            groups.append(k)
+        else:
+            x, y, w, h = model.box(k)
+            box = (x + ox, y + oy, w, h)
+            if sig in ('V:229', 'V:231'):
+                lamps.append((k, box))
+            elif 'text' in style_names(k):
+                texts.append((k, box))
+            else:
+                others.append((k, box))
+    assert lamps and masts, 'signal without lamps or mast'
+    lamps.sort(key=lambda t: t[1][0])
+    lamp_cx = sum(b[0] + b[2] / 2 for _, b in lamps) / len(lamps)
+    mast_x = sum(x for _, pts in masts for _, x, _y in pts) / sum(len(pts) for _, pts in masts)
+    mast_left = mast_x < lamp_cx
+    n = len(lamps)
+    y0 = 0 if head_top else H - HB
+    ly = y0 + (HB - L) / 2
+    if mast_left:
+        mx = S['mastInset']
+        a0, a1 = mx + S['arm'], W
+    else:
+        mx = W - S['mastInset']
+        a0, a1 = 0, mx - S['arm']
+    rx0 = a0 + (a1 - a0 - n * L) / 2
+    # old lamp row -> new lamp row (for the other parts)
+    ox0 = min(b[0] for _, b in lamps)
+    ox1 = max(b[0] + b[2] for _, b in lamps)
+    oy0 = min(b[1] for _, b in lamps)
+    oy1 = max(b[1] + b[3] for _, b in lamps)
+    sx = (n * L) / (ox1 - ox0) if ox1 > ox0 else 1
+    sy = L / (oy1 - oy0) if oy1 > oy0 else 1
+    mapx = lambda x: rx0 + (x - ox0) * sx
+    mapy = lambda y: ly + (y - oy0) * sy
+    for g in groups:
+        set_box(model, g, 0, 0, W, H)
+    for i, (k, _b) in enumerate(lamps):
+        set_box(model, k, rx0 + i * L, ly, L, L)
+    for k, _pts in masts:
+        set_edge_ends(model, k, (mx, y0), (mx, y0 + HB))
+    arm_end = rx0 if mast_left else rx0 + n * L
+    for k, _pts in arms:
+        set_edge_ends(model, k, (mx, y0 + HB / 2), (arm_end, y0 + HB / 2))
+    band = HB if head_top else 0
+    for k, _b in texts:
+        set_box(model, k, 0, band, W, H - HB)
+        set_style_key(k, 'fontSize', S['fontSize'])
+    for k, rest in others:
+        if model.is_edge(k):
+            for p, x, y in rest:
+                set_point(p, mapx(x), mapy(y))
+        else:
+            x, y, w, h = rest
+            set_box(model, k, mapx(x), mapy(y), w * sx, h * sy)
+    g = model.geo(el)
+    g.set('width', fmt(W))
+    g.set('height', fmt(H))
+
+
+def scale_descendants(model, el, sx, sy):
+    """Scales the geometry of every cell inside the group `el` (coordinates are relative to their
+    parents, so every level scales the same way)."""
+    for k in model.descendants(el):
+        if model.is_edge(k):
+            for p, x, y in edge_all_points(model, k):
+                set_point(p, x * sx, y * sy)
+        elif 'text' in style_names(k):
+            # a text keeps its box (the font does not scale): centred as before, bottom edge scaled
+            x, y, w, h = model.box(k)
+            set_box(model, k, (x + w / 2) * sx - w / 2, (y + h) * sy - h, w, h)
+        else:
+            x, y, w, h = model.box(k)
+            set_box(model, k, x * sx, y * sy, w * sx, h * sy)
+
+
+def train_size(w, h):
+    """Standard train: STD height, the drawn aspect kept (even width)."""
+    H = STD['train']['h']
+    return 2 * int(w * H / h / 2 + 0.5), H  # half up, as symbol-sizes.ts
+
+
+def normalise_train(model, el):
+    """Scales a train group to the standard height (aspect kept); returns the old box."""
+    old = model.box(el)
+    W, H = train_size(old[2], old[3])
+    scale_descendants(model, el, W / old[2], H / old[3])
+    g = model.geo(el)
+    g.set('width', fmt(W))
+    g.set('height', fmt(H))
+    return old
+
+
+def normalise_joint(model, el):
+    """TC joint marker group -> the standard joint box around its centre: its lines are scaled, its
+    parts (the joint bar) keep their size and move with the scale."""
+    J = STD['insulatedJoint']
+    x, y, w, h = model.box(el)
+    if abs(w - J['w']) < 0.01 and abs(h - J['h']) < 0.01:
+        return
+    sx, sy = J['w'] / w, J['h'] / h
+    for k in model.children(el):
+        if model.is_edge(k):
+            for p, px, py in edge_all_points(model, k):
+                set_point(p, px * sx, py * sy)
+        else:
+            kx, ky, kw, kh = model.box(k)
+            set_box(model, k, (kx + kw / 2) * sx - kw / 2, (ky + kh / 2) * sy - kh / 2, kw, kh)
+    set_box(model, el, x + w / 2 - J['w'] / 2, y + h / 2 - J['h'] / 2, J['w'], J['h'])
+
+
 def annotate_template(xml, report):
     model = Model(xml)
     top = list(model.top())
@@ -507,6 +749,8 @@ def annotate_template(xml, report):
 
     # ---- symbols
     signals, tcs = [], []
+    # cell id of each top-level element (set_data moves it onto the <object> wrapper)
+    ids = {id(el): el.get('id') for el in model.root if el.get('id')}
     for el in top:
         if model.is_edge(el) or not model.children(el):
             continue
@@ -669,6 +913,42 @@ def annotate_template(xml, report):
         set_data(model, el, attrs)
     if joints:
         sections_report.append(f'{len(joints)} joints')
+
+    # ---- the standard symbol sizes (docs/architecture/symbol-sizes.md): after the analysis above,
+    # so the data does not depend on them. Each symbol keeps its centre along the track; a signal is
+    # re-placed beside its nearest track as the snap puts it (its head SNAP gap from the line, on
+    # the side it is drawn), a train keeps its edge facing the track, a joint marker its centre.
+    gap = STD['snapGap']
+    S = STD['signal']
+    for el, (bx, by, bw, bh), _d in signals:
+        el = model.by_id[ids[id(el)]]
+        c = (bx + bw / 2, by + bh / 2)
+        line = nearest_line(lines, c)
+        below = c[1] >= line['y'] if line else True
+        relayout_signal(model, el, below)
+        if line:
+            y = line['y'] + gap if below else line['y'] - gap - S['h']
+        else:
+            y = c[1] - S['h'] / 2
+        set_box(model, el, c[0] - S['w'] / 2, y, S['w'], S['h'])
+    for el in model.top():
+        if el.get('rdKind') == 'train' and model.children(el):
+            bx, by, bw, bh = normalise_train(model, el)
+            w, h = model.box(el)[2:]
+            c = (bx + bw / 2, by + bh / 2)
+            line = nearest_line(lines, c)
+            if line and c[1] < line['y']:
+                y = by + bh - h
+            elif line:
+                y = by
+            else:
+                y = c[1] - h / 2
+            set_box(model, el, c[0] - w / 2, y, w, h)
+    for el, _b in tcs:
+        el = model.by_id[ids[id(el)]]
+        # a loose joint bar (no marker group) keeps its drawing
+        if 'group' in style_names(el):
+            normalise_joint(model, el)
     report.append('; '.join(sections_report) + (f'; {len(report_ungrouped)} balise(s) without group' if report_ungrouped else ''))
     return model_text(model.doc)
 
@@ -690,7 +970,12 @@ def build(src, dst):
             sections = []
             new = annotate_template(xml, sections)
             report.append(f'template {i}: ' + sections[0])
-        out.append(replace_xml(part, new) if new is not None else part)
+        if new is not None:
+            part = replace_xml(part, new)
+            size = entry_size(new) if i < 18 else None
+            if size and (abs(size[0] - entry['w']) > 0.001 or abs(size[1] - entry['h']) > 0.001):
+                part = replace_size(part, size)
+        out.append(part)
     open(dst, 'w', encoding='utf-8', newline='').write(join(head, out, tail))
     return report
 

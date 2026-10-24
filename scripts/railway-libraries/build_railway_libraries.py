@@ -27,6 +27,11 @@ up is left when the toe is on the left (travel to the right), right when the toe
 Signals are groups whose lamps are round filled leaf vertices (states.ts recolours them for the
 aspect); masts and feet are edges, frames are unfilled or non-square, so nothing else is a lamp.
 
+Sizes follow the symbol size standard (src/railway/symbol-sizes.json, read here; documented in
+docs/architecture/symbol-sizes.md): every signal one box (lamp row centred beside the mast, head on
+the track side), every board on a post one box, one size per balise / axle counter / joint / LEU /
+RBC / buffer stop / km post class, trains one height, tracks and points legs one stroke width.
+
 Deterministic output; LF line endings.
 """
 import base64
@@ -46,10 +51,27 @@ BLUE = '#0050aa'
 SHUNT_BLUE = '#1e5bff'
 GREY = '#d9d9d9'
 
+STD = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'src', 'railway', 'symbol-sizes.json'),
+                     encoding='utf-8'))
+SIG = STD['signal']
+BOARD = STD['board']
+LEU = STD['leu']
+RBC = STD['rbc']
+LC = STD['levelCrossing']
+KM = STD['kmPost']
+HM = STD['hectometrePost']
+ANN = STD['locationAnnotation']
+
+
+def train_size(w, h):
+    """Standard train: STD height, the drawn aspect kept (even width)."""
+    H = STD['train']['h']
+    return 2 * int(w * H / h / 2 + 0.5), H  # half up, as symbol-sizes.ts
+
 LINE = 'endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;'
 THIN = 'endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;'
-TRACK = 'endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;'
-LEG = 'endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;'
+TRACK = f"endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth={STD['line']['strokeWidth']};"
+LEG = TRACK
 
 
 def esc(text):
@@ -158,60 +180,79 @@ SIGNAL_TAGS = 'signal semafor sygnalizator sygnał'
 # Signals (groups: foot + arm edges, round filled lamp vertices)
 # --------------------------------------------------------------------------------------------
 
-def light_signal(title, d, lamps, tags, signal_type='main', notes='', lamp=8, frame=False):
-    n = len(lamps)
-    arm = 5
-    inset = 1 if frame else 0
-    h = lamp + 4
-    w = arm + n * lamp + 2 * inset + 1
+def signal_frame(d):
+    """The standard signal box: (w, h, X mirror, y0 = top of the head band, mast x, head area x0, x1).
+    Right (nominal, below the track): mast on the left, head band at the top (track side);
+    Left (reverse, above the track): mirrored in both axes."""
+    w, h, hb = SIG['w'], SIG['h'], SIG['head']
     X = (lambda x, ww=0: x) if d == 'R' else (lambda x, ww=0: w - x - ww)
+    y0 = 0 if d == 'R' else h - hb
+    mast = SIG['mastInset']
+    return w, h, X, y0, mast, mast + SIG['arm'], w
+
+
+def signal_mast(m, g, X, y0, mast, arm_end):
+    hb = SIG['head']
+    m.edge(LINE, (X(mast), y0), (X(mast), y0 + hb), g)
+    m.edge(LINE, (X(mast), y0 + hb / 2), (X(arm_end), y0 + hb / 2), g)
+
+
+def light_signal(title, d, lamps, tags, signal_type='main', notes='', frame=False):
+    """Light signal: mast + arm, a row of lamps (one diameter for every signal) centred in the head
+    area of the standard box; a repeater's frame around the lamps."""
+    n = len(lamps)
+    lamp = SIG['lamp']
+    w, h, X, y0, mast, a0, a1 = signal_frame(d)
+    hb = SIG['head']
+    rx0 = a0 + (a1 - a0 - n * lamp) / 2
     data = {'rdKind': 'signal', 'rdSignalType': signal_type, 'rdDirection': direction(d), 'rdAspects': str(n)}
     if notes:
         data['rdNotes'] = notes
     m = Model()
     g = m.group(w, h, data=data)
-    m.edge(LINE, (X(1), 0), (X(1), h), g)
-    m.edge(LINE, (X(1), h / 2), (X(arm), h / 2), g)
+    signal_mast(m, g, X, y0, mast, rx0 - (1 if frame else 0))
     if frame:
         m.vertex('rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;',
-                 X(arm, n * lamp + 2), 0, n * lamp + 2, h, g)
+                 X(rx0 - 1, n * lamp + 2), y0, n * lamp + 2, hb, g)
     for i, colour in enumerate(lamps):
         m.vertex(f'ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor={colour};strokeColor=#000000;strokeWidth=1;',
-                 X(arm + inset + i * lamp, lamp), 2, lamp, lamp, g)
+                 X(rx0 + i * lamp, lamp), y0 + (hb - lamp) / 2, lamp, lamp, g)
     return entry(title, m, w, h, f'{SIGNAL_TAGS} {DIR_TAGS[d]} {tags}')
 
 
 def arm_signal(title, d, arms, tags, notes):
-    """Semafor kształtowy: mast, lamp, 1 or 2 arms (rotated bars)."""
-    w = 18 + 10 * arms
-    h = 16
-    X = (lambda x, ww=0: x) if d == 'R' else (lambda x, ww=0: w - x - ww)
+    """Semafor kształtowy: mast, lamp, 1 or 2 arms (rotated bars) on a beam, centred in the head area."""
+    lamp = SIG['lamp']
+    w, h, X, y0, mast, a0, a1 = signal_frame(d)
+    yc = y0 + SIG['head'] / 2
+    comp = lamp + 12 * arms
+    cx0 = a0 + (a1 - a0 - comp) / 2
     rot = -35 if d == 'R' else 35
     data = {'rdKind': 'signal', 'rdSignalType': 'main', 'rdDirection': direction(d),
             'rdAspects': str(arms + 1), 'rdNotes': notes}
     m = Model()
     g = m.group(w, h, data=data)
-    m.edge(LINE, (X(1), 0), (X(1), h), g)
-    m.edge(LINE, (X(1), 10), (X(w - 2), 10), g)
+    m.edge(LINE, (X(mast), y0), (X(mast), y0 + SIG['head']), g)
+    m.edge(LINE, (X(mast), yc), (X(cx0 + comp), yc), g)
     m.vertex('ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;',
-             X(4, 6), 7, 6, 6, g)
+             X(cx0, lamp), yc - lamp / 2, lamp, lamp, g)
     for i in range(arms):
         m.vertex(f'rounded=0;whiteSpace=wrap;html=1;fillColor={RED};strokeColor=#000000;strokeWidth=1;rotation={rot};',
-                 X(10 + 10 * i, 12), 3, 12, 3, g)
+                 X(cx0 + lamp + 2 + 12 * i, 10), yc - 4.5, 10, 3, g)
     return entry(title, m, w, h, f'{SIGNAL_TAGS} kształtowy ksztaltowy semaphore arm {DIR_TAGS[d]} {tags}')
 
 
 def disc_signal(title, d, tags, notes):
-    """Tarcza ostrzegawcza kształtowa: round disc on a post (the disc takes the aspect colour)."""
-    w, h = 18, 14
-    X = (lambda x, ww=0: x) if d == 'R' else (lambda x, ww=0: w - x - ww)
+    """Tarcza ostrzegawcza kształtowa: round disc on the mast (the disc takes the aspect colour)."""
+    disc = SIG['head'] - 2
+    w, h, X, y0, mast, a0, a1 = signal_frame(d)
+    dx = a0 + (a1 - a0 - disc) / 2
     data = {'rdKind': 'signal', 'rdSignalType': 'main', 'rdDirection': direction(d), 'rdAspects': '2', 'rdNotes': notes}
     m = Model()
     g = m.group(w, h, data=data)
-    m.edge(LINE, (X(1), 0), (X(1), h), g)
-    m.edge(LINE, (X(1), 7), (X(6), 7), g)
+    signal_mast(m, g, X, y0, mast, dx)
     m.vertex(f'ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor={ORANGE};strokeColor=#000000;strokeWidth=2;',
-             X(6, 11), 1.5, 11, 11, g)
+             X(dx, disc), y0 + 1, disc, disc, g)
     return entry(title, m, w, h, f'{SIGNAL_TAGS} {DIR_TAGS[d]} {tags}')
 
 
@@ -219,22 +260,26 @@ def disc_signal(title, d, tags, notes):
 # Boards on a post (groups: foot + arm edges, face vertex)
 # --------------------------------------------------------------------------------------------
 
-def board(title, d, face_style, fw, fh, label, tags, data=None, strike=False, font=None):
-    arm = 5
-    h = max(fh, 14)
-    w = arm + fw
+def board(title, d, face_style, label, tags, data=None, strike=False, symbol=False):
+    """Board on a post in the standard board box: post (full height) + arm, the face (text boards
+    BOARD['face'], symbol boards BOARD['symbolFace']) centred in the area beside the post; Left
+    mirrored. Text labels in BOARD['fontSize'] bold."""
+    w, h = BOARD['w'], BOARD['h']
+    fw, fh = BOARD['symbolFace'] if symbol else BOARD['face']
     X = (lambda x, ww=0: x) if d != 'L' else (lambda x, ww=0: w - x - ww)
+    a0 = 1 + BOARD['arm']
+    fx = a0 + (w - a0 - fw) / 2
+    fy = (h - fh) / 2
     m = Model()
     g = m.group(w, h, data=data)
     m.edge(LINE, (X(1), 0), (X(1), h), g)
-    m.edge(LINE, (X(1), h / 2), (X(arm), h / 2), g)
-    fy = (h - fh) / 2
+    m.edge(LINE, (X(1), h / 2), (X(fx), h / 2), g)
     style = face_style
     if label and 'fontSize' not in style:
-        style += f'fontSize={font or 7};fontStyle=1;'
-    m.vertex(style, X(arm, fw), fy, fw, fh, g, label=label)
+        style += f"fontSize={BOARD['fontSize']};fontStyle=1;"
+    m.vertex(style, X(fx, fw), fy, fw, fh, g, label=label)
     if strike:
-        m.edge(THIN, (X(arm), fy + fh), (X(arm + fw), fy), g)
+        m.edge(THIN, (X(fx), fy + fh), (X(fx + fw), fy), g)
     d_tags = DIR_TAGS[d] if d in DIR_TAGS else ''
     return entry(title, m, w, h, f'board tablica tarcza wskaźnik wskaznik {d_tags} {tags}')
 
@@ -304,9 +349,10 @@ AXLE_COUNTER = stencil(shape_xml(
     '<fillstroke/>' + P(('M', 6, 0), ('L', 6, 12)) + '<stroke/>' + P(('M', 2.5, 4), ('L', 2.5, 8)) + P(('M', 9.5, 4), ('L', 9.5, 8)) + '<stroke/>',
     SIDE_POINTS))
 
+J = STD['insulatedJoint']
 RAIL_JOINT = stencil(shape_xml(
-    'Insulated rail joint', 8, 16, P(('M', 2, 0), ('L', 2, 16)),
-    '<stroke/>' + P(('M', 6, 0), ('L', 6, 16)) + '<stroke/>', C(0.5, 0.5, 'C')))
+    'Insulated rail joint', J['w'], J['h'], P(('M', J['w'] / 2 - 2, 0), ('L', J['w'] / 2 - 2, J['h'])),
+    '<stroke/>' + P(('M', J['w'] / 2 + 2, 0), ('L', J['w'] / 2 + 2, J['h'])) + '<stroke/>', C(0.5, 0.5, 'C')))
 
 EUROLOOP = stencil(shape_xml(
     'Euroloop', 80, 10, '<roundrect x="0" y="2" w="80" h="6" arcsize="50"/>',
@@ -365,14 +411,14 @@ KM_RULER = stencil(shape_xml(
     C(0, 0.9, 'W') + C(1, 0.9, 'E')))
 
 BUFFER_STOP = stencil(shape_xml(
-    'Buffer stop', 14, 18, P(('M', 0, 9), ('L', 8, 9)),
-    '<stroke/><strokewidth width="3"/>' + P(('M', 8, 1), ('L', 8, 17)) + '<stroke/>'
-    + '<strokewidth width="1"/>' + P(('M', 8, 3), ('L', 13, 9), ('L', 8, 15)) + '<stroke/>',
+    'Buffer stop', 14, 20, P(('M', 0, 10), ('L', 8, 10)),
+    '<stroke/><strokewidth width="3"/>' + P(('M', 8, 1), ('L', 8, 19)) + '<stroke/>'
+    + '<strokewidth width="1"/>' + P(('M', 8, 3.5), ('L', 13, 10), ('L', 8, 16.5)) + '<stroke/>',
     C(0, 0.5, 'W')))
 
 TRACK_END = stencil(shape_xml(
-    'Track end', 10, 18, P(('M', 0, 9), ('L', 6, 9)),
-    '<stroke/><strokewidth width="3"/>' + P(('M', 6, 2), ('L', 6, 16)) + '<stroke/>', C(0, 0.5, 'W')))
+    'Track end', 10, 20, P(('M', 0, 10), ('L', 6, 10)),
+    '<stroke/><strokewidth width="3"/>' + P(('M', 6, 2), ('L', 6, 18)) + '<stroke/>', C(0, 0.5, 'W')))
 
 DERAILER = stencil(shape_xml(
     'Derailer', 14, 10, P(('M', 0, 10), ('L', 14, 10), ('L', 3, 1), 'Z'),
@@ -542,41 +588,41 @@ def ertms_extra():
     out = []
     for d, side in (('R', 'Right'), ('L', 'Left')):
         flip = '' if d == 'R' else 'flipV=1;'
-        out.append(board(f'ETCS Stop Marker {side}', d, stencil_style(STOP_MARKER_FACE, BLUE, extra=flip), 12, 12, '',
+        out.append(board(f'ETCS Stop Marker {side}', d, stencil_style(STOP_MARKER_FACE, BLUE, extra=flip), '',
                          'etcs stop marker marker board eob wskaźnik zatrzymania etcs',
-                         data={'rdKind': 'signal', 'rdSignalType': 'etcsStopMarker', 'rdDirection': direction(d)}))
+                         data={'rdKind': 'signal', 'rdSignalType': 'etcsStopMarker', 'rdDirection': direction(d)}, symbol=True))
     for d, side in (('R', 'Right'), ('L', 'Left')):
         flip = '' if d == 'R' else 'flipV=1;'
-        out.append(board(f'ETCS Location Marker {side}', d, stencil_style(LOCATION_MARKER_FACE, BLUE, extra=flip), 12, 12, '',
+        out.append(board(f'ETCS Location Marker {side}', d, stencil_style(LOCATION_MARKER_FACE, BLUE, extra=flip), '',
                          'etcs location marker marker board tablica etcs',
-                         data={'rdKind': 'signal', 'rdSignalType': 'markerBoard', 'rdDirection': direction(d)}))
+                         data={'rdKind': 'signal', 'rdSignalType': 'markerBoard', 'rdDirection': direction(d)}, symbol=True))
     for level in ('L0', 'L1', 'L2', 'L3', 'NTC'):
-        out.append(board(f'Level Transition {level}', 'R', WHITE_FACE, 16, 12, level,
+        out.append(board(f'Level Transition {level}', 'R', WHITE_FACE, level,
                          f'etcs level transition execution board {level.lower()} poziom zmiana poziomu'))
-    out.append(board('Level Transition Announcement', 'R', ANNOUNCE_FACE, 16, 12, 'L2',
+    out.append(board('Level Transition Announcement', 'R', ANNOUNCE_FACE, 'L2',
                      'etcs level transition announcement board zapowiedź zapowiedz poziom'))
-    out.append(board('RBC Border Announcement', 'R', ANNOUNCE_FACE, 18, 12, 'RBC',
+    out.append(board('RBC Border Announcement', 'R', ANNOUNCE_FACE, 'RBC',
                      'rbc border handover announcement board granica zapowiedź'))
-    out.append(board('RBC Border', 'R', WHITE_FACE, 18, 12, 'RBC', 'rbc border handover execution board granica'))
-    out.append(board('Cab Signalling Begin', 'R', WHITE_FACE, 18, 12, 'CAB',
+    out.append(board('RBC Border', 'R', WHITE_FACE, 'RBC', 'rbc border handover execution board granica'))
+    out.append(board('Cab Signalling Begin', 'R', WHITE_FACE, 'CAB',
                      'cab signalling begin start board etcs sygnalizacja kabinowa początek poczatek'))
-    out.append(board('Cab Signalling End', 'R', WHITE_FACE, 18, 12, 'CAB',
+    out.append(board('Cab Signalling End', 'R', WHITE_FACE, 'CAB',
                      'cab signalling end board etcs sygnalizacja kabinowa koniec', strike=True))
-    out.append(board('Neutral Section Announcement', 'R', stencil_style(NS_ANNOUNCE_FACE, BLUE), 14, 14, '',
-                     'neutral section announcement phase break board sekcja izolowana zapowiedź we'))
-    out.append(board('Neutral Section Begin', 'R', stencil_style(NS_BEGIN_FACE, BLUE), 14, 14, '',
-                     'neutral section begin open main circuit breaker board sekcja izolowana wyłącz wylacz'))
-    out.append(board('Neutral Section End', 'R', stencil_style(NS_END_FACE, BLUE), 14, 14, '',
-                     'neutral section end close main circuit breaker board sekcja izolowana załącz zalacz'))
-    out.append(board('Lower Pantograph', 'R', stencil_style(PANTO_DOWN_FACE, BLUE), 14, 14, '',
-                     'pantograph lower down board opuść opusc pantograf'))
-    out.append(board('Raise Pantograph', 'R', stencil_style(PANTO_UP_FACE, BLUE), 14, 14, '',
-                     'pantograph raise up board podnieś podnies pantograf'))
-    out.append(board('Track Condition Board', 'R', WHITE_FACE, 18, 12, 'TC',
+    out.append(board('Neutral Section Announcement', 'R', stencil_style(NS_ANNOUNCE_FACE, BLUE), '',
+                     'neutral section announcement phase break board sekcja izolowana zapowiedź we', symbol=True))
+    out.append(board('Neutral Section Begin', 'R', stencil_style(NS_BEGIN_FACE, BLUE), '',
+                     'neutral section begin open main circuit breaker board sekcja izolowana wyłącz wylacz', symbol=True))
+    out.append(board('Neutral Section End', 'R', stencil_style(NS_END_FACE, BLUE), '',
+                     'neutral section end close main circuit breaker board sekcja izolowana załącz zalacz', symbol=True))
+    out.append(board('Lower Pantograph', 'R', stencil_style(PANTO_DOWN_FACE, BLUE), '',
+                     'pantograph lower down board opuść opusc pantograf', symbol=True))
+    out.append(board('Raise Pantograph', 'R', stencil_style(PANTO_UP_FACE, BLUE), '',
+                     'pantograph raise up board podnieś podnies pantograf', symbol=True))
+    out.append(board('Track Condition Board', 'R', WHITE_FACE, 'TC',
                      'track condition board etcs warunki toru'))
-    out.append(board('Non-Stopping Area Board', 'R', WHITE_FACE, 18, 12, 'STOP',
-                     'non stopping area track condition board zakaz zatrzymania', strike=True, font=6))
-    out.append(board('Release Speed Board', 'R', WHITE_FACE, 16, 12, '40',
+    out.append(board('Non-Stopping Area Board', 'R', WHITE_FACE, 'STOP',
+                     'non stopping area track condition board zakaz zatrzymania', strike=True))
+    out.append(board('Release Speed Board', 'R', WHITE_FACE, '40',
                      'release speed vrelease board etcs prędkość zwolnienia predkosc'))
     # balises
     for d, side in (('R', 'Right'), ('L', 'Left')):
@@ -594,28 +640,28 @@ def ertms_extra():
                                 notes='Linked balise group', linked=True))
     out.append(single('Euroloop', stencil_style(EUROLOOP, 'none'), 80, 10, 'euroloop loop infill pętla petla'))
     # equipment
-    out.append(single('RBC', 'rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=10;',
-                      40, 24, 'rbc radio block centre center centrum', label='RBC', data={'rdKind': 'rbc'}))
-    out.append(single('LEU', 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;',
-                      30, 16, 'leu lineside electronic unit koder', label='LEU', data={'rdKind': 'leu'}))
-    out.append(single('Axle Counter Head', stencil_style(AXLE_COUNTER), 12, 12,
+    out.append(single('RBC', f"rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize={RBC['fontSize']};",
+                      RBC['w'], RBC['h'], 'rbc radio block centre center centrum', label='RBC', data={'rdKind': 'rbc'}))
+    out.append(single('LEU', f"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize={LEU['fontSize']};",
+                      LEU['w'], LEU['h'], 'leu lineside electronic unit koder', label='LEU', data={'rdKind': 'leu'}))
+    out.append(single('Axle Counter Head', stencil_style(AXLE_COUNTER), STD['axleCounter']['w'], STD['axleCounter']['h'],
                       'axle counter head detection point licznik osi czujnik punkt detekcji', data={'rdKind': 'axleCounter'}))
-    out.append(single('Axle Counter Evaluator', 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;',
-                      30, 16, 'axle counter evaluator ace evaluation licznik osi ewaluator', label='ACE'))
-    out.append(single('Insulated Rail Joint', stencil_style(RAIL_JOINT, 'none'), 8, 16,
+    out.append(single('Axle Counter Evaluator', f"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize={LEU['fontSize']};",
+                      LEU['w'], LEU['h'], 'axle counter evaluator ace evaluation licznik osi ewaluator', label='ACE'))
+    out.append(single('Insulated Rail Joint', stencil_style(RAIL_JOINT, 'none'), J['w'], J['h'],
                       'insulated rail joint track circuit joint irj tc styk izolowany obwód torowy obwod',
                       data={'rdKind': 'insulatedJoint'}))
     out.append(single('Radio Infill Unit', stencil_style(RADIO_INFILL, extra='verticalAlign=bottom;spacingBottom=1;fontSize=7;fontStyle=1;'),
                       24, 24, 'radio infill unit riu euroradio', label='RIU'))
     out.append(single('GSM-R Mast', stencil_style(GSMR_MAST, 'none'), 20, 32, 'gsm-r gsmr mast bts radio antenna maszt'))
-    out.append(single('Interlocking', 'shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=10;',
-                      44, 28, 'interlocking ixl electronic interlocking nastawnia urządzenia srk', label='IXL'))
-    out.append(single('Object Controller', 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=8;',
-                      30, 16, 'object controller oc sterownik obiektowy', label='OC'))
+    out.append(single('Interlocking', f"shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize={RBC['fontSize']};",
+                      RBC['w'], RBC['h'], 'interlocking ixl electronic interlocking nastawnia urządzenia srk', label='IXL'))
+    out.append(single('Object Controller', f"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize={LEU['fontSize']};",
+                      LEU['w'], LEU['h'], 'object controller oc sterownik obiektowy', label='OC'))
     # trains
     for d, side in (('R', 'Right'), ('L', 'Left')):
         flip = '' if d == 'R' else 'flipH=1;'
-        out.append(single(f'ETCS Train {side}', stencil_style(TRAIN, extra=flip), 60, 16,
+        out.append(single(f'ETCS Train {side}', stencil_style(TRAIN, extra=flip), *train_size(60, 16),
                           f'train pociąg pociag etcs onboard obu evc {DIR_TAGS[d]}',
                           data={'rdKind': 'train', 'rdEtcsLevel': '2'}))
     # annotations
@@ -626,10 +672,10 @@ def ertms_extra():
                p1, p2, label='MA')
         out.append(entry(f'MA Arrow {side}', m, 100, 12, f'movement authority ma arrow zezwolenie na jazdę jazde {DIR_TAGS[d]}'))
     out.append(single('End of Authority', f'shape=line;direction=south;html=1;strokeColor={RED};strokeWidth=3;{LABEL_BELOW}',
-                      10, 24, 'end of authority eoa koniec zezwolenia', label='EoA'))
-    out.append(single('Danger Point', stencil_style(DANGER_POINT, 'none', RED, LABEL_BELOW), 12, 24,
+                      ANN['w'], ANN['h'], 'end of authority eoa koniec zezwolenia', label='EoA'))
+    out.append(single('Danger Point', stencil_style(DANGER_POINT, 'none', RED, LABEL_BELOW), ANN['w'], ANN['h'],
                       'danger point dp punkt niebezpieczny', label='DP'))
-    out.append(single('Supervised Location', stencil_style(SVL, WHITE, BLACK, LABEL_BELOW), 12, 24,
+    out.append(single('Supervised Location', stencil_style(SVL, WHITE, BLACK, LABEL_BELOW), ANN['w'], ANN['h'],
                       'supervised location svl nadzorowane miejsce', label='SvL'))
     m = Model()
     m.edge('endArrow=none;html=1;rounded=0;strokeColor=#c05000;strokeWidth=2;fontSize=8;labelBackgroundColor=none;verticalAlign=bottom;',
@@ -676,10 +722,10 @@ def railway_pl():
                                 notes='Tarcza ostrzegawcza przejazdowa (Osp)'))
     for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza zaporowa Tz {side}', d, [RED, WHITE], 'tarcza zaporowa tz stop shunting ms2',
-                                signal_type='shunting', notes='Tarcza zaporowa (Tz)', lamp=7))
+                                signal_type='shunting', notes='Tarcza zaporowa (Tz)'))
     for d, side in TARCZA_SIDES:
         out.append(light_signal(f'Tarcza manewrowa Tm {side}', d, [SHUNT_BLUE, WHITE], 'tarcza manewrowa tm ms1 ms2 shunting signal manewry',
-                                signal_type='shunting', notes='Tarcza manewrowa (Tm)', lamp=7))
+                                signal_type='shunting', notes='Tarcza manewrowa (Tm)'))
     for d, side in (('R', 'prawy'), ('L', 'lewy')):
         out.append(light_signal(f'Sygnał zastępczy Sz {side}', d, [WHITE], 'sygnał zastępczy sygnal zastepczy sz substitution',
                                 notes='Sygnał zastępczy (Sz)'))
@@ -696,20 +742,20 @@ def railway_pl():
             ('W24', 'Wskaźnik W24', 'w24'),
             ('W', 'Wskaźnik (pusty)', 'blank pusty generic')):
         face = ANNOUNCE_FACE if code == '60' and 'W9' in title else WHITE_FACE
-        out.append(board(title, 'R', face, 16, 12, code, f'pkp plk {tags}'))
-    out.append(board('Tarcza D1 (Stój)', 'R', f'rounded=0;whiteSpace=wrap;html=1;fillColor={RED};strokeColor=#000000;strokeWidth=2;', 12, 12, '',
-                     'd1 stój stoj stop tarcza zatrzymania pkp plk'))
+        out.append(board(title, 'R', face, code, f'pkp plk {tags}'))
+    out.append(board('Tarcza D1 (Stój)', 'R', f'rounded=0;whiteSpace=wrap;html=1;fillColor={RED};strokeColor=#000000;strokeWidth=2;', '',
+                     'd1 stój stoj stop tarcza zatrzymania pkp plk', symbol=True))
     # przejazdy
     for cat, protection, desc in (('A', 'fullBarriers', 'rogatki'), ('B', 'halfBarriers', 'półrogatki polrogatki'),
                                   ('C', 'lights', 'sygnalizacja świetlna swietlna'), ('D', 'passive', 'bez zabezpieczeń zabezpieczen')):
-        out.append(single(f'Przejazd kat. {cat}', stencil_style(level_crossing_stencil(cat), 'none'), 20, 40,
+        out.append(single(f'Przejazd kat. {cat}', stencil_style(level_crossing_stencil(cat), 'none'), LC['w'], LC['h'],
                           f'przejazd kolejowo-drogowy level crossing kategoria {cat.lower()} {desc}',
                           data={'rdKind': 'levelCrossing', 'rdProtection': protection}))
     out.append(single('Rogatka', stencil_style(BARRIER, 'none'), 30, 8, 'rogatka barrier szlaban przejazd level crossing'))
     out.append(single('Sygnalizator przejazdowy (drogowy)', stencil_style(ROAD_LIGHTS), 16, 30,
                       'sygnalizator przejazdowy drogowy road lights przejazd level crossing'))
     for d, side, flip in (('R', 'z prawej', ''), ('L', 'z lewej', 'flipH=1;')):
-        out.append(single(f'Kozioł oporowy {side}', stencil_style(BUFFER_STOP, 'none', extra=flip), 14, 18,
+        out.append(single(f'Kozioł oporowy {side}', stencil_style(BUFFER_STOP, 'none', extra=flip), STD['bufferStop']['w'], STD['bufferStop']['h'],
                           'kozioł koziol oporowy buffer stop koniec toru', data={'rdKind': 'bufferStop'}))
     # rozjazdy
     out.append(turnout_set('Rozjazd zwyczajny lewy', 9, True, True, 'zwyczajny lewy left'))
@@ -719,7 +765,7 @@ def railway_pl():
     out.append(diamond('Skrzyżowanie torów', 0, 'skrzyżowanie torów torow diamond crossing'))
     out.append(diamond('Rozjazd krzyżowy pojedynczy', 1, 'rozjazd krzyżowy krzyzowy pojedynczy rkp single slip zwrotnica points'))
     out.append(diamond('Rozjazd krzyżowy podwójny', 2, 'rozjazd krzyżowy krzyzowy podwójny podwojny rkpd double slip zwrotnica points'))
-    out.append(single('Styk izolowany', stencil_style(RAIL_JOINT, 'none'), 8, 16,
+    out.append(single('Styk izolowany', stencil_style(RAIL_JOINT, 'none'), J['w'], J['h'],
                       'styk izolowany insulated rail joint obwód torowy obwod tc', data={'rdKind': 'insulatedJoint'}))
     out.append(single('Krzyżownica', stencil_style(FROG, 'none'), 24, 12, 'krzyżownica krzyzownica frog crossing nose'))
     for side, flip in (('prawa', ''), ('lewa', 'flipH=1;')):
@@ -730,12 +776,12 @@ def railway_pl():
     out.append(single('Peron wyspowy', f'rounded=0;whiteSpace=wrap;html=1;fillColor={GREY};strokeColor=#000000;strokeWidth=1;fontSize=8;',
                       160, 24, 'peron platform wyspowy island platform dwukrawędziowy', label='Peron 2'))
     out.append(single('Nastawnia', 'shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontSize=9;',
-                      60, 28, 'nastawnia signal box interlocking dysponująca dysponujaca wykonawcza', label='Nastawnia'))
+                      60, 30, 'nastawnia signal box interlocking dysponująca dysponujaca wykonawcza', label='Nastawnia'))
     out.append(single('Posterunek', 'rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontSize=9;',
-                      60, 24, 'posterunek ruchu post bocznicowy odgałęźny', label='Posterunek'))
-    out.append(single('Słupek hektometrowy', f'shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=2;{LABEL_BELOW}',
-                      8, 14, 'hektometr słupek slupek hectometre post kilometraż kilometraz km', label='12,3'))
-    out.append(board('Wskaźnik kilometrowy', 'R', WHITE_FACE, 16, 12, '12', 'kilometrowy km post kilometraż kilometraz'))
+                      60, 30, 'posterunek ruchu post bocznicowy odgałęźny', label='Posterunek'))
+    out.append(single('Słupek hektometrowy', f'shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=1;{LABEL_BELOW}',
+                      HM['w'], HM['h'], 'hektometr słupek slupek hectometre post kilometraż kilometraz km', label='12,3'))
+    out.append(board('Wskaźnik kilometrowy', 'R', WHITE_FACE, '12', 'kilometrowy km post kilometraż kilometraz'))
     return out
 
 
@@ -748,9 +794,9 @@ def track_layout():
     out.append(track_piece('Diagonal Track Down', (0, 0), (40, 40), 40, 40, 'diagonal skośny skosny down'))
     out.append(track_piece('Track Section', (0, 0), (120, 0), 120, 1, 'track section tvd odcinek izolowany obwód torowy obwod tc',
                            data={'rdKind': 'trackSection', 'rdSectionType': 'tc'},
-                           style='endArrow=none;html=1;rounded=0;strokeColor=#0050aa;strokeWidth=4;'))
+                           style=f"endArrow=none;html=1;rounded=0;strokeColor=#0050aa;strokeWidth={STD['line']['strokeWidth']};"))
     for d, flip in (('Right', ''), ('Left', 'flipH=1;')):
-        out.append(single(f'Track End {d}', stencil_style(TRACK_END, 'none', extra=flip), 10, 18,
+        out.append(single(f'Track End {d}', stencil_style(TRACK_END, 'none', extra=flip), STD['trackEnd']['w'], STD['trackEnd']['h'],
                           'track end end of track koniec toru buffer'))
     for ratio in (9, 12):
         for toe_left in (True, False):
@@ -771,20 +817,20 @@ def track_layout():
                       120, 16, 'platform peron', label='Platform 1'))
     out.append(single('Bridge', stencil_style(BRIDGE, 'none'), 60, 24, 'bridge most wiadukt viaduct'))
     out.append(single('Tunnel', stencil_style(TUNNEL, 'none'), 60, 24, 'tunnel tunel'))
-    out.append(single('Level Crossing', stencil_style(level_crossing_stencil('A'), 'none'), 20, 40,
+    out.append(single('Level Crossing', stencil_style(level_crossing_stencil('A'), 'none'), LC['w'], LC['h'],
                       'level crossing przejazd road barriers rogatki', data={'rdKind': 'levelCrossing', 'rdProtection': 'fullBarriers'}))
     out.append(single('km Post', f'shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=2;{LABEL_BELOW}',
-                      8, 16, 'km post kilometre marker kilometraż kilometraz chainage', label='12.0'))
+                      KM['w'], KM['h'], 'km post kilometre marker kilometraż kilometraz chainage', label='12.0'))
     out.append(single('Hectometre Mark', f'shape=line;direction=south;html=1;strokeColor=#000000;strokeWidth=1;{LABEL_BELOW}',
-                      8, 10, 'hectometre hektometr mark chainage km', label='12.3'))
+                      HM['w'], HM['h'], 'hectometre hektometr mark chainage km', label='12.3'))
     out.append(single('km Ruler', stencil_style(KM_RULER, 'none', extra=LABEL_BELOW), 100, 10,
                       'km ruler scale chainage kilometraż kilometraz linijka', label='1 km'))
     out.append(single('Gradient Board Up', stencil_style(gradient_board(True), 'none', extra=LABEL_ABOVE), 20, 26,
                       'gradient board up incline pochylenie wzniesienie wskaźnik', label='5 ‰'))
     out.append(single('Gradient Board Down', stencil_style(gradient_board(False), 'none', extra=LABEL_ABOVE), 20, 26,
                       'gradient board down decline pochylenie spadek wskaźnik', label='5 ‰'))
-    out.append(board('Speed Board', 'R', WHITE_FACE, 16, 12, '80', 'speed board limit prędkość predkosc', font=8))
-    out.append(board('Speed Warning Board', 'R', ANNOUNCE_FACE, 16, 12, '80', 'speed warning announcement board zapowiedź prędkość', font=8))
+    out.append(board('Speed Board', 'R', WHITE_FACE, '80', 'speed board limit prędkość predkosc'))
+    out.append(board('Speed Warning Board', 'R', ANNOUNCE_FACE, '80', 'speed warning announcement board zapowiedź prędkość'))
     out.append(single('Track Number', 'rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontStyle=1;fontSize=9;',
                       20, 14, 'track number label numer toru', label='1'))
     return out
