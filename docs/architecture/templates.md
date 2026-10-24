@@ -34,6 +34,10 @@
   signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC joint markers on a track (centre within 8 of the line)
   = `insulatedJoint` J<n> with `rdTrackId` + `rdSections` (sections starting/ending within 15: railML
   `hasDemarcatingTraindetector`); markers off the tracks, labels, arrows, highlights: no kind.
+  Symbol sizes (after that analysis): signals re-laid out in the standard signal box and re-placed beside their nearest
+  track at the snap gap (centre along the track and side kept), trains 20 high, TC joint marker groups 10x12
+  ([symbol-sizes.md](symbol-sizes.md)); `template-semantics.test.ts` pins objects, routes, interlocking and rule
+  checks of every template to the snapshot taken before (`fixtures/template-semantics.json`).
   Sections drawn ON the track = topology.ts "sections on tracks" (names the pieces, not separate links), so routes,
   snap and the railML export (tracks + `tvdSection`s) work; recolouring a section = its own edge's strokeColor.
   The library stores no `rdState`/`rdAspect` (state feature: defaults free/stop/normal). `insertTemplate` renumbers

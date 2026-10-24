@@ -91,6 +91,7 @@ tests (a test that passes only on a retry fails) and on CSP violations; all spec
 | File format, draw.io compatibility guard | `src/format`, `src/services/drawio-xml.ts`, `src/document` | [file-format.md](docs/architecture/file-format.md) |
 | draw.io shapes (engine, palettes, stencils) | `src/drawio-shapes`, `src/ui/drawio-palette`, `scripts/drawio-palettes` | [drawio-shapes.md](docs/architecture/drawio-shapes.md) |
 | All draw.io libraries, More shapes, user libraries | `src/ui/drawio-palette` | [drawio-libraries.md](docs/architecture/drawio-libraries.md) |
+| Railway symbol size standard (library generators, schematic builder, Normalize Symbol Sizes) | `src/railway/symbol-sizes.{json,ts}`, `scripts/ertms-library`, `scripts/railway-libraries` | [symbol-sizes.md](docs/architecture/symbol-sizes.md) |
 | Templates | `src/ui/templates` | [templates.md](docs/architecture/templates.md) |
 | Railway object data, Data / Checks panels | `src/railway` | [railway-data.md](docs/architecture/railway-data.md) |
 | Topology, routes, snapping, km | `src/railway` | [railway-tools.md](docs/architecture/railway-tools.md) |

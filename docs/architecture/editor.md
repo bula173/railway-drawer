@@ -43,6 +43,8 @@
   point, Ctrl/Cmd+D = offset copy, Ctrl/Cmd+1 = fit 20 px; a `panel` arrange command does nothing while the active graph
   is hidden). The Properties > Arrange buttons are `data-command` buttons (z-order, Rotate 90°, Flip, Group / Ungroup,
   Snap to Grid `snapToGrid`, Copy Size `matchSize`, Lock `toggleLock`; bound by `session-views.ts` with source `panel`,
+  Arrange > Normalize Symbol Sizes `normalizeSymbolSizes`: the selected railway symbols get their standard box,
+  one undo step, lazy `src/railway/normalize-sizes.ts`, see [symbol-sizes.md](symbol-sizes.md);
   one undo step each); the panel's model listener refreshes the rotation field, flip and lock state. Contributions: file, edit, view, arrange, railway, features
   (scenarios, Railway Script, railML, share; the AI assistant has none), help. Adding an action = a command (+ the
   `data-action` in index.html); `src/ui/commands/__tests__/registry.test.ts` fails on a data-action without a command,
@@ -247,6 +249,8 @@
   PL per entry (`tags` key of the `<mxlibrary>` entries, ignored by draw.io). Typed entries store catalogue
   attributes (`rdKind`, `rdSignalType`, `rdDirection` Right/prawy = nominal, `rdAspects` = lamps, `rdHand` physical
   from the toe, `rdProtection`, `rdFunction`, ...); signals are groups with round filled lamp vertices (states);
+  default sizes follow the symbol size standard ([symbol-sizes.md](symbol-sizes.md), `src/railway/symbol-sizes.json`,
+  read by both generators; `symbol-sizes.test.ts` fails on an entry that deviates);
   turnouts/crossovers/slips are multi-cell sets (track edges + points legs, topology.ts). On insert
   `prepareRailwayInsert` runs `renumberInsertedObjects` for every non-ERTMS entry (free IDs, `BG1`/`B1` references
   follow); `kindForPaletteEntry` reads the first `rdKind` of a non-ERTMS entry's XML (click placement). **Licensing:

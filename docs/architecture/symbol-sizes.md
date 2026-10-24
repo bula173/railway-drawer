@@ -6,6 +6,75 @@ entries of the four railway libraries (`public/libraries/ertms.xml`, `ertms-extr
 import and the Railway Script (`src/railway/schematic.ts`), and the symbols inside the built-in
 ERTMS templates.
 
+## The standard
+
+One file holds it: `src/railway/symbol-sizes.json`, read by both library generators
+(`scripts/ertms-library/build_app_library.py`, `scripts/railway-libraries/build_railway_libraries.py`)
+and by the app (`src/railway/symbol-sizes.ts`: schematic builder, train run, Arrange > Normalize
+Symbol Sizes). Boxes are on the draw.io 10 px grid where the symbol stands beside a track (signals,
+boards, equipment, trains); symbols centred on the track line have even sizes, so their centre lands
+on the grid point of the line. **Existing drawings are not changed on open**: the standard is the
+default of new inserts; Arrange > Normalize Symbol Sizes applies it to a selection (one undo step).
+
+| Class | Members | Box w×h | Layout / text |
+|---|---|---|---|
+| Signal | every lit, arm and disc signal: ERTMS "Signal …", PKP semafory, tarcze To / Osp / Tz / Tm, Sz, powtarzacz, semafory kształtowe; schematic signals | **50×20** for every lamp count | head band 12 on the track side (Right / nominal: top, below the track; Left / reverse: bottom), mast at x = 1 (49 mirrored) spanning the head band, arm at its middle to the lamp row; lamps **Ø 8**, contiguous, the row centred in x 6..50 (5 lamps fill it); label band 8 on the far side (ERTMS ID text, font 8); disc Ø 10; arms 10×3 |
+| Board on a post | ETCS stop / location markers (`markerBoard`, `etcsStopMarker`), level transition, RBC border, cab signalling, neutral section, pantograph, track condition, non-stopping, release speed boards, PKP wskaźniki W1 / W4 / W8 / W9 / W24, D1, kilometrowy, Track layout speed boards | **30×20** | post at x = 1 full height, arm at y 10; text face 20×14, symbol face 14×14, centred beside the post; labels font 7 bold |
+| Balise | every fixed / switchable / ERTMS balise | **12×12** | centred on the line |
+| Balise group | ETCS extra groups | **(16 n − 4)×24**, linked +2 (link arrow) | balises 12 at a pitch of 16, `%rdId%` label row 10 (font 8) |
+| Axle counter | Axle Counter Head; schematic | **12×12** | centred |
+| Joint | ERTMS "TC", Insulated Rail Joint, Styk izolowany; template TC markers | **10×12** | centred (a loose joint bar in a template keeps its 2×8 drawing) |
+| LEU | LEU (also ACE, OC boxes) | **30×20** | font 8 bold |
+| RBC | RBC (also IXL) | **40×30** | font 10 bold |
+| Buffer stop | Kozioł oporowy; schematic | **14×20** | stop bar centred on the line; Track End 10×20 |
+| Level crossing | Przejazd kat. A–D, Level Crossing | **20×40** | |
+| km post | km Post 10×20; Hectometre Mark, Słupek hektometrowy 10×10 | | label below, font 8 |
+| Location annotations | End of Authority, Danger Point, Supervised Location | **12×24** | label below, font 8 |
+| Train | every train | height **20**, width = drawn aspect (ERTMS "Train" / new train run train 50×20, Train Connected 50×20, ETCS Train 76×20) | texts keep their box |
+| Lines | tracks, points legs, Track Section in every library | strokeWidth **6** (the ERTMS track) | schematic section overlay 2, Railway Script sidings 3 (deliberate) |
+| Snap | | gap 4 between line and a signal / board / LEU box | `src/railway/snap.ts` (box based: one box, one offset) |
+
+Not standardised (one entry each, sizes unchanged): platforms, buildings (Nastawnia / Posterunek
+60×30), bridge, tunnel, GSM-R mast, RIU, Euroloop, MA arrows, overlap, km ruler, gradient boards,
+rogatka, road lights, frog, derailers, track pieces and turnout sets (their geometry is the track).
+The legacy `src/shapes/ertms` placeholder shapes (render-only, for old files) keep their sizes.
+
+## What changed
+
+- **ERTMS library** (`build_app_library.py`, the user's `ERTMSDrawioTemplate/ERTMS.xml` untouched):
+  "Signal Left 3" 43×24, "Signal Right 3" 42×26, "SIgnal Right 4" 46×24 re-laid out in the signal box
+  (cells, ids, styles and stencils kept; lamps 9 -> 8); "Train Connected" 68×27 -> 50×20; the
+  entries' `w`/`h` follow. **Templates**: 90 signals (35..57 × 20..32) -> 50×20, each kept at its
+  centre along the track and re-placed beside its nearest track at the snap gap on the side drawn
+  (head toward the track, ID text in the label band); 107 TC joint marker groups (10..13 × 12) ->
+  10×12 around their centre; 19 trains (68×16..72×32) -> 20 high. `template-semantics.test.ts`
+  proves the templates mean the same: objects, data, places on the topology, route paths and
+  lengths, interlocking table and conflicts, rule-check findings equal the snapshot taken before.
+- **ERTMS/ETCS extra**: marker / location markers 17×14 and boards 19..23×14 -> 30×20; balise
+  groups unchanged; LEU / ACE / OC 30×16 -> 30×20, RBC 40×24 -> 40×30, IXL 44×28 -> 40×30;
+  Insulated Rail Joint 8×16 -> 10×12; ETCS Train 60×16 -> 76×20; End of Authority 10×24 -> 12×24.
+- **PKP**: light signals 22..46×12, tarcze 20×11 / 18×14, Sz 14×12, semafory kształtowe 28..38×16
+  -> 50×20 (Tz / Tm lamps 7 -> 8); wskaźniki / D1 / kilometrowy -> 30×20; kozioł 14×18 -> 14×20;
+  styk 8×16 -> 10×12; słupek hektometrowy 8×14 -> 10×10; Nastawnia / Posterunek -> 60×30; tracks and
+  legs strokeWidth 4 -> 6.
+- **Track layout**: tracks, legs, Track Section strokeWidth 4 -> 6; Track End 10×18 -> 10×20;
+  km Post 8×16 -> 10×20; Hectometre Mark 8×10 -> 10×10; speed boards -> 30×20 (font 7).
+- **Schematic builder** (`schematic.ts`; railML import, Railway Script): `defaultSize` from the
+  standard (axle counter 10×10 -> 12×12, buffer stop 6×24 -> 14×20 drawn as a stop bar, level
+  crossing 30×40 -> 20×40, LEU 34×18 -> 30×20, RBC 50×30 -> 40×30, fallback signal 20×20 -> 50×20);
+  ETCS marker boards (10×16 rectangles) -> `markerBoardSymbol`, a board on a post in the 30×20 box
+  with the ID above. Signals, balises, joints and trains come from the ERTMS library (now standard).
+- **Train run**: a new train is 50×20 (`NEW_TRAIN_SIZE` from the standard).
+- **Click / drag insert, hover-arrow clones**: insert the entry as stored (so the standard); a
+  hover-arrow clone copies its source's size (`cloneForConnect`).
+- Lamps stay round filled leaf parts (states), signals and boards stay railway objects (press on the
+  body moves, the small-symbol sizer rule), snap offsets come from the box (now one per class).
+
+Tests: `src/railway/__tests__/symbol-sizes.test.ts` (every palette entry of each class and every
+template symbol has the standard size, lamp diameter, head band and mast place; a new entry that
+deviates fails), `schematic-sizes.test.ts`, `normalize-sizes.test.ts`, `template-semantics.test.ts`;
+e2e `railway-shapes.spec.ts` (signals from ERTMS, PKP and ETCS extra insert with equal boxes).
+
 ## Audit before the standard (commit 6ae19b7)
 
 Palette entries by catalogue kind and subtype (ERTMS: the 18 palette elements; the 19 templates
