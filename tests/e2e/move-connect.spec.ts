@@ -352,7 +352,8 @@ test.describe('connecting (real mouse)', () => {
     await page.keyboard.press('ControlOrMeta+z');
 
     // 3. from the signal's right point (connectable as a whole) to rectangle B; the signal stays
-    await connectDrag(page, { x: 342, y: 313 }, { x: 430, y: 150 });
+    // the signal box is 50x20 (symbol size standard): its right point E at (350, 310)
+    await connectDrag(page, { x: 350, y: 310 }, { x: 430, y: 150 });
     added = (await edgesOf(page)).slice(base);
     expect(added).toHaveLength(1);
     expect(added[0]).toMatchObject({ source: sig, target: b });

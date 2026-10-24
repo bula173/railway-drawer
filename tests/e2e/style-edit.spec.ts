@@ -188,7 +188,10 @@ test.describe('style edits on inserted templates and palette shapes', () => {
     await page.keyboard.press('ControlOrMeta+z');
     await expect.poll(async () => (await ownStyleOf(page, edge!.id)).strokeColor).toBe(edge!.style.strokeColor);
 
-    // A shape inside a group: first click selects the group, the next one the child
+    // A shape inside a group: first click selects the group, the next one the child (zoom 4: the
+    // template's symbols have the standard sizes, a 50x20 signal's 8 px lamps need room for a
+    // click away from their connection points and the group's handles)
+    await inGraph(page, 'graph.zoomTo(4);');
     const child = await inGraph<{ id: string; group: string; style: Record<string, unknown> } | null>(page, helpers(`
       let best = null;
       for (const g of graph.getDefaultParent().children) {
