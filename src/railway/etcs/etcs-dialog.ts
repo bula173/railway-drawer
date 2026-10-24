@@ -146,6 +146,8 @@ export function openEtcsDialog(options: EtcsDialogOptions): () => void {
     problems = validateEtcsData(data, ctx);
     const errors = problems.filter((p) => p.severity === 'error');
     const warnings = problems.filter((p) => p.severity === 'warning');
+    // a refused Save's message goes once the errors are fixed
+    if (errors.length === 0 && error.textContent?.startsWith('Not saved')) error.textContent = '';
     problemsBox.replaceChildren();
     if (problems.length > 0) {
       problemsBox.append(el('div', 'rd-etcs-problems-title', `${errors.length} error${errors.length === 1 ? '' : 's'}, ${warnings.length} warning${warnings.length === 1 ? '' : 's'}`));

@@ -10,7 +10,8 @@
 }
 
 .rd-etcs-content {
-  min-height: 320px;
+  flex: 1 1 auto;
+  min-height: 160px;
 }
 
 .rd-etcs-layout {
@@ -202,8 +203,9 @@
 
 .rd-etcs-problems,
 .rd-etcs-result {
+  flex: 0 0 auto;
   padding: 0 16px;
-  max-height: 140px;
+  max-height: 110px;
   overflow: auto;
 }
 
@@ -214,6 +216,7 @@
 }
 
 .rd-etcs-error {
+  flex: 0 0 auto;
   margin: 0;
   padding: 0 16px;
   color: var(--rd-danger);
