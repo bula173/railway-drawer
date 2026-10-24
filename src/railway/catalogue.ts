@@ -99,6 +99,10 @@ const idField = (label = 'ID', help?: string): FieldDef => field('id', label, 't
 const kmField = (label = 'km position'): FieldDef => field('km', label, 'km', { unit: 'km', help: 'e.g. 12.345 or 12+345' });
 const trackField = (): FieldDef => field('trackId', 'Track', 'ref', { refKinds: TRACK_KINDS });
 const notesField = (): FieldDef => field('notes', 'Remarks', 'text');
+/** Line data used by the ETCS computed values (etcs/etcs-compute.ts) and the train run. */
+const speedField = (): FieldDef => field('speedLimit', 'Speed limit', 'number', { unit: 'km/h', min: 0, max: 600, help: 'Line speed (ETCS SSP packet 27, train run)' });
+const gradientField = (): FieldDef =>
+  field('gradient', 'Gradient', 'text', { unit: '‰', help: '+ rising left to right; or from km on: "12.000:+3.5; 12+450:-2" (ETCS packet 21)' });
 
 export const KINDS: readonly KindDef[] = [
   {
@@ -163,6 +167,8 @@ export const KINDS: readonly KindDef[] = [
       field('length', 'Length', 'number', { unit: 'm', min: 0 }),
       field('kmStart', 'km start', 'km', { unit: 'km' }),
       field('kmEnd', 'km end', 'km', { unit: 'km' }),
+      speedField(),
+      gradientField(),
       notesField(),
     ],
   },
@@ -178,6 +184,8 @@ export const KINDS: readonly KindDef[] = [
       field('length', 'Length', 'number', { unit: 'm', min: 0 }),
       field('kmStart', 'km start', 'km', { unit: 'km' }),
       field('kmEnd', 'km end', 'km', { unit: 'km' }),
+      speedField(),
+      gradientField(),
       notesField(),
     ],
   },
@@ -196,6 +204,7 @@ export const KINDS: readonly KindDef[] = [
       }),
       kmField(),
       trackField(),
+      speedField(),
       notesField(),
     ],
   },

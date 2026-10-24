@@ -210,7 +210,9 @@ describe('rule: points without detection', () => {
 describe('rule settings', () => {
   it('defaults: every rule enabled with its documented thresholds', () => {
     const s = defaultRuleSettings();
-    expect(Object.keys(s)).toHaveLength(10);
+    expect(Object.keys(s)).toHaveLength(17);
+    expect(s['etcs-linking-distance']).toEqual({ enabled: true, severity: 'warning', params: { tolerance: 5 } });
+    expect(s['etcs-duplicate-nid-bg'].severity).toBe('error');
     expect(s['bg-signal-distance']).toEqual({ enabled: true, severity: 'warning', params: { min: 0, max: 50 } });
     expect(s['balise-order'].severity).toBe('error');
     expect(s['overlap-length'].params).toEqual({ min: 50 });

@@ -20,6 +20,7 @@ import { defaultRuleSettings, getRuleDef } from './rule-settings';
 import type { Topology, TopoLocation } from './topology';
 import { buildTopology, directionAt, forwardIsNominal, locateObject, passage } from './topology';
 import type { Issue, RailObject } from './validation';
+import { checkEtcsRules } from './etcs/etcs-checks';
 
 export interface RuleNote {
   rule: RuleSetId;
@@ -415,6 +416,11 @@ export function checkRules(objects: RailObject[], settings: RuleSettings = defau
       }
     }
   }
+
+  // ---- ETCS balise data (etcs/etcs-checks.ts)
+  const etcs = checkEtcsRules(objects, settings, topo);
+  issues.push(...etcs.issues);
+  notes.push(...etcs.notes);
 
   return { issues, notes };
 }

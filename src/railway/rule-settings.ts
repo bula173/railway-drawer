@@ -23,7 +23,14 @@ export type RuleSetId =
   | 'signal-spacing'
   | 'detection-between-signals'
   | 'signal-direction'
-  | 'points-detection';
+  | 'points-detection'
+  | 'etcs-linking-missing'
+  | 'etcs-linking-distance'
+  | 'etcs-no-packets'
+  | 'etcs-duplicate-nid-bg'
+  | 'etcs-packet-direction'
+  | 'etcs-tsr-revocation'
+  | 'etcs-packet-invalid';
 
 export interface Bi {
   en: string;
@@ -164,6 +171,77 @@ export const RULE_DEFS: readonly RuleDef[] = [
       pl: 'Każda zwrotnica leży w odcinku izolowanym (jedna z jej gałęzi) lub ma punkty detekcji na gałęziach.',
     },
     severity: 'warning',
+    params: [],
+  },
+  // ---- ETCS balise data (etcs/etcs-checks.ts; docs/architecture/etcs-data.md)
+  {
+    id: 'etcs-linking-missing',
+    label: { en: 'Linked group without linking packet', pl: 'Grupa linkowana bez pakietu linkowania' },
+    help: {
+      en: 'A balise group with ETCS data marked as linked (Q_LINK = 1) carries a linking packet (5).',
+      pl: 'Grupa balis z danymi ETCS oznaczona jako linkowana (Q_LINK = 1) ma pakiet linkowania (5).',
+    },
+    severity: 'warning',
+    params: [],
+  },
+  {
+    id: 'etcs-linking-distance',
+    label: { en: 'Linking distance vs the drawing', pl: 'Odległość linkowania a rysunek' },
+    help: {
+      en: 'The D_LINK distances of packet 5 add up to the distance of each linked group (by NID_BG) along the drawing in the packet direction, within the tolerance.',
+      pl: 'Suma odległości D_LINK pakietu 5 do każdej grupy linkowanej (wg NID_BG) zgadza się z odległością na rysunku w kierunku pakietu, z tolerancją.',
+    },
+    severity: 'warning',
+    params: [metres('tolerance', 'tolerance', 'tolerancja', 5, 1000)],
+  },
+  {
+    id: 'etcs-no-packets',
+    label: { en: 'Balise group without packets', pl: 'Grupa balis bez pakietów' },
+    help: {
+      en: 'Once the drawing has ETCS data, every balise group has at least one packet (besides 255).',
+      pl: 'Gdy rysunek ma dane ETCS, każda grupa balis ma co najmniej jeden pakiet (poza 255).',
+    },
+    severity: 'warning',
+    params: [],
+  },
+  {
+    id: 'etcs-duplicate-nid-bg',
+    label: { en: 'Duplicate NID_BG within NID_C', pl: 'Powtórzony NID_BG w NID_C' },
+    help: {
+      en: 'NID_BG identifies a balise group within its country / region NID_C (the diagram default when empty): no two groups share the pair.',
+      pl: 'NID_BG identyfikuje grupę balis w obrębie NID_C (domyślnego dla rysunku, gdy puste): żadne dwie grupy nie mają tej samej pary.',
+    },
+    severity: 'error',
+    params: [],
+  },
+  {
+    id: 'etcs-packet-direction',
+    label: { en: 'Packet direction vs the group', pl: 'Kierunek pakietu a grupa' },
+    help: {
+      en: 'A packet for one direction (Q_DIR nominal / reverse) needs an orientation of the group (direction, or two balises; a single balise must be linked), and linking / MA packets look towards the groups / signals of that direction.',
+      pl: 'Pakiet dla jednego kierunku (Q_DIR) wymaga orientacji grupy (kierunek lub dwie balisy; pojedyncza balisa musi być linkowana), a pakiety linkowania / MA patrzą w stronę grup / semaforów tego kierunku.',
+    },
+    severity: 'warning',
+    params: [],
+  },
+  {
+    id: 'etcs-tsr-revocation',
+    label: { en: 'TSR without revocation', pl: 'TSR bez odwołania' },
+    help: {
+      en: 'Every revocable temporary speed restriction (packet 65, NID_TSR other than 255) is revoked by a packet 66 with the same NID_TSR somewhere in the drawing.',
+      pl: 'Każde odwoływalne doraźne ograniczenie prędkości (pakiet 65, NID_TSR inny niż 255) ma pakiet 66 z tym samym NID_TSR w rysunku.',
+    },
+    severity: 'warning',
+    params: [],
+  },
+  {
+    id: 'etcs-packet-invalid',
+    label: { en: 'Invalid ETCS packet data', pl: 'Błędne dane pakietów ETCS' },
+    help: {
+      en: 'The ETCS data of a group passes the editor\'s validation: ranges, required variables, N_ITER, Q_SCALE limits, telegram size.',
+      pl: 'Dane ETCS grupy przechodzą walidację edytora: zakresy, wymagane zmienne, N_ITER, Q_SCALE, rozmiar telegramu.',
+    },
+    severity: 'error',
     params: [],
   },
 ];

@@ -372,6 +372,20 @@
           "$ref": "#/definitions/km",
           "description": "km end [km]"
         },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
+        },
+        "gradient": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Gradient [‰] — + rising left to right; or from km on: \"12.000:+3.5; 12+450:-2\" (ETCS packet 21)"
+        },
         "notes": {
           "type": [
             "string",
@@ -556,6 +570,12 @@
         "track": {
           "$ref": "#/definitions/id",
           "description": "Track ID (implied inside a track item)"
+        },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
         },
         "notes": {
           "type": [
@@ -1038,6 +1058,20 @@
         "endKm": {
           "$ref": "#/definitions/km",
           "description": "km end [km]"
+        },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Speed limit [km/h] — Line speed (ETCS SSP packet 27, train run)"
+        },
+        "gradient": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Gradient [‰] — + rising left to right; or from km on: \"12.000:+3.5; 12+450:-2\" (ETCS packet 21)"
         },
         "notes": {
           "type": [
