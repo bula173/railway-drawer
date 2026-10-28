@@ -5,7 +5,9 @@
  *        autoplay (Space, interval, stops at the last step), File > Export Scenario (PDF)… (real PDF:
  *        %PDF header, title page + >= 1 page per step, embedded Unicode font, UML as vectors) and the
  *        HTML slideshow from the panel button (every step, keyboard navigation); the step drawings
- *        of a multi-layer diagram show every visible layer (hidden ones left out), highlights on top.
+ *        of a multi-layer diagram show every visible layer (hidden ones left out), highlights on top;
+ *        the labelled "Export ▾" menu button of a scenario row (PDF via the keyboard) and of the
+ *        view banner (slides, HTML document).
  *
  * Runs on any port (dev server only: the graph is reached through the service registry module).
  */
@@ -274,6 +276,122 @@ test.describe('scenario as a document', () => {
     const raw = (await readFile(await (await pdfDownload).path())).toString('latin1');
     expect(raw.startsWith('%PDF-')).toBe(true);
     expect((raw.match(/\/Subtype \/Image/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect(pageErrors).toEqual([]);
+  });
+
+  test('"Export ▾" in the scenario row (keyboard, PDF) and in the view banner (slides, HTML)', async ({ page }) => {
+    test.setTimeout(120_000);
+    const pageErrors: string[] = [];
+    page.on('pageerror', (err) => pageErrors.push(err.message));
+    await freshApp(page);
+    await page.locator('[data-right-panel="scenarios"]').click();
+    const panel = page.locator('#scenarios-panel');
+    await panel.locator('.rd-scn-new').click();
+    const dialog = page.locator('.rd-tpl-modal');
+    await dialog.locator('input[name="template-name"]').fill('Export me');
+    await dialog.locator('.rd-tpl-btn-primary').click();
+    const head = panel.locator('.rd-scn-head');
+    const exportBtn = head.locator('.rd-scn-export-row');
+    // no steps: disabled, the tooltip says why
+    await expect(exportBtn).toHaveText('⇩Export▾');
+    await expect(exportBtn).toHaveAttribute('aria-haspopup', 'menu');
+    await expect(exportBtn).toBeDisabled();
+    await expect(exportBtn).toHaveAttribute('title', 'Add a step first');
+
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] });
+    await expect.poll(() => withGraph<number>(page, 'return graph.getChildVertices(graph.getDefaultParent()).length;')).toBe(1);
+    await addStep(page, 'One');
+    await withGraph(page, 'const [a] = graph.getChildVertices(graph.getDefaultParent()); graph.moveCells([a], 120, 0);');
+    await addStep(page, 'Two');
+    await expect(exportBtn).toBeEnabled();
+    await expect(exportBtn).toHaveAttribute('title', /PDF, slides or an HTML document/);
+
+    // Present, Export ▾ and ⋯ side by side on one row inside the 280 px panel, targets >= 24 px
+    const boxes = await Promise.all([head.locator('.rd-scn-play'), exportBtn, head.locator('.rd-scn-more')].map((l) => l.boundingBox()));
+    const panelBox = (await panel.boundingBox())!;
+    for (const b of boxes) {
+      expect(b!.height).toBeGreaterThanOrEqual(24);
+      expect(b!.width).toBeGreaterThanOrEqual(24);
+      expect(Math.abs(b!.y + b!.height / 2 - (boxes[0]!.y + boxes[0]!.height / 2))).toBeLessThan(2);
+      expect(b!.x + b!.width).toBeLessThanOrEqual(panelBox.x + panelBox.width);
+    }
+    expect(boxes[0]!.x + boxes[0]!.width).toBeLessThanOrEqual(boxes[1]!.x);
+    expect(boxes[1]!.x + boxes[1]!.width).toBeLessThanOrEqual(boxes[2]!.x);
+    await panel.locator('.rd-scn-item').first().screenshot({ path: test.info().outputPath('scenario-row-export.png') });
+
+    // keyboard: Enter opens (first item focused), arrows move, Esc closes and returns the focus
+    const menu = panel.locator('.rd-scn-menu:not([hidden])');
+    await exportBtn.focus();
+    await page.keyboard.press('Enter');
+    await expect(menu.locator('[role="menuitem"]')).toHaveText(['PDF…', 'Slides (HTML)…', 'HTML document…']);
+    await expect(menu.locator('.rd-scn-export-menu-pdf')).toBeFocused();
+    await page.keyboard.press('ArrowDown');
+    await expect(menu.locator('.rd-scn-export-menu-slides')).toBeFocused();
+    await page.keyboard.press('ArrowUp');
+    await page.keyboard.press('ArrowUp');
+    await expect(menu.locator('.rd-scn-export-menu-html')).toBeFocused();
+    await page.keyboard.press('Escape');
+    await expect(menu).toHaveCount(0);
+    await expect(exportBtn).toBeFocused();
+    await expect(exportBtn).toHaveAttribute('aria-expanded', 'false');
+    // Space opens too; Home + Enter: PDF… -> options dialog -> download
+    await page.keyboard.press('Space');
+    await expect(menu).toBeVisible();
+    await page.keyboard.press('End');
+    await page.keyboard.press('Home');
+    await expect(menu.locator('.rd-scn-export-menu-pdf')).toBeFocused();
+    await page.keyboard.press('Enter');
+    const optionsDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');
+    await expect(optionsDialog).toBeVisible();
+    const pdfDownload = page.waitForEvent('download');
+    await optionsDialog.locator('.rd-tpl-btn-primary').click();
+    const pdf = await pdfDownload;
+    expect(pdf.suggestedFilename()).toMatch(/ - Export me\.pdf$/);
+    const raw = (await readFile(await pdf.path())).toString('latin1');
+    expect(raw.startsWith('%PDF-')).toBe(true);
+    // title page + one page per step (both drawings are the same cropped hexagon: one shared image)
+    expect((raw.match(/\/Type\s*\/Page[^s]/g) ?? []).length).toBeGreaterThanOrEqual(3);
+    expect((raw.match(/\/Subtype \/Image/g) ?? []).length).toBeGreaterThanOrEqual(1);
+
+    // the view banner: Export ▾ of the scenario shown
+    const view = page.locator('[data-testid="scenario-view"]');
+    await panel.locator('.rd-scn-step').nth(1).click();
+    await expect(view).toBeVisible();
+    const bannerExport = page.locator('.rd-scn-banner .rd-scn-banner-export');
+    await expect(bannerExport).toHaveAttribute('aria-haspopup', 'menu');
+    expect((await bannerExport.boundingBox())!.height).toBeGreaterThanOrEqual(24);
+    await page.locator('.rd-scn-banner').screenshot({ path: test.info().outputPath('scenario-banner-export.png') });
+    const bannerMenu = page.locator('.rd-scn-banner .rd-scn-menu:not([hidden])');
+    // keys in the menu do not step through the scenario; Esc closes the menu, not the view
+    await bannerExport.focus();
+    await page.keyboard.press('Space');
+    await expect(bannerMenu).toBeVisible();
+    await expect(page.locator('.rd-scn-play-btn')).toHaveText('▶ Play');
+    await page.keyboard.press('ArrowDown');
+    await expect(bannerMenu.locator('.rd-scn-export-menu-slides')).toBeFocused();
+    await expect(page.locator('.rd-scn-banner-title')).toHaveText('Export me — step 2/2: Two');
+    await page.keyboard.press('Escape');
+    await expect(bannerMenu).toHaveCount(0);
+    await expect(view).toBeVisible();
+    await expect(bannerExport).toBeFocused();
+    await bannerExport.click();
+    await page.screenshot({ path: test.info().outputPath('scenario-banner-export-menu.png') });
+    await bannerMenu.locator('.rd-scn-export-menu-slides').click();
+    await expect(optionsDialog).toBeVisible();
+    const slidesDownload = page.waitForEvent('download');
+    await optionsDialog.locator('.rd-tpl-btn-primary').click();
+    const slides = await slidesDownload;
+    expect(slides.suggestedFilename()).toMatch(/ - Export me \(slides\)\.html$/);
+    const html = await readFile(await slides.path(), 'utf8');
+    expect(html.match(/<section class="slide step"/g)).toHaveLength(2);
+    // HTML document: straight download
+    await bannerExport.click();
+    const htmlDownload = page.waitForEvent('download');
+    await bannerMenu.locator('.rd-scn-export-menu-html').click();
+    const doc = await htmlDownload;
+    expect(doc.suggestedFilename()).toMatch(/ - Export me\.html$/);
+    expect(await readFile(await doc.path(), 'utf8')).toContain('Two');
+    await expect(view).toBeVisible();
     expect(pageErrors).toEqual([]);
   });
 });

@@ -154,6 +154,11 @@ export function installScenarios(
     getScenarios: (id) => tabById(id)?.document.scenarios ?? null,
     getLiveGraph: (id) => tabById(id)?.graph ?? null,
     onStateChange: (state) => panel.setViewState(state),
+    onExport: (state, format) => {
+      if (state.tabId !== tabManager.getActiveTab()?.id) return;
+      if (format === 'html') void exportScenario(state.scenarioId);
+      else void exportScenarioDoc(format, state.scenarioId);
+    },
     onReplaceDrawing: (state, step) => {
       void (async () => {
         const scenario = tabById(state.tabId)?.document.scenarios.get(state.scenarioId);
@@ -339,6 +344,8 @@ export function installScenarios(
     if (!viewer.isActive()) return false;
     const action = scenarioKeyAction(e);
     if (action === 'pass') return false;
+    // a menu (or its button) of the view / panel handles the key itself, nothing else may
+    if (action === 'menu') return true;
     e.stopPropagation();
     if (action === 'swallow') return true;
     e.preventDefault();

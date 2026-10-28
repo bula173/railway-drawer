@@ -23,6 +23,8 @@ import { showMarkdown } from './markdown';
 import { ScenarioAutoplay, AUTOPLAY_INTERVALS } from './scenario-autoplay';
 import { buildDiffHighlightXml, diffSnapshots, diffCountsText, DIFF_COLORS, DIFF_LABELS } from './scenario-diff';
 import type { CellChangeKind, SnapshotDiff } from './scenario-diff';
+import { closeActionMenuWithin, exportMenu } from './action-menu';
+import type { ScenarioExportFormat } from './action-menu';
 import './scenarios.css';
 import './scenario-doc.css';
 import { readItem, writeItem } from '../core/safe-storage';
@@ -85,6 +87,8 @@ export interface ScenarioViewerOptions {
   onStateChange?(state: ScenarioViewState | null): void;
   /** Banner action "Replace drawing with this step…" (the caller confirms and replaces). */
   onReplaceDrawing?(state: ScenarioViewState, step: ScenarioStepData): void;
+  /** Banner "Export ▾" (PDF / slides / HTML document) of the scenario shown (button hidden when missing). */
+  onExport?(state: ScenarioViewState, format: ScenarioExportFormat): void;
   /** UML renderer of the side panel (default: renderStepUml). */
   renderUml?(source: string): Promise<UmlRenderResult>;
 }
@@ -250,6 +254,7 @@ export class ScenarioViewer {
     if (!this.state) return;
     const { tabId } = this.state;
     this.autoplay.pause();
+    closeActionMenuWithin(this.wrapper);
     this.state = null;
     this.lastDiff = null;
     this.unsubscribe?.();
@@ -350,7 +355,20 @@ export class ScenarioViewer {
     diffToggle.type = 'checkbox';
     diffToggle.checked = this.showChanges;
     diffLabel.append(diffToggle, document.createTextNode(' Show changes'));
-    banner.append(badge, prev, text, next, autoplayGroup, diffLabel, replace, exit);
+    banner.append(badge, prev, text, next, autoplayGroup, diffLabel);
+    if (this.options.onExport) {
+      banner.appendChild(
+        exportMenu(
+          'this scenario',
+          1,
+          (format) => {
+            if (this.state) this.options.onExport?.({ ...this.state }, format);
+          },
+          { className: 'rd-scn-banner-btn rd-scn-banner-export' }
+        )
+      );
+    }
+    banner.append(replace, exit);
     const host = el('div', 'rd-scn-view-host');
     const side = el('aside', 'rd-scn-side');
     side.dataset.testid = 'scenario-side-panel';

@@ -449,12 +449,28 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.shot('scenario-menu');
   await page.keyboard.press('Escape');
   await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toHaveCount(0);
+  // the scenario row's labelled "Export ▾" button and its menu
+  await a.check('scenario row (Present, Export ▾, ⋯)', '#scenarios-panel .rd-scn-head');
+  await page.locator('#scenarios-panel .rd-scn-head .rd-scn-export-row').first().click();
+  await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toBeVisible();
+  await a.check('scenario "Export ▾" menu', '#scenarios-panel .rd-scn-menu:not([hidden])');
+  await a.shot('scenario-export-menu');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toHaveCount(0);
 
   // Scenario view (banner + side panel)
   await page.locator('#scenarios-panel .rd-scn-play').first().click();
   await expect(page.locator('[data-testid="scenario-view"]')).toBeVisible();
   await a.check('scenario view (banner, side panel)', '[data-testid="scenario-view"]', '.rd-scn-side');
   await a.shot('scenario-view');
+  // the banner's "Export ▾" menu
+  await page.locator('.rd-scn-banner .rd-scn-banner-export').click();
+  await expect(page.locator('.rd-scn-banner .rd-scn-menu:not([hidden])')).toBeVisible();
+  await a.check('scenario view: banner "Export ▾" menu', '.rd-scn-banner .rd-scn-menu:not([hidden])');
+  await a.shot('scenario-view-export-menu');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.rd-scn-banner .rd-scn-menu:not([hidden])')).toHaveCount(0);
+  await expect(page.locator('[data-testid="scenario-view"]')).toBeVisible();
   await page.locator('.rd-scn-exit').click();
   await expect(page.locator('[data-testid="scenario-view"]')).toBeHidden();
   // AI panel: settings (no key: open, key note), MCP pairing code

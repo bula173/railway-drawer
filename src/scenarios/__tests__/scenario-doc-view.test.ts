@@ -271,6 +271,109 @@ describe('scenario view: show changes, autoplay, PDF/slides export', () => {
     expect(dialogCalls).toHaveLength(1);
   });
 
+  it('"Export ▾" of a panel row and of the view banner: PDF… / Slides (HTML)… / HTML document…; disabled without steps', async () => {
+    const { h, scenarioId, tab } = start();
+    tab.document.scenarios.create('Empty');
+    h.showPanel('scenarios');
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('#scenarios-panel .rd-scn-item'));
+    const rowExport = (row: HTMLElement): HTMLButtonElement => row.querySelector('.rd-scn-head .rd-scn-export-row') as HTMLButtonElement;
+    const runRow = rows.find((r) => r.dataset.scenarioId === scenarioId)!;
+    const emptyRow = rows.find((r) => r.dataset.scenarioId !== scenarioId)!;
+    // Present, Export ▾, ⋯ in this order
+    expect(Array.from(runRow.querySelectorAll('.rd-scn-actions > button, .rd-scn-actions > .rd-scn-menu-wrap > button')).map((b) => b.className)).toEqual([
+      'rd-scn-play',
+      'rd-scn-export-btn rd-scn-export-row',
+      'rd-scn-more',
+    ]);
+    expect(rowExport(emptyRow).disabled).toBe(true);
+    expect(rowExport(emptyRow).title).toBe('Add a step first');
+    const btn = rowExport(runRow);
+    expect(btn.disabled).toBe(false);
+    expect(btn.textContent).toBe('⇩Export▾');
+    expect(btn.getAttribute('aria-haspopup')).toBe('menu');
+    expect(btn.getAttribute('aria-label')).toBe('Export Run');
+    btn.click();
+    expect(btn.getAttribute('aria-expanded')).toBe('true');
+    const menu = btn.parentElement!.querySelector('.rd-scn-menu') as HTMLElement;
+    expect(menu.hidden).toBe(false);
+    expect(Array.from(menu.querySelectorAll('[role="menuitem"]')).map((i) => i.textContent)).toEqual(['PDF…', 'Slides (HTML)…', 'HTML document…']);
+    expect(document.activeElement).toBe(menu.querySelector('.rd-scn-export-menu-pdf'));
+    // Esc closes and returns the focus to the button
+    menu.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    expect(menu.hidden).toBe(true);
+    expect(document.activeElement).toBe(btn);
+    // ↓ on the button opens it too; PDF… -> options dialog -> file
+    btn.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true, cancelable: true }));
+    expect(menu.hidden).toBe(false);
+    (menu.querySelector('.rd-scn-export-menu-pdf') as HTMLButtonElement).click();
+    expect(menu.hidden).toBe(true);
+    await vi.waitFor(() => expect(saved).toHaveLength(1), { timeout: 10_000 });
+    expect(dialogCalls[0]).toMatchObject({ format: 'pdf', initialScenarioId: scenarioId });
+    expect(saved[0].name).toBe('Węzeł - Run.pdf');
+    // HTML document: no dialog
+    rowExport(runRow).click();
+    (menu.querySelector('.rd-scn-export-menu-html') as HTMLButtonElement).click();
+    await vi.waitFor(() => expect(saved).toHaveLength(2), { timeout: 10_000 });
+    expect(saved[1].name).toBe('Węzeł - Run.html');
+    expect(dialogCalls).toHaveLength(1);
+
+    // the banner of the view: the scenario shown
+    h.viewer.open(tab.id, scenarioId, 1);
+    const bannerBtn = document.querySelector('.rd-scn-banner .rd-scn-banner-export') as HTMLButtonElement;
+    expect(bannerBtn.getAttribute('aria-haspopup')).toBe('menu');
+    bannerBtn.click();
+    const bannerMenu = bannerBtn.parentElement!.querySelector('.rd-scn-menu') as HTMLElement;
+    expect(bannerMenu.hidden).toBe(false);
+    // keys of the menu belong to it: not a scenario step, not "Back to editing"
+    const down = new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true, cancelable: true });
+    document.activeElement!.dispatchEvent(down);
+    expect(scenarioKeyAction(down)).toBe('menu');
+    expect(h.handleKeydown(down)).toBe(true);
+    expect(h.viewer.getState()!.index).toBe(1);
+    expect(document.activeElement).toBe(bannerMenu.querySelector('.rd-scn-export-menu-slides'));
+    (document.activeElement as HTMLButtonElement).click();
+    await vi.waitFor(() => expect(saved).toHaveLength(3), { timeout: 10_000 });
+    expect(dialogCalls[1]).toMatchObject({ format: 'slides', initialScenarioId: scenarioId });
+    expect(saved[2].name).toBe('Węzeł - Run (slides).html');
+    expect(h.viewer.isActive()).toBe(true);
+    // closing the view closes an open banner menu
+    bannerBtn.click();
+    h.viewer.close();
+    expect(bannerMenu.hidden).toBe(true);
+  });
+
+  it('keys in the view: Enter / Space / ↑ / ↓ on a menu button and every key in an open menu go to the menu', () => {
+    const keyOn = (target: HTMLElement, key: string, host: HTMLElement = target): string => {
+      document.body.appendChild(host);
+      let action = '';
+      target.addEventListener('keydown', (evt) => (action = scenarioKeyAction(evt)), { once: true });
+      target.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
+      host.remove();
+      return action;
+    };
+    const menuButton = (): HTMLButtonElement => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-haspopup', 'menu');
+      return b;
+    };
+    expect(keyOn(menuButton(), ' ')).toBe('menu');
+    expect(keyOn(menuButton(), 'Enter')).toBe('menu');
+    expect(keyOn(menuButton(), 'ArrowDown')).toBe('menu');
+    expect(keyOn(menuButton(), 'ArrowRight')).toBe('next');
+    expect(keyOn(menuButton(), 'Escape')).toBe('exit');
+    const menu = document.createElement('div');
+    menu.setAttribute('role', 'menu');
+    const item = menu.appendChild(document.createElement('button'));
+    for (const key of ['Escape', 'ArrowUp', 'Home', 'End', ' ', 'Enter', 'ArrowLeft']) expect(keyOn(item, key, menu)).toBe('menu');
+    const ctrlZ = new KeyboardEvent('keydown', { key: 'z', ctrlKey: true, bubbles: true, cancelable: true });
+    document.body.appendChild(menu);
+    let action = '';
+    item.addEventListener('keydown', (evt) => (action = scenarioKeyAction(evt)), { once: true });
+    item.dispatchEvent(ctrlZ);
+    menu.remove();
+    expect(action).toBe('block');
+  });
+
   it('options dialog: scenario choice, orientation remembered, highlight checkbox, Esc cancels', async () => {
     const scenarios = [
       { id: 'x', name: 'Empty', description: '', steps: [] },

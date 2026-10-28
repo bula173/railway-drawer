@@ -37,7 +37,9 @@
   registry), "Show changes" (legend, data-diff-* counts, Changes list, highlight strokes in the view SVG, snapshots without
   `rdDiff`), autoplay (1 s, Space plays to the end and stops, Space pauses), File > Export Scenario (PDF)… landscape (%PDF,
   pages >= 4, DejaVu embedded, 3 images, no "UML as vector failed" warning), Slides from the panel button (3 step slides,
-  highlighted drawings, opened as a data: page under its CSP: keys move, counter).
+  highlighted drawings, opened as a data: page under its CSP: keys move, counter); "Export ▾" of a row (disabled without
+  steps, one row with Present and ⋯ in the 280 px panel, Enter/Space/arrows/Home/End/Esc, PDF via the keyboard -> download) and
+  of the view banner (keys stay in the menu, Esc keeps the view; slides and HTML document downloads).
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 19 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel

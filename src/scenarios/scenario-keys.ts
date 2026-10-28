@@ -9,7 +9,7 @@
  * scenario view the dispatcher never calls this, so the arrows keep their usual meaning.
  */
 
-export type ScenarioKeyAction = 'prev' | 'next' | 'first' | 'last' | 'exit' | 'toggle-play' | 'block' | 'swallow' | 'pass';
+export type ScenarioKeyAction = 'prev' | 'next' | 'first' | 'last' | 'exit' | 'toggle-play' | 'block' | 'swallow' | 'menu' | 'pass';
 
 const EDIT_KEYS = new Set(['z', 'y', 'x', 'v', 'a', 'c', 'd', 'g', 'b', 'i', 'u', 'l', 'Delete', 'Backspace', 'Enter']);
 
@@ -24,6 +24,15 @@ function isEditableTarget(target: EventTarget | null): boolean {
   return tag === 'TEXTAREA' || tag === 'SELECT';
 }
 
+const MENU_BUTTON_KEYS = new Set(['Enter', ' ', 'ArrowDown', 'ArrowUp']);
+
+/** A key for a menu: inside an open menu, or opening a menu from its button. */
+function isMenuKey(e: KeyboardEvent): boolean {
+  if (!(e.target instanceof Element)) return false;
+  if (e.target.closest('[role="menu"]')) return true;
+  return MENU_BUTTON_KEYS.has(e.key) && e.target.closest('button[aria-haspopup="menu"]') !== null;
+}
+
 /**
  * What a keydown means in the scenario view:
  * - prev/next/first/last/exit: navigation (the caller prevents the default and stops the event);
@@ -31,6 +40,9 @@ function isEditableTarget(target: EventTarget | null): boolean {
  * - block: an editing shortcut of the hidden drawing (Ctrl+Z/Y/X/V/A/C/D/G, Delete, ...): prevent + stop;
  * - swallow: any other key: stopped so no per-tab shortcut acts on the hidden drawing, default kept
  *   (Tab focus, Enter/Space on a focused button);
+ * - menu: a key of an open menu (role=menu: ↑/↓/Home/End/Esc/Enter/...) or Enter/Space/↑/↓ on a menu
+ *   button ("Export ▾", "⋯"): the menu handles it (the caller neither stops nor prevents it; the
+ *   menu keeps it from every other shortcut);
  * - pass: typing in a field, IME composition, Ctrl/Cmd+S (save works as usual).
  */
 export function scenarioKeyAction(e: KeyboardEvent): ScenarioKeyAction {
@@ -42,6 +54,7 @@ export function scenarioKeyAction(e: KeyboardEvent): ScenarioKeyAction {
   // other combinations (Ctrl+R, Ctrl+T, ...) keep the browser's behaviour
   if (mod) return EDIT_KEYS.has(key) ? 'block' : 'swallow';
   if (e.altKey) return 'swallow';
+  if (isMenuKey(e)) return 'menu';
   switch (e.key) {
     case 'ArrowLeft':
     case 'PageUp':

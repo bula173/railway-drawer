@@ -80,6 +80,7 @@
 }
 .rd-scn-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 4px;
   padding: 6px 6px 6px 4px;
@@ -100,7 +101,8 @@
   transform: rotate(90deg);
 }
 .rd-scn-label {
-  flex: 1 1 auto;
+  /* a narrow panel puts Present / Export / ⋯ together on their own line under the name */
+  flex: 1 1 110px;
   min-width: 0;
   cursor: pointer;
 }
@@ -129,7 +131,8 @@
   flex: 0 0 auto;
   gap: 1px;
 }
-.rd-scn-play {
+.rd-scn-play,
+.rd-scn-export-row {
   min-height: 24px;
   padding: 2px 8px;
   border: 1px solid var(--rd-border);
@@ -142,10 +145,13 @@
   white-space: nowrap;
   cursor: pointer;
 }
-.rd-scn-play:hover:not(:disabled) {
+.rd-scn-play:hover:not(:disabled),
+.rd-scn-export-row:hover:not(:disabled),
+.rd-scn-export-row[aria-expanded='true'] {
   background: var(--rd-hover);
 }
-.rd-scn-play:disabled {
+.rd-scn-play:disabled,
+.rd-scn-export-row:disabled {
   color: var(--rd-text-muted);
   cursor: default;
 }
@@ -167,6 +173,7 @@
   background: var(--rd-hover);
 }
 .rd-scn-play:focus-visible,
+.rd-scn-export-btn:focus-visible,
 .rd-scn-more:focus-visible,
 .rd-scn-menu-item:focus-visible {
   outline: 2px solid var(--rd-focus);
@@ -348,6 +355,18 @@
 .rd-scn-actions {
   align-items: center;
   gap: 4px;
+  margin-left: auto;
+}
+.rd-scn-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.rd-scn-export-caret {
+  font-size: 0.85em;
+}
+.rd-scn-banner-export[aria-expanded='true'] {
+  background: var(--rd-scenario-hover);
 }
 
 /* ---------------------------------------------------------------- scenario view on the canvas */

@@ -4,7 +4,8 @@
  *
  * Lists the tab's scenarios; each expands to its ordered steps (thumbnail, number, name,
  * description, UML/Text badges). Scenario actions: new, edit (name/description), duplicate, export
- * as HTML, delete (confirmed), present from step 1. Step actions: add / edit in the step editor
+ * as PDF / slides / HTML (the labelled "Export ▾" button and the "⋯" menu, action-menu.ts), delete
+ * (confirmed), present from step 1. Step actions: add / edit in the step editor
  * (step-editor.ts: name, description, drawing capture/keep, PlantUML, Markdown), update from the
  * current drawing (confirmed), duplicate, delete (confirmed), reorder (drag, or ↑/↓). Clicking a
  * step shows it read-only on the canvas (ScenarioViewer). Other dialogs are the template dialogs.
@@ -17,6 +18,8 @@ import { extractShapeNames } from '../ui/drawio-palette/library-adapter';
 import type { ScenarioData, ScenarioSet, ScenarioStepData } from './scenario-model';
 import type { ScenarioViewState } from './scenario-view';
 import { openStepEditor } from './step-editor';
+import { actionMenu, closeActionMenu, closeActionMenuWithin, exportMenu } from './action-menu';
+import type { MenuAction } from './action-menu';
 import type { StepEditorOptions, StepEditorResult } from './step-editor';
 import './scenarios.css';
 import { onDrawioColorModeChange } from '../drawio-shapes/engine/graph-compat';
@@ -91,102 +94,6 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, t
   return node;
 }
 
-interface MenuAction {
-  className: string;
-  label: string;
-  title?: string;
-  disabled?: boolean;
-  danger?: boolean;
-  run: () => void;
-}
-
-/** The menu currently open (one at a time). */
-let openActionMenu: { menu: HTMLElement; button: HTMLButtonElement } | null = null;
-
-function closeActionMenu(focusButton = false): void {
-  const open = openActionMenu;
-  if (!open) return;
-  openActionMenu = null;
-  open.menu.hidden = true;
-  open.button.setAttribute('aria-expanded', 'false');
-  if (focusButton) open.button.focus();
-}
-
-function onDocumentPointerDown(e: Event): void {
-  const open = openActionMenu;
-  if (open && !open.menu.contains(e.target as Node) && !open.button.contains(e.target as Node)) closeActionMenu();
-}
-
-/**
- * A "⋯" button with a text menu of actions (role=menu). The items keep their own classes
- * (e.g. `rd-scn-edit`), so they stay addressable; the menu is position: fixed under the button,
- * so the panel's scrolling does not clip it. Esc closes it, ↑/↓ move between items.
- */
-function actionMenu(label: string, actions: MenuAction[], extraClass = ''): HTMLElement {
-  const wrap = el('div', 'rd-scn-menu-wrap');
-  const button = el('button', `rd-scn-more ${extraClass}`.trim(), '⋯');
-  button.type = 'button';
-  button.title = label;
-  button.setAttribute('aria-label', label);
-  button.setAttribute('aria-haspopup', 'menu');
-  button.setAttribute('aria-expanded', 'false');
-  const menu = el('div', 'rd-scn-menu');
-  menu.setAttribute('role', 'menu');
-  menu.hidden = true;
-  const items: HTMLButtonElement[] = [];
-  for (const action of actions) {
-    const item = el('button', `rd-scn-menu-item ${action.className}${action.danger ? ' rd-scn-danger' : ''}`, action.label);
-    item.type = 'button';
-    item.setAttribute('role', 'menuitem');
-    if (action.title) item.title = action.title;
-    item.disabled = !!action.disabled;
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeActionMenu();
-      action.run();
-    });
-    items.push(item);
-    menu.appendChild(item);
-  }
-  const enabled = (): HTMLButtonElement[] => items.filter((i) => !i.disabled);
-  button.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (openActionMenu?.menu === menu) {
-      closeActionMenu();
-      return;
-    }
-    closeActionMenu();
-    const r = button.getBoundingClientRect();
-    menu.hidden = false;
-    const w = menu.offsetWidth || 160;
-    menu.style.left = `${Math.max(4, Math.min(r.right - w, window.innerWidth - w - 4))}px`;
-    const h = menu.offsetHeight || 0;
-    menu.style.top = `${r.bottom + 2 + h > window.innerHeight ? Math.max(4, r.top - h - 2) : r.bottom + 2}px`;
-    button.setAttribute('aria-expanded', 'true');
-    openActionMenu = { menu, button };
-    enabled()[0]?.focus();
-  });
-  menu.addEventListener('keydown', (e) => {
-    const list = enabled();
-    const i = list.indexOf(document.activeElement as HTMLButtonElement);
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      e.stopPropagation();
-      closeActionMenu(true);
-    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      e.preventDefault();
-      const next = list[(i + (e.key === 'ArrowDown' ? 1 : list.length - 1)) % list.length];
-      next?.focus();
-    } else if (e.key === 'Tab') {
-      closeActionMenu();
-    }
-  });
-  // clicks inside the menu must not reach the row (present / expand)
-  menu.addEventListener('click', (e) => e.stopPropagation());
-  wrap.append(button, menu);
-  return wrap;
-}
-
 /** Short stable hash of a snapshot, so a thumbnail is re-rendered when the step's drawing changes. */
 function hashText(text: string): string {
   let h = 5381;
@@ -226,9 +133,8 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
   const root = el('div', 'rd-scn-panel');
   container.replaceChildren(root);
-  document.addEventListener('mousedown', onDocumentPointerDown, true);
   const onPanelScroll = (): void => {
-    if (openActionMenu && root.contains(openActionMenu.menu)) closeActionMenu();
+    closeActionMenuWithin(root);
   };
   container.addEventListener('scroll', onPanelScroll);
 
@@ -575,7 +481,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
     const actions = el('div', 'rd-scn-step-actions');
     actions.appendChild(
-      actionMenu(`Step ${index + 1} actions`, [
+      actionMenu({ label: `Step ${index + 1} actions` }, [
         { className: 'rd-scn-step-edit', label: 'Edit…', title: 'Edit step: name, drawing, UML, text', run: () => run(() => editStep(t, scenario, index, step)) },
         { className: 'rd-scn-step-update', label: 'Update from drawing', title: 'Replace the snapshot with the current drawing', run: () => run(() => updateStepDrawing(t, scenario, index, step)) },
         { className: 'rd-scn-step-duplicate', label: 'Duplicate', run: () => t.scenarios.duplicateStep(scenario.id, step.id) },
@@ -684,7 +590,24 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       );
     }
     menuActions.push({ className: 'rd-scn-delete', label: 'Delete…', danger: true, run: () => run(() => deleteScenario(t, scenario)) });
-    actions.append(play, actionMenu(`${scenario.name}: more actions`, menuActions));
+    actions.appendChild(play);
+    if (options.onExportScenario || options.onExportScenarioDoc) {
+      actions.appendChild(
+        exportMenu(
+          scenario.name,
+          n,
+          (format) => {
+            if (format === 'html') options.onExportScenario?.(t.id, scenario.id);
+            else options.onExportScenarioDoc?.(t.id, scenario.id, format);
+          },
+          {
+            className: 'rd-scn-export-row',
+            formats: [...(options.onExportScenarioDoc ? (['pdf', 'slides'] as const) : []), ...(options.onExportScenario ? (['html'] as const) : [])],
+          }
+        )
+      );
+    }
+    actions.appendChild(actionMenu({ label: `${scenario.name}: more actions` }, menuActions));
     head.append(toggle, label, actions);
     item.appendChild(head);
 
@@ -725,7 +648,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   }
 
   function render(): void {
-    if (openActionMenu && root.contains(openActionMenu.menu)) closeActionMenu();
+    closeActionMenuWithin(root);
     const t = tab();
     follow(t?.scenarios ?? null);
     const scrollTop = container.scrollTop;
@@ -792,7 +715,6 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     },
     destroy() {
       closeActionMenu();
-      document.removeEventListener('mousedown', onDocumentPointerDown, true);
       container.removeEventListener('scroll', onPanelScroll);
       stopColorModeWatch();
       unsubscribe?.();

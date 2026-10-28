@@ -120,7 +120,7 @@ test.describe('UX batch 2b', () => {
     await expect.poll(() => topLevelCount(page)).toBe(withTrack);
   });
 
-  test('scenario rows: Present button and a "⋯" menu with text actions', async ({ page }) => {
+  test('scenario rows: Present button, "Export ▾" and a "⋯" menu with text actions', async ({ page }) => {
     await fresh(page);
     await page.locator('[data-right-panel="scenarios"]').click();
     const panel = page.locator('#scenarios-panel');
@@ -129,7 +129,10 @@ test.describe('UX batch 2b', () => {
     const head = panel.locator('.rd-scn-head');
     await expect(head.locator('.rd-scn-play')).toHaveText('▶ Present');
     await expect(head.locator('.rd-scn-play')).toBeDisabled();
-    for (const target of [head.locator('.rd-scn-play'), head.locator('.rd-scn-more'), panel.locator('.rd-scn-new'), panel.locator('.rd-scn-add-step')]) {
+    await expect(head.locator('.rd-scn-export-row')).toContainText('Export');
+    await expect(head.locator('.rd-scn-export-row')).toBeDisabled();
+    await expect(head.locator('.rd-scn-export-row')).toHaveAttribute('title', 'Add a step first');
+    for (const target of [head.locator('.rd-scn-play'), head.locator('.rd-scn-export-row'), head.locator('.rd-scn-more'), panel.locator('.rd-scn-new'), panel.locator('.rd-scn-add-step')]) {
       const box = await target.boundingBox();
       expect(box!.height).toBeGreaterThanOrEqual(24);
     }

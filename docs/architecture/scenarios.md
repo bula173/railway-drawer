@@ -106,8 +106,11 @@
   scoped (`#deck > section.slide`, `nav.controls > [data-rd=…]`) so UML/Markdown content cannot hijack them. No JS: slides
   stacked; print: one per page. PPTX: not implemented (optional; would need pptxgenjs ~0.5 MB).
 - Export wiring: File > Export Scenario (PDF)… / (Slides)… (`data-action="exportScenarioPdf|exportScenarioSlides"` -> the same
-  `scenario-export-request` event with `detail.format`), panel buttons ⎙ (`.rd-scn-export-pdf`) and ▭
-  (`.rd-scn-export-slides`); `exportScenarioDoc(format, id?)` opens `openScenarioDocDialog` (`scenario-doc-export.ts`:
+  `scenario-export-request` event with `detail.format`; File > Export > Scenario > PDF… / Slides (HTML)… / HTML Document…), the
+  labelled "Export ▾" button (`action-menu.ts` `exportMenu`) of every panel row (`.rd-scn-export-row`) and of the view
+  banner (`.rd-scn-banner-export`, the scenario shown; `ScenarioViewerOptions.onExport`) with the menu PDF… / Slides (HTML)… /
+  HTML document… (`.rd-scn-export-menu-pdf|-slides|-html`; row: disabled with the tooltip "Add a step first" without
+  steps), and the "⋯" items Export HTML / PDF / Slides; `exportScenarioDoc(format, id?)` opens `openScenarioDocDialog` (`scenario-doc-export.ts`:
   scenario select when several, A4 portrait/landscape remembered in `rd.scenario.pdfOrientation`, "Highlight changes"
   preset from the view's toggle). Tests inject `docDialog`, `renderDrawingPng`, `pdfDeps`.
 - Railway > Train Run… "Create scenario from run" (and the AI tool `simulate_train_run`) builds a whole scenario from a
@@ -117,8 +120,12 @@
 - Keyboard: the keymap's interceptor (`bootKeyboard`) calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
   view is open: ←/PageUp, →/PageDown, Home/End, Esc, Space (autoplay); editing shortcuts are prevented, every other key is stopped
   (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
-- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario "▶ Present" (`.rd-scn-play`) + "⋯"
-  (`.rd-scn-more`, role=menu `.rd-scn-menu`, position fixed, Esc/↑/↓): Edit… / Duplicate / Export HTML / Export PDF /
+- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario "▶ Present" (`.rd-scn-play`) + "⇩ Export ▾"
+  (`.rd-scn-export-row`) + "⋯" (`.rd-scn-more`); a narrow panel (default 280 px) puts the three buttons together on their own
+  line under the name (flex-wrap; the label's basis is 110 px). Menu buttons (`action-menu.ts` `actionMenu`, aria-haspopup=menu,
+  role=menu `.rd-scn-menu`, position fixed, one open at a time; Enter/Space/↓ open (↑: last item), ↑/↓/Home/End, Esc closes
+  and refocuses the button, Tab / click outside close; keys inside never reach the shell shortcuts and, in the view,
+  `scenarioKeyAction` returns `menu` for them). "⋯" items: Edit… / Duplicate / Export HTML / Export PDF /
   Export Slides / Delete… (items keep the classes `.rd-scn-edit`, `-duplicate`, `-export`, `-export-pdf`,
   `-export-slides`, `-delete`), expandable step list (lazy 64x40 thumbnails from the palette's shared renderer; per step
   "⋯": Edit… / Update from drawing (confirm) / Duplicate / Move up / Move down / Delete…, classes `.rd-scn-step-*`;
