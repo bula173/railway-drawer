@@ -72,7 +72,7 @@ describe('@maxgraph/core patch canary', () => {
       // drawio-shapes/behaviour/tables.ts, containers.ts, drawio-palette-view.ts
       ['SelectionHandler', proto(SelectionHandler), ['start', 'reset', 'getCells', 'isValidDropTarget', 'shouldRemoveCellsFromParent', 'selectCellForEvent']],
       // ui/pan.ts
-      ['PanningHandler', proto(PanningHandler), ['isPanningTrigger', 'isForcePanningEvent', 'mouseUp']],
+      ['PanningHandler', proto(PanningHandler), ['isPanningTrigger', 'isForcePanningEvent', 'mouseMove', 'mouseUp']],
     ];
     const missing: string[] = [];
     for (const [name, p, members] of methods) {
@@ -110,8 +110,15 @@ describe('@maxgraph/core patch canary', () => {
       expect(selection).toHaveProperty('first', null);
       expect(selection).toHaveProperty('cells', null);
 
-      // ui/pan.ts: useLeftButtonForPanning
-      expect(plugin('PanningHandler')).toHaveProperty('useLeftButtonForPanning', false);
+      // ui/pan.ts: useLeftButtonForPanning; the click tolerance reads panningTrigger / active / startX / startY
+      const panning = plugin('PanningHandler')!;
+      expect(panning).toHaveProperty('useLeftButtonForPanning', false);
+      expect(panning).toHaveProperty('panningTrigger', false);
+      expect(panning).toHaveProperty('active', false);
+      expect(typeof graph.getEventTolerance()).toBe('number');
+      // ui/text-editor.ts: CellEditorHandler.textarea (null until editing); setup-graph.ts: setInvokesStopCellEditing
+      expect(plugin('CellEditorHandler')).toHaveProperty('textarea');
+      expect(typeof graph.setInvokesStopCellEditing).toBe('function');
       // ui/context-menu.ts: selectOnPopup / clearSelectionOnBackground
       expect(plugin('PopupMenuHandler')).toHaveProperty('selectOnPopup', true);
       expect(plugin('PopupMenuHandler')).toHaveProperty('clearSelectionOnBackground', true);

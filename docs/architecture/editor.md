@@ -261,6 +261,18 @@
   distinguishing part of long titles in the two-line captions of the ERTMS and railway sections ("1:9 R toe L", "Tarcza Tm
   prawa", "3-komorowy prawy"); the title stays the tooltip / search text. The generated track-layout turnouts are
   "Points 1:<n> Left|Right (toe left|right)" and the PKP PLK tarcze "… prawa / lewa" (feminine).
+- Deselecting and ending edits (draw.io rules, `tests/e2e/deselect.spec.ts`): a click (press + release under
+  `graph.tolerance`, 4 px; `installPanning` keeps a background press from panning below it, maxGraph uses snapTolerance 0
+  so a 1 px jitter was a pan) on the empty canvas or the scroll padding clears the selection; a click in a group's gap
+  selects the group (press-to-move, `cellAtBackgroundPoint`). A press outside an open editor (label textarea, railway ID
+  field, maxGraph's cell editor with `invokesStopCellEditing`) commits it first: `TextEditorController` listens to
+  `pointerdown` in the capture phase on the document (maxGraph cancels a canvas pointerdown, so no compatibility
+  `mousedown` follows: the old mousedown listeners never saw canvas presses and the editor stayed open while the click
+  cleared the selection). A press that ended an edit on the empty canvas keeps the edited cell selected (its graph CLICK is
+  consumed), the next click deselects; a press on another object selects it. Escape cancels the label / ID editor
+  (selection kept); Ctrl/Cmd+Enter commits a label (Enter = new line). Escape in a panel field (outside a dialog, not
+  handled by the field) blurs it (`edit.blurField`), the next Escape clears the selection (`edit.clearSelection`). The
+  multi-selection box (overlay, `fill: none`) does not take background clicks.
 - Editor commands (UX batch 3): double-click on a railway object (`railwayObjectOf`: the cell or its nearest ancestor
   with rdKind; a double-click in a symbol group's gap resolves by `cellAtBackgroundPoint`) opens the in-place ID field
   (`TextEditorController.startIdEditing`) -> `src/railway/rename-id.ts` `renameObjectId` (unique per kind, no spaces /

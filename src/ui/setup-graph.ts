@@ -119,6 +119,8 @@ export const GRAPH_INSTALLERS: readonly GraphInstaller[] = [
       new RubberBandHandler(graph);
       // Text editing on double-click; stored on the graph for TextEditorController
       (graph as Graph & { cellEditorHandler?: CellEditorHandler }).cellEditorHandler = new CellEditorHandler(graph);
+      // like draw.io: a press outside maxGraph's cell editor commits the text instead of discarding it
+      graph.setInvokesStopCellEditing(true);
       // Native scrollbars (the graph div is the scroll container, canvas-scroll.ts)
       graph.ignoreScrollbars = false;
       graph.translateToScrollPosition = false;

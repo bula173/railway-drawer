@@ -140,6 +140,15 @@
   `tests/e2e/helpers/press-probe-lib.ts`; the full 5x5 grid at 100/200 % is `tests/e2e/helpers/press-probe.spec.ts`
   (`PRESS_PROBE=1 PRESS_PROBE_OUT=<file.md>`), drag smoothness `tests/e2e/helpers/drag-perf.spec.ts` (`DRAG_PERF=1`);
   both are skipped otherwise.
+- `tests/e2e/deselect.spec.ts` (any port, real `page.mouse` / keyboard, 1600x1100, light theme, 100 %): for a draw.io
+  rectangle, a text, an ERTMS signal group, a track and a template group a click on the empty canvas, Escape and a click
+  with 3 px jitter deselect; label editor (rectangle, text) and railway ID editor (signal, track): a click on the empty
+  canvas commits and keeps the edited cell selected, the second click deselects; Escape cancels the editor (selection
+  kept), the next Escape deselects; Ctrl/Cmd+Enter commits a label; editing then a click on another object selects it;
+  Properties / Data panel field + canvas click deselects, Escape blurs the field and a second Escape deselects; a click in
+  a draw.io group's gap selects the group; the scroll padding and the canvas edge deselect (also ending an edit first);
+  a pan drag keeps the selection; the > 10 cells selection box lets background clicks through. Each test prints its
+  scenario table. In CI.
 - `tests/e2e/print-sheets.spec.ts` (any port; `PRINT_SHEETS_SHOTS=<dir>` keeps the screenshots and the PDF): File >
   Page Setup… A3 landscape + Title Block… + Revisions… (Polish text) -> the sheet border overlay (format, title block
   fields, sheet 1 z 1, frame) on the canvas; View > Pages… adds a page; View > Insert Sheet Reference… markers on both
