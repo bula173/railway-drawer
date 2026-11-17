@@ -9,18 +9,72 @@ import { getKind } from '../railway/catalogue';
 import { getCellKind } from '../railway/object-data';
 import { globalNotificationManager } from './notification';
 
-/** Inline editor textarea carrying its document mousedown handler for later removal. */
-type EditingTextArea = HTMLTextAreaElement & { __clickOutsideHandler?: (evt: MouseEvent) => void };
-
+/**
+ * Label and ID editors, and how a press outside them ends the edit (draw.io rules):
+ * - a press anywhere outside the open editor (label textarea, railway ID field or maxGraph's cell editor)
+ *   commits it first (document pointerdown, capture phase: maxGraph cancels the pointerdown of a canvas press,
+ *   so no compatibility `mousedown` follows and a mousedown listener never saw canvas presses);
+ * - when that press is a click on the empty canvas, the click only ends the edit: the edited cell stays
+ *   selected (draw.io), the next click on the empty canvas deselects; a press on another object selects it;
+ * - Escape cancels the label / ID editor (the selection stays; a second Escape clears it, edit.ts),
+ *   Ctrl/Cmd+Enter commits the label (Enter is a new line, like draw.io).
+ */
 export class TextEditorController {
   private graph: Graph;
   private currentEditingCell: Cell | null = null;
-  private editingInput: EditingTextArea | null = null;
+  private editingInput: HTMLTextAreaElement | null = null;
+  /** The current press on the canvas ended an edit: its click must not clear the selection. */
+  private keepSelectionOnClick = false;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupTextEditingHandlers();
+    document.addEventListener('pointerdown', this.onPointerDown, true);
+    this.graph.addListener(InternalEvent.CLICK, this.onGraphClick);
   }
+
+  /** Whether a label or ID editor of this controller is open. */
+  isEditing(): boolean {
+    return !!this.editingInput || !!this.idEditor;
+  }
+
+  /** A press outside the open editor commits it (before the graph sees the press). */
+  private readonly onPointerDown = (evt: PointerEvent): void => {
+    this.keepSelectionOnClick = false;
+    const target = evt.target instanceof Node ? evt.target : null;
+    const onCanvas = !!target && this.graph.container.contains(target);
+    if (this.editingInput && target && !this.editingInput.contains(target)) {
+      this.stopEditing();
+      this.keepSelectionOnClick = onCanvas;
+    } else if (this.idEditor && target !== this.idEditor.input) {
+      const input = this.idEditor.input;
+      if (!this.idEditor.commit()) {
+        // refused ID: the field stays open with the reason, the press does nothing else
+        evt.preventDefault();
+        evt.stopPropagation();
+        setTimeout(() => input.focus());
+        return;
+      }
+      this.keepSelectionOnClick = onCanvas;
+    } else if (this.graph.isEditing() && onCanvas && !this.isCellEditorSource(target)) {
+      // maxGraph's cell editor (an edge label): committed like draw.io (invokesStopCellEditing)
+      this.graph.stopEditing(false);
+      this.keepSelectionOnClick = true;
+    }
+  };
+
+  /** Whether `node` is inside maxGraph's cell editor (its contentEditable). */
+  private isCellEditorSource(node: Node | null): boolean {
+    const editor = this.graph.getPlugin('CellEditorHandler') as unknown as { textarea?: HTMLElement | null } | undefined;
+    return !!node && !!editor?.textarea && editor.textarea.contains(node);
+  }
+
+  /** The click of a press that ended an edit on the empty canvas keeps the selection (draw.io). */
+  private readonly onGraphClick = (_sender: unknown, evt: EventObject): void => {
+    const keep = this.keepSelectionOnClick;
+    this.keepSelectionOnClick = false;
+    if (keep && !evt.getProperty('cell')) evt.consume();
+  };
 
   private setupTextEditingHandlers(): void {
     // Listen for double-click to start inline text editing
@@ -83,11 +137,8 @@ export class TextEditorController {
     logger.debug('TextEditor', 'Cell bounds:', bounds);
 
     // Create textarea element (supports multi-line text)
-    this.editingInput = document.createElement('textarea') as EditingTextArea;
-    if (!this.editingInput) {
-      console.error('[TextEditor] Failed to create textarea element');
-      return;
-    }
+    this.editingInput = document.createElement('textarea');
+    this.editingInput.className = 'rd-label-editor';
 
     // convertValueToString: the label of a draw.io UserObject value, not the element itself
     this.editingInput.value = this.graph.convertValueToString(cell);
@@ -126,25 +177,16 @@ export class TextEditorController {
     this.editingInput.focus();
     this.editingInput.select();
 
-    // Handle Escape to cancel editing
+    // Escape cancels, Ctrl/Cmd+Enter commits (Enter is a new line); a press outside commits (onPointerDown)
     this.editingInput.addEventListener('keydown', (evt: KeyboardEvent) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();
         this.cancelEditing();
-      }
-    });
-
-    // Handle click outside to close editing
-    const handleClickOutside = (evt: MouseEvent) => {
-      if (this.editingInput && evt.target && !this.editingInput.contains(evt.target as Node)) {
+      } else if (evt.key === 'Enter' && (evt.ctrlKey || evt.metaKey)) {
+        evt.preventDefault();
         this.stopEditing();
       }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    // Store handler so we can remove it later
-    this.editingInput.__clickOutsideHandler = handleClickOutside;
+    });
 
     logger.debug('TextEditor', 'Inline text input created and focused at', { left, top, width, height });
   }
@@ -197,21 +239,16 @@ export class TextEditorController {
       }
     });
     input.addEventListener('input', () => input.removeAttribute('aria-invalid'));
-    const outside = (e: MouseEvent): void => {
-      if (e.target !== input && !commit()) e.preventDefault();
-    };
-    document.addEventListener('mousedown', outside, true);
-    this.idEditor = { input, outside };
+    this.idEditor = { input, commit };
     document.body.appendChild(input);
     input.focus();
     input.select();
   }
 
-  private idEditor: { input: HTMLInputElement; outside: (e: MouseEvent) => void } | null = null;
+  private idEditor: { input: HTMLInputElement; commit: () => boolean } | null = null;
 
   private cancelIdEditing(): void {
     if (!this.idEditor) return;
-    document.removeEventListener('mousedown', this.idEditor.outside, true);
     this.idEditor.input.remove();
     this.idEditor = null;
   }
@@ -226,48 +263,30 @@ export class TextEditorController {
     const newText = input.value;
     logger.debug('TextEditor', 'Saving text:', newText);
 
-    // Remove click outside handler
-    const handler = input.__clickOutsideHandler;
-    if (handler) {
-      document.removeEventListener('mousedown', handler);
-    }
-
-    // Clean up - check if element is still in DOM before removing
-    if (input.parentNode) {
-      input.remove();
-    }
-
-    // Update cell value; cellLabelChanged keeps the other attributes of a UserObject value
-    this.graph.cellLabelChanged(cell, newText, false);
-    this.graph.refresh();
-
     this.editingInput = null;
     this.currentEditingCell = null;
+    input.remove();
+
+    // Update cell value; cellLabelChanged keeps the other attributes of a UserObject value. The model
+    // change redraws the cell; no graph.refresh(): it would rebuild every shape while the press that
+    // ended the edit (onPointerDown) is still being dispatched to them
+    this.graph.cellLabelChanged(cell, newText, false);
   }
 
   /**
-   * Ends an edit still open when the tab closes: removes the overlay textarea and its
-   * `document` mousedown listener, which are added per edit and so not managed by the TabManager.
+   * Ends an edit still open when the tab closes (removes the overlay field) and the `document`
+   * pointerdown listener.
    */
   destroy(): void {
     this.cancelEditing();
     this.cancelIdEditing();
+    document.removeEventListener('pointerdown', this.onPointerDown, true);
+    this.graph.removeListener(this.onGraphClick);
   }
 
   private cancelEditing(): void {
     if (this.editingInput) {
-      const input = this.editingInput;
-
-      // Remove click outside handler
-      const handler = input.__clickOutsideHandler;
-      if (handler) {
-        document.removeEventListener('mousedown', handler);
-      }
-
-      // Check if element is still in DOM before removing
-      if (input.parentNode) {
-        input.remove();
-      }
+      this.editingInput.remove();
       this.editingInput = null;
     }
     this.currentEditingCell = null;

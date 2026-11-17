@@ -13,6 +13,7 @@ import { toggleCellsLocked } from '../cell-lock';
 import { scrollSelectionIntoView } from '../canvas-scroll';
 import { logger } from '../../drawio/logger';
 import { isMod, keyOf } from './keymap';
+import { isEditableTarget } from '../../core/keyboard-guard';
 import type { Command, CommandContext } from './types';
 
 /** The cells a context-menu command acts on (the right-clicked selection), without nulls. */
@@ -175,6 +176,27 @@ export const editCommands: readonly Command[] = [
       ctx.tab?.hoverArrowsController.escape();
       ctx.tab?.graph.clearSelection();
     },
+  },
+  {
+    id: 'edit.blurField',
+    label: 'Leave the Field',
+    // Escape in a panel field (Properties, Data, palette search, ...) gives the focus back to the page, so the
+    // next Escape clears the selection (edit.clearSelection skips keys typed into fields). Fields that handle
+    // Escape themselves (preventDefault: dialogs, the ID / label editors, the Data panel) and fields inside a
+    // dialog are left alone; maxGraph's cell editor (inside the canvas) cancels itself.
+    keys: [
+      {
+        phase: 'bubble',
+        guard: 'none',
+        preventDefault: false,
+        match: (e) => e.key === 'Escape' && !e.defaultPrevented && !e.isComposing,
+        when: (_e, ctx) => {
+          const focus = document.activeElement;
+          return isEditableTarget(focus) && !focus!.closest('[role="dialog"]') && !ctx.tab?.graph.container.contains(focus);
+        },
+      },
+    ],
+    run: () => (document.activeElement as HTMLElement | null)?.blur(),
   },
   {
     id: 'edit.nudge',

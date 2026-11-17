@@ -37,6 +37,22 @@ export function installPanning(graph: Graph): void {
     if (PAN_MODE.has(graph) && evt.button === 0) return true;
     return origForce(me);
   };
+  // A background press starts panning only beyond the click tolerance (graph.tolerance, 4 px; maxGraph
+  // uses snapTolerance, 0: a 1 px hand jitter turned the click that clears the selection into a pan)
+  const origMove = handler.mouseMove.bind(handler);
+  handler.mouseMove = (sender: unknown, me: InternalMouseEvent): void => {
+    // (forced panning, Space / middle button, is active from the press on)
+    if (handler.panningTrigger && !handler.active) {
+      const dx = me.getX() - handler.startX;
+      const dy = me.getY() - handler.startY;
+      const tol = graph.getEventTolerance();
+      if (Math.abs(dx) < tol && Math.abs(dy) < tol) {
+        me.consume();
+        return;
+      }
+    }
+    origMove(sender as never, me);
+  };
   // A pan never ends in a click (which would clear the selection), whatever its direction
   const origUp = handler.mouseUp.bind(handler);
   handler.mouseUp = (sender: unknown, me: InternalMouseEvent): void => {
@@ -57,7 +73,7 @@ export function installPanning(graph: Graph): void {
  * PanningHandler pans with the scrollbars, `useScrollbarsForPanning`):
  * - a left-button drag on the EMPTY background pans, like a map (default cursor, grabbing while panning);
  *   a press on a shape, an edge, a handle or a group's gap (canvas-interaction.ts gives it the
- *   group) still selects / moves it; a click without a move still clears the selection;
+ *   group) still selects / moves it; a click (a move under graph.tolerance, 4 px) still clears the selection;
  * - Shift+drag (and Alt+drag, maxGraph's forced rubber band) on the background draws the rubber
  *   band; Ctrl/Cmd+drag keeps it too;
  * - Space+drag (also over shapes) and middle-button drag pan from the press on ("force panning":

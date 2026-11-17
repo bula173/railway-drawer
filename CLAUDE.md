@@ -49,7 +49,7 @@ tools/mcp-local/src + stylelint), test:run, build, `wrangler deploy --dry-run` a
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, ux-batch3, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, print-sheets, train-run, interlocking, etcs-data, csp). No
+railway-shapes, backlog-ui, ai, ai-scenarios, all-shapes, access-identity, press-to-move, deselect, print-sheets, train-run, interlocking, etcs-data, csp). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 E2E specs (what each covers, helpers, CI rules): [docs/architecture/e2e.md](docs/architecture/e2e.md). CI fails on flaky
