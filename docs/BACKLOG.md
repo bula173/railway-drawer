@@ -35,3 +35,11 @@ writing: interlocking table with route conflicts, rule checks, animated train ru
 - **AI drawing review.** "Check this plan": list of suspicious places, referencing the rule checks.
 - **Documentation generation.** Station technical description, route descriptions, PL↔EN translation of labels
   and documents.
+
+## Added 2026-11-17 (approved, scheduled)
+
+- **Automatic numbering** of signals, points, sections, balises by km and direction, with configurable conventions.
+- **Station and typical layout library**: parametric stations/blocks (tracks, platform length, turnout type) inserted in one click.
+- **One-click design report (PDF)**: sheets, interlocking table, balise data, check results and scenarios in one document.
+- **Live validation on the canvas**: rule findings shown on the objects while drawing.
+- **Presentation / training mode**: full screen, scenario and train-run playback with narration, pointer and ink annotations.
